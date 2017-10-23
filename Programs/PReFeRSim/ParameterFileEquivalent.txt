@@ -1,0 +1,305 @@
+while ((argc > 1) && (argv[1] [0] == '-'))
+{
+//arg[1] [2] is the first option character, N in this case
+printf("Argument = %s %s\n",&argv[1][1] , &argv[1][2]);
+switch (argv [1] [1])
+{
+/*	case 'A':
+N[0] = atoi(&argv[1] [2]);
+break;
+case 'a':
+gen[0] = atoi(&argv[1] [2]);
+break;
+case 'B':
+N[1] = atoi(&argv[1] [2]);
+break;
+case 'b':
+gen[1] = atoi(&argv[1] [2]);
+break;
+case 'C':
+N[2] = atoi(&argv[1] [2]);
+break;
+case 'c':
+gen[2] = atoi(&argv[1] [2]);
+break;
+case 'D':
+N[3] = atoi(&argv[1] [2]);
+break;
+case 'd':
+gen[3] = atoi(&argv[1] [2]);
+break; */
+case 'T':
+AllelesToKeep = &argv[1][2];
+printf("FileToTakeAllelesFrom = %s\n",AllelesToKeep);
+InputAlleles = fopen(AllelesToKeep,"r");
+while (fscanf(InputAlleles, "%d",&AlleleRead) != EOF){
+//		printf("Allele = %d\n",AlleleRead);
+NumberOfAlleles++;
+}
+fclose(InputAlleles);
+printf("NumberOfAlleles = %d\n", NumberOfAlleles);
+ListOfAllelesToKeep = malloc(NumberOfAlleles*sizeof(int));
+InputAlleles = fopen(AllelesToKeep,"r");
+NumberOfAlleles = 0;
+while (fscanf(InputAlleles, "%d",&AlleleRead) != EOF){
+//		printf("Allele = %d\n",AlleleRead);
+ListOfAllelesToKeep[NumberOfAlleles] = AlleleRead;
+//		printf("Array %d %d\n", NumberOfAlleles , ListOfAllelesToKeep[NumberOfAlleles]);
+NumberOfAlleles++;
+}
+fclose(InputAlleles);
+++argv;
+--argc;
+NameExitTrajFile = &argv[1][0];
+printf("ExitFile = %s\n", NameExitTrajFile );
+EXITTRAJFILE = fopen(NameExitTrajFile,"w");
+//	fprintf(EXITTRAJFILE, "Here I come!\n");
+//	fclose(EXITTRAJFILE);
+FlagTrajToPrint = NumberOfAlleles;
+//	return 0;
+break;
+case 'R':
+DemographicTrajectory = &argv[1][2];
+printf("DemographicTrajectoryFile = %s\n",DemographicTrajectory);
+NumberOfEpochs = 0;
+NeTrajFile = fopen (DemographicTrajectory,"r");
+do {
+ch = fgetc(NeTrajFile);
+if (ch == '\n')
+NumberOfEpochs++;
+} while (ch != EOF);
+if (ch != '\n' && NumberOfEpochs != 0)
+NumberOfEpochs++;
+fclose(NeTrajFile);
+//	printf("Number of epochs = %i\n", NumberOfEpochs);
+/*	NumberOfEpochs = 0;
+while(1){
+if(fgets(TrajLine,150,NeTrajFile) == NULL) break;
+NumberOfEpochs++;
+}
+fclose(NeTrajFile);
+printf("Epochs = %i\n",NumberOfEpochs);*/
+N = malloc(NumberOfEpochs*sizeof(int));
+gen = malloc(NumberOfEpochs*sizeof(int));
+NumberOfEpochs = 0;
+NeTrajFile = fopen (DemographicTrajectory,"r");
+while ((read = getline(&TrajLine, &len, NeTrajFile)) != -1) {
+//		printf("Retrieve line of length %zu :\n", read);
+//		printf("%s", TrajLine);
+pch = strtok (TrajLine," ");
+if ( NumberOfEpochs == 0 ){
+//		N = malloc(1*sizeof(int));
+//		gen = malloc(1*sizeof(int));
+}else{
+//		N = (int*) realloc(N , (NumberOfEpochs + 1 )* sizeof(int) );
+//		gen = (int*) realloc(gen , (NumberOfEpochs + 1 )* sizeof(int) );
+}
+//		N = (int*) TempN;
+//		Tempgen = (int*) gen;
+StringPart = 0;
+//		printf("str part 1 %s and 2 %s\n",pch[0],pch[1]);
+while (pch != NULL){
+//			printf ("CurrentLine = %s %i\n",pch, StringPart);
+
+//			pch = strtok (NULL, " ");
+if (StringPart == 0){
+N[NumberOfEpochs] = atoi(pch);
+//				printf("String1 = %i %i\n",N[NumberOfEpochs], NumberOfEpochs);
+}else if (StringPart == 1){
+//				gen[NumberOfEpochs] = atoi (pch);
+char *SubString = pch;
+SubString[strlen(SubString) -1] = '\0';
+gen[NumberOfEpochs] = atoi (SubString);
+//				printf("String2 = %i %i\n",gen[NumberOfEpochs], NumberOfEpochs);
+}
+pch = strtok (NULL, " ");
+StringPart++;
+}
+NumberOfEpochs++;
+}
+fclose(NeTrajFile);
+//	printf("Number of epochs = %i\n",NumberOfEpochs);
+//	return 0;
+break;
+case 'm':
+mut_rate = atof(&argv[1] [2]);
+break;
+
+case 's':
+seed = atol(&argv[1] [2]);
+break;
+
+case 't':
+num = atoi(&argv[1] [2]);
+break;
+
+case 'z':
+run = atoi(&argv[1] [2]);
+break;
+case 'g':
+type_sel = &argv[1][2] ;
+if(strcmp(type_sel,"point")==0)
+{
+++argv;
+--argc;
+PointSel = atof(&argv[1][0]);
+printf("Sel = %s %lf\n", &argv[1][0] , PointSel );
+//	return 0;
+//sel=0.005;
+//        //sel=0.001331913;
+//                sel=0.00125;
+}
+if( ( strcmp(type_sel,"gamma")==0) || ( strcmp(type_sel,"beta")==0) || ( strcmp(type_sel,"lognormal")==0) ){
+++argv;
+--argc;
+DistParamOne = atof(&argv[1][0]);
+printf("Sel = %s %lf\n", &argv[1][0] , DistParamOne );
+++argv;
+--argc;
+DistParamTwo = atof(&argv[1][0]);
+printf("Sel = %s %lf\n", &argv[1][0] , DistParamTwo );
+++argv;
+--argc;
+DistParamThree = atof(&argv[1][0]);
+printf("Sel = %s %lf\n", &argv[1][0] , DistParamThree );
+}
+if ( ( strcmp(type_sel,"pointprob")==0 ) || ( strcmp(type_sel,"unifbounds")==0  ) ){
+++argv;
+--argc;
+SelParFileName = &argv[1][0];
+SelParFile = fopen (SelParFileName,"r");
+NumberOfSelParameters = 0;
+do {
+ch = fgetc(SelParFile);
+if (ch == '\n')
+NumberOfSelParameters++;
+} while (ch != EOF);
+if (ch != '\n' && NumberOfSelParameters != 0)
+NumberOfSelParameters++;
+fclose(SelParFile);
+
+VectorSelParamOne = malloc(NumberOfSelParameters * sizeof(double));
+VectorSelParamTwo = malloc(NumberOfSelParameters * sizeof(double));
+VectorSelParamThree = malloc(NumberOfSelParameters * sizeof(double));
+NumberOfSelParameters = 0;
+SelParFile = fopen (SelParFileName,"r");
+while ((read = getline(&TrajLine, &len, SelParFile)) != -1) {
+pch = strtok (TrajLine," ");
+StringPart = 0;
+while (pch != NULL){
+if (StringPart == 0){
+VectorSelParamOne[NumberOfSelParameters] = atof(pch);
+printf("Parameter One = %f\n",VectorSelParamOne[NumberOfSelParameters]);
+}
+else if (StringPart == 1){
+if (strcmp(type_sel,"pointprob")==0){
+char *SubString2 = pch;
+SubString2[strlen(SubString2) -1] = '\0';
+VectorSelParamTwo[NumberOfSelParameters] = atof (SubString2);
+printf("Parameter Two = %f\n",VectorSelParamTwo[NumberOfSelParameters]);
+}else{
+VectorSelParamTwo[NumberOfSelParameters] = atof(pch);
+printf("Parameter Two = %f\n",VectorSelParamTwo[NumberOfSelParameters]);
+}
+}
+else if (StringPart == 2){
+char *SubString3 = pch;
+SubString3[strlen(SubString3) -1] = '\0';
+VectorSelParamThree[NumberOfSelParameters] = atof (SubString3);
+printf("Parameter Three = %f\n",VectorSelParamThree[NumberOfSelParameters]);
+}
+pch = strtok (NULL, " ");
+StringPart++;
+}
+NumberOfSelParameters++;
+}
+++argv;
+--argc;
+DistParamThree = atof(&argv[1][0]);
+}
+break;
+case 'r':
+++argv;
+--argc;
+FlagRelaxationSelection = 1;
+EpochOfRelaxation = atoi(&argv[1] [0]);
+++argv;
+--argc;
+NewSelectionCoefficient = atof(&argv[1][0]);
+++argv;
+--argc;
+SelectionThreshold = atof(&argv[1][0]);
+//	printf("Epoch %i new selection %lf selThreshold %lf\n", EpochOfRelaxation, NewSelectionCoefficient, SelectionThreshold);
+++argv;
+--argc;
+TypeOfRelaxedSelection = atoi(&argv[1] [0]);
+printf("Epoch %i new selection %lf selThreshold %lf TypeRelSel = %i\n", EpochOfRelaxation, NewSelectionCoefficient, SelectionThreshold, TypeOfRelaxedSelection);
+break;
+case 'N':
+SampleSize = atoi(&argv[1] [2]);
+SampleFlag = 1;
+printf("Sample Size = %i , Sample Flag = %i\n", SampleSize , SampleFlag);
+//	  return 0;
+break;
+case 'f':
+sel_mult = atof(&argv[1][2]) ;
+break;
+case 'F':
+type_f = &argv[1][2];
+if(strcmp(type_f,"fixed")==0)
+{
+++argv;
+--argc;
+F = atof(&argv[1][0]) ;
+F_fixedflag = 1;
+}else if (strcmp(type_f,"changed") == 0) {
+++argv;
+--argc;
+F_fixedflag = 0;
+FValuesFileName = &argv[1][0];
+FValuesFile = fopen (FValuesFileName,"r");
+NumberOfEpochs_F = 0;
+printf("All well here...\n");
+do {
+ch = fgetc(FValuesFile);
+if (ch == '\n')
+NumberOfEpochs_F++;
+} while (ch != EOF);
+if (ch != '\n' && NumberOfEpochs_F != 0)
+NumberOfEpochs_F++;
+fclose(FValuesFile);
+NumberOfEpochs_F= NumberOfEpochs_F - 1;
+F_Epochs = malloc(NumberOfEpochs_F*sizeof(double));
+printf("Number of epochs = %d\n",NumberOfEpochs_F);
+NumberOfEpochs_F = 0;
+FValuesFile = fopen (FValuesFileName,"r");
+while (fscanf(FValuesFile, "%lf",&F_Temp) != EOF){
+//		printf("Allele = %d\n",AlleleRead);
+F_Epochs[NumberOfEpochs_F] = F_Temp;
+printf("Array %lf %d\n", F_Temp, NumberOfEpochs_F);
+NumberOfEpochs_F++;
+}
+fclose(FValuesFile);
+printf("Make it here? %d\n", NumberOfEpochs_F);
+F = 0.0;
+}
+break;
+case 'h':
+h = atof(&argv[1][2]) ;
+break;
+case 'n':
+n  = atoi(&argv[1][2]) ;
+break;
+case 'S':
+Short = atoi(&argv[1][2]) ;
+if (Short == 1){
+++argv;
+--argc;
+PrintingInterval = atoi(&argv[1][0]) ;
+}
+
+}
+//	printf("Argument = %s %s\n",&argv[1][1] , &argv[1][2]);
+++argv;
+--argc;
+}

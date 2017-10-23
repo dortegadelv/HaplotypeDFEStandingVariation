@@ -1,0 +1,16 @@
+MutationRate: 10
+DFEType: point
+DFEPointSelectionCoefficient: 0.0
+DemographicHistory: Bottleneck.txt
+AlleleTrajsInput: MiniTest/Alleles11.txt
+AlleleTrajsOutput: MiniTest/Traj_11.txt
+PrintSNPNumber: 1
+PrintSumOfS: 1
+PrintAverageDAF: 1
+PrintWeightedSumOfS: 1
+PrintGenLoad: 1
+PrintFixedSites: 1
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 1
+PrintSFS: 1
+FilePrefix: MiniTest/Output

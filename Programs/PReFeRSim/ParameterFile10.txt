@@ -1,0 +1,16 @@
+MutationRate: 4
+DFEType: lognormal
+DFEParameterOne: 5.02
+DFEParameterTwo: 5.94
+DFEParameterThree: 1000
+DemographicHistory: DemographicHistoryBreedDogs1000.txt
+PrintSNPNumber: 1
+PrintSumOfS: 1
+PrintAverageDAF: 1
+PrintWeightedSumOfS: 1
+PrintGenLoad: 1
+PrintFixedSites: 1
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 1
+PrintSFS: 1
+FilePrefix: MiniTest/Output

@@ -1,0 +1,393 @@
+General usage of the program
+
+0.
+This program performs simulations under the Poisson Random Field model, where it is assumed that the number of independent mutations arising each generation follows a Poisson distribution. The change in frequency of the independent mutations across generation follows a Wright-Fisher model.
+This program can model any demographic scenario including only one deme and can model a wide variety of distribution of fitness effects for the mutations arising each generation.
+Assuming a wide different demographic scenarios and distributions of fitness effects, this program can be used to:
+- Follow the allele frequency trajectories of alleles that end at a certain frequency in the population.
+- Obtain a list of segregating sites, along with their frequency and selection coefficient.
+- Print the site frequency spectrum.
+- Print the number of heterozygous and homozygous derived genotypes.
+- Print the number of segregating sites across time.
+- Print the average derived allele frequency of the segregating variants across time.
+- Print the genetic load across time.
+- Print the number of variants fixed across time.
+
+###############################
+
+1. Compilation
+
+GSL must be installed in your computer.
+
+gcc -g -o fwd_seldist_gsl_2012_4epoch.debug fwd_seldist_gsl_2012_4epoch.gutted.dom_inbreedParameterFile.c -lm -lgsl -lgslcblas -O3
+
+###############################
+
+2. General usage
+
+Use the following syntax to run the program:
+
+GSL_RNG_SEED=1 GSL_RNG_TYPE=mrg ./fwd_seldist_gsl_2012_4epoch.debug ParameterFile11_B.txt 11
+
+Where:
+GSL_RNG_SEED=1          This defines the random seed number used by the program (1 in this case)
+GSL_RNG_TYPE=mrg        This defines the random number generator used (mrg)
+ParameterFile11_B.txt   This is the parameter file, including the instructions needed for the program to run
+11                      This is the replicate number. This is specified by the user and will be used in the output files to facilitate running the program in parallel.
+
+###############################
+
+3. Parameter file
+
+The parameter file specifies the options that you will use to run the PRF simulator. Ten examples of parameter files are included in the script RunTestNew.sh with an example of how to run each parameter file using the simulator.
+
+Every option of the parameter file must be separated by EXACTLY ONE BLANK SPACE (tab spaces are not accepted) from the value of the parameter and must be typed exactly as shown in the manual, including the colon and the lower case and upper case letters were they are indicated. Example.-
+
+MutationRate: 4
+
+###############################
+
+3.1 Options NEEDED to make the program run
+
+DemographicHistory:
+Tells the program the name of the file that contains the demographic history, specifying the population size changes through time. Example.-
+
+DemographicHistory: Bottleneck.txt
+
+Where Bottleneck.txt is a file that has the following content:
+
+1000 8000
+100 100
+
+There are two epochs here. First there is an epoch of 25,000 generations in a population of size 2N = 1,000 followed by an epoch of 100 generations in a population of size 2N = 100. NOTE! There should be a blank space between the two columns in each row, not a tab.
+All of the numbers in the file must be nonnegative integer numbers.
+
+When you run the program, it is advisable that in the first epoch you run the program for a long time to achieve mutation-selection balance at the end of that first epoch. In our experiments, we have seen that running the program for 16N generations is sufficient to achieve mutation-selection balance.
+
+MutationRate:
+This specifies the mean number of mutations added each generation in the first epoch specified by the demographic history. This parameter is equal to the multiplication of the number of chromosomes (in terms of the most ancestral population size) * mutation rate per bp *number of bases. A Poisson number of mutations with a mean equal to what is specified by this parameter enter the population every generation. This is re-scaled appropriately when the population changes its size. We recommend to not try values higher than 5000 due to possible problems with the memory usage. [default value = 0]. The number must be a nonnegative decimal number.
+Example.-
+
+MutationRate: 4
+
+DFEType:
+Specify the distribution of fitness effects to use. The fitnesses of the genotypes are A1A1 = 1; A1A2 = 1-h*(2*s); A2A2 = 1-(2*s). Six distribution of fitness effects are available to be specified with DFEType.-
+
+#### Constant distribution of fitness effects ####
+
+point
+All the mutations will share the same selection coefficient ’s’. The selection coefficient must be specified using the parameter ‘DFEPointSelectionCoefficient:’
+
+DFEPointSelectionCoefficient:
+The selection coefficient ’s’ is specified with this option.
+
+Example of how to use this distribution of fitness effects.-
+DFEType: point
+DFEPointSelectionCoefficient: 0.0
+
+DFEPointSelectionCoefficient must be a decimal number.
+#### Gamma distribution of fitness effects ####
+
+gamma
+The scaled selection parameter 2Ns of the mutations will follow a gamma distribution. Three parameters must be specified.
+
+DFEParameterOne:
+The shape parameter of the gamma distribution. This must be a decimal number bigger than zero.
+
+DFEParameterTwo:
+The scale parameter of the gamma distribution. This must be a decimal number bigger than zero.
+
+DFEParameterThree:
+The effective population size used in the scaled selection parameter 2Ns. This must be a nonnegative integer.
+
+Example of how to use this distribution of fitness effects.-
+DFEType: gamma
+DFEParameterOne: 0.184
+DFEParameterTwo: 319.8626
+DFEParameterThree: 1000
+
+#### LogNormal distribution of fitness effects ####
+
+lognormal
+The scaled selection parameter 2Ns of the mutations will follow a lognormal distribution. Three parameters must be specified.
+
+DFEParameterOne:
+The mean of the lognormal distribution. This must be a decimal number.
+
+DFEParameterTwo:
+The standard deviation of the lognormal distribution. This must be a nonnegative decimal number.
+
+DFEParameterThree:
+The effective population size used in the scaled selection parameter 2Ns. This must be a nonnegative integer.
+
+Example of how to use this distribution of fitness effects.-
+DFEType: lognormal
+DFEParameterOne: 5.02
+DFEParameterTwo: 5.94
+DFEParameterThree: 1000
+
+#### Beta distribution of fitness effects ####
+
+beta
+The selection coefficient s of the mutations will follow a beta distribution. Two parameters must be specified.
+
+DFEParameterOne:
+The alpha shape parameter of the beta distribution. The value given should be a decimal number bigger than zero.
+
+DFEParameterTwo:
+The beta shape parameter of the beta distribution. The value given should be a decimal number bigger than zero.
+
+Example of how to use this distribution of fitness effects.-
+DFEType: beta
+DFEParameterOne: 0.5
+DFEParameterTwo: 0.5
+
+#### Point probability distribution of fitness effects ####
+
+pointprob
+The scaled selection coefficient 2Ns of the mutations will take particular values specified by the probabilities given by the user. Two parameters must be specified:
+
+DFEPointProbSelectionFile:
+This file contains the particular 2Ns values that will be used in the simulation along with their associated probabilities. As an example, you can give a file with the following content.-
+
+1 0.2
+5 0.5
+10 1.0
+
+All values in each row must be separated by a blank space. A random number between 0 and 1 is simulated for each mutation. If the random number value is between 0 and 0.2, the value of 2Ns is 1. If the random number value is between 0.2 and 0.5, the value of 2Ns is 5. If the random number value is between 0.5 and 1.0, the value of 2Ns is 10.
+
+The two numbers on each row must be decimal numbers. The numbers in the second row must be ordered in ascendent order and must be bounded between 0 and 1. The number from the second column in the last row must be equal to 1.
+
+DFEPointProbNe:
+The effective population size used in the scaled selection parameter 2Ns. This number must be a nonnegative integer.
+
+Example of how to use this distribution of fitness effects.-
+DFEType: pointprob
+DFEPointProbSelectionFile: SelPointTest.txt
+DFEPointProbNe: 10000
+
+#### Uniform-bound probability distribution of fitness effects ####
+
+unifbounds
+The scaled selection coefficient 2Ns of the mutations will take particular values specified by the probabilities given by the user. Two parameters must be specified:
+
+DFEUnifBoundsSelectionFile:
+This file contains the particular 2Ns values that will be used in the simulation along with their associated probabilities. As an example, you can give a file with the following content.-
+
+10 20 0.33
+100 200 0.66
+1000 2000 1.0
+
+All values in each row must be separated by a blank space. A random number between 0 and 1 is simulated for each mutation. If the random number value is between 0 and 0.33, then the value of 2Ns is a random number sampled uniformly from the interval 10-20. If the random number value is between 0.33 and 0.66, then the value of 2Ns is a random number sampled uniformly from the interval 100-200. If the random number value is between 0.66 and 1.0, then the value of 2Ns is a random number sampled uniformly from the interval 1000-2000.
+
+The three numbers on each row must be decimal numbers. The numbers in the third column must be ordered in ascendent order and must be bounded between 0 and 1. The number from the third column in the last row must be equal to 1.
+
+DFEUnifBoundsNe:
+The effective population size used in the scaled selection parameter 2Ns. This number must be a nonnegative integer.
+
+Example of how to use this distribution of fitness effects.-
+DFEType: unifbounds
+DFEUnifBoundsSelectionFile: SelUnifBounds.txt
+DFEUnifBoundsNe: 100000
+
+###############################
+
+3.1.1 Relaxation of selection
+
+Four parameters must be given if you plan to relax the selection coefficient of all the mutations.
+
+EpochOfRelaxation:
+Starting from this epoch, the selective coefficient of all the mutations will be relaxed. The most ancestral epoch has the number 0, the second one most ancestral has the number 1, etc. Example .-
+EpochOfRelaxation: 1
+This must be a nonnegative integer number.
+
+RelaxationSelectionThreshold:
+All the mutations with a selection coefficient smaller than this threshold will have their selection coefficient relaxed. Example.-
+RelaxationSelectionThreshold: 1.0
+This must be a decimal number.
+
+RelaxationSelectionType:
+There are two ways to relax the selection coefficient. If this parameter is set equal to 0, then the new selection coefficient of all the mutations with a selective coefficient smaller than what is specified in ‘RelaxationSelectionThreshold:’ will be equal to what is specified in the parameter ‘RelaxationSelectionCoefficient:’. If the parameter is set equal to 1, then the new selection coefficient of each mutation with a selective coefficient smaller than what is specified in ‘RelaxationSelectionThreshold:’ will be equal to the multiplication of the current selective coefficient of each mutation and the value specified in the parameter ‘RelaxationSelectionCoefficient:’. Example.- 
+RelaxationSelectionType: 0
+This must be a integer number equal to 0 or 1.
+
+
+RelaxationSelectionCoefficient:
+The value set in this parameter will depend on what relaxation type is specified in the parameter ‘RelaxationSelectionType:’.
+Example.-
+RelaxationSelectionType: 0.9
+This must be a decimal number.
+
+###############################
+
+
+3.2 Optional Parameters
+
+FixedFValue:
+This is the inbreeding coefficient for the population. Set it to 0 for HWE. If you use this parameter, then the inbreeding coefficient will have the same value across all generations. [ FixedFValue is used when ChangedFValue or FixedFValue are not specified. Its default value is 0.0.] Example.- 
+
+FixedFValue: 0.0
+This must be a decimal number.
+
+ChangedFValue:
+Specifies the inbreeding coefficient in each epoch for the population. You must provide a file for this parameter. In this file, the number of rows should be the same as in the file that was given to the parameter ‘DemographicHistory:’ , where each row will contain the inbreeding coefficient for the population at that particular epoch. The file will follow this format:
+
+0.0
+0.0
+0.1
+0.2
+0.3
+
+This must be a list of decimal numbers.
+
+
+Example to use this option.-
+ChangedFValue: FChangedExample.txt
+
+h:
+This is the dominance coefficient h. Set it to 0.5 for additive, 0 for recessive. [Default value = 0.5] Example:
+
+h: 0.5
+This must be a decimal number.
+
+n:
+This is the sample size used for the output given in the options ‘PrintSNPNumber:’, ‘PrintSumOfS:’, ‘PrintAverageDAF:’ , ‘PrintWeightedSumOfS:’, ‘PrintGenLoad:’ , ‘PrintSFS’. [Default value = 20]
+This must be a nonnegative integer number
+
+SFSNoBurnIn:
+WARNING - This option can only be used if the option ‘DFEPointSelectionCoefficient’ is used and h = 0.5.
+If this option is used, the program first will generate a Site Frequency Spectrum that is dependent on the parameter gamma = 2Ns and the number of chromosomes specified by the user. The SFS has a number of mutations at different frequencies that has a poisson distribution with a mean value equal to formula (2) from Bustamante et al. 2001, which is based on the derivations made by Sawyer and Hartl (2011), particularly see formula (11). The forward simulations are then performed starting with a number of mutations at different frequencies as defined by the SFS. You must specify the number of chromosomes that will be present in the SFS if you use this option. [ Default value = 10000 ] Example:
+
+SFSNoBurnIn: 20000
+This must be a nonnegative integer number.
+
+###############################
+
+3.3 Output file options
+
+FilePrefix:
+A prefix to use before all the output files. Can include a path to where you want to print all the output files. [Default value = “Output”]
+Example.-
+FilePrefix: MiniTest/Output
+
+PrintSNPNumber:
+Prints the number of segregating sites per generation from the past going into the present if set to 1. The number of alleles sampled per generation to calculate the number of segregating sites is given by the option ’n:’. [Default value = 0]. Example.- 
+PrintSNPNumber: 1
+This must be a integer number equal to 0 or 1.
+
+PrintSumOfS:
+Prints out the sum of the selection coefficients across all segregating sites per generation from the past going into the present if set to 1. The number of alleles sampled per generation to calculate the value of that sum is given by the option ’n:’. [Default value = 0]. Example.- 
+PrintSumOfS: 1
+This must be a integer number equal to 0 or 1.
+
+PrintAverageDAF:
+Prints out the sum of the derived allele frequencies across all SNPs per generation from the past going into the present if set to 1. If each number is divided over the number of segregating sites in that same generation, the average derived allele frequency in that generation is obtained. The number of alleles sampled to calculate the value of that sum is given by the option ’n:’. [Default value = 0]. Example.- 
+PrintAverageDAF: 1
+This must be a integer number equal to 0 or 1.
+
+PrintWeightedSumOfS:
+Prints out the sum of (allele frequency * selective coefficients) across all SNPs per generation from the past going into the present if set to 1. The number of alleles sampled to calculate the value of that sum is given by the option ’n:’. [Default value = 0]. Example.- 
+PrintWeightedSumOfS: 1
+This must be a integer number equal to 0 or 1.
+
+PrintGenLoad:
+Prints out the genetic load per generation from the past going into the present if set to 1. The number of alleles sampled to calculate the genetic load is given by the option ’n:’. [Default value = 0]. Example.- 
+PrintGenLoad: 1
+This must be a integer number equal to 0 or 1.
+
+PrintFixedSites:
+Prints out a file with three columns. For each generation from the past going into the present there will be one row. In each row, the first column contains the number of mutations that become extinct, the second column has the number of mutations that became fixed and the third column has the sum of the selection coefficients of the fixed SNPs. [Default value = 0]. Example.- 
+PrintFixedSites: 1
+This must be a integer number equal to 0 or 1.
+
+PrintSFS:
+Prints out the site frequency spectrum in the present day. This is obtained by sampling n alleles per segregating mutation [as given by the option n:] and counting the number of derived alleles observed per segregating mutation. n elements will be displayed in the output file. The first corresponds to the number of variants with 1 derived alleles observed, the second element shows the number of variants with 2 derived allele observed, etc. The last column will contain the number of variants with n-1 derived alleles observed. [Default value = 0]. Example.- 
+PrintSFS: 1
+This must be a integer number equal to 0 or 1.
+
+PrintSegSiteInfo:
+Prints out a file with information for every segregating mutation in the population. The information for each mutation is given in each row. Five elements will be shown for each mutation in six consecutive columns: A)run_number [not used anymore…], B) replicate number, C) frequency of the allele, D) The selection coefficient multiplied by 2, E) The generation in which the allele emerged and F) An unique ID number associated to that mutation. [Default value = 0]. Example.- 
+PrintSegSiteInfo: 1
+This must be a integer number equal to 0 or 1.
+
+PrintSampledGenotypes:
+The program loops through every segregating mutation in the population and eight numbers are printed.
+A) run_number [not used anymore…]
+B) replicate number
+
+We are going to print the number of observed genotypes for two different individuals. We sample one genotype from each segregating mutation (Inbreeding is taken into account for this). After we loop through every segregating mutation we print:
+C) The number of homozygous ancestral genotypes in individual 1
+D) The number of heterozygous genotypes in individual 1
+E) The number of homozygous derived genotypes in individual 1
+
+We sample another genotype from each segregating mutation. After looping through every segregating mutation we print:
+F) The number of homozygous ancestral genotypes in individual 2
+G) The number of heterozygous genotypes in individual 2
+H) The number of homozygous derived genotypes in individual 2
+
+Then, we will sample one allele from individual 1 and another one from individual 2 based on their genotype for each segregating mutation and we will print:
+I) The number of times that the two alleles do not match.
+
+[Default value = 0]. Example.- 
+PrintSampledGenotypes: 1
+This must be a integer number equal to 0 or 1.
+
+###############################
+
+3.4 Printing allele frequency trajectories.
+
+Getting the allele frequency trajectories for alleles that have a particular frequency in the present requires running the program two times. In the first run, we get a list of mutations with their associated allele frequencies as given in the parameter option ‘PrintSegSiteInfo:’. Then we run a perl script to get the allele ID of those mutations whose frequency in the present is equal to a particular range of frequency values we are interested in looking at. In the second run we run the program again using the same parameters and random seed to track the frequency trajectories of particular alleles. An example is given in CompareAFTrajs.sh
+
+Options related to printing allele frequency trajectories.-
+
+AlleleTrajsInput:
+This option requires you to add a file with the allele ID of the variants whose allele frequency trajectory you want to follow. Example.- 
+AlleleTrajsInput: MiniTest/Alleles11.txt
+
+Where Alleles11.txt has the following input.-
+80354
+80352
+80345
+65707
+
+The list must be composed of nonnegative integer numbers.
+
+The perl script GetListOfRunsWhereFrequencyMatches.pl can be used to obtain the input for ‘AlleleTrajsInput:’. The perl script requires 5 parameters:
+
+A) The lower range of the frequency values of the alleles whose trajectory you want to follow.
+B) The upper range of the frequency values of the alleles whose trajectory you want to follow.
+C) The input file as given by the parameter option ‘PrintSegSiteInfo:’
+D) The output file with the allele IDs of the variants whose allele frequencies you want to follow.
+E) A flag to tell you if you want to print the generation in which each allele emerged. Set to 1 if you want to print this information. Set to 0 if you don’t want this. If you want to print the allele frequency trajectories using the options ‘AlleleTrajsInput:’ and ‘AlleleTrajsOutput:’, set to 0.
+F) The number of generations across the whole demographic history.
+
+Example of usage.-
+perl GetListOfRunsWhereFrequencyMatches.pl 0.0 0.1 MiniTest/Output.11.full_out.txt MiniTest/Alleles11.txt 0 25100
+
+AlleleTrajsOutput:
+This option will print the allele frequency trajectories of the alleles whose allele ID was specified by the option ‘AlleleTrajsInput:’ Example.-
+AlleleTrajsOutput: MiniTest/Traj_11.txt
+
+The output of ‘AlleleTrajsOutput:’ has the following format:
+
+65707   0.001000
+65707   0.001000
+65707   0.003000
+
+Where the first column corresponds to the allele ID and the second column corresponds to the frequency. You could use grep to follow the frequency trajectory of one particular allele with the output of ‘AlleleTrajsOutput:’. Example.-
+
+grep ‘65707’ MiniTest/Traj_11.txt
+
+You can use the perl script TrajToMsselFormat.pl to transform the output of ‘AlleleTrajsOutput:’ into the format used by mssel. Seven parameters are needed to run this script:
+
+A) The prefix of the output given by ‘AlleleTrajsOutput:’
+B) The value of 2*N, where N is the effective population size in the present day.
+C) The mssel input file
+D) The number of allele frequency trajectories followed
+E) The value of s [unnecesary].
+F) The first replicate number.
+G) The last replicate number.
+
+Example of usage.-
+perl TrajToMsselFormat.pl MiniTest/Traj_ 100 MiniTest/AllTrajs.txt 4 0 11 11
+
