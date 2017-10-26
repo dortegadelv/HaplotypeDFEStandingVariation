@@ -11,7 +11,7 @@ Diego Ortega-Del Vecchyo, Kirk Lohmueller and John Novembre
 We included these programs in the Programs/ folder:
 
 1. PReFerSim.- We conducted forward simulations using PReFerSim. We include the version of PReFerSim we used in our paper with this repository (but see https://github.com/LohmuellerLab/PReFerSim for the latest version).
-2. FoIS.- This program implements an importance sampling method developed by Monty Slatkin (2001, Genetics Research) to calculate the expected value of statistics from alleles that have a particular allele frequency in the present. The program can model any arbitrary demographic scenario.
+2. FoIS.- This program implements an importance sampling method based on a paper by Monty Slatkin (2001, Genetics Research). We use this program to calculate the expected value of statistics from alleles that have a particular allele frequency in the present. The program can model any arbitrary demographic scenario.
 
 
 ## Running forward simulations with PReFerSim
