@@ -17,17 +17,21 @@ We included these programs in the Programs/ folder:
 ## Running forward simulations with PReFerSim
 
 
-Figures associated: 2, 4, 8, SuppFig3.
+Figures associated: 2, 4, 8
+Supplementary figures associated: 3.
 
 ## Running FoIS. Inferring the distribution of fitness effects of variants at a particular frequency
 
-Figures associated: 3, 5, 6, SuppFig1, SuppFig2, SuppFig3, SuppFig4, SuppFig5, SuppFig7, SuppFig8, SuppFig9
+Figures associated: 3, 5, 6
+Supplementary figures associated: 1, 2, 3, 4, 5, 7, 8, 9
 
 ## Calculating the relationship between the distribution of fitness effects of new variants vs. the distribution of fitness effects of variants at a particular frequency
 
-Figures associated: 7, 9, SuppFig10
+Figures associated: 7, 9
+Supplementary figures associated: 10
 
 ## Inferring the distribution of fitness effects of new variants in the UK10K dataset.
 
 
-Figures associated: 9, SuppFig6
+Figures associated: 9
+Supplementary figures associated: 6
