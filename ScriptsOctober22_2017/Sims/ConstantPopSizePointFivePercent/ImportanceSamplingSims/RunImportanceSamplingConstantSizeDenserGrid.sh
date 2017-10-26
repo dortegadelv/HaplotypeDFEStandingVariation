@@ -39,9 +39,9 @@ SelectionCoef2=$( echo "scale=10;$SelectionCoef1 * 2" | bc )
 File="Exit_"${Frequency[$FrequencyNumber]}"_"${Selection[$SelectionNumber]}"_"$Number".txt"
 Seed=$(( $SGE_TASK_ID + 2001))
 echo "./SlatkinISConstantSizeF -A $SelectionCoef2 -a $SelectionCoef1 -f ${Frequency[$FrequencyNumber]} -r 2000 -N 20000 -s $Seed -t 0 -M 0.0000003 -U 0.99999 -Q 0.0 -E 0.0001 -F $SCRATCH/$File -S 2 0.0 0.0 -D DemographicHistoryAfricanTennessen.txt"
-# g++ -o SlatkinISConstantSizeSISR SlatkinISConstantSizeSISR.cpp prob.cpp -lm
-# ./SlatkinISConstantSizeSISR -A $SelectionCoef2 -a $SelectionCoef1 -f ${Frequency[$FrequencyNumber]} -r 20 -N 848000 -s $Seed -t 0 -M 0.0000003 -U 0.99999 -Q 0.0 -E 0.0001 -F $File -b Bounds.txt -D DemographicHistoryAfricanTennessen.txt -C 0.8
-time ../../../../Programs/ISProgram/SlatkinISConstantSizeSISR -A $SelectionCoef2 -a $SelectionCoef1 -f ${Frequency[$FrequencyNumber]} -r 1000 -N 20000 -s $Seed -t 0 -M 0.0000003 -U 0.99999 -Q 0.0 -E 0.0001 -F ../../../../Results/ConstantPopSizePointFivePercent/ImportanceSamplingSims/$File -b ../../ConstantPopSize/ImportanceSamplingSims/Bounds.txt -D ../../ConstantPopSize/ImportanceSamplingSims/DemographicHistoryConstant.txt -X ../../ConstantPopSize/ImportanceSamplingSims/NewSelectionValues.txt -C 100000 -p 4000
+# g++ -o FoIS FoIS.cpp prob.cpp -lm
+# ./FoIS -A $SelectionCoef2 -a $SelectionCoef1 -f ${Frequency[$FrequencyNumber]} -r 20 -N 848000 -s $Seed -t 0 -M 0.0000003 -U 0.99999 -Q 0.0 -E 0.0001 -F $File -b Bounds.txt -D DemographicHistoryAfricanTennessen.txt -C 0.8
+time ../../../../Programs/ISProgram/FoIS -A $SelectionCoef2 -a $SelectionCoef1 -f ${Frequency[$FrequencyNumber]} -r 1000 -N 20000 -s $Seed -t 0 -M 0.0000003 -U 0.99999 -Q 0.0 -E 0.0001 -F ../../../../Results/ConstantPopSizePointFivePercent/ImportanceSamplingSims/$File -b ../../ConstantPopSize/ImportanceSamplingSims/Bounds.txt -D ../../ConstantPopSize/ImportanceSamplingSims/DemographicHistoryConstant.txt -X ../../ConstantPopSize/ImportanceSamplingSims/NewSelectionValues.txt -C 100000 -p 4000
 
 #### NOTE! All that is below should be documented
 # WeightFile=$File"WeightYears.txt"
