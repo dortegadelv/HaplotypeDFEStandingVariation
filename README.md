@@ -1,5 +1,3 @@
-# HaplotypeDFEStandingVariation
-
 This repository contains all the scripts and programs used in our paper:
 
 Haplotype-based inference of the distribution of fitness effects of segregating variants
