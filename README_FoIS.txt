@@ -2,6 +2,11 @@
 
 Go to these directories and run FoIS on each of the four demographic scenarios.
 
+mkdir Results/ConstantPopSize/ImportanceSamplingSims/
+mkdir Results/AncientBottleneck/ImportanceSamplingSims/
+mkdir Results/PopExpansion/ImportanceSamplingSims/
+mkdir Results/UK10K_OnePercenters/ImportanceSamplingSims/
+mkdir Results/UK10K/ImportanceSamplingSims
 cd ScriptsOctober22_2017/Sims/ConstantPopSize/ImportanceSamplingSims
 SGE_TASK_ID=601
 bash RunImportanceSamplingConstantSizeDenserGrid.sh
@@ -69,5 +74,32 @@ The file from ScriptsOctober22_2017/Sims/UK10K_OnePercenters/ImportanceSamplingS
 
 5) Simulate L values using the forward-in-time allele frequency trajectories. You must have already followed the instructions from README_ForwardSims.txt to simulate the trajectories. You must have a ‘ReducedTrajectories10000.txt’ for the demographic scenario and the selection value you want to explore.
 
+cd ScriptsOctober22_2017/Sims/ConcatenateManyStatisticsScripts/
+SGE_TASK_ID=1
+bash SimulateLDatasetsWithMssel.sh
 
+Repeat for values of SGE_TASK_ID going from 1-50, 101-151 and 301-351.
 
+6) Calculate the Log-likelihoods for different values of selection
+
+cd ScriptsOctober22_2017/Sims/ConstantPopSize/ForwardSims
+SGE_TASK_ID=1
+bash CreateSimTestTableWithLLResultsDenseGridNoRec.sh
+cd ScriptsOctober22_2017/Sims/AncientBottleneck/ForwardSims
+SGE_TASK_ID=1
+bash CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTable.sh
+cd ScriptsOctober22_2017/Sims/PopExpansion/ForwardSims
+SGE_TASK_ID=1
+bash CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTable.sh
+
+Run for SGE_TASK_ID values going from 1 to 5.
+
+7) Get the maximum likelihood estimator for each dataset
+
+cd ScriptsOctober22_2017/Sims/ConstantPopSize/ForwardSims/
+bash GetMax4NsValueFromTable.sh
+cd ScriptsOctober22_2017/Sims/AncientBottleneck/ForwardSims/
+bash GetMax4NsValueFromTable.sh
+cd ScriptsOctober22_2017/Sims/PopExpansion/ForwardSims/
+bash GetMax4NsValueFromTable.sh
+ 

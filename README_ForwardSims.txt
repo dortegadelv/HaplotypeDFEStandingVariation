@@ -90,6 +90,7 @@ bash CreateReducedTrajectories.sh
 
 Then, to obtain the mean allele frequency trajectories, run:
 
+mkdir Results/FrequencyTrajectories/
 cd ScriptsOctober22_2017/Sims/ConstantPopSize/ForwardSims
 bash CalculateMeanTrajectory.sh
 cd ScriptsOctober22_2017/Sims/PopExpansion/ForwardSims
@@ -114,6 +115,7 @@ bash PrintThisTrajectoryNumber.sh
 
 Then, to get the distribution of allele ages, run:
 
+mkdir Results/AlleleAges
 cd ConcatenateManyStatisticsScripts
 bash GetAgesDistribution.sh
 
@@ -121,6 +123,7 @@ bash GetAgesDistribution.sh
 
 Run the following script:
 
+mkdir Results/TTwos/
 cd ConcatenateManyStatisticsScripts
 bash GetTTwosDistribution.sh
 
