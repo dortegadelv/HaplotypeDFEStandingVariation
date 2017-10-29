@@ -103,3 +103,131 @@ bash GetMax4NsValueFromTable.sh
 cd ScriptsOctober22_2017/Sims/PopExpansion/ForwardSims/
 bash GetMax4NsValueFromTable.sh
  
+### Estimation of parameters of a distribution of fitness effects that has a gamma distribution
+
+1) Run forward-in-time simulations of allele frequency trajectories
+
+mkdir ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart/
+mkdir ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/PositivePart/
+mkdir ../../../../Results/PopExpansionBoykoPlusPositive/ForwardSims/MousePart/
+mkdir ../../../../Results/PopExpansionBoykoPlusPositive/ForwardSims/PositivePart/
+cd ScriptsOctober22_2017/Sims/ConstantPopSizeBoyko/ForwardSims/
+SGE_TASK_ID=1
+bash ConstantSizeBoyko.sh
+# Run the past script with SGE_TASK_ID values going from 1-2500
+cd ScriptsOctober22_2017/Sims/ConstantPopSizeMouse/ForwardSims/
+SGE_TASK_ID=1
+bash ConstantSizeMouse.sh
+# Run the past script with SGE_TASK_ID values going from 1-2500
+cd ScriptsOctober22_2017/Sims/PopExpansionBoykoPlusPositive/ForwardSims/
+SGE_TASK_ID=1
+bash PopExpansionBoyko.sh
+# Run the past script with SGE_TASK_ID values going from 1-2500
+SGE_TASK_ID=1
+bash PopExpansionPositive.sh
+# Run the past script with SGE_TASK_ID values going from 1-1500
+cd ScriptsOctober22_2017/Sims/PopExpansionMousePlusPositive/ForwardSims/
+SGE_TASK_ID=1
+bash PopExpansionMouse.sh
+# Run the past script with SGE_TASK_ID values going from 1-5000
+SGE_TASK_ID=1
+bash PopExpansionPositive.sh
+# Run the past script with SGE_TASK_ID values going from 1-1500
+
+2) Reduce the trajectories file size and put them into a readable format for mssel:
+
+cd ScriptsOctober22_2017/Sims/ConstantPopSizeBoyko/ForwardSims
+bash CreateReducedTrajectoriesFile.sh
+cd ScriptsOctober22_2017/Sims/ConstantPopSizeMouse/ForwardSims
+bash CreateReducedTrajectoriesFile.sh
+cd ScriptsOctober22_2017/Sims/PopExpansionBoykoPlusPositive/ForwardSims
+bash CreateReducedTrajectoriesFile.sh
+cd ScriptsOctober22_2017/Sims/PopExpansionMousePlusPositive/ForwardSims
+bash CreateReducedTrajectoriesFile.sh
+
+3) Run this script to create a file with 50,000 allele frequency trajectories:
+
+cd ScriptsOctober22_2017/Sims/ConstantPopSizeBoyko/ForwardSims
+bash PrintThisTrajectoryNumber.sh
+cd ScriptsOctober22_2017/Sims/ConstantPopSizeMouse/ForwardSims
+bash PrintThisTrajectoryNumber.sh
+cd ScriptsOctober22_2017/Sims/PopExpansionBoykoPlusPositive/ForwardSims
+bash PrintThisTrajectoryNumber.sh
+cd ScriptsOctober22_2017/Sims/PopExpansionMousePlusPositive/ForwardSims
+bash PrintThisTrajectoryNumber.sh
+
+4) Simulate Data 
+
+cd ScriptsOctober22_2017/Sims/ConcatenateManyStatisticsScripts/
+SGE_TASK_ID=1
+bash SimulateLDatasetsWithMsselDFEThousands.sh
+# Run the past script with SGE_TASK_ID values going from 1-6000
+cd ScriptsOctober22_2017/Sims/PopExpansionBoykoPlusPositive/ForwardSims
+bash MixBoykoPositiveHapLengths.sh
+
+5) Run FoIS on each of the four demographic scenarios.
+
+mkdir Results/ConstantPopSizeBoyko/ImportanceSampling/
+mkdir Results/PopExpansionBoykoPlusPositive/ImportanceSampling/
+cd Results/ConstantPopSizeBoyko/ImportanceSampling
+SGE_TASK_ID=601
+bash RunImportanceSamplingConstantSizeDenserGrid.sh
+# Run the past script with SGE_TASK_ID values going from 601-700
+cd Results/PopExpansionBoykoPlusPositive/ImportanceSampling
+SGE_TASK_ID=601
+bash RunImportanceSamplingPopulationExpansion.sh
+# Run the past script with SGE_TASK_ID values going from 601-700
+
+6) Run mssel and compute L on the simulated trajectories
+
+cd ScriptsOctober22_2017/Sims/ConstantPopSizeBoyko/ImportanceSamplingSims
+SGE_TASK_ID=1
+bash RunMsselCalculateDistance10000.sh
+cd ScriptsOctober22_2017/Sims/PopExpansionBoykoPlusPositive/ImportanceSamplingSims
+SGE_TASK_ID=1
+bash RunMsselCalculateDistance10000.sh
+
+Run using values of SGE_TASK_ID that go from 1-999 for both bash scripts
+
+6) Concatenate the L results.
+
+cd ScriptsOctober22_2017/Sims/ConstantPopSizeBoyko/ImportanceSamplingSims
+perl SumDistances10000.pl
+cd ScriptsOctober22_2017/Sims/PopExpansionBoykoPlusPositive/ImportanceSamplingSims
+perl SumDistances10000.pl
+
+7) Compute P(L| distribution of fitness effects of 1% frequency variants) where that distribution follows a gamma distribution and a grid of parameter values for the gamma distribution is explored.
+
+cd ScriptsOctober22_2017/Sims/ConstantPopSizeBoyko/ImportanceSamplingSims
+Run R script CreationOfDiscreteDistribution.R to get the file AnotherExtraTableOfProbabilities.txt
+bash GetDFETable.sh
+cd ScriptsOctober22_2017/Sims/PopExpansionBoykoPlusPositive/ImportanceSamplingSims
+Run R script CreationOfDiscreteDistribution.R to get the file AnotherExtraTableOfProbabilities.txt
+bash GetDFETable.sh
+
+8) Calculate the log-likelihoods
+
+cd ScriptsOctober22_2017/Sims/ConstantPopSizeBoyko/ForwardSims/
+SGE_TASK_ID=1
+bash CreateSimTestTableWithLLResultsDenseGridNoRec.sh
+# Run the past script with values going from 1-100 
+cd ScriptsOctober22_2017/Sims/ConstantPopSizeMouse/ForwardSims/
+SGE_TASK_ID=1
+bash CreateSimTestTableWithLLResultsDenseGridNoRec.sh
+# Run the past script with values going from 1-100 
+cd ScriptsOctober22_2017/Sims/PopExpansionBoykoPlusPositive/ForwardSims
+SGE_TASK_ID=1
+bash CreateSimTestTableWithLLResultsDenseGridNoRec.sh
+# Run the past script with values going from 1-100 
+cd ScriptsOctober22_2017/Sims/PopExpansionMousePlusPositive/ForwardSims
+SGE_TASK_ID=1
+bash CreateSimTestTableWithLLResultsDenseGridNoRec.sh
+# Run the past script with values going from 1-100 
+
+9) Get the MLE
+
+cd ScriptsOctober22_2017/Sims/ConcatenateManyStatisticsScripts/GetMLEDFEs
+SGE_TASK_ID=1
+bash GetMLEDFEs.sh
+
+Run the past script getting the script take values from 1-17.
