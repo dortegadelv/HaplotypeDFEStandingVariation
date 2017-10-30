@@ -65,16 +65,16 @@ cd ScriptsOctober22_2017/Sims/UK10K_OnePercenters/ForwardSims
 mkdir ../../../../Results/UK10K_OnePercenters/
 mkdir ../../../../Results/UK10K_OnePercenters/ForwardSims/
 mkdir ../../../../Results/UK10K_OnePercenters/ForwardSims/4Ns_0
+mkdir ../../../../Results/UK10K_OnePercenters/ForwardSims/4Ns_25
 mkdir ../../../../Results/UK10K_OnePercenters/ForwardSims/4Ns_50
-mkdir ../../../../Results/UK10K_OnePercenters/ForwardSims/4Ns_100
+mkdir ../../../../Results/UK10K_OnePercenters/ForwardSims/4Ns_-25
 mkdir ../../../../Results/UK10K_OnePercenters/ForwardSims/4Ns_-50
-mkdir ../../../../Results/UK10K_OnePercenters/ForwardSims/4Ns_-100
 SGE_TASK_ID=1
 bash Expansion_4Ns0.sh
+bash Expansion_4Ns25.sh
 bash Expansion_4Ns50.sh
-bash Expansion_4Ns100.sh
+bash Expansion_4Ns-25.sh
 bash Expansion_4Ns-50.sh
-bash Expansion_4Ns-100.sh
 
 Run the past scripts with many values of SGE_TASK_ID until you obtain 10,000 trajectories or more. Then run the following scripts after going
 into the appropriate directories. To run these scripts, you will need the program mssel (kindly provided to us from Richard Hudson). These scripts will change the trajectories into a readable format for mssel and also will reduce the disk space taken by the file containing the allele frequency trajectories:

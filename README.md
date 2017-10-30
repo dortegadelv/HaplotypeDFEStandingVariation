@@ -33,7 +33,7 @@ Supplementary figures associated: 1, 2, 3, 4, 5, 7, 8, 9
 
 ## Calculating the relationship between the distribution of fitness effects of new variants vs. the distribution of fitness effects of variants at a particular frequency
 
-Check README_StandingNew.txt
+Check the R scripts associated with the figures shown below.
 
 Figures associated: 7, 9
 
