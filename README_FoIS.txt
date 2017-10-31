@@ -43,10 +43,14 @@ cd ScriptsOctober22_2017/Sims/AncientBottleneck/ImportanceSamplingSims
 bash RunMsselCalculateDistance10000.sh
 cd ScriptsOctober22_2017/Sims/PopExpansion/ImportanceSamplingSims
 bash RunMsselCalculateDistance10000.sh
-cd ScriptsOctober22_2017/Sims/UK10K_OnePercenters/ImportanceSamplingSims
-bash RunMsselCalculateDistance10000NoSingleton.sh
 
-Run using values of SGE_TASK_ID that go from 1-999
+#Run using values of SGE_TASK_ID that go from 1-999
+
+SGE_TASK_ID=1
+cd ScriptsOctober22_2017/Sims/UK10K_OnePercenters/ImportanceSamplingSims
+bash RunMsselCalculateDistanceWithRecombination10000NoSingleton.sh
+
+#Run using values of SGE_TASK_ID that go from 1, 11, 21, 31, …, 9991
 
 3) Concatenate the L results.
 
@@ -78,7 +82,21 @@ cd ScriptsOctober22_2017/Sims/ConcatenateManyStatisticsScripts/
 SGE_TASK_ID=1
 bash SimulateLDatasetsWithMssel.sh
 
-Repeat for values of SGE_TASK_ID going from 1-50, 101-151 and 301-351.
+# Repeat for values of SGE_TASK_ID going from 1-50, 101-151 and 301-351.
+
+cd ScriptsOctober22_2017/Sims/UK10K_OnePercenters/ForwardSims
+SGE_TASK_ID=1
+bash RunMssel_4Ns0.sh
+SGE_TASK_ID=1
+bash RunMssel_4Ns25.sh
+SGE_TASK_ID=1
+bash RunMssel_4Ns50.sh
+SGE_TASK_ID=1
+bash RunMssel_4Ns-25.sh
+SGE_TASK_ID=1
+bash RunMssel_4Ns-50.sh
+
+# Repeat the past commands for values of SGE_TASK_ID going from 1-100
 
 6) Calculate the Log-likelihoods for different values of selection
 
@@ -91,6 +109,9 @@ bash CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTable.sh
 cd ScriptsOctober22_2017/Sims/PopExpansion/ForwardSims
 SGE_TASK_ID=1
 bash CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTable.sh
+cd ScriptsOctober22_2017/Sims/UK10K_OnePercenters/ForwardSims
+SGE_TASK_ID=1
+bash CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableFromSims.sh
 
 Run for SGE_TASK_ID values going from 1 to 5.
 
@@ -102,7 +123,9 @@ cd ScriptsOctober22_2017/Sims/AncientBottleneck/ForwardSims/
 bash GetMax4NsValueFromTable.sh
 cd ScriptsOctober22_2017/Sims/PopExpansion/ForwardSims/
 bash GetMax4NsValueFromTable.sh
- 
+cd ScriptsOctober22_2017/Sims/UK10K_OnePercenters/ForwardSims
+perl GetMax4NsValueSims.pl
+
 ### Estimation of parameters of a distribution of fitness effects that has a gamma distribution
 
 1) Run forward-in-time simulations of allele frequency trajectories

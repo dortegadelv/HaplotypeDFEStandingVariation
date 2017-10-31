@@ -75,5 +75,22 @@ bash ConcatenateMismatchStatisticAndLDistances.sh
 
 #### Forward in time simulations
 
-Check README_ForwardSims.txt for information on how we did the forward-in-time allele frequency simulations.
+Check README_ForwardSims.txt and README_FoIS.txt for information on how we did the forward-in-time allele frequency simulations shown in Figure 10
+
+#### Get DFEs that will be used in analysis
+
+cd ScriptsOctober22_2017/Sims/UK10K_OnePercenters/ImportanceSamplingSims/
+Run CreationOfDiscreteDistribution.R to get the probabilities for each 2Ns value in each distribution of fitness effects.
+perl GetDFETable.pl
+
+#### DFE bootstrap analysis
+
+Get Bootstrap replicates and calculate L
+cd ScriptsOctober22_2017/Sims/UK10K_OnePercenters/ForwardSims/
+SGE_TASK_ID=1
+bash CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableDFEBootstrap.sh
+# Run the past command with SGE_TASK_ID values going from 1-100.
+
+### Get the maximum likelihood estimator
+perl GetMax4NsValueDFEBootstrap.pl
 
