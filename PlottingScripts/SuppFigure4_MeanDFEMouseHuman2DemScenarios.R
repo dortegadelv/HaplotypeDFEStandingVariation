@@ -8,7 +8,7 @@ MLE <- read.table("../Results/MLEDFEs/ConstantBoykoMLE.txt")
 Row <- ( MLE$V1 ) %% 70 + 1
 Column <- floor(( MLE$V1 ) / 70) + 1
 
-boxplot(2*Row*5*Column*.01,main="Constant Boyko",ylab="Mean 4Ns value",cex.lab=1.5)
+boxplot(2*Row*5*Column*.01,main="Constant Boyko",ylab="Mean 4Ns value",cex.lab=1.5,ylim=c(0,50))
 points(1,2*5.028910e+01*0.1851583,col="red",pch=19)
 
 MLE <- read.table("../Results/MLEDFEs/ConstantMouseMLE.txt")
@@ -16,7 +16,7 @@ MLE <- read.table("../Results/MLEDFEs/ConstantMouseMLE.txt")
 Row <- ( MLE$V1 ) %% 70 + 1
 Column <- floor(( MLE$V1 ) / 70) + 1
 
-boxplot(2*Row*5*Column*.01,main="Constant Mouse",ylab="Mean 4Ns value",cex.lab=1.5)
+boxplot(2*Row*5*Column*.01,main="Constant Mouse",ylab="Mean 4Ns value",cex.lab=1.5,ylim=c(0,50))
 points(1,2*5.115042e+01*0.1097575,col="red",pch=19)
 
 MLE <- read.table("../Results/MLEDFEs/PopExpansionBoykoMLE.txt")
@@ -24,7 +24,7 @@ MLE <- read.table("../Results/MLEDFEs/PopExpansionBoykoMLE.txt")
 Row <- ( MLE$V1 ) %% 70 + 1
 Column <- floor(( MLE$V1 ) / 70) + 1
 
-boxplot(2*Row*5*Column*.01,main="Pop expansion Boyko",ylab="Mean 4Ns value",cex.lab=1.5)
+boxplot(2*Row*5*Column*.01,main="Pop expansion Boyko",ylab="Mean 4Ns value",cex.lab=1.5,ylim=c(0,100))
 points(1,2*2.926423e+01*0.1906465,col="red",pch=19)
 
 MLE <- read.table("../Results/MLEDFEs/PopExpansionMouseMLE.txt")
@@ -32,7 +32,7 @@ MLE <- read.table("../Results/MLEDFEs/PopExpansionMouseMLE.txt")
 Row <- ( MLE$V1 ) %% 70 + 1
 Column <- floor(( MLE$V1 ) / 70) + 1
 
-boxplot(2*Row*5*Column*.01,main="Pop expansion Mouse",ylab="Mean 4Ns value",cex.lab=1.5)
+boxplot(2*Row*5*Column*.01,main="Pop expansion Mouse",ylab="Mean 4Ns value",cex.lab=1.5,ylim=c(0,100))
 points(1,2*3.100203e+01*0.1123318,col="red",pch=19)
 
 dev.off()
