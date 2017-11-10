@@ -126,6 +126,17 @@ bash GetMax4NsValueFromTable.sh
 cd ScriptsOctober22_2017/Sims/UK10K_OnePercenters/ForwardSims
 perl GetMax4NsValueSims.pl
 
+8) Calculate effective sample sizes.
+
+cd ScriptsOctober22_2017/Sims/ConstantPopSize/ImportanceSamplingSims/
+perl ../../ConstantPopSize/ImportanceSamplingSims/EstimateAge.pl ../../../../Results/ConstantPopSize/ImportanceSamplingSims/Exit_0.01_0.txtWeightYears.txt
+cd ScriptsOctober22_2017/Sims/PopExpansion/ImportanceSamplingSims/
+perl ../../ConstantPopSize/ImportanceSamplingSims/EstimateAge.pl ../../../../Results/PopExpansion/ImportanceSamplingSims/Exit_0.01_0.txtWeightYears.txt
+cd ScriptsOctober22_2017/Sims/UK10K_OnePercenters/ImportanceSamplingSims/
+perl ../../ConstantPopSize/ImportanceSamplingSims/EstimateAge.pl ../../../../Results/UK10K_OnePercenters/ImportanceSamplingSims/Exit_DemHistAfricanTennessen.txt_0.01_0.txtWeightYears.txt
+
+## The output ESS is in the FinalStats.txt output file.
+
 ### Estimation of parameters of a distribution of fitness effects that has a gamma distribution
 
 1) Run forward-in-time simulations of allele frequency trajectories
