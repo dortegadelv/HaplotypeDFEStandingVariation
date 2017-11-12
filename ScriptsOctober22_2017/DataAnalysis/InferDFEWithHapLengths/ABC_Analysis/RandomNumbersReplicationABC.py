@@ -56,17 +56,17 @@ RandLowRecFileTwo = open (RandomNumbersFile, 'w')
 
 NeInitial  = random.random()* 999000
 print "Ne Initial " + str(NeInitial)
-NeInitial  = int( 549326 )
+NeInitial  = int( 551894 )
 print "Ne Initial " + str(NeInitial)
 
 NeTwo  = random.random()* 49500
-NeTwo  = int ( 7131 )
+NeTwo  = int ( 6685 )
 
 NeThree  = random.random()* math.log10(490000)
 NeThree  = int (math.pow(10, NeThree) + 10000 + 0.5)
 
 TimeOne = random.random()* 919
-TimeOne = int ( 312 )
+TimeOne = int ( 303 )
 
 TimeTwo = random.random()* (918 - TimeOne)
 TimeTwo = int (TimeOne + TimeTwo + 1 + 0.5)
