@@ -17,7 +17,7 @@ for (i in 1:200){
     # print (i)
     Prob <- pgamma(i*5,Alpha,scale=Beta) - pgamma((i-1)*5,Alpha,scale=Beta)
     P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,Prob)
-    NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*((10000*80000 + 100000*100)*2500*1000)) # Original Test
+    NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*((80000 + (100000/10000)*100)*2500*1000)) # Original Test
     # NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*(1))
 }
 
@@ -29,7 +29,7 @@ SelectionCoefficientListBoyko <- read.table("../Results/CalculateDFEOfNewMutatio
 
 ### P (allele is at 1%)
 
-P_allele_at_OnePercent = nrow(SelectionCoefficientListBoyko)/((10000*80000 + 100000*100)*2500*1000) # Original
+P_allele_at_OnePercent = nrow(SelectionCoefficientListBoyko)/((80000 + (100000/10000)*100)*2500*1000) # Original
 Alpha = 0.11
 Beta = 8636364 * 0.005
 
@@ -41,7 +41,7 @@ for (i in 1:200){
     # print (i)
     Prob <- pgamma(i*5,Alpha,scale=Beta) - pgamma((i-1)*5,Alpha,scale=Beta)
     #   P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,Prob)
-    NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*((10000*80000 + 100000*100)*2500*1000)) # Original Test
+    NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*((80000 + (100000/10000)*100)*2500*1000)) # Original Test
     #    NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*(1))
 }
 

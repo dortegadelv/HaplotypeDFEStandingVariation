@@ -13,7 +13,7 @@ P_allele_at_OnePercent = 741/1258700644
 
 ### P (allele is 2Ns = x | allele is at 1%)
 
-Alpha = 0.11
+Alpha = 0.1
 Beta = 250
 
 P_Allele_Is_2Ns_given_OnePercent <- c()
@@ -29,7 +29,7 @@ for (i in 1:200){
 
 
 Alpha = 0.184
-Beta = 319.8626 * 2.297
+Beta = 319.8626 * 4594/2000
 
 P_Allele_Is_2Ns <- c()
 NumberOfAllelesAt2Ns <- c()
