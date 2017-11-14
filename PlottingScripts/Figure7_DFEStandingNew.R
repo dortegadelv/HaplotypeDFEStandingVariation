@@ -110,7 +110,7 @@ par(mar=c(5.1,5.1,4.1,2.1))
 plot(1:25,P_Allele_Is_2Ns[1:25],col="red",ylim=c(0,0.8),xaxt="n",ylab="Probability",xlab="2Ns",lwd=3,cex.lab=2,cex.axis=2,cex.lab=2)
 lines(1:25,ProbsMouse[1:25],col="blue",lwd=3)
 lines(1:25,P_Allele_Is_2Ns_given_OnePercent[1:25],col="green",lwd=3)
-legend("topright",c("Real P(2Ns)","Inferred P(2Ns)", "P(2Ns| 1%, DFE, D)"),pch=19,col=c("red","blue","green"),cex=2)
+legend("topright",c("Real P(2Ns | DFE)","Inferred P(2Ns | DFE)", "P(2Ns| 1%, DFE, D)"),pch=19,col=c("red","blue","green"),cex=2)
 axis(1, at=c(1:25), labels=Labels,cex.lab=2,cex=2,cex.axis=2)
 dev.off()
 

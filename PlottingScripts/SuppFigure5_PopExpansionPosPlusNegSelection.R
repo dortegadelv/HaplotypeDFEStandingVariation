@@ -20,8 +20,8 @@ plot(Row*30,Column*.02, xlim=c(0,450), ylim=c(0,0.3), xlab="Shape", ylab="Scale"
 points(29.1767603378041,0.190915110603425,col="red",pch=19,lwd=3)
 lines(1:450,5.570284/1:450,lty="dashed",lwd=2,col="red")
 
-boxplot(2*Row*30*Column*.02,main="B) Pop Expansion\nDeleterious variation mean 4Ns value",ylab="Mean 4Ns value",cex.lab=1.5)
-points(1,2*2.926423e+01*0.1906465,col="red",pch=19)
+boxplot(-2*Row*30*Column*.02,main="B) Pop Expansion\nDeleterious variation mean 4Ns value",ylab="Mean 4Ns value",cex.lab=1.5)
+points(1,-2*2.926423e+01*0.1906465,col="red",pch=19)
 
 Sel <- MLE$V1 %% 3
 par(mar = c(5,5,4,3))
