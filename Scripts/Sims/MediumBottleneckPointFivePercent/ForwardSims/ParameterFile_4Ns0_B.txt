@@ -1,0 +1,18 @@
+MutationRate  1000.0 
+DFEType: 	point
+DFEPointSelectionCoefficient:	 0.0
+DemographicHistory:         PopulationBottleneckModel.txt
+PrintSNPNumber:   0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 0
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+AlleleTrajsInput: ../../../../Results/MediumBottleneckPointFivePercent/ForwardSims/4Ns_0/Alleles
+AlleleTrajsOutput: ../../../../Results/MediumBottleneckPointFivePercent/ForwardSims/4Ns_0/Traj
+FilePrefix: ../../../../Results/MediumBottleneckPointFivePercent/ForwardSims/4Ns_0/Output
+

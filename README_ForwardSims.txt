@@ -13,7 +13,7 @@ All scripts were run in a computing cluster and can be easily run in parallel by
 the variable SGE_TASK_ID to a different number:
 
 ### Generating allele frequency trajectories under a constant population size scenario
-cd ScriptsOctober22_2017/Sims/ConstantPopSize/ForwardSims
+cd Scripts/Sims/ConstantPopSize/ForwardSims
 mkdir ../../../../Results/ConstantPopSize/
 mkdir ../../../../Results/ConstantPopSize/ForwardSims/
 mkdir ../../../../Results/ConstantPopSize/ForwardSims/4Ns_0
@@ -29,7 +29,7 @@ bash ConstantSize_4Ns-50.sh
 bash ConstantSize_4Ns-100.sh
 
 ### Generating allele frequency trajectories under a population expansion scenario
-cd ScriptsOctober22_2017/Sims/PopExpansion/ForwardSims
+cd Scripts/Sims/PopExpansion/ForwardSims
 mkdir ../../../../Results/PopExpansion/
 mkdir ../../../../Results/PopExpansion/ForwardSims/
 mkdir ../../../../Results/PopExpansion/ForwardSims/4Ns_0
@@ -45,7 +45,7 @@ bash Expansion_4Ns-50.sh
 bash Expansion_4Ns-100.sh
 
 ### Generating allele frequency trajectories under an ancient bottleneck scenario
-cd ScriptsOctober22_2017/Sims/AncientBottleneck/ForwardSims
+cd Scripts/Sims/AncientBottleneck/ForwardSims
 mkdir ../../../../Results/AncientBottleneck/
 mkdir ../../../../Results/AncientBottleneck/ForwardSims/
 mkdir ../../../../Results/AncientBottleneck/ForwardSims/4Ns_0
@@ -61,7 +61,7 @@ bash Expansion_4Ns-50.sh
 bash Expansion_4Ns-100.sh
 
 ### Generating allele frequency trajectories under the UK10K inferred demographic model
-cd ScriptsOctober22_2017/Sims/UK10K_OnePercenters/ForwardSims
+cd Scripts/Sims/UK10K_OnePercenters/ForwardSims
 mkdir ../../../../Results/UK10K_OnePercenters/
 mkdir ../../../../Results/UK10K_OnePercenters/ForwardSims/
 mkdir ../../../../Results/UK10K_OnePercenters/ForwardSims/4Ns_0

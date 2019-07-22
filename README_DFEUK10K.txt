@@ -73,6 +73,14 @@ perl CalculateMismatchStatistic.pl
 ## Concatenate results and get posterior distribution
 bash ConcatenateMismatchStatisticAndLDistances.sh
 
+## Do simulations using the point estimates from the posterior distribution of the demographic parameters
+SGE_TASK_ID=1
+bash ReplicationOfBestABCParameters.sh
+# Run the past script using SGE_TASK_ID values from 1-100
+
+## Get an average estimate of the difference in L values between the replicates of simulated data and the UK10K data
+perl CalculateMismatchStatisticSimsReplicates.pl
+
 #### Forward in time simulations
 
 Check README_ForwardSims.txt and README_FoIS.txt for information on how we did the forward-in-time allele frequency simulations shown in Figure 10
@@ -80,8 +88,8 @@ Check README_ForwardSims.txt and README_FoIS.txt for information on how we did t
 #### Get DFEs that will be used in analysis
 
 cd ScriptsOctober22_2017/Sims/UK10K_OnePercenters/ImportanceSamplingSims/
-Run CreationOfDiscreteDistribution.R to get the probabilities for each 2Ns value in each distribution of fitness effects.
-perl GetDFETable.pl
+Run CreationOfDiscreteDistribution50.R to get the probabilities for each 2Ns value in each distribution of fitness effects.
+bash GetDFETable.sh
 
 #### DFE bootstrap analysis
 
@@ -93,4 +101,12 @@ bash CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableDFEBootstrap.
 
 ### Get the maximum likelihood estimator
 perl GetMax4NsValueDFEBootstrap.pl
+
+
+sort -nrk2,2 ../../../../Results/UK10K_OnePercenters/ForwardSims/LLDataDFE.txt | head
+
+#### Print s values at a particular frequency
+
+cd ScriptsOctober22_2017/Scripts/Sims/ConcatenateManyStatisticsScripts
+bash PrintSValuesAtParticularFrequency.sh
 

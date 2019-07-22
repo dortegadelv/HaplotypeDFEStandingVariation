@@ -1,0 +1,51 @@
+
+@----------------------------------------------------------@
+|        PLINK!       |     v1.07      |   10/Aug/2009     |
+|----------------------------------------------------------|
+|  (C) 2009 Shaun Purcell, GNU General Public License, v2  |
+|----------------------------------------------------------|
+|  For documentation, citation & bug-report instructions:  |
+|        http://pngu.mgh.harvard.edu/purcell/plink/        |
+@----------------------------------------------------------@
+
+Web-based version check ( --noweb to skip )
+Recent cached web-check found... OK, v1.07 is current
+
++++ PLINK 1.9 is now available! See above website for details +++ 
+
+Writing this text to log file [ plink.log ]
+Analysis started: Sat Apr 23 13:30:59 2016
+
+Options in effect:
+	--tfile ../../../Data/Plink/Plink1
+	--allow-no-sex
+	--missing-genotype 8
+	--keep ../../../Data/ListUnrelatedSamplesUK10K_3781-samples_annotated_release_20130515.txt
+	--from-bp 570318
+	--to-bp 570318
+	--chr 1
+
+Reading pedigree information from [ ../../../Data/Plink/Plink1.tfam ] 
+3781 individuals read from [ ../../../Data/Plink/Plink1.tfam ] 
+3781 individuals with nonmissing phenotypes
+Assuming a disease phenotype (1=unaff, 2=aff, 0=miss)
+Missing phenotype value is also -9
+0 cases, 3781 controls and 0 missing
+0 males, 0 females, and 3781 of unspecified sex
+Warning, found 3781 individuals with ambiguous sex codes
+Writing list of these individuals to [ plink.nosex ]
+1695959 (of 1695959) markers to be included from [ ../../../Data/Plink/Plink1.tped ]
+Scan region on chromosome 1 from [ 1.570318 ] to [ 1.570318 ]
+Reading individuals to keep [ ../../../Data/ListUnrelatedSamplesUK10K_3781-samples_annotated_release_20130515.txt ] ... 3711 read
+70 individuals removed with --keep option
+Before frequency and genotyping pruning, there are 1 SNPs
+3711 founders and 0 non-founders found
+Total genotyping rate in remaining individuals is 1
+0 SNPs failed missingness test ( GENO > 1 )
+0 SNPs failed frequency test ( MAF < 0 )
+After frequency and genotyping pruning, there are 1 SNPs
+After filtering, 0 cases, 3711 controls and 0 missing
+After filtering, 0 males, 0 females, and 3711 of unspecified sex
+
+Analysis finished: Sat Apr 23 13:47:36 2016
+

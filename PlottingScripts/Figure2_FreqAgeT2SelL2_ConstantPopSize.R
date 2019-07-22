@@ -139,8 +139,8 @@ for (j in 1:11){
 for (j in 3:3){
 
 Plot <- paste("../Figures/Figure2_ConstantPopFreqAgeT2.pdf",sep="")
-pdf(Plot,width=28/2,height=7/1.55)
-par(mfrow=c(1,4))
+pdf(Plot,width=28/2,height=7*2/1.55)
+par(mfrow=c(2,3))
 par(mar=c(5,5,5,2) + 0.1)
 
 	
@@ -551,14 +551,32 @@ par(mar=c(5,5,5,2) + 0.1)
 #	dev.off()
 		
 	}
-par(mar=c(0,0,0,0) + 0.0)
-#par(oma=c(1,1,0,1))
+
+par(mar=c(5,5,5,2) + 0.1)
+
+DistributionOfL <- read.table("../Results/DistributionOfL/DistributionOfL.txt")
+Max <- max(DistributionOfL)
+Min <- min(DistributionOfL)
+plot(1:6,DistributionOfL[1,], col=ColorViridis[3], type="l", lwd=6, ylim=c(Min,Max), ylab="Probability", xlab="L", cex.lab=2.5, cex.axis=2.5, xaxt="n", main="D) Probability Distribution of L", cex.main=2.5)
+lines(1:6,DistributionOfL[2,],col=ColorViridis[2],lwd=6)
+lines(1:6,DistributionOfL[3,],col=ColorViridis[1],lwd=6)
+lines(1:6,DistributionOfL[4,],col=ColorViridis[4],lty=5,lwd=6)
+lines(1:6,DistributionOfL[5,],col=ColorViridis[5],lty=5,lwd=6)
+axis(1,at=c(1,2,3,4,5,6),labels=c(expression(w[1],w[2],w[3],w[4],w[5],w[6])),cex.lab=2.5,cex.axis=2.5)
+legend("center",c("-100","-50","0","50","100"), lty=c(1,1,1,6,6),lwd=6,col=ColorViridis,cex=2,title=expression(paste(4,N,'s',sep="")),bty="n")
+
+#,cex.lab=2.5,cex.main=2,cex.axis=2
+
+par(mar=c(0,0,5,0) + 0.0)
+#par(oma=c(0,0,0,0))
 
 Image <- readJPEG("../PotentialPaperFigures/HaplotypeLengths/Slide1.jpg")
-plot(0.5,0.5,xaxt="n",yaxt="n",xlim=c(0,1.290323),ylim=c(0,1),main="",cex.main=2.5)
+plot(0.5,0.5,xaxt="n",yaxt="n",xlim=c(0,1.290323),ylim=c(0,1),cex.main=2.5,main="E) The effect of\n selection on L")
 #plot(0.5,0.5,xaxt="n",yaxt="n",xlim=c(0,1.333333),ylim=c(0,1),main="D) Selection and pairwise\nhaplotypic identity\n by state lengths (L)",cex.main=2.5)
 
 rasterImage(Image,0.0,0.0,1.290323,1,bty="n")
+
+
 dev.off()
 
 }

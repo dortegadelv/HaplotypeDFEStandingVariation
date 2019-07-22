@@ -30,7 +30,7 @@ s random seed
 b Give a bounds file that defines allele frequency trajectories. The program will only report allele frequency changes that go across the bounds.
 D Demographic scenario used.
 X Selection values that will be evaluated when going forwards in time
-p Number of chromosomes used
+p Number of chromosomes sampled from the present.
 t M E C and U are useless parameters, but leave them as they are.
 Q gives a F values for using the Balding-Nicholls model. Leave as zero.
 

@@ -1,0 +1,3 @@
+mkdir: cannot create directory `../../../Results//ForwardSims/4Ns_-25/Trajectories': No such file or directory
+NO! at SampleTrajectories.pl line 13.
+NO! ../../../Results//ForwardSims/4Ns_-25/Trajectories/Traj_0.dat

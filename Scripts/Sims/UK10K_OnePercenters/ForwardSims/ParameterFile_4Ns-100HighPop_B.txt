@@ -1,0 +1,18 @@
+MutationRate  100.0 
+DFEType: 	point
+DFEPointSelectionCoefficient:	 0.002176752
+DemographicHistory:         PopulationExpansionModelHighPopSize.txt
+PrintSNPNumber:   0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 0
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 7242
+AlleleTrajsInput: ../../../../Results/UK10KHighPopSize/ForwardSims/4Ns_-100/Alleles
+AlleleTrajsOutput: ../../../../Results/UK10KHighPopSize/ForwardSims/4Ns_-100/Traj
+FilePrefix: ../../../../Results/UK10KHighPopSize/ForwardSims/4Ns_-100/Output
+

@@ -1,0 +1,1 @@
+perl CalculateFrequencyByWindowsSynMissenseNotCpGs.pl TestWindowBounds.txt Unimportant_2.txt LDistribution_NotCpG.txt

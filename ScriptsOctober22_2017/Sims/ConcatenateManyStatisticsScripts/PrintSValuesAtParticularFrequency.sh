@@ -7,3 +7,5 @@ perl PrintSValuesAroundParticularFrequency.pl OnePercentVariants.txt ../../../Re
 perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../../../Results/ExitSValues/ExitOnePercentSValuesPopExpansionMouse5000.txt ../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart/Output. 5000
 perl PrintSValuesAroundParticularFrequency.pl OnePercentVariants.txt ../../../Results/ExitSValues/ExitOnePercentSValuesPopExpansionMouseApprox5000.txt ../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart/Output. 5000
 
+perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../../../Results/ExitSValues/ExitOnePercentSValuesPopExpansionBoykoWeak.txt ../../../Results/PopExpansionBoykoPlusPositive/ForwardSims/BoykoWeakPart/Output. 1000
+

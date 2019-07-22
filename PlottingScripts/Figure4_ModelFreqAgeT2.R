@@ -153,7 +153,7 @@ for (j in 7:7){
 
 	if (j==1 || j==2){
 		
-		plot(c(100000,100000-5000,100000-5200,100000-10000),c(5000,1000,5000,5000),type="s",xlim=c(100000-6000,100000),ylim=c(0,5000),ylab="Effective Population Size",xlab="Time before the present",main="A) Ancient Bottleneck Model",xaxt='n',yaxt='n',cex.main=2,cex.lab=2,col="red",lwd=6)
+		plot(c(100000,100000-5000,100000-5200,100000-10000),c(5000,1000,5000,5000),type="s",xlim=c(100000-6000,100000),ylim=c(0,5000),ylab="Effective Population Size",xlab="Time before the present",main="A) Ancient Bottleneck Model",xaxt='n',yaxt='n',cex.main=2.5,cex.lab=2,col="red",lwd=6)
 		
 		axis(1,at=c(100000,100000-1000,100000-2000,100000-3000,100000-4000,100000-5000,100000-6000),labels = c("Present","1000","2000","3000","4000","5000","6000"),cex.axis=2)
 		axis(2,at=c(5000,1000),labels = c("5000","1000"),cex.axis=2)
@@ -161,7 +161,7 @@ for (j in 7:7){
 
 	if (j==9 || j==10){
 		
-		plot(c(100000,100000-100,100000-300,100000-10000),c(5000,1000,5000,5000),type="s",xlim=c(100000-6000,100000),ylim=c(0,5000),ylab="Effective Population Size",xlab="Time before the present",main="A) Recent Bottleneck Model",xaxt='n',yaxt='n',cex.main=2,cex.lab=2,col="red",lwd=6)
+		plot(c(100000,100000-100,100000-300,100000-10000),c(5000,1000,5000,5000),type="s",xlim=c(100000-6000,100000),ylim=c(0,5000),ylab="Effective Population Size",xlab="Time before the present",main="A) Recent Bottleneck Model",xaxt='n',yaxt='n',cex.main=2.5,cex.lab=2,col="red",lwd=6)
 		
 		axis(1,at=c(100000,100000-1000,100000-2000,100000-3000,100000-4000,100000-5000,100000-6000),labels = c("Present","1000","2000","3000","4000","5000","6000"),cex.axis=2)
 		axis(2,at=c(5000,1000),labels = c("5000","1000"),cex.axis=2)
@@ -169,7 +169,7 @@ for (j in 7:7){
 	
 	if (j==5 || j==6){
 		
-		plot(c(100000,100000-2000,100000-2200,100000-10000),c(5000,1000,5000,5000),type="s",xlim=c(100000-6000,100000),ylim=c(0,5000),ylab="Effective Population Size",xlab="Time before the present",main="A) Moderately Ancient Bottleneck Model",xaxt='n',yaxt='n',cex.main=2,cex.lab=2,col="red",lwd=6)
+		plot(c(100000,100000-2000,100000-2200,100000-10000),c(5000,1000,5000,5000),type="s",xlim=c(100000-6000,100000),ylim=c(0,5000),ylab="Effective Population Size",xlab="Time before the present",main="A) Moderately Ancient Bottleneck Model",xaxt='n',yaxt='n',cex.main=2.5,cex.lab=2,col="red",lwd=6)
 		
 		axis(1,at=c(100000,100000-1000,100000-2000,100000-3000,100000-4000,100000-5000,100000-6000),labels = c("Present","1000","2000","3000","4000","5000","6000"),cex.axis=2)
 		axis(2,at=c(5000,1000),labels = c("5000","1000"),cex.axis=2)
@@ -184,7 +184,7 @@ for (j in 7:7){
 	}
 	
 	if (j==3 || j==4 || j==11){
-		plot(c(100000,100000-100,100000-10000),c(10000,10000,10000),type="s",xlim=c(100000-6000,100000),ylim=c(0,10000),ylab="Effective Population Size",xlab="Time before the present",main="A) Constant Population Size Model",xaxt='n',yaxt='n',cex.main=2,cex.lab=2,col="red",lwd=6)
+		plot(c(100000,100000-100,100000-10000),c(10000,10000,10000),type="s",xlim=c(100000-6000,100000),ylim=c(0,10000),ylab="Effective Population Size",xlab="Time before the present",main="A) Constant Population Size Model",xaxt='n',yaxt='n',cex.main=2.5,cex.lab=2,col="red",lwd=6)
 		
 		axis(1,at=c(100000,100000-1000,100000-2000,100000-3000,100000-4000,100000-5000,100000-6000),labels = c("Present","1000","2000","3000","4000","5000","6000"),cex.axis=2)
 		axis(2,at=c(10000,0),labels = c("10000","0"),cex.axis=2)
@@ -313,7 +313,7 @@ for (j in 7:7){
 		XSubset <- subset(rev(density(Data$V1*Ne[j]*2,from=0,to=Max)$x),rev(density(Data$V1*Ne[j]*2,from=0,to=Max)$x)<=XLimFigureTwo[j]*0.78 )
 		Length <- length(XSubset) - 1
 		MaxLength <- length(density(Data$V1*Ne[j]*2,from=0,to=Max)$x)
-		plot(rev(c(max(density(Data$V1*Ne[j]*2,from=0,to=Max)$x)-XLimFigureTwo[j] + 0.22*(XLimFigureTwo[j]),density(Data$V1*Ne[j]*2,from=0,to=Max)$x[(MaxLength-Length):(MaxLength)])),density(Data$V1*Ne[j]*2,from=0,to=Max)$y[1:(Length+2)],xlab="Allele Age",ylab="Probability",type="l",ylim=c(-0.2*ListMaxAge[j],ListMaxAge[j]),main="C) Allele Age",xaxt="n",yaxt="n",col=ColorViridis[3],cex.lab=2,cex.main=2,cex.axis=2.5,lwd=6,xlim=c(max(density(Data$V1*Ne[j]*2,from=0,to=Max)$x)-XLimFigureTwo[j],max(density(Data$V1*Ne[j]*2,from=0,to=Max)$x)))
+		plot(rev(c(max(density(Data$V1*Ne[j]*2,from=0,to=Max)$x)-XLimFigureTwo[j] + 0.22*(XLimFigureTwo[j]),density(Data$V1*Ne[j]*2,from=0,to=Max)$x[(MaxLength-Length):(MaxLength)])),density(Data$V1*Ne[j]*2,from=0,to=Max)$y[1:(Length+2)],xlab="Allele Age",ylab="Probability",type="l",ylim=c(-0.2*ListMaxAge[j],ListMaxAge[j]),main="C) Allele Age",xaxt="n",yaxt="n",col=ColorViridis[3],cex.lab=2,cex.main=2.5,cex.axis=2.5,lwd=6,xlim=c(max(density(Data$V1*Ne[j]*2,from=0,to=Max)$x)-XLimFigureTwo[j],max(density(Data$V1*Ne[j]*2,from=0,to=Max)$x)))
 		SD <- sd(Data$V1*Ne[j]*2)
 		arrows(max(density(Data$V1*Ne[j]*2,from=0,to=Max)$x)-XLimFigureTwo[j]+0.1*XLimFigureTwo[j],-0.12*ListMaxAge[j],min(Max- mean(Data$V1*Ne[j]*2)+SD,Max),-0.12*ListMaxAge[j], length=0.05, angle=90, code=3,col=ColorViridis[3],lwd=6)
 

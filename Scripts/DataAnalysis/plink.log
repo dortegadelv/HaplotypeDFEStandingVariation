@@ -1,0 +1,45 @@
+
+@----------------------------------------------------------@
+|        PLINK!       |     v1.07      |   10/Aug/2009     |
+|----------------------------------------------------------|
+|  (C) 2009 Shaun Purcell, GNU General Public License, v2  |
+|----------------------------------------------------------|
+|  For documentation, citation & bug-report instructions:  |
+|        http://pngu.mgh.harvard.edu/purcell/plink/        |
+@----------------------------------------------------------@
+
+Web-based version check ( --noweb to skip )
+Recent cached web-check found... OK, v1.07 is current
+
++++ PLINK 1.9 is now available! See above website for details +++ 
+
+Writing this text to log file [ plink.log ]
+Analysis started: Sun Aug 21 20:43:42 2016
+
+Options in effect:
+	--tfile ../../Data/Plink/Plink7
+	--allow-no-sex
+	--missing-genotype 8
+	--keep ../../Data/ListUnrelatedSamplesUK10K_3781-samples_annotated_release_20130515.txt
+	--freq
+
+Reading pedigree information from [ ../../Data/Plink/Plink7.tfam ] 
+3781 individuals read from [ ../../Data/Plink/Plink7.tfam ] 
+3781 individuals with nonmissing phenotypes
+Assuming a disease phenotype (1=unaff, 2=aff, 0=miss)
+Missing phenotype value is also -9
+0 cases, 3781 controls and 0 missing
+0 males, 0 females, and 3781 of unspecified sex
+Warning, found 3781 individuals with ambiguous sex codes
+Writing list of these individuals to [ plink.nosex ]
+1852303 (of 1852303) markers to be included from [ ../../Data/Plink/Plink2.tped ]
+Reading individuals to keep [ ../../Data/ListUnrelatedSamplesUK10K_3781-samples_annotated_release_20130515.txt ] ... 3621 read
+160 individuals removed with --keep option
+Before frequency and genotyping pruning, there are 1852303 SNPs
+3621 founders and 0 non-founders found
+Writing allele frequencies (founders-only) to [ plink.frq ] 
+
+Analysis finished: Sun Aug 21 22:03:47 2016
+
+16
+
