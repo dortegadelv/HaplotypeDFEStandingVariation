@@ -37,7 +37,7 @@ int main(int argc, char const *argv[])
 	// Get Parameters, should be the selection coefficients
 	double sAA = 0.0, sAa = 0.0, f = 0.0, Back_sAA, Back_sAa;
 	double LogRatio, ActualRatio, CurrentWeight, PrevLogRatio;
-	int repetitions, i, Ne, p, Test, j, k, l , PrintFrequenciesAtThisGen, PrintFrequenciesFlag = 0;
+	int repetitions, i, Ne, p, Test = 0, j, k, l , PrintFrequenciesAtThisGen, PrintFrequenciesFlag = 0;
 	unsigned int seed,CurrentRepetitionSeed, BaldingModelFlag;
 	double CurrentAlleleAge, GenerationsAgoin4NeScale;
 	int CoefOfVarFlag = 0, RepRandomNumber, SampleFinalGenFlag = 0, SampleFinalGenPopSize = 0;
@@ -56,10 +56,10 @@ int main(int argc, char const *argv[])
 	int ZeroWeightFlag;
 	int Ages;
 	double MaximumWRatio;
-	double BigW, SumW, TestAge, XP, YP, Epsilon, CurrentForward, CurrentBackward;
-	double Margin, UpperMargin;
+	double BigW, SumW, TestAge, XP, YP, Epsilon = 0.0001, CurrentForward, CurrentBackward;
+	double Margin = 0.0000003, UpperMargin = 0.99999;
 	double ExpectedAlleleAge, ExpectedAlleleAgeGeneration, ThisXPrime;
-	double F_Beta, GammaTest, DistributionTypeS, DistributionParameter1S, DistributionParameter2S, random_uniform_number, CV_Threshold, CurrentSimFrequency;
+	double F_Beta = 0.0, GammaTest, DistributionTypeS, DistributionParameter1S, DistributionParameter2S, random_uniform_number, CV_Threshold = 100000, CurrentSimFrequency;
 	WrightFisher.push_back(0);
 	WrightFisher.push_back(6);
 //	for(vector<int>::iterator p=WrightFisher.begin(); p!= WrightFisher.end();++p){
