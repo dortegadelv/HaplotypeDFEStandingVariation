@@ -8,9 +8,16 @@ To compile the version of PReFerSim we used, go to Programs/ and type:
 
 gcc -g -o fwd_seldist_gsl_2012_4epoch.debug fwd_seldist_gsl_2012_4epoch.gutted.dom_inbreedParameterFile.c -lm -lgsl -lgslcblas -O3
 
+
+
+##############################################################################################################################################
+########## Below I explain the code I used to run the simulations
+##############################################################################################################################################
+
+
 We ran the forward-in-time simulations by running the following scripts after going into the appropriate directories.
 All scripts were run in a computing cluster and can be easily run in parallel by changing the value of 
-the variable SGE_TASK_ID to a different number:
+the variable $SGE_TASK_ID to a different number:
 
 ### Generating allele frequency trajectories under a constant population size scenario
 cd Scripts/Sims/ConstantPopSize/ForwardSims

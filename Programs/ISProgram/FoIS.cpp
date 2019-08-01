@@ -115,7 +115,7 @@ int main(int argc, char const *argv[])
 	cout << "Beta-Binomial pdf test = " << GammaTest << "\n";
 	return 0; */
 	if (argc < 7 ){
-		cout<<"usage :"<<argv[0] <<" -A <value> -a <value> -f <value> -r <value> -N <value> -s <value> -t <value>\n";
+		cout<<"usage :"<<argv[0] <<" -A <Homozygous_selection_coefficient> -a <Heterozygous_selection_coefficient> -f <Frequency_of_sampled_allele> -r <Number_of_repetitions> -N <Number_of_chromosomes_in_the_present_day_population> -s <Random_seed> -F <Exit_file> -b <Allele_frequency_bounds_file> -D <Demographic_history_file> -X <Selection_values_file> -p <Number_of_chromosomes_sampled>\n";
 		exit(1);
 	}
 	DistributionTypeS = 0;
@@ -946,12 +946,12 @@ while (ExitLoopFlag == 0){
 	advance(NeSizesIterator, ( (int) AllelesPerGen.size() - 2));
 	LogRatio = log(*NeSizesIterator) + PathBetaProbability;
 	PrevLogRatio = log(*NeSizesIterator) + MontyWeight(AllelesPerGen[0],sAA,sAa,Ne,XPrimes,YPrimes,N_eSizes);
-	/*	cout << "Log ratio! = " << LogRatio << "\n";
+		cout << "Log ratio! = " << LogRatio << "\n";
 	 cout << "Prev Log ratio! = " << PrevLogRatio << "\n";
 	 cout << "PathBetaProbability! = " << PathBetaProbability << "\n";
 	 cout << "Weight! = " << MontyWeight(AllelesPerGen,sAA,sAa,Ne,XPrimes,YPrimes,N_eSizes) << "\n";
-	 cout << "Size! = " << *NeSizesIterator << "\n"; */
-	/*
+	 cout << "Size! = " << *NeSizesIterator << "\n";
+	
 	//	ActualRatio = exp(LogRatio);
 	//	outputFile << TestAlleleAge << "\t" << ActualRatio << endl;
 	//	cout << "Ratio1: " << ActualRatio << " LogRatio: "<< LogRatio <<"\n";

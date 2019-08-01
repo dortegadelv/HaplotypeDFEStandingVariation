@@ -2,23 +2,58 @@ setwd("/Users/vicentediegoortegadelvecchyo/Dropbox/Documents/DissertationThesis/
 
 library(viridis)
 
+FinalTable <- matrix(,ncol=4,nrow=5)
+rownames(FinalTable) <- c("Inferred P(4Ns | DFE)","Boyko et al 2008 P(4Ns | DFE)", "Kim et al 2017 P(4Ns | DFE)", "Inferred P(4Ns | DFE) lower 90% bootstrap", "Inferred P(4Ns | DFE) upper 90% bootstrap")
+colnames(FinalTable) <- c("4Ns < 1","1 < 4Ns < 10", "10 < 4Ns < 50", " 4Ns > 50")
+
+DFEPars <- read.table ("../ScriptsOctober22_2017/Sims/UK10K_OnePercenters/ImportanceSamplingSims/AnotherDFETableOfProbabilities.txt")
+
+P_Allele_Is_2Ns_given_OnePercent <- c()
+
+
+LowerLimit <- c()
+LowerLimit <- c(LowerLimit,0)
+LowerLimit <- c(LowerLimit,1)
+LowerLimit <- c(LowerLimit,5)
+LowerLimit <- c(LowerLimit,10)
+LowerLimit <- c(LowerLimit,15)
+LowerLimit <- c(LowerLimit,20)
+LowerLimit <- c(LowerLimit,25)
+LowerLimit <- c(LowerLimit,30)
+LowerLimit <- c(LowerLimit,35)
+LowerLimit <- c(LowerLimit,40)
+LowerLimit <- c(LowerLimit,45)
+LowerLimit <- c(LowerLimit,50)
+
+
+for (i in 2:12){
+    UpperBound <- LowerLimit[i] + 3
+    LowerBound <- LowerLimit[(i-1)] + 3
+    CurrentSum <- sum(DFEPars[1,LowerBound:UpperBound])
+    # CurrentSum <-  pgamma(LowerLimit[i+1],Alpha,scale=Beta) - pgamma(LowerLimit[i],Alpha,scale=Beta)
+    #    print (i)
+    #    print (CurrentSum)
+    P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,CurrentSum)
+}
+
+
 ### P (allele is 2Ns = x | allele is at 1%)
 
 Alpha = 0.01
 Beta = 0.03
 
-P_Allele_Is_2Ns_given_OnePercent <- c()
+# P_Allele_Is_2Ns_given_OnePercent <- c()
 CurrentLimits <- c(0, 0.5, 2.5, 5, 7.5, 10, 12.5, 15, 17.5, 20, 22.5, 25)
 
 # P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,pgamma(0.5,Alpha,scale=Beta))
 for (i in 1:11){
     # print (i)
     Prob <- pgamma(CurrentLimits[i+1],Alpha,scale=Beta) - pgamma(CurrentLimits[i],Alpha,scale=Beta)
-    P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,Prob)
+    #    P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,Prob)
 }
 
 Prob <- 1 - pgamma(25,Alpha,scale=Beta)
-P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,Prob)
+# P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,Prob)
 
 ### P (allele is at 1% | allele is 2Ns x)
 
@@ -61,7 +96,7 @@ Probs <- P_Allele_Is_2Ns_given_OnePercent
 ## This is the over the number of NonCpG sites where a nonsynonymous mutation can take place that are far away from centromeres and telomeres
 NumberOfNonCpGSites <- 26368474
 MutationRate <- 1.5e-8
-SitesDemography <- (22970 * 229700 + 45544 * 6104 + 5856 * 1760 + 7480 * 1222 + 1131262 * 228) * NumberOfNonCpGSites * MutationRate * (1/3)
+SitesDemography <- (22970 * 229700 + 45544 * 6104 + 5856 * 1760 + 7480 * 1222 + 1131262 * 228) * NumberOfNonCpGSites * MutationRate
 Prob_One_Percent <- 273 / SitesDemography
 
 Probs <- Probs[1:11] * Prob_One_Percent / Probabilities_At_One_Percent_Given_2Ns[1:11]
@@ -73,6 +108,10 @@ if (sum(Probs) > 1.0){
     Probs[12] <- 1 - sum (Probs[1:11])
 }
 
+FinalTable[1,1] <- Probs[1]
+FinalTable[1,2] <- sum(Probs[2:3])
+FinalTable[1,3] <- sum(Probs[4:11])
+FinalTable[1,4] <- Probs[12]
 
 # Probs <- Probs[1:11] / sum (Probs[1:11] )
 
@@ -116,6 +155,11 @@ for (i in 2:4){
 Prob <- 1 - pgamma(50 *.5,Alpha,scale=Beta)
 ProbsBoyko <- c(ProbsBoyko, Prob)
 
+FinalTable[2,1] <- ProbsBoyko[1]
+FinalTable[2,2] <- ProbsBoyko[2]
+FinalTable[2,3] <- ProbsBoyko[3]
+FinalTable[2,4] <- ProbsBoyko[4]
+
 Alpha = 0.169
 Beta = 1327.4 * 22970/(2*11261)
 
@@ -126,6 +170,11 @@ for (i in 2:4){
 }
 Prob <- 1 - pgamma(50 *.5,Alpha,scale=Beta)
 ProbsKim <- c(ProbsKim, Prob)
+
+FinalTable[3,1] <- ProbsKim[1]
+FinalTable[3,2] <- ProbsKim[2]
+FinalTable[3,3] <- ProbsKim[3]
+FinalTable[3,4] <- ProbsKim[4]
 
 
 counts <- table(mtcars$vs, mtcars$gear)
@@ -273,6 +322,23 @@ for (i in 1:14){
     print (Quantiles[2])
     print (Quantiles[3])
     
+    if (i == 1){
+    FinalTable[4,1] <- Quantiles[1]
+    FinalTable[5,1] <- Quantiles[3]
+    }
+    if (i == 13){
+        FinalTable[4,2] <- Quantiles[1]
+        FinalTable[5,2] <- Quantiles[3]
+    }
+    if (i == 14){
+        FinalTable[4,3] <- Quantiles[1]
+        FinalTable[5,3] <- Quantiles[3]
+    }
+    if (i == 12){
+        FinalTable[4,4] <- Quantiles[1]
+        FinalTable[5,4] <- Quantiles[3]
+    }
+
     # print(max(log10(Quantiles[1]) - log10(0.001)), 0)
     # print(max(log10(Quantiles[2]) - log10(0.001)), 0)
     Quantiles <- quantile(MatrixFinalProbs[,i],c(0.5))
@@ -288,5 +354,7 @@ for (i in 1:14){
 ####################################################################################
 dev.off()
 
+
+write.table(FinalTable, file = "../Figures/TableS4.txt", sep = "\t")
 
 
