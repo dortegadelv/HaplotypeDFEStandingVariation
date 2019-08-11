@@ -1,15 +1,14 @@
 1) Simulating forward-in-time allele frequency trajectories
 
-The first step of the analysis performed is to run forward-in-time simulations where we specify that the allele has
-a sample allele frequency equal to X in the present.
+The first step of the analysis performed is to run forward-in-time simulations where we specify that the allele has a sample allele frequency equal to X in the present.
 
 We used the program PReFerSim to perform the forward-in-time simulations. The program can be found in the Programs/ folder.
 To compile the version of PReFerSim we used, go to Programs/ and type:
 
 gcc -g -o fwd_seldist_gsl_2012_4epoch.debug fwd_seldist_gsl_2012_4epoch.gutted.dom_inbreedParameterFile.c -lm -lgsl -lgslcblas -O3
 
-
-
+You will need the GSL library to compile this program. You can find more instructions to compile the program from our github site https://github.com/LohmuellerLab/PReFerSim/blob/master/PReFerSim_Manual_v2.pdf . You can also find the latest version of our program there.
+ 
 ##############################################################################################################################################
 ########## Below I explain the code I used to run the simulations
 ##############################################################################################################################################
@@ -86,38 +85,38 @@ bash Expansion_4Ns-50.sh
 Run the past scripts with many values of SGE_TASK_ID until you obtain 10,000 trajectories or more. Then run the following scripts after going
 into the appropriate directories. To run these scripts, you will need the program mssel (kindly provided to us from Richard Hudson). These scripts will change the trajectories into a readable format for mssel and also will reduce the disk space taken by the file containing the allele frequency trajectories:
 
-cd ScriptsOctober22_2017/Sims/ConstantPopSize/ForwardSims
+cd Scripts/Sims/ConstantPopSize/ForwardSims
 bash CreateReducedTrajectories.sh
-cd ScriptsOctober22_2017/Sims/PopExpansion/ForwardSims
+cd Scripts/Sims/PopExpansion/ForwardSims
 bash CreateReducedTrajectories.sh
-cd ScriptsOctober22_2017/Sims/AncientBottleneck/ForwardSims
+cd Scripts/Sims/AncientBottleneck/ForwardSims
 bash CreateReducedTrajectories.sh
-cd ScriptsOctober22_2017/Sims/UK10K_OnePercenters/ForwardSims
+cd Scripts/Sims/UK10K_OnePercenters/ForwardSims
 bash CreateReducedTrajectories.sh
 
 Then, to obtain the mean allele frequency trajectories, run:
 
 mkdir Results/FrequencyTrajectories/
-cd ScriptsOctober22_2017/Sims/ConstantPopSize/ForwardSims
+cd Scripts/Sims/ConstantPopSize/ForwardSims
 bash CalculateMeanTrajectory.sh
-cd ScriptsOctober22_2017/Sims/PopExpansion/ForwardSims
+cd Scripts/Sims/PopExpansion/ForwardSims
 bash CalculateMeanTrajectory.sh
-cd ScriptsOctober22_2017/Sims/AncientBottleneck/ForwardSims
+cd Scripts/Sims/AncientBottleneck/ForwardSims
 bash CalculateMeanTrajectory.sh
-cd ScriptsOctober22_2017/Sims/UK10K_OnePercenters/ForwardSims
+cd Scripts/Sims/UK10K_OnePercenters/ForwardSims
 bash CalculateMeanTrajectory.sh
 
 2) Calculate allele age distributions
 
 First run this script to create a file with 10,000 allele frequency trajectories:
 
-cd ScriptsOctober22_2017/Sims/ConstantPopSize/ForwardSims
+cd Scripts/Sims/ConstantPopSize/ForwardSims
 bash PrintThisTrajectoryNumber.sh
-cd ScriptsOctober22_2017/Sims/PopExpansion/ForwardSims
+cd Scripts/Sims/PopExpansion/ForwardSims
 bash PrintThisTrajectoryNumber.sh
-cd ScriptsOctober22_2017/Sims/AncientBottleneck/ForwardSims
+cd Scripts/Sims/AncientBottleneck/ForwardSims
 bash PrintThisTrajectoryNumber.sh
-cd ScriptsOctober22_2017/Sims/UK10K_OnePercenters/ForwardSims
+cd Scripts/Sims/UK10K_OnePercenters/ForwardSims
 bash PrintThisTrajectoryNumber.sh
 
 Then, to get the distribution of allele ages, run:

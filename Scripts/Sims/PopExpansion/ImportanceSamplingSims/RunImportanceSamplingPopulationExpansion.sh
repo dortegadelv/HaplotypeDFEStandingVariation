@@ -47,7 +47,7 @@ Seed=$(( $SGE_TASK_ID + 2001))
 echo "time ./SlatkinISConstantSizeSISR -A $SelectionCoef2 -a $SelectionCoef1 -f ${Frequency[$FrequencyNumber]} -r 1000 -N 100000 -s $Seed -t 0 -M 0.0000003 -U 0.99999 -Q 0.0 -E 0.0001 -F ExpansionDenserGrid/$File -b ExpansionDenserGrid/Bounds.txt -D ${DemHist[$FrequencyNumber]} -X ExpansionDenserGrid/NewSelectionValues.txt -C 100000"
 # g++ -o SlatkinISConstantSizeSISR SlatkinISConstantSizeSISR.cpp prob.cpp -lm
 # ./SlatkinISConstantSizeSISR -A $SelectionCoef2 -a $SelectionCoef1 -f ${Frequency[$FrequencyNumber]} -r 20 -N 848000 -s $Seed -t 0 -M 0.0000003 -U 0.99999 -Q 0.0 -E 0.0001 -F $File -b Bounds.txt -D DemographicHistoryAfricanTennessen.txt -C 0.8
-time ../../../../Programs/ISProgram/SlatkinISConstantSizeSISR -A $SelectionCoef2 -a $SelectionCoef1 -f ${Frequency[$FrequencyNumber]} -r 1000 -N 100000 -s $Seed -t 0 -M 0.0000003 -U 0.99999 -Q 0.0 -E 0.0001 -F ../../../../Results/PopExpansion/ImportanceSamplingSims/$File -b ../../ConstantPopSize/ImportanceSamplingSims/Bounds.txt -D DemHistExpansion.txt -X NewSelectionValues.txt -C 100000 -p 4000
+time ../../../../Programs/ISProgram/FoIS -A $SelectionCoef2 -a $SelectionCoef1 -f ${Frequency[$FrequencyNumber]} -r 1000 -N 100000 -s $Seed -F ../../../../Results/PopExpansion/ImportanceSamplingSims/$File -b ../../ConstantPopSize/ImportanceSamplingSims/Bounds.txt -D DemHistExpansion.txt -X NewSelectionValues.txt -p 4000
 
 #### NOTE! All that is below should be documented
 # WeightFile=$File"WeightYears.txt"
