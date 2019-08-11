@@ -15,7 +15,7 @@ We included these programs in the Programs/ folder:
 
 ## Plotting scripts
 
-The folder PlottingScripts/ includes the R scripts we used to create each figure from the paper. To run, just change the setwd() command on top of each script to point to the location of PlottingScripts in your local computer.
+The folder PlottingScripts/ includes the R scripts we used to create each figure from the paper.
 
 ## Running forward simulations with PReFerSim
 
