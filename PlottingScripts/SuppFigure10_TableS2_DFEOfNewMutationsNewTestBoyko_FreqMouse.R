@@ -1,5 +1,4 @@
-setwd("/Users/vicentediegoortegadelvecchyo/Dropbox/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/PlottingScripts")
-
+library(here)
 library(viridis)
 
 ### P (allele is 2Ns = x | allele is at 1%)

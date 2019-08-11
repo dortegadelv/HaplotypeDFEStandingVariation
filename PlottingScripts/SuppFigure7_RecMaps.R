@@ -1,6 +1,6 @@
-setwd("/Users/vicentediegoortegadelvecchyo/Dropbox/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Results/RecMaps")
+library(here)
 
-FileNames <- c("LeftBpRecRatePerVariantNoCpGPrintMap.txt", "RightBpRecRatePerVariantNoCpGPrintMap.txt", "LeftBpRecRatePerVariantSynonymousNoCpGPrintMap.txt", "RightBpRecRatePerVariantSynonymousNoCpGPrintMap.txt")
+FileNames <- c("../Results/RecMaps/LeftBpRecRatePerVariantNoCpGPrintMap.txt", "../Results/RecMaps/RightBpRecRatePerVariantNoCpGPrintMap.txt", "../Results/RecMaps/LeftBpRecRatePerVariantSynonymousNoCpGPrintMap.txt", "../Results/RecMaps/RightBpRecRatePerVariantSynonymousNoCpGPrintMap.txt")
 
 for (j in 1:2){
 
@@ -62,7 +62,7 @@ for (i in 1:nrow(Table)){
 }
 
 if (j == 1){
-jpeg(filename = "../../Figures/SuppFigure7_RecMapPlotsNS_Sites.jpeg", width = 960, quality = 90)
+jpeg(filename = "../Figures/SuppFigure7_RecMapPlotsNS_Sites.jpeg", width = 960, quality = 90)
 RecMapNS <- RecMap[1:250000]/(27300)
 plot(1:250000,RecMap[1:250000]/(27300), xlim = c(0,500002),xlab = "Position",ylab = "Recombination rate",xaxt="n", ylim = c(0, 1.65e-7), pch = 19)
 axis(1,c(1,50001,100001,150001,200001,250001,300001,350001,400001,450001,500002),c("-250 kb","-200 kb","-150 kb","-100 kb", "-50 kb", "NS Variant","50 kb","100 kb","150kb", "200 kb", "250 kb"))
@@ -194,7 +194,7 @@ for (j in 3:4){
     }
     
     if (j == 3){
-        jpeg(filename = "../../Figures/SuppFigure7_RecMapPlotsSyn_Sites.jpeg", width = 960, quality = 90)
+        jpeg(filename = "../Figures/SuppFigure7_RecMapPlotsSyn_Sites.jpeg", width = 960, quality = 90)
         RecMapSyn <- RecMap[1:250000]/(27300)
         plot(1:250000,RecMap[1:250000]/(15100), xlim = c(0,500002),xlab = "Position",ylab = "Recombination rate",xaxt="n", ylim = c(0, 1.65e-7), pch = 19)
         axis(1,c(1,50001,100001,150001,200001,250001,300001,350001,400001,450001,500002),c("-250 kb","-200 kb","-150 kb","-100 kb", "-50 kb", "Syn Variant","50 kb","100 kb","150kb", "200 kb", "250 kb"))
@@ -257,7 +257,7 @@ if (AbsDifference == "NaN"){
 
 BoxplotAbsDiff <- c(BoxplotAbsDiff,sd(CurSum))
 
-pdf("../../Figures/SuppFigure7_BoxPlots.pdf")
+pdf("../Figures/SuppFigure7_BoxPlots.pdf")
 par(mar=c(5.1,6.1,4.1,2.1))
 boxplot(FirstDataBoxPlots/100, BoxplotAbsDiff/100, names = c("Non synonymous","Synonomous"), ylab = expression( plain("sd (") ~ R[s[j]] ~ plain(")") ))
 

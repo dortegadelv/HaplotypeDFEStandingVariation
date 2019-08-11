@@ -1,6 +1,8 @@
-This repository contains all the scripts and programs used in our paper:
+## Programs and scripts from our paper 'Haplotype-based inference of the distribution of fitness effects'
 
-Haplotype-based inference of the distribution of fitness effects of segregating variants
+This repository contains all the scripts to reproduce the results from our paper:
+
+Haplotype-based inference of the distribution of fitness effects
 
 Diego Ortega-Del Vecchyo, Kirk Lohmueller and John Novembre
 
@@ -8,8 +10,8 @@ Diego Ortega-Del Vecchyo, Kirk Lohmueller and John Novembre
 
 We included these programs in the Programs/ folder:
 
-1. PReFerSim.- We conducted forward simulations using PReFerSim. We include the version of PReFerSim we used in our paper with this repository (but see https://github.com/LohmuellerLab/PReFerSim for the latest version).
-2. FoIS.- This program implements an importance sampling method based on a paper by Monty Slatkin (2001, Genetics Research) with some modifications explained in our paper to: 1) Model the uncertainty in our estimate of the population allele frequency and 2) Evaluate multiple values of selection using the same set of simulated allele frequency trajectories. We use this program to calculate the expected value of statistics from alleles that have a particular sample allele frequency in the present. The program can model any arbitrary demographic scenario.
+1. PReFerSim.- We conducted forward simulations using PReFerSim. We include the version of PReFerSim we used in our paper with this repository. Check https://github.com/LohmuellerLab/PReFerSim for the latest version of PReFerSim and the instructions to run PReFerSim. You can also download the latest version of PReFerSim from the Bioconda package manager.
+2. FoIS.- This program implements an importance sampling method based on a paper by Monty Slatkin (2001, Genetics Research) to simulate a set of allele frequency trajectories from genetic variants evolving under a particular strength of natural selection.  We performed some modifications to the original method by Monty Slatkin to: 1) Model the uncertainty in our estimate of the population allele frequency and 2) Evaluate multiple values of selection using the same set of simulated allele frequency trajectories. We use this program to calculate the expected value of statistics from alleles that have a particular sample allele frequency in the present, such as the pairwise identity-by state lengths surrounding variants that have a particular strength of natural selection acting on them. The program can model any arbitrary demographic scenario. You can also download FoIS from the Bioconda package manager.
 
 ## Plotting scripts
 

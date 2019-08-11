@@ -1,5 +1,4 @@
-setwd("/Users/vicentediegoortegadelvecchyo/Dropbox/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/PlottingScripts")
-
+library(here)
 library(viridis)
 
 FinalTable <- matrix(,ncol=4,nrow=5)

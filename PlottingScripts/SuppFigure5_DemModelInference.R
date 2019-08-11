@@ -1,7 +1,6 @@
 ### One Percenters
 
-setwd("/Users/vicentediegoortegadelvecchyo/Dropbox/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/PlottingScripts")
-
+library(here)
 PriorData <- read.table("../Results/ABCResults/ParametersAndStatistics.txt")
 
 Posterior100 <- read.table("../Results/ABCResults/Best100.txt")

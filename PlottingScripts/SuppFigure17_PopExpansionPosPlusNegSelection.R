@@ -1,7 +1,6 @@
 ############# Plot Boyko plus positive selection
 
-setwd("/Users/vicentediegoortegadelvecchyo/Dropbox/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/PlottingScripts")
-
+library(here)
 library(viridis)
 library(jpeg)
 library(plotrix)

@@ -1,5 +1,4 @@
-setwd("/Users/vicentediegoortegadelvecchyo/Dropbox/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Figures")
-
+library(here)
 library(viridis)
 library(jpeg)
 library(plotrix)
