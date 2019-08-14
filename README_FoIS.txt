@@ -21,20 +21,19 @@ Run using values of SGE_TASK_ID that go from 601-700
 The output of the program are the simulated allele frequency trajectories that end with a certain frequency in the present. Each trajectory has an associated weight.
 
 Options of the FoIS program as stated in the bash scripts:
-A and a are the fitnesses of the derived homozygote and heterozygote genotypes used when going backwards in time. I used 0 for both values in our simulations.
+A and a are the fitnesses of the derived homozygote and heterozygote genotypes used when going backwards in time. I used 0 for both values in all our simulations
 f frequency of the sampled allele frequency in the present
-r number of repetitions
+r number of allele frequency trajectories simulated under the importance sampling framework
 N number of chromosomes in the present
 s random seed
-b Give a bounds file that defines allele frequency trajectories. The program will only report allele frequency changes that go across the bounds.
-D Demographic scenario used.
+b Give a file that defines the bounds between allele frequency trajectories. The program will only report allele frequency changes that go across the bounds. See the ‘Bounds.txt’ file in each directory to see an example
+D Demographic scenario used
 X Selection values that will be evaluated when going forwards in time
-p Number of chromosomes sampled from the present.
+p Number of chromosomes sampled from the present
 
 2) Run mssel (kindly provided by Richard Hudson) and compute L on the simulated trajectories.
 
 cd Scripts/Sims/ConstantPopSize/ImportanceSamplingSims
-SGE_TASK_ID=1
 bash RunMsselCalculateDistance10000.sh
 cd Scripts/Sims/AncientBottleneck/ImportanceSamplingSims
 bash RunMsselCalculateDistance10000.sh
@@ -43,7 +42,6 @@ bash RunMsselCalculateDistance10000.sh
 
 #Run using values of SGE_TASK_ID that go from 1-1000
 
-SGE_TASK_ID=1
 cd Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims
 bash RunMsselCalculateDistanceWithRecombination10000NoSingleton.sh
 
@@ -73,10 +71,10 @@ bash CreateNewP_L_Given_S_Table.sh
 
 The file from Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims/CreateNewP_L_Given_S_Table.sh must be ran from 1-21.
 
+### Continue checking here
 5) Simulate L values using the forward-in-time allele frequency trajectories. You must have already followed the instructions from README_ForwardSims.txt to simulate the trajectories. You must have a ‘ReducedTrajectories10000.txt’ for the demographic scenario and the selection value you want to explore.
 
 cd Scripts/Sims/ConcatenateManyStatisticsScripts/
-SGE_TASK_ID=1
 bash SimulateLDatasetsWithMssel.sh
 
 # Repeat for values of SGE_TASK_ID going from 1-50, 101-151 and 301-351.
@@ -243,26 +241,21 @@ bash GetDFETable.sh
 8) Calculate the log-likelihoods
 
 cd Scripts/Sims/ConstantPopSizeBoyko/ForwardSims/
-SGE_TASK_ID=1
 bash CreateSimTestTableWithLLResultsDenseGridNoRec.sh
 # Run the past script with values going from 1-100 
 cd Scripts/Sims/ConstantPopSizeMouse/ForwardSims/
-SGE_TASK_ID=1
 bash CreateSimTestTableWithLLResultsDenseGridNoRec.sh
 # Run the past script with values going from 1-100 
 cd Scripts/Sims/PopExpansionBoykoPlusPositive/ForwardSims
-SGE_TASK_ID=1
 bash CreateSimTestTableWithLLResultsDenseGridNoRec.sh
 # Run the past script with values going from 1-100 
 cd Scripts/Sims/PopExpansionMousePlusPositive/ForwardSims
-SGE_TASK_ID=1
 bash CreateSimTestTableWithLLResultsDenseGridNoRec.sh
 # Run the past script with values going from 1-100 
 
 9) Get the MLE
 
 cd Scripts/Sims/ConcatenateManyStatisticsScripts/GetMLEDFEs
-SGE_TASK_ID=1
 bash GetMLEDFEs.sh
 
 Run the past script getting the script to take values from 1-17.

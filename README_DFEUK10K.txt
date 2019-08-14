@@ -2,16 +2,16 @@
 
 First, to create the plink files used to calculate the frequencies, use:
 
-cd ScriptsOctober22_2017/DataAnalysis
-SGE_TASK_ID=1
+cd Scripts/DataAnalysis
 bash CreatePlinkFiles.sh
+
 # Run the past script using SGE_TASK_ID values from 1-22
 
 Obtain the frequency per each site in the UK10K individuals that are clearly European according to the UK10K paper:
 
-cd ScriptsOctober22_2017/DataAnalysis/InferDFEWithHapLengths
-SGE_TASK_ID=1
+cd Scripts/DataAnalysis/InferDFEWithHapLengths
 bash CalculateFrequencyPlinkFiles.sh
+
 # Run the past script using SGE_TASK_ID values from 1-22
 
 Add the annotations for each site:
@@ -22,21 +22,69 @@ Then add the ancestral state:
 
 perl AssignAncestralState.pl
 
-Then get the list of missense variants at a particular frequency:
+####### CpG Sites
+#This compares the reference allele of the reference genome hg19 with what
+# the reference allele I got from the 1000 genomes VCF. Things match!
 
-SGE_TASK_ID=1
-bash GetListOfMissenseAllelesAtACertainFrequency.sh
-# Run the past script using SGE_TASK_ID values from 1-22
+perl RefAlleleMapCheck.pl
 
-Then do:
+# We clasified CpG sites using
 
-cat ../../../Data/Plink/MissenseOnePercent{1..22}.frq > ../../../Data/Plink/AllMissenseOnePercent.frq
+for i in {1..22}
+do
+perl RefAlleleCpgAllSites.pl $i
+done
 
-Then execute this for every variant at a one percent frequency to get the L values:
+## Merge Annotations with CpG information
 
-SGE_TASK_ID=1
-CalculateHaplotypeLengths.sh
-# Run the past script using SGE_TASK_ID values from 1-741
+perl MergeAncCpgAnnotation.pl
+
+# Get 1% frequency sites that are not CpGs
+
+qsub -t 1-22 GetListOfMissenseAllelesAtACertainFrequencyCpG.sh
+qsub -t 1-22 GetListOfSynonymousAllelesAtACertainFrequencyCpG.sh
+
+cat ../../../Data/Plink/SynonymousOnePercentCpG{1..22}.frq > ../../../Data/Plink/SynonymousOnePercentCpG.frq
+cat ../../../Data/Plink/MissenseOnePercentCpG{1..22}.frq > ../../../Data/Plink/MissenseOnePercentCpG.frq
+
+# Create Plink file without CpGs
+
+perl CreatePlinkFileWithoutCpGs.pl
+
+## Positions of not CpGs sites files
+
+for i in {1..22}
+do
+echo $i
+awk '{print $4}' ../../../Data/Plink/PlinkNotCpG$i.tped > ../../../Data/Plink/PositionsNotCpG$i.txt
+done
+
+perl PrintCpGPositionsOnePercentFrequency.pl
+
+### Calculate Haplotype lengths not CpG regions
+
+qsub -t 1-183 CalculateHaplotypeLengthsSynonymousOnlyCpG.sh
+qsub -t 1-325 CalculateHaplotypeLengthsOnlyCpG.sh
+
+### GetListOfExonsAwayFromCentromeresTelomeres
+
+perl GetExonsAwayFromCentromereTelomere.pl
+
+#### Count total number of NOT CpG sites
+
+for i in {1..22}
+do
+perl CountCpGSites.pl $i
+done
+
+
+############## Check Recombination maps
+
+perl GetGeneticMapLeftRightPrintMap.pl
+perl GetGeneticMapLeftRightSynonymousPrintMap.pl
+perl GetGeneticMapLeftRightNotCpGPrintMap.pl
+perl GetGeneticMapLeftRightSynonymousNotCpGPrintMap.pl
+
 
 ######### Run ABC algorithm
 
@@ -50,20 +98,19 @@ bash GetListOfSynonymousAllelesAtACertainFrequency.sh
 
 Then do:
 
-cat ../../../Data/Plink/SynonymousOnePercent{1..22}.frq > ../../../Data/Plink/AllSynonymousOnePercent.frq
+cat ../../../Data/Plink/SynonymousOnePercentCpG{1..22}.frq > ../../../Data/Plink/AllSynonymousOnePercentCpG.frq
 
 Then execute this for every variant at a one percent frequency to get the L values for synonymous variants:
 
-SGE_TASK_ID=1
-bash CalculateHaplotypeLengthsSynonymous.sh
-# Run the past script using SGE_TASK_ID values from 1-531
+bash CalculateHaplotypeLengthsSynonymousOnlyCpG.sh
+# Run the past script using SGE_TASK_ID values from 1-183
 
+cd Scripts/DataAnalysis/InferDFEWithHapLengths/ABC_Analysis
 bash CalculateFrequencyByWindowsSynMissense.sh
 
 #### Run ABC pipeline
 
-cd ScriptsOctober22_2017/DataAnalysis/InferDFEWithHapLengths/ABC_Analysis
-SGE_TASK_ID=1
+cd Scripts/DataAnalysis/InferDFEWithHapLengths/ABC_Analysis
 bash ABCDemographyAnalysis.sh
 # Run the past script using SGE_TASK_ID values from 1-500
 
@@ -74,7 +121,6 @@ perl CalculateMismatchStatistic.pl
 bash ConcatenateMismatchStatisticAndLDistances.sh
 
 ## Do simulations using the point estimates from the posterior distribution of the demographic parameters
-SGE_TASK_ID=1
 bash ReplicationOfBestABCParameters.sh
 # Run the past script using SGE_TASK_ID values from 1-100
 
@@ -83,30 +129,64 @@ perl CalculateMismatchStatisticSimsReplicates.pl
 
 #### Forward in time simulations
 
-Check README_ForwardSims.txt and README_FoIS.txt for information on how we did the forward-in-time allele frequency simulations shown in Figure 10
+Check README_ForwardSims.txt and README_FoIS.txt for information on how we did the forward-in-time allele frequency simulations shown in Figure 8
 
 #### Get DFEs that will be used in analysis
 
-cd ScriptsOctober22_2017/Sims/UK10K_OnePercenters/ImportanceSamplingSims/
+cd Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims/
 Run CreationOfDiscreteDistribution50.R to get the probabilities for each 2Ns value in each distribution of fitness effects.
 bash GetDFETable.sh
+
+#### Get max likelihood value from data
+
+cd Scripts/Sims/UK10K_OnePercenters/ForwardSims
+bash CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableDFE.sh
+sort -nrk2,2 ../../../../Results/UK10K_OnePercenters/ForwardSims/LLDataDFE.txt | head
 
 #### DFE bootstrap analysis
 
 Get Bootstrap replicates and calculate L
-cd ScriptsOctober22_2017/Sims/UK10K_OnePercenters/ForwardSims/
+cd Scripts/Sims/UK10K_OnePercenters/ForwardSims/
 SGE_TASK_ID=1
 bash CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableDFEBootstrap.sh
 # Run the past command with SGE_TASK_ID values going from 1-100.
 
 ### Get the maximum likelihood estimator
+
 perl GetMax4NsValueDFEBootstrap.pl
-
-
-sort -nrk2,2 ../../../../Results/UK10K_OnePercenters/ForwardSims/LLDataDFE.txt | head
 
 #### Print s values at a particular frequency
 
-cd ScriptsOctober22_2017/Scripts/Sims/ConcatenateManyStatisticsScripts
+cd Scripts/Scripts/Sims/ConcatenateManyStatisticsScripts
 bash PrintSValuesAtParticularFrequency.sh
 
+############################################################################################################################################################
+
+
+### Simulations tests
+
+cd Sims/UK10K_OnePercenters/ForwardSims
+bash Expansion_DFEHighPop.sh
+### Run the past command with SGE_TASK_ID values going from 1-100.
+
+bash Expansion_DFE.sh
+### Run the past command with SGE_TASK_ID values going from 1-100.
+
+### Create the reduced trajectories file
+bash CreateReducedTrajectories.sh
+
+### Create mssel files
+bash RunMssel_DFEHighPop.sh
+bash RunMssel_DFE.sh
+### Run the past commands with SGE_TASK_ID values going from 1-100.
+
+### Run the next scripts
+bash CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableDFEHighPopAnotherSims.sh
+bash CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableDFEHighPopSims.sh
+bash CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableDFESims.sh
+bash CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableDFEAnotherSims.sh
+### Run the past commands with SGE_TASK_ID values going from 1-100.
+
+### Run the following commands
+perl GetMax4NsValueSimsLargerSpaceDFE.pl
+perl GetMax4NsValueSimsLargerSpaceHighPopDFE.pl

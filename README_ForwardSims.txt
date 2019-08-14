@@ -27,7 +27,6 @@ mkdir ../../../../Results/ConstantPopSize/ForwardSims/4Ns_50
 mkdir ../../../../Results/ConstantPopSize/ForwardSims/4Ns_100
 mkdir ../../../../Results/ConstantPopSize/ForwardSims/4Ns_-50
 mkdir ../../../../Results/ConstantPopSize/ForwardSims/4Ns_-100
-SGE_TASK_ID=1
 bash ConstantSize_4Ns0.sh
 bash ConstantSize_4Ns50.sh
 bash ConstantSize_4Ns100.sh

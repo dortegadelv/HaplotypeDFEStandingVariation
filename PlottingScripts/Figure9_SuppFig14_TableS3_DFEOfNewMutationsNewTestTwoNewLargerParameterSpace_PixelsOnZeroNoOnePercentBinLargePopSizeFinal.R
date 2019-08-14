@@ -194,7 +194,7 @@ axis (2,at=c(0+0.01, 1+0.01, 2+0.01, 3+0.01), labels = c(0,10^-2,10^-1,10^0))
 #################################################################################### Upper and lower 5% quantile
 
 DFESelection <- read.table("../Results/ResultsSelectionInferred/SelectionLargerSpaceBootstrapUK10KDFETest.txt")
-DFEPars <- read.table ("../ScriptsOctober22_2017/Sims/UK10K_OnePercenters/ImportanceSamplingSims/AnotherDFETableOfProbabilities.txt")
+DFEPars <- read.table ("../Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims/AnotherDFETableOfProbabilities.txt")
 
 MatrixProbs <- c()
 MatrixP_Allele_Is_2Ns_given_OnePercent <- c()
@@ -493,7 +493,7 @@ ViridisColors <- viridis(4, alpha = 0.7)
 #################################################################################### Upper and lower 5% quantile
 
 DFESelection <- read.table("../Results/ResultsSelectionInferred/SelectionLargerSpaceBootstrapUK10KDFETest.txt")
-DFEPars <- read.table ("../ScriptsOctober22_2017/Sims/UK10K_OnePercenters/ImportanceSamplingSims/AnotherDFETableOfProbabilities.txt")
+DFEPars <- read.table ("../Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims/AnotherDFETableOfProbabilities.txt")
 
 MatrixProbs <- c()
 MatrixP_Allele_Is_2Ns_given_OnePercent <- c()
@@ -805,7 +805,7 @@ axis (2,at=c(0+0.01, 0.25+0.01, 0.5+0.01, 0.75 + 0.01, 1+0.01), labels = c(0, 0.
 #################################################################################### Upper and lower 5% quantile
 
 DFESelection <- read.table("../Results/ResultsSelectionInferred/SelectionLargerSpaceBootstrapUK10KDFETest.txt")
-DFEPars <- read.table ("../ScriptsOctober22_2017/Sims/UK10K_OnePercenters/ImportanceSamplingSims/AnotherDFETableOfProbabilities.txt")
+DFEPars <- read.table ("../Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims/AnotherDFETableOfProbabilities.txt")
 
 MatrixProbs <- c()
 MatrixP_Allele_Is_2Ns_given_OnePercent <- c()
