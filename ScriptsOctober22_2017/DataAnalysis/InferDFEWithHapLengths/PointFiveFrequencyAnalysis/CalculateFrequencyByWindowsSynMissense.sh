@@ -1,1 +1,0 @@
-perl CalculateFrequencyByWindowsSynMissense.pl TestWindowBounds.txt Unimportant.txt LDistribution.txt

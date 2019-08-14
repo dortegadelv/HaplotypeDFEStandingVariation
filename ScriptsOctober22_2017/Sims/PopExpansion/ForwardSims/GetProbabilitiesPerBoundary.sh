@@ -1,4 +1,0 @@
-perl GetProbabilitiesPerBoundary.pl TestData/run.2/HapLengthNoRecN10000_ 100 500000 /u/home/d/diegoort/klohmueldata/diego_data/OldGeneralDirectory/project/PurifyingSelectionProject/SISR_January6_2013/TemporalCode/SingleTrajectoryPij_23July2014/TestT2Bounds.txt TestData/run.2/FrequencyMssel.txt
-perl GetProbabilitiesPerBoundary.pl TestData/run.2/HapLength_mbs_NoRecN10000_ 100 500000 /u/home/d/diegoort/klohmueldata/diego_data/OldGeneralDirectory/project/PurifyingSelectionProject/SISR_January6_2013/TemporalCode/SingleTrajectoryPij_23July2014/TestT2Bounds.txt TestData/run.2/Frequencymbs.txt
-perl GetProbabilitiesPerBoundary.pl TestData/run.2/HapLength_mbs_NoRecN10000_ 1 500000 /u/home/d/diegoort/klohmueldata/diego_data/OldGeneralDirectory/project/PurifyingSelectionProject/SISR_January6_2013/TemporalCode/SingleTrajectoryPij_23July2014/TestT2Bounds.txt TestData/run.2/FrequencyTestmbs.txt
-
