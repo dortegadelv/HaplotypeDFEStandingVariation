@@ -27,7 +27,8 @@ r number of allele frequency trajectories simulated under the importance samplin
 N number of chromosomes in the present
 s random seed
 b Give a file that defines the bounds between allele frequency trajectories. The program will only report allele frequency changes that go across the bounds. See the ‘Bounds.txt’ file in each directory to see an example
-D Demographic scenario used
+D Demographic scenario used. This follows the syntax from ms. Check Scripts/Sims/PopExpansion/ImportanceSamplingSims/DemHistExpansion.txt for an example. We report the following each line:
+- eN refers to a change in population size (only option available at the moment). The next number refers to the time in a scale of 4N0 generations from the present to the past. The next number is a factor that states the change in population size with respect to the present day population. The next number should be set to zero.
 X Selection values that will be evaluated when going forwards in time
 p Number of chromosomes sampled from the present
 
