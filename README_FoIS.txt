@@ -1,3 +1,8 @@
+0) Compile FoIS, the program that does the importance sampling routine.
+
+cd /Programs/ISProgram
+g++ -o FoIS FoIS.cpp prob.cpp -lm
+
 1) Run FoIS.
 
 After compiling FoIS, go to these directories and run FoIS on each of the four demographic scenarios.
