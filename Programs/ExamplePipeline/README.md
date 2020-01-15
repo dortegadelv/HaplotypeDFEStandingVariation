@@ -40,7 +40,9 @@ cd ISProgram
 
 g++ -o FoIS FoIS.cpp prob.cpp -lm
 
-1) To run the step 1, you can run the following bash script by providing the following parameters.
+## 1) Simulation of pairwise identity by state lengths, L, values
+
+To run the step 1, you can run the following bash script by providing the following parameters.
 
 bash CreateManyFrequencyTrajectories.sh <PReFerSimParameterFile1> <PReFerSimParameterFile2> <Identifier> <AlleleFrequencyDown> <AlleleFrequencyUp> <NumberOfHaplotypesWithTheDerivedAllele> <NumberOfIndependentVariants> <DemographicScenarioFile> <ThetaHaplotype> <RhoHaplotype> <NumberOfSites>
 
@@ -92,7 +94,9 @@ The past three scripts contain comments with further instructions on the command
 
 Note that you can modify the files <PReFerSimParameterFile1> and <PReFerSimParameterFile1> to simulate alleles evolving under a different selection coefficient or a particular distribution of fitness effects.
 
-2) To run step 2, use the script SimulateUsingISRoutine.sh
+## 2) Generate the table that computes the likelihoods of L(4Ns, allele frequency, Demographic scenario | L) for a single selection coefficient 4Ns (see equation 2 from our paper)
+
+To run step 2, use the script SimulateUsingISRoutine.sh
 
 bash SimulateUsingISRoutine.sh <HomozygoteFitness> <HeterozygoteFitness> <PresentDayAlleleFrequency> <Replicates> <PresentDayChromosomes> <Identifier> <DemScenario> <SelValuesForwardFile> <SampleSize>
 
@@ -160,7 +164,7 @@ perl EstimateESS.pl ../Results/Exit.txtWeightYears.txt
 
 This will create a file called FinalStats.txt . In this file, you will see the ESS's printed in the first columns for each value of selection as given in the table provided by the variable SelectionValuesToEvaluate. Then you will see the expected allele ages followed by the standard deviation of the allele ages.
 
-3) Generate a table that computes the likelihoods of L(alpha, gamma, allele frequency, Demographic scenario | L) for two parameters alpha and gamma of a partially collapsed gamma distribution
+## 3) Generate a table that computes the likelihoods of L(alpha, gamma, allele frequency, Demographic scenario | L) for two parameters alpha and gamma of a partially collapsed gamma distribution
 
 Run the script CreateDiscreteDFE.sh after going through step 2):
 
@@ -173,7 +177,7 @@ GammaGrid <- 5*1:70
 
 And put the values you wish to explore. Also, currently the threshold 4Ns is equal to 300 (check equation 3 from the paper). If you want to change that, modify the variable UpperThreshold appearing at the top of the script. The integration over the the 4Ns values is done over the integer values of 4Ns (0, 1, 2, ... etc up to the value of the UpperThreshold).
 
-4) Compute the maximum likelihood estimate of either a) the single selection coefficient 4Ns or b) the two parameters alpha and beta.
+## 4) Compute the maximum likelihood estimate of either a) the single selection coefficient 4Ns or b) the two parameters alpha and beta.
 
 bash CalculateLLSingleSValue.sh <NumberOfIdentifiers> <SelectionValuesToEvaluate>
 
@@ -192,7 +196,7 @@ bash CalculateLLDFE.sh <NumberOfIdentifiers> <SelectionValuesToEvaluate>
 
 bash CalculateLLDFE.sh 1 ../TableDFE/AnotherExtraTableOfProbabilities.txt
 
-5) Estimate the DFE from DFEf.
+## 5) Estimate the DFE from DFEf.
 
 If you have an estimate of the DFEf based on the parameters alpha and gamma estimated in 3), you can obtain an estimate of the DFE. To do that, you need to have an estimate of the proportion of alelles at a certain frequency given a certain demographic history including fixations and extinctions over a certain time-span determined by the analyzed demographic history (see equation 4 from our main text). This would be equal to the variable P_F_Given_D. In simulations and in real data this would be equal to the number of variants observed at a certain frequency divided by the total number of variants observed in the demographic history under study. To make things more concrete, let's say you observe 100 variants at a frequency of 0.01 in the present. Then, let's say that you are looking at an scenario of a population expansion, where the number of chromosomes is equal to 10,000 for 80,000 generations and then it is equal to 100,000 chromosomes for 100 generations. If the average number of new mutations in the first epoch is equal to 200, then an estimate of the average new number of mutations is equal to 200*80,000 + (100000/10000)*100 = 16001000 and, therefore the estimate of P_F_Given_D = 100/16001000 = 6.25e-06 . Note that both P_F_Given_D and P_F_given_sj_and_D are equally dependent on the same demographic history, and the ratio of P_F_Given_D / P_F_given_sj_and_D will remain the same if the demographic history goes further back in the time in the most ancestral epoch.
 
@@ -233,7 +237,7 @@ NumberAllelesSimulatedInDemHistory - This is the total number of alleles that we
 FourNsIntervalLength - This is the length of each of the 4Ns intervals inspected.
 FourNsIntervalNumber - How many 4Ns were inspected. The first interval inspected goes from 4Ns = 0 to 4Ns = FourNsIntervalLength, the second interval goes from 4Ns = FourNsIntervalLength to 4Ns = 2*FourNsIntervalLength
 
-6) Calculate L and mean recombination rate from genomic data
+## 6) Calculate L and mean recombination rate from genomic data
 
 The start point are three files: Plink tped and a Plink tfam file where the information has been phased. We also assume that you have a file with the frequency of the low-frequency derived alleles.
 
@@ -251,7 +255,7 @@ perl GetGeneticMapLeftRightPrintMap.pl <Bound> <FrequencyFilePrefix> <MapFilePre
 
 perl GetGeneticMapLeftRightPrintMap.pl 250000 MissenseOnePercent maps_chr. 1
 
-7) ABC algorithm to estimate the demographic history
+## 7) ABC algorithm to estimate the demographic history
 
 A demographic model must be specified when analyzing genomic data to infer DFEf or the strength of selection acting on the nonsynonymous variants at a certain frequency in the population (steps 2-4). We used an ABC algorithm to infer the demographic model based on the L values found on the synonymous variants. To do that, we run the following scripts in consecutive order:
 
