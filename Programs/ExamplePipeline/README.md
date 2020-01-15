@@ -110,7 +110,7 @@ Note that you can modify the files PReFerSimParameterFile1 and PReFerSimParamete
 
 ## 2) Generate the table that computes the likelihoods of L(4Ns, allele frequency, Demographic scenario | L) for a single selection coefficient 4Ns (see equation 2 from our paper)
 
-To run step 2, use the script SimulateUsingISRoutine.sh
+The likelihood table will be generated using an importance sampling approach. To run step 2, use the script SimulateUsingISRoutine.sh
 
 bash SimulateUsingISRoutine.sh HomozygoteFitness HeterozygoteFitness PresentDayAlleleFrequency Replicates PresentDayChromosomes Identifier DemScenario SelValuesForwardFile SampleSize
 
