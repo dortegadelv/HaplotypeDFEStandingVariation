@@ -1,0 +1,16 @@
+MutationRate  100.0 
+DFEType: 	point
+DFEPointSelectionCoefficient:	 0.0
+DemographicHistory:         ../Results/ConstantSizeDemHist1.txt
+PrintSNPNumber:   0
+PrintSumOfS: 0
+PrintSumDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 1
+n: 7242
+FilePrefix: ../Results/PReFerSimOutput1.txt
