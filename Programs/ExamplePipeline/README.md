@@ -127,7 +127,7 @@ Identifier - A number to give to the script. Can be changed in case the user wan
 
 DemScenario - This follows the syntax from PReFerSim to get demographic histories.  This should match what you simulated on step 1.
 
-SelValuesForwardFile - File with the selection values that will be evaluated when going forwards in time
+SelValuesForwardFile - File with the selection values that will be evaluated when going forwards in time. There should be one selection coefficient per row.
 
 SampleSize - Number of chromosomes sampled from the present. This should match what you simulated on step 1.
 
@@ -135,9 +135,10 @@ Example of how to run the script:
 
 bash SimulateUsingISRoutine.sh 0.0 0.0 0.01 1000 100000 1 PopulationExpansionModel.txt NewSelectionValues.txt 4000
 
-That scripts runs an importance sampling method based on a paper by Monty Slatkin (2001, Genetics Research) to simulate a set of allele frequency trajectories from genetic variants evolving under a particular strength of natural selection. More details can be found in our paper. I recommend running the past script with many 'Identifier' numbers many times until you get 100,000 trajectories going backwards in time. You need to start from the 'Identifier' number 1 and then go up in consecutive order  To check the number of allele frequency trajectories you have created run these two commands:
+That scripts runs an importance sampling method based on a paper by Monty Slatkin (2001, Genetics Research) to simulate a set of allele frequency trajectories from genetic variants evolving under a particular strength of natural selection. More details can be found in our paper. I recommend running the past script with many 'Identifier' numbers many times until you get 100,000 trajectories going backwards in time. You need to start from the 'Identifier' number 1 and then go up in consecutive order. To check the number of allele frequency trajectories you have created run these two commands:
 
 Traj=$( wc -l ../Results/ImportanceSamplingSims_*.txtWeightYears.txt | tail -n1 | awk '{print $1}' )
+
 echo $Traj
 
 To reduce computing time and disk space, only changes in allele frequency across a set of pre-specified boundaries are tracked, those boundaries can be found in the file ExamplePipeline/ISProgram/Bounds.txt . The boundaries in that file should match the boundaries in ExamplePipeline/Mssel/freqints.h
@@ -180,11 +181,15 @@ SimsPerTrajectory - Number of coalescent simulations that will be done for each 
 
 NumberOfHaplotypesWithTheDerivedAllele - For every coalescent simulation, this will be this number of haplotypes with the derived allele.  This should match what you simulated on step 1.
 
-bash RunMsselCalculateDistance.sh 600 500 1 PopulationExpansionModel.txt 1000 250000 10 40
+bash RunMsselCalculateDistance.sh 600 500 1 PopulationExpansionModel.txt 250000 1000 10 40
 
 Then, we create the P(L|s) table using the following script:
 
 bash CreateNewP_L_Given_S_Table.sh NumberOfIdentifiers
+
+If you did simulations using a single identifier number this should be:
+
+bash CreateNewP_L_Given_S_Table.sh 1
 
 Where NumberOfIdentifiers must match the number of times you ran SimulateUsingISRoutine.sh and RunMsselCalculateDistance.sh starting from 1.
 
