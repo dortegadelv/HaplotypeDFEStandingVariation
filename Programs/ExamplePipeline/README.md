@@ -16,18 +16,26 @@ And an example of our ABC algorithm to estimate demographic history:
 7) ABC algorithm to estimate the demographic history
 
 
-0) Prerequisites
+## Step 0)  Prerequisites
 
 You need to compile the following programs. Some programs require the gsl library. More information on how to install it can be found in the PReFerSim manual at https://github.com/LohmuellerLab/PReFerSim
 
 cd PReFerSim
+
 gcc -g -o PReFerSim PReFerSim.c -lm -lgsl -lgslcblas -O3
+
 cd ..
+
 cd Mssel
+
 gcc -O3 -o stepftn stepftn.c -lm
+
 gcc -O2 -o mssel3  mssel3.c  rand1.c streecsel.c -lm
+
 cd ..
+
 cd ISProgram
+
 g++ -o FoIS FoIS.cpp prob.cpp -lm
 
 1) To run the step 1, you can run the following bash script by providing the following parameters.
