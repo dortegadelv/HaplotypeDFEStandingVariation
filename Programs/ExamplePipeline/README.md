@@ -44,7 +44,7 @@ g++ -o FoIS FoIS.cpp prob.cpp -lm
 
 To run the step 1, you can run the following bash script by providing the following parameters.
 
-bash CreateManyFrequencyTrajectories.sh <PReFerSimParameterFile1> <PReFerSimParameterFile2> <Identifier> <AlleleFrequencyDown> <AlleleFrequencyUp> <NumberOfHaplotypesWithTheDerivedAllele> <NumberOfIndependentVariants> <DemographicScenarioFile> <ThetaHaplotype> <RhoHaplotype> <NumberOfSites>
+bash CreateManyFrequencyTrajectories.sh PReFerSimParameterFile1 PReFerSimParameterFile2 Identifier AlleleFrequencyDown AlleleFrequencyUp NumberOfHaplotypesWithTheDerivedAllele NumberOfIndependentVariants DemographicScenarioFile ThetaHaplotype RhoHaplotype NumberOfSites
 
 where:
 PReFerSimParameterFile1.- Contains the parameters to run the forward-in-time simulator PReFerSim to get a list of alleles that end inside a certain frequency interval where the distribution of selective coefficients of the simulated alleles is a point value or follows a different probability distribution.
@@ -85,7 +85,7 @@ bash ConcatenateAlleleFrequencyTrajectories.sh ParameterFile_4Ns10.txt Parameter
 
 Script structure: 
 
-bash ConcatenateAlleleFrequencyTrajectories.sh <PReFerSimParameterFile1> <PReFerSimParameterFile2> <Identifier> <AlleleFrequencyDown> <AlleleFrequencyUp> <NumberOfHaplotypesWithTheDerivedAllele> <NumberOfIndependentVariants> <DemographicScenario> <ThetaHaplotype> <RhoHaplotype> <NumberOfSites>
+bash ConcatenateAlleleFrequencyTrajectories.sh PReFerSimParameterFile1 PReFerSimParameterFile2 Identifier AlleleFrequencyDown AlleleFrequencyUp NumberOfHaplotypesWithTheDerivedAllele NumberOfIndependentVariants DemographicScenario ThetaHaplotype RhoHaplotype NumberOfSites
 
 The options are identical to the ones given to the script CreateManyFrequencyTrajectories.sh to keep consistency. The variable Identifier is not used since the script will read all the trajectories in the Results/ folder without taking into account the differences in the Identifier number.
 This will create a file with all the trajectories generated with CreateManyFrequencyTrajectories.sh. The output is a large file called "../Results/ReducedTrajectories.txt". The allele frequency trajectories from "../Results/ReducedTrajectories.txt" do not track the allele frequency every SINGLE generation. To reduce computing time and disk space, only changes in allele frequency across a set of pre-specified boundaries are tracked, those boundaries can be found in ExamplePipeline/Mssel/freqints.h . If you want to change the boundaries, modify that file and recompile using:
@@ -98,13 +98,13 @@ Finally run the following script to simulate haplotypes and compute the L values
 bash SimulateL.sh ParameterFile_4Ns10.txt ParameterFile_4Ns10_B.txt 1 0.009999999 0.010000001 40 10 PopulationExpansionModel.txt 600 500 250000
 
 Script structure:
-bash SimulateL.sh <PReFerSimParameterFile1> <PReFerSimParameterFile2> <Identifier> <AlleleFrequencyDown> <AlleleFrequencyUp> <NumberOfHaplotypesWithTheDerivedAllele> <NumberOfIndependentVariants> <DemographicScenario> <ThetaHaplotype> <RhoHaplotype> <NumberOfSites>
+bash SimulateL.sh PReFerSimParameterFile1 PReFerSimParameterFile2 Identifier AlleleFrequencyDown AlleleFrequencyUp NumberOfHaplotypesWithTheDerivedAllele NumberOfIndependentVariants DemographicScenario ThetaHaplotype RhoHaplotype NumberOfSites
 
 With that command line the output will be printed in the folder Results/HapLengths1.txt . The output file will contain the L values. Some L values printed will be equal to 2.0. That happens when there is no difference between a pair of haplotypes sampled. Other L values will have values between 0 and 1, where the values of L in number of bases is equal to the printed value times the value assigned to the variable NumberOfSites.
 
 The past three scripts contain comments with further instructions on the commands used to run the scripts.
 
-Note that you can modify the files <PReFerSimParameterFile1> and <PReFerSimParameterFile1> to simulate alleles evolving under a different selection coefficient or a particular distribution of fitness effects.
+Note that you can modify the files PReFerSimParameterFile1 and PReFerSimParameterFile1 to simulate alleles evolving under a different point selection coefficient or a particular distribution of fitness effects. There are more instructions on how to do this in the PReFerSim manual.
 
 ## 2) Generate the table that computes the likelihoods of L(4Ns, allele frequency, Demographic scenario | L) for a single selection coefficient 4Ns (see equation 2 from our paper)
 
