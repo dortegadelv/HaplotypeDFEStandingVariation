@@ -3,7 +3,7 @@
 The following steps can be used to compute the DFE from a set of L values:
 
 0) Prerequisites
-1) Simulate many forward in time allele frequency trajectories of a derived allele evolving under the Wright-Fisher model with selection (CreateManyFrequencyTrajectories.sh), concatenate those trajectories (ConcatenateAlleleFrequencyTrajectories.sh) and use that collection of allele frequency trajectories to simulate haplotypic data that will be used to estimate the pairwise identity by state lengths L (SimulateL.sh).
+1) Simulate a set of pairwise identity by state lengths L that have a certain distribution of selection coefficients (can be a probability distribution or a point estimate) from alleles that have a certain frequency f in the present.
 2) Generate the table that computes the likelihoods of L(4Ns, allele frequency, Demographic scenario | L) for a single selection coefficient 4Ns (see equation 2 from our paper)
 3) Generate a table that computes the likelihoods of L(alpha, beta, allele frequency, Demographic scenario | L) for two parameters alpha and beta of a partially collapsed gamma distribution (see equation 3 from our paper).
 4) Use the L values to compute the maximum likelihood estimate of either a) the single selection coefficient 4Ns or b) the two parameters alpha and beta.
@@ -106,7 +106,7 @@ With that command line the output will be printed in the folder Results/HapLengt
 
 The past three scripts contain comments with further instructions on the commands used to run the scripts.
 
-Note that you can modify the files PReFerSimParameterFile1 and PReFerSimParameterFile1 to simulate alleles evolving under a different point selection coefficient or a particular distribution of fitness effects. There are more instructions on how to do this in the PReFerSim manual.
+Note that you can modify the files PReFerSimParameterFile1 and PReFerSimParameterFile2 to simulate alleles evolving under a different point selection coefficient or a particular distribution of fitness effects. There are more instructions on how to do this in the PReFerSim manual.
 
 ## 2) Generate the table that computes the likelihoods of L(4Ns, allele frequency, Demographic scenario | L) for a single selection coefficient 4Ns (see equation 2 from our paper)
 
