@@ -91,6 +91,7 @@ The options are identical to the ones given to the script CreateManyFrequencyTra
 This will create a file with all the trajectories generated with CreateManyFrequencyTrajectories.sh. The output is a large file called "../Results/ReducedTrajectories.txt". The allele frequency trajectories from "../Results/ReducedTrajectories.txt" do not track the allele frequency every SINGLE generation. To reduce computing time and disk space, only changes in allele frequency across a set of pre-specified boundaries are tracked, those boundaries can be found in ExamplePipeline/Mssel/freqints.h . If you want to change the boundaries, modify that file and recompile using:
 
 cd Mssel
+
 gcc -O3 -o stepftn stepftn.c -lm
 
 Finally run the following script to simulate haplotypes and compute the L values from the collection of allele frequency trajectories. The allele frequency trajectories will be sampled with replacement from the file ../Results/ReducedTrajectories.txt :
@@ -98,6 +99,7 @@ Finally run the following script to simulate haplotypes and compute the L values
 bash SimulateL.sh ParameterFile_4Ns10.txt ParameterFile_4Ns10_B.txt 1 0.009999999 0.010000001 40 10 PopulationExpansionModel.txt 600 500 250000
 
 Script structure:
+
 bash SimulateL.sh PReFerSimParameterFile1 PReFerSimParameterFile2 Identifier AlleleFrequencyDown AlleleFrequencyUp NumberOfHaplotypesWithTheDerivedAllele NumberOfIndependentVariants DemographicScenario ThetaHaplotype RhoHaplotype NumberOfSites
 
 With that command line the output will be printed in the folder Results/HapLengths1.txt . The output file will contain the L values. Some L values printed will be equal to 2.0. That happens when there is no difference between a pair of haplotypes sampled. Other L values will have values between 0 and 1, where the values of L in number of bases is equal to the printed value times the value assigned to the variable NumberOfSites.
