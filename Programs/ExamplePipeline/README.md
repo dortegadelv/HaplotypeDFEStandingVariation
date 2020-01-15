@@ -47,11 +47,11 @@ To run the step 1, you can run the following bash script by providing the follow
 bash CreateManyFrequencyTrajectories.sh <PReFerSimParameterFile1> <PReFerSimParameterFile2> <Identifier> <AlleleFrequencyDown> <AlleleFrequencyUp> <NumberOfHaplotypesWithTheDerivedAllele> <NumberOfIndependentVariants> <DemographicScenarioFile> <ThetaHaplotype> <RhoHaplotype> <NumberOfSites>
 
 where:
-PReFerSimParameterFile1.- Contains the parameters to run the forward-in-time simulator PReFerSim to get a list of alleles that end at a certain frequency interval where their distribution of selective coefficients is a point value or follows a different probability distribution.
+PReFerSimParameterFile1.- Contains the parameters to run the forward-in-time simulator PReFerSim to get a list of alleles that end inside a certain frequency interval where the distribution of selective coefficients of the simulated alleles is a point value or follows a different probability distribution.
 
 PReFerSimParameterFile2.- It is almost the same file as PReFerSimParameterFile1, but it contains two extra options at the bottom that specify the list of alleles whose frequency trajectory you will print, and the output file with the frequency trajectory of those alleles. More information on the options of the parameter files can be found in the PReFerSim manual at https://github.com/LohmuellerLab/PReFerSim
 
-Identifier - A number to give to the script. Can be changed in case the user wants to run the same parameter many times and get a different output with a different identifier every time. Also a random seed.
+Identifier - A number to give to the script. Can be changed in case the user wants to run the same parameter files PReFerSimParameterFile1 and PReFerSimParameterFile2 many times and get a different output with a different identifier every time. Also a random seed.
 
 AlleleFrequencyDown - The program will print the L values for alleles that have a frequency in the present that is bounded by two numbers. This is the lower bound.
 
@@ -63,9 +63,9 @@ NumberOfIndependentVariants - How many independent variants will be printed. The
 
 DemographicScenario - A file containing the demographic scenario simulated. This follows the structure of the demographic scenario specified in the PReFerSim manual. Make sure that this file is also read by PReFerSimParameterFile1 and PReFerSimParameterFile2.
 
-ThetaHaplotype - Theta of the whole haplotype simulated. Note that the variant of interest sits on one end of the haplotype and the L values are the distances from the variant of interest to the first difference between a pair of haplotypes.
+ThetaHaplotype - Theta (4Nub = 4 * Population size in the present * mutation rate per base pair * number of bases) of the whole haplotype simulated. Note that the variant of interest sits on one end of the haplotype and the L values are the distances from the variant of interest to the first difference between a pair of haplotypes.
 
-RhoHaplotype - Rho of the whole haplotype simulated.
+RhoHaplotype - Rho (4Nub = 4 * Population size in the present * recombination rate per base pair * number of bases) of the whole haplotype simulated.
 
 NumberOfSites - Number of sites in the haplotype.
 
