@@ -6,7 +6,7 @@ The following steps can be used to compute the DFE from a set of L values:
 1) Simulate many forward in time allele frequency trajectories of a derived allele evolving under the Wright-Fisher model with selection (CreateManyFrequencyTrajectories.sh), concatenate those trajectories (ConcatenateAlleleFrequencyTrajectories.sh) and use that collection of allele frequency trajectories to simulate haplotypic data that will be used to estimate the pairwise identity by state lengths L (SimulateL.sh).
 2) Generate the table that computes the likelihoods of L(4Ns, allele frequency, Demographic scenario | L) for a single selection coefficient 4Ns (see equation 2 from our paper)
 3) Generate a table that computes the likelihoods of L(alpha, beta, allele frequency, Demographic scenario | L) for two parameters alpha and beta of a partially collapsed gamma distribution (see equation 3 from our paper).
-4) Compute the maximum likelihood estimate of either a) the single selection coefficient 4Ns or b) the two parameters alpha and beta.
+4) Use the L values to compute the maximum likelihood estimate of either a) the single selection coefficient 4Ns or b) the two parameters alpha and beta.
 5) Estimate the DFE from DFEf
 
 We also provide the following scripts to calculate L:
@@ -84,6 +84,7 @@ Then, run the script ConcatenateAlleleFrequencyTrajectories.sh to concatenate th
 bash ConcatenateAlleleFrequencyTrajectories.sh ParameterFile_4Ns10.txt ParameterFile_4Ns10_B.txt 1 0.009999999 0.010000001 40 10 PopulationExpansionModel.txt 600 500 250000
 
 Script structure: 
+
 bash ConcatenateAlleleFrequencyTrajectories.sh <PReFerSimParameterFile1> <PReFerSimParameterFile2> <Identifier> <AlleleFrequencyDown> <AlleleFrequencyUp> <NumberOfHaplotypesWithTheDerivedAllele> <NumberOfIndependentVariants> <DemographicScenario> <ThetaHaplotype> <RhoHaplotype> <NumberOfSites>
 
 The options are identical to the ones given to the script CreateManyFrequencyTrajectories.sh to keep consistency. The variable Identifier is not used since the script will read all the trajectories in the Results/ folder without taking into account the differences in the Identifier number.
