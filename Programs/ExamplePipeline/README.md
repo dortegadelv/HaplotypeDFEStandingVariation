@@ -1,4 +1,6 @@
-The example pipeline is composed of five different steps:
+## Example pipeline
+
+The following steps can be used to compute the DFE from a set of L values:
 
 0) Prerequisites
 1) Simulate many forward in time allele frequency trajectories of a derived allele evolving under the Wright-Fisher model with selection (CreateManyFrequencyTrajectories.sh), concatenate those trajectories (ConcatenateAlleleFrequencyTrajectories.sh) and use that collection of allele frequency trajectories to simulate haplotypic data that will be used to estimate the pairwise identity by state lengths L (SimulateL.sh).
@@ -16,7 +18,7 @@ And an example of our ABC algorithm to estimate demographic history:
 7) ABC algorithm to estimate the demographic history
 
 
-## Step 0)  Prerequisites
+## Step 0) Prerequisites
 
 You need to compile the following programs. Some programs require the gsl library. More information on how to install it can be found in the PReFerSim manual at https://github.com/LohmuellerLab/PReFerSim
 
