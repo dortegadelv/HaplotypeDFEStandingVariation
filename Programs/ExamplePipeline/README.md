@@ -90,13 +90,13 @@ Script structure:
 `bash ConcatenateAlleleFrequencyTrajectories.sh PReFerSimParameterFile1 PReFerSimParameterFile2 Identifier AlleleFrequencyDown AlleleFrequencyUp NumberOfHaplotypesWithTheDerivedAllele NumberOfIndependentVariants DemographicScenario ThetaHaplotype RhoHaplotype NumberOfSites`
 
 The options are identical to the ones given to the script CreateManyFrequencyTrajectories.sh to keep consistency. The variable Identifier is not used since the script will read all the trajectories in the Results/ folder without taking into account the differences in the Identifier number.
-This will create a file with all the trajectories generated with CreateManyFrequencyTrajectories.sh. The output is a large file called "../Results/ReducedTrajectories.txt". The allele frequency trajectories from "../Results/ReducedTrajectories.txt" do not track the allele frequency every SINGLE generation. To reduce computing time and disk space, only changes in allele frequency across a set of pre-specified boundaries are tracked, those boundaries can be found in ExamplePipeline/Mssel/freqints.h . If you want to change the boundaries, modify that file and recompile using:
+This will create a file with all the trajectories generated with CreateManyFrequencyTrajectories.sh. The output is a large file called "Results/ReducedTrajectories.txt". The allele frequency trajectories from "Results/ReducedTrajectories.txt" do not track the allele frequency every SINGLE generation. To reduce computing time and disk space, only changes in allele frequency across a set of pre-specified boundaries are tracked, those boundaries can be found in ExamplePipeline/Mssel/freqints.h . If you want to change the boundaries, modify that file and recompile using:
 
 `cd Mssel`
 
 `gcc -O3 -o stepftn stepftn.c -lm`
 
-Finally run the following script to simulate haplotypes under a structured coalescent framework with the program mssel and compute the L values from the collection of simulated haplotypes that contain the derived allele. The allele frequency trajectories will be sampled with replacement from the file ../Results/ReducedTrajectories.txt :
+Finally run the following script to simulate haplotypes under a structured coalescent framework with the program mssel and compute the L values from the collection of simulated haplotypes that contain the derived allele. The allele frequency trajectories will be sampled with replacement from the file Results/ReducedTrajectories.txt :
 
 `bash SimulateL.sh ParameterFile_4Ns10.txt ParameterFile_4Ns10_B.txt 1 0.009999999 0.010000001 40 10 PopulationExpansionModel.txt 600 500 250000`
 
@@ -161,7 +161,7 @@ Example of how to run the script:
 
 `bash TransformTrajectoriesToMsselFormat.sh 1 PopulationExpansionModel.txt 1000`
 
-Then run mssel on the trajectories simulated with the IS routine.
+Then run coalescent simulations using mssel on the trajectories simulated with the IS routine. Those simulations will be used to calculate the L values for each simulated trajectory given a set of haplotypes with the derived allele.
 
 Script structure:
 
@@ -184,7 +184,11 @@ Where:
 
 * NumberOfHaplotypesWithTheDerivedAllele - For every coalescent simulation, this will be this number of haplotypes with the derived allele.  This should match what you simulated on step 1.
 
+You can, as an example, run the following command:
+
 `bash RunMsselCalculateDistance.sh 600 500 1 PopulationExpansionModel.txt 250000 1000 10 40`
+
+The output will be found in the file Results/DistancesFile_Identifier.txt . Each row contains the L values estimated for a given allele frequency trajectory given a set of coalescent simulations with a set of haplotypes that contain the derived allele.
 
 Then, we create the L(4Ns, allele frequency, Demographic scenario | L) table using the following script:
 
@@ -194,7 +198,7 @@ If you did simulations using a single identifier number this should be:
 
 `bash CreateNewP_L_Given_S_Table.sh 1`
 
-Where NumberOfIdentifiers must match the number of times you ran SimulateUsingISRoutine.sh and RunMsselCalculateDistance.sh starting from 1. Three files will be created: Results/Exit.txtWeightYears.txt has the weights (see section 'Integration over the space of allele frequency trajectories using importance sampling'). Results/NewMiniExp10000.txt has the values of L(4Ns, allele frequency, Demographic scenario | L) starting from the third row, where the selection coefficients are listed following the order from in the file SelValuesForwardFile given to the script SimulateUsingISRoutine.sh . The first column gives the likelihood L(4Ns, allele frequency, Demographic scenario | L = w1) for the window w1, the second column gives the likelihood L(4Ns, allele frequency, Demographic scenario | L = w2) for the window w2, etc . The file Results/TableToTest.txt is identical to Results/NewMiniExp10000.txt but with an extra column, which is the first column from Results/NewMiniExp10000.txt duplicated. ../Results/TableToTest.txt is the file that will be used to calculate the maximum likelihood estimates from a single selection coefficients in step 4).
+Where NumberOfIdentifiers must match the number of times you ran SimulateUsingISRoutine.sh and RunMsselCalculateDistance.sh starting from 1. Three files will be created: Results/Exit.txtWeightYears.txt has the weights (see section 'Integration over the space of allele frequency trajectories using importance sampling'). Results/NewMiniExp10000.txt has the values of L(4Ns, allele frequency, Demographic scenario | L) starting from the third row, where the selection coefficients are listed following the order from in the file SelValuesForwardFile given to the script SimulateUsingISRoutine.sh . The first column gives the likelihood L(4Ns, allele frequency, Demographic scenario | L = w1) for the window w1, the second column gives the likelihood L(4Ns, allele frequency, Demographic scenario | L = w2) for the window w2, etc . The file Results/TableToTest.txt is identical to Results/NewMiniExp10000.txt but with an extra column, which is the first column from Results/NewMiniExp10000.txt duplicated. Results/TableToTest.txt is the file that will be used to calculate the maximum likelihood estimates from a single selection coefficients in step 4).
 
 You can estimate the effective sample size (ESS) for each value of selection given in the table provided by the variable SelValuesForwardFile from the script SimulateUsingISRoutine.sh . To do that, run:
 
@@ -223,8 +227,11 @@ Structure of the script to calculate the maximum likelihood estimate from one si
 
 `bash CalculateLLSingleSValue.sh NumberOfIdentifiers SelectionValuesToEvaluate`
 
-Where NumberOfIdentifiers must match the number of number of haplotype files starting with the prefix HapLengths that you have on the Results file
-SelectionValues File with the selection values that will be evaluated.
+Where:
+
+* NumberOfIdentifiers must match the number of number of haplotype files starting with the prefix HapLengths that you have on the Results file
+
+* SelectionValues File with the selection values that will be evaluated.
 
 Example:
 
@@ -309,7 +316,7 @@ This script will produce two files: Results/DFEf_toDFE.pdf contains a plot with 
 
 The start point are three files: A Plink tped and a Plink tfam file where the information has been phased. We also assume that you have a file with the frequency of the low-frequency derived alleles.
 
-`bash CalculateLData.sh PositionsFilePrefix FrequencySNPFile SNPNumberToTake  PlinkTpedFilePrefix PlinkTfamFilePrefix IndividualsToTake HapLengthToTake`
+`bash CalculateLData.sh PositionsFilePrefix FrequencySNPFile SNPNumberToTake PlinkTpedFilePrefix PlinkTfamFilePrefix IndividualsToTake HapLengthToTake`
 
 * PositionsFilePrefix - Prefix of the files that contain the positions that will be used to compute L.
 
@@ -371,4 +378,4 @@ And finally, you can run:
 
 `bash ConcatenateMismatchStatisticAndLDistances.sh`
 
-And the posterior distribution of the parameters will be given in the file ../Results/Best100NotCpG.txt . Those are the 100 simulations where the proportion of L values in the windows w1, ... , wn is more similar to what is seen in the synonymous variants. The three parameters analyzed in this demographic model are given in columns 2-4. In this example those parameters are the Ne in the present, the Ne in the epoch that comes before the present epoch and the time where the population size changes to the current day Ne.
+And the posterior distribution of the parameters will be given in the file Results/Best100NotCpG.txt . Those are the 100 simulations where the proportion of L values in the windows w1, ... , wn is more similar to what is seen in the synonymous variants. The three parameters analyzed in this demographic model are given in columns 2-4. In this example those parameters are the Ne in the present, the Ne in the epoch that comes before the present epoch and the time where the population size changes to the current day Ne.
