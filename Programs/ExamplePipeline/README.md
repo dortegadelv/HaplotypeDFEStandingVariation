@@ -238,9 +238,9 @@ The maximum likelihood estimate will be in the file ../Results/MaxLLEstimatesDFE
 
 ## 5) Estimate the DFE from DFEf.
 
-If you have an estimate of the DFEf based on the parameters alpha and beta estimated in 4), you can obtain an estimate of the DFE. To do that, you need to have an estimate of the proportion of alelles at a certain frequency given a certain demographic history including allele fixations and extinctions over a certain time-span determined by the analyzed demographic history (see equation 4 from our main text). This would be equal to the variable P_F_Given_D. In simulations and in real data this would be equal to the number of variants observed at a certain frequency divided by the total number of variants observed in the demographic history under study. To make things more concrete, let's say you observe 100 variants at a frequency of 0.01 in the present. Then, let's say that you are looking at an scenario of a population expansion, where the number of chromosomes is equal to 10,000 for 80,000 generations and then it is equal to 100,000 chromosomes for 100 generations. If the average number of new mutations in the first epoch is equal to 200, then an estimate of the average new number of mutations is equal to 200*80,000 + 200 * (100000/10000) * 100 = 16001000 and, therefore the estimate of P_F_Given_D = 100/16001000 = 6.25e-06 . Note that both P_F_Given_D and P_F_given_sj_and_D are equally dependent on the same demographic history, and the ratio of P_F_Given_D / P_F_given_sj_and_D will remain the same if the demographic history goes further back in the time in the most ancestral epoch.
+If you have an estimate of the DFEf based on the parameters alpha and beta estimated in 4), you can obtain an estimate of the DFE. To do that, you need to have an estimate of the proportion of alelles at a certain frequency given a certain demographic history including allele fixations and extinctions over a certain time-span determined by the analyzed demographic history (see equation 4 from our main text). This would be equal to the variable P_F_Given_D. In simulations and in real data this would be equal to the number of variants observed at a certain frequency divided by the total number of variants observed in the demographic history under study. To make things more concrete, let's say you observe 100 variants at a frequency of 0.01 in the present. Then, let's say that you are looking at an scenario of a population expansion, where the number of chromosomes is equal to 10,000 for 80,000 generations and then it is equal to 100,000 chromosomes for 100 generations. If the average number of new mutations in the first epoch is equal to 200, then an estimate of the average new number of mutations is equal to 200*80,000 + 200 * (100000/10000) * 100 = 16200000 and, therefore the estimate of P_F_Given_D = 100/16001000 = 6.17e-06 . Note that both P_F_Given_D and P_F_given_sj_and_D are equally dependent on the same demographic history. The ratio of P_F_Given_D / P_F_given_sj_and_D will remain the same if the demographic history goes further back in the time in the most ancestral epoch.
 
-The other probability P_F_given_sj_and_D is equal to the proportion of variants at a certain frequency given that the selection coefficient is inside a certain interval s_j and we have a specified demographic history D. This quantity can be estimated by running forward-in-time simulations using PReFerSim under an arbitrary DFE that simulates a sufficient number of variants across the s_j intervals under study. Then, for each interval s_j, the probability  P_F_given_sj_and_D is the proportion of variants at a certain frequency given an interval of selection values sj and a certain demographic history D. As an example, you could run the following command line in PReFerSim with many different 'IdentifierNumber' integer values starting from 1:
+The other probability P_F_given_sj_and_D is equal to the proportion of variants at a certain frequency given that the selection coefficient is inside a certain interval s_j and we have a specified demographic history D. This quantity can be estimated by running forward-in-time simulations using PReFerSim under an arbitrary DFE that simulates a sufficient number of variants across the s_j intervals under study. Then, for each interval s_j, the probability P_F_given_sj_and_D is the proportion of variants at a certain frequency given an interval of selection values sj and a certain demographic history D. As an example, you could run the following command line in PReFerSim with many different 'IdentifierNumber' integer values starting from 1:
 
 cd DFEfToDFE
 bash RunSimsPReFerSim.sh IdentifierNumber ParameterFilePReFerSim
@@ -250,10 +250,18 @@ One example run is:
 cd DFEfToDFE
 bash RunSimsPReFerSim.sh 1 ParameterFileBoyko.txt
 
-And then, you could get the S values of alleles that have a certain frequency in the present from running the past script many times:
+And then, you could get the selection coefficient values of alleles that have a certain frequency in the present from running the past script many times with a different IdentifierNumber:
 
 cd DFEfToDFE
-perl PrintSValuesAtParticularFrequency.pl FileOfFrequenciesToRetain ExitFile PrefixFilesAlleleFreq NumberIdentifierFiles
+perl PrintSValuesAtParticularFrequency.pl FileOfFrequenciesToRetain ExitFile FilesAlleleFreq NumberIdentifierFiles
+
+Where:
+
+* FileOfFrequenciesToRetain - A file with one number that indicates the frequency of the variants to retain.
+
+* FilesAlleleFreq - A file with two columns. The first one indicates the allele frequency and the second one indicates the selection coefficient.
+
+* NumberIdentifierFiles - How many files where run with a different IdentifierNumber.
 
 As an example, you can run:
 
@@ -281,7 +289,7 @@ Where:
 
 * FourNsIntervalLength - This is the length of each of the 4Ns intervals inspected.
 
-* FourNsIntervalNumber - How many 4Ns were inspected. The first interval inspected goes from 4Ns = 0 to 4Ns = FourNsIntervalLength, the second interval goes from 4Ns = FourNsIntervalLength to 4Ns = 2*FourNsIntervalLength
+* FourNsIntervalNumber - How many 4Ns intervals were inspected. The first interval inspected goes from 4Ns = 0 to 4Ns = FourNsIntervalLength, the second interval goes from 4Ns = FourNsIntervalLength to 4Ns = 2*FourNsIntervalLength
 
 ## 6) Calculate L and mean recombination rate from genomic data
 
