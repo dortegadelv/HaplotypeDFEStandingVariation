@@ -19,29 +19,29 @@ We also provide scripts to calculate L from genomic data. If you compute the L v
 
 You need to compile the following programs to run any of the steps. Some programs require the gsl library. More information on how to install it can be found in the PReFerSim manual at https://github.com/LohmuellerLab/PReFerSim
 
-cd PReFerSim
+`cd PReFerSim`
 
-gcc -g -o PReFerSim PReFerSim.c -lm -lgsl -lgslcblas -O3
+`gcc -g -o PReFerSim PReFerSim.c -lm -lgsl -lgslcblas -O3`
 
-cd ..
+`cd ..`
 
-cd Mssel
+`cd Mssel`
 
-gcc -O3 -o stepftn stepftn.c -lm
+`gcc -O3 -o stepftn stepftn.c -lm`
 
-gcc -O2 -o mssel3  mssel3.c  rand1.c streecsel.c -lm
+`gcc -O2 -o mssel3  mssel3.c  rand1.c streecsel.c -lm`
 
-cd ..
+`cd ..`
 
-cd ISProgram
+`cd ISProgram`
 
-g++ -o FoIS FoIS.cpp prob.cpp -lm
+`g++ -o FoIS FoIS.cpp prob.cpp -lm`
 
 ## 1) Simulation of pairwise identity by state lengths, L, values
 
 The first step is to simulate many allele frequency trajectories under the Poisson Random Field model going forward in time with PReFerSim. To do that, you can run the following bash script by providing the following parameters:
 
-bash CreateManyFrequencyTrajectories.sh PReFerSimParameterFile1 PReFerSimParameterFile2 Identifier AlleleFrequencyDown AlleleFrequencyUp NumberOfHaplotypesWithTheDerivedAllele NumberOfIndependentVariants DemographicScenarioFile ThetaHaplotype RhoHaplotype NumberOfSites
+`bash CreateManyFrequencyTrajectories.sh PReFerSimParameterFile1 PReFerSimParameterFile2 Identifier AlleleFrequencyDown AlleleFrequencyUp NumberOfHaplotypesWithTheDerivedAllele NumberOfIndependentVariants DemographicScenarioFile ThetaHaplotype RhoHaplotype NumberOfSites`
 
 where:
 
@@ -69,38 +69,38 @@ where:
 
 Example of how to run the script:
 
-bash CreateManyFrequencyTrajectories.sh ParameterFile_4Ns10.txt ParameterFile_4Ns10_B.txt 1 0.009999999 0.010000001 40 10 PopulationExpansionModel.txt 600 500 250000
+`bash CreateManyFrequencyTrajectories.sh ParameterFile_4Ns10.txt ParameterFile_4Ns10_B.txt 1 0.009999999 0.010000001 40 10 PopulationExpansionModel.txt 600 500 250000`
 
 The output of that script will be two files located in the results folder. One file is Results/Traj_Identifier.txt  (substitute Identifier with the value of Identifier given to the script). That file contains the allele frequency trajectories. The other file is Results/Alleles_Identifier.txt which contains the IDs of the alleles that fell inside the frequency interval specified in the script.
 
 I recommend running the past script with many 'Identifier' numbers many times. You need to start from the number 1 and then go up in consecutive order until you get a big number of allele frequency trajectories, probably a number close to 10,000. Those trajectories will be sampled with replacement to generate the haplotypic data under the stuctured coalescent model. To check the number of allele frequency trajectories you have created run these two commands:
 
-AlleleCount=$( wc -l Results/Alleles_*.txt | tail -n1 | awk '{print $1}' )
+`AlleleCount=$( wc -l Results/Alleles_*.txt | tail -n1 | awk '{print $1}' )`
 
-echo $AlleleCount
+`echo $AlleleCount`
 
 Then, run the script ConcatenateAlleleFrequencyTrajectories.sh to concatenate the allele frequency trajectories:
 
-bash ConcatenateAlleleFrequencyTrajectories.sh ParameterFile_4Ns10.txt ParameterFile_4Ns10_B.txt 1 0.009999999 0.010000001 40 10 PopulationExpansionModel.txt 600 500 250000
+`bash ConcatenateAlleleFrequencyTrajectories.sh ParameterFile_4Ns10.txt ParameterFile_4Ns10_B.txt 1 0.009999999 0.010000001 40 10 PopulationExpansionModel.txt 600 500 250000`
 
 Script structure: 
 
-bash ConcatenateAlleleFrequencyTrajectories.sh PReFerSimParameterFile1 PReFerSimParameterFile2 Identifier AlleleFrequencyDown AlleleFrequencyUp NumberOfHaplotypesWithTheDerivedAllele NumberOfIndependentVariants DemographicScenario ThetaHaplotype RhoHaplotype NumberOfSites
+`bash ConcatenateAlleleFrequencyTrajectories.sh PReFerSimParameterFile1 PReFerSimParameterFile2 Identifier AlleleFrequencyDown AlleleFrequencyUp NumberOfHaplotypesWithTheDerivedAllele NumberOfIndependentVariants DemographicScenario ThetaHaplotype RhoHaplotype NumberOfSites`
 
 The options are identical to the ones given to the script CreateManyFrequencyTrajectories.sh to keep consistency. The variable Identifier is not used since the script will read all the trajectories in the Results/ folder without taking into account the differences in the Identifier number.
 This will create a file with all the trajectories generated with CreateManyFrequencyTrajectories.sh. The output is a large file called "../Results/ReducedTrajectories.txt". The allele frequency trajectories from "../Results/ReducedTrajectories.txt" do not track the allele frequency every SINGLE generation. To reduce computing time and disk space, only changes in allele frequency across a set of pre-specified boundaries are tracked, those boundaries can be found in ExamplePipeline/Mssel/freqints.h . If you want to change the boundaries, modify that file and recompile using:
 
-cd Mssel
+`cd Mssel`
 
-gcc -O3 -o stepftn stepftn.c -lm
+`gcc -O3 -o stepftn stepftn.c -lm`
 
 Finally run the following script to simulate haplotypes under a structured coalescent framework with the program mssel and compute the L values from the collection of simulated haplotypes that contain the derived allele. The allele frequency trajectories will be sampled with replacement from the file ../Results/ReducedTrajectories.txt :
 
-bash SimulateL.sh ParameterFile_4Ns10.txt ParameterFile_4Ns10_B.txt 1 0.009999999 0.010000001 40 10 PopulationExpansionModel.txt 600 500 250000
+`bash SimulateL.sh ParameterFile_4Ns10.txt ParameterFile_4Ns10_B.txt 1 0.009999999 0.010000001 40 10 PopulationExpansionModel.txt 600 500 250000`
 
 Script structure:
 
-bash SimulateL.sh PReFerSimParameterFile1 PReFerSimParameterFile2 Identifier AlleleFrequencyDown AlleleFrequencyUp NumberOfHaplotypesWithTheDerivedAllele NumberOfIndependentVariants DemographicScenario ThetaHaplotype RhoHaplotype NumberOfSites
+`bash SimulateL.sh PReFerSimParameterFile1 PReFerSimParameterFile2 Identifier AlleleFrequencyDown AlleleFrequencyUp NumberOfHaplotypesWithTheDerivedAllele NumberOfIndependentVariants DemographicScenario ThetaHaplotype RhoHaplotype NumberOfSites`
 
 With that command line the output will be printed in the folder Results/HapLengths1.txt . The output file will contain the L values. Some L values printed will be equal to 2.0. That happens when there is no difference between a pair of haplotypes sampled. Other L values will have values between 0 and 1, where the values of L in number of bases is equal to the printed value times the value assigned to the variable NumberOfSites.
 
@@ -112,7 +112,7 @@ Note that you can modify the files PReFerSimParameterFile1 and PReFerSimParamete
 
 The likelihood table will be generated using an importance sampling approach. To run step 2, start by using the script SimulateUsingISRoutine.sh
 
-bash SimulateUsingISRoutine.sh HomozygoteFitness HeterozygoteFitness PresentDayAlleleFrequency Replicates PresentDayChromosomes Identifier DemScenario SelValuesForwardFile SampleSize
+`bash SimulateUsingISRoutine.sh HomozygoteFitness HeterozygoteFitness PresentDayAlleleFrequency Replicates PresentDayChromosomes Identifier DemScenario SelValuesForwardFile SampleSize`
 
 Where:
 
@@ -134,19 +134,19 @@ Where:
 
 Example of how to run the script:
 
-bash SimulateUsingISRoutine.sh 0.0 0.0 0.01 1000 100000 1 PopulationExpansionModel.txt NewSelectionValues.txt 4000
+`bash SimulateUsingISRoutine.sh 0.0 0.0 0.01 1000 100000 1 PopulationExpansionModel.txt NewSelectionValues.txt 4000`
 
 That scripts runs an importance sampling method based on a paper by Monty Slatkin (2001, Genetics Research) to simulate a set of allele frequency trajectories from genetic variants evolving under a particular strength of natural selection. More details can be found in our paper. I recommend running the past script with many 'Identifier' numbers many times until you get 100,000 trajectories going backwards in time. You need to start from the 'Identifier' number 1 and then go up in consecutive order. Two output files will be created: Results/ImportanceSamplingSims_Identifier.txtTrajectory.txt and Results/ImportanceSamplingSims_Identifier.txtWeightYears.txt . The first file contains the simulated trajectories starting from the present and going backwards in time. The second file has the weights associated with each trajectory depending on the selection coefficient used when going forwards in time  (see section 'Integration over the space of allele frequency trajectories using importance sampling' from our paper ). To check the number of allele frequency trajectories you have created run these two commands:
 
-Traj=$( wc -l ../Results/ImportanceSamplingSims_*.txtWeightYears.txt | tail -n1 | awk '{print $1}' )
+`Traj=$( wc -l ../Results/ImportanceSamplingSims_*.txtWeightYears.txt | tail -n1 | awk '{print $1}' )`
 
-echo $Traj
+`echo $Traj`
 
 To reduce computing time and disk space, only changes in allele frequency across a set of pre-specified boundaries are tracked, those boundaries can be found in the file ExamplePipeline/ISProgram/Bounds.txt . The boundaries in that file should match the boundaries in ExamplePipeline/Mssel/freqints.h
 
 Then, run the following script to transform the trajectories into a format usable by mssel:
 
-bash TransformTrajectoriesToMsselFormat.sh NumberOfSims DemographicScenario Replicates
+`bash TransformTrajectoriesToMsselFormat.sh NumberOfSims DemographicScenario Replicates`
 
 Where:
 * NumberOfSims - This specifies the number of files where we will transform the trajectories to a mssel format. The identifier number starts with 1 and ends at NumberOfSims. 
@@ -157,13 +157,13 @@ Where:
 
 Example of how to run the script:
 
-bash TransformTrajectoriesToMsselFormat.sh 1 PopulationExpansionModel.txt 1000
+`bash TransformTrajectoriesToMsselFormat.sh 1 PopulationExpansionModel.txt 1000`
 
 Then run mssel on the trajectories simulated with the IS routine.
 
 Script structure:
 
-bash RunMsselCalculateDistance.sh ThetaHaplotype RhoHaplotype Identifier DemographicHistory NumberOfSites Replicates SimsPerTrajectory NumberOfHaplotypesWithTheDerivedAllele
+`bash RunMsselCalculateDistance.sh ThetaHaplotype RhoHaplotype Identifier DemographicHistory NumberOfSites Replicates SimsPerTrajectory NumberOfHaplotypesWithTheDerivedAllele`
 
 Where:
 * ThetaHaplotype - Theta of the whole haplotype simulated. Note that the variant of interest sits on one end of the haplotype and the L values are the distances from the variant of interest to the first difference between a pair of haplotypes. This should match what you simulated on step 1.
@@ -182,21 +182,21 @@ Where:
 
 * NumberOfHaplotypesWithTheDerivedAllele - For every coalescent simulation, this will be this number of haplotypes with the derived allele.  This should match what you simulated on step 1.
 
-bash RunMsselCalculateDistance.sh 600 500 1 PopulationExpansionModel.txt 250000 1000 10 40
+`bash RunMsselCalculateDistance.sh 600 500 1 PopulationExpansionModel.txt 250000 1000 10 40`
 
 Then, we create the L(4Ns, allele frequency, Demographic scenario | L) table using the following script:
 
-bash CreateNewP_L_Given_S_Table.sh NumberOfIdentifiers
+`bash CreateNewP_L_Given_S_Table.sh NumberOfIdentifiers`
 
 If you did simulations using a single identifier number this should be:
 
-bash CreateNewP_L_Given_S_Table.sh 1
+`bash CreateNewP_L_Given_S_Table.sh 1`
 
 Where NumberOfIdentifiers must match the number of times you ran SimulateUsingISRoutine.sh and RunMsselCalculateDistance.sh starting from 1. Three files will be created: ../Results/Exit.txtWeightYears.txt has the weights (see section 'Integration over the space of allele frequency trajectories using importance sampling'). ../Results/NewMiniExp10000.txt has the values of L(4Ns, allele frequency, Demographic scenario | L) starting from the third row, where the selection coefficients are listed following the order from in the file SelValuesForwardFile given to the script SimulateUsingISRoutine.sh . The first column gives the likelihood L(4Ns, allele frequency, Demographic scenario | L = w1) for the window w1, the second column gives the likelihood L(4Ns, allele frequency, Demographic scenario | L = w2) for the window w2, etc . The file ../Results/TableToTest.txt is identical to ../Results/NewMiniExp10000.txt but with an extra column, which is the first column from ../Results/NewMiniExp10000.txt duplicated. ../Results/TableToTest.txt is the file that will be used to calculate the maximum likelihood estimates from a single selection coefficients in step 4).
 
 You can estimate the effective sample size (ESS) for each value of selection given in the table provided by the variable SelValuesForwardFile from the script SimulateUsingISRoutine.sh . To do that, run:
 
-perl EstimateESS.pl ../Results/Exit.txtWeightYears.txt
+`perl EstimateESS.pl ../Results/Exit.txtWeightYears.txt`
 
 This will create a file called FinalStats.txt . In this file, you will see the ESS's printed in the first columns for each value of selection in the order given in the table provided by the variable SelectionValuesToEvaluate. Then you will see the expected allele ages followed by the standard deviation of the allele ages. See the section 'Importance sampling' for a description of what the ESS's are. We recommend only trusting estimates of L(4Ns, allele frequency, Demographic scenario | L) on the values of selection s where you have a high ESS number, at least a number bigger than 100.
 
@@ -205,7 +205,7 @@ This will create a file called FinalStats.txt . In this file, you will see the E
 
 Run the script CreateDiscreteDFE.sh after going through step 2):
 
-bash CreateDiscreteDFE.sh
+`bash CreateDiscreteDFE.sh`
 
 If you want to change the space of alpha and gamma parameters explored you need to modify the R script CreationOfDiscreteDistribution.R. Specifically modify these two lines:
 
@@ -217,22 +217,24 @@ And put the values you wish to explore. Also, currently the threshold 4Ns is equ
 
 ## 4) Compute the maximum likelihood estimate of either a) the single selection coefficient 4Ns or b) the two parameters alpha and beta.
 
-bash CalculateLLSingleSValue.sh NumberOfIdentifiers SelectionValuesToEvaluate
+Structure of the script to calculate the maximum likelihood estimate from one single selection coefficient value:
+
+`bash CalculateLLSingleSValue.sh NumberOfIdentifiers SelectionValuesToEvaluate`
 
 Where NumberOfIdentifiers must match the number of number of haplotype files starting with the prefix HapLengths that you have on the Results file
 SelectionValues File with the selection values that will be evaluated.
 
 Example:
 
-bash CalculateLLSingleSValue.sh 1 ../ISProgram/NewSelectionValues.txt
+`bash CalculateLLSingleSValue.sh 1 ../ISProgram/NewSelectionValues.txt`
 
 The maximum likelihood estimate will be found in the file ../Results/MaxLLEstimates.txt
 
 You can also do the find the maximum likelihood estimate for the alpha and gamma parameters of a partially collapsed gamma distribution of fitness effects:
 
-bash CalculateLLDFE.sh NumberOfIdentifiers SelectionValuesToEvaluate
+`bash CalculateLLDFE.sh NumberOfIdentifiers SelectionValuesToEvaluate`
 
-bash CalculateLLDFE.sh 1 TableDFE/AnotherExtraTableOfProbabilities.txt
+`bash CalculateLLDFE.sh 1 TableDFE/AnotherExtraTableOfProbabilities.txt`
 
 The maximum likelihood estimate will be in the file ../Results/MaxLLEstimatesDFE.txt 
 
@@ -242,21 +244,21 @@ If you have an estimate of the DFEf based on the parameters alpha and beta estim
 
 The other probability P_F_given_sj_and_D is equal to the proportion of variants at a certain frequency given that the selection coefficient is inside a certain interval s_j and we have a specified demographic history D. This quantity can be estimated by running forward-in-time simulations using PReFerSim under an arbitrary DFE that simulates a sufficient number of variants across the s_j intervals under study. Then, for each interval s_j, the probability P_F_given_sj_and_D is the proportion of variants at a certain frequency given an interval of selection values sj and a certain demographic history D. As an example, you could run the following command line in PReFerSim with many different 'IdentifierNumber' integer values starting from 1:
 
-cd DFEfToDFE
+`cd DFEfToDFE`
 
-bash RunSimsPReFerSim.sh IdentifierNumber ParameterFilePReFerSim
+`bash RunSimsPReFerSim.sh IdentifierNumber ParameterFilePReFerSim`
 
 One example run is:
 
-cd DFEfToDFE
+`cd DFEfToDFE`
 
-bash RunSimsPReFerSim.sh 1 ParameterFileBoyko.txt
+`bash RunSimsPReFerSim.sh 1 ParameterFileBoyko.txt`
 
 And then, you could get the selection coefficient values of alleles that have a certain frequency in the present from running the past script many times with a different IdentifierNumber:
 
-cd DFEfToDFE
+`cd DFEfToDFE`
 
-perl PrintSValuesAtParticularFrequency.pl FileOfFrequenciesToRetain ExitFile FilesAlleleFreq NumberIdentifierFiles
+`perl PrintSValuesAtParticularFrequency.pl FileOfFrequenciesToRetain ExitFile FilesAlleleFreq NumberIdentifierFiles`
 
 Where:
 
@@ -270,18 +272,18 @@ Where:
 
 As an example, you can run:
 
-cd DFEfToDFE
+`cd DFEfToDFE`
 
-perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../Results/ExitOnePercentSValuesConstantBoyko.txt ../Results/Output. 2500
+`perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../Results/ExitOnePercentSValuesConstantBoyko.txt ../Results/Output. 2500`
 
 
 After obtaining that file, you can run the following script:
 
-bash EstimateDFEfromDFEf.sh MaxLLestimatesDFE P_allele_at_f AllelesWithSelectionCoefficientFile NumberOfChromosomesInMostAncestralEpoch NumberAllelesSimulatedInDemHistory FourNsIntervalLength FourNsIntervalNumber
+`bash EstimateDFEfromDFEf.sh MaxLLestimatesDFE P_allele_at_f AllelesWithSelectionCoefficientFile NumberOfChromosomesInMostAncestralEpoch NumberAllelesSimulatedInDemHistory FourNsIntervalLength FourNsIntervalNumber`
 
 In this particular example it is possible to run:
 
-bash EstimateDFEfromDFEf.sh ../Results/MaxLLEstimatesDFE.txt 3.08e-07 ExitOnePercentSValuesPopExpansionBoyko.txt 10000 2.025e+11 5 30
+`bash EstimateDFEfromDFEf.sh ../Results/MaxLLEstimatesDFE.txt 3.08e-07 ExitOnePercentSValuesPopExpansionBoyko.txt 10000 2.025e+11 5 30`
 
 Where:
 
@@ -303,7 +305,7 @@ Where:
 
 The start point are three files: A Plink tped and a Plink tfam file where the information has been phased. We also assume that you have a file with the frequency of the low-frequency derived alleles.
 
-bash CalculateLData.sh PositionsFilePrefix FrequencySNPFile SNPNumberToTake  PlinkTpedFilePrefix PlinkTfamFilePrefix IndividualsToTake HapLengthToTake
+`bash CalculateLData.sh PositionsFilePrefix FrequencySNPFile SNPNumberToTake  PlinkTpedFilePrefix PlinkTfamFilePrefix IndividualsToTake HapLengthToTake`
 
 * PositionsFilePrefix - Prefix of the files that contain the positions that will be used to compute L.
 
@@ -321,11 +323,11 @@ bash CalculateLData.sh PositionsFilePrefix FrequencySNPFile SNPNumberToTake  Pli
 
 As an example, you can run:
 
-bash CalculateLData.sh Positions SNPsAtOnePercentFrequency.frq 325 Plink Plink ListUnrelatedSamples.txt 250000
+`bash CalculateLData.sh Positions SNPsAtOnePercentFrequency.frq 325 Plink Plink ListUnrelatedSamples.txt 250000`
 
 Then, you can also run the following command to get the recombination map:
 
-perl GetGeneticMapLeftRightPrintMap.pl HapLengthToTake FrequencyFilePrefix MapFilePrefix Chromosome
+`perl GetGeneticMapLeftRightPrintMap.pl HapLengthToTake FrequencyFilePrefix MapFilePrefix Chromosome`
 
 Where:
 
@@ -339,7 +341,7 @@ Where:
 
 Example run:
 
-perl GetGeneticMapLeftRightPrintMap.pl 250000 MissenseOnePercent maps_chr. 1
+`perl GetGeneticMapLeftRightPrintMap.pl 250000 MissenseOnePercent maps_chr. 1`
 
 ## 7) ABC algorithm to estimate the demographic history
 
@@ -347,22 +349,22 @@ A demographic model must be specified when analyzing genomic data to infer DFEf 
 
 Then, to run the ABC algorithm we run the following scripts in consecutive order:
 
-bash ABCDemographyAnalysisNotCpGs.sh Identifier
+`bash ABCDemographyAnalysisNotCpGs.sh Identifier`
 
 Identifier is an integer number. You should run the past script with integer numbers starting from 1 and going up in a consecutive order. As an example, you can run:
 
-bash ABCDemographyAnalysisNotCpGs.sh 1
+`bash ABCDemographyAnalysisNotCpGs.sh 1`
 
 Then you can run the following script:
 
-perl CalculateMismatchStatistic.pl LDistributionFile NumberIdentifiers
+`perl CalculateMismatchStatistic.pl LDistributionFile NumberIdentifiers`
 
 As an example, here you can run:
 
-perl CalculateMismatchStatistic.pl LDistributionOnePercentSynSites.txt 1
+`perl CalculateMismatchStatistic.pl LDistributionOnePercentSynSites.txt 1`
 
 And finally, you can run:
 
-bash ConcatenateMismatchStatisticAndLDistances.sh
+`bash ConcatenateMismatchStatisticAndLDistances.sh`
 
 And the posterior distribution of the parameters will be given in the file ../Results/Best100NotCpG.txt . Those are the 100 simulations where the proportion of L values in the windows w1, ... , wn is more similar to what is seen in the synonymous variants. The three parameters analyzed in this demographic model are given in columns 2-4. In this example those parameters are the Ne in the present, the Ne in the epoch that comes before the present epoch and the time where the population size changes to the current day Ne.
