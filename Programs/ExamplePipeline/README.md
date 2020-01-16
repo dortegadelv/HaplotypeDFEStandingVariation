@@ -357,4 +357,4 @@ And finally, you can run:
 
 bash ConcatenateMismatchStatisticAndLDistances.sh
 
-And the posterior distribution of the parameters will be given in the file ../Results/Best100NotCpG.txt
+And the posterior distribution of the parameters will be given in the file ../Results/Best100NotCpG.txt . Those are the 100 simulations where the proportion of L values in the windows w1, ... , wn is more similar to what is seen in the synonymous variants.
