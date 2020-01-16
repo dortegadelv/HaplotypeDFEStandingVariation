@@ -47,7 +47,7 @@ if ($NumberOfSequences == $TotalNumberOfSequences ){
 				$SubstrTwo = substr($Sequences[$k],$i,1);
 #				$SubstrOne = $VectorOne[$i];
 #				$SubstrTwo = $VectorTwo[$i];
-				if (($SubstrOne ne $SubstrTwo) && ($Frequencies[$i] != 1) && ($Frequencies[$i] != ($NumDerSequences - 1)) ){
+				if (($SubstrOne ne $SubstrTwo) ){
 					$Distance = ( $Positions[$i+1] - $Position );
 #					print EXIT "$Positions[$i+1]\n";
 					print EXIT "$Distance\n";
