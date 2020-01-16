@@ -287,17 +287,29 @@ Where:
 
 * NumberAllelesSimulatedInDemHistory - This is the total number of alleles that were simulated to obtain the results from the AllelesWithSelectionCoefficientFile.
 
-* FourNsIntervalLength - This is the length of each of the 4Ns intervals inspected.
+* FourNsIntervalLength - This is the length of each of the sj 4Ns intervals inspected.
 
-* FourNsIntervalNumber - How many 4Ns intervals were inspected. The first interval inspected goes from 4Ns = 0 to 4Ns = FourNsIntervalLength, the second interval goes from 4Ns = FourNsIntervalLength to 4Ns = 2*FourNsIntervalLength
+* FourNsIntervalNumber - How many sj 4Ns intervals were inspected. The first interval inspected goes from 4Ns = 0 to 4Ns = FourNsIntervalLength, the second interval goes from 4Ns = FourNsIntervalLength to 4Ns = 2*FourNsIntervalLength
 
 ## 6) Calculate L and mean recombination rate from genomic data
 
 The start point are three files: A Plink tped and a Plink tfam file where the information has been phased. We also assume that you have a file with the frequency of the low-frequency derived alleles.
 
-bash CalculateLData.sh PositionsFilePrefix SNPNumberToTake FrequencyFile PlinkTpedFilePrefix PlinkTfamFilePrefix IndividualsToTake HapLengthToTake
+bash CalculateLData.sh PositionsFilePrefix FrequencySNPFile SNPNumberToTake  PlinkTpedFilePrefix PlinkTfamFilePrefix IndividualsToTake HapLengthToTake
 
-PositionsFilePrefix - This file is produced after running
+* PositionsFilePrefix - Prefix of the files that contain the positions that will be used to compute L.
+
+* FrequencySNPFile - A list of the SNPs at a certain frequency in the population.
+
+* SNPNumberToTake - The row number defininf the SNP that will be taken from the FrequencySNPFile file to calculate L.
+
+* PlinkTpedFilePrefix - Prefix of the tped file
+
+* PlinkTfamFilePrefix - Prefix of the tfam file
+
+* IndividualsToTake - List of individuals from the Plink files that will be used to calculate L.
+
+* HapLengthToTake - The L values calculated will start from the focal variant analyzed up to the value of HapLengthToTake . If there are no differences in the haplotype pairs from the focal variant up to HapLengthToTake, this will be noted in the output.
 
 As an example, you can run:
 
@@ -305,13 +317,27 @@ bash CalculateLData.sh Positions SNPsAtOnePercentFrequency.frq 325 Plink Plink L
 
 Then, you can also run the following command to get the recombination map:
 
-perl GetGeneticMapLeftRightPrintMap.pl Bound FrequencyFilePrefix MapFilePrefix Chromosome
+perl GetGeneticMapLeftRightPrintMap.pl HapLengthToTake FrequencyFilePrefix MapFilePrefix Chromosome
+
+Where:
+
+* HapLengthToTake - The recombination rate will be estimated from focal variant analyzed up to the value of HapLengthToTake .
+
+* FrequencyFilePrefix - Prefix of the SNPs at a one percent frequency. We will print the mean recombination rate for these variants.
+
+* MapFilePrefix - Recombination map prefix.
+
+* Chromosome - Number of the chromosome that contains the variants that will be analyzed.
+
+Example run:
 
 perl GetGeneticMapLeftRightPrintMap.pl 250000 MissenseOnePercent maps_chr. 1
 
 ## 7) ABC algorithm to estimate the demographic history
 
-A demographic model must be specified when analyzing genomic data to infer DFEf or the strength of selection acting on the nonsynonymous variants at a certain frequency in the population (steps 2-4). We used an ABC algorithm to infer the demographic model based on the L values found on the synonymous variants. To do that, we run the following scripts in consecutive order:
+A demographic model must be specified when analyzing genomic data to infer DFEf or the point strength of selection acting on the nonsynonymous variants at a certain frequency in the population (steps 2-4). We used an ABC algorithm to infer the demographic model based on the L values found on the synonymous variants. The L values of the synonymous variants are summarized by their frequency in different windows w1, ... , wn. In this example we will use the file located in ExamplePipeline/ABC/LDistributionOnePercentSynSites.txt .
+
+Then, to run the ABC algorithm we run the following scripts in consecutive order:
 
 bash ABCDemographyAnalysisNotCpGs.sh Identifier
 
@@ -321,7 +347,7 @@ bash ABCDemographyAnalysisNotCpGs.sh 1
 
 Then you can run the following script:
 
-perl CalculateMismatchStatistic.pl LDistributionOnePercent NumberIdentifiers
+perl CalculateMismatchStatistic.pl LDistributionFile NumberIdentifiers
 
 As an example, here you can run:
 
@@ -331,4 +357,4 @@ And finally, you can run:
 
 bash ConcatenateMismatchStatisticAndLDistances.sh
 
-You should run CalculateLData.sh on all the synonymous variants at a certain frequency f that you have in your data. Then, you should run
+And the posterior distribution of the parameters will be given in the file ../Results/Best100NotCpG.txt
