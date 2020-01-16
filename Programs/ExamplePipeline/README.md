@@ -44,7 +44,8 @@ The first step is to simulate many allele frequency trajectories under the Poiss
 bash CreateManyFrequencyTrajectories.sh PReFerSimParameterFile1 PReFerSimParameterFile2 Identifier AlleleFrequencyDown AlleleFrequencyUp NumberOfHaplotypesWithTheDerivedAllele NumberOfIndependentVariants DemographicScenarioFile ThetaHaplotype RhoHaplotype NumberOfSites
 
 where:
-PReFerSimParameterFile1.- Contains the parameters to run the forward-in-time simulator PReFerSim to get a list of alleles that end inside a certain frequency interval where the distribution of selective coefficients of the simulated alleles is a point value or follows a different probability distribution.
+
+*PReFerSimParameterFile1.- Contains the parameters to run the forward-in-time simulator PReFerSim to get a list of alleles that end inside a certain frequency interval where the distribution of selective coefficients of the simulated alleles is a point value or follows a different probability distribution.
 
 PReFerSimParameterFile2.- It is almost the same file as PReFerSimParameterFile1, but it contains two extra options at the bottom that specify the list of alleles whose frequency trajectory you will print, and the output file with the frequency trajectory of those alleles. More information on the options of the parameter files can be found in the PReFerSim manual at https://github.com/LohmuellerLab/PReFerSim
 
@@ -64,7 +65,7 @@ ThetaHaplotype - Theta (4Nub = 4 * Population size in the present * mutation rat
 
 RhoHaplotype - Rho (4Nrb = 4 * Population size in the present * recombination rate per base pair * number of bases) of the whole haplotype simulated.
 
-NumberOfSites - Number of sites in the haplotype.
+NumberOfSites - Number of sites in the haplotype. *
 
 Example of how to run the script:
 
