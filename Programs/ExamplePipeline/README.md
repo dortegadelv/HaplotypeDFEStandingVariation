@@ -47,25 +47,25 @@ where:
 
 * PReFerSimParameterFile1.- Contains the parameters to run the forward-in-time simulator PReFerSim to get a list of alleles that end inside a certain frequency interval where the distribution of selective coefficients of the simulated alleles is a point value or follows a different probability distribution.
 
-PReFerSimParameterFile2.- It is almost the same file as PReFerSimParameterFile1, but it contains two extra options at the bottom that specify the list of alleles whose frequency trajectory you will print, and the output file with the frequency trajectory of those alleles. More information on the options of the parameter files can be found in the PReFerSim manual at https://github.com/LohmuellerLab/PReFerSim
+* PReFerSimParameterFile2.- It is almost the same file as PReFerSimParameterFile1, but it contains two extra options at the bottom that specify the list of alleles whose frequency trajectory you will print, and the output file with the frequency trajectory of those alleles. More information on the options of the parameter files can be found in the PReFerSim manual at https://github.com/LohmuellerLab/PReFerSim
 
-Identifier - A number to give to the script. Can be changed in case the user wants to run the same parameter files PReFerSimParameterFile1 and PReFerSimParameterFile2 many times and get a different output with a different identifier every time. Also a random seed.
+* Identifier - A number to give to the script. Can be changed in case the user wants to run the same parameter files PReFerSimParameterFile1 and PReFerSimParameterFile2 many times and get a different output with a different identifier every time. Also a random seed.
 
-AlleleFrequencyDown - The program will print the L values for alleles that have a frequency in the present that is bounded by two numbers. This is the lower bound.
+* AlleleFrequencyDown - The program will print the L values for alleles that have a frequency in the present that is bounded by two numbers. This is the lower bound.
 
-AlleleFrequencyUp - The program will print the L values for alleles that have a frequency in the present that is bounded by two numbers. This is the upper bound.
+* AlleleFrequencyUp - The program will print the L values for alleles that have a frequency in the present that is bounded by two numbers. This is the upper bound.
 
-NumberOfHaplotypesWithTheDerivedAllele - For every variant, there will be this number of haplotypes with the derived allele.
+* NumberOfHaplotypesWithTheDerivedAllele - For every variant, there will be this number of haplotypes with the derived allele.
 
-NumberOfIndependentVariants - How many independent variants will be simulated. The number of L values will be equal to 2* NumberOfIndependentVariants * factorial (NumberOfHaplotypesWithTheDerivedAllele)/(factorial (NumberOfHaplotypesWithTheDerivedAllele - 2) * factorial (2))
+* NumberOfIndependentVariants - How many independent variants will be simulated. The number of L values will be equal to 2* NumberOfIndependentVariants * factorial (NumberOfHaplotypesWithTheDerivedAllele)/(factorial (NumberOfHaplotypesWithTheDerivedAllele - 2) * factorial (2))
 
-DemographicScenario - A file containing the demographic scenario simulated. This follows the structure of the demographic scenario specified in the PReFerSim manual. Make sure that this file is also read by PReFerSimParameterFile1 and PReFerSimParameterFile2.
+* DemographicScenario - A file containing the demographic scenario simulated. This follows the structure of the demographic scenario specified in the PReFerSim manual. Make sure that this file is also read by PReFerSimParameterFile1 and PReFerSimParameterFile2.
 
-ThetaHaplotype - Theta (4Nub = 4 * Population size in the present * mutation rate per base pair * number of bases) of the whole haplotype simulated. Note that the variant of interest sits on one end of the haplotype and the L values are the distances from the variant of interest to the first difference between a pair of haplotypes.
+* ThetaHaplotype - Theta (4Nub = 4 * Population size in the present * mutation rate per base pair * number of bases) of the whole haplotype simulated. Note that the variant of interest sits on one end of the haplotype and the L values are the distances from the variant of interest to the first difference between a pair of haplotypes.
 
-RhoHaplotype - Rho (4Nrb = 4 * Population size in the present * recombination rate per base pair * number of bases) of the whole haplotype simulated.
+* RhoHaplotype - Rho (4Nrb = 4 * Population size in the present * recombination rate per base pair * number of bases) of the whole haplotype simulated.
 
-NumberOfSites - Number of sites in the haplotype. *
+* NumberOfSites - Number of sites in the haplotype.
 
 Example of how to run the script:
 
@@ -115,21 +115,22 @@ The likelihood table will be generated using an importance sampling approach. To
 bash SimulateUsingISRoutine.sh HomozygoteFitness HeterozygoteFitness PresentDayAlleleFrequency Replicates PresentDayChromosomes Identifier DemScenario SelValuesForwardFile SampleSize
 
 Where:
-HomozygoteFitness and HeterozygoteFitness are the fitnesses of the derived homozygote and heterozygote genotypes used when going backwards in time (see our paper for a description of the importance sampling approach to generate allele frequency trajectories). We used 0 for both values in all our simulations in the paper.
 
-PresentDayAlleleFrequency - Frequency of the derived allele in the present.  This should match what you simulated on step 1.
+* HomozygoteFitness and HeterozygoteFitness are the fitnesses of the derived homozygote and heterozygote genotypes used when going backwards in time (see our paper for a description of the importance sampling approach to generate allele frequency trajectories). We used 0 for both values in all our simulations in the paper.
 
-Replicates - Number of allele frequency trajectories simulated under the importance sampling framework.
+* PresentDayAlleleFrequency - Frequency of the derived allele in the present.  This should match what you simulated on step 1.
 
-PresentDayChromosomes - Number of chromosomes in the present.  This should match what you simulated on step 1, and should be equal to the population size in the present in numbers of chromosomes.
+* Replicates - Number of allele frequency trajectories simulated under the importance sampling framework.
 
-Identifier - A number to give to the script. Can be changed in case the user wants to run the same parameter many times and get a different output with a different identifier every time. Also a random seed.
+* PresentDayChromosomes - Number of chromosomes in the present.  This should match what you simulated on step 1, and should be equal to the population size in the present in numbers of chromosomes.
 
-DemScenario - Demographic history. This follows the syntax from PReFerSim to get demographic histories.  This should match what you simulated on step 1.
+* Identifier - A number to give to the script. Can be changed in case the user wants to run the same parameter many times and get a different output with a different identifier every time. Also a random seed.
 
-SelValuesForwardFile - File with the selection values that will be evaluated when going forwards in time. There should be one selection coefficient per row.
+* DemScenario - Demographic history. This follows the syntax from PReFerSim to get demographic histories.  This should match what you simulated on step 1.
 
-SampleSize - Number of chromosomes sampled from the present. This should match the number used after the variable 'n: ' inside the files PReFerSimParameterFile1 and PReFerSimParameterFile2 used on step 1.
+* SelValuesForwardFile - File with the selection values that will be evaluated when going forwards in time. There should be one selection coefficient per row.
+
+* SampleSize - Number of chromosomes sampled from the present. This should match the number used after the variable 'n: ' inside the files PReFerSimParameterFile1 and PReFerSimParameterFile2 used on step 1.
 
 Example of how to run the script:
 
@@ -148,11 +149,11 @@ Then, run the following script to transform the trajectories into a format usabl
 bash TransformTrajectoriesToMsselFormat.sh NumberOfSims DemographicScenario Replicates
 
 Where:
-NumberOfSims - This specifies the number of files where we will transform the trajectories to a mssel format. The identifier number starts with 1 and ends at NumberOfSims. 
+* NumberOfSims - This specifies the number of files where we will transform the trajectories to a mssel format. The identifier number starts with 1 and ends at NumberOfSims. 
 
-DemographicScenario - This follows the syntax from PReFerSim to get demographic histories.  This should match what you simulated on step 1.
+* DemographicScenario - This follows the syntax from PReFerSim to get demographic histories.  This should match what you simulated on step 1.
 
-Replicates - Number of allele frequency trajectories simulated under the importance sampling framework in each file produced from each IS run.
+* Replicates - Number of allele frequency trajectories simulated under the importance sampling framework in each file produced from each IS run.
 
 Example of how to run the script:
 
@@ -165,21 +166,21 @@ Script structure:
 bash RunMsselCalculateDistance.sh ThetaHaplotype RhoHaplotype Identifier DemographicHistory NumberOfSites Replicates SimsPerTrajectory NumberOfHaplotypesWithTheDerivedAllele
 
 Where:
-ThetaHaplotype - Theta of the whole haplotype simulated. Note that the variant of interest sits on one end of the haplotype and the L values are the distances from the variant of interest to the first difference between a pair of haplotypes. This should match what you simulated on step 1.
+* ThetaHaplotype - Theta of the whole haplotype simulated. Note that the variant of interest sits on one end of the haplotype and the L values are the distances from the variant of interest to the first difference between a pair of haplotypes. This should match what you simulated on step 1.
 
-RhoHaplotype - Rho of the whole haplotype simulated. This should match what you simulated on step 1.
+* RhoHaplotype - Rho of the whole haplotype simulated. This should match what you simulated on step 1.
 
-Identifier - A number to give to the script. Can be changed in case the user wants to run the same parameter file many times and get a different output with a different identifier every time. Also a random seed. This number should match the number used in the script SimulateUsingISRoutine.sh .
+* Identifier - A number to give to the script. Can be changed in case the user wants to run the same parameter file many times and get a different output with a different identifier every time. Also a random seed. This number should match the number used in the script SimulateUsingISRoutine.sh .
 
-DemographicHistory - This follows the syntax from PReFerSim to get demographic histories.  This should match what you simulated on step 1.
+* DemographicHistory - This follows the syntax from PReFerSim to get demographic histories.  This should match what you simulated on step 1.
 
-Replicates - Number of allele frequency trajectories simulated under the importance sampling framework.
+* Replicates - Number of allele frequency trajectories simulated under the importance sampling framework.
 
-NumberOfSites - Number of sites in the haplotype.
+* NumberOfSites - Number of sites in the haplotype.
 
-SimsPerTrajectory - Number of coalescent simulations that will be done for each trajectory generated under the importance sampling framework. An increase of this number generates a bigger precision on the results, since using a greater number of coalescent simulations means a larger collection of L values will be used to calculate P(L|s).
+* SimsPerTrajectory - Number of coalescent simulations that will be done for each trajectory generated under the importance sampling framework. An increase of this number generates a bigger precision on the results, since using a greater number of coalescent simulations means a larger collection of L values will be used to calculate P(L|s).
 
-NumberOfHaplotypesWithTheDerivedAllele - For every coalescent simulation, this will be this number of haplotypes with the derived allele.  This should match what you simulated on step 1.
+* NumberOfHaplotypesWithTheDerivedAllele - For every coalescent simulation, this will be this number of haplotypes with the derived allele.  This should match what you simulated on step 1.
 
 bash RunMsselCalculateDistance.sh 600 500 1 PopulationExpansionModel.txt 250000 1000 10 40
 
@@ -266,19 +267,19 @@ bash EstimateDFEfromDFEf.sh ../Results/MaxLLEstimatesDFE.txt 3.08e-07 ExitOnePer
 
 Where:
 
-MaxLLestimatesDFE - Is a file with one row and two columns that you get after running step 4. This list the maximum likelihood estimate of the shape and scale parameters of the compound DFEf distribution.
+* MaxLLestimatesDFE - Is a file with one row and two columns that you get after running step 4. This list the maximum likelihood estimate of the shape and scale parameters of the compound DFEf distribution.
 
-P_allele_at_f - This is the proportion of variants at a certain frequency f given a demographic history and that the variants evolve according to a certain distribution of fitness effects.
+* P_allele_at_f - This is the proportion of variants at a certain frequency f given a demographic history and that the variants evolve according to a certain distribution of fitness effects.
 
-AllelesWithSelectionCoefficientFile - This is a file that contains a list of selection coefficients of variants at a frequency f in the population. This file was created by simulating many variants evolving under a PRF model under an arbitrary DFE using PReFerSim. Then, we can use those simulations to count the proportion of variants that have a frequency f in the present and have a selection coefficient inside a certain interval sj in a demographic scenario D (P_F_given_sj_and_D). That proportion would be equal to 1) the number of variants that have a selection coefficient inside a certain interval sj with a frequency f in the present divided by 2) All the variants that have a selection coefficient inside a certain interval sj.
+* AllelesWithSelectionCoefficientFile - This is a file that contains a list of selection coefficients of variants at a frequency f in the population. This file was created by simulating many variants evolving under a PRF model under an arbitrary DFE using PReFerSim. Then, we can use those simulations to count the proportion of variants that have a frequency f in the present and have a selection coefficient inside a certain interval sj in a demographic scenario D (P_F_given_sj_and_D). That proportion would be equal to 1) the number of variants that have a selection coefficient inside a certain interval sj with a frequency f in the present divided by 2) All the variants that have a selection coefficient inside a certain interval sj.
 
-NumberOfChromosomesInMostAncestralEpoch - This is equal to the number of chromosomes in the most old epoch of the demographic scenario studied.
+* NumberOfChromosomesInMostAncestralEpoch - This is equal to the number of chromosomes in the most old epoch of the demographic scenario studied.
 
-NumberAllelesSimulatedInDemHistory - This is the total number of alleles that were simulated to obtain the results from the AllelesWithSelectionCoefficientFile.
+* NumberAllelesSimulatedInDemHistory - This is the total number of alleles that were simulated to obtain the results from the AllelesWithSelectionCoefficientFile.
 
-FourNsIntervalLength - This is the length of each of the 4Ns intervals inspected.
+* FourNsIntervalLength - This is the length of each of the 4Ns intervals inspected.
 
-FourNsIntervalNumber - How many 4Ns were inspected. The first interval inspected goes from 4Ns = 0 to 4Ns = FourNsIntervalLength, the second interval goes from 4Ns = FourNsIntervalLength to 4Ns = 2*FourNsIntervalLength
+* FourNsIntervalNumber - How many 4Ns were inspected. The first interval inspected goes from 4Ns = 0 to 4Ns = FourNsIntervalLength, the second interval goes from 4Ns = FourNsIntervalLength to 4Ns = 2*FourNsIntervalLength
 
 ## 6) Calculate L and mean recombination rate from genomic data
 
