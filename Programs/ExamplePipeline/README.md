@@ -357,4 +357,4 @@ And finally, you can run:
 
 bash ConcatenateMismatchStatisticAndLDistances.sh
 
-And the posterior distribution of the parameters will be given in the file ../Results/Best100NotCpG.txt . Those are the 100 simulations where the proportion of L values in the windows w1, ... , wn is more similar to what is seen in the synonymous variants.
+And the posterior distribution of the parameters will be given in the file ../Results/Best100NotCpG.txt . Those are the 100 simulations where the proportion of L values in the windows w1, ... , wn is more similar to what is seen in the synonymous variants. The three parameters analyzed in this demographic model are given in columns 2-4. In this example those parameters are the Ne in the present, the Ne in the epoch that comes before the present epoch and the time where the population size changes to the current day Ne.
