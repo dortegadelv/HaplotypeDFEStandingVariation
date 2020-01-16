@@ -285,7 +285,7 @@ bash EstimateDFEfromDFEf.sh ../Results/MaxLLEstimatesDFE.txt 3.08e-07 ExitOnePer
 
 Where:
 
-* MaxLLestimatesDFE - Is a file with one row and two columns that you get after running step 4. This list the maximum likelihood estimate of the shape and scale parameters of the compound DFEf distribution.
+* MaxLLestimatesDFE - Is a file with one row and two columns that you get after running step 4. This lists the maximum likelihood estimate of the shape and scale parameters of the compound DFEf distribution.
 
 * P_allele_at_f - This is the proportion of variants at a certain frequency f given a demographic history and that the variants evolve according to a certain distribution of fitness effects.
 
