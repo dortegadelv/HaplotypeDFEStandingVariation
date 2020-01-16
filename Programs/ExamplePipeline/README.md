@@ -343,7 +343,7 @@ perl GetGeneticMapLeftRightPrintMap.pl 250000 MissenseOnePercent maps_chr. 1
 
 ## 7) ABC algorithm to estimate the demographic history
 
-A demographic model must be specified when analyzing genomic data to infer DFEf or the point strength of selection acting on the nonsynonymous variants at a certain frequency in the population (steps 2-4). We used an ABC algorithm to infer the demographic model based on the L values found on the synonymous variants. The L values of the synonymous variants are summarized by their frequency in different windows w1, ... , wn. In this example we will use the file located in ExamplePipeline/ABC/LDistributionOnePercentSynSites.txt .
+A demographic model must be specified when analyzing genomic data to infer DFEf or the point strength of selection acting on the nonsynonymous variants at a certain frequency in the population (steps 2-4). We used an ABC algorithm to infer the demographic model based on the L values found on the synonymous variants. Although the scenario simulated is very specific, we hope that this gives an intuition into how our proposed ABC works. The L values of the synonymous variants are summarized by their frequency in different windows w1, ... , wn. In this example we will use the file located in ExamplePipeline/ABC/LDistributionOnePercentSynSites.txt .
 
 Then, to run the ABC algorithm we run the following scripts in consecutive order:
 
