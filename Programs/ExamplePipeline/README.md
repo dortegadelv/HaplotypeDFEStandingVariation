@@ -309,7 +309,7 @@ bash CalculateLData.sh PositionsFilePrefix FrequencySNPFile SNPNumberToTake  Pli
 
 * FrequencySNPFile - A list of the SNPs at a certain frequency in the population.
 
-* SNPNumberToTake - The row number defininf the SNP that will be taken from the FrequencySNPFile file to calculate L.
+* SNPNumberToTake - The row number defining the SNP that will be taken from the FrequencySNPFile file to calculate L.
 
 * PlinkTpedFilePrefix - Prefix of the tped file
 
