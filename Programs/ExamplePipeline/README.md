@@ -243,16 +243,19 @@ If you have an estimate of the DFEf based on the parameters alpha and beta estim
 The other probability P_F_given_sj_and_D is equal to the proportion of variants at a certain frequency given that the selection coefficient is inside a certain interval s_j and we have a specified demographic history D. This quantity can be estimated by running forward-in-time simulations using PReFerSim under an arbitrary DFE that simulates a sufficient number of variants across the s_j intervals under study. Then, for each interval s_j, the probability P_F_given_sj_and_D is the proportion of variants at a certain frequency given an interval of selection values sj and a certain demographic history D. As an example, you could run the following command line in PReFerSim with many different 'IdentifierNumber' integer values starting from 1:
 
 cd DFEfToDFE
+
 bash RunSimsPReFerSim.sh IdentifierNumber ParameterFilePReFerSim
 
 One example run is:
 
 cd DFEfToDFE
+
 bash RunSimsPReFerSim.sh 1 ParameterFileBoyko.txt
 
 And then, you could get the selection coefficient values of alleles that have a certain frequency in the present from running the past script many times with a different IdentifierNumber:
 
 cd DFEfToDFE
+
 perl PrintSValuesAtParticularFrequency.pl FileOfFrequenciesToRetain ExitFile FilesAlleleFreq NumberIdentifierFiles
 
 Where:
@@ -268,6 +271,7 @@ As an example, you can run:
 cd DFEfToDFE
 
 perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../Results/ExitOnePercentSValuesConstantBoyko.txt ../Results/Output. 2500
+
 
 After obtaining that file, you can run the following script
 bash EstimateDFEfromDFEf.sh MaxLLestimatesDFE P_allele_at_f AllelesWithSelectionCoefficientFile NumberOfChromosomesInMostAncestralEpoch NumberAllelesSimulatedInDemHistory FourNsIntervalLength FourNsIntervalNumber
