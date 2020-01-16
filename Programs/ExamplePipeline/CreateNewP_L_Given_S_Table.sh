@@ -26,4 +26,6 @@ awk '{print $1}' ../Results/NewMiniExp10000.txt > ../Results/FirstColumn.txt
 paste -d "\t" ../Results/FirstColumn.txt ../Results/NewMiniExp10000.txt > ../Results/TableToTest.txt
 # paste -d "\t" ListOfAges.txt NewMiniExp10000.txt > TableToTest10000.txt
 
-
+rm ../Results/FirstColumn.txt
+rm ../Results/DistancesFile.txt
+rm ../Results/NewMiniSD10000.txt

@@ -1,5 +1,5 @@
 NumberOfIdentifiers=$1
-SelectionValuesToEvaluate=$2
+SelectionValues=$2
 
 ### Check if you have all the variables
 

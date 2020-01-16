@@ -105,12 +105,12 @@ eval "$CommandLineMssel"
 
 MsselOutput="../Results/MsselOutput"$Identifier".txt"
 HapLengths="../Results/HapLengths"$Identifier".txt"
-perl ../DistanceToFirstSegregatingSiteMultiSequence.pl $MsselOutput $HapLengths 1 $NumberOfIndependentVariants
+perl ../DistanceToFirstSegregatingSiteMultiSequence.pl $MsselOutput $HapLengths 1 $NumberOfHaplotypesWithTheDerivedAllele 0 0 25 $NumberOfSites
 
 AlleleFile="../Results/Alleles_"$Identifier".txt"
 TrajFile="../Results/Traj_"$Identifier".txt"
 # rm $AlleleFile
-rm $MsselOutput
+# rm $MsselOutput
 # rm $ResampledTrajectory
 # rm $CurrentTrajs
 # rm $TrajFile
