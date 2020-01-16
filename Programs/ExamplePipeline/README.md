@@ -79,6 +79,8 @@ I recommend running the past script with many 'Identifier' numbers many times. Y
 
 `echo $AlleleCount`
 
+The variable $AlleleCount will show the number of allele frequency trajectories created.
+
 Then, run the script ConcatenateAlleleFrequencyTrajectories.sh to concatenate the allele frequency trajectories:
 
 `bash ConcatenateAlleleFrequencyTrajectories.sh ParameterFile_4Ns10.txt ParameterFile_4Ns10_B.txt 1 0.009999999 0.010000001 40 10 PopulationExpansionModel.txt 600 500 250000`
