@@ -68,7 +68,7 @@ for (i in 1:IntervalNumber){
     # print (i)
     Prob <- pgamma(i*IntervalLength/2,Alpha,scale=Beta) - pgamma((i-1)*IntervalLength/2,Alpha,scale=Beta)
     P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,Prob)
-    NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*(NumberOfChromosomesInMostAncestralEpoch)) # Original Test
+    NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*(NumberAllelesSimulatedInDemHistory)) # Original Test
     # NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*(1))
 }
 

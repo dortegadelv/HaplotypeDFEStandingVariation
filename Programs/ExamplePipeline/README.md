@@ -230,7 +230,7 @@ Example:
 
 `bash CalculateLLSingleSValue.sh 1 ../ISProgram/NewSelectionValues.txt`
 
-The maximum likelihood estimate will be found in the file ../Results/MaxLLEstimates.txt
+The maximum likelihood estimate will be found in the file Results/MaxLLEstimates.txt
 
 You can also do the find the maximum likelihood estimate for the alpha and gamma parameters of a partially collapsed gamma distribution of fitness effects:
 
@@ -238,7 +238,7 @@ You can also do the find the maximum likelihood estimate for the alpha and gamma
 
 `bash CalculateLLDFE.sh 1 TableDFE/AnotherExtraTableOfProbabilities.txt`
 
-The maximum likelihood estimate will be in the file ../Results/MaxLLEstimatesDFE.txt 
+The maximum likelihood estimate will be in the file Results/MaxLLEstimatesDFE.txt 
 
 ## 5) Estimate the DFE from DFEf.
 
@@ -302,6 +302,8 @@ Where:
 * FourNsIntervalLength - This is the length of each of the sj 4Ns intervals inspected.
 
 * FourNsIntervalNumber - How many sj 4Ns intervals were inspected. The first interval inspected goes from 4Ns = 0 to 4Ns = FourNsIntervalLength, the second interval goes from 4Ns = FourNsIntervalLength to 4Ns = 2*FourNsIntervalLength
+
+This script will produce two files: Results/DFEf_toDFE.pdf contains a plot with the inferred values of P(sj) and P(sj|f ,D); we will also create a file called 'Probabilities.txt' which contains the probabilities of P(sj) and P(sj|f ,D) across a set of pre-specified sj intervals of 4Ns.
 
 ## 6) Calculate L and mean recombination rate from genomic data
 
