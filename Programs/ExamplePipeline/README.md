@@ -262,6 +262,8 @@ Where:
 
 * FileOfFrequenciesToRetain - A file with one number that indicates the frequency of the variants to retain.
 
+* ExitFile - Exit file with the alleles at the frequency specified in FileOfFrequenciesToRetain.
+
 * FilesAlleleFreq - A file with two columns. The first one indicates the allele frequency and the second one indicates the selection coefficient.
 
 * NumberIdentifierFiles - How many files where run with a different IdentifierNumber.
