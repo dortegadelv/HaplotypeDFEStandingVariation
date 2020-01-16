@@ -275,7 +275,8 @@ cd DFEfToDFE
 perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../Results/ExitOnePercentSValuesConstantBoyko.txt ../Results/Output. 2500
 
 
-After obtaining that file, you can run the following script
+After obtaining that file, you can run the following script:
+
 bash EstimateDFEfromDFEf.sh MaxLLestimatesDFE P_allele_at_f AllelesWithSelectionCoefficientFile NumberOfChromosomesInMostAncestralEpoch NumberAllelesSimulatedInDemHistory FourNsIntervalLength FourNsIntervalNumber
 
 In this particular example it is possible to run:
