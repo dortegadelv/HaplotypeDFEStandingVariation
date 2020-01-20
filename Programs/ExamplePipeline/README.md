@@ -108,7 +108,7 @@ Note that you can modify the files PReFerSimParameterFile1 and PReFerSimParamete
 
 The likelihood table will be generated using an importance sampling approach. To run step 2, start by using the script SimulateUsingISRoutine.sh
 
-`bash SimulateUsingISRoutine.sh HomozygoteFitness HeterozygoteFitness PresentDayAlleleFrequency Replicates PresentDayChromosomes Identifier DemScenario SelValuesForwardFile SampleSize`
+`bash SimulateUsingISRoutine.sh HomozygoteFitness HeterozygoteFitness PresentDayAlleleFrequency Replicates Identifier DemScenario SelValuesForwardFile SampleSize`
 
 Where:
 
@@ -117,8 +117,6 @@ Where:
 * PresentDayAlleleFrequency - Frequency of the derived allele in the present. If you want to analyze the simulations generated on step 1 make sure that this number is equal to the division of  (NumberOfHaplotypesWithTheDerivedAllele from step 1) / ( PresentDayChromosomes from step 2 ).
 
 * Replicates - Number of allele frequency trajectories simulated under the importance sampling framework.
-
-* PresentDayChromosomes - Number of chromosomes in the present.  This should match what you simulated on step 1, and should be equal to the population size in the present in numbers of chromosomes.
 
 * Identifier - A number to give to the script. Can be changed in case the user wants to run the same parameter many times and get a different output with a different identifier every time. Also a random seed.
 
@@ -130,7 +128,7 @@ Where:
 
 Example of how to run the script:
 
-`bash SimulateUsingISRoutine.sh 0.0 0.0 0.01 1000 100000 1 PopulationExpansionModel.txt NewSelectionValues.txt 4000`
+`bash SimulateUsingISRoutine.sh 0.0 0.0 0.01 1000 1 PopulationExpansionModel.txt NewSelectionValues.txt 4000`
 
 That scripts runs an importance sampling method based on a paper by Monty Slatkin (2001, Genetics Research) to simulate a set of allele frequency trajectories from genetic variants evolving under a particular strength of natural selection. More details can be found in our paper. I recommend running the past script with many 'Identifier' numbers many times until you get 100,000 trajectories going backwards in time. You need to start from the 'Identifier' number 1 and then go up in consecutive order. Two output files will be created: Results/ImportanceSamplingSims_Identifier.txtTrajectory.txt and Results/ImportanceSamplingSims_Identifier.txtWeightYears.txt . The first file contains the simulated trajectories starting from the present and going backwards in time. The second file has the weights associated with each trajectory depending on the selection coefficient used when going forwards in time  (see section 'Integration over the space of allele frequency trajectories using importance sampling' from our paper ). To check the number of allele frequency trajectories you have created run these two commands:
 
@@ -243,7 +241,7 @@ The maximum likelihood estimate will be in the file Results/MaxLLEstimatesDFE.tx
 
 ## 5) Estimate the DFE from DFEf.
 
-If you have an estimate of the DFEf based on the parameters alpha and beta estimated in 4), you can obtain an estimate of the DFE. To do that, you need to have an estimate of the proportion of alelles at a certain frequency given a certain demographic history including allele fixations and extinctions over a certain time-span determined by the analyzed demographic history (see equation 4 from our main text). This would be equal to the variable P_F_Given_D. In simulations and in real data this would be equal to the number of variants observed at a certain frequency divided by the total number of variants observed in the demographic history under study. To make things more concrete, let's say you observe 100 variants at a frequency of 0.01 in the present. Then, let's say that you are looking at an scenario of a population expansion, where the number of chromosomes is equal to 10,000 for 80,000 generations and then it is equal to 100,000 chromosomes for 100 generations. If the average number of new mutations in the first epoch is equal to 200, then an estimate of the average new number of mutations is equal to 200*80,000 + 200 * (100000/10000) * 100 = 16200000 and, therefore the estimate of P_F_Given_D = 100/16001000 = 6.17e-06 . Note that both P_F_Given_D and P_F_given_sj_and_D are equally dependent on the same demographic history. The ratio of P_F_Given_D / P_F_given_sj_and_D will remain the same if the demographic history goes further back in the time in the most ancestral epoch.
+If you have an estimate of the DFEf based on the parameters alpha and beta estimated in 4), you can obtain an estimate of the DFE. To do that, you need to have an estimate of the proportion of alelles at a certain frequency given a certain demographic history including allele fixations and extinctions over a certain time-span determined by the analyzed demographic history (see equation 4 from our main text). This would be equal to the variable P_F_Given_D. In simulations and in real data this would be equal to the number of variants observed at a certain frequency divided by the total number of variants observed in the demographic history under study. To make things more concrete, let's say you observe 100 variants at a frequency of 0.01 in the present. Then, let's say that you are looking at an scenario of a population expansion, where the number of chromosomes is equal to 10,000 for 80,000 generations and then it is equal to 100,000 chromosomes for 100 generations. If the average number of new mutations in the first epoch is equal to 200, then an estimate of the average new number of mutations is equal to 200*80,000 + 200 * (100000/10000) * 100 = 16200000 and, therefore the estimate of P_F_Given_D = 100/16001000 = 6.17e-06 . Note that both P_F_Given_D and P_F_given_sj_and_D are equally dependent on the same demographic history. The ratio of P_F_Given_D / P_F_given_sj_and_D will remain the same if the demographic history goes further back in the time in the most ancestral epoch (our paper contains an example). 
 
 The other probability P_F_given_sj_and_D is equal to the proportion of variants at a certain frequency given that the selection coefficient is inside a certain interval s_j and we have a specified demographic history D. This quantity can be estimated by running forward-in-time simulations using PReFerSim under an arbitrary DFE that simulates a sufficient number of variants across the s_j intervals under study. Then, for each interval s_j, the probability P_F_given_sj_and_D is the proportion of variants at a certain frequency given an interval of selection values sj and a certain demographic history D. As an example, you could run the following command line in PReFerSim with many different 'IdentifierNumber' integer values starting from 1:
 

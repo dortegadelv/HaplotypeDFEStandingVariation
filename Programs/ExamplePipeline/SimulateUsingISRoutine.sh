@@ -2,12 +2,15 @@ HomozygoteFitness=$1
 HeterozygoteFitness=$2
 PresentDayAlleleFrequency=$3
 Replicates=$4
-PresentDayChromosomes=$5
-Identifier=$6
-DemScenario=$7
-SelValuesForwardFile=$8
-SampleSize=$9
+# PresentDayChromosomes=$5
+Identifier=$5
+DemScenario=$6
+SelValuesForwardFile=$7
+SampleSize=$8
 
+cd ISProgram
+
+PresentDayChromosomes=$( tail -n1 $DemScenario | awk '{print $1}' )
 ### Check if you have all the variables
 
 if [ -z "$HomozygoteFitness" ]
@@ -63,8 +66,6 @@ then
       echo "The variable SampleSize given in the command line was not given a value in the command line"
       exit 1
 fi
-
-cd ISProgram
 
 FoISDemScenario=$DemScenario""$Identifier".txt"
 perl CreateMsselParameter.pl $DemScenario $FoISDemScenario
