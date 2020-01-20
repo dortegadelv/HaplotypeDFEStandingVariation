@@ -4,14 +4,22 @@
 PReFerSimParameterFile1=$1
 PReFerSimParameterFile2=$2
 Identifier=$3
-AlleleFrequencyDown=$4
-AlleleFrequencyUp=$5
-NumberOfHaplotypesWithTheDerivedAllele=$6
-NumberOfIndependentVariants=$7
-DemographicScenario=$8
-ThetaHaplotype=$9
-RhoHaplotype=${10}
-NumberOfSites=${11}
+# AlleleFrequencyDown=$4
+# AlleleFrequencyUp=$5
+NumberOfHaplotypesWithTheDerivedAllele=$4
+NumberOfIndependentVariants=$5
+# DemographicScenario=$6
+ThetaHaplotype=$6
+RhoHaplotype=$7
+NumberOfSites=$8
+
+cd PReFerSim
+
+SampleSize=$( grep 'n:' $PReFerSimParameterFile1 | awk '{print $2}' )
+DemographicScenario=$( grep 'DemographicHistory:' $PReFerSimParameterFile1 | awk '{print $2}' )
+
+AlleleFrequencyDown=$( echo "scale=30; $NumberOfHaplotypesWithTheDerivedAllele / $SampleSize - 0.00000000000000000000000001" | bc )
+AlleleFrequencyUp=$( echo "scale=30; $NumberOfHaplotypesWithTheDerivedAllele / $SampleSize + 0.00000000000000000000000001" | bc )
 
 ### Check if you have all the variables
 
@@ -80,8 +88,6 @@ then
       echo "The variable NumberOfSites given in the command line was not given a value in the command line"
       exit 1
 fi
-
-cd PReFerSim
 
 ### Simulate the allele frequency trajectories with PReFerSim. If you want to simulate more replicates of this process, you will need to change the identifier number for another number.
 

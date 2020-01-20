@@ -45,21 +45,15 @@ The first step is to simulate many allele frequency trajectories under the Poiss
 
 where:
 
-* PReFerSimParameterFile1.- Contains the parameters to run the forward-in-time simulator PReFerSim to get a list of alleles that end inside a certain frequency interval where the distribution of selective coefficients of the simulated alleles is a point value or follows a different probability distribution.
+* PReFerSimParameterFile1.- Contains the parameters to run the forward-in-time simulator PReFerSim to get a list of alleles that end inside a certain frequency interval where the distribution of selective coefficients of the simulated alleles is a point value or follows a different probability distribution. This file should be present in the PReFerSim folder.
 
-* PReFerSimParameterFile2.- It is almost the same file as PReFerSimParameterFile1, but it contains two extra options at the bottom that specify the list of alleles whose frequency trajectory you will print, and the output file with the frequency trajectory of those alleles. More information on the options of the parameter files can be found in the PReFerSim manual at https://github.com/LohmuellerLab/PReFerSim
+* PReFerSimParameterFile2.- It is almost the same file as PReFerSimParameterFile1, but it contains two extra options at the bottom that specify the list of alleles whose frequency trajectory you will print, and the output file with the frequency trajectory of those alleles.  This file should be present in the PReFerSim folder. More information on the options of the parameter files can be found in the PReFerSim manual at https://github.com/LohmuellerLab/PReFerSim
 
 * Identifier - A number to give to the script. Can be changed in case the user wants to run the same parameter files PReFerSimParameterFile1 and PReFerSimParameterFile2 many times and get a different output with a different identifier every time. Also a random seed.
-
-* AlleleFrequencyDown - The program will print the L values for alleles that have a frequency in the present that is bounded by two numbers. This is the lower bound.
-
-* AlleleFrequencyUp - The program will print the L values for alleles that have a frequency in the present that is bounded by two numbers. This is the upper bound.
 
 * NumberOfHaplotypesWithTheDerivedAllele - For every variant, there will be this number of haplotypes with the derived allele.
 
 * NumberOfIndependentVariants - How many independent variants will be simulated. The number of L values will be equal to 2* NumberOfIndependentVariants * factorial (NumberOfHaplotypesWithTheDerivedAllele)/(factorial (NumberOfHaplotypesWithTheDerivedAllele - 2) * factorial (2))
-
-* DemographicScenario - A file containing the demographic scenario simulated. This follows the structure of the demographic scenario specified in the PReFerSim manual. Make sure that this file is also read by PReFerSimParameterFile1 and PReFerSimParameterFile2.
 
 * ThetaHaplotype - Theta (4Nub = 4 * Population size in the present * mutation rate per base pair * number of bases) of the whole haplotype simulated. Note that the variant of interest sits on one end of the haplotype and the L values are the distances from the variant of interest to the first difference between a pair of haplotypes.
 
@@ -69,7 +63,7 @@ where:
 
 Example of how to run the script:
 
-`bash CreateManyFrequencyTrajectories.sh ParameterFile_4Ns10.txt ParameterFile_4Ns10_B.txt 1 0.009999999 0.010000001 40 10 PopulationExpansionModel.txt 600 500 250000`
+`bash CreateManyFrequencyTrajectories.sh ParameterFile_4Ns10.txt ParameterFile_4Ns10_B.txt 1 40 10 600 500 250000`
 
 The output of that script will be two files located in the results folder. One file is Results/Traj_Identifier.txt  (substitute Identifier with the value of Identifier given to the script). That file contains the allele frequency trajectories. The other file is Results/Alleles_Identifier.txt which contains the IDs of the alleles that fell inside the frequency interval specified in the script.
 
@@ -83,11 +77,11 @@ The variable $AlleleCount will show the number of allele frequency trajectories 
 
 Then, run the script ConcatenateAlleleFrequencyTrajectories.sh to concatenate the allele frequency trajectories:
 
-`bash ConcatenateAlleleFrequencyTrajectories.sh ParameterFile_4Ns10.txt ParameterFile_4Ns10_B.txt 1 0.009999999 0.010000001 40 10 PopulationExpansionModel.txt 600 500 250000`
+`bash ConcatenateAlleleFrequencyTrajectories.sh ParameterFile_4Ns10.txt ParameterFile_4Ns10_B.txt 1 40 10 600 500 250000`
 
 Script structure: 
 
-`bash ConcatenateAlleleFrequencyTrajectories.sh PReFerSimParameterFile1 PReFerSimParameterFile2 Identifier AlleleFrequencyDown AlleleFrequencyUp NumberOfHaplotypesWithTheDerivedAllele NumberOfIndependentVariants DemographicScenario ThetaHaplotype RhoHaplotype NumberOfSites`
+`bash ConcatenateAlleleFrequencyTrajectories.sh PReFerSimParameterFile1 PReFerSimParameterFile2 Identifier NumberOfHaplotypesWithTheDerivedAllele NumberOfIndependentVariants ThetaHaplotype RhoHaplotype NumberOfSites`
 
 The options are identical to the ones given to the script CreateManyFrequencyTrajectories.sh to keep consistency. The variable Identifier is not used since the script will read all the trajectories in the Results/ folder without taking into account the differences in the Identifier number.
 This will create a file with all the trajectories generated with CreateManyFrequencyTrajectories.sh. The output is a large file called "Results/ReducedTrajectories.txt". The allele frequency trajectories from "Results/ReducedTrajectories.txt" do not track the allele frequency every SINGLE generation. To reduce computing time and disk space, only changes in allele frequency across a set of pre-specified boundaries are tracked, those boundaries can be found in ExamplePipeline/Mssel/freqints.h . If you want to change the boundaries, modify that file and recompile using:
@@ -98,11 +92,11 @@ This will create a file with all the trajectories generated with CreateManyFrequ
 
 Finally run the following script to simulate haplotypes under a structured coalescent framework with the program mssel and compute the L values from the collection of simulated haplotypes that contain the derived allele. The allele frequency trajectories will be sampled with replacement from the file Results/ReducedTrajectories.txt :
 
-`bash SimulateL.sh ParameterFile_4Ns10.txt ParameterFile_4Ns10_B.txt 1 0.009999999 0.010000001 40 10 PopulationExpansionModel.txt 600 500 250000`
+`bash SimulateL.sh ParameterFile_4Ns10.txt ParameterFile_4Ns10_B.txt 1 40 10 600 500 250000`
 
 Script structure:
 
-`bash SimulateL.sh PReFerSimParameterFile1 PReFerSimParameterFile2 Identifier AlleleFrequencyDown AlleleFrequencyUp NumberOfHaplotypesWithTheDerivedAllele NumberOfIndependentVariants DemographicScenario ThetaHaplotype RhoHaplotype NumberOfSites`
+`bash SimulateL.sh PReFerSimParameterFile1 PReFerSimParameterFile2 Identifier NumberOfHaplotypesWithTheDerivedAllele NumberOfIndependentVariants ThetaHaplotype RhoHaplotype NumberOfSites`
 
 With that command line the output will be printed in the folder Results/HapLengths1.txt . The output file will contain the L values. Some L values printed will be equal to 2.0. That happens when there is no difference between a pair of haplotypes sampled. Other L values will have values between 0 and 1, where the values of L in number of bases is equal to the printed value times the value assigned to the variable NumberOfSites.
 
@@ -120,7 +114,7 @@ Where:
 
 * HomozygoteFitness and HeterozygoteFitness are the fitnesses of the derived homozygote and heterozygote genotypes used when going backwards in time (see our paper for a description of the importance sampling approach to generate allele frequency trajectories). We used 0 for both values in all our simulations in the paper.
 
-* PresentDayAlleleFrequency - Frequency of the derived allele in the present.  This should match what you simulated on step 1.
+* PresentDayAlleleFrequency - Frequency of the derived allele in the present. If you want to analyze the simulations generated on step 1 make sure that this number is equal to the division of  (NumberOfHaplotypesWithTheDerivedAllele from step 1) / ( PresentDayChromosomes from step 2 ).
 
 * Replicates - Number of allele frequency trajectories simulated under the importance sampling framework.
 

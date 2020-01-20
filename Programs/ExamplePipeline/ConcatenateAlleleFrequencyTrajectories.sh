@@ -1,17 +1,25 @@
 #### Parameters of the pipeline
 
-# This is a parameter file that is used to concatenate the allele frequency trajectories of alleles that end at a frequency f in the present and have a particular selection coefficient s.
+# This is a script used to get the allele frequency trajectories of alleles that end at a frequency f in the present and have a particular selection coefficient s.
 PReFerSimParameterFile1=$1
 PReFerSimParameterFile2=$2
 Identifier=$3
-AlleleFrequencyDown=$4
-AlleleFrequencyUp=$5
-NumberOfHaplotypesWithTheDerivedAllele=$6
-NumberOfIndependentVariants=$7
-DemographicScenario=$8
-ThetaHaplotype=$9
-RhoHaplotype=${10}
-NumberOfSites=${11}
+# AlleleFrequencyDown=$4
+# AlleleFrequencyUp=$5
+NumberOfHaplotypesWithTheDerivedAllele=$4
+NumberOfIndependentVariants=$5
+# DemographicScenario=$6
+ThetaHaplotype=$6
+RhoHaplotype=$7
+NumberOfSites=$8
+
+cd PReFerSim
+
+SampleSize=$( grep 'n:' $PReFerSimParameterFile1 | awk '{print $2}' )
+DemographicScenario=$( grep 'DemographicHistory:' $PReFerSimParameterFile1 | awk '{print $2}' )
+
+AlleleFrequencyDown=$( echo "scale=30; $NumberOfHaplotypesWithTheDerivedAllele / $SampleSize - 0.00000000000000000000000001" | bc )
+AlleleFrequencyUp=$( echo "scale=30; $NumberOfHaplotypesWithTheDerivedAllele / $SampleSize + 0.00000000000000000000000001" | bc )
 
 ### Check if you have all the variables
 
@@ -82,8 +90,6 @@ then
 fi
 
 ### Concatenate allele frequency trajectories and give them the format required by mssel. If you have many trajectories in the Results/ directory they will be concatenated and put into the file $CurrentTrajs.
-
-cd PReFerSim
 
 CurrentTrajs="../Results/ReducedTrajectories.txt"
 ResampledTrajectory="../Results/ResampledTrajs"$Identifier".txt"
