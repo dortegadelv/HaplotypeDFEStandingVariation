@@ -66,6 +66,8 @@ perl PrintCpGPositionsOnePercentFrequency.pl
 qsub -t 1-183 CalculateHaplotypeLengthsSynonymousOnlyCpG.sh
 qsub -t 1-325 CalculateHaplotypeLengthsOnlyCpG.sh
 
+### The haplotypic lengths can be found on: Data/Plink/HapLengths
+
 ### GetListOfExonsAwayFromCentromeresTelomeres
 
 perl GetExonsAwayFromCentromereTelomere.pl

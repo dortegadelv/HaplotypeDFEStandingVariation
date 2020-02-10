@@ -4,6 +4,9 @@ perl ../../RecentBottleneck/ForwardSims/CalculateMeanTrajectory.pl ../../../../R
 perl ../../RecentBottleneck/ForwardSims/CalculateMeanTrajectory.pl ../../../../Results/PopExpansion/ForwardSims/4Ns_50/TrajMsselLike.txt ../../../../Results/FrequencyTrajectories/OutMeanTrajPopExpansion4Ns50.txt 50000 10000
 perl ../../RecentBottleneck/ForwardSims/CalculateMeanTrajectory.pl ../../../../Results/PopExpansion/ForwardSims/4Ns_0/TrajMsselLike.txt ../../../../Results/FrequencyTrajectories/OutMeanTrajPopExpansion4Ns0.txt 50000 10000
 
+perl ../../RecentBottleneck/ForwardSims/CalculateMeanTrajectory.pl ../../../../Results/PopExpansion/ForwardSims/4Ns_-25/TrajMsselLike.txt ../../../../Results/FrequencyTrajectories/OutMeanTrajPopExpansion4Ns-25.txt 50000 10000
+perl ../../RecentBottleneck/ForwardSims/CalculateMeanTrajectory.pl ../../../../Results/PopExpansion/ForwardSims/4Ns_25/TrajMsselLike.txt ../../../../Results/FrequencyTrajectories/OutMeanTrajPopExpansion4Ns25.txt 50000 10000
+
 
 # perl CalculateMeanTrajectory.pl TestData/run.2/TrajMsselLike.txt MeanTrajectories/OutMeanTraj4Ns0.txt 50000
 # perl CalculateMeanTrajectory.pl TestData/run.5/TrajMsselLike.txt MeanTrajectories/OutMeanTraj4Ns-50.txt 50000

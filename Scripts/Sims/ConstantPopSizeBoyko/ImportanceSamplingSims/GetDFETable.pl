@@ -61,7 +61,7 @@ print "Table number = $TableNumber Column number = $ColumnNumberTable\n";
 for ( $i = 0; $i < $TableNumber; $i++){
 for ( $k = 0; $k < $ColumnNumberTable; $k++){ 
 $CurrentValue = 0;
-for ( $j = 0; $j <= 300; $j++){
+for ( $j = 0; $j <= 200; $j++){
 $CurrentValue = $CurrentValue + $Probabilities[$i][$j+2] * $DistanceFourNSProbabilities[$j][$k];
 # print "$Probabilities[$i][$j+2]\t$DistanceFourNSProbabilities[$j][$k]\n";
 # die "NO!";

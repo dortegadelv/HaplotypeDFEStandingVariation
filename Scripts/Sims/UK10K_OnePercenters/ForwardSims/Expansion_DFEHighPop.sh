@@ -1,20 +1,25 @@
-#$ -l h_vmem=2g
-#$ -cwd
+#!/bin/bash
+#SBATCH --job-name=example_sbatch
+#SBATCH --output=example_sbatch.out
+#SBATCH --error=example_sbatch.err
+#SBATCH --time=00:10:00
+#SBATCH --partition=jnovembre
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --mem-per-cpu=1000
 
 
-#$ -N ForWF
-#$ -o ../../../../Results/UK10K/ForwardSims/4Ns_0/Trash
-#$ -e ../../../../Results/UK10K/ForwardSims/4Ns_0/Trash
 
-time GSL_RNG_SEED=$SGE_TASK_ID GSL_RNG_TYPE=mrg ../../../../Programs/PReFeRSim/fwd_seldist_gsl_2012_4epoch.debug ParameterFile_DFEHighPop.txt $SGE_TASK_ID
 
-time perl ../../ConstantPopSize/ForwardSims/GetListOfRunsWhereFrequencyMatches.pl 0.0095 0.0105 ../../../../Results/UK10K/ForwardSims/DFETestHighPop/Output.$SGE_TASK_ID.full_out.txt ../../../../Results/UK10K/ForwardSims/DFETestHighPop/Alleles_$SGE_TASK_ID.txt 0 24834
+time GSL_RNG_SEED=$SLURM_ARRAY_TASK_ID GSL_RNG_TYPE=mrg ../../../../Programs/PReFeRSim/fwd_seldist_gsl_2012_4epoch.debug ParameterFile_DFEHighPop.txt $SLURM_ARRAY_TASK_ID
 
-File="../../../../Results/UK10K/ForwardSims/DFETestHighPop/Output."$SGE_TASK_ID".full_out.txt"
+time perl ../../ConstantPopSize/ForwardSims/GetListOfRunsWhereFrequencyMatches.pl 0.0095 0.0105 ../../../../Results/UK10K/ForwardSims/DFETestHighPop/Output.$SLURM_ARRAY_TASK_ID.full_out.txt ../../../../Results/UK10K/ForwardSims/DFETestHighPop/Alleles_$SLURM_ARRAY_TASK_ID.txt 0 24834
+
+File="../../../../Results/UK10K/ForwardSims/DFETestHighPop/Output."$SLURM_ARRAY_TASK_ID".full_out.txt"
 
 # rm $File
 
-time GSL_RNG_SEED=$SGE_TASK_ID GSL_RNG_TYPE=mrg ../../../../Programs/PReFeRSim/fwd_seldist_gsl_2012_4epoch.debug ParameterFile_DFE_BHighPop.txt $SGE_TASK_ID
+time GSL_RNG_SEED=$SLURM_ARRAY_TASK_ID GSL_RNG_TYPE=mrg ../../../../Programs/PReFeRSim/fwd_seldist_gsl_2012_4epoch.debug ParameterFile_DFE_BHighPop.txt $SLURM_ARRAY_TASK_ID
 
 
 

@@ -7,7 +7,7 @@ $ExitFile = $ARGV[4];
 
 open (EXIT,">>$ExitFile") or die "NO!";
 
-open (HAP,$HapLengthFile) or die "NO!";
+open (HAP,$HapLengthFile) or die "NO! $HapLengthFile\n";
 
 while(<HAP>){
 chomp;

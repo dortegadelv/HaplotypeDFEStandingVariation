@@ -48,7 +48,7 @@ if ($NumberOfSequences == $TotalNumberOfSequences ){
 #				$SubstrOne = $VectorOne[$i];
 #				$SubstrTwo = $VectorTwo[$i];
 				if (($SubstrOne ne $SubstrTwo) && ($Frequencies[$i] != 1) && ($Frequencies[$i] != ($NumDerSequences - 1)) ){
-					$Distance = ( $Positions[$i+1] - $Position ) * $BpNumber;
+					$Distance = ( $Positions[$i+1] - $Position );
 #					print EXIT "$Positions[$i+1]\n";
 					print EXIT "$Distance\n";
 #					print "seq = $j seq = $k Site = $i Frequency = $Frequencies[$i]\n";
@@ -58,7 +58,7 @@ if ($NumberOfSequences == $TotalNumberOfSequences ){
 			}
 			if ($MiniFlag == 0){
 				$BigNum = $BpNumber + 1;
-				print EXIT "$BigNum\n";
+				print EXIT "2.0\n";
 			}			
 		}
 		$FlagSequences = 0;

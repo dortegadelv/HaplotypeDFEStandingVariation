@@ -12,7 +12,7 @@ for ( $row = 0; $row < 1000; $row++ ){
 $Distances[$i][$row] = 0;
 }}
 
-for ( $k = 1; $k <= 20; $k++ ){
+for ( $k = 1; $k <= 1; $k++ ){
 $InputFile = "../../../../Results/UK10K_OnePercenters/ImportanceSamplingSims/Quantile".$l."/DistancesFileWithRec10000_".$j."_".$k.".txt";
 open (INPUT,$InputFile) or die "NO! $InputFile\n";
 $row = 0;
@@ -34,7 +34,7 @@ close(INPUT);
 print "Here?\n";
 for ( $row = 0; $row < 1000; $row++ ){
 for ( $i = 0; $i < 27; $i++){
-$Distances[$i][$row] = $Distances[$i][$row] / 20;
+$Distances[$i][$row] = $Distances[$i][$row] / 1;
 print EXIT "$Distances[$i][$row]\t";
 }
 print EXIT "\n";

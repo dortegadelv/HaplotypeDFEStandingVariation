@@ -65,4 +65,10 @@ Reps=$( ls ../../../../Results/UK10K/ForwardSims/DFETestHighPop/Alleles*.txt | w
 perl ../../ConstantPopSize/ForwardSims/TrajToMsselFormat.pl ../../../../Results/UK10K/ForwardSims/DFETestHighPop/Traj_ 1103788 ../../../../Results/UK10K/ForwardSims/DFETestHighPop/TrajMsselLike.txt $AlleleCount 0 $Reps
 cat ../../../../Results/UK10K/ForwardSims/DFETestHighPop/TrajMsselLike.txt | ../../../../Programs/Mssel/stepftn > ../../../../Results/UK10K/ForwardSims/DFETestHighPop/ReducedTrajectories.txt
 
+AlleleCount=$( wc -l ../../../../Results/UK10K/ForwardSims/DFETestMouseHighPop/Alleles*.txt | tail -n1 | awk '{print $1}' )
+echo $AlleleCount
+Reps=$( ls ../../../../Results/UK10K/ForwardSims/DFETestMouseHighPop/Alleles*.txt | wc -l )
+perl ../../ConstantPopSize/ForwardSims/TrajToMsselFormat.pl ../../../../Results/UK10K/ForwardSims/DFETestMouseHighPop/Traj_ 1103788 ../../../../Results/UK10K/ForwardSims/DFETestMouseHighPop/TrajMsselLike.txt $AlleleCount 0 $Reps
+cat ../../../../Results/UK10K/ForwardSims/DFETestMouseHighPop/TrajMsselLike.txt | ../../../../Programs/Mssel/stepftn > ../../../../Results/UK10K/ForwardSims/DFETestMouseHighPop/ReducedTrajectories.txt
+
 

@@ -16,7 +16,7 @@ You will need the GSL library to compile this program. You can find more instruc
 
 We ran the forward-in-time simulations by running the following scripts after going into the appropriate directories.
 All scripts were run in a computing cluster and can be easily run in parallel by changing the value of 
-the variable $SGE_TASK_ID to a different number:
+the variable $SGE_TASK_ID (or $SLURM_ARRAY_TASK_ID) to a different number:
 
 ### Generating allele frequency trajectories under a constant population size scenario
 cd Scripts/Sims/ConstantPopSize/ForwardSims
@@ -81,8 +81,8 @@ bash Expansion_4Ns50.sh
 bash Expansion_4Ns-25.sh
 bash Expansion_4Ns-50.sh
 
-Run the past scripts with many values of SGE_TASK_ID until you obtain 10,000 trajectories or more. Then run the following scripts after going
-into the appropriate directories. To run these scripts, you will need the program mssel (kindly provided to us from Richard Hudson). These scripts will change the trajectories into a readable format for mssel and also will reduce the disk space taken by the file containing the allele frequency trajectories:
+Run the past scripts with many values of SGE_TASK_ID (or SLURM_ARRAY_TASK_ID) until you obtain 10,000 trajectories or more. Then run the following scripts after going
+into the appropriate directories. To run these scripts, you will need the program mssel (kindly provided to us from Richard Hudson). These scripts will change the trajectories into a readable format for mssel and also will reduce the disk space taken by the file containing the allele frequency trajectories. The allele frequency trajectories are reduced using a set of allele frequency boundaries, where we will only record changes across allele frequency boundaries. The boundaries are defined in Programs/Mssel/freqints.h . If the user wishes to change those boundaries, modify the vector 'bounds' inside Programs/Mssel/freqints.h to define the new boundaries and recompile the program stepftn using 'gcc -O3 -o stepftn stepftn.c -lm':
 
 cd Scripts/Sims/ConstantPopSize/ForwardSims
 bash CreateReducedTrajectories.sh

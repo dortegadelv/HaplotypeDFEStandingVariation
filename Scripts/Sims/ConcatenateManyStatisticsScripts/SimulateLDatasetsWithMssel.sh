@@ -1,8 +1,12 @@
-#$ -l h_vmem=2g
-#$ -cwd
-#$ -N ForWF
-#$ -o Trash
-#$ -e Trash
+#!/bin/bash
+#SBATCH --job-name=example_sbatch
+#SBATCH --output=example_sbatch.out
+#SBATCH --error=example_sbatch.err
+#SBATCH --time=00:10:00
+#SBATCH --partition=jnovembre
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --mem-per-cpu=1000
 
 
 Directory[1]="AncientBottleneck"
@@ -50,9 +54,9 @@ Ne[10]="10000"
 Ne[11]="20000"
 Ne[12]="346884"
 
-DemHistNumber=$(( ( ( $SGE_TASK_ID - 1) / 50 ) + 1 ))
-FourNsNumber=$(( ( $SGE_TASK_ID - 1 -  ( ( $DemHistNumber - 1 ) * 50 ) ) / 10 + 1 ))
-SeriesNumber=$(( ( $SGE_TASK_ID - 1 ) % 10 + 1 ))
+DemHistNumber=$(( ( ( $SLURM_ARRAY_TASK_ID - 1) / 50 ) + 1 ))
+FourNsNumber=$(( ( $SLURM_ARRAY_TASK_ID - 1 -  ( ( $DemHistNumber - 1 ) * 50 ) ) / 10 + 1 ))
+SeriesNumber=$(( ( $SLURM_ARRAY_TASK_ID - 1 ) % 10 + 1 ))
 
 i=$DemHistNumber
 
@@ -100,7 +104,7 @@ Line[12]="../../../Programs/Mssel/mssel3 3 10000 1 2 $ResampledTrajectory 1 -r 2
 
 ${Line[$i]} > $MsselOut
 perl DistanceToFirstSegregatingSite.pl $MsselOut $HapLengths
-rm $MsselOut
+# rm $MsselOut
 rm $ResampledTrajectory
 done
 # perl GetT2s.pl $MsselOut $TTwoOutput

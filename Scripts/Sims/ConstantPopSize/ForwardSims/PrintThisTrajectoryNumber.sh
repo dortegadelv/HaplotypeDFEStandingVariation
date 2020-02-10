@@ -18,3 +18,12 @@ File="../../../../Results/ConstantPopSize/ForwardSims/4Ns_100/ReducedTrajectorie
 ExitFile="../../../../Results/ConstantPopSize/ForwardSims/4Ns_100/ReducedTrajectories10000.txt"
 perl ../../ConstantPopSize/ForwardSims/PrintThisTrajectoryNumber.pl $File 10000 $ExitFile
 
+
+File="../../../../Results/ConstantPopSize/ForwardSims/4Ns_-25/ReducedTrajectories.txt"
+ExitFile="../../../../Results/ConstantPopSize/ForwardSims/4Ns_-25/ReducedTrajectories10000.txt"
+perl ../../ConstantPopSize/ForwardSims/PrintThisTrajectoryNumber.pl $File 10000 $ExitFile
+
+File="../../../../Results/ConstantPopSize/ForwardSims/4Ns_25/ReducedTrajectories.txt"
+ExitFile="../../../../Results/ConstantPopSize/ForwardSims/4Ns_25/ReducedTrajectories10000.txt"
+perl ../../ConstantPopSize/ForwardSims/PrintThisTrajectoryNumber.pl $File 10000 $ExitFile
+

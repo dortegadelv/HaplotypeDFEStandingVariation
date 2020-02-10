@@ -37,7 +37,7 @@ bash RunImportanceSamplingPopulationExpansion.sh
 cd Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims
 bash RunImportanceSamplingPopulationExpansion.sh
 
-Run using values of SGE_TASK_ID that go from 601-700
+Run using values of SLURM_ARRAY_TASK_ID that go from 601-700
 
 The output of the program are the simulated allele frequency trajectories that end with a certain frequency in the present. Each trajectory has an associated weight.
 
@@ -47,11 +47,22 @@ f frequency of the sampled allele frequency in the present
 r number of allele frequency trajectories simulated under the importance sampling framework
 N number of chromosomes in the present
 s random seed
-b Give a file that defines the bounds between allele frequency trajectories. The program will only report allele frequency changes that go across the bounds. See the ‘Bounds.txt’ file in each directory to see an example
+b The allele frequency trajectories are reduced using a set of allele frequency boundaries, where we will only record changes across allele frequency boundaries. This will be done in the next step of the pipeline using the script 'TransformTrajectoriesToMsselFormat.sh'. The file given to the program (Bounds.txt) is used for the user to keep as a reference and not actually used in the program. The boundaries defined in 'Bounds.txt' are equal to the boundaries defined in Programs/Mssel/freqints.h .
 D Demographic scenario used. This follows the syntax from ms. Check Scripts/Sims/PopExpansion/ImportanceSamplingSims/DemHistExpansion.txt for an example. We report the following each line:
 - eN refers to a change in population size (only option available at the moment). The next number refers to the time in a scale of 4N0 generations from the present to the past. The next number is a factor that states the change in population size with respect to the present day population. The next number should be set to zero.
 X Selection values that will be evaluated when going forwards in time
 p Number of chromosomes sampled from the present
+t, M, U, Q, E and C are unused options and any change to their values do not change the output of the program.
+
+1.5) Transform the trajectories to the Mssel format
+
+cd Scripts/Sims/ConstantPopSize/ImportanceSamplingSims
+bash TransformTrajectoriesToMsselFormat.sh 
+cd Scripts/Sims/AncientBottleneck/ImportanceSamplingSims
+bash TransformTrajectoriesToMsselFormat.sh 
+cd Scripts/Sims/PopExpansion/ImportanceSamplingSims
+bash TransformTrajectoriesToMsselFormat.sh 
+
 
 2) Run mssel (kindly provided by Richard Hudson) and compute L on the simulated trajectories.
 
@@ -62,12 +73,12 @@ bash RunMsselCalculateDistance10000.sh
 cd Scripts/Sims/PopExpansion/ImportanceSamplingSims
 bash RunMsselCalculateDistance10000.sh
 
-#Run using values of SGE_TASK_ID that go from 1-1000
+#Run using values of SLURM_ARRAY_TASK_ID that go from 1-100
 
 cd Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims
 bash RunMsselCalculateDistanceWithRecombination10000NoSingleton.sh
 
-#Run using values of SGE_TASK_ID that go from 1, 11, 21, 31, …, 9991
+#Run using values of SLURM_ARRAY_TASK_ID that go from 1-100
 
 3) Concatenate the L results.
 
@@ -97,43 +108,43 @@ The file from Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims/CreateNewP
 5) Simulate L values using the forward-in-time allele frequency trajectories. You must have already followed the instructions from README_ForwardSims.txt to simulate the trajectories. You must have a ‘ReducedTrajectories10000.txt’ for the demographic scenario and the selection value you want to explore.
 
 cd Scripts/Sims/ConcatenateManyStatisticsScripts/
-bash SimulateLDatasetsWithMssel.sh
+bash SimulateLDatasetsWithMsselMultiLessBothSides.sh
 
-# Repeat for values of SGE_TASK_ID going from 1-50, 101-151 and 301-351.
+# Repeat for values of SLURM_ARRAY_TASK_ID going from 1-50, 101-151 and 301-351.
 
 cd Scripts/Sims/UK10K_OnePercenters/ForwardSims
-SGE_TASK_ID=1
+SLURM_ARRAY_TASK_ID=1
 bash RunMssel_4Ns0.sh
-SGE_TASK_ID=1
+SLURM_ARRAY_TASK_ID=1
 bash RunMssel_4Ns25.sh
-SGE_TASK_ID=1
+SLURM_ARRAY_TASK_ID=1
 bash RunMssel_4Ns50.sh
-SGE_TASK_ID=1
+SLURM_ARRAY_TASK_ID=1
 bash RunMssel_4Ns-25.sh
-SGE_TASK_ID=1
+SLURM_ARRAY_TASK_ID=1
 bash RunMssel_4Ns-50.sh
 
-# Repeat the past commands for values of SGE_TASK_ID going from 1-100
+# Repeat the past commands for values of SLURM_ARRAY_TASK_ID going from 1-100
 
 6) Calculate the Log-likelihoods for different values of selection
 
 cd Scripts/Sims/ConstantPopSize/ForwardSims
-SGE_TASK_ID=1
-bash CreateSimTestTableWithLLResultsDenseGridNoRec.sh
+SLURM_ARRAY_TASK_ID=1
+bash CreateSimTestTableWithLLResultsDenseGridNoRecLess.sh
 cd Scripts/Sims/AncientBottleneck/ForwardSims
-SGE_TASK_ID=1
-bash CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTable.sh
+SLURM_ARRAY_TASK_ID=1
+bash CreateSimTestTableWithLLResultsDenseGridNoRecLess.sh
 cd Scripts/Sims/PopExpansion/ForwardSims
-SGE_TASK_ID=1
-bash CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTable.sh
+SLURM_ARRAY_TASK_ID=1
+bash CreateSimTestTableWithLLResultsDenseGridNoRecLess.sh
 
-# Run the past commands for SGE_TASK_ID values going from 1 to 5.
+# Run the past commands for SLURM_ARRAY_TASK_ID values going from 1 to 100.
 
 cd Scripts/Sims/UK10K_OnePercenters/ForwardSims
-SGE_TASK_ID=1
+SLURM_ARRAY_TASK_ID=1
 bash CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableFromSims.sh
 
-# Run the past commands for SGE_TASK_ID values going from 1 to 100.
+# Run the past commands for SLURM_ARRAY_TASK_ID values going from 1 to 100.
 
 
 7) Get the maximum likelihood estimator for each dataset
@@ -215,8 +226,8 @@ bash PrintThisTrajectoryNumber.sh
 
 cd Scripts/Sims/ConcatenateManyStatisticsScripts/
 SGE_TASK_ID=1
-bash SimulateLDatasetsWithMsselDFEThousands.sh
-# Run the past script with SGE_TASK_ID values going from 1-6000
+bash SimulateLDatasetsWithMsselDFE.sh
+# Run the past script with SGE_TASK_ID values going from 1-600
 cd Scripts/Sims/PopExpansionBoykoPlusPositive/ForwardSims
 bash MixBoykoPositiveHapLengths.sh
 
@@ -224,11 +235,11 @@ bash MixBoykoPositiveHapLengths.sh
 
 mkdir Results/ConstantPopSizeBoyko/ImportanceSampling/
 mkdir Results/PopExpansionBoykoPlusPositive/ImportanceSampling/
-cd Results/ConstantPopSizeBoyko/ImportanceSampling
+cd Scripts/Sims/ConstantPopSizeBoyko/ImportanceSamplingSims
 SGE_TASK_ID=601
 bash RunImportanceSamplingConstantSizeDenserGrid.sh
 # Run the past script with SGE_TASK_ID values going from 601-700
-cd Results/PopExpansionBoykoPlusPositive/ImportanceSampling
+cd Scripts/Sims/PopExpansionBoykoPlusPositive/ImportanceSamplingSims
 SGE_TASK_ID=601
 bash RunImportanceSamplingPopulationExpansion.sh
 # Run the past script with SGE_TASK_ID values going from 601-700
@@ -242,7 +253,7 @@ cd Scripts/Sims/PopExpansionBoykoPlusPositive/ImportanceSamplingSims
 SGE_TASK_ID=1
 bash RunMsselCalculateDistance10000.sh
 
-Run using values of SGE_TASK_ID that go from 1-999 for both bash scripts
+Run using values of SGE_TASK_ID that go from 1-100 for both bash scripts
 
 6) Concatenate the L results.
 
@@ -264,21 +275,25 @@ bash GetDFETable.sh
 
 cd Scripts/Sims/ConstantPopSizeBoyko/ForwardSims/
 bash CreateSimTestTableWithLLResultsDenseGridNoRec.sh
-# Run the past script with values going from 1-100 
+bash CreateSimTestTableWithLLResultsDenseGridNoRecSmall.sh
+# Run the past script with values of SLURM_ARRAY_TASK_ID going from 1-500 
 cd Scripts/Sims/ConstantPopSizeMouse/ForwardSims/
 bash CreateSimTestTableWithLLResultsDenseGridNoRec.sh
-# Run the past script with values going from 1-100 
+bash CreateSimTestTableWithLLResultsDenseGridNoRecSmall.sh
+# Run the past script with values of SLURM_ARRAY_TASK_ID going from 1-500 
 cd Scripts/Sims/PopExpansionBoykoPlusPositive/ForwardSims
 bash CreateSimTestTableWithLLResultsDenseGridNoRec.sh
-# Run the past script with values going from 1-100 
+bash CreateSimTestTableWithLLResultsDenseGridNoRecSmall.sh
+# Run the past script with values of SLURM_ARRAY_TASK_ID going from 1-500 
 cd Scripts/Sims/PopExpansionMousePlusPositive/ForwardSims
 bash CreateSimTestTableWithLLResultsDenseGridNoRec.sh
-# Run the past script with values going from 1-100 
+bash CreateSimTestTableWithLLResultsDenseGridNoRecSmall.sh
+# Run the past script with values of SLURM_ARRAY_TASK_ID going from 1-500 
 
 9) Get the MLE
 
 cd Scripts/Sims/ConcatenateManyStatisticsScripts/GetMLEDFEs
 bash GetMLEDFEs.sh
 
-Run the past script getting the script to take values from 1-17.
+Run the past script getting the script to take values from 1-8.
 

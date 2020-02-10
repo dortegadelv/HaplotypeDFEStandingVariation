@@ -5,8 +5,8 @@ open (EXIT,">$LLExit") or die "NO!";
 
 for ($i = 0; $i < 100 ; $i++){
 
-$Start = $i * 10 + 1;
-$End = ( $i + 1 ) * 10;
+$Start = $i * 1 + 1;
+$End = ( $i + 1 ) * 1;
 
 @LLs = ();
 

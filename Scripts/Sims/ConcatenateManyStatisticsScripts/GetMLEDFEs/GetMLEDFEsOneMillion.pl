@@ -3,14 +3,14 @@ $LLExit = $ARGV[1];
 
 open (EXIT,">$LLExit") or die "NO!";
 
-for ($i = 0; $i < 10 ; $i++){
+for ($i = 0; $i < 50 ; $i++){
 
-$Start = $i * 100 + 1;
-$End = ( $i + 1 ) * 100;
+$Start = $i * 10 + 1;
+$End = ( $i + 1 ) * 10;
 
 @LLs = ();
 
-for ($k = 0; $k < 2100 ; $k++){
+for ($k = 0; $k < 4200 ; $k++){
 $LLs[$k] = 0;
 }
 
@@ -22,7 +22,7 @@ while(<FILE>){
 chomp;
 $Line = $_;
 @SplitLine = split(/\s+/,$Line);
-for ($k = 0; $k < 2100 ; $k++){
+for ($k = 0; $k < 4200 ; $k++){
 $LLs[$k] = $LLs[$k] + $SplitLine[$k];
 }
 
@@ -31,7 +31,7 @@ $LLs[$k] = $LLs[$k] + $SplitLine[$k];
 close(FILE);
 }
 
-for ($k = 0; $k < 2100 ; $k++){
+for ($k = 0; $k < 4200 ; $k++){
 # print "$LLs[$k]\t";
 }
 
@@ -39,7 +39,7 @@ for ($k = 0; $k < 2100 ; $k++){
 
 $Max = $LLs[0];
 $MaxK = 0;
-for ($k = 0; $k < 2100 ; $k++){
+for ($k = 0; $k < 4200 ; $k++){
 
 if ($LLs[$k] > $Max){
 

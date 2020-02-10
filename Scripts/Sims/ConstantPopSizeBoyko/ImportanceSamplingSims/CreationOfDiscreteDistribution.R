@@ -1,9 +1,9 @@
-setwd("/Users/vicentediegoortegadelvecchyo/Dropbox/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/ScriptsOctober22_2017/Sims/ConstantPopSizeBoyko/ImportanceSamplingSims")
+setwd("/Users/vicentediegoortegadelvecchyo/Dropbox/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/ConstantPopSizeBoyko/ImportanceSamplingSims")
 
 #### Another table of probabilities
 
 AlphaGrid <- 0.01*1:30
-BetaGrid <- 5*1:70
+BetaGrid <- 30*1:70
 
 TwoNsValues <- 0:300*.5 + .25
 

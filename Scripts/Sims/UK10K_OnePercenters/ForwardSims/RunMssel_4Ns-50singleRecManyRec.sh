@@ -1,8 +1,13 @@
-#$ -l h_vmem=2g
-#$ -cwd
-#$ -N ForWF
-#$ -o ../../../../Results/ConstantPopSize/ForwardSims/4Ns_50/Trash
-#$ -e ../../../../Results/ConstantPopSize/ForwardSims/4Ns_50/Trash
+#!/bin/bash
+#SBATCH --job-name=example_sbatch
+#SBATCH --output=example_sbatch.out
+#SBATCH --error=example_sbatch.err
+#SBATCH --time=02:00:00
+#SBATCH --partition=jnovembre
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --mem-per-cpu=1000
+
 
 TrajNum=$( wc -l ../../../../Results/UK10K/ForwardSims/4Ns_-50/Alleles{1..120}.txt | tail -n1 | awk '{print $1}' )
 echo $TrajNum
@@ -39,8 +44,8 @@ RecRate[19]="14138.413"
 RecRate[20]="19608.766"
 RecRate[21]="38656.841"
 
-RecNumber=$(( ( $SGE_TASK_ID - 1 ) / 100 + 1 ))
-Repetition=$(( ( $SGE_TASK_ID - 1 ) % 100 + 1 ))
+RecNumber=$(( ( $SLURM_ARRAY_TASK_ID - 1 ) / 100 + 1 ))
+Repetition=$(( ( $SLURM_ARRAY_TASK_ID - 1 ) % 100 + 1 ))
 
 
 ResampledTrajFile="../../../../Results/UK10K/ForwardSims/4Ns_-50/ResampledTraj"${RecRate[$RecNumber]}"_"$Repetition".txt"

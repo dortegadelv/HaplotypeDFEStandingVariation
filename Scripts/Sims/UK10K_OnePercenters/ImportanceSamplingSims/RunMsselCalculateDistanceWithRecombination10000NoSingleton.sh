@@ -1,18 +1,22 @@
-#$ -l h_vmem=2g
-#$ -cwd
-#$ -N ForWF
-#$ -e ../../../../Results/Trash/
-#$ -o ../../../../Results/Trash/
+#!/bin/bash
+#SBATCH --job-name=example_sbatch
+#SBATCH --output=example_sbatch.out
+#SBATCH --error=example_sbatch.err
+#SBATCH --time=96:00:00
+#SBATCH --partition=jnovembre
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --mem-per-cpu=1000
 
-FileNumber=$(( ( $SGE_TASK_ID - 1 ) / 100 + 1 ))
-Repetition=$(( ( $SGE_TASK_ID - 1 ) % 100 + 1 ))
+FileNumber=$(( ( $SLURM_ARRAY_TASK_ID - 1 ) / 1 + 1 ))
+Repetition=$(( ( $SLURM_ARRAY_TASK_ID - 1 ) % 1 + 1 ))
 
 File="../../../../Results/UK10K_OnePercenters/ImportanceSamplingSims/ExitMssel_0.01_0_"$FileNumber".txtTrajectory.txt"
 ExitMssel="../../../../Results/UK10K_OnePercenters/ImportanceSamplingSims/TrajParTrajPartMsselOut_"$FileNumber"_"$Repetition".txt"
 
 # ./mssel3 3 1000 1 2 $File 1 -r 100 500000 -t 100 > $ExitMssel
 
-SeedNumber=$(( $FileNumber * 10 + $Repetition ))
+SeedNumber=$(( ( $FileNumber * 10 + $Repetition) * 1000 ))
 
 for j in {1..21}
 do
@@ -49,6 +53,7 @@ do
 perl ../../ConstantPopSize/ImportanceSamplingSims/TrajectoryPartMssel.pl $File $i $ExitMssel 113126
 LastFrequency=$( tail -n1 $ExitMssel | awk '{print $2}' )
 echo $LastFrequency
+SeedNumber=$(( $SeedNumber + 1  ))
 
 for j in {1..21}
 do
@@ -57,13 +62,13 @@ DistancesFile="../../../../Results/UK10K_OnePercenters/ImportanceSamplingSims/Qu
 
 rm $MsselFile
 
-if [ "$LastFrequency" == "0" ]
+if (( $(echo "$LastFrequency == 0.0" |bc -l) ))
 then
 echo "NO"
 # for k in {1..1000}
 # do
 
-../../../../Programs/Mssel/mssel3 73 1 1 72 $ExitMssel 1 -r ${RecRate[$j]} 250000 -t 8484.45 -eN 0.0 1.0 -eN 0.0001017 0.0066121 -eN 0.0006409 0.0051756 -eN 0.0014188 0.0402604 -eN 0.0041171 0.0203048 -seeds $SeedNumber $SeedNumber $SeedNumber > $MsselFile
+../../../../Programs/Mssel/mssel3 73 100 1 72 $ExitMssel 1 -r ${RecRate[$j]} 250000 -t 8484.45 -eN 0.0 1.0 -eN 0.0001017 0.0066121 -eN 0.0006409 0.0051756 -eN 0.0014188 0.0402604 -eN 0.0041171 0.0203048 -seeds $SeedNumber $SeedNumber $SeedNumber > $MsselFile
 # done
 time perl ../../ConcatenateManyStatisticsScripts/DistanceToFirstSegregatingSiteMultiSequenceFractions.pl $MsselFile $DistancesFile 1 72 0 0 25 250000 TestT2Bounds.txt
 else

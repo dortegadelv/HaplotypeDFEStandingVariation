@@ -23,35 +23,13 @@ Dir[6]="4Ns_100"
 
 for i in {2..6}
 do
-Directory="TestData/run."$i"/"
+Directory="/u/home/d/diegoort/project/PurifyingSelectionProject/ForwardSimsKirkProgram/NewProgram/TestData/run."$i"/"
 for k in {3..3}
 do
-ResultsFile="../../../../Results/AncientBottleneck/ForwardSims/"${Dir[$i]}"/HapLengths/ExitFileNoRecN"${NumberOfMarkers[$k]}".txt"
+ResultsFile="../../../../Results/AncientBottleneck/ForwardSims/"${Dir[$i]}"/HapLengths/ExitFileNoRecLessN"${NumberOfMarkers[$k]}".txt"
+cat ../../../../Results/AncientBottleneck/ForwardSims/${Dir[$i]}/HapLengths/ExitFileNoRecLessN${NumberOfMarkers[$k]}_{1..100}.txt > $ResultsFile
 DataSummarized="../../../../Results/ResultsSelectionInferred/SelectionAncientBottleneck"${Selection[$i]}"_N"${NumberOfMarkers[$k]}".txt"
 perl ../../ConstantPopSize/ForwardSims/GetMax4NsValueFromTable.pl $ResultsFile $DataSummarized ${ActualSelection[$i]}
-done
-done
-
-
-for i in {5..5}
-do
-Directory="TestData/run."$i"/"
-for k in {3..3}
-do
-ResultsFile=$Directory"ExitFileNoRecN_NewTable"${NumberOfMarkers[$k]}".txt"
-DataSummarized="ResultsSelectionInferred/Selection"${Selection[$i]}"_N"${NumberOfMarkers[$k]}".txt"
-perl ../../GetMax4NsValueFromTable.pl $ResultsFile $DataSummarized ${ActualSelection[$i]}
-done
-done
-
-for i in {8..8}
-do
-Directory="TestData/run."$i"/"
-for k in {3..3}
-do
-ResultsFile=$Directory"ExitFileNoRecN_NewTable"${NumberOfMarkers[$k]}".txt"
-DataSummarized="ResultsSelectionInferred/Selection"${Selection[$i]}"_N"${NumberOfMarkers[$k]}".txt"
-perl ../../GetMax4NsValueFromTable.pl $ResultsFile $DataSummarized ${ActualSelection[$i]}
 done
 done
 
