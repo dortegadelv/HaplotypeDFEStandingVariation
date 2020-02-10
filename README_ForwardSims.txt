@@ -81,8 +81,11 @@ bash Expansion_4Ns50.sh
 bash Expansion_4Ns-25.sh
 bash Expansion_4Ns-50.sh
 
-Run the past scripts with many values of SGE_TASK_ID (or SLURM_ARRAY_TASK_ID) until you obtain 10,000 trajectories or more. Then run the following scripts after going
-into the appropriate directories. To run these scripts, you will need the program mssel (kindly provided to us from Richard Hudson). These scripts will change the trajectories into a readable format for mssel and also will reduce the disk space taken by the file containing the allele frequency trajectories. The allele frequency trajectories are reduced using a set of allele frequency boundaries, where we will only record changes across allele frequency boundaries. The boundaries are defined in Programs/Mssel/freqints.h . If the user wishes to change those boundaries, modify the vector 'bounds' inside Programs/Mssel/freqints.h to define the new boundaries and recompile the program stepftn using 'gcc -O3 -o stepftn stepftn.c -lm':
+Run the past scripts with many values of SGE_TASK_ID (or SLURM_ARRAY_TASK_ID) until you obtain 10,000 trajectories or more. The number of trajectories obtained can be found by checking the number of alleles printed after running the past scripts. As an example, to check the number of trajectories in a constant population size scenario with a 4Ns value equal to 0 you can type the following command 'wc -l ../../../../Results/ConstantPopSize/ForwardSims/4Ns_0/Alleles*'
+Then run the following scripts after going into the appropriate directories. To run these scripts, you will need the program mssel (kindly provided to us from Richard Hudson).
+These scripts will change the trajectories into a readable format for mssel and also will reduce the disk space taken by the file containing the allele frequency trajectories.
+The allele frequency trajectories are reduced using a set of allele frequency boundaries, where we will only record changes across allele frequency boundaries. The boundaries are defined in Programs/Mssel/freqints.h .
+If the user wishes to change those boundaries, modify the vector 'bounds' inside Programs/Mssel/freqints.h to define the new boundaries and recompile the program stepftn using 'gcc -O3 -o stepftn stepftn.c -lm':
 
 cd Scripts/Sims/ConstantPopSize/ForwardSims
 bash CreateReducedTrajectories.sh
