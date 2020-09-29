@@ -247,7 +247,7 @@ int main(int argc, char const *argv[])
 			for (j = 0; j < (int) DemoRate.size(); j++){
 //				printf("Line iteration = %i\n", j);
 				
-				cout << "Time boundary: " << TimeBoundary << "\t" << *line_time<< "\t" << CurrentPopulationSize << "\n";
+//				cout << "Time boundary: " << TimeBoundary << "\t" << *line_time<< "\t" << CurrentPopulationSize << "\n";
 //				IterationGens = 0;
 				if (j != ((int) DemoRate.size() - 1)){
 				if (*line_type == "eN"){
@@ -258,7 +258,7 @@ int main(int argc, char const *argv[])
 					while (NumberOfGenerations < TimeBoundary) {
 						N_eSizes.push_back(CurrentPopulationSize);
 						MultScalars.push_back(*line_multype);
-						cout << "Gens: " << NumberOfGenerations <<  "NeVector: " << CurrentPopulationSize << " Scalar: " << *line_multype << "\n";
+//						cout << "Gens: " << NumberOfGenerations <<  "NeVector: " << CurrentPopulationSize << " Scalar: " << *line_multype << "\n";
 						NumberOfGenerations++;
 					}
 					PastGrowthFlag = 0;
@@ -295,7 +295,7 @@ int main(int argc, char const *argv[])
 					while (NumberOfGenerations < TMax) {
 						N_eSizes.push_back(CurrentPopulationSize);
 						MultScalars.push_back(*line_multype);
-						cout << "Gens: " << NumberOfGenerations <<  "NeVector: " << CurrentPopulationSize << " Scalar: " << *line_multype << "\n";
+//						cout << "Gens: " << NumberOfGenerations <<  "NeVector: " << CurrentPopulationSize << " Scalar: " << *line_multype << "\n";
 						NumberOfGenerations++;
 					}
 					PastGrowthFlag = 0;
@@ -458,8 +458,8 @@ boost::math::beta_distribution<> nd((int) (SampleFinalGenPopSize*f + 0.5) + 1, (
 		FrequencyToPrint = (Bounds[UpperBoundPerRepetition - 1] + Bounds[LowerBoundPerRepetition])/ 2.0;
 		GenerationsAgoin4NeScale = double(double(NumberOfGenerations) / double(2*Ne));
 //		cout << "Frequency is in one of the bounds: " << FrequencyToPrint << "\t" << Bounds[LowBound] << "\t" << Bounds[UpBound] << "\n";
-		ReducedTrajectories = string("TRA\t") + static_cast<ostringstream*>( &(ostringstream() << GenerationsAgoin4NeScale) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << FrequencyToPrint) )->str() + string("\n");
-		TemporalTrajectories = string("TRA\t") + static_cast<ostringstream*>( &(ostringstream() << GenerationsAgoin4NeScale) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << FrequencyToPrint) )->str() + string("\n");
+		ReducedTrajectories = string("TRA\t") + static_cast<ostringstream*>( &(ostringstream() << GenerationsAgoin4NeScale) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << Currentf) )->str() + string("\n");
+		TemporalTrajectories = string("TRA\t") + static_cast<ostringstream*>( &(ostringstream() << GenerationsAgoin4NeScale) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << Currentf) )->str() + string("\n");
 
 		
 //		cout <<  "TRA\t0\t" << CurrentAlleleNumber << "\t" << FrequencyToPrint << "\t" << Ne << endl;
@@ -469,8 +469,8 @@ boost::math::beta_distribution<> nd((int) (SampleFinalGenPopSize*f + 0.5) + 1, (
 		FrequencyToPrint = (Bounds[UpperBoundPerRepetition] + Bounds[LowerBoundPerRepetition])/ 2.0;
 		GenerationsAgoin4NeScale = double(double(NumberOfGenerations) / double(2*Ne));
 //		cout << "Frequency is in the middle of the bounds: " << FrequencyToPrint << "\t" << Bounds[LowBound] << "\t" << Bounds[UpBound] << "\n";
-		ReducedTrajectories = string("TRA\t") + static_cast<ostringstream*>( &(ostringstream() << GenerationsAgoin4NeScale) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << FrequencyToPrint) )->str() + string("\n");
-		TemporalTrajectories = string("TRA\t") + static_cast<ostringstream*>( &(ostringstream() << GenerationsAgoin4NeScale) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << FrequencyToPrint) )->str() + string("\n");
+		ReducedTrajectories = string("TRA\t") + static_cast<ostringstream*>( &(ostringstream() << GenerationsAgoin4NeScale) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << Currentf) )->str() + string("\n");
+		TemporalTrajectories = string("TRA\t") + static_cast<ostringstream*>( &(ostringstream() << GenerationsAgoin4NeScale) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << Currentf) )->str() + string("\n");
 //		cout <<  "TRA\t0\t" << CurrentAlleleNumber << "\t" << FrequencyToPrint << "\t" << Ne << endl;
 	}
 //			cout << "New Bounds: " << j << "\t" << LowerBoundPerRepetition[j] << "\t" << UpperBoundPerRepetition[j] << "\n";
@@ -561,6 +561,7 @@ while (ExitLoopFlag == 0){
 			CurrentNeSizeBefore = *NeSizesIterator;
 			CurrentNeSizeAfter = *NeSizesIteratorAfter;
 //			ExampleTrajectory << "R: "<< CurrentNeSizeBefore << "\t" << CurrentNeSizeAfter << "\t";
+//            cout << "R: "<< CurrentNeSizeBefore << "\t" << CurrentNeSizeAfter << "\n";
 			Currentf = double(AllelesInPresentGeneration) / double(CurrentNeSizeBefore);
 
 			Test = 0;
@@ -621,15 +622,18 @@ while (ExitLoopFlag == 0){
 //				cout << "Entered Exit Loop Flag\n";
 				AfterFrequency = ( double(Test) / double(CurrentNeSizeAfter));
 //				cout << "Current frequency: " << AfterFrequency << "\n";
-				
+                GenerationsAgoin4NeScale = double(double(NumberOfGenerations + 1) / double(2*Ne));
+                ReducedTrajectories = string(ReducedTrajectories) + string("TRA\t") + static_cast<ostringstream*>( &(ostringstream() << GenerationsAgoin4NeScale) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << AfterFrequency) )->str() + string("\n");
+                TemporalTrajectories = string(TemporalTrajectories) + string("TRA\t") + static_cast<ostringstream*>( &(ostringstream() << GenerationsAgoin4NeScale) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << AfterFrequency) )->str() + string("\n");
+
 				if (AfterFrequency <= Bounds[LowerBoundPerRepetition]){
 //					cout << "Lower bound\n";
 					FrequencyToPrint = (Bounds[UpperBoundPerRepetition - 1] + Bounds[LowerBoundPerRepetition - 1])/ 2.0;
 					GenerationsAgoin4NeScale = double(double(NumberOfGenerations + 1) / double(2*Ne));
 /*					ReducedTrajectories[j] = string(ReducedTrajectories[j]) + string("TRA\t") + static_cast<ostringstream*>( &(ostringstream() << GenerationsAgoin4NeScale) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << Test) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << FrequencyToPrint) )->str() +  string("\t") + static_cast<ostringstream*>( &(ostringstream() << CurrentNeSizeAfter) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << Bounds[LowerBoundPerRepetition[j]]) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << Bounds[UpperBoundPerRepetition[j]]) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << AfterFrequency) )->str() + " Down" + string("\n");
 					TemporalTrajectories[j] = string(TemporalTrajectories[j]) + string("TRA\t") + static_cast<ostringstream*>( &(ostringstream() << GenerationsAgoin4NeScale) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << Test) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << FrequencyToPrint) )->str() +  string("\t") + static_cast<ostringstream*>( &(ostringstream() << CurrentNeSizeAfter) )->str() + string("\t")  + static_cast<ostringstream*>( &(ostringstream() << Bounds[LowerBoundPerRepetition[j]]) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << Bounds[UpperBoundPerRepetition[j]]) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << AfterFrequency) )->str() + " Down" + string("\n");
-*/					ReducedTrajectories = string(ReducedTrajectories) + string("TRA\t") + static_cast<ostringstream*>( &(ostringstream() << GenerationsAgoin4NeScale) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << FrequencyToPrint) )->str() + string("\n");
-					TemporalTrajectories = string(TemporalTrajectories) + string("TRA\t") + static_cast<ostringstream*>( &(ostringstream() << GenerationsAgoin4NeScale) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << FrequencyToPrint) )->str() + string("\n");
+*/ /*					ReducedTrajectories = string(ReducedTrajectories) + string("TRA\t") + static_cast<ostringstream*>( &(ostringstream() << GenerationsAgoin4NeScale) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << Currentf) )->str() + string("\n");
+					TemporalTrajectories = string(TemporalTrajectories) + string("TRA\t") + static_cast<ostringstream*>( &(ostringstream() << GenerationsAgoin4NeScale) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << FrequencyToPrint) )->str() + string("\n"); */
 					LowerBoundPerRepetition = LowerBoundPerRepetition - 1;
 					UpperBoundPerRepetition = UpperBoundPerRepetition - 1;
 //					return 0;
@@ -641,8 +645,8 @@ while (ExitLoopFlag == 0){
 //					cout << "1: "<< ReducedTrajectories[j];
 /*					ReducedTrajectories[j] = string(ReducedTrajectories[j]) + string("TRA\t") + static_cast<ostringstream*>( &(ostringstream() << GenerationsAgoin4NeScale) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << Test) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << FrequencyToPrint) )->str() +  string("\t") + static_cast<ostringstream*>( &(ostringstream() << CurrentNeSizeAfter) )->str() + string("\t")  + static_cast<ostringstream*>( &(ostringstream() << Bounds[LowerBoundPerRepetition[j]]) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << Bounds[UpperBoundPerRepetition[j]]) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << AfterFrequency) )->str() + " Up" + string("\n");
 					TemporalTrajectories[j] = string(TemporalTrajectories[j]) + string("TRA\t") + static_cast<ostringstream*>( &(ostringstream() << GenerationsAgoin4NeScale) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << Test) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << FrequencyToPrint) )->str() +  string("\t") + static_cast<ostringstream*>( &(ostringstream() << CurrentNeSizeAfter) )->str() + string("\t")  + static_cast<ostringstream*>( &(ostringstream() << Bounds[LowerBoundPerRepetition[j]]) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << Bounds[UpperBoundPerRepetition[j]]) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << AfterFrequency) )->str() + " Up" + string("\n");
-*/					ReducedTrajectories = string(ReducedTrajectories) + string("TRA\t") + static_cast<ostringstream*>( &(ostringstream() << GenerationsAgoin4NeScale) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << FrequencyToPrint) )->str() + string("\n");
-					TemporalTrajectories = string(TemporalTrajectories) + string("TRA\t") + static_cast<ostringstream*>( &(ostringstream() << GenerationsAgoin4NeScale) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << FrequencyToPrint) )->str() + string("\n");
+*/ /*					ReducedTrajectories = string(ReducedTrajectories) + string("TRA\t") + static_cast<ostringstream*>( &(ostringstream() << GenerationsAgoin4NeScale) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << Currentf) )->str() + string("\n");
+					TemporalTrajectories = string(TemporalTrajectories) + string("TRA\t") + static_cast<ostringstream*>( &(ostringstream() << GenerationsAgoin4NeScale) )->str() + string("\t") + static_cast<ostringstream*>( &(ostringstream() << FrequencyToPrint) )->str() + string("\n"); */
 					LowerBoundPerRepetition = LowerBoundPerRepetition + 1;
 					UpperBoundPerRepetition = UpperBoundPerRepetition + 1;
 //					cout << "2: "<< ReducedTrajectories[j];

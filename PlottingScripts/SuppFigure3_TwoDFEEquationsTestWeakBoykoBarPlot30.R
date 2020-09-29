@@ -186,7 +186,7 @@ Label <- paste(">","150",sep="")
 Labels <- c("0-5","50-55","100-105",Label)
 
 
-barplot(log10(counts)-log10(0.00001), main="", ylab="Probability", xlab="4Ns", col=ViridisColors,
+barplot(log10(counts)-log10(0.00001), main="", ylab="Probability", xlab=expression(bolditalic(s[j]) * " (4Ns intervals)"), col=ViridisColors,
 legend = c(expression("Real" ~ 'P'[psi] * "(" * bolditalic(s[j]) * ")"), expression("Inferred"  ~ 'P'[psi] * "(" * bolditalic(s[j]) * ")"), expression('P'[psi] * "(" * bolditalic(s[j])*" | "* italic(f) * ", "* italic(D) *")")), ylim = c(0, 5), beside=TRUE,cex.lab=2,cex.axis=2,cex.names=2, args.legend = list(x = "top",cex= 0.95), yaxt="n", xaxt = "n", space = c(0, 2))
 
 axis (2,at=c(0,1,2,3,4,5), labels = c(0,10^-4,10^-3,10^-2,10^-1,10^0), cex.axis = 0.8)

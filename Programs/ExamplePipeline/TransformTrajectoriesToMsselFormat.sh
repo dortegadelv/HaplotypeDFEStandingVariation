@@ -34,5 +34,7 @@ echo $i
 Sum=$(( $i + 1000 ))
 FileOne="../Results/ImportanceSamplingSims_"$i".txtTrajectory.txt"
 ExitFile="../Results/ExitMsselImportanceSamplingSims_"$i".txtTrajectory.txt"
-perl TrajToMsselFormat.pl $FileOne $ExitFile $RepsPerSim $LastPopSize
+CurrentTrajs="../Results/ExitMsselReducedImportanceSamplingSims_"$i".txtTrajectory.txt"
+perl TrajToMsselFormatReverse.pl $FileOne $ExitFile $RepsPerSim $LastPopSize
+cat $ExitFile | ../Mssel/stepftn > $CurrentTrajs
 done

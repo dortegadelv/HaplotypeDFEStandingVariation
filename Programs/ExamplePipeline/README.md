@@ -14,6 +14,7 @@ We also provide scripts to calculate L from genomic data. If you compute the L v
 6) Calculate L from data
 7) ABC algorithm to estimate the demographic history
 
+If you only want to run the inference on a set of precomputed L values, follow steps 2-5.
 
 ## Step 0) Prerequisites
 
@@ -104,7 +105,7 @@ The past three scripts contain comments with further instructions on the command
 
 Note that you can modify the files PReFerSimParameterFile1 and PReFerSimParameterFile2 to simulate alleles evolving under a different point selection coefficient or a particular distribution of fitness effects. There are more instructions on how to do this in the PReFerSim manual.
 
-## 2) Generate the table that computes the likelihoods of L(4Ns, allele frequency, Demographic scenario | L) for a single selection coefficient 4Ns (see equation 2 from our paper)
+## 2) Generate the table that computes the likelihoods of Likelihood(4Ns, allele frequency, Demographic scenario | L) for a single selection coefficient 4Ns (see equation 2 from our paper)
 
 The likelihood table will be generated using an importance sampling approach. To run step 2, start by using the script SimulateUsingISRoutine.sh
 
@@ -136,9 +137,7 @@ That scripts runs an importance sampling method based on a paper by Monty Slatki
 
 `echo $Traj`
 
-To reduce computing time and disk space, only changes in allele frequency across a set of pre-specified boundaries are tracked, those boundaries can be found in the file ExamplePipeline/ISProgram/Bounds.txt . The boundaries in that file should match the boundaries in ExamplePipeline/Mssel/freqints.h
-
-Then, run the following script to transform the trajectories into a format usable by mssel:
+To reduce computing time and disk space, only changes in allele frequency across a set of pre-specified boundaries are tracked, those boundaries can be found in the file ExamplePipeline/Mssel/freqints.h . Then, we run the following script to transform the trajectories into a format usable by mssel:
 
 `bash TransformTrajectoriesToMsselFormat.sh NumberOfSims DemographicScenario Replicates`
 
