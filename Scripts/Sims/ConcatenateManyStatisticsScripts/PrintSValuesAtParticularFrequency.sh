@@ -18,3 +18,19 @@ perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../../../Result
 perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../../../Results/ExitSValues/ExitOnePercentSValuesPopExpansionMouseLongBurnIn.txt ../../../Results/PopExpansionMousePlusPositiveLongBurnIn/ForwardSims/MousePart/Output. 2500
 perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../../../Results/ExitSValues/ExitOnePercentSValuesPopExpansionMouseLongerBurnIn.txt ../../../Results/PopExpansionMousePlusPositiveLongerBurnIn/ForwardSims/MousePart/Output. 2500
 
+perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../../../Results/ExitSValues/ExitOnePercentSValuesConstantPopSizeBoykoLongBurnIn.txt ../../../Results/ConstantPopSizeLongBurnInBoyko/ForwardSims/Output. 2500
+perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../../../Results/ExitSValues/ExitOnePercentSValuesConstantPopSizeBoykoLongerBurnIn.txt ../../../Results/ConstantPopSizeLongerBurnInBoyko/ForwardSims/Output. 2500
+perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../../../Results/ExitSValues/ExitOnePercentSValuesConstantPopSizeMouseLongBurnIn.txt ../../../Results/ConstantPopSizeLongBurnInMouse/ForwardSims/Output. 2500
+perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../../../Results/ExitSValues/ExitOnePercentSValuesConstantPopSizeMouseLongerBurnIn.txt ../../../Results/ConstantPopSizeLongerBurnInMouse/ForwardSims/Output. 2500
+
+perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../../../Results/ExitSValues/ExitOnePercentSValuesTestBoyko_1.txt ../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart1/Output. 500
+perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../../../Results/ExitSValues/ExitOnePercentSValuesTestBoyko_2.txt ../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart2/Output. 500
+perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../../../Results/ExitSValues/ExitOnePercentSValuesTestBoyko_3.txt ../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart3/Output. 500
+perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../../../Results/ExitSValues/ExitOnePercentSValuesTestBoyko_4.txt ../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart4/Output. 500
+perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../../../Results/ExitSValues/ExitOnePercentSValuesTestBoyko_5.txt ../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart5/Output. 500
+perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../../../Results/ExitSValues/ExitOnePercentSValuesTestBoyko_6.txt ../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output. 500
+perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../../../Results/ExitSValues/ExitOnePercentSValuesTestBoyko_7.txt ../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart7/Output. 500
+perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../../../Results/ExitSValues/ExitOnePercentSValuesTestBoyko_8.txt ../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart8/Output. 500
+perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../../../Results/ExitSValues/ExitOnePercentSValuesTestBoyko_9.txt ../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart9/Output. 500
+perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../../../Results/ExitSValues/ExitOnePercentSValuesTestBoyko_10.txt ../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart10/Output. 500
+

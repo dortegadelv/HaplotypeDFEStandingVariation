@@ -1,0 +1,2 @@
+/bin/ar qc libtables.a  CMakeFiles/tables.dir/treerec/tskit/convert.c.o CMakeFiles/tables.dir/treerec/tskit/core.c.o CMakeFiles/tables.dir/treerec/tskit/genotypes.c.o CMakeFiles/tables.dir/treerec/tskit/kastore/kastore.c.o CMakeFiles/tables.dir/treerec/tskit/stats.c.o CMakeFiles/tables.dir/treerec/tskit/tables.c.o CMakeFiles/tables.dir/treerec/tskit/text_input.c.o CMakeFiles/tables.dir/treerec/tskit/trees.c.o
+/bin/ranlib libtables.a

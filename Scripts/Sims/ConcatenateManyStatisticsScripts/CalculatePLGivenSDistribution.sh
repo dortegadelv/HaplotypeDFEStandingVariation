@@ -47,6 +47,7 @@ for (( i = 7 ; i <= 7 ; i++ ))
 do
 for (( j = 1 ; j <= 5 ; j++ ))
 do
+echo $j
 Files="../../../Results/"${Directory[$i]}"/ForwardSims/"${FourNs[$j]}"/HapLengths/HapLengths"
 perl CalculatePLGivenSDistribution.pl ../../../Results/DistributionOfL/DistributionOfL.txt 1 100 $Files
 done

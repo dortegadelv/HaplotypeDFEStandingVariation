@@ -1,0 +1,4 @@
+SeriesNumber = 7 Number = 1001 FrequencyNum = 2 SelectionNum = 1
+ExitFileFreq0.01Selection0.txt
+Selection = 0
+time ./SlatkinISConstantSizeSISR -A 0 -a 0 -f 0.01 -r 1000 -N 22886 -s 2602 -t 0 -M 0.0000003 -U 0.99999 -Q 0.0 -E 0.0001 -F ExpansionDenserGrid/Exit__0.01_0_1001.txt -b ExpansionDenserGrid/Bounds.txt -D  -X ExpansionDenserGrid/NewSelectionValues.txt -C 100000

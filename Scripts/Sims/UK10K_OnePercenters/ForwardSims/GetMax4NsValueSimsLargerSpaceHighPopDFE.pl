@@ -6,7 +6,7 @@ for ( $DirNumber = 1; $DirNumber <= 1 ; $DirNumber++ ) {
 print "$FourNs[$DirNumber]\n";
 $ExitFile = "../../../../Results/ResultsSelectionInferred/SelectionLargerSpaceHighPopUK10K".$FourNs[$DirNumber].".txt";
 open (EXIT,">$ExitFile") or die "NO";
-for ( $RepNumber = 1; $RepNumber <= 40 ; $RepNumber++) {
+for ( $RepNumber = 1; $RepNumber <= 100 ; $RepNumber++) {
 $File="../../../../Results/UK10K/ForwardSims/".$FourNs[$DirNumber]."/LLSimsMssel273_".$RepNumber.".txt";
 
 open (FILE,$File) or die "NO! $File\n";

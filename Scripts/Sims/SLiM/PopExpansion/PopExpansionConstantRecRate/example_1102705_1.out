@@ -1,0 +1,37 @@
+1
+// Initial random seed:
+1690287621405
+
+// RunInitializeCallbacks():
+initializeMutationRate(4.18731e-08);
+initializeTreeSeq();
+initializeMutationType(1, 0, "f", 0);
+initializeMutationType(2, 0.5, "s", "return runif(1,0.00125, 0.0125);");
+initializeGenomicElementType(1, m1, 1);
+initializeRecombinationRate(5e-08);
+NO!
+2
+// Initial random seed:
+1690987622000
+
+// RunInitializeCallbacks():
+initializeMutationRate(4.18731e-08);
+initializeTreeSeq();
+initializeMutationType(1, 0, "f", 0);
+initializeMutationType(2, 0.5, "s", "return runif(1,0.00125, 0.0125);");
+initializeGenomicElementType(1, m1, 1);
+initializeRecombinationRate(5e-08);
+NO!
+3
+// Initial random seed:
+1691667622601
+
+// RunInitializeCallbacks():
+initializeMutationRate(4.18731e-08);
+initializeTreeSeq();
+initializeMutationType(1, 0, "f", 0);
+initializeMutationType(2, 0.5, "s", "return runif(1,0.00125, 0.0125);");
+initializeGenomicElementType(1, m1, 1);
+initializeRecombinationRate(5e-08);
+NO!
+TotalNumberOfAlleles is 0

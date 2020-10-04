@@ -2,7 +2,7 @@
 #SBATCH --job-name=example_sbatch
 #SBATCH --output=example_sbatch.out
 #SBATCH --error=example_sbatch.err
-#SBATCH --time=02:00:00
+#SBATCH --time=24:00:00
 #SBATCH --partition=jnovembre
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
@@ -44,9 +44,11 @@ RecRate[19]="14138.413"
 RecRate[20]="19608.766"
 RecRate[21]="38656.841"
 
-RecNumber=$(( ( $SLURM_ARRAY_TASK_ID - 1 ) / 100 + 1 ))
-Repetition=$(( ( $SLURM_ARRAY_TASK_ID - 1 ) % 100 + 1 ))
+RecNumber=$(( ( $SLURM_ARRAY_TASK_ID - 1 ) / 1 + 1 ))
+# Repetition=$(( ( $SLURM_ARRAY_TASK_ID - 1 ) % 100 + 1 ))
 
+for Repetition in {1..50}
+do
 
 ResampledTrajFile="../../../../Results/UK10K/ForwardSims/4Ns_-50/ResampledTraj"${RecRate[$RecNumber]}"_"$Repetition".txt"
 MsselOut="../../../../Results/UK10K/ForwardSims/4Ns_-50/MsselOut"${RecRate[$RecNumber]}"_"$Repetition".txt"
@@ -76,40 +78,18 @@ DistancesFile="../../../../Results/UK10K/ForwardSims/4Ns_-50/SimDistancesMsselSi
 
 perl ../../ConstantPopSize/ForwardSims/SampleTrajectories.pl ../../../../Results/UK10K/ForwardSims/4Ns_-50/ReducedTrajectories10000.txt 273 $ResampledTrajFile $Repetition
 
-# ../mssel3 3 ${NumberOfMarkers[$i]} 1 2 $ResampledTrajFile 1 -r 0.0 500000 -t 200 > $MsselOut
+Rate=$( echo "scale = 5; ${RecRate[$RecNumber]} * 2" | bc )
 
-# perl ../DistanceToFirstSegregatingSite.pl $MsselOut $HapLengths 
+../../../../Programs/Mssel/mssel3 73 273 1 72 $ResampledTrajFile 250000 -r $Rate 499999 -t 16968.9 -eN 0.0 1.0 -eN 0.0001017 0.0066121 -eN 0.0006409 0.0051756 -eN 0.0014188 0.0402604 -eN 0.0041171 0.0203048 > $MsselOutNoRec
 
-../../../../Programs/Mssel/mssel3 73 273 1 72 $ResampledTrajFile 1 -r ${RecRate[$RecNumber]} 250000 -t 8484.45 -eN 0.0 1.0 -eN 0.0001017 0.0066121 -eN 0.0006409 0.0051756 -eN 0.0014188 0.0402604 -eN 0.0041171 0.0203048 > $MsselOutNoRec
+time perl ../../ConcatenateManyStatisticsScripts/DistanceToFirstSegregatingSiteMultiSequence_DeleteSingletonsBothSides.pl  $MsselOutNoRec $DistancesFile 1 72 0 0 25 250000 
 
-time perl ../../ConcatenateManyStatisticsScripts/DistanceToFirstSegregatingSiteMultiSequence.pl $MsselOutNoRec $DistancesFileOne 1 72 0 0 25 250000 
-
-../../../../Programs/Mssel/mssel3 73 273 1 72 $ResampledTrajFile 1 -r ${RecRate[$RecNumber]} 250000 -t 8484.45 -eN 0.0 1.0 -eN 0.0001017 0.0066121 -eN 0.0006409 0.0051756 -eN 0.0014188 0.0402604 -eN 0.0041171 0.0203048 > $MsselOutNoRec
-
-time perl ../../ConcatenateManyStatisticsScripts/DistanceToFirstSegregatingSiteMultiSequence.pl $MsselOutNoRec $DistancesFileTwo 1 72 0 0 25 250000
-
-cat $DistancesFileOne $DistancesFileTwo > $DistancesFile
-# perl ../../DistanceToFirstSegregatingSite.pl $MsselOutNoRec $HapLengthsNoRec
-
-# perl ../Sardinia_July5_2015/GetT2s.pl $MsselOutNoRec $T2File
-# ../../mssel3 102 ${NumberOfMarkers[$i]} 100 2 $ResampledTrajFile 1 -r 1000 500000 -t 1000 -eN 0.0 1.0 -eN 0.0005 0.1 > $MsselOutNoRecAnc
-
-# perl ../DistanceToFirstSegregatingSite.pl $MsselOutNoRecAnc $HapLengthsNoRecAnc
-
-# perl ../../DistanceToFirstSegregatingSiteRecAware.pl $MsselOutNoRecAnc $HapLengthsRecAware 100 2
-
-# ../mssel3 51 ${NumberOfMarkers[$i]} 1 50 $ResampledTrajFile 1 -r 0.0 500000 -t 200 > $MsselOutMultiSeq
-
-# perl ../DistanceToFirstSegregatingSiteMultiSequence.pl $MsselOutMultiSeq $HapLengthsMultiSeq 1 50 
 
 rm $ResampledTrajFile
 rm $DistancesFileTwo
 rm $DistancesFileOne
-# rm $MsselOut
 rm $MsselOutNoRec
-# rm $MsselOutMultiSeq
-# rm $MsselOutNoRecAnc
 
 done
-
+done
 

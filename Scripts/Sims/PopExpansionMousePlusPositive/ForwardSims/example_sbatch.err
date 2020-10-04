@@ -1,8 +1,3 @@
-rm: cannot remove ‘../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart/HapLengths/ExitFileNoRecN210.txt’: No such file or directory
-rm: cannot remove ‘../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart/HapLengths/ExitFileNoRecN217.txt’: No such file or directory
-rm: cannot remove ‘../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart/HapLengths/ExitFileNoRecN220.txt’: No such file or directoryrm: 
-rm: cannot remove ‘../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart/HapLengths/ExitFileNoRecN207.txt’cannot remove ‘../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart/HapLengths/ExitFileNoRecN218.txt’rm: rm: rm: cannot remove ‘../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart/HapLengths/ExitFileNoRecN215.txt’: No such file or directory: No such file or directorycannot remove ‘../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart/HapLengths/ExitFileNoRecN219.txt’cannot remove ‘../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart/HapLengths/ExitFileNoRecN214.txt’
-: No such file or directory: No such file or directory
-
-: No such file or directory
-
+rm: cannot remove ‘../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart/HapLengths/ExitFileNoRecSmallN497.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart/HapLengths/ExitFileNoRecSmallN500.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart/HapLengths/ExitFileNoRecSmallN499.txt’: No such file or directory

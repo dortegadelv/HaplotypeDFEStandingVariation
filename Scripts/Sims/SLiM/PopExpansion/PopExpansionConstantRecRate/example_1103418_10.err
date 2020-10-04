@@ -1,0 +1,243 @@
+
+real	6m30.841s
+user	6m27.354s
+sys	0m3.046s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_28_ns.vcf
+	--freq
+	--out Salele28.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:16570412
+After filtering, kept 1320 out of a possible 1320 Sites
+Run Time = 1.00 seconds
+Writing to /tmp/bcftools-sort.2vYWxd
+Merging 1 temporary files
+Cleaning
+Done
+Writing to /tmp/bcftools-sort.G67H9G
+Merging 1 temporary files
+Cleaning
+Done
+
+real	10m5.345s
+user	4m21.783s
+sys	0m3.845s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_28_ns.vcf
+	--freq
+	--out Salele28.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:16570412
+After filtering, kept 1320 out of a possible 1320 Sites
+Run Time = 6.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_28_syn.vcf
+	--freq
+	--out SaleleSyn28.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 527 out of a possible 527 Sites
+Run Time = 13.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_28_combined.vcf
+	--freq
+	--out SaleleWholeSequence28.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:16570412
+After filtering, kept 73253 out of a possible 73253 Sites
+Run Time = 54.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_28_combined.vcf
+	--chr 1
+	--to-bp 7100980
+	--out MiniVCF28.vcf
+	--recode
+	--from-bp 6600980
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1746 out of a possible 73253 Sites
+Run Time = 88.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_28_combined.vcf
+	--chr 1
+	--to-bp 9510476
+	--out MiniVCF28.vcf
+	--recode
+	--from-bp 9010476
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1825 out of a possible 73253 Sites
+Run Time = 20.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+rm: cannot remove ‘Salele28.vcf.log’: No such file or directory
+rm: cannot remove ‘SaleleWholeSequence28.vcf.log’: No such file or directory
+
+real	7m20.327s
+user	7m16.252s
+sys	0m2.322s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_29_ns.vcf
+	--freq
+	--out Salele29.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 1395 out of a possible 1395 Sites
+Run Time = 3.00 seconds
+Writing to /tmp/bcftools-sort.lVVuUT
+Merging 1 temporary files
+Cleaning
+Done
+Writing to /tmp/bcftools-sort.9eEEHt
+Merging 1 temporary files
+Cleaning
+Done
+
+real	9m1.049s
+user	4m27.965s
+sys	0m3.809s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_29_ns.vcf
+	--freq
+	--out Salele29.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 1395 out of a possible 1395 Sites
+Run Time = 21.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_29_syn.vcf
+	--freq
+	--out SaleleSyn29.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 565 out of a possible 565 Sites
+Run Time = 16.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_29_combined.vcf
+	--freq
+	--out SaleleWholeSequence29.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 73700 out of a possible 73700 Sites
+Run Time = 55.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_29_combined.vcf
+	--chr 1
+	--to-bp 515354
+	--out MiniVCF29.vcf
+	--recode
+	--from-bp 15354
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1827 out of a possible 73700 Sites
+Run Time = 37.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_29_combined.vcf
+	--chr 1
+	--to-bp 3435636
+	--out MiniVCF29.vcf
+	--recode
+	--from-bp 2935636
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1815 out of a possible 73700 Sites
+Run Time = 12.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+rm: cannot remove ‘Salele29.vcf.log’: No such file or directory
+rm: cannot remove ‘SaleleWholeSequence29.vcf.log’: No such file or directory
+
+real	6m48.087s
+user	6m41.188s
+sys	0m2.461s
+Traceback (most recent call last):
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 192, in <module>
+    main(args)
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 134, in main
+    ns_vcf(ts_sample, '{0}_{1}_ns.vcf'.format(args.inputname, args.simnum))
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 56, in ns_vcf
+    ts.write_vcf(vcf_file)
+  File "/home/diegoortega/.local/lib/python3.7/site-packages/tskit/trees.py", line 3253, in write_vcf
+    writer.write(output)
+  File "/home/diegoortega/.local/lib/python3.7/site-packages/tskit/vcf.py", line 156, in write
+    for variant in self.tree_sequence.variants(samples=self.samples):
+  File "/home/diegoortega/.local/lib/python3.7/site-packages/tskit/trees.py", line 2923, in variants
+    impute_missing_data=impute_missing_data)
+_tskit.LibraryError: Cannot generate genotypes for non-samples unless missing data imputation is enabled
+
+real	4m20.418s
+user	2m33.264s
+sys	0m0.773s
+rm: cannot remove ‘Salele30.vcf.frq’: No such file or directory
+rm: cannot remove ‘Salele30.vcf.log’: No such file or directory
+rm: cannot remove ‘test_30_allelenumber.txt’: No such file or directory
+rm: cannot remove ‘test_30_noncoding.vcf’: No such file or directory
+rm: cannot remove ‘test_30_syn.vcf’: No such file or directory
+rm: cannot remove ‘test_30_unsorted.vcf’: No such file or directory

@@ -23,7 +23,7 @@ chomp;
 $Line = $_;
 @SplitLine = split(/\s+/,$Line);
 # print "$SplitLine[1]";
-if ($LineNumber == 1){
+if ($LineNumber == 126){
 $Max = $SplitLine[1];
 $MaxNum = $LineNumber;
 }

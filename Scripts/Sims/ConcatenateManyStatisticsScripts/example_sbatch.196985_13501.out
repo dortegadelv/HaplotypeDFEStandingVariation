@@ -1,0 +1,11 @@
+DemHist = 10 FourNs = 1 Series = 0
+RecentBottleneckPointFivePercent
+time ../../../Programs/shapeit.v2.904.3.10.0-693.11.6.el7.x86_64/bin/shapeit --input-vcf ../../../Results/RecentBottleneckPointFivePercent/ForwardSims/4Ns_0/HapLengths/PhasedVCF1.txt.0.txt -M GeneticMapConstantPopSize.txt -O ../../../Results/RecentBottleneckPointFivePercent/ForwardSims/4Ns_0/HapLengths/PhasedShapeitVCF1.txt.0.phased --output-log ../../../Results/RecentBottleneckPointFivePercent/ForwardSims/4Ns_0/MsselFiles/Log13501.txt
+perl CreatePhasedToVCF.pl ../../../Results/RecentBottleneckPointFivePercent/ForwardSims/4Ns_0/MsselFiles/MsselOutLess_1.txt ../../../Results/RecentBottleneckPointFivePercent/ForwardSims/4Ns_0/HapLengths/PhasedShapeitVCF1.txt.0.phased.haps ../../../Results/RecentBottleneckPointFivePercent/ForwardSims/4Ns_0/MsselFiles/MsselOutLessPhased_0.txt 0
+perl DistanceToFirstSegregatingSiteMultiSequence_NoSingletonsBothSides.pl ../../../Results/RecentBottleneckPointFivePercent/ForwardSims/4Ns_0/MsselFiles/MsselOutLessPhased_0.txt ../../../Results/RecentBottleneckPointFivePercent/ForwardSims/4Ns_0/HapLengths/HapLengthsLessStatPhase0.txt 1 40
+
+[33mS[0megmented [33mHAP[0mlotype [33mE[0mstimation & [33mI[0mmputation [33mT[0mool
+  * Authors : Olivier Delaneau, Jared O'Connell, Jean-François Zagury, Jonathan Marchini
+  * Contact : send an email to the OXSTATGEN mail list https://www.jiscmail.ac.uk/cgi-bin/webadmin?A0=OXSTATGEN
+  * Webpage : https://mathgen.stats.ox.ac.uk/shapeit
+  * Version : v2.r904

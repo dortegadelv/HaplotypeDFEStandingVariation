@@ -1,8 +1,12 @@
-#$ -l h_vmem=2g
-#$ -cwd
-#$ -N ForWF
-#$ -o ../../../../Results/ConstantPopSize/ForwardSims/4Ns_0/Trash
-#$ -e ../../../../Results/ConstantPopSize/ForwardSims/4Ns_0/Trash
+#!/bin/bash
+#SBATCH --job-name=example_sbatch
+#SBATCH --output=example_sbatch.out
+#SBATCH --error=example_sbatch.err
+#SBATCH --time=24:00:00
+#SBATCH --partition=jnovembre
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --mem-per-cpu=1000
 
 NumberOfMarkers[1]="1000"
 NumberOfMarkers[2]="5000"
@@ -15,8 +19,10 @@ FourNs[4]="4Ns_25"
 FourNs[5]="4Ns_50"
 FourNs[6]="4Ns_1"
 
-RepNumber=$(( ( ( $SGE_TASK_ID - 1 ) % 100 ) + 1 ))
-DirNumber=$(( ( ( $SGE_TASK_ID - 1 ) / 100 ) + 1))
+DirNumber=$(( $SLURM_ARRAY_TASK_ID ))
+
+for RepNumber in {1..50}
+do
 
 echo "RepNumber = $RepNumber DirNumber = $DirNumber"
 
@@ -24,7 +30,7 @@ FileToCheck="../../../../Results/UK10K/ForwardSims/"${FourNs[$DirNumber]}"/SimDi
 LLResults="../../../../Results/UK10K/ForwardSims/"${FourNs[$DirNumber]}"/LLSimsMssel273_"$RepNumber".txt"
 echo "File = $FileToCheck"
 
-Directory="../../../../Results/UK10K/ForwardSims/"${FourNs[$SGE_TASK_ID]}"/"
+Directory="../../../../Results/UK10K/ForwardSims/"${FourNs[$SLURM_ARRAY_TASK_ID]}"/"
 ResultsFile="../../../../Results/UK10K_OnePercenters/ForwardSims/LLData.txt"
 
 HapFilePrefix="../../../../Data/Plink/HapLengths/HapLength"
@@ -32,4 +38,4 @@ HapFilePrefix="../../../../Data/Plink/HapLengths/HapLength"
 perl ../../UK10K_PointTwoPercenters/ForwardSims/CalculatePLengthGivenSQuantileSims.pl $FileToCheck 250000 ../../../../Results/UK10K_OnePercenters/ImportanceSamplingSims/Quantile ../ImportanceSamplingSims/TestT2Bounds.txt $LLResults ../../../../Data/RightBpRecRatePerVariantNoCpG.txt ../../../../Data/LeftBpRecRatePerVariantNoCpG.txt 273 ../../UK10K_PointTwoPercenters/ForwardSims/MissenseOnePercentNoCpG.txt 565630
 
 
-
+done

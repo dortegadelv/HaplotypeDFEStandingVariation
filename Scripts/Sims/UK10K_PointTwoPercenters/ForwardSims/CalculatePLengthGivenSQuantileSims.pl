@@ -3,8 +3,8 @@ $UnitsOfHapLengthFile = $ARGV[1];
 $IS_Prefix = $ARGV[2];
 $FileISBoundaries = $ARGV[3];
 $ExitFile = $ARGV[4];
-$LeftRecFile = $ARGV[5];
-$RightRecFile = $ARGV[6];
+$RightRecFile = $ARGV[5];
+$LeftRecFile = $ARGV[6];
 $NumberOfVariants = $ARGV[7];
 $QuantilesFile = $ARGV[8];
 $LastPopSize = $ARGV[9];
@@ -12,6 +12,18 @@ $LastPopSize = $ARGV[9];
 @ISValues = ();
 @VariantsToUse = ();
 
+print "HapFile = $HapLengthFile
+Units = $UnitsOfHapLengthFile
+ISPrefix = $IS_Prefix
+FileISBoundaries = $FileISBoundaries
+ExitFile = $ExitFile
+LeftRecFile = $LeftRecFile
+RightRecFile = $RightRecFile
+NumberOfVariants = $NumberOfVariants
+QuantilesFile = $QuantilesFile
+LastPopSize = $LastPopSize\n";
+
+$DownNotUp = 0;
 @Bounds = ();
 open (BOUNDS,$FileISBoundaries) or die "NO!";
 
@@ -67,19 +79,11 @@ $LineNumber++;
 close(IS);
 }
 
+@LeftRecRate = ();
+@RightRecRate = ();
 @RecRate = ();
-@RecRate = ();
 
-open (LEFT, $LeftRecFile ) or die "NO";
-
-while ( <LEFT> ){
-chomp;
-$Line = $_;
-push (@RecRate,$Line);
-}
-close (LEFT);
-
-open (RIGHT, $RightRecFile ) or die "NO";
+open (RIGHT, $RightRecFile ) or die "NO RightRecRate";
 
 while ( <RIGHT> ){
 chomp;
@@ -88,8 +92,17 @@ push (@RecRate,$Line);
 }
 close (RIGHT);
 
+open (LEFT, $LeftRecFile ) or die "NO LeftRecFile";
 
-open (QUANTILE,$QuantilesFile) or die "NO $QuantilesFile\n";
+while ( <LEFT> ){
+chomp;
+$Line = $_;
+push (@RecRate,$Line);
+}
+close (LEFT);
+
+
+open (QUANTILE,$QuantilesFile) or die "NO Q$QuantilesFile\n";
 
 @QuantileRec = ();
 while (<QUANTILE>){
@@ -133,37 +146,43 @@ $QuantileRight = $QuantTest + 1;
 $HapLengthFileToOpen = $HapLengthFile.$VarNum.".txt";
 
 @HapLengths = ();
-open (HAP,$HapLengthFile ) or die "NO! File\n";
+open (HAP,$HapLengthFile ) or die "NO! File $HapLengthFile\n";
 $OddOrEven = 0;
 $LineNumber = 0;
 while (<HAP>){
 chomp;
 $Line = $_;
 # push(@HapLengths,int($Line));
-# print "$Line\t";
+$Line = $Line * 250000;
+# print "Line = $Line\t";
 for ($j = 0; $j < $NumberOfIntervalsToCheck; $j++){
 if ( ($Line >= $Bounds[$j]) && ($Line <= $Bounds[$j+1])){
 $IntervalFlag = 1;
-# print "$Bounds[$j]\t$Bounds[$j+1]\t";
+# print "$Bounds[$j]\t$Bounds[$j+1]\n";
 last;
 }
 }
-if ($LineNumber % 2556 == 0){
-$RecNum = int ($LineNumber / 2556);
-print "Rec num = $RecNum\n";
-$CurrentRec = $RecRate[$RecNum];
-$RecRate = $CurrentRec * .01 * 4*$LastPopSize*250000;
+# print "$j\n";
+# die "NO\n";
 
+if ($LineNumber % 2556 == 0){
+$RecNum = int ($LineNumber / 2556 + 0.5);
+print "Rec num = $RecNum\t";
+$CurrentRec = $RecRate[$RecNum];
+
+$RecRate = $CurrentRec * .01 * 4*$LastPopSize*250000;
+print "rec rate = $RecRate\t";
 for ( $QuantTest = 0 ; $QuantTest < 20 ; $QuantTest++ ){
 $MidPoint = ( $QuantileRec[$QuantTest+1] - $QuantileRec[$QuantTest]) / 2 + $QuantileRec[$QuantTest] ;
 if ( ( $RecRate <= ($MidPoint)) && ($RecRate >= $QuantileRec[$QuantTest]  )){
 $QuantileLeft = $QuantTest;
+$DownNotUp++;
 }
 if ( ( $RecRate > ($MidPoint)) && ($RecRate <= $QuantileRec[$QuantTest+1]  )){
 $QuantileLeft = $QuantTest + 1;
 }
-
 }
+print "Quantile = Down=$QuantileRec[$QuantileLeft - 1] Middle=$QuantileRec[$QuantileLeft] Up=$QuantileRec[$QuantileLeft + 1] D = $DownNotUp\n";
 }
 # print "$j\n";
 # die "NO!\n";
@@ -189,7 +208,7 @@ for ($i = 0; $i <= 401; $i++){
 # die "NO!\n";
 
 
-open (EXIT,">$ExitFile") or die "NO!";
+open (EXIT,">$ExitFile") or die "NO! Exit";
 
 for ($i = 0; $i <= 401; $i++){
 print EXIT "$i\t$LogLikelihoods[$i]\n";
@@ -198,9 +217,9 @@ print EXIT "$i\t$LogLikelihoods[$i]\n";
 close (EXIT);
 die "Here? $VariantNumberSum $HapFileToOpen\n";
 
-open (EXIT,">$ExitFile") or die "NO!";
+open (EXIT,">$ExitFile") or die "NO! Exit";
 
-open (HAP,$HapLengthFile) or die "NO!";
+open (HAP,$HapLengthFile) or die "NO! ";
 
 while(<HAP>){
 chomp;

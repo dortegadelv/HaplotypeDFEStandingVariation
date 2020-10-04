@@ -1,0 +1,16 @@
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 2_2_combined.vcf
+	--chr 1
+	--to-bp 16528970
+	--out MiniVCF2.vcf
+	--recode
+	--from-bp 16028970
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 2445 out of a possible 94175 Sites
+Run Time = 4.00 seconds

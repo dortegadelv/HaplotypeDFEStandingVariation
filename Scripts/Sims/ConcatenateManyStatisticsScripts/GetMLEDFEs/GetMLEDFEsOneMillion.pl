@@ -3,10 +3,10 @@ $LLExit = $ARGV[1];
 
 open (EXIT,">$LLExit") or die "NO!";
 
-for ($i = 0; $i < 50 ; $i++){
+for ($i = 0; $i < 5 ; $i++){
 
-$Start = $i * 10 + 1;
-$End = ( $i + 1 ) * 10;
+$Start = $i * 100 + 1;
+$End = ( $i + 1 ) * 100;
 
 @LLs = ();
 

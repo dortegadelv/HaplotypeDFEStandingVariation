@@ -1,0 +1,26 @@
+
+real	6m35.098s
+user	6m32.424s
+sys	0m2.163s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_52_ns.vcf
+	--freq
+	--out Salele52.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:8680921
+ Duplicate alternate alleles found at 1:13044956
+After filtering, kept 1278 out of a possible 1278 Sites
+Run Time = 1.00 seconds
+Writing to /tmp/bcftools-sort.KIzcmw
+Merging 1 temporary files
+Cleaning
+Done
+Writing to /tmp/bcftools-sort.4UaEkN
+Merging 1 temporary files
+slurmstepd-midway2-0401: error: *** JOB 1102766 ON midway2-0401 CANCELLED AT 2020-05-09T19:11:35 ***

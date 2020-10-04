@@ -32,10 +32,12 @@ push(@RecRate,"38656.841");
 
 for ( $RecNumber = 0; $RecNumber < 21 ; $RecNumber++ ) {
 for ( $DirNumber = 1; $DirNumber <= 5 ; $DirNumber++ ) {
+# for ( $RecNumber = 0; $RecNumber < 20 ; $RecNumber++ ) {
+
 print "$FourNs[$DirNumber]\n";
 $ExitFile = "../../../../Results/ResultsSelectionInferred/SelectionUK10KSingleRecHighRec".$RecRate[$RecNumber]."4Ns".$FourNs[$DirNumber].".txt";
 open (EXIT,">$ExitFile") or die "NO";
-for ( $RepNumber = 1; $RepNumber <= 100 ; $RepNumber++) {
+for ( $RepNumber = 1; $RepNumber <= 50 ; $RepNumber++) {
 # LLSimsSingleRecHighRecMssel273_"${RecRate[$RecNumber]}"_"$RepNumber".txt"
 $File="../../../../Results/UK10K/ForwardSims/".$FourNs[$DirNumber]."/LLSimsSingleRecHighRecMssel273_".$RecRate[$RecNumber]."_".$RepNumber.".txt";
 

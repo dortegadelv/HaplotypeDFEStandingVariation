@@ -39,3 +39,9 @@ File="../../../../Results/UK10K/ForwardSims/DFETestHighPop/ReducedTrajectories.t
 ExitFile="../../../../Results/UK10K/ForwardSims/DFETestHighPop/ReducedTrajectories10000.txt"
 perl ../../ConstantPopSize/ForwardSims/PrintThisTrajectoryNumber.pl $File 10000 $ExitFile
 
+
+File="../../../../Results/UK10K/ForwardSims/4Ns_0/ReducedTrajectories.txt"
+ExitFile="../../../../Results/UK10K/ForwardSims/4Ns_0/ReducedTrajectories99Percent10000.txt"
+perl ../../ConstantPopSize/ForwardSims/PrintThisTrajectoryNumber.pl $File 500 $ExitFile
+
+

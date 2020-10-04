@@ -58,17 +58,18 @@ ResampledTrajectory="../../../Results/"${Directory[$i]}"/MsselFiles/ResampledTra
 HapLengths=$DirToCreate"HapLengths"$k".txt"
 perl ../../Sims/ConstantPopSize/ForwardSims/SampleTrajectories.pl $CurrentTrajs 300 $ResampledTrajectory $k ${Ne[$i]}
 # Bases = Theta /(4Nu) = 120/(4*10000*1.2e-8) = 250000
-Line[1]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 1 -r 100 250000 -t 120 -seeds $k $k $k"
-Line[2]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 1 -r 100 250000 -t 120 -seeds $k $k $k"
+Line[1]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 250000 -r 200 499999 -t 240 -seeds $k $k $k"
+Line[2]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 250000 -r 200 499999 -t 240 -seeds $k $k $k"
 # Bases = Theta /(4Nu) = 600/(4*50000*1.2e-8) = 250000
-Line[3]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 1 -r 500 250000 -t 600 -eN 0.0 1.0 -eN 0.0005 0.1 -seeds $k $k $k"
-Line[4]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 1 -r 500 250000 -t 600 -eN 0.0 1.0 -eN 0.0005 0.1 -seeds $k $k $k"
-Line[5]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 1 -r 500 250000 -t 600 -eN 0.0 1.0 -eN 0.0005 0.1 -seeds $k $k $k"
-Line[6]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 1 -r 500 250000 -t 600 -eN 0.0 1.0 -eN 0.0005 0.1 -seeds $k $k $k"
+Line[3]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 250000 -r 1000 499999 -t 1200 -eN 0.0 1.0 -eN 0.0005 0.1 -seeds $k $k $k"
+Line[4]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 250000 -r 1000 499999 -t 1200 -eN 0.0 1.0 -eN 0.0005 0.1 -seeds $k $k $k"
+Line[5]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 250000 -r 1000 499999 -t 1200 -eN 0.0 1.0 -eN 0.0005 0.1 -seeds $k $k $k"
+Line[6]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 250000 -r 1000 499999 -t 1200 -eN 0.0 1.0 -eN 0.0005 0.1 -seeds $k $k $k"
 
 ${Line[$i]} > $MsselOut
 # perl DistanceToFirstSegregatingSite.pl $MsselOut $HapLengths
-perl DistanceToFirstSegregatingSiteMultiSequence_NoSingletons.pl $MsselOut $HapLengths 1 40
+perl DistanceToFirstSegregatingSiteMultiSequence_NoSingletonsBothSides.pl $MsselOut $HapLengths 1 40
+# perl DistanceToFirstSegregatingSiteMultiSequence_NoSingletons.pl $MsselOut $HapLengths 1 40
 # rm $MsselOut
 rm $ResampledTrajectory
 done

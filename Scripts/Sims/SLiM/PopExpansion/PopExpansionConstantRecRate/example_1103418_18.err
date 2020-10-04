@@ -1,0 +1,239 @@
+
+real	6m36.133s
+user	6m32.756s
+sys	0m2.824s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_52_ns.vcf
+	--freq
+	--out Salele52.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:13044956
+After filtering, kept 1269 out of a possible 1269 Sites
+Run Time = 0.00 seconds
+Writing to /tmp/bcftools-sort.IrpSAT
+Merging 1 temporary files
+Cleaning
+Done
+Writing to /tmp/bcftools-sort.EeWkhI
+Merging 1 temporary files
+Cleaning
+Done
+
+real	9m35.530s
+user	4m27.771s
+sys	0m3.708s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_52_ns.vcf
+	--freq
+	--out Salele52.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:13044956
+After filtering, kept 1269 out of a possible 1269 Sites
+Run Time = 8.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_52_syn.vcf
+	--freq
+	--out SaleleSyn52.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 522 out of a possible 522 Sites
+Run Time = 14.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_52_combined.vcf
+	--freq
+	--out SaleleWholeSequence52.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:13044956
+After filtering, kept 73876 out of a possible 73876 Sites
+Run Time = 49.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_52_combined.vcf
+	--chr 1
+	--to-bp 6428641
+	--out MiniVCF52.vcf
+	--recode
+	--from-bp 5928641
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1854 out of a possible 73876 Sites
+Run Time = 97.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_52_combined.vcf
+	--chr 1
+	--to-bp 7174255
+	--out MiniVCF52.vcf
+	--recode
+	--from-bp 6674255
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1976 out of a possible 73876 Sites
+Run Time = 45.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+rm: cannot remove ‘Salele52.vcf.log’: No such file or directory
+rm: cannot remove ‘SaleleWholeSequence52.vcf.log’: No such file or directory
+
+real	6m50.167s
+user	6m47.165s
+sys	0m2.375s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_53_ns.vcf
+	--freq
+	--out Salele53.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:11098645
+ Duplicate alternate alleles found at 1:17564572
+After filtering, kept 1347 out of a possible 1347 Sites
+Run Time = 9.00 seconds
+Writing to /tmp/bcftools-sort.VYSrPy
+Merging 1 temporary files
+Cleaning
+Done
+Writing to /tmp/bcftools-sort.ewhX1k
+Merging 1 temporary files
+Cleaning
+Done
+
+real	8m17.282s
+user	4m23.027s
+sys	0m3.538s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_53_ns.vcf
+	--freq
+	--out Salele53.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:11098645
+ Duplicate alternate alleles found at 1:17564572
+After filtering, kept 1347 out of a possible 1347 Sites
+Run Time = 16.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_53_syn.vcf
+	--freq
+	--out SaleleSyn53.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 547 out of a possible 547 Sites
+Run Time = 25.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_53_combined.vcf
+	--freq
+	--out SaleleWholeSequence53.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:11098645
+ Duplicate alternate alleles found at 1:17564572
+After filtering, kept 73863 out of a possible 73863 Sites
+Run Time = 57.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_53_combined.vcf
+	--chr 1
+	--to-bp 17415458
+	--out MiniVCF53.vcf
+	--recode
+	--from-bp 16915458
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1937 out of a possible 73863 Sites
+Run Time = 27.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+rm: cannot remove ‘Salele53.vcf.log’: No such file or directory
+rm: cannot remove ‘SaleleWholeSequence53.vcf.log’: No such file or directory
+
+real	6m43.295s
+user	6m37.902s
+sys	0m2.940s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_54_ns.vcf
+	--freq
+	--out Salele54.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 1309 out of a possible 1309 Sites
+Run Time = 1.00 seconds
+Traceback (most recent call last):
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 192, in <module>
+    main(args)
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 153, in main
+    args.mu, start, end)
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 100, in noncoding_vcf
+    ts.write_vcf(vcf_file)
+  File "/home/diegoortega/.local/lib/python3.7/site-packages/tskit/trees.py", line 3253, in write_vcf
+    writer.write(output)
+  File "/home/diegoortega/.local/lib/python3.7/site-packages/tskit/vcf.py", line 163, in write
+    "Missing data is not currently supported. Please open an issue "
+ValueError: Missing data is not currently supported. Please open an issue on GitHub if this limitation affects you.
+
+real	3m47.834s
+user	3m38.735s
+sys	0m0.360s
+rm: cannot remove ‘Salele54.vcf.log’: No such file or directory
+rm: cannot remove ‘test_54_syn.vcf’: No such file or directory
+rm: cannot remove ‘test_54_unsorted.vcf’: No such file or directory

@@ -1,0 +1,284 @@
+
+real	6m33.749s
+user	6m30.900s
+sys	0m2.319s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_76_ns.vcf
+	--freq
+	--out Salele76.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:11098774
+ Duplicate alternate alleles found at 1:19926112
+After filtering, kept 1336 out of a possible 1336 Sites
+Run Time = 0.00 seconds
+Writing to /tmp/bcftools-sort.gKybbr
+Merging 1 temporary files
+Cleaning
+Done
+Writing to /tmp/bcftools-sort.YU5TFN
+Merging 1 temporary files
+Cleaning
+Done
+
+real	9m22.673s
+user	4m22.751s
+sys	0m3.733s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_76_ns.vcf
+	--freq
+	--out Salele76.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:11098774
+ Duplicate alternate alleles found at 1:19926112
+After filtering, kept 1336 out of a possible 1336 Sites
+Run Time = 6.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_76_syn.vcf
+	--freq
+	--out SaleleSyn76.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 523 out of a possible 523 Sites
+Run Time = 13.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_76_combined.vcf
+	--freq
+	--out SaleleWholeSequence76.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:11098774
+ Duplicate alternate alleles found at 1:19926112
+After filtering, kept 73140 out of a possible 73140 Sites
+Run Time = 51.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_76_combined.vcf
+	--chr 1
+	--to-bp 9181778
+	--out MiniVCF76.vcf
+	--recode
+	--from-bp 8681778
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1838 out of a possible 73140 Sites
+Run Time = 32.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_76_combined.vcf
+	--chr 1
+	--to-bp 10912343
+	--out MiniVCF76.vcf
+	--recode
+	--from-bp 10412343
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1836 out of a possible 73140 Sites
+Run Time = 38.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_76_combined.vcf
+	--chr 1
+	--to-bp 18429179
+	--out MiniVCF76.vcf
+	--recode
+	--from-bp 17929179
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1865 out of a possible 73140 Sites
+Run Time = 24.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_76_combined.vcf
+	--chr 1
+	--to-bp 6659369
+	--out MiniVCF76.vcf
+	--recode
+	--from-bp 6159369
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1796 out of a possible 73140 Sites
+Run Time = 13.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+rm: cannot remove ‘Salele76.vcf.log’: No such file or directory
+rm: cannot remove ‘SaleleWholeSequence76.vcf.log’: No such file or directory
+
+real	6m42.401s
+user	6m39.040s
+sys	0m2.840s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_77_ns.vcf
+	--freq
+	--out Salele77.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 1303 out of a possible 1303 Sites
+Run Time = 1.00 seconds
+Writing to /tmp/bcftools-sort.lGuGWT
+Merging 1 temporary files
+Cleaning
+Done
+Writing to /tmp/bcftools-sort.1WzrfI
+Merging 1 temporary files
+Cleaning
+Done
+
+real	8m45.608s
+user	4m21.439s
+sys	0m3.574s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_77_ns.vcf
+	--freq
+	--out Salele77.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 1303 out of a possible 1303 Sites
+Run Time = 23.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_77_syn.vcf
+	--freq
+	--out SaleleSyn77.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 507 out of a possible 507 Sites
+Run Time = 18.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_77_combined.vcf
+	--freq
+	--out SaleleWholeSequence77.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 74107 out of a possible 74107 Sites
+Run Time = 53.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_77_combined.vcf
+	--chr 1
+	--to-bp 12370471
+	--out MiniVCF77.vcf
+	--recode
+	--from-bp 11870471
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1931 out of a possible 74107 Sites
+Run Time = 35.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_77_combined.vcf
+	--chr 1
+	--to-bp 17656772
+	--out MiniVCF77.vcf
+	--recode
+	--from-bp 17156772
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1755 out of a possible 74107 Sites
+Run Time = 33.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+rm: cannot remove ‘Salele77.vcf.log’: No such file or directory
+rm: cannot remove ‘SaleleWholeSequence77.vcf.log’: No such file or directory
+
+real	6m48.651s
+user	6m38.812s
+sys	0m2.723s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_78_ns.vcf
+	--freq
+	--out Salele78.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:7852716
+After filtering, kept 1272 out of a possible 1272 Sites
+Run Time = 0.00 seconds
+Writing to /tmp/bcftools-sort.LRasDG
+Merging 1 temporary files
+Cleaning
+Done
+Writing to /tmp/bcftools-sort.WN5P3i
+[E::hts_open_format] Failed to open file /tmp/bcftools-sort.WN5P3i/00001.bcf
+Cannot write /tmp/bcftools-sort.WN5P3i/00001.bcf: No such file or directory
+
+real	5m49.079s
+user	4m17.708s
+sys	0m3.368s
+rm: cannot remove ‘Salele78.vcf.log’: No such file or directory

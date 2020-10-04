@@ -1,0 +1,69 @@
+ERROR (SLiMSim::RunInitializeCallbacks): At least one genomic element must be defined in an initialize() callback with initializeGenomicElement().
+
+real	0m0.005s
+user	0m0.004s
+sys	0m0.001s
+Traceback (most recent call last):
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 192, in <module>
+    main(args)
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 128, in main
+    annot, start, end = zip(*lines)
+ValueError: not enough values to unpack (expected 3, got 0)
+
+real	0m0.576s
+user	0m0.335s
+sys	0m0.232s
+rm: cannot remove ‘trees_test_1.trees’: No such file or directory
+rm: cannot remove ‘test_1_ns.vcf’: No such file or directory
+rm: cannot remove ‘Salele1.vcf.frq’: No such file or directory
+rm: cannot remove ‘Salele1.vcf.log’: No such file or directory
+rm: cannot remove ‘test_1_allelenumber.txt’: No such file or directory
+rm: cannot remove ‘test_1_noncoding.vcf’: No such file or directory
+rm: cannot remove ‘test_1_syn.vcf’: No such file or directory
+rm: cannot remove ‘test_1_unsorted.vcf’: No such file or directory
+ERROR (SLiMSim::RunInitializeCallbacks): At least one genomic element must be defined in an initialize() callback with initializeGenomicElement().
+
+real	0m0.006s
+user	0m0.004s
+sys	0m0.001s
+Traceback (most recent call last):
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 192, in <module>
+    main(args)
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 128, in main
+    annot, start, end = zip(*lines)
+ValueError: not enough values to unpack (expected 3, got 0)
+
+real	0m0.584s
+user	0m0.334s
+sys	0m0.239s
+rm: cannot remove ‘trees_test_2.trees’: No such file or directory
+rm: cannot remove ‘test_2_ns.vcf’: No such file or directory
+rm: cannot remove ‘Salele2.vcf.frq’: No such file or directory
+rm: cannot remove ‘Salele2.vcf.log’: No such file or directory
+rm: cannot remove ‘test_2_allelenumber.txt’: No such file or directory
+rm: cannot remove ‘test_2_noncoding.vcf’: No such file or directory
+rm: cannot remove ‘test_2_syn.vcf’: No such file or directory
+rm: cannot remove ‘test_2_unsorted.vcf’: No such file or directory
+ERROR (SLiMSim::RunInitializeCallbacks): At least one genomic element must be defined in an initialize() callback with initializeGenomicElement().
+
+real	0m0.006s
+user	0m0.003s
+sys	0m0.003s
+Traceback (most recent call last):
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 192, in <module>
+    main(args)
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 128, in main
+    annot, start, end = zip(*lines)
+ValueError: not enough values to unpack (expected 3, got 0)
+
+real	0m0.581s
+user	0m0.323s
+sys	0m0.247s
+rm: cannot remove ‘trees_test_3.trees’: No such file or directory
+rm: cannot remove ‘test_3_ns.vcf’: No such file or directory
+rm: cannot remove ‘Salele3.vcf.frq’: No such file or directory
+rm: cannot remove ‘Salele3.vcf.log’: No such file or directory
+rm: cannot remove ‘test_3_allelenumber.txt’: No such file or directory
+rm: cannot remove ‘test_3_noncoding.vcf’: No such file or directory
+rm: cannot remove ‘test_3_syn.vcf’: No such file or directory
+rm: cannot remove ‘test_3_unsorted.vcf’: No such file or directory

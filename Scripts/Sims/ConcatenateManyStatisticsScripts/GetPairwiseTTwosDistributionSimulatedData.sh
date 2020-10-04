@@ -31,9 +31,9 @@ Ne[11]="20000"
 Ne[12]="346884"
 
 
-for i in {3..3}
+for i in {7..7}
 do
-for j in {1..1}
+for j in {1..5}
 do
 CurrentTrajs="../../../Results/"${Directory[$i]}"/ForwardSims/"${FourNs[$j]}"/ReducedTrajectories10000.txt"
 ExitT2File="../../../Results/TTwos/"${Directory[$i]}"_"${FourNs[$j]}".txt"

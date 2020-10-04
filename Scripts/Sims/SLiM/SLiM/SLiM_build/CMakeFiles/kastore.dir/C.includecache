@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/project2/jnovembre/diegoortega/HaplotypeDFEStandingVariation/Scripts/Sims/SLiM/SLiM/SLiM/treerec/tskit/kastore/kastore.c
+sys/mman.h
+-
+sys/stat.h
+-
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+assert.h
+-
+errno.h
+-
+stdbool.h
+-
+kastore.h
+/project2/jnovembre/diegoortega/HaplotypeDFEStandingVariation/Scripts/Sims/SLiM/SLiM/SLiM/treerec/tskit/kastore/kastore.h
+
+/project2/jnovembre/diegoortega/HaplotypeDFEStandingVariation/Scripts/Sims/SLiM/SLiM/SLiM/treerec/tskit/kastore/kastore.h
+stdint.h
+-
+stddef.h
+-
+stdio.h
+-
+

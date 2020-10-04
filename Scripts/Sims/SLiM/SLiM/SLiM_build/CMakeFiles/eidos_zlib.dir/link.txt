@@ -1,0 +1,2 @@
+/bin/ar qc libeidos_zlib.a  CMakeFiles/eidos_zlib.dir/eidos_zlib/adler32.c.o CMakeFiles/eidos_zlib.dir/eidos_zlib/compress.c.o CMakeFiles/eidos_zlib.dir/eidos_zlib/crc32.c.o CMakeFiles/eidos_zlib.dir/eidos_zlib/deflate.c.o CMakeFiles/eidos_zlib.dir/eidos_zlib/gzlib.c.o CMakeFiles/eidos_zlib.dir/eidos_zlib/gzwrite.c.o CMakeFiles/eidos_zlib.dir/eidos_zlib/trees.c.o CMakeFiles/eidos_zlib.dir/eidos_zlib/zutil.c.o
+/bin/ranlib libeidos_zlib.a

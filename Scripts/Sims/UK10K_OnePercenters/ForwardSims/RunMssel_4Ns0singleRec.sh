@@ -42,7 +42,7 @@ HapLengthsNoRecAnc="../../../../Results/UK10K/ForwardSims/4Ns_0/HapLengthNoRecAn
 HapLengthsRecAware="../../../../Results/UK10K/ForwardSims/4Ns_0/HapLengthRecAwareN"${NumberOfMarkers[$i]}"_"$SGE_TASK_ID".txt"
 DistancesFileOne="../../../../Results/UK10K/ForwardSims/4Ns_0/SimDistancesPartOneMsselSingleRec"${NumberOfMarkers[$i]}"_"$SGE_TASK_ID".txt"
 DistancesFileTwo="../../../../Results/UK10K/ForwardSims/4Ns_0/SimDistancesPartTwoMsselSingleRec"${NumberOfMarkers[$i]}"_"$SGE_TASK_ID".txt"
-DistancesFile="../../../../Results/UK10K/ForwardSims/4Ns_0/SimDistancesMsselSingleRec"${NumberOfMarkers[$i]}"_"$SGE_TASK_ID".txt"
+DistancesFile="../../../../Results/UK10K/ForwardSims/4Ns_0/SimDistancesMsselSingleRecTest"${NumberOfMarkers[$i]}"_"$SGE_TASK_ID".txt"
 
 
 perl ../../ConstantPopSize/ForwardSims/SampleTrajectories.pl ../../../../Results/UK10K/ForwardSims/4Ns_0/ReducedTrajectories10000.txt 273 $ResampledTrajFile $SGE_TASK_ID
