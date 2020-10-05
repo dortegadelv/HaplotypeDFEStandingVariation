@@ -1,6 +1,4 @@
-## Programs and scripts from our paper 'Haplotype-based inference of the distribution of fitness effects'
-
-This repository contains all the scripts to reproduce the results from our paper:
+This repository contains the scripts and programs to reproduce all the results from our paper:
 
 Haplotype-based inference of the distribution of fitness effects
 
