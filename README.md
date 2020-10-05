@@ -46,7 +46,7 @@ Figures associated: 3, 5, 6
 
 ## Calculating the relationship between the distribution of fitness effects of new variants vs. the distribution of fitness effects of variants at a particular frequency
 
-Check the R scripts associated with the figures shown below.
+Check the R scripts associated with the figures shown below. Also see 
 
 Figures associated: 7, 9
 
