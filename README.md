@@ -18,7 +18,7 @@ b) FoIS.- This program implements an importance sampling method based on a paper
 >  2) Evaluate multiple values of selection using the same set of simulated allele frequency trajectories. <br>
 
 
--  We use this program to calculate the expected value of statistics from alleles that have a particular sample allele frequency in the present, such as the pairwise identity-by state lengths surrounding variants that have a particular strength of natural selection acting on them. The program can model any arbitrary demographic scenario. The folder Programs/ISProgram/FoIS includes more instructions. <br>
+We use this program to calculate the expected value of statistics from alleles that have a particular sample allele frequency in the present, such as the pairwise identity-by state lengths surrounding variants that have a particular strength of natural selection acting on them. The program can model any arbitrary demographic scenario. The folder Programs/ISProgram/FoIS includes more instructions. <br>
 
 
 c) ExamplePipeline.- This pipeline includes scripts that can be used to
