@@ -4,7 +4,7 @@ Haplotype-based inference of the distribution of fitness effects
 
 Diego Ortega-Del Vecchyo, Kirk E. Lohmueller and John Novembre
 
-## Programs included
+## Programs and example pipeline
 
 We included the programs PReFerSim and FoIS in the Programs/ folder along with an example pipeline in the folder Programs/ExamplePipeline . There is a README document in the Programs/ExamplePipeline folder with more instructions on how to run our method to estimate the DFE using the pairwise haplotypic identity by state lengths L:
 
@@ -32,27 +32,10 @@ c) ExamplePipeline.- This pipeline includes scripts that can be used to
 
 The folder PlottingScripts/ includes the R scripts we used to create each figure from the paper.
 
-## Running forward simulations with PReFerSim
+## Commands to reproduce the analysis associated to the main figures from our paper
 
-Check README_ForwardSims.txt
+Check README_ForwardSims.txt for instructions to run forward simulations with PReFerSim that lead to the results shown in figures 2, 4 and 8.
 
-Figures associated: 2, 4, 8
+Check README_FoIS.txt for instructions to infer the distribution of fitness effects of variants at a particular frequency. This leads to the results shown in figures 3, 5 and 6.
 
-## Running FoIS. Inferring the distribution of fitness effects of variants at a particular frequency
-
-Check README_FoIS.txt
-
-Figures associated: 3, 5, 6
-
-## Calculating the relationship between the distribution of fitness effects of new variants vs. the distribution of fitness effects of variants at a particular frequency
-
-Check the R scripts associated with the figures shown below. Also see 
-
-Figures associated: 7, 9
-
-## Inferring the distribution of fitness effects of new variants in the UK10K dataset.
-
-Check README_DFEUK10K.txt
-
-Figures associated: 9
-
+Check README_DFEUK10K.txt for instructions to infer the distribution of fitness effects of new variants in the UK10K dataset. These analysis lead to the results shown in Figure 9.
