@@ -40,15 +40,11 @@ Check README_ForwardSims.txt
 
 Figures associated: 2, 4, 8
 
-Supplementary figures associated: 1.
-
 ## Running FoIS. Inferring the distribution of fitness effects of variants at a particular frequency
 
 Check README_FoIS.txt
 
-Figures associated: 3, 5, 6, 9
-
-Supplementary figures associated: 1, 2, 4, 7, 8, 9, 10, 11, 13, 14, 15
+Figures associated: 3, 5, 6
 
 ## Calculating the relationship between the distribution of fitness effects of new variants vs. the distribution of fitness effects of variants at a particular frequency
 
@@ -56,13 +52,9 @@ Check the R scripts associated with the figures shown below.
 
 Figures associated: 7, 9
 
-Supplementary figures associated: 3, 4, 10, 14
-
 ## Inferring the distribution of fitness effects of new variants in the UK10K dataset.
 
 Check README_DFEUK10K.txt
 
 Figures associated: 9
-
-Supplementary figures associated: 14
 
