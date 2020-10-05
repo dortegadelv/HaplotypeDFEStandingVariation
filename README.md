@@ -18,9 +18,9 @@ We use this program to calculate the expected value of statistics from alleles t
 - ExamplePipeline.- This pipeline includes scripts that can be used to
 >  1) Generate the pairwise identity by state lengths L.
 >  2) Generate the table that computes the likelihoods of L(4Ns, allele frequency, Demographic scenario | L) for a single selection coefficient 4Ns (see equation 2 from our paper).
->  3) Generate a table that computes the likelihoods of L(alpha, beta, allele frequency, Demographic scenario | L) for two parameters alpha and beta of a partially collapsed gamma distribution (see equation 3 from our paper).
->  4) Compute the maximum likelihood estimate of either a) the single selection coefficient 4Ns or b) the two parameters alpha and beta.
->  5) Estimate the DFE from DFEf.
+>  3) Generate a table that computes the likelihoods of L(alpha, beta, allele frequency, Demographic scenario | L) for two parameters alpha and beta of a partially collapsed gamma distribution of DFEf, the distribution of fitness effects of variants at a certain frequency (also see equation 3 from our paper).
+>  4) Compute the maximum likelihood estimate of either a) the single selection coefficient 4Ns or b) the two parameters alpha and beta of the DFEf.
+>  5) Estimate the distribution of fitness effects of new variants, DFE, from the DFEf.
 >  6) Calculate L from data.
 >  7) An ABC algorithm to estimate demographic history based on the L values at neutral sites.
 
