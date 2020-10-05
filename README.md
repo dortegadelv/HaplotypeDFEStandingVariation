@@ -14,7 +14,7 @@ a) PReFerSim.- We conducted forward simulations using PReFerSim. We include the 
 
 
 b) FoIS.- This program implements an importance sampling method based on a paper by Monty Slatkin (2001, Genetics Research) to simulate a set of allele frequency trajectories from genetic variants evolving under a particular strength of natural selection.  We performed some modifications to the original method by Monty Slatkin to:
->  1)  Model the uncertainty in our estimate of the population allele frequency
+>  1)  Model the uncertainty in our estimate of the population allele frequency.
 >  2) Evaluate multiple values of selection using the same set of simulated allele frequency trajectories. <br>
 
 
