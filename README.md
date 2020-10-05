@@ -10,14 +10,14 @@ Diego Ortega-Del Vecchyo, Kirk Lohmueller and John Novembre
 
 We included the programs PReFerSim and FoIS in the Programs/ folder along with an example pipeline in the folder Programs/ExamplePipeline . There is a README document in the Programs/ExamplePipeline folder with more instructions on how to run our method to estimate the DFE using the pairwise haplotypic identity by state lengths L:
 
-- PReFerSim.- We conducted forward simulations using PReFerSim. We include the version of PReFerSim we used in our paper with this repository. Check https://github.com/LohmuellerLab/PReFerSim for the latest version of PReFerSim and the instructions to run PReFerSim.
-- FoIS.- This program implements an importance sampling method based on a paper by Monty Slatkin (2001, Genetics Research) to simulate a set of allele frequency trajectories from genetic variants evolving under a particular strength of natural selection.  We performed some modifications to the original method by Monty Slatkin to:
+a) PReFerSim.- We conducted forward simulations using PReFerSim. We include the version of PReFerSim we used in our paper with this repository. Check https://github.com/LohmuellerLab/PReFerSim for the latest version of PReFerSim and the instructions to run PReFerSim.
+b) FoIS.- This program implements an importance sampling method based on a paper by Monty Slatkin (2001, Genetics Research) to simulate a set of allele frequency trajectories from genetic variants evolving under a particular strength of natural selection.  We performed some modifications to the original method by Monty Slatkin to:
 >  1)  Model the uncertainty in our estimate of the population allele frequency
 >  2) Evaluate multiple values of selection using the same set of simulated allele frequency trajectories. <br>
 
 
-  We use this program to calculate the expected value of statistics from alleles that have a particular sample allele frequency in the present, such as the pairwise identity-by state lengths surrounding variants that have a particular strength of natural selection acting on them. The program can model any arbitrary demographic scenario. The folder Programs/ISProgram/FoIS includes more instructions.
-- ExamplePipeline.- This pipeline includes scripts that can be used to
+-  We use this program to calculate the expected value of statistics from alleles that have a particular sample allele frequency in the present, such as the pairwise identity-by state lengths surrounding variants that have a particular strength of natural selection acting on them. The program can model any arbitrary demographic scenario. The folder Programs/ISProgram/FoIS includes more instructions.
+c) ExamplePipeline.- This pipeline includes scripts that can be used to
 >  1) Generate the pairwise identity by state lengths L.
 >  2) Generate the table that computes the likelihoods of L(4Ns, allele frequency, Demographic scenario | L) for a single selection coefficient 4Ns (see equation 2 from our paper).
 >  3) Generate a table that computes the likelihoods of L(alpha, beta, allele frequency, Demographic scenario | L) for two parameters alpha and beta of a partially collapsed gamma distribution of DFEf, the distribution of fitness effects of variants at a certain frequency (also see equation 3 from our paper).
