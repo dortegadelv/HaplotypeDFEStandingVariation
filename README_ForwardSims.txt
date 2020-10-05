@@ -15,8 +15,8 @@ You will need the GSL library to compile this program. You can find more instruc
 
 
 We ran the forward-in-time simulations by running the following scripts after going into the appropriate directories.
-All scripts were run in a computing cluster and can be easily run in parallel by changing the value of 
-the variable $SGE_TASK_ID (or $SLURM_ARRAY_TASK_ID) to a different number:
+All scripts were run in a computing cluster (either SGE or SLURM cluster) and can be easily run in parallel by changing the value of 
+the variable $SGE_TASK_ID (or $SLURM_ARRAY_TASK_ID in the case of the simulations contained in the UK10K_OnePercenters folder) to a different number inside each of the *.sh files. The options given at the top of the *.sh scripts may vary depending on how your computing cluster is set up:
 
 ### Generating allele frequency trajectories under a constant population size scenario
 cd Scripts/Sims/ConstantPopSize/ForwardSims
@@ -27,11 +27,11 @@ mkdir ../../../../Results/ConstantPopSize/ForwardSims/4Ns_50
 mkdir ../../../../Results/ConstantPopSize/ForwardSims/4Ns_100
 mkdir ../../../../Results/ConstantPopSize/ForwardSims/4Ns_-50
 mkdir ../../../../Results/ConstantPopSize/ForwardSims/4Ns_-100
-bash ConstantSize_4Ns0.sh
-bash ConstantSize_4Ns50.sh
-bash ConstantSize_4Ns100.sh
-bash ConstantSize_4Ns-50.sh
-bash ConstantSize_4Ns-100.sh
+qsub -t 1 ConstantSize_4Ns0.sh
+qsub -t 1 ConstantSize_4Ns50.sh
+qsub -t 1 ConstantSize_4Ns100.sh
+qsub -t 1 ConstantSize_4Ns-50.sh
+qsub -t 1 ConstantSize_4Ns-100.sh
 
 ### Generating allele frequency trajectories under a population expansion scenario
 cd Scripts/Sims/PopExpansion/ForwardSims
@@ -42,12 +42,11 @@ mkdir ../../../../Results/PopExpansion/ForwardSims/4Ns_50
 mkdir ../../../../Results/PopExpansion/ForwardSims/4Ns_100
 mkdir ../../../../Results/PopExpansion/ForwardSims/4Ns_-50
 mkdir ../../../../Results/PopExpansion/ForwardSims/4Ns_-100
-SGE_TASK_ID=1
-bash Expansion_4Ns0.sh
-bash Expansion_4Ns50.sh
-bash Expansion_4Ns100.sh
-bash Expansion_4Ns-50.sh
-bash Expansion_4Ns-100.sh
+qsub -t 1 Expansion_4Ns0.sh
+qsub -t 1 Expansion_4Ns50.sh
+qsub -t 1 Expansion_4Ns100.sh
+qsub -t 1 Expansion_4Ns-50.sh
+qsub -t 1 Expansion_4Ns-100.sh
 
 ### Generating allele frequency trajectories under an ancient bottleneck scenario
 cd Scripts/Sims/AncientBottleneck/ForwardSims
@@ -58,12 +57,11 @@ mkdir ../../../../Results/AncientBottleneck/ForwardSims/4Ns_50
 mkdir ../../../../Results/AncientBottleneck/ForwardSims/4Ns_100
 mkdir ../../../../Results/AncientBottleneck/ForwardSims/4Ns_-50
 mkdir ../../../../Results/AncientBottleneck/ForwardSims/4Ns_-100
-SGE_TASK_ID=1
-bash Expansion_4Ns0.sh
-bash Expansion_4Ns50.sh
-bash Expansion_4Ns100.sh
-bash Expansion_4Ns-50.sh
-bash Expansion_4Ns-100.sh
+qsub -t 1 Expansion_4Ns0.sh
+qsub -t 1 Expansion_4Ns50.sh
+qsub -t 1 Expansion_4Ns100.sh
+qsub -t 1 Expansion_4Ns-50.sh
+qsub -t 1 Expansion_4Ns-100.sh
 
 ### Generating allele frequency trajectories under the UK10K inferred demographic model
 cd Scripts/Sims/UK10K_OnePercenters/ForwardSims
@@ -75,13 +73,13 @@ mkdir ../../../../Results/UK10K_OnePercenters/ForwardSims/4Ns_50
 mkdir ../../../../Results/UK10K_OnePercenters/ForwardSims/4Ns_-25
 mkdir ../../../../Results/UK10K_OnePercenters/ForwardSims/4Ns_-50
 SGE_TASK_ID=1
-bash Expansion_4Ns0.sh
-bash Expansion_4Ns25.sh
-bash Expansion_4Ns50.sh
-bash Expansion_4Ns-25.sh
-bash Expansion_4Ns-50.sh
+sbatch --array=1 Expansion_4Ns0.sh
+sbatch --array=1 Expansion_4Ns25.sh
+sbatch --array=1 Expansion_4Ns50.sh
+sbatch --array=1 Expansion_4Ns-25.sh
+sbatch --array=1 Expansion_4Ns-50.sh
 
-Run the past scripts with many values of SGE_TASK_ID (or SLURM_ARRAY_TASK_ID) until you obtain 10,000 trajectories or more. The number of trajectories obtained can be found by checking the number of alleles printed after running the past scripts. As an example, to check the number of trajectories in a constant population size scenario with a 4Ns value equal to 0 you can type the following command 'wc -l ../../../../Results/ConstantPopSize/ForwardSims/4Ns_0/Alleles*'
+Run the past scripts with many values of $SGE_TASK_ID (or $SLURM_ARRAY_TASK_ID in the case of the simulations contained in the UK10K_OnePercenters folder) until you obtain 10,000 trajectories or more. The number of trajectories obtained can be found by checking the number of alleles printed after running the past scripts. As an example, to check the number of trajectories in a constant population size scenario with a 4Ns value equal to 0 you can type the following command 'wc -l ../../../../Results/ConstantPopSize/ForwardSims/4Ns_0/Alleles*'
 Then run the following scripts after going into the appropriate directories. To run these scripts, you will need the program mssel (kindly provided to us from Richard Hudson).
 These scripts will change the trajectories into a readable format for mssel and also will reduce the disk space taken by the file containing the allele frequency trajectories.
 The allele frequency trajectories are reduced using a set of allele frequency boundaries, where we will only record changes across allele frequency boundaries. The boundaries are defined in Programs/Mssel/freqints.h .

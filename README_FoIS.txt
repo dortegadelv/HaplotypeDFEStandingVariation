@@ -1,6 +1,6 @@
 ################ Broad overview of how FoIS works
 
-1) Run FoIS to use the importance sampling approach that simulates a set of allele frequency trajectories that end at a frequency f in the present. Those trajectories are simulated started from a frequency f in the present and going backwards in time. A set of selection values is given as an input to the program (option X). We will give a weight wi for each trajectory and value of selection given to the program (see section “Integration over the space of allele frequency trajectories using importance sampling” from our manuscript).
+1) Run FoIS to use the importance sampling approach that simulates a set of allele frequency trajectories that end at a frequency f in the present. Those trajectories are simulated starting from a frequency f in the present and going backwards in time. A set of selection values is given as an input to the program (option X). We will give a weight wi for each trajectory and value of selection given to the program (see section “Integration over the space of allele frequency trajectories using importance sampling” from our manuscript).
 2) Run mssel to simulate many values of the pairwise identity by state L for each allele frequency trajectory Hi. We simulate many values of L for each allele frequency trajectory.
 3) Compute P(L|Hi) for each allele frequency trajectory Hi.
 4) Calculate P(L|s) using P(L|Hi) and the weights wi.

@@ -32,7 +32,7 @@ c) ExamplePipeline.- This pipeline includes scripts that can be used to
 
 The folder PlottingScripts/ includes the R scripts we used to create each figure from the paper.
 
-## Commands to reproduce the analysis associated to the main figures from our paper
+## Commands to reproduce the analysis associated to main figures from our paper
 
 Check README_ForwardSims.txt for instructions to run forward simulations with PReFerSim that lead to the results shown in figures 2, 4 and 8.
 
