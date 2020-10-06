@@ -16,7 +16,7 @@ You will need the GSL library to compile this program. You can find more instruc
 
 We ran the forward-in-time simulations by running the following scripts after going into the appropriate directories.
 All scripts were run in a computing cluster (either SGE or SLURM cluster) and can be easily run in parallel by changing the value of 
-the variable $SGE_TASK_ID (or $SLURM_ARRAY_TASK_ID in the case of the simulations contained in the UK10K_OnePercenters folder) to a different number inside each of the *.sh files. The options given at the top of the *.sh scripts may vary depending on how your computing cluster is set up:
+the variable $SGE_TASK_ID (or $SLURM_ARRAY_TASK_ID in the case of the simulations contained in the UK10K_OnePercenters and ConstantPopSize folder) to a different number inside each of the *.sh files. The options given at the top of the *.sh scripts may vary depending on how your computing cluster is set up:
 
 ### Generating allele frequency trajectories under a constant population size scenario
 cd Scripts/Sims/ConstantPopSize/ForwardSims

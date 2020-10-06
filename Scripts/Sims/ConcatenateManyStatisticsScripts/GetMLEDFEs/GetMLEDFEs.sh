@@ -1,9 +1,3 @@
-#$ -l h_vmem=2g
-#$ -cwd
-#$ -N ForWF
-#$ -o ../Trash
-#$ -e ../Trash
-
 
 Line[1]="perl GetMLEDFEs.pl ../../../../Results/ConstantPopSizeBoyko/ForwardSims/HapLengths/ExitFileNoRecCombinedN ../../../../Results/MLEDFEs/ConstantBoykoMLE.txt"
 Line[2]="perl GetMLEDFEs.pl ../../../../Results/ConstantPopSizeMouse/ForwardSims/HapLengths/ExitFileNoRecCombinedN ../../../../Results/MLEDFEs/ConstantMouseMLE.txt"
@@ -23,4 +17,7 @@ Line[15]="perl GetMLEDFEsOneHundredMillionBootstrap.pl ../../../../Results/PopEx
 Line[16]="perl GetMLEDFEsOneHundredMillionBootstrap.pl ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart/HapLengths/ExitFileNoRecN ../../../../Results/MLEDFEs/PopExpansionMouseMLEOneHundredMillionBootstrap.txt"
 Line[17]="perl GetMLEDFEsBoykoPlusPos.pl ../../../../Results/PopExpansionBoykoPlusPositive/ForwardSims/MixBoykoPositive/HapLengths/ExitFileNoRecCombinedN ../../../../Results/MLEDFEs/PopExpansionBoykoPositiveMLE.txt"
 
-${Line[$SGE_TASK_ID]}
+${Line[1]}
+${Line[2]}
+${Line[3]}
+${Line[4]}

@@ -1,4 +1,3 @@
-setwd("/Users/vicentediegoortegadelvecchyo/Dropbox/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/ConstantPopSizeBoyko/ImportanceSamplingSims")
 
 #### Another table of probabilities
 
