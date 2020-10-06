@@ -110,6 +110,7 @@ bash CalculateMeanTrajectory.sh
 First run this script to create a file with 10,000 allele frequency trajectories:
 
 cd Scripts/Sims/ConstantPopSize/ForwardSims
+mkdir ../../../../Results/FrequencyTrajectories/
 bash PrintThisTrajectoryNumber.sh
 cd Scripts/Sims/PopExpansion/ForwardSims
 bash PrintThisTrajectoryNumber.sh
@@ -131,4 +132,10 @@ Run the following script:
 mkdir Results/TTwos/
 cd ConcatenateManyStatisticsScripts
 bash GetTTwosDistribution.sh
+
+4) Get distribution of L values
+
+mkdir Results/DistributionOfL/
+cd ConcatenateManyStatisticsScripts
+bash CalculatePLGivenSDistribution.sh
 

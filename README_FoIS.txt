@@ -18,6 +18,7 @@
 
 cd /Programs/ISProgram
 g++ -o FoIS FoIS.cpp prob.cpp -lm
+g++ -o SlatkinISConstantSizeSISR FoIS.cpp prob.cpp -lm ## We used this program name when we ran some of the commands.
 
 1) Run FoIS.
 
@@ -77,6 +78,12 @@ sbatch --array=1-100 RunMsselCalculateDistance10000.sh
 # Run the past commands using values of SLURM_ARRAY_TASK_ID that go from 1-100
 
 cd Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims
+
+for i in {1..21}
+do
+mkdir ../../../../Results/UK10K_OnePercenters/ImportanceSamplingSims/Quantile"$i"/
+done
+
 sbatch --array=1-100 RunMsselCalculateDistanceWithRecombination10000NoSingleton.sh
 
 # Run the past command using values of SLURM_ARRAY_TASK_ID that go from 1-100
@@ -117,13 +124,13 @@ sbatch --array=301-351 SimulateLDatasetsWithMsselMultiLessBothSides.sh
 # Repeat for values of SLURM_ARRAY_TASK_ID going from 1-50, 101-151 and 301-351.
 
 cd Scripts/Sims/UK10K_OnePercenters/ForwardSims
-sbatch --array=1-100 RunMssel_4Ns0.sh
-sbatch --array=1-100 RunMssel_4Ns25.sh
-sbatch --array=1-100 RunMssel_4Ns50.sh
-sbatch --array=1-100 RunMssel_4Ns-25.sh
-sbatch --array=1-100 RunMssel_4Ns-50.sh
+sbatch --array=1-21 RunMssel_4Ns0singleRecManyRec.sh
+sbatch --array=1-21 RunMssel_4Ns25singleRecManyRec.sh
+sbatch --array=1-21 RunMssel_4Ns50singleRecManyRec.sh
+sbatch --array=1-21 RunMssel_4Ns-25singleRecManyRec.sh
+sbatch --array=1-21 RunMssel_4Ns-50singleRecManyRec.sh
 
-# Repeat the past commands for values of SLURM_ARRAY_TASK_ID going from 1-100
+# Repeat the past commands for values of SLURM_ARRAY_TASK_ID going from 1-21
 
 6) Calculate the Log-likelihoods for different values of selection
 
@@ -137,9 +144,9 @@ sbatch --array=1-100 CreateSimTestTableWithLLResultsDenseGridNoRecLess.sh
 # Run the past commands for SLURM_ARRAY_TASK_ID values going from 1 to 100.
 
 cd Scripts/Sims/UK10K_OnePercenters/ForwardSims
-sbatch --array=1-100 CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableFromSims.sh
+sbatch --array=1-105 CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableFromSimsSingleRecMany.sh
 
-# Run the past commands for SLURM_ARRAY_TASK_ID values going from 1 to 100.
+# Run the past commands for SLURM_ARRAY_TASK_ID values going from 1 to 105.
 
 
 7) Get the maximum likelihood estimator for each dataset
@@ -151,7 +158,7 @@ bash GetMax4NsValueFromTable.sh
 cd Scripts/Sims/PopExpansion/ForwardSims/
 bash GetMax4NsValueFromTable.sh
 cd Scripts/Sims/UK10K_OnePercenters/ForwardSims
-perl GetMax4NsValueSims.pl
+perl GetMax4NsValueSimsSingleRecManyRec.pl
 
 8) Calculate effective sample sizes.
 

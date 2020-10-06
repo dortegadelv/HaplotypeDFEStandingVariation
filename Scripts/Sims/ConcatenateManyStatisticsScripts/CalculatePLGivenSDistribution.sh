@@ -43,7 +43,7 @@ Ne[11]="20000"
 rm ../../../Results/DistributionOfL/DistributionOfL.txt
 touch ../../../Results/DistributionOfL/DistributionOfL.txt
 # File="../../../Results/"${Directory[]}
-for (( i = 7 ; i <= 7 ; i++ ))
+for (( i = 3 ; i <= 3 ; i++ ))
 do
 for (( j = 1 ; j <= 5 ; j++ ))
 do
