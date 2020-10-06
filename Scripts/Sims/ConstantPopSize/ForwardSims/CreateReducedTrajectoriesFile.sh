@@ -33,16 +33,3 @@ echo $AlleleCount
 Reps=$( ls ../../../../Results/ConstantPopSize/ForwardSims/4Ns_100/Alleles_*.txt | wc -l )
 perl TrajToMsselFormat.pl ../../../../Results/ConstantPopSize/ForwardSims/4Ns_100/Traj_ 20000 ../../../../Results/ConstantPopSize/ForwardSims/4Ns_100/TrajMsselLike.txt $AlleleCount 0 $Reps
 cat ../../../../Results/ConstantPopSize/ForwardSims/4Ns_100/TrajMsselLike.txt | ../../../../Programs/Mssel/stepftn > ../../../../Results/ConstantPopSize/ForwardSims/4Ns_100/ReducedTrajectories.txt
-
-AlleleCount=$( wc -l ../../../../Results/ConstantPopSize/ForwardSims/4Ns_25/Alleles_*.txt | tail -n1 | awk '{print $1}' )
-echo $AlleleCount
-Reps=$( ls ../../../../Results/ConstantPopSize/ForwardSims/4Ns_25/Alleles_*.txt | wc -l )
-perl TrajToMsselFormat.pl ../../../../Results/ConstantPopSize/ForwardSims/4Ns_25/Traj_ 20000 ../../../../Results/ConstantPopSize/ForwardSims/4Ns_25/TrajMsselLike.txt $AlleleCount 0 $Reps
-cat ../../../../Results/ConstantPopSize/ForwardSims/4Ns_25/TrajMsselLike.txt | ../../../../Programs/Mssel/stepftn > ../../../../Results/ConstantPopSize/ForwardSims/4Ns_25/ReducedTrajectories.txt
-
-AlleleCount=$( wc -l ../../../../Results/ConstantPopSize/ForwardSims/4Ns_-25/Alleles_*.txt | tail -n1 | awk '{print $1}' )
-echo $AlleleCount
-Reps=$( ls ../../../../Results/ConstantPopSize/ForwardSims/4Ns_-25/Alleles_*.txt | wc -l )
-perl TrajToMsselFormat.pl ../../../../Results/ConstantPopSize/ForwardSims/4Ns_-25/Traj_ 20000 ../../../../Results/ConstantPopSize/ForwardSims/4Ns_-25/TrajMsselLike.txt $AlleleCount 0 $Reps
-cat ../../../../Results/ConstantPopSize/ForwardSims/4Ns_-25/TrajMsselLike.txt | ../../../../Programs/Mssel/stepftn > ../../../../Results/ConstantPopSize/ForwardSims/4Ns_-25/ReducedTrajectories.txt
-

@@ -72,7 +72,6 @@ mkdir ../../../../Results/UK10K_OnePercenters/ForwardSims/4Ns_25
 mkdir ../../../../Results/UK10K_OnePercenters/ForwardSims/4Ns_50
 mkdir ../../../../Results/UK10K_OnePercenters/ForwardSims/4Ns_-25
 mkdir ../../../../Results/UK10K_OnePercenters/ForwardSims/4Ns_-50
-SGE_TASK_ID=1
 sbatch --array=1 Expansion_4Ns0.sh
 sbatch --array=1 Expansion_4Ns25.sh
 sbatch --array=1 Expansion_4Ns50.sh
@@ -86,13 +85,13 @@ The allele frequency trajectories are reduced using a set of allele frequency bo
 If the user wishes to change those boundaries, modify the vector 'bounds' inside Programs/Mssel/freqints.h to define the new boundaries and recompile the program stepftn using 'gcc -O3 -o stepftn stepftn.c -lm':
 
 cd Scripts/Sims/ConstantPopSize/ForwardSims
-bash CreateReducedTrajectories.sh
+bash CreateReducedTrajectoriesFile.sh
 cd Scripts/Sims/PopExpansion/ForwardSims
-bash CreateReducedTrajectories.sh
+bash CreateReducedTrajectoriesFile.sh
 cd Scripts/Sims/AncientBottleneck/ForwardSims
-bash CreateReducedTrajectories.sh
+bash CreateReducedTrajectoriesFile.sh
 cd Scripts/Sims/UK10K_OnePercenters/ForwardSims
-bash CreateReducedTrajectories.sh
+bash CreateReducedTrajectoriesFile.sh
 
 Then, to obtain the mean allele frequency trajectories, run:
 
