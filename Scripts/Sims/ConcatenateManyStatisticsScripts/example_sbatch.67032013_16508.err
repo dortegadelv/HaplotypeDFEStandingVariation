@@ -1,0 +1,2 @@
+mkdir: cannot create directory ‘../../../Results/UK10K/ForwardSims/4Ns_0/HapLengths/’: File exists
+slurmstepd-midway2-0408: error: *** JOB 67032023 ON midway2-0408 CANCELLED AT 2020-04-13T19:39:01 ***

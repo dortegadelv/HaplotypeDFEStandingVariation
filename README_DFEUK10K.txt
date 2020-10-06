@@ -3,14 +3,14 @@
 First, to create the plink files used to calculate the frequencies, use:
 
 cd Scripts/DataAnalysis
-bash CreatePlinkFiles.sh
+qsub -t 1-22 CreatePlinkFiles.sh
 
 # Run the past script using SGE_TASK_ID values from 1-22
 
 Obtain the frequency per each site in the UK10K individuals that are clearly European according to the UK10K paper:
 
 cd Scripts/DataAnalysis/InferDFEWithHapLengths
-bash CalculateFrequencyPlinkFiles.sh
+qsub -t 1-22 CalculateFrequencyPlinkFiles.sh
 
 # Run the past script using SGE_TASK_ID values from 1-22
 
@@ -94,8 +94,7 @@ perl GetGeneticMapLeftRightSynonymousNotCpGPrintMap.pl
 
 Get the list of synonymous variants at a particular frequency:
 
-SGE_TASK_ID=1
-bash GetListOfSynonymousAllelesAtACertainFrequency.sh
+qsub -t 1-22 GetListOfSynonymousAllelesAtACertainFrequency.sh
 # Run the past script using SGE_TASK_ID values from 1-22
 
 Then do:
@@ -104,7 +103,7 @@ cat ../../../Data/Plink/SynonymousOnePercentCpG{1..22}.frq > ../../../Data/Plink
 
 Then execute this for every variant at a one percent frequency to get the L values for synonymous variants:
 
-bash CalculateHaplotypeLengthsSynonymousOnlyCpG.sh
+qsub -t 1-183 CalculateHaplotypeLengthsSynonymousOnlyCpG.sh
 # Run the past script using SGE_TASK_ID values from 1-183
 
 cd Scripts/DataAnalysis/InferDFEWithHapLengths/ABC_Analysis
@@ -113,7 +112,7 @@ bash CalculateFrequencyByWindowsSynMissense.sh
 #### Run ABC pipeline
 
 cd Scripts/DataAnalysis/InferDFEWithHapLengths/ABC_Analysis
-bash ABCDemographyAnalysis.sh
+qsub -t 1-500 ABCDemographyAnalysis.sh
 # Run the past script using SGE_TASK_ID values from 1-500
 
 ## Calculate the difference in L values between the simulated data and the UK10K data
@@ -123,7 +122,7 @@ perl CalculateMismatchStatistic.pl
 bash ConcatenateMismatchStatisticAndLDistances.sh
 
 ## Do simulations using the point estimates from the posterior distribution of the demographic parameters
-bash ReplicationOfBestABCParameters.sh
+qsub -t 1-100 ReplicationOfBestABCParameters.sh
 # Run the past script using SGE_TASK_ID values from 1-100
 
 ## Get an average estimate of the difference in L values between the replicates of simulated data and the UK10K data

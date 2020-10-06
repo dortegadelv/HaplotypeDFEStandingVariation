@@ -1,0 +1,5 @@
+mkdir: cannot create directory ‘../../../Results/UK10K/ForwardSims/4Ns_-25/HapLengths/’: File exists
+
+real	166m0.186s
+user	165m39.130s
+sys	0m12.903s

@@ -1,8 +1,12 @@
-#$ -l h_vmem=2g
-#$ -cwd
-#$ -N ForWF
-#$ -o ../../../../Results/ConstantPopSize/ForwardSims/4Ns_0/Trash
-#$ -e ../../../../Results/ConstantPopSize/ForwardSims/4Ns_0/Trash
+#!/bin/bash
+#SBATCH --job-name=example_sbatch
+#SBATCH --output=example_sbatch.out
+#SBATCH --error=example_sbatch.err
+#SBATCH --time=24:00:00
+#SBATCH --partition=jnovembre
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --mem-per-cpu=1000
 
 NumberOfMarkers[1]="1000"
 NumberOfMarkers[2]="5000"
@@ -36,22 +40,31 @@ RecRate[19]="14138.413"
 RecRate[20]="19608.766"
 RecRate[21]="38656.841"
 
-RepNumber=$(( ( ( $SGE_TASK_ID - 1 ) % 100 ) + 1 ))
-RecNumber=$(( ( ( $SGE_TASK_ID - 1 ) / 500 ) + 1 ))
-DirNumber=$(( ( ( ( ( $SGE_TASK_ID - 1 ) - ( $RecNumber - 1 ) * 500 ) ) / 100 + 1 )))
+
+RecNumber=$(( ( ( $SLURM_ARRAY_TASK_ID - 1 ) / 5 ) + 1 ))
+DirNumber=$(( ( ( $SLURM_ARRAY_TASK_ID - 1 ) % 5 ) + 1 ))
+
+for RepNumber in {1..50}
+do
 
 echo "RepNumber = $RepNumber FourNsNumber = $DirNumber ${FourNs[$DirNumber]} RecNumber = $RecNumber ${RecRate[$RecNumber]}"
 
 FileToCheck="../../../../Results/UK10K/ForwardSims/"${FourNs[$DirNumber]}"/SimDistancesMsselSingleRecHighRec273_"${RecRate[$RecNumber]}"_"$RepNumber".txt"
 LLResults="../../../../Results/UK10K/ForwardSims/"${FourNs[$DirNumber]}"/LLSimsSingleRecHighRecMssel273_"${RecRate[$RecNumber]}"_"$RepNumber".txt"
 echo "File = $FileToCheck"
+CountDistancesFile="../../../../Results/UK10K/ForwardSims/"${FourNs[$DirNumber]}"/CountDistancesMsselSingleRecHighRec273_"${RecRate[$RecNumber]}"_"$RepNumber".txt"
 
-Directory="../../../../Results/UK10K/ForwardSims/"${FourNs[$SGE_TASK_ID]}"/"
+Directory="../../../../Results/UK10K/ForwardSims/"${FourNs[$SLURM_ARRAY_TASK_ID]}"/"
 ResultsFile="../../../../Results/UK10K_OnePercenters/ForwardSims/LLData.txt"
 
 HapFilePrefix="../../../../Data/Plink/HapLengths/HapLength"
 
-perl ../../UK10K_PointTwoPercenters/ForwardSims/CalculatePLengthGivenSQuantileSimsSingleRecMany.pl $FileToCheck 250000 ../../../../Results/UK10K_OnePercenters/ImportanceSamplingSims/Quantile ../ImportanceSamplingSims/TestT2Bounds.txt $LLResults 273 565630 $RecNumber
+time perl CountDistances.pl $FileToCheck $CountDistancesFile
 
+perl ../../UK10K_PointTwoPercenters/ForwardSims/CalculatePLengthGivenSQuantileSimsCountsSingleRecMany.pl $CountDistancesFile 250000 ../../../../Results/UK10K_OnePercenters/ImportanceSamplingSims/Quantile ../ImportanceSamplingSims/TestT2Bounds.txt $LLResults 273 565630 $RecNumber
+
+# perl ../../UK10K_PointTwoPercenters/ForwardSims/CalculatePLengthGivenSQuantileSimsSingleRecMany.pl $FileToCheck 250000 ../../../../Results/UK10K_OnePercenters/ImportanceSamplingSims/Quantile ../ImportanceSamplingSims/TestT2Bounds.txt $LLResults 273 565630 $RecNumber
+
+done
 
 

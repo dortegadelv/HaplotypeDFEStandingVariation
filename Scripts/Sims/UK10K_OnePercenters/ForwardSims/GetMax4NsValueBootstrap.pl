@@ -86,7 +86,7 @@ print "$FourNs[$DirNumber]\n";
 $ExitFile = "../../../../Results/ResultsSelectionInferred/SelectionSynUK10KBootstrap.txt";
 open (EXIT,">$ExitFile") or die "NO";
 for ( $RepNumber = 1; $RepNumber <= 100 ; $RepNumber++) {
-$File="../../../../Results/UK10K_OnePercenters/ForwardSims/LLDataBootstrapSyn".$RepNumber.".txt";
+$File="../../../../Results/UK10K_OnePercenters/ForwardSims/LLDataSynBootstrap".$RepNumber.".txt";
 
 open (FILE,$File) or die "NO!";
 
@@ -123,7 +123,7 @@ print "$FourNs[$DirNumber]\n";
 $ExitFile = "../../../../Results/ResultsSelectionInferred/SelectionOnlyNegSynUK10KBootstrap.txt";
 open (EXIT,">$ExitFile") or die "NO";
 for ( $RepNumber = 1; $RepNumber <= 100 ; $RepNumber++) {
-$File="../../../../Results/UK10K_OnePercenters/ForwardSims/LLDataBootstrapSyn".$RepNumber.".txt";
+$File="../../../../Results/UK10K_OnePercenters/ForwardSims/LLDataSynBootstrap".$RepNumber.".txt";
 
 open (FILE,$File) or die "NO!";
 

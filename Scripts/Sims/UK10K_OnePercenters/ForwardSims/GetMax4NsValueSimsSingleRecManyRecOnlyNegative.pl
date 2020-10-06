@@ -35,7 +35,7 @@ for ( $DirNumber = 1; $DirNumber <= 5 ; $DirNumber++ ) {
 print "$FourNs[$DirNumber]\n";
 $ExitFile = "../../../../Results/ResultsSelectionInferred/SelectionUK10KSingleRecHighRecOnlyNeg".$RecRate[$RecNumber]."4Ns".$FourNs[$DirNumber].".txt";
 open (EXIT,">$ExitFile") or die "NO";
-for ( $RepNumber = 1; $RepNumber <= 100 ; $RepNumber++) {
+for ( $RepNumber = 1; $RepNumber <= 50 ; $RepNumber++) {
 # LLSimsSingleRecHighRecMssel273_"${RecRate[$RecNumber]}"_"$RepNumber".txt"
 $File="../../../../Results/UK10K/ForwardSims/".$FourNs[$DirNumber]."/LLSimsSingleRecHighRecMssel273_".$RecRate[$RecNumber]."_".$RepNumber.".txt";
 

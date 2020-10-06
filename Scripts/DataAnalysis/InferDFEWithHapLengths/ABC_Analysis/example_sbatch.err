@@ -1,0 +1,5 @@
+/tmp/slurmd/job2186426/slurm_script: line 55: 14535 Segmentation fault      ../../../../Programs/ISProgram/SlatkinISConstantSizeSISR -A $SelectionCoef2 -a $SelectionCoef1 -f ${Frequency[$FrequencyNumber]} -r 1000 -N 22886 -s $Seed -t 0 -M 0.0000003 -U 0.99999 -Q 0.0 -E 0.0001 -F ../../../../Results/PopExpansionHundred/ImportanceSamplingSims/$File -b ../../ConstantPopSize/ImportanceSamplingSims/Bounds.txt -D DemHistExpansion.txt -X NewSelectionValues.txt -C 100000 -p 4000
+
+real	0m0.029s
+user	0m0.003s
+sys	0m0.017s

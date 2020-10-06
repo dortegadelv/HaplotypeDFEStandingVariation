@@ -2,7 +2,7 @@
 #SBATCH --job-name=example_sbatch
 #SBATCH --output=example_sbatch.out
 #SBATCH --error=example_sbatch.err
-#SBATCH --time=01:00:00
+#SBATCH --time=02:00:00
 #SBATCH --partition=jnovembre
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1

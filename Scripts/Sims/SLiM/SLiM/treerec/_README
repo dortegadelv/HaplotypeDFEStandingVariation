@@ -1,0 +1,23 @@
+This directory, and subdirectories, contains code related to the tree
+sequence recording facility of SLiM 3.
+
+
+Tree sequence recording works by the following hooks:
+
+- `SetCurrentNewIndividual` :
+- `RecordNewGenome` : 
+- `RecordNewDerivedState` :
+- `RetractNewIndividual` :
+
+Management:
+
+- `StartTreeRecording` :
+- `FreeTreeSequence` :
+
+Simplification interval:
+
+- `CheckAutoSimplification` :
+
+
+The code in `tskit/` is from [tskit/lib](https://github.com/tskit-dev/msprime/tree/master/lib);
+the code in `tskit/kastore` is from [kastore/c](https://github.com/tskit-dev/kastore/tree/master/c).

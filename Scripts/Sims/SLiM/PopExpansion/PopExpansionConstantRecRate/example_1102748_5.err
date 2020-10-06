@@ -1,0 +1,24 @@
+
+real	6m23.728s
+user	6m20.742s
+sys	0m2.444s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_13_ns.vcf
+	--freq
+	--out Salele13.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 1345 out of a possible 1345 Sites
+Run Time = 1.00 seconds
+Writing to /tmp/bcftools-sort.wYJ47X
+Merging 1 temporary files
+Cleaning
+Done
+Writing to /tmp/bcftools-sort.7iLvTy
+Merging 1 temporary files
+slurmstepd-midway2-0401: error: *** JOB 1102753 ON midway2-0401 CANCELLED AT 2020-05-09T19:11:35 ***

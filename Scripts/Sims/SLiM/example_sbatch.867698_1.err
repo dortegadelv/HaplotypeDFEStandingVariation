@@ -1,0 +1,100 @@
+/tmp/slurmd/job867698/slurm_script: line 16: slim: command not found
+
+real	0m0.001s
+user	0m0.000s
+sys	0m0.000s
+Traceback (most recent call last):
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 3, in <module>
+    import pyslim
+ImportError: No module named pyslim
+awk: fatal: cannot open file `Salele1.vcf.frq' for reading (No such file or directory)
+/tmp/slurmd/job867698/slurm_script: line 16: slim: command not found
+
+real	0m0.000s
+user	0m0.000s
+sys	0m0.000s
+Traceback (most recent call last):
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 3, in <module>
+    import pyslim
+ImportError: No module named pyslim
+awk: fatal: cannot open file `Salele2.vcf.frq' for reading (No such file or directory)
+/tmp/slurmd/job867698/slurm_script: line 16: slim: command not found
+
+real	0m0.000s
+user	0m0.000s
+sys	0m0.000s
+Traceback (most recent call last):
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 3, in <module>
+    import pyslim
+ImportError: No module named pyslim
+awk: fatal: cannot open file `Salele3.vcf.frq' for reading (No such file or directory)
+/tmp/slurmd/job867698/slurm_script: line 16: slim: command not found
+
+real	0m0.000s
+user	0m0.000s
+sys	0m0.000s
+Traceback (most recent call last):
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 3, in <module>
+    import pyslim
+ImportError: No module named pyslim
+awk: fatal: cannot open file `Salele4.vcf.frq' for reading (No such file or directory)
+/tmp/slurmd/job867698/slurm_script: line 16: slim: command not found
+
+real	0m0.001s
+user	0m0.000s
+sys	0m0.001s
+Traceback (most recent call last):
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 3, in <module>
+    import pyslim
+ImportError: No module named pyslim
+awk: fatal: cannot open file `Salele5.vcf.frq' for reading (No such file or directory)
+/tmp/slurmd/job867698/slurm_script: line 16: slim: command not found
+
+real	0m0.000s
+user	0m0.000s
+sys	0m0.000s
+Traceback (most recent call last):
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 3, in <module>
+    import pyslim
+ImportError: No module named pyslim
+awk: fatal: cannot open file `Salele6.vcf.frq' for reading (No such file or directory)
+/tmp/slurmd/job867698/slurm_script: line 16: slim: command not found
+
+real	0m0.001s
+user	0m0.000s
+sys	0m0.000s
+Traceback (most recent call last):
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 3, in <module>
+    import pyslim
+ImportError: No module named pyslim
+awk: fatal: cannot open file `Salele7.vcf.frq' for reading (No such file or directory)
+/tmp/slurmd/job867698/slurm_script: line 16: slim: command not found
+
+real	0m0.001s
+user	0m0.000s
+sys	0m0.000s
+Traceback (most recent call last):
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 3, in <module>
+    import pyslim
+ImportError: No module named pyslim
+awk: fatal: cannot open file `Salele8.vcf.frq' for reading (No such file or directory)
+/tmp/slurmd/job867698/slurm_script: line 16: slim: command not found
+
+real	0m0.001s
+user	0m0.000s
+sys	0m0.000s
+Traceback (most recent call last):
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 3, in <module>
+    import pyslim
+ImportError: No module named pyslim
+awk: fatal: cannot open file `Salele9.vcf.frq' for reading (No such file or directory)
+/tmp/slurmd/job867698/slurm_script: line 16: slim: command not found
+
+real	0m0.001s
+user	0m0.000s
+sys	0m0.000s
+Traceback (most recent call last):
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 3, in <module>
+    import pyslim
+ImportError: No module named pyslim
+awk: fatal: cannot open file `Salele10.vcf.frq' for reading (No such file or directory)

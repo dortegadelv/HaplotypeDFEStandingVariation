@@ -1,0 +1,480 @@
+
+real	6m12.212s
+user	6m8.756s
+sys	0m2.949s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_49_ns.vcf
+	--freq
+	--out Salele49.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 1348 out of a possible 1348 Sites
+Run Time = 1.00 seconds
+Writing to /tmp/bcftools-sort.NXBlfw
+Merging 1 temporary files
+Cleaning
+Done
+Writing to /tmp/bcftools-sort.BoDGPy
+Merging 1 temporary files
+Cleaning
+Done
+
+real	8m15.429s
+user	4m22.892s
+sys	0m3.665s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_49_ns.vcf
+	--freq
+	--out Salele49.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 1348 out of a possible 1348 Sites
+Run Time = 2.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_49_syn.vcf
+	--freq
+	--out SaleleSyn49.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 556 out of a possible 556 Sites
+Run Time = 17.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_49_combined.vcf
+	--freq
+	--out SaleleWholeSequence49.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 73185 out of a possible 73185 Sites
+Run Time = 102.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_49_combined.vcf
+	--chr 1
+	--to-bp 642958
+	--out MiniVCF49.vcf
+	--recode
+	--from-bp 142958
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1821 out of a possible 73185 Sites
+Run Time = 36.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_49_combined.vcf
+	--chr 1
+	--to-bp 1652246
+	--out MiniVCF49.vcf
+	--recode
+	--from-bp 1152246
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1795 out of a possible 73185 Sites
+Run Time = 21.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_49_combined.vcf
+	--chr 1
+	--to-bp 3748981
+	--out MiniVCF49.vcf
+	--recode
+	--from-bp 3248981
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1834 out of a possible 73185 Sites
+Run Time = 23.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_49_combined.vcf
+	--chr 1
+	--to-bp 5818957
+	--out MiniVCF49.vcf
+	--recode
+	--from-bp 5318957
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1786 out of a possible 73185 Sites
+Run Time = 10.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_49_combined.vcf
+	--chr 1
+	--to-bp 11467322
+	--out MiniVCF49.vcf
+	--recode
+	--from-bp 10967322
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1777 out of a possible 73185 Sites
+Run Time = 4.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_49_combined.vcf
+	--chr 1
+	--to-bp 1585575
+	--out MiniVCF49.vcf
+	--recode
+	--from-bp 1085575
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1791 out of a possible 73185 Sites
+Run Time = 4.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_49_combined.vcf
+	--chr 1
+	--to-bp 11480837
+	--out MiniVCF49.vcf
+	--recode
+	--from-bp 10980837
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1781 out of a possible 73185 Sites
+Run Time = 4.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+rm: cannot remove ‘Salele49.vcf.log’: No such file or directory
+rm: cannot remove ‘SaleleWholeSequence49.vcf.log’: No such file or directory
+
+real	6m54.995s
+user	6m50.987s
+sys	0m3.151s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_50_ns.vcf
+	--freq
+	--out Salele50.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 1362 out of a possible 1362 Sites
+Run Time = 13.00 seconds
+Writing to /tmp/bcftools-sort.YGwbKj
+Merging 1 temporary files
+Cleaning
+Done
+Writing to /tmp/bcftools-sort.HXRhhc
+Merging 1 temporary files
+Cleaning
+Done
+
+real	10m24.394s
+user	4m19.924s
+sys	0m3.509s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_50_ns.vcf
+	--freq
+	--out Salele50.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 1362 out of a possible 1362 Sites
+Run Time = 28.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_50_syn.vcf
+	--freq
+	--out SaleleSyn50.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 482 out of a possible 482 Sites
+Run Time = 0.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_50_combined.vcf
+	--freq
+	--out SaleleWholeSequence50.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 73190 out of a possible 73190 Sites
+Run Time = 47.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_50_combined.vcf
+	--chr 1
+	--to-bp 5230044
+	--out MiniVCF50.vcf
+	--recode
+	--from-bp 4730044
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1974 out of a possible 73190 Sites
+Run Time = 16.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_50_combined.vcf
+	--chr 1
+	--to-bp 6141559
+	--out MiniVCF50.vcf
+	--recode
+	--from-bp 5641559
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1870 out of a possible 73190 Sites
+Run Time = 4.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_50_combined.vcf
+	--chr 1
+	--to-bp 19728695
+	--out MiniVCF50.vcf
+	--recode
+	--from-bp 19228695
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1848 out of a possible 73190 Sites
+Run Time = 4.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_50_combined.vcf
+	--chr 1
+	--to-bp 11877947
+	--out MiniVCF50.vcf
+	--recode
+	--from-bp 11377947
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1820 out of a possible 73190 Sites
+Run Time = 4.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_50_combined.vcf
+	--chr 1
+	--to-bp 12403161
+	--out MiniVCF50.vcf
+	--recode
+	--from-bp 11903161
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1818 out of a possible 73190 Sites
+Run Time = 4.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+rm: cannot remove ‘Salele50.vcf.log’: No such file or directory
+rm: cannot remove ‘SaleleWholeSequence50.vcf.log’: No such file or directory
+
+real	6m54.286s
+user	6m43.934s
+sys	0m3.189s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_51_ns.vcf
+	--freq
+	--out Salele51.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 1375 out of a possible 1375 Sites
+Run Time = 1.00 seconds
+Writing to /tmp/bcftools-sort.TK2WZ0
+Merging 1 temporary files
+Cleaning
+Done
+Writing to /tmp/bcftools-sort.NzRtKX
+Merging 1 temporary files
+Cleaning
+Done
+
+real	5m36.424s
+user	4m17.409s
+sys	0m3.746s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_51_ns.vcf
+	--freq
+	--out Salele51.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 1375 out of a possible 1375 Sites
+Run Time = 2.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_51_syn.vcf
+	--freq
+	--out SaleleSyn51.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 529 out of a possible 529 Sites
+Run Time = 2.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_51_combined.vcf
+	--freq
+	--out SaleleWholeSequence51.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 73259 out of a possible 73259 Sites
+Run Time = 20.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_51_combined.vcf
+	--chr 1
+	--to-bp 9853391
+	--out MiniVCF51.vcf
+	--recode
+	--from-bp 9353391
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1790 out of a possible 73259 Sites
+Run Time = 4.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_51_combined.vcf
+	--chr 1
+	--to-bp 10942678
+	--out MiniVCF51.vcf
+	--recode
+	--from-bp 10442678
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1922 out of a possible 73259 Sites
+Run Time = 3.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_51_combined.vcf
+	--chr 1
+	--to-bp 11277629
+	--out MiniVCF51.vcf
+	--recode
+	--from-bp 10777629
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1746 out of a possible 73259 Sites
+Run Time = 5.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+rm: cannot remove ‘Salele51.vcf.log’: No such file or directory
+rm: cannot remove ‘SaleleWholeSequence51.vcf.log’: No such file or directory

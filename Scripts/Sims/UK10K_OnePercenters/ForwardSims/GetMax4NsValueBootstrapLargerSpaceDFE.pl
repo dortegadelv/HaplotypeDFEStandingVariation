@@ -7,7 +7,7 @@ print "$FourNs[$DirNumber]\n";
 $ExitFile = "../../../../Results/ResultsSelectionInferred/SelectionLargerSpaceBootstrapUK10K".$FourNs[$DirNumber].".txt";
 open (EXIT,">$ExitFile") or die "NO";
 for ( $RepNumber = 1; $RepNumber <= 100 ; $RepNumber++) {
-$File="../../../../Results/UK10K_OnePercenters/ForwardSims/LLDataDFEBootstrapWideRangeOne".$RepNumber.".txt";
+$File="../../../../Results/UK10K_OnePercenters/ForwardSims/LLDataDFEBootstrap".$RepNumber.".txt";
 
 open (FILE,$File) or die "NO! $File\n";
 
@@ -21,7 +21,7 @@ if ($LineNumber == 1){
 $Max = $SplitLine[1];
 $MaxNum = $LineNumber;
 }
-if ($LineNumber > 0){
+if ( ( $LineNumber > 0 ) && ( $LineNumber != 1501 ) ){
 if ($SplitLine[1] > $Max ){
 $Max = $SplitLine[1];
 $MaxNum = $LineNumber;
@@ -30,43 +30,15 @@ $MaxNum = $LineNumber;
 # print "\t$MaxNum\n";
 $LineNumber++;
 }
-
-close (FILE);
-$SelValue = $MaxNum - 1;
-$FirstMaxLL = $Max;
-$FirstSelValue = $SelValue; 
-# print EXIT "0\t$SelValue\t$Max\t";
-$File="../../../../Results/UK10K_OnePercenters/ForwardSims/LLDataDFEBootstrapWideRangeTwo".$RepNumber.".txt";
-
-open (FILE,$File) or die "NO! $File\n";
-
-$LineNumber = 0;
-while (<FILE>){
-chomp;
-$Line = $_;
-@SplitLine = split(/\s+/,$Line);
-# print "$SplitLine[1]";
-if ($LineNumber == 1){
-$Max = $SplitLine[1];
-$MaxNum = $LineNumber;
-}
-if ($LineNumber > 0){
-if ($SplitLine[1] > $Max ){
-$Max = $SplitLine[1];
-$MaxNum = $LineNumber;
-}
-}
-# print "\t$MaxNum\n";
-$LineNumber++;
-}
-
+print "Rep number = $RepNumber\tLine number = $LineNumber\n";
 close (FILE);
 $SelValue = $MaxNum - 1;
 
-if ($FirstMaxLL > $Max){
-print EXIT "0\t$FirstSelValue\t$FirstMaxLL\n";
+if ($MaxNum <= 1500){
+print EXIT "0\t$SelValue\t$Max\n";
 }else{
-print EXIT "1\t$SelValue\t$Max\n";
+$CurValue = $MaxNum - 1502;
+print EXIT "1\t$CurValue\t$Max\n";
 }
 
 }

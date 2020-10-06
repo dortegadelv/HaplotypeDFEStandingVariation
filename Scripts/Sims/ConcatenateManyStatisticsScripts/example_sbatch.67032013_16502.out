@@ -1,0 +1,5 @@
+DemHist = 12 FourNs = 1 Series = 1
+UK10K
+time ../../../Programs/shapeit.v2.904.3.10.0-693.11.6.el7.x86_64/bin/shapeit --input-vcf ../../../Results/UK10K/ForwardSims/4Ns_0/HapLengths/PhasedVCF1.txt.1.txt -M GeneticMapConstantPopSize.txt -O ../../../Results/UK10K/ForwardSims/4Ns_0/HapLengths/PhasedShapeitVCF1.txt.1.phased --output-log ../../../Results/UK10K/ForwardSims/4Ns_0/MsselFiles/Log16502.txt
+perl CreatePhasedToVCF.pl ../../../Results/UK10K/ForwardSims/4Ns_0/MsselFiles/MsselOutLess_1.txt ../../../Results/UK10K/ForwardSims/4Ns_0/HapLengths/PhasedShapeitVCF1.txt.1.phased.haps ../../../Results/UK10K/ForwardSims/4Ns_0/MsselFiles/MsselOutLessPhased_1.txt 1
+perl DistanceToFirstSegregatingSiteMultiSequence_NoSingletonsBothSides.pl ../../../Results/UK10K/ForwardSims/4Ns_0/MsselFiles/MsselOutLessPhased_1.txt ../../../Results/UK10K/ForwardSims/4Ns_0/HapLengths/HapLengthsLessStatPhase1.txt 1 40

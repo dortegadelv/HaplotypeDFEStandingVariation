@@ -1,0 +1,921 @@
+
+real	0m54.936s
+user	0m53.733s
+sys	0m1.091s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22801_22801_ns.vcf
+	--freq
+	--out Salele22801.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:11290755
+After filtering, kept 4605 out of a possible 4605 Sites
+Run Time = 1.00 seconds
+Writing to /tmp/bcftools-sort.2QmQfu
+Merging 1 temporary files
+Cleaning
+Done
+Writing to /tmp/bcftools-sort.L6JHiA
+Merging 1 temporary files
+Cleaning
+Done
+
+real	3m56.589s
+user	3m47.271s
+sys	0m4.775s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22801_22801_ns.vcf
+	--freq
+	--out Salele22801.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:11290755
+After filtering, kept 4605 out of a possible 4605 Sites
+Run Time = 1.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22801_22801_syn.vcf
+	--freq
+	--out SaleleSyn22801.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 590 out of a possible 590 Sites
+Run Time = 0.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22801_22801_combined.vcf
+	--freq
+	--out SaleleWholeSequence22801.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:11290755
+After filtering, kept 93416 out of a possible 93416 Sites
+Run Time = 26.00 seconds
+rm: cannot remove ‘Positions22801.txt’: No such file or directory
+rm: cannot remove ‘PositionsSyn22801.txt’: No such file or directory
+rm: cannot remove ‘22801_22801_combinedMSFormat.txt’: No such file or directory
+rm: cannot remove ‘Salele22801.vcf.log’: No such file or directory
+rm: cannot remove ‘SaleleWholeSequence22801.vcf.log’: No such file or directory
+
+real	1m7.399s
+user	1m5.218s
+sys	0m2.030s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22802_22802_ns.vcf
+	--freq
+	--out Salele22802.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:11135872
+ Duplicate alternate alleles found at 1:12531875
+ Duplicate alternate alleles found at 1:12714948
+After filtering, kept 4798 out of a possible 4798 Sites
+Run Time = 1.00 seconds
+Writing to /tmp/bcftools-sort.WvjeD8
+Merging 1 temporary files
+Cleaning
+Done
+Writing to /tmp/bcftools-sort.OUuHFc
+Merging 1 temporary files
+Cleaning
+Done
+
+real	3m25.619s
+user	3m16.192s
+sys	0m4.690s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22802_22802_ns.vcf
+	--freq
+	--out Salele22802.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:11135872
+ Duplicate alternate alleles found at 1:12531875
+ Duplicate alternate alleles found at 1:12714948
+After filtering, kept 4798 out of a possible 4798 Sites
+Run Time = 1.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22802_22802_syn.vcf
+	--freq
+	--out SaleleSyn22802.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 158 out of a possible 158 Sites
+Run Time = 0.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22802_22802_combined.vcf
+	--freq
+	--out SaleleWholeSequence22802.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:11135872
+ Duplicate alternate alleles found at 1:12531875
+ Duplicate alternate alleles found at 1:12714948
+After filtering, kept 94116 out of a possible 94116 Sites
+Run Time = 26.00 seconds
+rm: cannot remove ‘Positions22802.txt’: No such file or directory
+rm: cannot remove ‘PositionsSyn22802.txt’: No such file or directory
+rm: cannot remove ‘22802_22802_combinedMSFormat.txt’: No such file or directory
+rm: cannot remove ‘Salele22802.vcf.log’: No such file or directory
+rm: cannot remove ‘SaleleWholeSequence22802.vcf.log’: No such file or directory
+
+real	1m2.357s
+user	0m58.251s
+sys	0m4.032s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22803_22803_ns.vcf
+	--freq
+	--out Salele22803.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:3128982
+ Duplicate alternate alleles found at 1:4352571
+After filtering, kept 3196 out of a possible 3196 Sites
+Run Time = 1.00 seconds
+Writing to /tmp/bcftools-sort.WkObd8
+Merging 1 temporary files
+Cleaning
+Done
+Writing to /tmp/bcftools-sort.9UvYHI
+Merging 1 temporary files
+Cleaning
+Done
+
+real	3m38.966s
+user	3m31.070s
+sys	0m4.560s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22803_22803_ns.vcf
+	--freq
+	--out Salele22803.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:3128982
+ Duplicate alternate alleles found at 1:4352571
+After filtering, kept 3196 out of a possible 3196 Sites
+Run Time = 1.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22803_22803_syn.vcf
+	--freq
+	--out SaleleSyn22803.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 270 out of a possible 270 Sites
+Run Time = 0.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22803_22803_combined.vcf
+	--freq
+	--out SaleleWholeSequence22803.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:3128982
+ Duplicate alternate alleles found at 1:4352571
+After filtering, kept 92540 out of a possible 92540 Sites
+Run Time = 25.00 seconds
+rm: cannot remove ‘Positions22803.txt’: No such file or directory
+rm: cannot remove ‘PositionsSyn22803.txt’: No such file or directory
+rm: cannot remove ‘22803_22803_combinedMSFormat.txt’: No such file or directory
+rm: cannot remove ‘Salele22803.vcf.log’: No such file or directory
+rm: cannot remove ‘SaleleWholeSequence22803.vcf.log’: No such file or directory
+
+real	0m51.220s
+user	0m49.115s
+sys	0m2.057s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22804_22804_ns.vcf
+	--freq
+	--out Salele22804.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:2626177
+After filtering, kept 4198 out of a possible 4198 Sites
+Run Time = 1.00 seconds
+Writing to /tmp/bcftools-sort.mfCR6d
+Merging 1 temporary files
+Cleaning
+Done
+Writing to /tmp/bcftools-sort.vCl8iW
+Merging 1 temporary files
+Cleaning
+Done
+
+real	4m49.012s
+user	4m39.312s
+sys	0m4.576s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22804_22804_ns.vcf
+	--freq
+	--out Salele22804.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:2626177
+After filtering, kept 4198 out of a possible 4198 Sites
+Run Time = 1.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22804_22804_syn.vcf
+	--freq
+	--out SaleleSyn22804.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 729 out of a possible 729 Sites
+Run Time = 0.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22804_22804_combined.vcf
+	--freq
+	--out SaleleWholeSequence22804.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:2626177
+After filtering, kept 90563 out of a possible 90563 Sites
+Run Time = 24.00 seconds
+rm: cannot remove ‘Positions22804.txt’: No such file or directory
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22804_22804_combined.vcf
+	--chr 1
+	--to-bp 16802065
+	--out MiniVCF22804.vcf
+	--recode
+	--from-bp 16302065
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 2232 out of a possible 90563 Sites
+Run Time = 5.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+rm: cannot remove ‘PositionsSyn22804.txt’: No such file or directory
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22804_22804_combined.vcf
+	--chr 1
+	--to-bp 1904788
+	--out MiniVCF22804.vcf
+	--recode
+	--from-bp 1404788
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 2127 out of a possible 90563 Sites
+Run Time = 4.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+rm: cannot remove ‘Salele22804.vcf.log’: No such file or directory
+rm: cannot remove ‘SaleleWholeSequence22804.vcf.log’: No such file or directory
+
+real	0m33.518s
+user	0m32.122s
+sys	0m1.331s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22805_22805_ns.vcf
+	--freq
+	--out Salele22805.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 2549 out of a possible 2549 Sites
+Run Time = 1.00 seconds
+Writing to /tmp/bcftools-sort.vniwsZ
+Merging 1 temporary files
+Cleaning
+Done
+Writing to /tmp/bcftools-sort.obTEkt
+Merging 1 temporary files
+Cleaning
+Done
+
+real	3m26.893s
+user	3m19.148s
+sys	0m4.642s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22805_22805_ns.vcf
+	--freq
+	--out Salele22805.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 2549 out of a possible 2549 Sites
+Run Time = 1.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22805_22805_syn.vcf
+	--freq
+	--out SaleleSyn22805.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 165 out of a possible 165 Sites
+Run Time = 0.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22805_22805_combined.vcf
+	--freq
+	--out SaleleWholeSequence22805.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 92912 out of a possible 92912 Sites
+Run Time = 27.00 seconds
+rm: cannot remove ‘Positions22805.txt’: No such file or directory
+rm: cannot remove ‘PositionsSyn22805.txt’: No such file or directory
+rm: cannot remove ‘22805_22805_combinedMSFormat.txt’: No such file or directory
+rm: cannot remove ‘Salele22805.vcf.log’: No such file or directory
+rm: cannot remove ‘SaleleWholeSequence22805.vcf.log’: No such file or directory
+
+real	1m1.837s
+user	0m59.548s
+sys	0m1.807s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22806_22806_ns.vcf
+	--freq
+	--out Salele22806.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:19334181
+After filtering, kept 4457 out of a possible 4457 Sites
+Run Time = 1.00 seconds
+Writing to /tmp/bcftools-sort.cbxlMn
+Merging 1 temporary files
+Cleaning
+Done
+Writing to /tmp/bcftools-sort.B7wKq3
+[E::hts_open_format] Failed to open file /tmp/bcftools-sort.B7wKq3/00001.bcf
+Cannot write /tmp/bcftools-sort.B7wKq3/00001.bcf: No such file or directory
+
+real	4m15.735s
+user	3m31.822s
+sys	0m4.193s
+rm: cannot remove ‘Salele22806.vcf.log’: No such file or directory
+
+real	0m46.209s
+user	0m44.444s
+sys	0m1.612s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22807_22807_ns.vcf
+	--freq
+	--out Salele22807.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:1904033
+ Duplicate alternate alleles found at 1:18061722
+After filtering, kept 3369 out of a possible 3369 Sites
+Run Time = 1.00 seconds
+Writing to /tmp/bcftools-sort.iyqmXl
+Merging 1 temporary files
+Cleaning
+Done
+Writing to /tmp/bcftools-sort.ct7oz4
+Merging 1 temporary files
+Cleaning
+Done
+
+real	3m40.508s
+user	3m29.645s
+sys	0m4.787s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22807_22807_ns.vcf
+	--freq
+	--out Salele22807.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:1904033
+ Duplicate alternate alleles found at 1:18061722
+After filtering, kept 3369 out of a possible 3369 Sites
+Run Time = 1.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22807_22807_syn.vcf
+	--freq
+	--out SaleleSyn22807.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 253 out of a possible 253 Sites
+Run Time = 0.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22807_22807_combined.vcf
+	--freq
+	--out SaleleWholeSequence22807.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:1904033
+ Duplicate alternate alleles found at 1:18061722
+After filtering, kept 92947 out of a possible 92947 Sites
+Run Time = 25.00 seconds
+rm: cannot remove ‘22807_22807_combinedMSFormat.txt’: No such file or directory
+rm: cannot remove ‘Salele22807.vcf.log’: No such file or directory
+rm: cannot remove ‘SaleleWholeSequence22807.vcf.log’: No such file or directory
+rm: cannot remove ‘Positions22807.txt’: No such file or directory
+rm: cannot remove ‘PositionsSyn22807.txt’: No such file or directory
+
+real	0m53.297s
+user	0m51.456s
+sys	0m1.742s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22808_22808_ns.vcf
+	--freq
+	--out Salele22808.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:14768241
+After filtering, kept 3475 out of a possible 3475 Sites
+Run Time = 1.00 seconds
+Writing to /tmp/bcftools-sort.pX1bGO
+Merging 1 temporary files
+Cleaning
+Done
+Writing to /tmp/bcftools-sort.52jYiX
+Merging 1 temporary files
+Cleaning
+Done
+
+real	3m33.874s
+user	3m24.257s
+sys	0m4.734s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22808_22808_ns.vcf
+	--freq
+	--out Salele22808.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:14768241
+After filtering, kept 3475 out of a possible 3475 Sites
+Run Time = 1.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22808_22808_syn.vcf
+	--freq
+	--out SaleleSyn22808.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 279 out of a possible 279 Sites
+Run Time = 0.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22808_22808_combined.vcf
+	--freq
+	--out SaleleWholeSequence22808.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:14768241
+After filtering, kept 93556 out of a possible 93556 Sites
+Run Time = 25.00 seconds
+rm: cannot remove ‘Positions22808.txt’: No such file or directory
+rm: cannot remove ‘PositionsSyn22808.txt’: No such file or directory
+rm: cannot remove ‘22808_22808_combinedMSFormat.txt’: No such file or directory
+rm: cannot remove ‘Salele22808.vcf.log’: No such file or directory
+rm: cannot remove ‘SaleleWholeSequence22808.vcf.log’: No such file or directory
+ERROR (SLiMSim::ExecuteContextFunction_initializeGenomicElement): initializeGenomicElement() genomic element from start position 4375308 to end position 4375312 overlaps existing genomic element.
+
+Error on script line 76, character 8:
+
+        initializeGenomicElement(g2, cnc_starts, cnc_ends);
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+
+real	0m0.151s
+user	0m0.098s
+sys	0m0.052s
+Traceback (most recent call last):
+  File "/home/diegoortega/.local/lib/python3.7/site-packages/tskit/trees.py", line 1665, in load
+    return TreeSequence.load(path)
+  File "/home/diegoortega/.local/lib/python3.7/site-packages/tskit/trees.py", line 2171, in load
+    ts.load(str(path))
+_tskit.FileFormatError: No such file or directory
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 198, in <module>
+    main(args)
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 138, in main
+    ts_sample = simplify_tree(treefilename, sampsize, archaic_sample_time)
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 18, in simplify_tree
+    ts = pyslim.load(filename)
+  File "/home/diegoortega/.local/lib/python3.7/site-packages/pyslim/slim_tree_sequence.py", line 29, in load
+    ts = SlimTreeSequence.load(path)
+  File "/home/diegoortega/.local/lib/python3.7/site-packages/pyslim/slim_tree_sequence.py", line 171, in load
+    ts = tskit.load(path)
+  File "/home/diegoortega/.local/lib/python3.7/site-packages/tskit/trees.py", line 1667, in load
+    formats.raise_hdf5_format_error(path, e)
+  File "/home/diegoortega/.local/lib/python3.7/site-packages/tskit/formats.py", line 259, in raise_hdf5_format_error
+    raise exceptions.FileFormatError(str(original_exception)) from original_exception
+_tskit.FileFormatError: No such file or directory
+
+real	0m1.554s
+user	0m0.527s
+sys	0m0.356s
+rm: cannot remove ‘trees_22809_22809.trees’: No such file or directory
+rm: cannot remove ‘22809_22809_ns.vcf’: No such file or directory
+rm: cannot remove ‘Salele22809.vcf.frq’: No such file or directory
+rm: cannot remove ‘Salele22809.vcf.log’: No such file or directory
+rm: cannot remove ‘22809_22809_allelenumber.txt’: No such file or directory
+rm: cannot remove ‘22809_22809_noncoding.vcf’: No such file or directory
+rm: cannot remove ‘22809_22809_syn.vcf’: No such file or directory
+rm: cannot remove ‘22809_22809_unsorted.vcf’: No such file or directory
+
+real	1m12.440s
+user	1m8.129s
+sys	0m3.766s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22810_22810_ns.vcf
+	--freq
+	--out Salele22810.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:1086956
+ Duplicate alternate alleles found at 1:5093903
+ Duplicate alternate alleles found at 1:12732515
+ Duplicate alternate alleles found at 1:13273393
+After filtering, kept 4611 out of a possible 4611 Sites
+Run Time = 2.00 seconds
+Writing to /tmp/bcftools-sort.aZwQFp
+Merging 1 temporary files
+Cleaning
+Done
+Writing to /tmp/bcftools-sort.e6mB9w
+Merging 1 temporary files
+Cleaning
+Done
+
+real	3m38.155s
+user	3m25.987s
+sys	0m5.024s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22810_22810_ns.vcf
+	--freq
+	--out Salele22810.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:1086956
+ Duplicate alternate alleles found at 1:5093903
+ Duplicate alternate alleles found at 1:12732515
+ Duplicate alternate alleles found at 1:13273393
+After filtering, kept 4611 out of a possible 4611 Sites
+Run Time = 2.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22810_22810_syn.vcf
+	--freq
+	--out SaleleSyn22810.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 189 out of a possible 189 Sites
+Run Time = 0.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22810_22810_combined.vcf
+	--freq
+	--out SaleleWholeSequence22810.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:1086956
+ Duplicate alternate alleles found at 1:5093903
+ Duplicate alternate alleles found at 1:12732515
+ Duplicate alternate alleles found at 1:13273393
+After filtering, kept 95008 out of a possible 95008 Sites
+Run Time = 26.00 seconds
+rm: cannot remove ‘Positions22810.txt’: No such file or directory
+rm: cannot remove ‘PositionsSyn22810.txt’: No such file or directory
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22810_22810_combined.vcf
+	--chr 1
+	--to-bp 6768549
+	--out MiniVCF22810.vcf
+	--recode
+	--from-bp 6268549
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 2478 out of a possible 95008 Sites
+Run Time = 5.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+rm: cannot remove ‘Salele22810.vcf.log’: No such file or directory
+rm: cannot remove ‘SaleleWholeSequence22810.vcf.log’: No such file or directory
+
+real	0m50.328s
+user	0m47.898s
+sys	0m2.190s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22811_22811_ns.vcf
+	--freq
+	--out Salele22811.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 2728 out of a possible 2728 Sites
+Run Time = 1.00 seconds
+Writing to /tmp/bcftools-sort.MgmIse
+Merging 1 temporary files
+Cleaning
+Done
+Writing to /tmp/bcftools-sort.IsW4Sv
+Merging 1 temporary files
+Cleaning
+Done
+
+real	4m2.001s
+user	3m50.457s
+sys	0m4.604s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22811_22811_ns.vcf
+	--freq
+	--out Salele22811.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 2728 out of a possible 2728 Sites
+Run Time = 1.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22811_22811_syn.vcf
+	--freq
+	--out SaleleSyn22811.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 256 out of a possible 256 Sites
+Run Time = 0.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22811_22811_combined.vcf
+	--freq
+	--out SaleleWholeSequence22811.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 91942 out of a possible 91942 Sites
+Run Time = 27.00 seconds
+rm: cannot remove ‘Positions22811.txt’: No such file or directory
+rm: cannot remove ‘PositionsSyn22811.txt’: No such file or directory
+rm: cannot remove ‘22811_22811_combinedMSFormat.txt’: No such file or directory
+rm: cannot remove ‘Salele22811.vcf.log’: No such file or directory
+rm: cannot remove ‘SaleleWholeSequence22811.vcf.log’: No such file or directory
+
+real	0m45.560s
+user	0m43.828s
+sys	0m1.616s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22812_22812_ns.vcf
+	--freq
+	--out Salele22812.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:16092265
+After filtering, kept 2972 out of a possible 2972 Sites
+Run Time = 1.00 seconds
+Writing to /tmp/bcftools-sort.KxT85r
+Merging 1 temporary files
+Cleaning
+Done
+Writing to /tmp/bcftools-sort.wUxiL6
+Merging 1 temporary files
+Cleaning
+Done
+
+real	3m33.550s
+user	3m23.659s
+sys	0m4.663s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22812_22812_ns.vcf
+	--freq
+	--out Salele22812.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:16092265
+After filtering, kept 2972 out of a possible 2972 Sites
+Run Time = 1.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22812_22812_syn.vcf
+	--freq
+	--out SaleleSyn22812.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 189 out of a possible 189 Sites
+Run Time = 1.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22812_22812_combined.vcf
+	--freq
+	--out SaleleWholeSequence22812.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:16092265
+After filtering, kept 93642 out of a possible 93642 Sites
+Run Time = 25.00 seconds
+rm: cannot remove ‘Positions22812.txt’: No such file or directory
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf 22812_22812_combined.vcf
+	--chr 1
+	--to-bp 18744188
+	--out MiniVCF22812.vcf
+	--recode
+	--from-bp 18244188
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 2458 out of a possible 93642 Sites
+Run Time = 5.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+rm: cannot remove ‘PositionsSyn22812.txt’: No such file or directory
+rm: cannot remove ‘Salele22812.vcf.log’: No such file or directory
+rm: cannot remove ‘SaleleWholeSequence22812.vcf.log’: No such file or directory

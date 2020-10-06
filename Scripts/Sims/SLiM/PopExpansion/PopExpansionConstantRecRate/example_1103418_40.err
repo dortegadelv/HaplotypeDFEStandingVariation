@@ -1,0 +1,266 @@
+
+real	6m29.139s
+user	6m25.243s
+sys	0m3.267s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_118_ns.vcf
+	--freq
+	--out Salele118.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 1293 out of a possible 1293 Sites
+Run Time = 0.00 seconds
+Writing to /tmp/bcftools-sort.v58n0k
+Merging 1 temporary files
+Cleaning
+Done
+Writing to /tmp/bcftools-sort.tAOjGR
+Merging 1 temporary files
+Cleaning
+Done
+
+real	9m35.362s
+user	4m33.763s
+sys	0m9.177s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_118_ns.vcf
+	--freq
+	--out Salele118.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 1293 out of a possible 1293 Sites
+Run Time = 2.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_118_syn.vcf
+	--freq
+	--out SaleleSyn118.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 497 out of a possible 497 Sites
+Run Time = 3.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_118_combined.vcf
+	--freq
+	--out SaleleWholeSequence118.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 73370 out of a possible 73370 Sites
+Run Time = 53.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_118_combined.vcf
+	--chr 1
+	--to-bp 8336723
+	--out MiniVCF118.vcf
+	--recode
+	--from-bp 7836723
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1846 out of a possible 73370 Sites
+Run Time = 13.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_118_combined.vcf
+	--chr 1
+	--to-bp 10771464
+	--out MiniVCF118.vcf
+	--recode
+	--from-bp 10271464
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1841 out of a possible 73370 Sites
+Run Time = 22.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+rm: cannot remove ‘Salele118.vcf.log’: No such file or directory
+rm: cannot remove ‘SaleleWholeSequence118.vcf.log’: No such file or directory
+
+real	7m4.605s
+user	6m52.263s
+sys	0m9.843s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_119_ns.vcf
+	--freq
+	--out Salele119.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 1423 out of a possible 1423 Sites
+Run Time = 1.00 seconds
+Writing to /tmp/bcftools-sort.vBFKYe
+Merging 1 temporary files
+Cleaning
+Done
+Writing to /tmp/bcftools-sort.J4CBqa
+Merging 1 temporary files
+Cleaning
+Done
+
+real	9m16.886s
+user	4m36.330s
+sys	0m8.785s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_119_ns.vcf
+	--freq
+	--out Salele119.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 1423 out of a possible 1423 Sites
+Run Time = 22.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_119_syn.vcf
+	--freq
+	--out SaleleSyn119.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 556 out of a possible 556 Sites
+Run Time = 18.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_119_combined.vcf
+	--freq
+	--out SaleleWholeSequence119.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 73551 out of a possible 73551 Sites
+Run Time = 44.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_119_combined.vcf
+	--chr 1
+	--to-bp 4235921
+	--out MiniVCF119.vcf
+	--recode
+	--from-bp 3735921
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1864 out of a possible 73551 Sites
+Run Time = 33.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_119_combined.vcf
+	--chr 1
+	--to-bp 512884
+	--out MiniVCF119.vcf
+	--recode
+	--from-bp 12884
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1776 out of a possible 73551 Sites
+Run Time = 36.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_119_combined.vcf
+	--chr 1
+	--to-bp 13323609
+	--out MiniVCF119.vcf
+	--recode
+	--from-bp 12823609
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1859 out of a possible 73551 Sites
+Run Time = 15.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+rm: cannot remove ‘Salele119.vcf.log’: No such file or directory
+rm: cannot remove ‘SaleleWholeSequence119.vcf.log’: No such file or directory
+
+real	6m59.997s
+user	6m43.401s
+sys	0m12.803s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_120_ns.vcf
+	--freq
+	--out Salele120.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 1315 out of a possible 1315 Sites
+Run Time = 0.00 seconds
+Traceback (most recent call last):
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 192, in <module>
+    main(args)
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 153, in main
+    args.mu, start, end)
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 100, in noncoding_vcf
+    ts.write_vcf(vcf_file)
+  File "/home/diegoortega/.local/lib/python3.7/site-packages/tskit/trees.py", line 3253, in write_vcf
+    writer.write(output)
+  File "/home/diegoortega/.local/lib/python3.7/site-packages/tskit/vcf.py", line 163, in write
+    "Missing data is not currently supported. Please open an issue "
+ValueError: Missing data is not currently supported. Please open an issue on GitHub if this limitation affects you.
+
+real	4m7.146s
+user	3m49.826s
+sys	0m3.464s
+rm: cannot remove ‘Salele120.vcf.log’: No such file or directory
+rm: cannot remove ‘test_120_syn.vcf’: No such file or directory
+rm: cannot remove ‘test_120_unsorted.vcf’: No such file or directory

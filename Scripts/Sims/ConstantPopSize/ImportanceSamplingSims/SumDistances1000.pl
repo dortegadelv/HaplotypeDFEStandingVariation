@@ -1,7 +1,7 @@
 $ExitFile = "../../../../Results/ConstantPopSize/ImportanceSamplingSims/SumDistancesFile1000.txt";
 open (EXIT,">$ExitFile") or die "NO! $ExitFile\n";
 
-for ( $j = 1; $j <= 100; $j++ ){
+for ( $j = 1; $j <= 10; $j++ ){
 print "File Number = $j\n";
 @Distances = ();
 for ( $i = 0; $i < 27; $i++){

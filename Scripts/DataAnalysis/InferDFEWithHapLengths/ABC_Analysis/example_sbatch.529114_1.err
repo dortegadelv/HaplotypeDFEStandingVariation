@@ -1,0 +1,3953 @@
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/WindowDistanceLowRecOut1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/TrajOutputAllAlleles_1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/PReFerSimOutputAllAlleles_1.txt’: No such file or directory
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=1
+
+real	0m25.423s
+user	0m25.405s
+sys	0m0.002s
+
+real	0m0.006s
+user	0m0.005s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=1
+
+real	0m25.657s
+user	0m25.634s
+sys	0m0.005s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=2
+
+real	0m25.044s
+user	0m25.026s
+sys	0m0.002s
+
+real	0m0.006s
+user	0m0.003s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=2
+
+real	0m25.519s
+user	0m25.501s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=3
+
+real	0m25.182s
+user	0m25.165s
+sys	0m0.001s
+
+real	0m0.006s
+user	0m0.006s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=3
+
+real	0m25.351s
+user	0m25.333s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=4
+
+real	0m25.065s
+user	0m25.047s
+sys	0m0.003s
+
+real	0m0.006s
+user	0m0.006s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=4
+
+real	0m25.411s
+user	0m25.394s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=5
+
+real	0m25.345s
+user	0m25.328s
+sys	0m0.002s
+
+real	0m0.006s
+user	0m0.004s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=5
+
+real	0m25.470s
+user	0m25.453s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=6
+
+real	0m25.051s
+user	0m25.033s
+sys	0m0.003s
+
+real	0m0.007s
+user	0m0.003s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=6
+
+real	0m25.682s
+user	0m25.621s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=7
+
+real	0m25.017s
+user	0m25.001s
+sys	0m0.002s
+
+real	0m0.006s
+user	0m0.004s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=7
+
+real	0m25.348s
+user	0m25.332s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=8
+
+real	0m25.096s
+user	0m25.078s
+sys	0m0.003s
+
+real	0m0.006s
+user	0m0.003s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=8
+
+real	0m25.478s
+user	0m25.461s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=9
+
+real	0m25.330s
+user	0m25.312s
+sys	0m0.002s
+
+real	0m0.007s
+user	0m0.006s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=9
+
+real	0m25.936s
+user	0m25.699s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=10
+
+real	0m25.064s
+user	0m25.046s
+sys	0m0.002s
+
+real	0m0.007s
+user	0m0.005s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=10
+
+real	0m25.281s
+user	0m25.266s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=11
+
+real	0m25.091s
+user	0m25.073s
+sys	0m0.002s
+
+real	0m0.006s
+user	0m0.004s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=11
+
+real	0m25.294s
+user	0m25.279s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=12
+
+real	0m25.131s
+user	0m25.115s
+sys	0m0.001s
+
+real	0m0.006s
+user	0m0.005s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=12
+
+real	0m25.259s
+user	0m25.241s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=13
+
+real	0m25.138s
+user	0m25.121s
+sys	0m0.001s
+
+real	0m0.006s
+user	0m0.006s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=13
+
+real	0m25.639s
+user	0m25.624s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=14
+
+real	0m25.187s
+user	0m25.172s
+sys	0m0.001s
+
+real	0m0.007s
+user	0m0.006s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=14
+
+real	0m25.216s
+user	0m25.199s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=15
+
+real	0m25.269s
+user	0m25.252s
+sys	0m0.002s
+
+real	0m0.006s
+user	0m0.004s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=15
+
+real	0m25.687s
+user	0m25.670s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=16
+
+real	0m24.691s
+user	0m24.675s
+sys	0m0.001s
+
+real	0m0.007s
+user	0m0.006s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=16
+
+real	0m25.253s
+user	0m25.234s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=17
+
+real	0m25.013s
+user	0m24.997s
+sys	0m0.002s
+
+real	0m0.006s
+user	0m0.004s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=17
+
+real	0m25.151s
+user	0m25.136s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=18
+
+real	0m25.363s
+user	0m25.166s
+sys	0m0.001s
+
+real	0m0.009s
+user	0m0.007s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=18
+
+real	0m25.353s
+user	0m25.294s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=19
+
+real	0m25.026s
+user	0m25.011s
+sys	0m0.000s
+
+real	0m0.005s
+user	0m0.003s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=19
+
+real	0m26.171s
+user	0m25.960s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=20
+
+real	0m25.301s
+user	0m25.287s
+sys	0m0.001s
+
+real	0m0.006s
+user	0m0.006s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=20
+
+real	0m25.326s
+user	0m25.305s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=21
+
+real	0m25.238s
+user	0m25.222s
+sys	0m0.002s
+
+real	0m0.006s
+user	0m0.004s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=21
+
+real	0m25.791s
+user	0m25.774s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=22
+
+real	0m25.044s
+user	0m25.029s
+sys	0m0.000s
+
+real	0m0.005s
+user	0m0.002s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=22
+
+real	0m25.292s
+user	0m25.250s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=23
+
+real	0m25.749s
+user	0m25.735s
+sys	0m0.001s
+
+real	0m0.005s
+user	0m0.004s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=23
+
+real	0m25.741s
+user	0m25.724s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=24
+
+real	0m25.324s
+user	0m25.307s
+sys	0m0.003s
+
+real	0m0.006s
+user	0m0.005s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=24
+
+real	0m24.945s
+user	0m24.929s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=25
+
+real	0m25.372s
+user	0m25.357s
+sys	0m0.000s
+
+real	0m0.007s
+user	0m0.003s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=25
+
+real	0m25.519s
+user	0m25.501s
+sys	0m0.002s
+NO! at ../../../Sims/ConstantPopSize/ForwardSims/TrajToMsselFormat.pl line 19.
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/TempRightDistanceOut1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/DistanceOutNotCpG1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/TrajOutputAllAlleles_1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/PReFerSimOutputAllAlleles_1.txt’: No such file or directory
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=26
+
+real	0m5.954s
+user	0m5.945s
+sys	0m0.004s
+
+real	0m0.018s
+user	0m0.016s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=26
+
+real	0m6.041s
+user	0m6.036s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=27
+
+real	0m6.080s
+user	0m6.071s
+sys	0m0.003s
+
+real	0m0.020s
+user	0m0.018s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=27
+
+real	0m6.133s
+user	0m6.124s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=28
+
+real	0m6.044s
+user	0m6.037s
+sys	0m0.002s
+
+real	0m0.018s
+user	0m0.017s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=28
+
+real	0m6.077s
+user	0m6.072s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=29
+
+real	0m5.956s
+user	0m5.951s
+sys	0m0.001s
+
+real	0m0.018s
+user	0m0.015s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=29
+
+real	0m5.993s
+user	0m5.986s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=30
+
+real	0m6.121s
+user	0m6.116s
+sys	0m0.002s
+
+real	0m0.019s
+user	0m0.017s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=30
+
+real	0m6.370s
+user	0m6.361s
+sys	0m0.005s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=31
+
+real	0m6.110s
+user	0m6.103s
+sys	0m0.002s
+
+real	0m0.020s
+user	0m0.018s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=31
+
+real	0m6.262s
+user	0m6.256s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=32
+
+real	0m6.063s
+user	0m6.056s
+sys	0m0.001s
+
+real	0m0.018s
+user	0m0.016s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=32
+
+real	0m6.066s
+user	0m6.061s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=33
+
+real	0m6.228s
+user	0m6.223s
+sys	0m0.001s
+
+real	0m0.018s
+user	0m0.017s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=33
+
+real	0m6.242s
+user	0m6.234s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=34
+
+real	0m6.120s
+user	0m6.110s
+sys	0m0.002s
+
+real	0m0.019s
+user	0m0.016s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=34
+
+real	0m6.211s
+user	0m6.206s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=35
+
+real	0m6.040s
+user	0m6.031s
+sys	0m0.005s
+
+real	0m0.018s
+user	0m0.017s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=35
+
+real	0m6.174s
+user	0m6.168s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=36
+
+real	0m6.056s
+user	0m6.051s
+sys	0m0.001s
+
+real	0m0.018s
+user	0m0.017s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=36
+
+real	0m6.132s
+user	0m6.127s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=37
+
+real	0m5.988s
+user	0m5.981s
+sys	0m0.003s
+
+real	0m0.018s
+user	0m0.017s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=37
+
+real	0m6.015s
+user	0m6.008s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=38
+
+real	0m6.200s
+user	0m6.194s
+sys	0m0.002s
+
+real	0m0.018s
+user	0m0.015s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=38
+
+real	0m6.063s
+user	0m6.056s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=39
+
+real	0m5.964s
+user	0m5.959s
+sys	0m0.000s
+
+real	0m0.018s
+user	0m0.015s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=39
+
+real	0m6.008s
+user	0m5.994s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=40
+
+real	0m6.030s
+user	0m6.023s
+sys	0m0.002s
+
+real	0m0.019s
+user	0m0.017s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=40
+
+real	0m6.060s
+user	0m6.053s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=41
+
+real	0m6.039s
+user	0m6.032s
+sys	0m0.002s
+
+real	0m0.018s
+user	0m0.017s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=41
+
+real	0m6.066s
+user	0m6.062s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=42
+
+real	0m6.095s
+user	0m6.084s
+sys	0m0.007s
+
+real	0m0.019s
+user	0m0.018s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=42
+
+real	0m6.023s
+user	0m6.016s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=43
+
+real	0m6.081s
+user	0m6.071s
+sys	0m0.004s
+
+real	0m0.019s
+user	0m0.018s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=43
+
+real	0m6.119s
+user	0m6.107s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=44
+
+real	0m6.091s
+user	0m6.084s
+sys	0m0.003s
+
+real	0m0.018s
+user	0m0.015s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=44
+
+real	0m6.188s
+user	0m6.180s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=45
+
+real	0m6.064s
+user	0m6.028s
+sys	0m0.004s
+
+real	0m0.018s
+user	0m0.015s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=45
+
+real	0m6.109s
+user	0m6.101s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=46
+
+real	0m6.014s
+user	0m6.009s
+sys	0m0.001s
+
+real	0m0.018s
+user	0m0.015s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=46
+
+real	0m6.093s
+user	0m6.086s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=47
+
+real	0m6.073s
+user	0m6.068s
+sys	0m0.001s
+
+real	0m0.017s
+user	0m0.015s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=47
+
+real	0m6.163s
+user	0m6.149s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=48
+
+real	0m6.075s
+user	0m6.069s
+sys	0m0.002s
+
+real	0m0.018s
+user	0m0.015s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=48
+
+real	0m6.267s
+user	0m6.125s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=49
+
+real	0m6.041s
+user	0m6.035s
+sys	0m0.001s
+
+real	0m0.019s
+user	0m0.015s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=49
+
+real	0m6.072s
+user	0m6.065s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=50
+
+real	0m6.221s
+user	0m6.024s
+sys	0m0.005s
+
+real	0m0.018s
+user	0m0.013s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=50
+
+real	0m6.034s
+user	0m6.021s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=51
+
+real	0m6.088s
+user	0m6.040s
+sys	0m0.001s
+
+real	0m0.019s
+user	0m0.016s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=51
+
+real	0m6.339s
+user	0m6.124s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=52
+
+real	0m6.106s
+user	0m6.021s
+sys	0m0.006s
+
+real	0m0.021s
+user	0m0.018s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=52
+
+real	0m6.224s
+user	0m6.107s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=53
+
+real	0m6.006s
+user	0m5.965s
+sys	0m0.004s
+
+real	0m0.020s
+user	0m0.019s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=53
+
+real	0m6.735s
+user	0m6.141s
+sys	0m0.003s
+NO! at ../../../Sims/ConstantPopSize/ForwardSims/TrajToMsselFormat.pl line 19.
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/TempRightDistanceOut1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/DistanceOutNotCpG1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/TrajOutputAllAlleles_1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/PReFerSimOutputAllAlleles_1.txt’: No such file or directory
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=54
+
+real	0m8.867s
+user	0m8.853s
+sys	0m0.008s
+
+real	0m0.042s
+user	0m0.037s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=54
+
+real	0m9.070s
+user	0m8.929s
+sys	0m0.007s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=55
+
+real	0m8.790s
+user	0m8.775s
+sys	0m0.009s
+
+real	0m0.143s
+user	0m0.039s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=55
+
+real	0m9.422s
+user	0m9.208s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=56
+
+real	0m8.837s
+user	0m8.828s
+sys	0m0.003s
+
+real	0m0.043s
+user	0m0.036s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=56
+
+real	0m8.923s
+user	0m8.875s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=57
+
+real	0m8.827s
+user	0m8.814s
+sys	0m0.002s
+
+real	0m0.054s
+user	0m0.039s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=57
+
+real	0m8.869s
+user	0m8.859s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=58
+
+real	0m8.781s
+user	0m8.758s
+sys	0m0.006s
+
+real	0m0.047s
+user	0m0.039s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=58
+
+real	0m8.783s
+user	0m8.772s
+sys	0m0.005s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=59
+
+real	0m8.853s
+user	0m8.843s
+sys	0m0.004s
+
+real	0m0.062s
+user	0m0.037s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=59
+
+real	0m8.841s
+user	0m8.829s
+sys	0m0.007s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=60
+
+real	0m8.808s
+user	0m8.728s
+sys	0m0.003s
+
+real	0m0.034s
+user	0m0.030s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=60
+
+real	0m9.169s
+user	0m8.794s
+sys	0m0.005s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=61
+
+real	0m8.938s
+user	0m8.800s
+sys	0m0.004s
+
+real	0m0.067s
+user	0m0.039s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=61
+
+real	0m8.929s
+user	0m8.822s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=62
+
+real	0m8.787s
+user	0m8.772s
+sys	0m0.004s
+
+real	0m0.130s
+user	0m0.038s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=62
+
+real	0m9.088s
+user	0m9.076s
+sys	0m0.006s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=63
+
+real	0m8.864s
+user	0m8.848s
+sys	0m0.004s
+
+real	0m0.064s
+user	0m0.040s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=63
+
+real	0m8.908s
+user	0m8.901s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=64
+
+real	0m8.856s
+user	0m8.846s
+sys	0m0.004s
+
+real	0m0.043s
+user	0m0.039s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=64
+
+real	0m8.897s
+user	0m8.888s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=65
+
+real	0m8.843s
+user	0m8.835s
+sys	0m0.003s
+
+real	0m0.061s
+user	0m0.038s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=65
+
+real	0m9.256s
+user	0m9.136s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=66
+
+real	0m8.759s
+user	0m8.749s
+sys	0m0.004s
+
+real	0m0.258s
+user	0m0.032s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=66
+
+real	0m8.818s
+user	0m8.809s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=67
+
+real	0m8.773s
+user	0m8.761s
+sys	0m0.006s
+
+real	0m0.066s
+user	0m0.037s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=67
+
+real	0m8.820s
+user	0m8.806s
+sys	0m0.007s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=68
+
+real	0m8.840s
+user	0m8.825s
+sys	0m0.005s
+
+real	0m0.067s
+user	0m0.041s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=68
+
+real	0m8.917s
+user	0m8.909s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=69
+
+real	0m8.862s
+user	0m8.854s
+sys	0m0.002s
+
+real	0m0.044s
+user	0m0.037s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=69
+
+real	0m8.878s
+user	0m8.871s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=70
+
+real	0m8.778s
+user	0m8.768s
+sys	0m0.004s
+
+real	0m0.117s
+user	0m0.035s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=70
+
+real	0m9.075s
+user	0m9.065s
+sys	0m0.005s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=71
+
+real	0m8.786s
+user	0m8.772s
+sys	0m0.003s
+
+real	0m0.048s
+user	0m0.039s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=71
+
+real	0m8.881s
+user	0m8.856s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=72
+
+real	0m9.041s
+user	0m9.033s
+sys	0m0.002s
+
+real	0m0.062s
+user	0m0.038s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=72
+
+real	0m9.195s
+user	0m9.179s
+sys	0m0.010s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=73
+
+real	0m8.834s
+user	0m8.822s
+sys	0m0.006s
+
+real	0m0.045s
+user	0m0.039s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=73
+
+real	0m9.155s
+user	0m9.146s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=74
+
+real	0m8.752s
+user	0m8.743s
+sys	0m0.004s
+
+real	0m0.045s
+user	0m0.038s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=74
+
+real	0m9.044s
+user	0m9.035s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=75
+
+real	0m8.864s
+user	0m8.849s
+sys	0m0.004s
+
+real	0m0.041s
+user	0m0.038s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=75
+
+real	0m8.911s
+user	0m8.899s
+sys	0m0.007s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=76
+
+real	0m8.849s
+user	0m8.835s
+sys	0m0.003s
+
+real	0m0.041s
+user	0m0.036s
+sys	0m0.005s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=76
+
+real	0m8.895s
+user	0m8.880s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=77
+
+real	0m8.797s
+user	0m8.786s
+sys	0m0.006s
+
+real	0m0.097s
+user	0m0.038s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=77
+
+real	0m8.912s
+user	0m8.902s
+sys	0m0.005s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=78
+
+real	0m8.765s
+user	0m8.751s
+sys	0m0.004s
+
+real	0m0.039s
+user	0m0.037s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=78
+
+real	0m9.338s
+user	0m9.328s
+sys	0m0.004s
+NO! at ../../../Sims/ConstantPopSize/ForwardSims/TrajToMsselFormat.pl line 19.
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/TempRightDistanceOut1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/DistanceOutNotCpG1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/TrajOutputAllAlleles_1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/PReFerSimOutputAllAlleles_1.txt’: No such file or directory
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=79
+
+real	0m9.484s
+user	0m9.469s
+sys	0m0.002s
+
+real	0m0.013s
+user	0m0.007s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=79
+
+real	0m9.551s
+user	0m9.543s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=80
+
+real	0m9.598s
+user	0m9.589s
+sys	0m0.003s
+
+real	0m0.009s
+user	0m0.007s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=80
+
+real	0m9.721s
+user	0m9.713s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=81
+
+real	0m9.454s
+user	0m9.446s
+sys	0m0.002s
+
+real	0m0.008s
+user	0m0.007s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=81
+
+real	0m9.534s
+user	0m9.526s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=82
+
+real	0m9.540s
+user	0m9.530s
+sys	0m0.003s
+
+real	0m0.008s
+user	0m0.005s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=82
+
+real	0m9.783s
+user	0m9.686s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=83
+
+real	0m9.586s
+user	0m9.578s
+sys	0m0.002s
+
+real	0m0.007s
+user	0m0.005s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=83
+
+real	0m9.772s
+user	0m9.765s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=84
+
+real	0m9.602s
+user	0m9.593s
+sys	0m0.002s
+
+real	0m0.009s
+user	0m0.008s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=84
+
+real	0m9.610s
+user	0m9.604s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=85
+
+real	0m9.610s
+user	0m9.603s
+sys	0m0.001s
+
+real	0m0.008s
+user	0m0.006s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=85
+
+real	0m9.775s
+user	0m9.768s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=86
+
+real	0m22.063s
+user	0m9.535s
+sys	0m0.006s
+
+real	0m0.010s
+user	0m0.008s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=86
+
+real	0m10.938s
+user	0m9.565s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=87
+
+real	0m9.511s
+user	0m9.473s
+sys	0m0.002s
+
+real	0m0.009s
+user	0m0.007s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=87
+
+real	0m9.547s
+user	0m9.524s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=88
+
+real	0m9.473s
+user	0m9.458s
+sys	0m0.002s
+
+real	0m0.008s
+user	0m0.006s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=88
+
+real	0m9.505s
+user	0m9.488s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=89
+
+real	0m9.375s
+user	0m9.358s
+sys	0m0.001s
+
+real	0m0.007s
+user	0m0.006s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=89
+
+real	0m9.526s
+user	0m9.514s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=90
+
+real	0m9.507s
+user	0m9.493s
+sys	0m0.002s
+
+real	0m0.007s
+user	0m0.005s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=90
+
+real	0m9.648s
+user	0m9.572s
+sys	0m0.007s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=91
+
+real	0m9.606s
+user	0m9.589s
+sys	0m0.001s
+
+real	0m0.007s
+user	0m0.006s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=91
+
+real	0m9.898s
+user	0m9.825s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=92
+
+real	0m9.469s
+user	0m9.455s
+sys	0m0.002s
+
+real	0m0.008s
+user	0m0.006s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=92
+
+real	0m9.822s
+user	0m9.810s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=93
+
+real	0m9.619s
+user	0m9.604s
+sys	0m0.001s
+
+real	0m0.007s
+user	0m0.004s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=93
+
+real	0m9.608s
+user	0m9.598s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=94
+
+real	0m9.442s
+user	0m9.426s
+sys	0m0.002s
+
+real	0m0.008s
+user	0m0.005s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=94
+
+real	0m9.557s
+user	0m9.544s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=95
+
+real	0m9.518s
+user	0m9.404s
+sys	0m0.001s
+
+real	0m0.008s
+user	0m0.005s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=95
+
+real	0m9.479s
+user	0m9.461s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=96
+
+real	0m9.365s
+user	0m9.324s
+sys	0m0.001s
+
+real	0m0.007s
+user	0m0.005s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=96
+
+real	0m9.390s
+user	0m9.370s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=97
+
+real	0m9.726s
+user	0m9.668s
+sys	0m0.005s
+
+real	0m0.007s
+user	0m0.006s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=97
+
+real	0m9.738s
+user	0m9.714s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=98
+
+real	0m9.452s
+user	0m9.435s
+sys	0m0.002s
+
+real	0m0.007s
+user	0m0.004s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=98
+
+real	0m9.628s
+user	0m9.609s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=99
+
+real	0m9.538s
+user	0m9.520s
+sys	0m0.003s
+
+real	0m0.007s
+user	0m0.006s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=99
+
+real	0m9.601s
+user	0m9.583s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=100
+
+real	0m9.526s
+user	0m9.504s
+sys	0m0.002s
+
+real	0m0.008s
+user	0m0.007s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=100
+
+real	0m9.552s
+user	0m9.533s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=101
+
+real	0m9.506s
+user	0m9.489s
+sys	0m0.002s
+
+real	0m0.010s
+user	0m0.006s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=101
+
+real	0m9.577s
+user	0m9.554s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=102
+
+real	0m9.467s
+user	0m9.451s
+sys	0m0.002s
+
+real	0m0.007s
+user	0m0.006s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=102
+
+real	0m9.586s
+user	0m9.570s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=103
+
+real	0m9.435s
+user	0m9.417s
+sys	0m0.001s
+
+real	0m0.009s
+user	0m0.006s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=103
+
+real	0m9.496s
+user	0m9.478s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=104
+
+real	0m9.540s
+user	0m9.520s
+sys	0m0.004s
+
+real	0m0.010s
+user	0m0.005s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=104
+
+real	0m9.708s
+user	0m9.667s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=105
+
+real	0m9.670s
+user	0m9.650s
+sys	0m0.003s
+
+real	0m0.008s
+user	0m0.007s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=105
+
+real	0m9.733s
+user	0m9.639s
+sys	0m0.007s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=106
+
+real	0m10.284s
+user	0m9.482s
+sys	0m0.001s
+
+real	0m0.051s
+user	0m0.010s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=106
+
+real	0m9.569s
+user	0m9.539s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=107
+
+real	0m9.587s
+user	0m9.468s
+sys	0m0.001s
+
+real	0m0.010s
+user	0m0.006s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=107
+
+real	0m9.527s
+user	0m9.504s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=108
+
+real	0m12.661s
+user	0m9.491s
+sys	0m0.006s
+
+real	0m0.067s
+user	0m0.007s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=108
+
+real	0m9.621s
+user	0m9.588s
+sys	0m0.002s
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/TempRightDistanceOut1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/DistanceOutNotCpG1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/TrajOutputAllAlleles_1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/PReFerSimOutputAllAlleles_1.txt’: No such file or directory
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=109
+
+real	0m13.165s
+user	0m13.121s
+sys	0m0.003s
+
+real	0m0.012s
+user	0m0.008s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=109
+
+real	0m13.568s
+user	0m13.534s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=110
+
+real	0m13.507s
+user	0m13.464s
+sys	0m0.002s
+
+real	0m0.011s
+user	0m0.010s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=110
+
+real	0m13.904s
+user	0m13.870s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=111
+
+real	0m13.416s
+user	0m13.385s
+sys	0m0.002s
+
+real	0m0.010s
+user	0m0.008s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=111
+
+real	0m13.386s
+user	0m13.358s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=112
+
+real	0m13.192s
+user	0m13.166s
+sys	0m0.003s
+
+real	0m0.011s
+user	0m0.009s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=112
+
+real	0m13.375s
+user	0m13.342s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=113
+
+real	0m13.310s
+user	0m13.277s
+sys	0m0.004s
+
+real	0m0.011s
+user	0m0.011s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=113
+
+real	0m13.441s
+user	0m13.375s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=114
+
+real	0m13.447s
+user	0m13.421s
+sys	0m0.003s
+
+real	0m0.011s
+user	0m0.010s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=114
+
+real	0m13.522s
+user	0m13.500s
+sys	0m0.005s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=115
+
+real	0m13.315s
+user	0m13.291s
+sys	0m0.002s
+
+real	0m0.011s
+user	0m0.009s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=115
+
+real	0m13.237s
+user	0m13.215s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=116
+
+real	0m13.300s
+user	0m13.263s
+sys	0m0.002s
+
+real	0m0.009s
+user	0m0.007s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=116
+
+real	0m13.402s
+user	0m13.308s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=117
+
+real	0m13.570s
+user	0m13.534s
+sys	0m0.003s
+
+real	0m0.014s
+user	0m0.013s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=117
+
+real	0m13.797s
+user	0m13.651s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=118
+
+real	0m13.554s
+user	0m13.524s
+sys	0m0.006s
+
+real	0m0.010s
+user	0m0.009s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=118
+
+real	0m13.783s
+user	0m13.764s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=119
+
+real	0m13.260s
+user	0m13.238s
+sys	0m0.002s
+
+real	0m0.012s
+user	0m0.009s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=119
+
+real	0m13.251s
+user	0m13.222s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=120
+
+real	0m13.482s
+user	0m13.435s
+sys	0m0.001s
+
+real	0m0.015s
+user	0m0.011s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=120
+
+real	0m13.456s
+user	0m13.437s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=121
+
+real	0m13.811s
+user	0m13.787s
+sys	0m0.003s
+
+real	0m0.009s
+user	0m0.009s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=121
+
+real	0m13.515s
+user	0m13.493s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=122
+
+real	0m13.534s
+user	0m13.514s
+sys	0m0.001s
+
+real	0m0.011s
+user	0m0.008s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=122
+
+real	0m13.473s
+user	0m13.418s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=123
+
+real	0m13.467s
+user	0m13.377s
+sys	0m0.001s
+
+real	0m0.011s
+user	0m0.009s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=123
+
+real	0m13.687s
+user	0m13.576s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=124
+
+real	0m13.273s
+user	0m13.256s
+sys	0m0.003s
+
+real	0m0.009s
+user	0m0.006s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=124
+
+real	0m13.343s
+user	0m13.326s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=125
+
+real	0m13.193s
+user	0m13.178s
+sys	0m0.002s
+
+real	0m0.010s
+user	0m0.010s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=125
+
+real	0m13.335s
+user	0m13.287s
+sys	0m0.006s
+NO! at ../../../Sims/ConstantPopSize/ForwardSims/TrajToMsselFormat.pl line 19.
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/TempRightDistanceOut1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/DistanceOutNotCpG1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/TrajOutputAllAlleles_1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/PReFerSimOutputAllAlleles_1.txt’: No such file or directory
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=126
+
+real	0m17.394s
+user	0m17.266s
+sys	0m0.008s
+
+real	0m0.011s
+user	0m0.008s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=126
+
+real	0m17.506s
+user	0m17.465s
+sys	0m0.006s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=127
+
+real	0m17.088s
+user	0m17.055s
+sys	0m0.004s
+
+real	0m0.012s
+user	0m0.009s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=127
+
+real	0m17.339s
+user	0m17.233s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=128
+
+real	0m17.055s
+user	0m17.025s
+sys	0m0.001s
+
+real	0m0.012s
+user	0m0.010s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=128
+
+real	0m17.592s
+user	0m17.248s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=129
+
+real	0m17.008s
+user	0m16.984s
+sys	0m0.002s
+
+real	0m0.011s
+user	0m0.008s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=129
+
+real	0m17.165s
+user	0m17.139s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=130
+
+real	0m16.892s
+user	0m16.861s
+sys	0m0.002s
+
+real	0m0.012s
+user	0m0.011s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=130
+
+real	0m17.006s
+user	0m16.977s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=131
+
+real	0m17.034s
+user	0m17.009s
+sys	0m0.002s
+
+real	0m0.013s
+user	0m0.010s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=131
+
+real	0m17.182s
+user	0m17.131s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=132
+
+real	0m16.890s
+user	0m16.863s
+sys	0m0.003s
+
+real	0m0.012s
+user	0m0.011s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=132
+
+real	0m17.096s
+user	0m17.055s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=133
+
+real	0m17.156s
+user	0m17.134s
+sys	0m0.003s
+
+real	0m0.011s
+user	0m0.010s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=133
+
+real	0m17.293s
+user	0m17.272s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=134
+
+real	0m17.202s
+user	0m17.180s
+sys	0m0.003s
+
+real	0m0.012s
+user	0m0.010s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=134
+
+real	0m17.429s
+user	0m17.305s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=135
+
+real	0m17.237s
+user	0m17.191s
+sys	0m0.006s
+
+real	0m0.018s
+user	0m0.012s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=135
+
+real	0m17.279s
+user	0m17.255s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=136
+
+real	0m17.356s
+user	0m17.331s
+sys	0m0.002s
+
+real	0m0.012s
+user	0m0.011s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=136
+
+real	0m17.540s
+user	0m17.517s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=137
+
+real	0m16.868s
+user	0m16.840s
+sys	0m0.002s
+
+real	0m0.014s
+user	0m0.010s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=137
+
+real	0m17.169s
+user	0m16.968s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=138
+
+real	0m17.109s
+user	0m17.085s
+sys	0m0.002s
+
+real	0m0.012s
+user	0m0.009s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=138
+
+real	0m17.169s
+user	0m17.146s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=139
+
+real	0m16.917s
+user	0m16.874s
+sys	0m0.000s
+
+real	0m0.016s
+user	0m0.014s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=139
+
+real	0m17.107s
+user	0m17.076s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=140
+
+real	0m17.151s
+user	0m17.054s
+sys	0m0.010s
+
+real	0m0.013s
+user	0m0.011s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=140
+
+real	0m17.588s
+user	0m17.555s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=141
+
+real	0m17.082s
+user	0m17.057s
+sys	0m0.002s
+
+real	0m0.011s
+user	0m0.008s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=141
+
+real	0m17.354s
+user	0m17.186s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=142
+
+real	0m17.267s
+user	0m17.226s
+sys	0m0.004s
+
+real	0m0.024s
+user	0m0.012s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=142
+
+real	0m17.296s
+user	0m17.257s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=143
+
+real	0m17.188s
+user	0m17.142s
+sys	0m0.002s
+
+real	0m0.010s
+user	0m0.008s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=143
+
+real	0m17.297s
+user	0m17.263s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=144
+
+real	0m17.148s
+user	0m17.120s
+sys	0m0.001s
+
+real	0m0.011s
+user	0m0.010s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=144
+
+real	0m17.109s
+user	0m17.070s
+sys	0m0.007s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=145
+
+real	0m17.195s
+user	0m17.163s
+sys	0m0.001s
+
+real	0m0.009s
+user	0m0.006s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=145
+
+real	0m17.835s
+user	0m17.331s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=146
+
+real	0m17.141s
+user	0m17.074s
+sys	0m0.004s
+
+real	0m0.011s
+user	0m0.009s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=146
+
+real	0m17.212s
+user	0m17.162s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=147
+
+real	0m16.974s
+user	0m16.939s
+sys	0m0.004s
+
+real	0m0.011s
+user	0m0.010s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=147
+
+real	0m17.206s
+user	0m17.137s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=148
+
+real	0m17.181s
+user	0m17.144s
+sys	0m0.003s
+
+real	0m0.012s
+user	0m0.010s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=148
+
+real	0m17.244s
+user	0m17.208s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=149
+
+real	0m17.209s
+user	0m17.173s
+sys	0m0.004s
+
+real	0m0.012s
+user	0m0.008s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=149
+
+real	0m17.474s
+user	0m17.278s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=150
+
+real	0m16.943s
+user	0m16.901s
+sys	0m0.004s
+
+real	0m0.011s
+user	0m0.009s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=150
+
+real	0m17.129s
+user	0m17.100s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=151
+
+real	0m16.843s
+user	0m16.817s
+sys	0m0.002s
+
+real	0m0.012s
+user	0m0.010s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=151
+
+real	0m16.986s
+user	0m16.956s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=152
+
+real	0m17.240s
+user	0m17.220s
+sys	0m0.001s
+
+real	0m0.012s
+user	0m0.009s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=152
+
+real	0m17.372s
+user	0m17.347s
+sys	0m0.003s
+NO! at ../../../Sims/ConstantPopSize/ForwardSims/TrajToMsselFormat.pl line 19.
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/TempRightDistanceOut1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/DistanceOutNotCpG1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/TrajOutputAllAlleles_1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/PReFerSimOutputAllAlleles_1.txt’: No such file or directory
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=153
+
+real	0m5.971s
+user	0m5.948s
+sys	0m0.005s
+
+real	0m0.070s
+user	0m0.049s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=153
+
+real	0m6.150s
+user	0m6.117s
+sys	0m0.010s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=154
+
+real	0m5.940s
+user	0m5.862s
+sys	0m0.013s
+
+real	0m0.046s
+user	0m0.044s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=154
+
+real	0m5.916s
+user	0m5.879s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=155
+
+real	0m5.885s
+user	0m5.865s
+sys	0m0.006s
+
+real	0m0.043s
+user	0m0.040s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=155
+
+real	0m6.117s
+user	0m6.093s
+sys	0m0.009s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=156
+
+real	0m5.924s
+user	0m5.869s
+sys	0m0.010s
+
+real	0m0.075s
+user	0m0.045s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=156
+
+real	0m6.106s
+user	0m6.087s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=157
+
+real	0m5.892s
+user	0m5.873s
+sys	0m0.006s
+
+real	0m0.043s
+user	0m0.043s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=157
+
+real	0m6.122s
+user	0m6.098s
+sys	0m0.008s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=158
+
+real	0m5.901s
+user	0m5.880s
+sys	0m0.006s
+
+real	0m0.074s
+user	0m0.042s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=158
+
+real	0m5.915s
+user	0m5.895s
+sys	0m0.008s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=159
+
+real	0m5.986s
+user	0m5.966s
+sys	0m0.005s
+
+real	0m0.063s
+user	0m0.047s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=159
+
+real	0m5.895s
+user	0m5.872s
+sys	0m0.007s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=160
+
+real	0m5.896s
+user	0m5.874s
+sys	0m0.007s
+
+real	0m0.068s
+user	0m0.041s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=160
+
+real	0m6.146s
+user	0m6.098s
+sys	0m0.006s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=161
+
+real	0m5.912s
+user	0m5.891s
+sys	0m0.009s
+
+real	0m0.043s
+user	0m0.040s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=161
+
+real	0m5.930s
+user	0m5.911s
+sys	0m0.005s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=162
+
+real	0m5.842s
+user	0m5.818s
+sys	0m0.013s
+
+real	0m0.045s
+user	0m0.041s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=162
+
+real	0m6.068s
+user	0m6.048s
+sys	0m0.009s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=163
+
+real	0m6.018s
+user	0m5.858s
+sys	0m0.007s
+
+real	0m0.044s
+user	0m0.042s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=163
+
+real	0m5.895s
+user	0m5.869s
+sys	0m0.009s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=164
+
+real	0m5.892s
+user	0m5.855s
+sys	0m0.009s
+
+real	0m0.064s
+user	0m0.048s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=164
+
+real	0m6.262s
+user	0m6.088s
+sys	0m0.010s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=165
+
+real	0m5.938s
+user	0m5.911s
+sys	0m0.008s
+
+real	0m0.139s
+user	0m0.043s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=165
+
+real	0m6.307s
+user	0m6.157s
+sys	0m0.006s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=166
+
+real	0m5.889s
+user	0m5.861s
+sys	0m0.009s
+
+real	0m0.044s
+user	0m0.040s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=166
+
+real	0m6.135s
+user	0m5.883s
+sys	0m0.012s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=167
+
+real	0m5.875s
+user	0m5.854s
+sys	0m0.006s
+
+real	0m0.066s
+user	0m0.047s
+sys	0m0.005s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=167
+
+real	0m6.115s
+user	0m6.084s
+sys	0m0.011s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=168
+
+real	0m5.951s
+user	0m5.918s
+sys	0m0.012s
+
+real	0m0.047s
+user	0m0.044s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=168
+
+real	0m5.885s
+user	0m5.864s
+sys	0m0.006s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=169
+
+real	0m5.918s
+user	0m5.882s
+sys	0m0.007s
+
+real	0m0.099s
+user	0m0.045s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=169
+
+real	0m6.127s
+user	0m6.108s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=170
+
+real	0m6.073s
+user	0m6.032s
+sys	0m0.017s
+
+real	0m0.063s
+user	0m0.049s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=170
+
+real	0m5.992s
+user	0m5.956s
+sys	0m0.008s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=171
+
+real	0m5.879s
+user	0m5.853s
+sys	0m0.007s
+
+real	0m0.045s
+user	0m0.043s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=171
+
+real	0m6.158s
+user	0m6.075s
+sys	0m0.006s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=172
+
+real	0m5.910s
+user	0m5.895s
+sys	0m0.006s
+
+real	0m0.046s
+user	0m0.041s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=172
+
+real	0m6.137s
+user	0m6.125s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=173
+
+real	0m6.020s
+user	0m6.005s
+sys	0m0.006s
+
+real	0m0.115s
+user	0m0.047s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=173
+
+real	0m6.093s
+user	0m6.079s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=174
+
+real	0m5.871s
+user	0m5.840s
+sys	0m0.005s
+
+real	0m0.064s
+user	0m0.044s
+sys	0m0.005s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=174
+
+real	0m5.982s
+user	0m5.866s
+sys	0m0.009s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=175
+
+real	0m5.869s
+user	0m5.845s
+sys	0m0.009s
+
+real	0m0.043s
+user	0m0.041s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=175
+
+real	0m5.880s
+user	0m5.859s
+sys	0m0.005s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=176
+
+real	0m5.888s
+user	0m5.874s
+sys	0m0.004s
+
+real	0m0.045s
+user	0m0.043s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=176
+
+real	0m6.111s
+user	0m6.091s
+sys	0m0.011s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=177
+
+real	0m5.870s
+user	0m5.852s
+sys	0m0.006s
+
+real	0m0.047s
+user	0m0.042s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=177
+
+real	0m6.140s
+user	0m6.090s
+sys	0m0.010s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=178
+
+real	0m5.882s
+user	0m5.846s
+sys	0m0.005s
+
+real	0m0.043s
+user	0m0.039s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=178
+
+real	0m5.881s
+user	0m5.848s
+sys	0m0.010s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=179
+
+real	0m5.984s
+user	0m5.960s
+sys	0m0.009s
+
+real	0m0.124s
+user	0m0.044s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=179
+
+real	0m6.172s
+user	0m6.105s
+sys	0m0.009s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=180
+
+real	0m5.850s
+user	0m5.829s
+sys	0m0.008s
+
+real	0m0.046s
+user	0m0.044s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=180
+
+real	0m6.081s
+user	0m6.057s
+sys	0m0.008s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=181
+
+real	0m5.831s
+user	0m5.806s
+sys	0m0.011s
+
+real	0m0.045s
+user	0m0.043s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=181
+
+real	0m5.857s
+user	0m5.833s
+sys	0m0.008s
+NO! at ../../../Sims/ConstantPopSize/ForwardSims/TrajToMsselFormat.pl line 19.
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/TempRightDistanceOut1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/DistanceOutNotCpG1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/TrajOutputAllAlleles_1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/PReFerSimOutputAllAlleles_1.txt’: No such file or directory
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=182
+
+real	0m9.504s
+user	0m9.472s
+sys	0m0.005s
+
+real	0m0.020s
+user	0m0.019s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=182
+
+real	0m9.485s
+user	0m9.456s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=183
+
+real	0m9.206s
+user	0m9.185s
+sys	0m0.002s
+
+real	0m0.018s
+user	0m0.017s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=183
+
+real	0m9.419s
+user	0m9.398s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=184
+
+real	0m9.152s
+user	0m9.125s
+sys	0m0.005s
+
+real	0m0.021s
+user	0m0.018s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=184
+
+real	0m9.301s
+user	0m9.278s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=185
+
+real	0m9.172s
+user	0m9.148s
+sys	0m0.003s
+
+real	0m0.020s
+user	0m0.018s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=185
+
+real	0m9.535s
+user	0m9.495s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=186
+
+real	0m9.090s
+user	0m9.062s
+sys	0m0.003s
+
+real	0m0.021s
+user	0m0.018s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=186
+
+real	0m9.233s
+user	0m9.166s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=187
+
+real	0m9.172s
+user	0m9.131s
+sys	0m0.005s
+
+real	0m0.018s
+user	0m0.016s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=187
+
+real	0m9.222s
+user	0m9.186s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=188
+
+real	0m9.104s
+user	0m9.069s
+sys	0m0.005s
+
+real	0m0.020s
+user	0m0.018s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=188
+
+real	0m9.379s
+user	0m9.345s
+sys	0m0.006s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=189
+
+real	0m9.167s
+user	0m9.144s
+sys	0m0.003s
+
+real	0m0.022s
+user	0m0.018s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=189
+
+real	0m9.371s
+user	0m9.351s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=190
+
+real	0m9.271s
+user	0m9.250s
+sys	0m0.004s
+
+real	0m0.020s
+user	0m0.019s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=190
+
+real	0m9.319s
+user	0m9.297s
+sys	0m0.006s
+NO! at ../../../Sims/ConstantPopSize/ForwardSims/TrajToMsselFormat.pl line 19.
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/TempRightDistanceOut1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/DistanceOutNotCpG1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/TrajOutputAllAlleles_1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/PReFerSimOutputAllAlleles_1.txt’: No such file or directory
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=191
+
+real	0m24.572s
+user	0m24.505s
+sys	0m0.002s
+
+real	0m0.012s
+user	0m0.009s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=191
+
+real	0m24.929s
+user	0m24.792s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=192
+
+real	0m24.400s
+user	0m24.304s
+sys	0m0.004s
+
+real	0m0.012s
+user	0m0.009s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=192
+
+real	0m24.642s
+user	0m24.543s
+sys	0m0.005s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=193
+
+real	0m24.324s
+user	0m24.282s
+sys	0m0.002s
+
+real	0m0.013s
+user	0m0.012s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=193
+
+real	0m24.669s
+user	0m24.614s
+sys	0m0.006s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=194
+
+real	0m24.878s
+user	0m24.835s
+sys	0m0.003s
+
+real	0m0.011s
+user	0m0.010s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=194
+
+real	0m24.885s
+user	0m24.825s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=195
+
+real	0m24.705s
+user	0m24.356s
+sys	0m0.001s
+
+real	0m0.012s
+user	0m0.008s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=195
+
+real	0m24.571s
+user	0m24.517s
+sys	0m0.005s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=196
+
+real	0m24.384s
+user	0m24.338s
+sys	0m0.003s
+
+real	0m0.024s
+user	0m0.011s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=196
+
+real	0m24.813s
+user	0m24.767s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=197
+
+real	0m24.440s
+user	0m24.391s
+sys	0m0.002s
+
+real	0m0.010s
+user	0m0.008s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=197
+
+real	0m24.657s
+user	0m24.609s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=198
+
+real	0m24.349s
+user	0m24.259s
+sys	0m0.008s
+
+real	0m0.013s
+user	0m0.012s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=198
+
+real	0m24.618s
+user	0m24.564s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=199
+
+real	0m24.210s
+user	0m24.174s
+sys	0m0.003s
+
+real	0m0.011s
+user	0m0.010s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=199
+
+real	0m24.168s
+user	0m24.132s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=200
+
+real	0m24.465s
+user	0m24.432s
+sys	0m0.001s
+
+real	0m0.015s
+user	0m0.011s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=200
+
+real	0m24.691s
+user	0m24.638s
+sys	0m0.006s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=201
+
+real	0m24.392s
+user	0m24.349s
+sys	0m0.002s
+
+real	0m0.014s
+user	0m0.010s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=201
+
+real	0m24.561s
+user	0m24.474s
+sys	0m0.005s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=202
+
+real	0m24.842s
+user	0m24.803s
+sys	0m0.004s
+
+real	0m0.014s
+user	0m0.010s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=202
+
+real	0m24.953s
+user	0m24.920s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=203
+
+real	0m24.321s
+user	0m24.283s
+sys	0m0.002s
+
+real	0m0.010s
+user	0m0.009s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=203
+
+real	0m24.496s
+user	0m24.469s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=204
+
+real	0m24.541s
+user	0m24.512s
+sys	0m0.001s
+
+real	0m0.013s
+user	0m0.011s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=204
+
+real	0m24.703s
+user	0m24.664s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=205
+
+real	0m24.250s
+user	0m24.218s
+sys	0m0.004s
+
+real	0m0.013s
+user	0m0.010s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=205
+
+real	0m25.199s
+user	0m25.164s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=206
+
+real	0m24.928s
+user	0m24.898s
+sys	0m0.005s
+
+real	0m0.011s
+user	0m0.009s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=206
+
+real	0m24.793s
+user	0m24.764s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=207
+
+real	0m24.650s
+user	0m24.620s
+sys	0m0.002s
+
+real	0m0.012s
+user	0m0.009s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=207
+
+real	0m24.572s
+user	0m24.543s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=208
+
+real	0m24.604s
+user	0m24.577s
+sys	0m0.002s
+
+real	0m0.012s
+user	0m0.011s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=208
+
+real	0m24.810s
+user	0m24.783s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=209
+
+real	0m24.900s
+user	0m24.862s
+sys	0m0.004s
+
+real	0m0.012s
+user	0m0.011s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=209
+
+real	0m24.863s
+user	0m24.830s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=210
+
+real	0m24.298s
+user	0m24.263s
+sys	0m0.005s
+
+real	0m0.011s
+user	0m0.008s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=210
+
+real	0m24.298s
+user	0m24.232s
+sys	0m0.005s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=211
+
+real	0m24.778s
+user	0m24.247s
+sys	0m0.003s
+
+real	0m0.017s
+user	0m0.012s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=211
+
+real	0m24.477s
+user	0m24.431s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=212
+
+real	0m24.495s
+user	0m24.282s
+sys	0m0.002s
+
+real	0m0.011s
+user	0m0.009s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=212
+
+real	0m25.461s
+user	0m24.918s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=213
+
+real	0m24.262s
+user	0m24.217s
+sys	0m0.003s
+
+real	0m0.013s
+user	0m0.010s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=213
+
+real	0m24.463s
+user	0m24.426s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=214
+
+real	0m24.172s
+user	0m24.097s
+sys	0m0.008s
+
+real	0m0.013s
+user	0m0.010s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=214
+
+real	0m24.356s
+user	0m24.288s
+sys	0m0.009s
+NO! at ../../../Sims/ConstantPopSize/ForwardSims/TrajToMsselFormat.pl line 19.
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/TempRightDistanceOut1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/DistanceOutNotCpG1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/TrajOutputAllAlleles_1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/PReFerSimOutputAllAlleles_1.txt’: No such file or directory
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=215
+
+real	0m26.998s
+user	0m26.921s
+sys	0m0.002s
+
+real	0m0.008s
+user	0m0.004s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=215
+
+real	0m27.279s
+user	0m27.066s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=216
+
+real	0m27.298s
+user	0m27.238s
+sys	0m0.004s
+
+real	0m0.005s
+user	0m0.003s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=216
+
+real	0m27.342s
+user	0m27.294s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=217
+
+real	0m26.794s
+user	0m26.749s
+sys	0m0.005s
+
+real	0m0.005s
+user	0m0.003s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=217
+
+real	0m26.879s
+user	0m26.839s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=218
+
+real	0m26.967s
+user	0m26.925s
+sys	0m0.003s
+
+real	0m0.005s
+user	0m0.003s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=218
+
+real	0m27.084s
+user	0m27.021s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=219
+
+real	0m27.241s
+user	0m27.200s
+sys	0m0.003s
+
+real	0m0.006s
+user	0m0.003s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=219
+
+real	0m27.644s
+user	0m27.599s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=220
+
+real	0m27.349s
+user	0m27.318s
+sys	0m0.001s
+
+real	0m0.005s
+user	0m0.003s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=220
+
+real	0m27.748s
+user	0m27.707s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=221
+
+real	0m27.313s
+user	0m27.158s
+sys	0m0.002s
+
+real	0m0.010s
+user	0m0.008s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=221
+
+real	0m27.651s
+user	0m27.582s
+sys	0m0.005s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=222
+
+real	0m27.305s
+user	0m27.273s
+sys	0m0.002s
+
+real	0m0.005s
+user	0m0.004s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=222
+
+real	0m27.495s
+user	0m27.450s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=223
+
+real	0m27.473s
+user	0m27.404s
+sys	0m0.002s
+
+real	0m0.006s
+user	0m0.001s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=223
+
+real	0m27.749s
+user	0m27.692s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=224
+
+real	0m27.117s
+user	0m27.081s
+sys	0m0.003s
+
+real	0m0.005s
+user	0m0.002s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=224
+
+real	0m27.406s
+user	0m27.353s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=225
+
+real	0m27.679s
+user	0m27.385s
+sys	0m0.001s
+
+real	0m0.007s
+user	0m0.003s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=225
+
+real	0m27.644s
+user	0m27.599s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=226
+
+real	0m27.186s
+user	0m27.148s
+sys	0m0.003s
+
+real	0m0.018s
+user	0m0.005s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=226
+
+real	0m27.508s
+user	0m27.451s
+sys	0m0.005s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=227
+
+real	0m27.297s
+user	0m27.261s
+sys	0m0.002s
+
+real	0m0.005s
+user	0m0.003s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=227
+
+real	0m27.839s
+user	0m27.673s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=228
+
+real	0m26.889s
+user	0m26.851s
+sys	0m0.002s
+
+real	0m0.005s
+user	0m0.003s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=228
+
+real	0m27.115s
+user	0m27.083s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=229
+
+real	0m26.806s
+user	0m26.776s
+sys	0m0.002s
+
+real	0m0.006s
+user	0m0.004s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=229
+
+real	0m26.997s
+user	0m26.960s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=230
+
+real	0m27.362s
+user	0m27.331s
+sys	0m0.002s
+
+real	0m0.005s
+user	0m0.003s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=230
+
+real	0m27.593s
+user	0m27.454s
+sys	0m0.012s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=231
+
+real	0m27.219s
+user	0m27.189s
+sys	0m0.001s
+
+real	0m0.005s
+user	0m0.003s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=231
+
+real	0m27.306s
+user	0m27.276s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=232
+
+real	0m27.920s
+user	0m27.883s
+sys	0m0.002s
+
+real	0m0.006s
+user	0m0.005s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=232
+
+real	0m27.833s
+user	0m27.581s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=233
+
+real	0m27.447s
+user	0m27.404s
+sys	0m0.003s
+
+real	0m0.005s
+user	0m0.002s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=233
+
+real	0m27.814s
+user	0m27.776s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=234
+
+real	0m27.451s
+user	0m27.415s
+sys	0m0.004s
+
+real	0m0.005s
+user	0m0.004s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=234
+
+real	0m27.377s
+user	0m27.345s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=235
+
+real	0m27.531s
+user	0m27.455s
+sys	0m0.004s
+
+real	0m0.005s
+user	0m0.002s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=235
+
+real	0m27.740s
+user	0m27.562s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=236
+
+real	0m27.403s
+user	0m27.368s
+sys	0m0.003s
+
+real	0m0.005s
+user	0m0.005s
+sys	0m0.000s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=236
+
+real	0m27.592s
+user	0m27.546s
+sys	0m0.004s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=237
+
+real	0m27.119s
+user	0m27.077s
+sys	0m0.002s
+
+real	0m0.006s
+user	0m0.003s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=237
+
+real	0m27.391s
+user	0m27.341s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=238
+
+real	0m27.012s
+user	0m26.971s
+sys	0m0.003s
+
+real	0m0.006s
+user	0m0.004s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=238
+
+real	0m27.131s
+user	0m27.094s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=239
+
+real	0m27.668s
+user	0m27.626s
+sys	0m0.001s
+
+real	0m0.007s
+user	0m0.005s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=239
+
+real	0m28.102s
+user	0m27.992s
+sys	0m0.008s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=240
+
+real	0m26.916s
+user	0m26.885s
+sys	0m0.001s
+
+real	0m0.005s
+user	0m0.004s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=240
+
+real	0m27.306s
+user	0m27.266s
+sys	0m0.003s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=241
+
+real	0m26.860s
+user	0m26.829s
+sys	0m0.002s
+
+real	0m0.006s
+user	0m0.005s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=241
+
+real	0m26.927s
+user	0m26.898s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=242
+
+real	0m26.916s
+user	0m26.888s
+sys	0m0.001s
+
+real	0m0.006s
+user	0m0.003s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=242
+
+real	0m27.112s
+user	0m27.079s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=243
+
+real	0m27.413s
+user	0m27.304s
+sys	0m0.009s
+
+real	0m0.006s
+user	0m0.004s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=243
+
+real	0m27.746s
+user	0m27.700s
+sys	0m0.002s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=244
+
+real	0m27.254s
+user	0m27.222s
+sys	0m0.002s
+
+real	0m0.005s
+user	0m0.003s
+sys	0m0.001s
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=244
+
+real	0m27.139s
+user	0m27.072s
+sys	0m0.001s
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/TempRightDistanceOut1.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/ABCAnalysisPopExpansion/Output/DistanceOutNotCpG1.txt’: No such file or directory

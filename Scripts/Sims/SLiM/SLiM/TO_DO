@@ -1,0 +1,92 @@
+OK, this has turned out not to be a "to do" file so much as a place to put useful little snippets and such...
+
+
+new cmake-based command line building:
+	cd SLiM
+	mkdir build
+	cd build
+	cmake ..
+	make
+
+cause cmake to be re-run (after addition/removal of source files, etc.; this is necessary because we use GLOB with "file" in our cmake config):
+	cd SLiM
+	touch ./CMakeLists.txt
+
+look for exported symbols that are not tagged with "eidos" or "Eidos" somewhere in the symbol before the parameter list:
+	nm -g -U -j ./EidosScribe | grep -E -v "^_+([^_\r\n]+_)*[^_]*[Ee]idos"
+
+dump demangled symbols from SLiMgui:
+	nm -g -U -j ./SLiMgui | c++filt
+
+some valgrind commands:
+	valgrind --leak-check=yes --track-origins=yes --expensive-definedness-checks=yes --num-callers=20 ./slim -testEidos		(with Debug version)
+	valgrind --leak-check=yes --track-origins=yes --expensive-definedness-checks=yes --num-callers=20 ./slim -testSLiM		(with Debug version)
+	valgrind --tool=cachegrind ./slim -seed 1 /Users/bhaller/Desktop/MK_SLiMGUIsim4.txt		(with Release version)
+		cg_annotate --sort=DLmr:1,DLmw:1 cachegrind.out.71431
+	valgrind --tool=callgrind ./slim -seed 1 /Users/bhaller/Desktop/MK_SLiMGUIsim4.txt		(with Release version)
+		callgrind_annotate --tree=both callgrind.out.72015
+	valgrind --tool=massif ./slim -seed 1 /Users/bhaller/Desktop/MK_SLiMGUIsim4.txt			(with Release version)
+		ms_print massif.out.73964
+	valgrind --tool=exp-sgcheck ./slim -testEidos	(with Debug version; not on Darwin yet)
+	valgrind --tool=exp-sgcheck ./slim -testSLiM	(with Debug version; not on Darwin yet)
+
+cpplint.py for checking includes (https://github.com/google/styleguide/tree/gh-pages/cpplint):
+	cd /Volumes/thimble/glide/Research/MesserLab/SLiM\ project/SLiM
+	python2.7 /Users/bhaller/bin/cpplint.py --filter=-,+build/include_what_you_use ./core/*.cpp ./eidos/*.cpp ./eidostool/*.cpp
+
+CR/LF issues:
+	file <file> tells you what a file is
+	tab2space -lf <file> converts a file to Unix-style LF only
+	convert all text files in the current directory to use LF: find . -name \*.txt -exec tab2space -lf {} {} \; -print
+
+tab issues:
+	convert leading spaces to tabs in recipes:
+		find . -name \*.txt -exec bash -c 'gunexpand -t 4 --first-only "$0" > /tmp/totabbuff && mv /tmp/totabbuff "$0"' {} \; -print
+
+finding out the generation number of a running simulation in lldb:
+	lldb /usr/local/bin/slim
+	process attach --pid X (from ps -ax | grep slim)
+	breakpoint set --method _RunOneGeneration
+	c
+	(lldb breaks at _RunOneGeneration...)
+	
+	if you have symbols, just p generation_; if not:
+	
+	si (repeat until you reach movl   $0x0, 0x40(%r15) which is perhaps around +30; this is generation_stage_ = SLiMGenerationStage::kStage0PreGeneration)
+	(now %r15 is the this pointer...)
+	register read r15 --format hex
+	memory read --size 4 --format x --count 50 `0x00007f9e28413f80`		(where the hex value of r15 goes in the backquotes)
+	the generation is at the end of the fourth line, as SLiM is currently set up:
+	0x7f9e28413fb0: 0x28414310 0x00007f9e 0x00000001 0x000021ef		-> 0x000021ef is the generation
+	if the memory layout moves, just look for 0x00000007 which will be the generation stage at this point in the code; the generation is immediately before it
+
+reassuring the Clang analyzer that a precondition is met:
+	#ifdef __clang_analyzer__
+		assert(p_argument_count >= 5);
+	#endif
+
+count total lines of code in the project (excluding the gsl code):
+	( find ./core/ ./eidos/ ./eidostool/ ./EidosScribe ./SLiMgui '(' -name '*.mm' -or -name '*.h' -or -name '*.cpp' ')' -print0 | xargs -0 cat ) | wc -l
+
+a useful LaTeX equation editor:
+	https://www.codecogs.com/latex/eqneditor.php
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

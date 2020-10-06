@@ -10,7 +10,7 @@ $End = ( $i + 1 ) * 1;
 
 @LLs = ();
 
-for ($k = 0; $k < 1350 ; $k++){
+for ($k = 0; $k < 2520 ; $k++){
 $LLs[$k] = 0;
 }
 
@@ -22,7 +22,7 @@ while(<FILE>){
 chomp;
 $Line = $_;
 @SplitLine = split(/\s+/,$Line);
-for ($k = 0; $k < 1350 ; $k++){
+for ($k = 0; $k < 2520 ; $k++){
 $LLs[$k] = $LLs[$k] + $SplitLine[$k];
 }
 
@@ -31,7 +31,7 @@ $LLs[$k] = $LLs[$k] + $SplitLine[$k];
 close(FILE);
 }
 
-for ($k = 0; $k < 1350 ; $k++){
+for ($k = 0; $k < 2520 ; $k++){
 # print "$LLs[$k]\t";
 }
 
@@ -39,7 +39,7 @@ for ($k = 0; $k < 1350 ; $k++){
 
 $Max = $LLs[0];
 $MaxK = 0;
-for ($k = 0; $k < 1350 ; $k++){
+for ($k = 0; $k < 2520 ; $k++){
 
 if ($LLs[$k] > $Max){
 

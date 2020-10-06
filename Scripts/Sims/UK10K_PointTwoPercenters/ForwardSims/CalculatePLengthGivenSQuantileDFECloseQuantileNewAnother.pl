@@ -9,6 +9,7 @@ $NumberOfVariants = $ARGV[7];
 $VariantsToIncludeFile = $ARGV[8];
 $QuantilesFile = $ARGV[9];
 $LastPopSize = $ARGV[10];
+$DFETableRec = $ARGV[11];
 @HapLengths = ();
 @ISValues = ();
 @VariantsToUse = ();
@@ -21,10 +22,26 @@ chomp;
 $Line = $_;
 @SplitLine = split(/\s+/,$Line);
 push(@Bounds,$SplitLine[0]);
-print "Test = $SplitLine[0]\n";
+# print "Test = $SplitLine[0]\n";
 }
 
 close(BOUNDS);
+
+@FullPLGivenSTable = ();
+$LineNumber = 0;
+open (REG,$DFETableRec) or die "NO!";
+while (<REG>){
+chomp;
+$Line = $_;
+@SplitLine = split(/\s+/, $Line );
+for ($i = 0; $i < scalar(@SplitLine); $i++){
+$FullPLGivenSTable[$i][$LineNumber] = $SplitLine[$i];
+}
+$LineNumber++;
+}
+
+close (REG);
+
 
 @LLValues = ();
 
@@ -35,22 +52,22 @@ if ( int ($UnitsOfHapLengthFile) < int ($Bounds[$i]) ){
 last;
 }
 $NumberOfIntervalsToCheck = $i;
-print "Here = $UnitsOfHapLengthFile \< $Bounds[$i] \t$NumberOfIntervalsToCheck\t$Bounds[$NumberOfIntervalsToCheck]\t$Bounds[$i]\n";
+# print "Here = $UnitsOfHapLengthFile \< $Bounds[$i] \t$NumberOfIntervalsToCheck\t$Bounds[$NumberOfIntervalsToCheck]\t$Bounds[$i]\n";
 }
 
-print "End = $NumberOfIntervalsToCheck\t$Bounds[$NumberOfIntervalsToCheck]\t$LineNumber\n";
+# print "End = $NumberOfIntervalsToCheck\t$Bounds[$NumberOfIntervalsToCheck]\t$LineNumber\n";
 
 @LogLikelihoods = ();
 
-for ($i = 0; $i <= 1590; $i++){
+for ($i = 0; $i <= 1560; $i++){
 $LogLikelihoods[$i] = 0;
-print "Interval = $i LL = $LogLikelihoods[$i]\n";
+# print "Interval = $i LL = $LogLikelihoods[$i]\n";
 }
 # die "NO\n";
 
 for ( $j = 1 ; $j <= 21 ; $j++ ){
 
-$IS_File = $IS_Prefix.$j."/AnotherDFETableToTest.txt";
+$IS_File = $IS_Prefix.$j."/TableToTest.txt";
 open (IS,$IS_File) or die "NO! $IS_File\n";
 
 $LineNumber = 0;
@@ -110,11 +127,25 @@ push (@QuantileRec, $Line );
 
 close (QUANTILE);
 
+for ($i = 1; $i <= 1560; $i++){
+$LogLikelihoods[$i] = 0;
+}
+
 $VariantNumberSum = 0;
 $RecNum = 0;
 $AppropriateVariantRecNumber = 0;
 for ($VarNum = 0; $VarNum < $NumberOfVariants; $VarNum++ ){
 $VariantFlagFount = 0;
+
+$SubResultsFile = $ExitFile.$VarNum.".txt";
+open (SUBR,">$SubResultsFile") or die "NO!\n";
+
+@CurrentLogLikelihoods = ();
+for ($i = 1; $i <= 1560; $i++){
+$CurrentLogLikelihoods[$i] = 0;
+}
+
+
 if (grep {$_ eq $VarNum} @VariantsToUse) {
 #  print "Element '$element' found!\n" ;
 $VariantFlagFount = 1;
@@ -128,90 +159,10 @@ $RecRateLeft = $CurrentLeftRec * .01 * 4*$LastPopSize*250000;
 $RecRateRight= $CurrentRightRec * .01 * 4*$LastPopSize*250000;
 $RecNum++;
 ### Get Recombination rate
-print "$VarNum\t$RecRateLeft\t$RecRateRight\t";
-$SmallRecDiffFlagLeft = 0;
-$SmallRecDiffFlagRight = 0;
-for ( $QuantTest = 0 ; $QuantTest < 20 ; $QuantTest++ ){
-$MidPoint = ( $QuantileRec[$QuantTest+1] - $QuantileRec[$QuantTest]) / 2 + $QuantileRec[$QuantTest] ;
-if ( ( $RecRateLeft <= ($MidPoint)) && ($RecRateLeft >= $QuantileRec[$QuantTest]  )){
-$QuantileLeft = $QuantTest;
-if ($QuantTest != 0){
-$DifCheck = abs($RecRateLeft - $QuantileRec[$QuantTest])/$QuantileRec[$QuantTest];
-if ($DifCheck < 0.01){
-$SmallRecDifFlagLeft = 1;
-$AppropriateVariantRecNumber++;
-}else {
-$SmallRecDifFlagLeft = 0;
-}
-}
+print "$VarNum\t$RecRateLeft\t$RecRateRight\n";
 
-}
-if ( ( $RecRateRight <= ($MidPoint)) && ($RecRateRight >= $QuantileRec[$QuantTest]  )){
-$QuantileRight = $QuantTest;
-if ($QuantTest != 0){
-$DifCheck = abs($RecRateRight - $QuantileRec[$QuantTest])/$QuantileRec[$QuantTest];
-if ($DifCheck < 0.01){
-$SmallRecDifFlagRight = 1;
-$AppropriateVariantRecNumber++;
-}else {
-$SmallRecDifFlagRight = 0;
-}
-}
-}
-
-if ( ( $RecRateLeft > ($MidPoint)) && ($RecRateLeft <= $QuantileRec[$QuantTest+1]  )){
-$QuantileLeft = $QuantTest + 1;
-$DifCheck = abs($RecRateLeft - $QuantileRec[$QuantTest+1])/$QuantileRec[$QuantTest+1];
-if (($DifCheck < 0.01)){
-$SmallRecDifFlagLeft = 1;
-$AppropriateVariantRecNumber++;
-}else {
-$SmallRecDifFlagLeft = 0;
-}
-
-}
-
-
-if ( ( $RecRateRight > ($MidPoint)) && ($RecRateRight <= $QuantileRec[$QuantTest+1]  )){
-$QuantileRight = $QuantTest + 1;
-$DifCheck = abs($RecRateRight - $QuantileRec[$QuantTest+1])/$QuantileRec[$QuantTest+1];
-if (($DifCheck < 0.01)){
-$SmallRecDifFlagRight = 1;
-$AppropriateVariantRecNumber++;
-}else {
-$SmallRecDifFlagRight = 0;
-}
-
-}
-#print "$QuantileLeft\t$QuantileRight\n";
-
-}
-print "T1=$QuantileRec[$QuantileLeft]\tT2=$QuantileLeft\tT22=$QuantileRec[$QuantileLeft+1]\tT3=$QuantileRec[$QuantileRight]\tT4=$QuantileRight\tT44=$QuantileRec[$QuantileRight+1]\tT5=$AppropriateVariantRecNumber\n";
 $HapLengthFileToOpen = $HapLengthFile.$VarNum.".txt";
-@HapLengths = ();
 
-$ContinueFlagLeft = 0;
-$ContinueFlagRight = 0;
-if ( ( $RecRateLeft < $QuantileRec[20] ) && (  $RecRateLeft > $QuantileRec[0] ) && ($SmallRecDifFlagLeft == 1)){
-$ContinueFlagLeft =  1;
-}elsif ( $RecRateLeft == $QuantileRec[0]){
-$ContinueFlagLeft =  1;
-}elsif ( $RecRateLeft == $QuantileRec[20]){
-$ContinueFlagLeft =  1;
-}
-
-if ( ( $RecRateRight < $QuantileRec[20] ) && (  $RecRateRight > $QuantileRec[0] ) && ($SmallRecDifFlagRight == 1)){
-$ContinueFlagRight =  1;
-}elsif ( $RecRateRight == $QuantileRec[0]){
-$ContinueFlagRight =  1;
-}elsif ( $RecRateRight == $QuantileRec[20]){
-$ContinueFlagRight =  1;
-}
-
-print "$ContinueFlagRight\t$ContinueFlagLeft\n";
-if ( ($ContinueFlagLeft == 0) && ($ContinueFlagRight == 0)) {
-next;
-}
 
 open (HAP,$HapLengthFileToOpen ) or die "NO! File\n";
 $OddOrEven = 0;
@@ -229,54 +180,44 @@ last;
 }
 # print "$j\n";
 # die "NO!\n";
-for ($i = 1; $i <= 1590; $i++){
+for ($i = 1; $i <= 1560; $i++){
 $ToCheckNum = $OddOrEven % 2;
 if ($ToCheckNum == 0){
-if ( ( $RecRateLeft < $QuantileRec[20] ) && (  $RecRateLeft > $QuantileRec[0] ) && ($SmallRecDifFlagLeft == 1)){
-$LogLikelihoods[$i] = $LogLikelihoods[$i] + log ($ISValues[$QuantileLeft][$i+1][$j+1]);
+# if ( ( $RecRateLeft < $QuantileRec[20] ) && (  $RecRateLeft > $QuantileRec[0] ) && ($SmallRecDifFlagLeft == 1)){
+$CurrentLogLikelihoods[$i] = $CurrentLogLikelihoods[$i] + log ($FullPLGivenSTable[$VarNum][ ( $i + 1 ) * 6 + $j ]);
+$LogLikelihoods[$i] = $LogLikelihoods[$i] + log ($FullPLGivenSTable[$VarNum][ ( $i + 1 ) * 6 + $j ]);
+# print "$i\t$j\t$FullPLGivenSTable[$VarNum][ ( $i + 1 ) * 6 + $j ]\n";
 # print "$ISValues[$QuantileLeft][$i+1][$j+1]\t$Line\t$j\t$QuantileLeft\tNO\n";
-}elsif ( $RecRateLeft == $QuantileRec[0]){
-$LogLikelihoods[$i] = $LogLikelihoods[$i] + log ($ISValues[0][$i+1][$j+1]);
-$TotalVariantNumberUsed++;
-}elsif ( $RecRateLeft == $QuantileRec[20]){
-$LogLikelihoods[$i] = $LogLikelihoods[$i] + log ($ISValues[20][$i+1][$j+1]);
-$TotalVariantNumberUsed++;
-}
-
 }else{
-if ( ( $RecRateRight < $QuantileRec[20] ) && (  $RecRateRight > $QuantileRec[0] ) && ($SmallRecDifFlagRight == 1)){
-$LogLikelihoods[$i] = $LogLikelihoods[$i] + log ($ISValues[$QuantileRight][$i+1][$j+1]);
+# print "$i\t$j\t$FullPLGivenSTable[$VarNum + $NumberOfVariants][ ( $i + 1 ) * 6 + $j ]\n";
+# if ( ( $RecRateRight < $QuantileRec[20] ) && (  $RecRateRight > $QuantileRec[0] ) && ($SmallRecDifFlagRight == 1)){
+$CurrentLogLikelihoods[$i] = $CurrentLogLikelihoods[$i] + log ($FullPLGivenSTable[$VarNum + $NumberOfVariants][ ( $i + 1 ) * 6 + $j ]);
+$LogLikelihoods[$i] = $LogLikelihoods[$i] + log ($FullPLGivenSTable[$VarNum + $NumberOfVariants][ ( $i + 1 ) * 6 + $j ]);
 # die "$ISValues[$QuantileRight][$i+1][$j+1]\t$Line\t$j\t$QuantileRight\tNO\n";
-}elsif ( $RecRateRight == $QuantileRec[0]){
-$LogLikelihoods[$i] = $LogLikelihoods[$i] + log ($ISValues[0][$i+1][$j+1]);
-$TotalVariantNumberUsed++;
-}elsif ( $RecRateRight == $QuantileRec[20]){
-$LogLikelihoods[$i] = $LogLikelihoods[$i] + log ($ISValues[20][$i+1][$j+1]);
-$TotalVariantNumberUsed++;
-}
-
+# die "NO\n";
 }
 # print "Hap = $i  $ISValues[$QuantileLeft][$i+2][$j]\n";
 }
 $OddOrEven++;
 }
+print "LL=$LogLikelihoods[1]\n";
 close (HAP);
 
-for ($i = 0; $i <= 1590; $i++){
-# print "LL $i = $LogLikelihoods[$i]\n";
-}
+for ($i = 0; $i <= 1560; $i++){
 
+print SUBR "$i\t$CurrentLogLikelihoods[$i]\n";
+}
+close (SUBR);
 # die "NO!\n";
 }
 }
 open (EXIT,">$ExitFile") or die "NO!";
 
-for ($i = 0; $i <= 1590; $i++){
+for ($i = 0; $i <= 1560; $i++){
 print EXIT "$i\t$LogLikelihoods[$i]\n";
 }
 
 close (EXIT);
-print "Appropriate Variant Number = $AppropriateVariantRecNumber\n";
 die "Here? $VariantNumberSum $HapFileToOpen\n";
 
 open (EXIT,">$ExitFile") or die "NO!";

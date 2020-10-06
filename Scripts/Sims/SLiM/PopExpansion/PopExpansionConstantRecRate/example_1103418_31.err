@@ -1,0 +1,210 @@
+
+real	6m28.597s
+user	6m25.743s
+sys	0m2.241s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_91_ns.vcf
+	--freq
+	--out Salele91.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:6220842
+After filtering, kept 1341 out of a possible 1341 Sites
+Run Time = 0.00 seconds
+Writing to /tmp/bcftools-sort.PIUXyX
+Merging 1 temporary files
+Cleaning
+Done
+Writing to /tmp/bcftools-sort.IMx9h2
+Merging 1 temporary files
+Cleaning
+Done
+
+real	9m30.156s
+user	4m32.316s
+sys	0m4.108s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_91_ns.vcf
+	--freq
+	--out Salele91.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:6220842
+After filtering, kept 1341 out of a possible 1341 Sites
+Run Time = 4.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_91_syn.vcf
+	--freq
+	--out SaleleSyn91.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+After filtering, kept 562 out of a possible 562 Sites
+Run Time = 0.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_91_combined.vcf
+	--freq
+	--out SaleleWholeSequence91.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:6220842
+After filtering, kept 73367 out of a possible 73367 Sites
+Run Time = 60.00 seconds
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_91_combined.vcf
+	--chr 1
+	--to-bp 16451026
+	--out MiniVCF91.vcf
+	--recode
+	--from-bp 15951026
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1874 out of a possible 73367 Sites
+Run Time = 46.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_91_combined.vcf
+	--chr 1
+	--to-bp 17546642
+	--out MiniVCF91.vcf
+	--recode
+	--from-bp 17046642
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1837 out of a possible 73367 Sites
+Run Time = 36.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_91_combined.vcf
+	--chr 1
+	--to-bp 3687503
+	--out MiniVCF91.vcf
+	--recode
+	--from-bp 3187503
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1845 out of a possible 73367 Sites
+Run Time = 27.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_91_combined.vcf
+	--chr 1
+	--to-bp 3907088
+	--out MiniVCF91.vcf
+	--recode
+	--from-bp 3407088
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting VCF file...
+After filtering, kept 1831 out of a possible 73367 Sites
+Run Time = 16.00 seconds
+Reading in VCF file...done.
+Now printing output...done.
+rm: cannot remove ‘Salele91.vcf.log’: No such file or directory
+rm: cannot remove ‘SaleleWholeSequence91.vcf.log’: No such file or directory
+
+real	6m24.196s
+user	6m19.941s
+sys	0m2.444s
+
+VCFtools - 0.1.15
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+	--vcf test_92_ns.vcf
+	--freq
+	--out Salele92.vcf
+
+After filtering, kept 2000 out of 2000 Individuals
+Outputting Frequency Statistics...
+ Duplicate alternate alleles found at 1:2814715
+After filtering, kept 1315 out of a possible 1315 Sites
+Run Time = 0.00 seconds
+Traceback (most recent call last):
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 192, in <module>
+    main(args)
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 153, in main
+    args.mu, start, end)
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 100, in noncoding_vcf
+    ts.write_vcf(vcf_file)
+  File "/home/diegoortega/.local/lib/python3.7/site-packages/tskit/trees.py", line 3253, in write_vcf
+    writer.write(output)
+  File "/home/diegoortega/.local/lib/python3.7/site-packages/tskit/vcf.py", line 163, in write
+    "Missing data is not currently supported. Please open an issue "
+ValueError: Missing data is not currently supported. Please open an issue on GitHub if this limitation affects you.
+
+real	4m10.629s
+user	3m40.917s
+sys	0m0.454s
+rm: cannot remove ‘Salele92.vcf.log’: No such file or directory
+rm: cannot remove ‘test_92_syn.vcf’: No such file or directory
+rm: cannot remove ‘test_92_unsorted.vcf’: No such file or directory
+
+real	7m30.513s
+user	7m1.596s
+sys	0m3.060s
+Traceback (most recent call last):
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 192, in <module>
+    main(args)
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 134, in main
+    ns_vcf(ts_sample, '{0}_{1}_ns.vcf'.format(args.inputname, args.simnum))
+  File "tree_2_vcf_noploidyConstantPopSize.py", line 56, in ns_vcf
+    ts.write_vcf(vcf_file)
+  File "/home/diegoortega/.local/lib/python3.7/site-packages/tskit/trees.py", line 3253, in write_vcf
+    writer.write(output)
+  File "/home/diegoortega/.local/lib/python3.7/site-packages/tskit/vcf.py", line 156, in write
+    for variant in self.tree_sequence.variants(samples=self.samples):
+  File "/home/diegoortega/.local/lib/python3.7/site-packages/tskit/trees.py", line 2923, in variants
+    impute_missing_data=impute_missing_data)
+_tskit.LibraryError: Cannot generate genotypes for non-samples unless missing data imputation is enabled
+
+real	4m40.653s
+user	2m35.266s
+sys	0m0.435s
+rm: cannot remove ‘Salele93.vcf.frq’: No such file or directory
+rm: cannot remove ‘Salele93.vcf.log’: No such file or directory
+rm: cannot remove ‘test_93_allelenumber.txt’: No such file or directory
+rm: cannot remove ‘test_93_noncoding.vcf’: No such file or directory
+rm: cannot remove ‘test_93_syn.vcf’: No such file or directory
+rm: cannot remove ‘test_93_unsorted.vcf’: No such file or directory
