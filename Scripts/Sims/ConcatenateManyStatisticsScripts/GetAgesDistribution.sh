@@ -1,15 +1,7 @@
 Directory[1]="AncientBottleneck"
-Directory[2]="AncientBottleneckPointFivePercent"
-Directory[3]="ConstantPopSize"
-Directory[4]="ConstantPopSizePointFivePercent"
-Directory[5]="MediumBottleneck"
-Directory[6]="MediumBottleneckPointFivePercent"
-Directory[7]="PopExpansion"
-Directory[8]="PopExpansionPointFivePercent"
-Directory[9]="RecentBottleneck"
-Directory[10]="RecentBottleneckPointFivePercent"
-Directory[11]="ConstantPopSizePopFrequency"
-Directory[12]="UK10K"
+Directory[2]="ConstantPopSize"
+Directory[3]="PopExpansion"
+Directory[4]="UK10K"
 
 FourNs[1]="4Ns_0"
 FourNs[2]="4Ns_50"
@@ -17,7 +9,7 @@ FourNs[3]="4Ns_100"
 FourNs[4]="4Ns_-50"
 FourNs[5]="4Ns_-100"
 
-for i in {1..11}
+for i in {1..3}
 do
 for j in {1..5}
 do
@@ -34,7 +26,7 @@ FourNs[3]="4Ns_50"
 FourNs[4]="4Ns_-25"
 FourNs[5]="4Ns_-50"
 
-for i in {12..12}
+for i in {4..4}
 do
 for j in {1..5}
 do
