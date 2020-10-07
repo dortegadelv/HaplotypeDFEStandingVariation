@@ -1,4 +1,3 @@
-setwd("/Users/vicentediegoortegadelvecchyo/Dropbox/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims")
 
 Data <- read.table("PLGivenSTableWithRecs.txt")
 DFETable <- read.table("DFETableOfProbabilities.txt")

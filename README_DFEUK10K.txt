@@ -138,6 +138,15 @@ cd Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims/
 Run CreationOfDiscreteDistribution50.R to get the probabilities for each 2Ns value in each distribution of fitness effects.
 bash GetDFETable.sh
 
+#### Run the following R scripts to get the expected L values for different point 4Ns values and DFE's using the recombination rates around synonymous and non synonymous variants.
+
+cd Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims/
+bash GetFullTable.sh
+GetQuadraticParametersSingle4Ns.R
+GetQuadraticParametersSingle4NsSyn.R
+GetQuadraticParametersDFE.R
+GetQuadraticParametersAnotherDFE.R
+
 #### Get max likelihood value from data
 
 cd Scripts/Sims/UK10K_OnePercenters/ForwardSims
@@ -152,42 +161,19 @@ SGE_TASK_ID=1
 bash CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableDFEBootstrap.sh
 # Run the past command with SGE_TASK_ID values going from 1-100.
 
-### Get the maximum likelihood estimator
+### Get the maximum likelihood estimator on the bootstrap data
 
 perl GetMax4NsValueDFEBootstrap.pl
 
-#### Print s values at a particular frequency
+### Do forward simulations under the UK10K scenario 
+
+mkdir ../../../../Results/UK10K/ForwardSims/DFETestHighPop/
+sbatch --array=1-3000 Expansion_DFEHighPop.sh
+
+#### Print s values at a particular frequency (Print the line that gives back ExitOnePercentSValuesUK10KHighPop.txt to get the file needed for Figure 9).
 
 cd Scripts/Scripts/Sims/ConcatenateManyStatisticsScripts
 bash PrintSValuesAtParticularFrequency.sh
 
 ############################################################################################################################################################
 
-
-### Simulations tests
-
-cd Sims/UK10K_OnePercenters/ForwardSims
-bash Expansion_DFEHighPop.sh
-### Run the past command with SGE_TASK_ID values going from 1-100.
-
-bash Expansion_DFE.sh
-### Run the past command with SGE_TASK_ID values going from 1-100.
-
-### Create the reduced trajectories file
-bash CreateReducedTrajectories.sh
-
-### Create mssel files
-bash RunMssel_DFEHighPop.sh
-bash RunMssel_DFE.sh
-### Run the past commands with SGE_TASK_ID values going from 1-100.
-
-### Run the next scripts
-bash CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableDFEHighPopAnotherSims.sh
-bash CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableDFEHighPopSims.sh
-bash CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableDFESims.sh
-bash CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableDFEAnotherSims.sh
-### Run the past commands with SGE_TASK_ID values going from 1-100.
-
-### Run the following commands
-perl GetMax4NsValueSimsLargerSpaceDFE.pl
-perl GetMax4NsValueSimsLargerSpaceHighPopDFE.pl

@@ -1,4 +1,3 @@
-setwd("/Users/vicentediegoortegadelvecchyo/Dropbox/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims")
 
 ### Another extra one
 
@@ -39,8 +38,6 @@ for (k in 1:1500){
     print(sum(Table[k,3:78]))
 }
 
-
-setwd("/Users/vicentediegoortegadelvecchyo/Dropbox/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/ScriptsOctober22_2017/Sims/UK10K_OnePercenters/ImportanceSamplingSims")
 
 ### Another extra one
 

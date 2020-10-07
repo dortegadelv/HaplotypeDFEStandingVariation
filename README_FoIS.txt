@@ -149,7 +149,7 @@ sbatch --array=1-105 CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTa
 # Run the past commands for SLURM_ARRAY_TASK_ID values going from 1 to 105.
 
 
-7) Get the maximum likelihood estimator for each dataset
+7) Get the maximum likelihood estimator for each dataset. Only run the first for loop in the *.sh scripts.
 
 cd Scripts/Sims/ConstantPopSize/ForwardSims/
 bash GetMax4NsValueFromTable.sh
