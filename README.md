@@ -38,4 +38,6 @@ Check README_ForwardSims.txt for instructions to run forward simulations with PR
 
 Check README_FoIS.txt for instructions to infer the distribution of fitness effects of variants at a particular frequency. This leads to the results shown in figures 3, 5 and 6.
 
-Check README_DFEUK10K.txt for instructions to infer the distribution of fitness effects of new variants in the UK10K dataset. These analysis lead to the results shown in Figure 9. The location of the L values calculated from the data, as well as the instructions to generate them, is detailed on README_DFEUK10K.txt . 
+Check README_DFEUK10K.txt for instructions to infer the distribution of fitness effects of new variants in the UK10K dataset. These analysis lead to the results shown in Figure 9. The location of the L values calculated from the data, as well as the instructions to generate them, is detailed on README_DFEUK10K.txt .  
+
+Check README_SI_Figs.txt for instructions to create the data for the supplementary figures.

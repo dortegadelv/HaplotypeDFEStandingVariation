@@ -1,4 +1,0 @@
-mkdir: cannot create directory ‘../../../Results/UK10K/ForwardSims/4Ns_0/HapLengths/’: File exists
-/tmp/slurmd/job67035758/slurm_script: line 96: 26437 Killed                  perl CreatePhasedToVCF.pl $MsselOut $PhasedDataOutputHaps $MsselPhasedOutFile $MinusNumber
-slurmstepd-midway2-0404: error: *** JOB 67035758 ON midway2-0404 CANCELLED AT 2020-04-13T22:57:41 ***
-slurmstepd-midway2-0404: error: Detected 1 oom-kill event(s) in step 67035758.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.

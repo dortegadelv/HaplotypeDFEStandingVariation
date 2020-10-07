@@ -1,6 +1,0 @@
-mkdir: cannot create directory ‘../../../Results/RecentBottleneckPointFivePercent/ForwardSims/4Ns_0/HapLengths/’: No such file or directory
-Impossible to open log file[../../../Results/RecentBottleneckPointFivePercent/ForwardSims/4Ns_0/MsselFiles/Log13501.txt] check writing permissions!
-
-real	0m0.086s
-user	0m0.003s
-sys	0m0.004s

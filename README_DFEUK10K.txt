@@ -66,7 +66,7 @@ perl PrintCpGPositionsOnePercentFrequency.pl
 qsub -t 1-183 CalculateHaplotypeLengthsSynonymousOnlyCpG.sh
 qsub -t 1-325 CalculateHaplotypeLengthsOnlyCpG.sh
 
-### The haplotypic lengths can be found on: Data/Plink/HapLengths
+### The haplotypic lengths can be found on: Data/Plink/HapLengths . The number of the hap lengths files surrounding non synonymous variants is found on Data/VariantNumberToInclude.txt . The number of the hap lengths files surrounding synonymous variants is found on Data/VariantNumberToIncludeSynonymous.txt 
 
 ### GetListOfExonsAwayFromCentromeresTelomeres
 
