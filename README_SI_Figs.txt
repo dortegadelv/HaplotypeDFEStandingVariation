@@ -193,4 +193,7 @@ Follow README_DFEUK10K.txt and the instructions to make SI 28.
 
 ## SI 36
 
-Follow README_DFEUK10K.txt 
+Follow README_DFEUK10K.txt and run HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims/GetFullTable.sh
+
+
+
