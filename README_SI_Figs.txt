@@ -126,5 +126,32 @@ and HaplotypeDFEStandingVariation/Scripts/Sims/ConcatenateManyStatisticsScripts/
 
 ## SI 26
 
+Run HaplotypeDFEStandingVariation/Scripts/Sims/ConstantPopSize/ImportanceSamplingSims/CreateNewP_L_Given_S_Table1000.sh after following README_FoIS.txt and then run cd Scripts/Sims/ConstantPopSize/ForwardSims
+sbatch --array=1-100 CreateSimTestTableWithLLResultsDenseGridNoRecLess.sh
+
+cd Scripts/Sims/ConstantPopSize/ForwardSims/
+bash GetMax4NsValueFromTable.sh
+
+Also:
+
+Run HaplotypeDFEStandingVariation/Scripts/Sims/ConstantPopSize/ImportanceSamplingSims/CreateNewP_L_Given_S_Table100.sh after following README_FoIS.txt and then run cd Scripts/Sims/ConstantPopSize/ForwardSims
+sbatch --array=1-100 CreateSimTestTableWithLLResultsDenseGridNoRecLess.sh
+
+cd Scripts/Sims/ConstantPopSize/ForwardSims/
+bash GetMax4NsValueFromTable.sh
+
+## SI 27
+
+Follow README_FoIS.txt and then run HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns0NewMisspecifiedAncestralState.sh , HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns25NewMisspecifiedAncestralState.sh , HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns50NewMisspecifiedAncestralState.sh , HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns-25NewMisspecifiedAncestralState.sh and HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns-50NewMisspecifiedAncestralState.sh taking values from 1 to 21 in SLURM_TASK_ID.
+
+Run HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableFromSimsSingleRecManyMisspecifiedAncestralState.sh taking values from 1 to 21 in SLURM_TASK_ID.
+
+## SI 28
+
+Follow README_FoIS.txt and then run HaplotypeDFEStandingVariation/Scripts/Sims/ConcatenateManyStatisticsScripts/SimulateLDatasetsWithMsselMultiLessBothSidesPhasingUK10K.sh for SLURM_TASK_ID values going from 551-560 , HaplotypeDFEStandingVariation/Scripts/Sims/ConcatenateManyStatisticsScripts/SimulateLDatasetsWithMsselMultiLessBothSidesPhasingPartTwoUK10K.sh for SLURM_TASK_ID values going from 18001-19500 , SimulateLDatasetsWithMsselMultiLessBothSidesPhasingPartThreeUK10K.sh  for SLURM_TASK_ID values going from 18001-19500.
+
+Run HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/CreateSimTestTableWithLLResultsDenseGridNoRecLessPhasing.sh taking values from 1 to 500 in SLURM_TASK_ID.
+
+## SI 29
 
 
