@@ -1,4 +1,4 @@
-### Get L values on missense variants
+### Get L values on missense variants (You will need to have the UK10K files UK10K_COHORT.REL-2012-06-02.beagle.anno.csq.shapeit.20140306.legend.gz and UK10K_COHORT.REL-2012-06-02.beagle.anno.csq.shapeit.20140306.hap.gz. Then substitute $SitesFile and $HapFile)
 
 First, to create the plink files used to calculate the frequencies, use:
 
@@ -14,7 +14,7 @@ qsub -t 1-22 CalculateFrequencyPlinkFiles.sh
 
 # Run the past script using SGE_TASK_ID values from 1-22
 
-Add the annotations for each site:
+Add the annotations for each site ( You will need to have the UK10K files UK10K_COHORT.REL-2012-06-02.beagle.anno.csq.shapeit.20140306.legend.gz and UK10K_COHORT.REL-2012-06-02.beagle.anno.csq.shapeit.20140306.hap.gz. Then substitute in $File ):
 
 perl AssignAnnotations.pl
 
@@ -24,7 +24,7 @@ perl AssignAncestralState.pl
 
 ####### CpG Sites
 #This compares the reference allele of the reference genome hg19 with what
-# the reference allele I got from the 1000 genomes VCF. Things match!
+# the reference allele I got from the 1000 genomes VCF. Things match! You will need to place the reference genome on the directory: ./../../Data/ReferenceGenomehg19/human_g1k_v37.fasta.gz.1
 
 perl RefAlleleMapCheck.pl
 
@@ -138,7 +138,7 @@ cd Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims/
 Run CreationOfDiscreteDistribution50.R to get the probabilities for each 2Ns value in each distribution of fitness effects.
 bash GetDFETable.sh
 
-#### Run the following R scripts to get the expected L values for different point 4Ns values and DFE's using the recombination rates around synonymous and non synonymous variants.
+#### Run the following R scripts to get the expected L values for different point 4Ns values and DFE's using the recombination rates around synonymous and non synonymous variants. Run this after running the pipelines from README_ForwardSims.txt and README_FoIS.txt.
 
 cd Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims/
 bash GetFullTable.sh
@@ -151,7 +151,11 @@ GetQuadraticParametersAnotherDFE.R
 
 cd Scripts/Sims/UK10K_OnePercenters/ForwardSims
 bash CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableDFE.sh
+bash CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableDFEAnother.sh
 sort -nrk2,2 ../../../../Results/UK10K_OnePercenters/ForwardSims/LLDataDFE.txt | head
+sort -nrk2,2 ../../../../Results/UK10K_OnePercenters/ForwardSims/LLDataDFEAnother.txt | head
+
+## LLDataDFE.txt contains the MLE since the likelihood is bigger than that of ../../../../Results/UK10K_OnePercenters/ForwardSims/LLDataDFEAnother.txt . This MLE has a scale value of 0.9 and a shape value of 75,000 .
 
 #### DFE bootstrap analysis
 
@@ -163,7 +167,7 @@ bash CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableDFEBootstrap.
 
 ### Get the maximum likelihood estimator on the bootstrap data
 
-perl GetMax4NsValueDFEBootstrap.pl
+perl GetMax4NsValueBootstrapLargerSpaceDFE.pl
 
 ### Do forward simulations under the UK10K scenario 
 
