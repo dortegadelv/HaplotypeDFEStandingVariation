@@ -42,7 +42,7 @@ You need to compile the following programs to run any of the steps. Some program
 
 The first step is to simulate many allele frequency trajectories under the Poisson Random Field model going forward in time with PReFerSim. To do that, you can run the following bash script by providing the following parameters:
 
-`bash CreateManyFrequencyTrajectories.sh PReFerSimParameterFile1 PReFerSimParameterFile2 Identifier AlleleFrequencyDown AlleleFrequencyUp NumberOfHaplotypesWithTheDerivedAllele NumberOfIndependentVariants DemographicScenarioFile ThetaHaplotype RhoHaplotype NumberOfSites`
+`bash CreateManyFrequencyTrajectories.sh PReFerSimParameterFile1 PReFerSimParameterFile2 Identifier NumberOfHaplotypesWithTheDerivedAllele NumberOfIndependentVariants ThetaHaplotype RhoHaplotype NumberOfSites`
 
 where:
 
@@ -68,7 +68,7 @@ Example of how to run the script:
 
 The output of that script will be two files located in the results folder. One file is Results/Traj_Identifier.txt  (substitute Identifier with the value of Identifier given to the script). That file contains the allele frequency trajectories. The other file is Results/Alleles_Identifier.txt which contains the IDs of the alleles that fell inside the frequency interval specified in the script.
 
-I recommend running the past script with many 'Identifier' numbers many times. You need to start from the number 1 and then go up in consecutive order until you get a big number of allele frequency trajectories, probably a number close to 10,000. Those trajectories will be sampled with replacement to generate the haplotypic data under the stuctured coalescent model. To check the number of allele frequency trajectories you have created run these two commands:
+I recommend running the past script with many 'Identifier' numbers many times. You need to start from the number 1 and then go up in consecutive order until you get a big number of allele frequency trajectories. A number close to 10,000 is recommended for point 4Ns selection coefficients and 50,000 is you are doing simulations from a DFE. Those trajectories will be sampled with replacement to generate the haplotypic data under the stuctured coalescent model. To check the number of allele frequency trajectories you have created run these two commands:
 
 `AlleleCount=$( wc -l Results/Alleles_*.txt | tail -n1 | awk '{print $1}' )`
 
@@ -115,23 +115,23 @@ Where:
 
 * HomozygoteFitness and HeterozygoteFitness are the fitnesses of the derived homozygote and heterozygote genotypes used when going backwards in time (see our paper for a description of the importance sampling approach to generate allele frequency trajectories). We used 0 for both values in all our simulations in the paper.
 
-* PresentDayAlleleFrequency - Frequency of the derived allele in the present. If you want to analyze the simulations generated on step 1 make sure that this number is equal to the division of  (NumberOfHaplotypesWithTheDerivedAllele from step 1) / ( PresentDayChromosomes from step 2 ).
+* PresentDayAlleleFrequency - Frequency of the derived allele in the present. If you want to analyze the simulations generated on step 1 make sure that this number is equal to the division of  (NumberOfHaplotypesWithTheDerivedAllele from the script CreateManyFrequencyTrajectories.sh ) )  / ( value of the variable n: from the file PReFerSimParameterFile1 inside CreateManyFrequencyTrajectories.sh  ).
 
 * Replicates - Number of allele frequency trajectories simulated under the importance sampling framework.
 
 * Identifier - A number to give to the script. Can be changed in case the user wants to run the same parameter many times and get a different output with a different identifier every time. Also a random seed.
 
-* DemScenario - Demographic history. This follows the syntax from PReFerSim to get demographic histories.  This should match what you simulated on step 1.
+* DemScenario - Demographic history. This follows the syntax from PReFerSim to get demographic histories.  This should match the variable DemographicHistory: from the file DemographicScenarioFile provided on the script CreateManyFrequencyTrajectories.sh  .
 
-* SelValuesForwardFile - File with the selection values that will be evaluated when going forwards in time. There should be one selection coefficient per row.
+* SelValuesForwardFile - File with the selection coefficient values that will be evaluated when going forwards in time. There should be one selection coefficient per row.
 
-* SampleSize - Number of chromosomes sampled from the present. This should match the number used after the variable 'n: ' inside the files PReFerSimParameterFile1 and PReFerSimParameterFile2 used on step 1.
+* SampleSize - Number of chromosomes sampled from the present. This should match the number used after the variable 'n: ' inside the files PReFerSimParameterFile1 and PReFerSimParameterFile2 used on the script CreateManyFrequencyTrajectories.sh  .
 
 Example of how to run the script:
 
 `bash SimulateUsingISRoutine.sh 0.0 0.0 0.01 1000 1 PopulationExpansionModel.txt NewSelectionValues.txt 4000`
 
-That scripts runs an importance sampling method based on a paper by Monty Slatkin (2001, Genetics Research) to simulate a set of allele frequency trajectories from genetic variants evolving under a particular strength of natural selection. More details can be found in our paper. I recommend running the past script with many 'Identifier' numbers many times until you get 100,000 trajectories going backwards in time. You need to start from the 'Identifier' number 1 and then go up in consecutive order. Two output files will be created: Results/ImportanceSamplingSims_Identifier.txtTrajectory.txt and Results/ImportanceSamplingSims_Identifier.txtWeightYears.txt . The first file contains the simulated trajectories starting from the present and going backwards in time. The second file has the weights associated with each trajectory depending on the selection coefficient used when going forwards in time  (see section 'Integration over the space of allele frequency trajectories using importance sampling' from our paper ). To check the number of allele frequency trajectories you have created run these two commands:
+That scripts runs an importance sampling method based on a paper by Monty Slatkin (2001, Genetics Research) to simulate a set of allele frequency trajectories from genetic variants evolving under a particular strength of natural selection. More details can be found in our paper. I recommend running the past script with many 'Identifier' numbers many times until you get 100,000 trajectories going backwards in time. You need to start from the 'Identifier' number 1 and then go up in consecutive order until a certain integer value NumberOfSims. Two output files will be created: Results/ImportanceSamplingSims_Identifier.txtTrajectory.txt and Results/ImportanceSamplingSims_Identifier.txtWeightYears.txt . The first file contains the simulated trajectories starting from the present and going backwards in time. The second file has the weights associated with each trajectory depending on the selection coefficient used when going forwards in time  (see section 'Integration over the space of allele frequency trajectories using importance sampling' from our paper ). To check the number of allele frequency trajectories you have created run these two commands:
 
 `Traj=$( wc -l Results/ImportanceSamplingSims_*.txtWeightYears.txt | tail -n1 | awk '{print $1}' )`
 
@@ -144,7 +144,7 @@ To reduce computing time and disk space, only changes in allele frequency across
 Where:
 * NumberOfSims - This specifies the number of files where we will transform the trajectories to a mssel format. The identifier number starts with 1 and ends at NumberOfSims. 
 
-* DemographicScenario - This follows the syntax from PReFerSim to get demographic histories.  This should match what you simulated on step 1.
+* DemographicScenario - This follows the syntax from PReFerSim to get demographic histories.  This should match the variable DemographicHistory: from the file DemographicScenarioFile provided on the script CreateManyFrequencyTrajectories.sh 
 
 * Replicates - Number of allele frequency trajectories simulated under the importance sampling framework in each file produced from each IS run.
 
@@ -159,21 +159,21 @@ Script structure:
 `bash RunMsselCalculateDistance.sh ThetaHaplotype RhoHaplotype Identifier DemographicHistory NumberOfSites Replicates SimsPerTrajectory NumberOfHaplotypesWithTheDerivedAllele`
 
 Where:
-* ThetaHaplotype - Theta of the whole haplotype simulated. Note that the variant of interest sits on one end of the haplotype and the L values are the distances from the variant of interest to the first difference between a pair of haplotypes. This should match what you simulated on step 1.
+* ThetaHaplotype - Theta of the whole haplotype simulated. Note that the variant of interest sits on one end of the haplotype and the L values are the distances from the variant of interest to the first difference between a pair of haplotypes. This should match what you simulated on the script CreateManyFrequencyTrajectories.sh .
 
-* RhoHaplotype - Rho of the whole haplotype simulated. This should match what you simulated on step 1.
+* RhoHaplotype - Rho of the whole haplotype simulated. This should match what you simulated on the script CreateManyFrequencyTrajectories.sh .
 
 * Identifier - A number to give to the script. Can be changed in case the user wants to run the same parameter file many times and get a different output with a different identifier every time. Also a random seed. This number should match the number used in the script SimulateUsingISRoutine.sh .
 
-* DemographicHistory - This follows the syntax from PReFerSim to get demographic histories.  This should match what you simulated on step 1.
+* DemographicHistory - This follows the syntax from PReFerSim to get demographic histories.  This should match the variable DemographicHistory: from the file DemographicScenarioFile provided on the script CreateManyFrequencyTrajectories.sh  .
 
 * Replicates - Number of allele frequency trajectories simulated under the importance sampling framework.
 
 * NumberOfSites - Number of sites in the haplotype.
 
-* SimsPerTrajectory - Number of coalescent simulations that will be done for each trajectory generated under the importance sampling framework. An increase of this number generates a bigger precision on the results, since using a greater number of coalescent simulations means a larger collection of L values will be used to calculate P(L|s).
+* SimsPerTrajectory - Number of coalescent simulations that will be done for each trajectory generated under the importance sampling framework. An increase of this number generates a bigger precision on the results, since using a greater number of coalescent simulations means a larger collection of L values will be used to calculate P(L|s). We recommend using a value of 100 as done in our paper.
 
-* NumberOfHaplotypesWithTheDerivedAllele - For every coalescent simulation, this will be this number of haplotypes with the derived allele.  This should match what you simulated on step 1.
+* NumberOfHaplotypesWithTheDerivedAllele - For every coalescent simulation, this will be this number of haplotypes with the derived allele.  This should match what you the variable NumberOfHaplotypesWithTheDerivedAllele used on the script CreateManyFrequencyTrajectories.sh .
 
 You can, as an example, run the following command:
 
@@ -189,7 +189,7 @@ If you did simulations using a single identifier number this should be:
 
 `bash CreateNewP_L_Given_S_Table.sh 1`
 
-Where NumberOfIdentifiers must match the number of times you ran SimulateUsingISRoutine.sh and RunMsselCalculateDistance.sh starting from 1. Three files will be created: Results/Exit.txtWeightYears.txt has the weights (see section 'Integration over the space of allele frequency trajectories using importance sampling'). Results/NewMiniExp10000.txt has the values of L(4Ns, allele frequency, Demographic scenario | L) starting from the third row, where the selection coefficients are listed following the order from in the file SelValuesForwardFile given to the script SimulateUsingISRoutine.sh . The first column gives the likelihood L(4Ns, allele frequency, Demographic scenario | L = w1) for the window w1, the second column gives the likelihood L(4Ns, allele frequency, Demographic scenario | L = w2) for the window w2, etc . The file Results/TableToTest.txt is identical to Results/NewMiniExp10000.txt but with an extra column, which is the first column from Results/NewMiniExp10000.txt duplicated. Results/TableToTest.txt is the file that will be used to calculate the maximum likelihood estimates from a single selection coefficients in step 4).
+Where NumberOfIdentifiers must match the number of times you ran SimulateUsingISRoutine.sh and RunMsselCalculateDistance.sh starting from 1 with different consecutive identifier numbers. Three files will be created: Results/Exit.txtWeightYears.txt has the weights (see section 'Integration over the space of allele frequency trajectories using importance sampling'). Results/NewMiniExp10000.txt has the values of L(4Ns, allele frequency, Demographic scenario | L) starting from the third row, where the selection coefficients are listed following the order from in the file SelValuesForwardFile given to the script SimulateUsingISRoutine.sh . The first column gives the likelihood L(4Ns, allele frequency, Demographic scenario | L = w1) for the window w1, the second column gives the likelihood L(4Ns, allele frequency, Demographic scenario | L = w2) for the window w2, etc . The file Results/TableToTest.txt is identical to Results/NewMiniExp10000.txt but with an extra column, which is the first column from Results/NewMiniExp10000.txt duplicated. Results/TableToTest.txt is the file that will be used to calculate the maximum likelihood estimates from a single selection coefficients in step 4).
 
 You can estimate the effective sample size (ESS) for each value of selection given in the table provided by the variable SelValuesForwardFile from the script SimulateUsingISRoutine.sh . To do that, run:
 
@@ -210,7 +210,7 @@ AlphaGrid <- 0.01*1:30
 
 GammaGrid <- 5*1:70
 
-And put the values you wish to explore. Also, currently the threshold 4Ns is equal to 300 (check equation 3 from the paper). If you want to change that, modify the variable UpperThreshold appearing at the top of the script. The integration over the 4Ns values is currently done over the integer values of 4Ns (0, 1, 2, ... etc up to the value of the UpperThreshold). The likelihoods L(alpha, gamma, allele frequency, Demographic scenario | L) will be given on the file Results/DFETableToTest.txt starting from the third row and following the same format as Results/TableToTest.txt . The order of the alpha and beta parameters from that file is given in the file TableDFE/AnotherExtraTableOfProbabilities.txt .
+And put the values you wish to explore. Also, currently the threshold 4Ns is equal to 300 (check equation 3 from the paper). If you want to change that, modify the variable UpperThreshold appearing at the top of the script. The integration over the 4Ns values is currently done over the integer values of 4Ns (0, 1, 2, ... etc up to the value of the UpperThreshold). The likelihoods L(alpha, gamma, allele frequency, Demographic scenario | L) will be given on the file Results/DFETableToTest.txt starting from the third row and follow the same format as Results/TableToTest.txt . The order of the alpha and beta parameters from that file is given in the file TableDFE/AnotherExtraTableOfProbabilities.txt . You need to do step 1) and 2) before doing this step.
 
 ## 4) Compute the maximum likelihood estimate of either a) the single selection coefficient 4Ns or b) the two parameters alpha and beta.
 
@@ -220,7 +220,7 @@ Structure of the script to calculate the maximum likelihood estimate from one si
 
 Where:
 
-* NumberOfIdentifiers must match the number of number of haplotype files starting with the prefix HapLengths that you have on the Results file
+* NumberOfIdentifiers must match the number of number of haplotype files starting with the prefix HapLengths that you have on the Results folder
 
 * SelectionValues File with the selection values that will be evaluated.
 
@@ -230,7 +230,7 @@ Example:
 
 The maximum likelihood estimate will be found in the file Results/MaxLLEstimates.txt
 
-You can also do the find the maximum likelihood estimate for the alpha and gamma parameters of a partially collapsed gamma distribution of fitness effects:
+You can also do the find the maximum likelihood estimate for the alpha and beta parameters of a partially collapsed gamma distribution of fitness effects:
 
 `bash CalculateLLDFE.sh NumberOfIdentifiers SelectionValuesToEvaluate`
 
@@ -313,7 +313,7 @@ The start point are three files: A Plink tped and a Plink tfam file where the in
 
 * FrequencySNPFile - A list of the SNPs at a certain frequency in the population.
 
-* SNPNumberToTake - The row number defining the SNP that will be taken from the FrequencySNPFile file to calculate L.
+* SNPNumberToTake - The row number defining the SNPs that will be taken from the FrequencySNPFile file to calculate L.
 
 * PlinkTpedFilePrefix - Prefix of the tped file
 
