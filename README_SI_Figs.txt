@@ -87,7 +87,7 @@ We used the 7 scripts from the directory Scripts/DataAnalysis/InferDFEWithHapLen
 
 ## SI 19
 
-Run the script /HaplotypeDFEStandingVariation/Scripts/DataAnalysis/InferDFEWithHapLengths/ABC_Analysis/ABCDemographyAnalysisNotCpGs.sh 500 times to obtain data from simulations to perform the ABC analysis.
+Run the script /HaplotypeDFEStandingVariation/Scripts/DataAnalysis/InferDFEWithHapLengths/ABC_Analysis/ABCDemographyAnalysisNotCpGs.sh 500 times to obtain data from simulations to perform the ABC analysis. Then run the first 60 lines in HaplotypeDFEStandingVariation/Scripts/DataAnalysis/InferDFEWithHapLengths/ABC_Analysis/ConcatenateMismatchStatisticAndLDistances.sh to get ../../../../Results/ABCAnalysis/Best100NotCpG.txt
 
 ## SI 20
 
