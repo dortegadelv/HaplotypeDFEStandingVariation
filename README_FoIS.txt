@@ -177,7 +177,7 @@ perl ../../ConstantPopSize/ImportanceSamplingSims/EstimateAge.pl ../../../../Res
 
 mkdir ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart/
 mkdir ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/PositivePart/
-mkdir ../../../../Results/PopExpansionBoykoPlusPositive/ForwardSims/MousePart/
+mkdir ../../../../Results/PopExpansionBoykoPlusPositive/ForwardSims/BoykoPart/
 mkdir ../../../../Results/PopExpansionBoykoPlusPositive/ForwardSims/PositivePart/
 cd Scripts/Sims/ConstantPopSizeBoyko/ForwardSims/
 sbatch --array=1-2500 ConstantSizeBoyko.sh
@@ -284,6 +284,7 @@ sbatch --array=1-500 CreateSimTestTableWithLLResultsDenseGridNoRecSmall.sh
 
 9) Get the MLE
 
+mkdir Results/MLEDFEs/
 cd Scripts/Sims/ConcatenateManyStatisticsScripts/GetMLEDFEs
 bash ConcatenateLLDFEResults.sh
 bash GetMLEDFEs.sh

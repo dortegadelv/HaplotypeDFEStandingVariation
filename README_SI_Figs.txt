@@ -11,7 +11,7 @@ Follow README_FoIS.txt to get MLE estimates of the DFE, and just run the SuppFig
 Run HaplotypeDFEStandingVariation/Scripts/Sims/PopExpansionMousePlusPositive/ForwardSims/PopExpansionMouse.sh with many $SGE_TASK_ID values until you get at least 40,000 variants ending at a 1% frequency. Run the scripts HaplotypeDFEStandingVariation/Scripts/Sims/PopExpansionBoykoWeakPlusPositive/ForwardSims/PopExpansionBoyko.sh with many $SGE_TASK_ID values to get 50,000 variants. If needed, create the results directories to direct the output files from those two bash scripts.
 
 Then run the two lines from HaplotypeDFEStandingVariation/Scripts/Sims/ConcatenateManyStatisticsScripts/PrintSValuesAtParticularFrequency.sh that help you obtain the files ../Results/CalculateDFEOfNewMutations/ExitOnePercentSValuesPopExpansionBoykoWeak.txt 
-and ../Results/CalculateDFEOfNewMutations/ExitOnePercentSValuesPopExpansionMouse5000.txt
+and ../Results/CalculateDFEOfNewMutations/ExitOnePercentSValuesPopExpansionMouse5000.txt Create the directories Results/ExitSValues/  ../Results/CalculateDFEOfNewMutations/ if needed.
 
 ### SI 4
 
@@ -19,7 +19,8 @@ Run HaplotypeDFEStandingVariation/Scripts/Sims/PopExpansionBoykoPlusPositiveLong
 
 Then run the lines from HaplotypeDFEStandingVariation/Scripts/Sims/ConcatenateManyStatisticsScripts/PrintSValuesAtParticularFrequency.sh that help you obtain the files ../Results/CalculateDFEOfNewMutations/ExitOnePercentSValuesPopExpansionBoykoLongBurnIn.txt ,
  ../Results/CalculateDFEOfNewMutations/ExitOnePercentSValuesPopExpansionMouseLongBurnIn.txt , ../Results/CalculateDFEOfNewMutations/ExitOnePercentSValuesPopExpansionBoykoLongerBurnIn.txt ,
- ../Results/CalculateDFEOfNewMutations/ExitOnePercentSValuesPopExpansionMouseLongerBurnIn.txt
+ ../Results/CalculateDFEOfNewMutations/ExitOnePercentSValuesPopExpansionMouseLongerBurnIn.txt . Create the directories ../Results/CalculateDFEOfNewMutations/ if needed.
+
 
 ### SI 5
 
@@ -30,7 +31,8 @@ Run HaplotypeDFEStandingVariation/Scripts/Sims/ConstantPopSizeMouse/ForwardSims/
 
 Then run the lines from HaplotypeDFEStandingVariation/Scripts/Sims/ConcatenateManyStatisticsScripts/PrintSValuesAtParticularFrequency.sh that help you obtain the files ../Results/CalculateDFEOfNewMutations/ExitOnePercentSValuesConstantMouse.txt ,
  ../Results/CalculateDFEOfNewMutations/ExitOnePercentSValuesConstantMouseLongBurnIn.txt , ../Results/CalculateDFEOfNewMutations/ExitOnePercentSValuesConstantMouseLongerBurnIn.txt , ../Results/CalculateDFEOfNewMutations/ExitOnePercentSValuesConstantBoyko.txt ,
- ../Results/CalculateDFEOfNewMutations/ExitOnePercentSValuesConstantBoykoLongBurnIn.txt , ../Results/CalculateDFEOfNewMutations/ExitOnePercentSValuesConstantBoykoLongerBurnIn.txt .
+ ../Results/CalculateDFEOfNewMutations/ExitOnePercentSValuesConstantBoykoLongBurnIn.txt , ../Results/CalculateDFEOfNewMutations/ExitOnePercentSValuesConstantBoykoLongerBurnIn.txt . Create the directories ../Results/CalculateDFEOfNewMutations/ if needed.
+
 
 ### SI 6
 
@@ -39,12 +41,13 @@ Follow README_FoIS.txt to get the results needed to do this plot.
 ### SI 7 and 8
 
 Run 
-HaplotypeDFEStandingVariation/Scripts/DataAnalysis/InferDFEWithHapLengths/ABC_Analysis/ABCDemographyAnalysisConstantPopSizeNotCpGs.sh and HaplotypeDFEStandingVariation/Scripts/DataAnalysis/InferDFEWithHapLengths/ABC_Analysis/ABCDemographyAnalysisPopExpansionNotCpGs.sh 500 times each with a different SLURM_TASK_ID value.
+HaplotypeDFEStandingVariation/Scripts/DataAnalysis/InferDFEWithHapLengths/ABC_Analysis/ABCDemographyAnalysisConstantPopSizeNotCpGs.sh and HaplotypeDFEStandingVariation/Scripts/DataAnalysis/InferDFEWithHapLengths/ABC_Analysis/ABCDemographyAnalysisPopExpansionNotCpGs.sh 500 times each with a different SLURM_TASK_ID value. Create the directories Results/ABCAnalysisConstantPopSize/Output/ and Results/ABCAnalysisConstantPopSize/ if needed. Also create the directories Results/ABCAnalysisPopExpansion/Output/ and Results/ABCAnalysisPopExpansion/ if needed.
 
 Then run the commands in HaplotypeDFEStandingVariation/Scripts/DataAnalysis/InferDFEWithHapLengths/ABC_Analysis/ConcatenateMismatchStatisticAndLDistances.sh to get 5 Results/ABCResults/Best100NotCpGPopExpansion files . Also get 5 Results/ABCResults/Best100NotCpGConstantPopSize files.
 
 ### SI 9
 
+Follow README_ForwardSims.txt .
 Run HaplotypeDFEStandingVariation/Scripts/Sims/ConstantPopSize/ForwardSims/ConstantSize_4Ns0_99PercentFreqAllele.sh , HaplotypeDFEStandingVariation/Scripts/Sims/ConstantPopSize/ForwardSims/ConstantSize_4Ns50_99PercentFreqAllele.sh and HaplotypeDFEStandingVariation/Scripts/Sims/ConstantPopSize/ForwardSims/ConstantSize_4Ns100_99PercentFreqAllele.sh to get 10,000 allele frequency trajectories. Do the same with HaplotypeDFEStandingVariation/Scripts/Sims/PopExpansion/ForwardSims/ConstantSize_4Ns0_99PercentFreqAllele.sh , HaplotypeDFEStandingVariation/Scripts/Sims/PopExpansion/ForwardSims/ConstantSize_4Ns50_99PercentFreqAllele.sh and HaplotypeDFEStandingVariation/Scripts/Sims/PopExpansion/ForwardSims/ConstantSize_4Ns100_99PercentFreqAllele.sh to get 10,000 allele frequency trajectories. Then run the commands shown after '############## HF' to get the reduced trajectories in HaplotypeDFEStandingVariation/Scripts/Sims/ConstantPopSize/ForwardSims/CreateReducedTrajectoriesFileHF.sh . Also get the 10,000 trajectories in HaplotypeDFEStandingVariation/Scripts/Sims/PopExpansion/ForwardSims/CreateReducedTrajectoriesFileHF.sh
 
 Run HaplotypeDFEStandingVariation/Scripts/Sims/ConcatenateManyStatisticsScripts/SimulateLDatasetsWithMsselMultiLessBothSidesMisspecifiedAncestralState.sh with SGE_TASK_ID values from 101-150 and 301-350. Then run HaplotypeDFEStandingVariation/Scripts/Sims/ConstantPopSize/ForwardSims/CreateSimTestTableWithLLResultsDenseGridNoRecLessAncMisspecified.sh from 1-100 and HaplotypeDFEStandingVariation/Scripts/Sims/PopExpansion/ForwardSims/CreateSimTestTableWithLLResultsDenseGridNoRecLessAncMisspecified.sh from 1-100.
@@ -53,6 +56,7 @@ Then run the commands from HaplotypeDFEStandingVariation/Scripts/Sims/PopExpansi
 
 ### SI 10
 
+Follow README_ForwardSims.txt and README_FoIS.txt.
 Run HaplotypeDFEStandingVariation/Scripts/Sims/ConcatenateManyStatisticsScripts/SimulateLDatasetsWithMsselMultiLessBothSidesDeleteSingletons.sh from 101-150 and 301-350.
 
 Run HaplotypeDFEStandingVariation/Scripts/Sims/ConstantPopSizeNoSingletons/ImportanceSamplingSimsRunMsselCalculateDistance10000.sh from 1 to 1000. Then run SumDistances10000.pl and then run CreateNewP_L_Given_S_Table.sh
@@ -61,6 +65,7 @@ Then run the commands from HaplotypeDFEStandingVariation/Scripts/Sims/PopExpansi
 
 ### SI 11 and 12
 
+Follow README_ForwardSims.txt and README_FoIS.txt.
 Run HaplotypeDFEStandingVariation/Scripts/Sims/ConcatenateManyStatisticsScripts/SimulateLDatasetsWithMsselMultiLessBothSidesPhasing.sh with SGE_TASK_ID values from 101-150 and 301-350.
 
 Then run HaplotypeDFEStandingVariation/Scripts/Sims/ConstantPopSize/ForwardSims/CreateSimTestTableWithLLResultsDenseGridNoRecLessPhasing.sh from 1-100 
@@ -69,6 +74,7 @@ Then run the commands from HaplotypeDFEStandingVariation/Scripts/Sims/PopExpansi
 
 ### SI 13 and 14
 
+Follow README_ForwardSims.txt and README_FoIS.txt.
 Run HaplotypeDFEStandingVariation/Scripts/Sims/ConcatenateManyStatisticsScripts/SimulateLDatasetsWithMsselMultiLessBothSidesFivePercentBigMut.sh , HaplotypeDFEStandingVariation/Scripts/Sims/ConcatenateManyStatisticsScripts/SimulateLDatasetsWithMsselMultiLessBothSidesFivePercentSmallMut.sh , HaplotypeDFEStandingVariation/Scripts/Sims/ConcatenateManyStatisticsScripts/SimulateLDatasetsWithMsselMultiLessBothSidesFivePercentFivePercentBigMut.sh , HaplotypeDFEStandingVariation/Scripts/Sims/ConcatenateManyStatisticsScripts/SimulateLDatasetsWithMsselMultiLessBothSidesFivePercentFivePercentSmallMut.sh , HaplotypeDFEStandingVariation/Scripts/Sims/ConcatenateManyStatisticsScripts/SimulateLDatasetsWithMsselMultiLessBothSidesFivePercentBigRec.sh , HaplotypeDFEStandingVariation/Scripts/Sims/ConcatenateManyStatisticsScripts/SimulateLDatasetsWithMsselMultiLessBothSidesFivePercentSmallRec.sh , HaplotypeDFEStandingVariation/Scripts/Sims/ConcatenateManyStatisticsScripts/SimulateLDatasetsWithMsselMultiLessBothSidesFivePercentFivePercentBigRec.sh , HaplotypeDFEStandingVariation/Scripts/Sims/ConcatenateManyStatisticsScripts/SimulateLDatasetsWithMsselMultiLessBothSidesFivePercentFivePercentSmallRec.sh , with SLURM_TASK_ID values from 101-150 and 301-350.
 
 Then run HaplotypeDFEStandingVariation/Scripts/Sims/ConstantPopSize/ForwardSims/CreateSimTestTableWithLLResultsDenseGridNoRecLessRecMisspecified.sh, HaplotypeDFEStandingVariation/Scripts/Sims/ConstantPopSize/ForwardSims/CreateSimTestTableWithLLResultsDenseGridNoRecLessMutMisspecified.sh, HaplotypeDFEStandingVariation/Scripts/Sims/ConstantPopSize/ForwardSims/CreateSimTestTableWithLLResultsDenseGridNoRecLessRecMutFivePercentMisspecified.sh from 1-100 
@@ -77,6 +83,7 @@ Then run the commands from HaplotypeDFEStandingVariation/Scripts/Sims/PopExpansi
 
 ## SI 15, 16, 17 and 18
 
+Follow README_ForwardSims.txt and README_FoIS.txt.
 The simulations can be performed using different values of the SLURM_TASK_ID values in the files /HaplotypeDFEStandingVariation/Scripts/Sims/SLiM/PopExpansion/PopExpansionChangedRecRate/SimulationPipeline.sh , /HaplotypeDFEStandingVariation/Scripts/Sims/SLiM/PopExpansion/PopExpansionChangedRecRate4Ns50/SimulationPipeline.sh , /HaplotypeDFEStandingVariation/Scripts/Sims/SLiM/PopExpansion/PopExpansionChangedRecRate4Ns100/SimulationPipeline.sh , /HaplotypeDFEStandingVariation/Scripts/Sims/SLiM/PopExpansion/PopExpansionChangedRecRateBoykoDFE/SimulationPipeline.sh . Run those commands until you obtain at least 600 Nonsynonymous (ReplicateNS_HapLength* file) and synonymous (ReplicateSyn_HapLength* file) files replicates when running perl SeparateNSandSynHapLengthFiles.pl in each directory.
 
 Then we use the perl script ShuffleLDistribution.pl to create 10 replicates of L values with synonymous sites. We must provide a number to that script in the command line (e.g. run perl ShuffleLDistribution.pl 1). Then run the commands below ´########## Random´ on the file LCalculationsSyn.sh to get the L distribution file 'LDistributionSynSitesRand$i.txt' where $i takes a value from 1 to 10.
@@ -99,6 +106,7 @@ We ran HaplotypeSelectionProject/Scripts/DataAnalysis/InferDFEWithHapLengths/Get
 
 ## SI 22
 
+Follow README_ForwardSims.txt and README_FoIS.txt and README_DFEUK10K.txt.
 We ran HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns-25.sh , HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns-50.sh , HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns0.sh , HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns25.sh , HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns50.sh with values from 1 to 50 in SLURM_TASK_ID in each case.
 
 Then we ran Scripts/Sims/UK10K_OnePercenters/ForwardSims/CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableFromSims.sh with values from 1 to 50.
@@ -107,6 +115,7 @@ Then run Scripts/Sims/UK10K_OnePercenters/ForwardSims/GetMax4NsValueSims.pl
 
 ## SI 23
 
+Follow README_ForwardSims.txt and README_FoIS.txt and README_DFEUK10K.txt.
 cd Scripts/Sims/UK10K_OnePercenters/ForwardSims
 sbatch --array=1-21 RunMssel_4Ns0singleRecManyRec.sh
 sbatch --array=1-21 RunMssel_4Ns25singleRecManyRec.sh
@@ -121,11 +130,12 @@ Then run Scripts/Sims/UK10K_OnePercenters/ForwardSims/GetMax4NsValueSimsSingleRe
 
 ## SI 24 and 25
 
-Run the forward in time simulations and get the ESS from SI 23, README_FoIS.txt and README_ForwardSims.txt. Then run HaplotypeDFEStandingVariation/Scripts/Sims/ConcatenateManyStatisticsScripts/CalculatePLGivenSDistribution.sh
+Run the forward in time simulations and get the ESS from SI 23. Follow README_ForwardSims.txt and README_FoIS.txt and README_DFEUK10K.txt . Then run HaplotypeDFEStandingVariation/Scripts/Sims/ConcatenateManyStatisticsScripts/CalculatePLGivenSDistribution.sh
 and HaplotypeDFEStandingVariation/Scripts/Sims/ConcatenateManyStatisticsScripts/CalculatePLGivenSDistributionUK10K.sh
 
 ## SI 26
 
+Follow README_ForwardSims.txt and README_FoIS.txt and README_DFEUK10K.txt.
 Run HaplotypeDFEStandingVariation/Scripts/Sims/ConstantPopSize/ImportanceSamplingSims/CreateNewP_L_Given_S_Table1000.sh after following README_FoIS.txt and then run cd Scripts/Sims/ConstantPopSize/ForwardSims
 sbatch --array=1-100 CreateSimTestTableWithLLResultsDenseGridNoRecLess.sh
 
@@ -142,25 +152,25 @@ bash GetMax4NsValueFromTable.sh
 
 ## SI 27
 
-Follow README_DFEUK10K.txt and then run HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns0NewMisspecifiedAncestralState.sh , HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns25NewMisspecifiedAncestralState.sh , HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns50NewMisspecifiedAncestralState.sh , HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns-25NewMisspecifiedAncestralState.sh and HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns-50NewMisspecifiedAncestralState.sh taking values from 1 to 21 in SLURM_TASK_ID.
+Follow README_ForwardSims.txt and README_FoIS.txt and README_DFEUK10K.txt and then run HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns0NewMisspecifiedAncestralState.sh , HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns25NewMisspecifiedAncestralState.sh , HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns50NewMisspecifiedAncestralState.sh , HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns-25NewMisspecifiedAncestralState.sh and HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns-50NewMisspecifiedAncestralState.sh taking values from 1 to 21 in SLURM_TASK_ID.
 
 Run HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableFromSimsSingleRecManyMisspecifiedAncestralState.sh taking values from 1 to 21 in SLURM_TASK_ID.
 
 ## SI 28
 
-Follow README_DFEUK10K.txt and then run HaplotypeDFEStandingVariation/Scripts/Sims/ConcatenateManyStatisticsScripts/SimulateLDatasetsWithMsselMultiLessBothSidesPhasingUK10K.sh for SLURM_TASK_ID values going from 551-560 , HaplotypeDFEStandingVariation/Scripts/Sims/ConcatenateManyStatisticsScripts/SimulateLDatasetsWithMsselMultiLessBothSidesPhasingPartTwoUK10K.sh for SLURM_TASK_ID values going from 18001-19500 , SimulateLDatasetsWithMsselMultiLessBothSidesPhasingPartThreeUK10K.sh  for SLURM_TASK_ID values going from 18001-19500.
+Follow README_ForwardSims.txt and README_FoIS.txt and README_DFEUK10K.txt and then run HaplotypeDFEStandingVariation/Scripts/Sims/ConcatenateManyStatisticsScripts/SimulateLDatasetsWithMsselMultiLessBothSidesPhasingUK10K.sh for SLURM_TASK_ID values going from 551-560 , HaplotypeDFEStandingVariation/Scripts/Sims/ConcatenateManyStatisticsScripts/SimulateLDatasetsWithMsselMultiLessBothSidesPhasingPartTwoUK10K.sh for SLURM_TASK_ID values going from 18001-19500 , SimulateLDatasetsWithMsselMultiLessBothSidesPhasingPartThreeUK10K.sh  for SLURM_TASK_ID values going from 18001-19500.
 
 Run HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/CreateSimTestTableWithLLResultsDenseGridNoRecLessPhasing.sh taking values from 1 to 500 in SLURM_TASK_ID.
 
 ## SI 29
 
-Follow README_DFEUK10K.txt . Then run HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns0singleRecManyRecHighMut.sh , HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns0singleRecManyRecLowMut.sh , HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns-25singleRecManyRecHighMut.sh , HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns-25singleRecManyRecLowMut.sh , HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns-50singleRecManyRecHighMut.sh , HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns-50singleRecManyRecLowMut.sh for a SLURM_TASK_ID value of 11.
+Follow README_ForwardSims.txt and README_FoIS.txt and README_DFEUK10K.txt. Then run HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns0singleRecManyRecHighMut.sh , HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns0singleRecManyRecLowMut.sh , HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns-25singleRecManyRecHighMut.sh , HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns-25singleRecManyRecLowMut.sh , HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns-50singleRecManyRecHighMut.sh , HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RunMssel_4Ns-50singleRecManyRecLowMut.sh for a SLURM_TASK_ID value of 11.
 
 Run HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableFromSimsSingleRecManyMisMut.sh for SLURM_TASK_ID values going from 51-55.
 
 ## SI 30 and SI 31
 
-Follow README_DFEUK10K.txt . Then run HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/Expansion_DFE.sh , HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/Expansion_DFEHighPop.sh , HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/Expansion_DFEMouse.sh and HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/Expansion_DFEMouseHighPop.sh with SLURM_TASK_ID values from 1 to 100.
+Follow README_ForwardSims.txt and README_FoIS.txt and README_DFEUK10K.txt. Then run HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/Expansion_DFE.sh , HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/Expansion_DFEHighPop.sh , HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/Expansion_DFEMouse.sh and HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/Expansion_DFEMouseHighPop.sh with SLURM_TASK_ID values from 1 to 100.
 
 Run HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/CreateReducedTrajectoriesFileAllDFE.sh
 
@@ -173,13 +183,13 @@ Then run HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardS
 
 ## SI 32
 
-Follow README_DFEUK10K.txt . Then run HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableBootstrap.sh with SLURM_TASK_ID values from 1 to 100.
+Follow README_ForwardSims.txt and README_FoIS.txt and README_DFEUK10K.txt . Then run HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableBootstrap.sh with SLURM_TASK_ID values from 1 to 100.
 
 Then run perl GetMax4NsValueBootstrap.pl
 
 ## SI 33
 
-Follow README_DFEUK10K.txt . Then run HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableDFEBootstrap.sh with SLURM_TASK_ID values from 1 to 100.
+Follow README_ForwardSims.txt and README_FoIS.txt and README_DFEUK10K.txt . Then run HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableDFEBootstrap.sh with SLURM_TASK_ID values from 1 to 100.
 
 Then run perl GetMax4NsValueDFEBootstrap.pl
 

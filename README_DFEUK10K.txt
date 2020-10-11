@@ -1,7 +1,8 @@
-### Get L values on missense variants (You will need to have the UK10K files UK10K_COHORT.REL-2012-06-02.beagle.anno.csq.shapeit.20140306.legend.gz and UK10K_COHORT.REL-2012-06-02.beagle.anno.csq.shapeit.20140306.hap.gz. Then substitute $SitesFile and $HapFile)
+### Get L values on missense variants (You will need to have the UK10K files UK10K_COHORT.REL-2012-06-02.beagle.anno.csq.shapeit.20140306.legend.gz and UK10K_COHORT.REL-2012-06-02.beagle.anno.csq.shapeit.20140306.hap.gz. Then substitute the variables $SitesFile and $HapFile to the location on those files on the script HaplotypeDFEStandingVariation/Scripts/DataAnalysis/CreatePlinkFiles.pl)
 
 First, to create the plink files used to calculate the frequencies, use:
 
+mkdir Data/Plink/
 cd Scripts/DataAnalysis
 qsub -t 1-22 CreatePlinkFiles.sh
 
@@ -14,17 +15,28 @@ qsub -t 1-22 CalculateFrequencyPlinkFiles.sh
 
 # Run the past script using SGE_TASK_ID values from 1-22
 
-Add the annotations for each site ( You will need to have the UK10K files UK10K_COHORT.REL-2012-06-02.beagle.anno.csq.shapeit.20140306.legend.gz and UK10K_COHORT.REL-2012-06-02.beagle.anno.csq.shapeit.20140306.hap.gz. Then substitute in $File ):
+Add the annotations for each site. The file ../../Data/UK10K_COHORT.20160215.sites.vcf.gz must be present. It can be found in ftp://ngs.sanger.ac.uk/production/uk10k/UK10K_COHORT/REL-2012-06-02/UK10K_COHORT.20160215.sites.vcf.gz . ( You will need to have the UK10K files UK10K_COHORT.REL-2012-06-02.beagle.anno.csq.shapeit.20140306.legend.gz and UK10K_COHORT.REL-2012-06-02.beagle.anno.csq.shapeit.20140306.hap.gz. Then substitute the locations of those files in the variable $File from the script AssignAnnotations.pl ):
 
+cd Scripts/DataAnalysis/
+perl GetAnnotationsPerSNP.pl
+cd Scripts/DataAnalysis/InferDFEWithHapLengths
 perl AssignAnnotations.pl
 
-Then add the ancestral state:
+Then add the ancestral state. You must get the vcf file from the 1,000 genomes project with the identification of the ancestral state ( ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20130502/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5b.20130502.sites.vcf.gz ). Then you must substitute the location of that file in the variable $LineToSearch from the script AssignAncestralState.pl :
 
 perl AssignAncestralState.pl
 
+# Get 1% frequency sites that are not CpGs
+
+qsub -t 1-22 GetListOfMissenseAllelesAtACertainFrequencyCpG.sh
+qsub -t 1-22 GetListOfSynonymousAllelesAtACertainFrequencyCpG.sh
+
+cat ../../../Data/Plink/SynonymousOnePercentCpG{1..22}.frq > ../../../Data/Plink/SynonymousOnePercentCpG.frq
+cat ../../../Data/Plink/MissenseOnePercentCpG{1..22}.frq > ../../../Data/Plink/MissenseOnePercentCpG.frq
+
 ####### CpG Sites
 #This compares the reference allele of the reference genome hg19 with what
-# the reference allele I got from the 1000 genomes VCF. Things match! You will need to place the reference genome on the directory: ./../../Data/ReferenceGenomehg19/human_g1k_v37.fasta.gz.1
+# the reference allele I got from the 1000 genomes VCF. Things match! You will need to place the reference genome on the directory: ../../../Data/ReferenceGenomehg19/human_g1k_v37.fasta.gz.1
 
 perl RefAlleleMapCheck.pl
 
@@ -38,14 +50,6 @@ done
 ## Merge Annotations with CpG information
 
 perl MergeAncCpgAnnotation.pl
-
-# Get 1% frequency sites that are not CpGs
-
-qsub -t 1-22 GetListOfMissenseAllelesAtACertainFrequencyCpG.sh
-qsub -t 1-22 GetListOfSynonymousAllelesAtACertainFrequencyCpG.sh
-
-cat ../../../Data/Plink/SynonymousOnePercentCpG{1..22}.frq > ../../../Data/Plink/SynonymousOnePercentCpG.frq
-cat ../../../Data/Plink/MissenseOnePercentCpG{1..22}.frq > ../../../Data/Plink/MissenseOnePercentCpG.frq
 
 # Create Plink file without CpGs
 
@@ -70,6 +74,7 @@ qsub -t 1-325 CalculateHaplotypeLengthsOnlyCpG.sh
 
 ### GetListOfExonsAwayFromCentromeresTelomeres
 
+cd Scripts/DataAnalysis/InferDFEWithHapLengths
 perl GetExonsAwayFromCentromereTelomere.pl
 
 #### Count total number of NOT CpG sites
@@ -112,21 +117,11 @@ bash CalculateFrequencyByWindowsSynMissense.sh
 #### Run ABC pipeline
 
 cd Scripts/DataAnalysis/InferDFEWithHapLengths/ABC_Analysis
-qsub -t 1-500 ABCDemographyAnalysis.sh
+qsub -t 1-500 ABCDemographyAnalysisNotCpG.sh
 # Run the past script using SGE_TASK_ID values from 1-500
 
 ## Calculate the difference in L values between the simulated data and the UK10K data
-perl CalculateMismatchStatistic.pl
-
-## Concatenate results and get posterior distribution
-bash ConcatenateMismatchStatisticAndLDistances.sh
-
-## Do simulations using the point estimates from the posterior distribution of the demographic parameters
-qsub -t 1-100 ReplicationOfBestABCParameters.sh
-# Run the past script using SGE_TASK_ID values from 1-100
-
-## Get an average estimate of the difference in L values between the replicates of simulated data and the UK10K data
-perl CalculateMismatchStatisticSimsReplicates.pl
+perl CalculateMismatchStatistic_NotCpG.pl
 
 #### Forward in time simulations
 
