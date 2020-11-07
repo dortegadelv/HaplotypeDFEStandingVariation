@@ -81,7 +81,7 @@ ViridisColors <- viridis(2)
 
 SelectionCoefficientList <- read.table(AllelesWithSelectionCoefficientFile)
 
-MultipliedValues <- SelectionCoefficientList$V2*NumberOfChromosomesInMostAncestralEpoch
+MultipliedValues <- SelectionCoefficientList$V2*NumberOfChromosomesInMostAncestralEpoch*2
 
 FourNsValues <- MultipliedValues[(MultipliedValues < IntervalLength/2*IntervalNumber)]
 
