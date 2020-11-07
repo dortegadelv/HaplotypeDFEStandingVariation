@@ -359,6 +359,7 @@ Then, to run the ABC algorithm we run the following scripts in consecutive order
 
 Identifier is an integer number. You should run the past script with integer numbers starting from 1 and going up in a consecutive order. As an example, you can run:
 
+`cd ABC`
 `bash ABCDemographyAnalysisNotCpGs.sh 1`
 
 Then you can run the following script:
