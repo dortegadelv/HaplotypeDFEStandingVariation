@@ -236,7 +236,7 @@ You can also do the find the maximum likelihood estimate for the alpha and beta 
 
 `bash CalculateLLDFE.sh NumberOfIdentifiers SelectionValuesToEvaluate`
 
-`bash CalculateLLDFE.sh 1 TableDFE/AnotherExtraTableOfProbabilities.txt`
+`bash CalculateLLDFE.sh 1 ../TableDFE/AnotherExtraTableOfProbabilities.txt`
 
 The maximum likelihood estimate will be in the file Results/MaxLLEstimatesDFE.txt 
 
