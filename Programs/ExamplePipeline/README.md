@@ -345,6 +345,8 @@ Where:
 
 Example run:
 
+`cd CalculateLData`
+
 `perl GetGeneticMapLeftRightPrintMap.pl 250000 MissenseOnePercent maps_chr. 1`
 
 ## 7) ABC algorithm to estimate the demographic history
