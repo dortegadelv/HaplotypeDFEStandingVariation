@@ -276,7 +276,7 @@ As an example, you can run:
 
 `cd DFEfToDFE`
 
-`perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../Results/ExitOnePercentSValuesConstantBoyko.txt ../Results/Output. 2500`
+`perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../Results/ExitOnePercentSValuesConstantBoyko.txt ../Results/Output. 1`
 
 
 After obtaining that file, you can run the following script:
