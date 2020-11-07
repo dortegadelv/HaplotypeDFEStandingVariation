@@ -364,10 +364,12 @@ Identifier is an integer number. You should run the past script with integer num
 
 Then you can run the following script:
 
+`cd ABC`
 `perl CalculateMismatchStatistic.pl LDistributionFile NumberIdentifiers`
 
 As an example, here you can run:
 
+`cd ABC`
 `perl CalculateMismatchStatistic.pl LDistributionOnePercentSynSites.txt 1`
 
 And finally, you can run:
