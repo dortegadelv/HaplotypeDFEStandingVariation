@@ -13,8 +13,9 @@ PrintFixedSites: 0
 PrintSegSiteInfo: 1
 PrintSampledGenotypes: 0
 PrintSFS: 0
-LastGenerationAFSamplingValue: 4000
-AlleleTrajsInput: ../../../../Results/PopExpansionBoykoPlusPositive/ForwardSims/BoykoPart/Alleles
-AlleleTrajsOutput: ../../../../Results/PopExpansionBoykoPlusPositive/ForwardSims/BoykoPart/Traj
-FilePrefix: ../../../../Results/PopExpansionBoykoPlusPositive/ForwardSims/BoykoPart/Output
+LastGenerationAFSamplingValue: 1
+n: 4000
+AlleleTrajsInput: ../Results/Alleles
+AlleleTrajsOutput: ../Results/Traj
+FilePrefix: ../Results/Output
 

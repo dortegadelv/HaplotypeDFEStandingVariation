@@ -13,6 +13,7 @@ PrintFixedSites: 0
 PrintSegSiteInfo: 1
 PrintSampledGenotypes: 0
 PrintSFS: 0
-LastGenerationAFSamplingValue: 4000
-FilePrefix: ../../../../Results/PopExpansionBoykoPlusPositive/ForwardSims/BoykoPart/Output
+LastGenerationAFSamplingValue: 1
+n: 4000
+FilePrefix: ../Results/Output
 
