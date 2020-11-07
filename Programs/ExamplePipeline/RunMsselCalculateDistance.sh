@@ -60,7 +60,7 @@ fi
 
 cd ISProgram
 
-File="../Results/ExitMsselImportanceSamplingSims_"$Identifier".txtTrajectory.txt"
+File="../Results/ExitMsselReducedImportanceSamplingSims_"$Identifier".txtTrajectory.txt"
 ExitMssel="../Results/TrajParTrajPartMsselOut_"$Identifier".txt"
 MsselFile="../Results/MsselFileOut_"$Identifier".txt"
 DistancesFile="../Results/DistancesFile_"$Identifier".txt"
@@ -82,8 +82,8 @@ echo "LastPopSize $CorrectLastPopSize"
 perl TrajectoryPartMssel.pl $File $i $ExitMssel $CorrectLastPopSize
 LastFrequency=$( tail -n1 $ExitMssel | awk '{print $2}' )
 echo "After"
-echo $LastFrequency
-if [ "$LastFrequency" == "0" ]
+echo "Last frequency = "$LastFrequency
+if [ "$LastFrequency" == "0.000000" ]
 then
 echo "NO"
 rm $MsselOutput
