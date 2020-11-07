@@ -193,6 +193,7 @@ Where NumberOfIdentifiers must match the number of times you ran SimulateUsingIS
 
 You can estimate the effective sample size (ESS) for each value of selection given in the table provided by the variable SelValuesForwardFile from the script SimulateUsingISRoutine.sh . To do that, run:
 
+`cd ISProgram`
 `perl EstimateESS.pl ../Results/Exit.txtWeightYears.txt`
 
 This will create a file called FinalStats.txt . In this file, you will see the ESS's printed in the first columns for each value of selection in the order given in the table provided by the variable SelectionValuesToEvaluate. Then you will see the expected allele ages followed by the standard deviation of the allele ages. See the section 'Importance sampling' for a description of what the ESS's are. We recommend only trusting estimates of L(4Ns, allele frequency, Demographic scenario | L) on the values of selection s where you have a high ESS number, at least a number bigger than 100.
