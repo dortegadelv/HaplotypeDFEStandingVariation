@@ -360,16 +360,19 @@ Then, to run the ABC algorithm we run the following scripts in consecutive order
 Identifier is an integer number. You should run the past script with integer numbers starting from 1 and going up in a consecutive order. As an example, you can run:
 
 `cd ABC`
+
 `bash ABCDemographyAnalysisNotCpGs.sh 1`
 
 Then you can run the following script:
 
 `cd ABC`
+
 `perl CalculateMismatchStatistic.pl LDistributionFile NumberIdentifiers`
 
 As an example, here you can run:
 
 `cd ABC`
+
 `perl CalculateMismatchStatistic.pl LDistributionOnePercentSynSites.txt 1`
 
 And finally, you can run:
