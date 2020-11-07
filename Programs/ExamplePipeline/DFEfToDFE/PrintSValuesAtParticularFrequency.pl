@@ -32,8 +32,8 @@ $Scalar = scalar(@FrequencyValues);
 for ($j = 0; $j < scalar(@FrequencyValues) ; $j++){
 # print "$FrequencyValues[$j]\n";
 # die "NO!\n";
-if ($SplitLine[2] eq $FrequencyValues[$j]){
-$CurrentS = $SplitLine[3] / 2;
+if ( $SplitLine[1] eq $FrequencyValues[$j] ){
+$CurrentS = $SplitLine[2];
 print OUT "$FrequencyValues[$j]\t$CurrentS\n";
 }}}
 
