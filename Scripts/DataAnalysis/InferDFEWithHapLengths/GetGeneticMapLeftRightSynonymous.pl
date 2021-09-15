@@ -1,6 +1,6 @@
 
-open (EXCLUSION,"../../../Data/VariantNumberSynonymous.txt") or die "NO!";
-open (PERRECVAR,">../../../Data/LeftBpRecRatePerVariantSynonymous.txt") or die "NO!";
+open (EXCLUSION,"../../../Data/Plink/CpGSynOnePercentNumberPositionsVar.txt") or die "NO!";
+open (PERRECVAR,">../../../Data/LeftBpRecRatePerVariantNoCpGSynonymous.txt") or die "NO!";
 @VariantsToExclude = ();
 
 while (<EXCLUSION>){
@@ -13,9 +13,9 @@ push(@VariantsToExclude,$Line);
 close(EXCLUSION);
 
 $TotalLineNumber = -1;
-for ($i = 1; $i <= 22; $i++){
+for ($i = 1; $i <= 1; $i++){
 
-$GeneticMapFile = "../../../Data/Plink/SynonymousOnePercent".$i.".frq";
+$GeneticMapFile = "../../../Data/Plink/SynonymousOnePercentCpG.frq";
 
 open (MAP,$GeneticMapFile) or die "NO!";
 
@@ -25,8 +25,10 @@ $Line = $_;
 @SplitLine = split(/\s+/, $Line);
 @Position = split(/\./,$SplitLine[2]);
 # print "$Position[1]\n";
-$ActualMap = "../../../Data/maps_b37/maps_chr.$i";
+$ActualMap = "../../../Data/maps_b37/maps_chr.$SplitLine[1]";
 
+print "Pos = $Position[1] Chr = $SplitLine[1]\n";
+    
 $LowerPosition = $Position[1] - 250000;
 $UpperPosition = $Position[1];
 
@@ -42,7 +44,7 @@ $Flag = 1;
 last;
 }
 }
-if ($Flag == 1){
+if ($Flag == 0){
 next;
 }
 
@@ -136,12 +138,12 @@ close (MAP);
 }
 close(PERRECVAR);
 
-open (PERRECVAR,">../../../Data/RightBpRecRatePerVariantSynonymous.txt") or die "NO!";
+open (PERRECVAR,">../../../Data/RightBpRecRatePerVariantNoCpGSynonymous.txt") or die "NO!";
 
 $TotalLineNumber = -1;
-for ($i = 1; $i <= 22; $i++){
+for ($i = 1; $i <= 1; $i++){
 
-$GeneticMapFile = "../../../Data/Plink/SynonymousOnePercent".$i.".frq";
+$GeneticMapFile = "../../../Data/Plink/SynonymousOnePercentCpG.frq";
 
 open (MAP,$GeneticMapFile) or die "NO!";
 
@@ -151,7 +153,7 @@ $Line = $_;
 @SplitLine = split(/\s+/, $Line);
 @Position = split(/\./,$SplitLine[2]);
 # print "$Position[1]\n";
-$ActualMap = "../../../Data/maps_b37/maps_chr.$i";
+$ActualMap = "../../../Data/maps_b37/maps_chr.$SplitLine[1]";
 
 $LowerPosition = $Position[1];
 $UpperPosition = $Position[1] + 250000;
@@ -168,7 +170,7 @@ $Flag = 1;
 last;
 }
 }
-if ($Flag == 1){
+if ($Flag == 0){
 next;
 }
 

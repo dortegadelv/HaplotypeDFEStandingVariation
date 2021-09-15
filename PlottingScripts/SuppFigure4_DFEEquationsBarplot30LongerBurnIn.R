@@ -129,7 +129,7 @@ Counts_At_OnePercent_Given2Ns <- Check$counts
 Alpha = 0.11
 Beta = 8636364 * 0.005
 
-LastAlleleNumber <- (1-pgamma(90,Alpha,scale=Beta))* ((120000 + (100000/10000)*100)*2500*1000)
+LastAlleleNumber <- (1-pgamma(50,Alpha,scale=Beta))* ((120000 + (100000/10000)*100)*2500*1000)
 
 Probabilities_At_One_Percent_Given_2NsMouse= c(Counts_At_OnePercent_Given2Ns[1:20],sum(Counts_At_OnePercent_Given2Ns[21:200]))/ c((NumberOfAllelesAt2Ns[1:20]),LastAlleleNumber )
 

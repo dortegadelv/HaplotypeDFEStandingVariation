@@ -1,14 +1,9 @@
+setwd("/Users/vicentediegoortegadelvecchyo/Dropbox (Personal)/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims")
 
 Data <- read.table("PLGivenSTableWithRecs.txt")
 DFETable <- read.table("DFETableOfProbabilities.txt")
 
-RecValuesOne <- read.table("~/Dropbox/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RecRateMissenseOnePercentRightNoCpG.txt")
-
-RecValuesTwo <- read.table("~/Dropbox/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RecRateMissenseOnePercentLeftNoCpG.txt")
-
-RecValues <- rbind(RecValuesOne,RecValuesTwo)
-
-FullDataTable <- matrix(nrow = nrow(DFETable)*6+12, ncol = 546)
+FullDataTable <- matrix(nrow = nrow(DFETable)*6+12, ncol = 550)
 
 TotalCount <- 1
 # for (i in 1:nrow(DFETable)){
@@ -19,8 +14,8 @@ for (Element in 1:6){
     #    print (Element)
     FullDataTable[TotalCount,] <- 0
     Test <- c()
-    for (RecRate in 1:546){
-        Test <- rbind(Test, Data[(204-3:ncol(DFETable))*6 + Element + 12,RecRate])
+    for (RecRate in 1:550){
+        Test <- rbind(Test, Data[(203-3:ncol(DFETable))*6 + Element + 12,RecRate])
     }
     Row <- Test %*% t(Subset)
     FullDataTable[TotalCount,] <- t(Row)
@@ -42,8 +37,8 @@ for (Element in 1:6){
     #    print (Element)
     FullDataTable[TotalCount,] <- 0
     Test <- c()
-    for (RecRate in 1:546){
-        Test <- rbind(Test, Data[(204-3:ncol(DFETable))*6 + Element + 12,RecRate])
+    for (RecRate in 1:550){
+        Test <- rbind(Test, Data[(203-3:ncol(DFETable))*6 + Element + 12,RecRate])
     }
     Row <- Test %*% t(Subset)
     FullDataTable[TotalCount,] <- t(Row)

@@ -41,7 +41,7 @@ RealProbs <- c()
 # P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,pgamma(0.5,Alpha,scale=Beta))
 for (i in 1:200){
     # print (i)
-    Prob <- pgamma(i*2.5 - 0.25,Alpha,scale=Beta) - pgamma(max((i-1)*2.5 - 0.25,0),Alpha,scale=Beta)
+    Prob <- pgamma(i*2.5,Alpha,scale=Beta) - pgamma((i-1)*2.5,Alpha,scale=Beta)
     #   P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,Prob)
     NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*((160000)*2500*1000)) # Original Test
     #    NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*(1))
@@ -78,7 +78,7 @@ SelectionCoefficientList <- read.table("../Results/CalculateDFEOfNewMutations/Ex
 
 TwoNsValues <- SelectionCoefficientList$V2*20000
 
-Breaks <- c(0,2.5*0:200 + 2.25)
+Breaks <- c(2.5*0:200)
 
 Check <- hist(TwoNsValues, breaks= Breaks, plot = FALSE)
 Counts_At_OnePercent_Given2Ns <- Check$counts
@@ -131,7 +131,7 @@ Counts_At_OnePercent_Given2Ns <- Check$counts
 Alpha = 0.11
 Beta = 8636364 * 0.01
 
-LastAlleleNumber <- (1-pgamma(90,Alpha,scale=Beta))* ((160000)*2500*1000)
+LastAlleleNumber <- (1-pgamma(50,Alpha,scale=Beta))* ((160000)*2500*1000)
 
 Probabilities_At_One_Percent_Given_2NsMouse= c(Counts_At_OnePercent_Given2Ns[1:20],sum(Counts_At_OnePercent_Given2Ns[21:200]))/ c((NumberOfAllelesAt2Ns[1:20]),LastAlleleNumber )
 

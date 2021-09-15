@@ -1,0 +1,16 @@
+#Partially deleted in new
+chr19	0	125937	1000
+#Partially deleted in new
+chr19	7292546	7300446	952
+#Partially deleted in new
+chr19	7300446	7306105	946
+#Partially deleted in new
+chr19	8593385	8599277	940
+#Partially deleted in new
+chr19	20607736	33403204	988
+#Partially deleted in new
+chr19	63804885	63807590	726
+#Deleted in new
+chr19	63807590	63810469	730
+#Deleted in new
+chr19	63810469	63811651	735

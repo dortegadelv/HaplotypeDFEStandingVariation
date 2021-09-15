@@ -1,0 +1,3908 @@
+100*21
+1000*21
+( 1 * 10 + $Repetition) * 1000
+( 1 * 10 + 1) * 1000
+( 2 * 10 + 1) * 1000
+( 3 * 10 + 1) * 1000
+16331.1/75255
+26856.2/75255
+100/12
+9*5
+100/14
+5/8
+5/78
+7264.35*2/3
+25000*20
+500000
+4*1000*1e-8 * 100000
+2/3 * 1 / 3
+dbinom(1,142,1/142)
+dbinom(0,142,1/142)
+dbinom(2,142,1/142)
+dbinom(3,142,1/142)
+dbinom(4,142,1/142)
+86270/5
+13*6
+40*5
+200/6
+200/60
+120000*3/20
+10000*20
+0.03031/0.01767
+0.04735/0.02700
+24000*20
+480000/12
+4.98-2.45
+2*6
+12
+2*7
+6*7
+33.87/3
+19.05/3
+1/.003
+20 + 3 +1 + 11 + 2 + 5 + 2 + 8 + 6 + 1
+20 + 3 +1 + 11 + 2 + 5 + 2 + 8 + 3 + 1 + 6 + 15
+1 + 6 + 8 + 2 + 5 + 2 + 11 + 1 + 3 + 20 + 1 + 8 + 3 + 1 + 2 + 6 + 15
+1 + 6 + 8 + 2 + 5 + 2 + 11 + 1 + 3 + 20 + 1 + 8 + 3 + 1 + 2 + 6 + 15 + 7
+183 -141
+0.0001088376*2*4594
+200*0.0001088376*2*4594
+4594*5
+22970/2
+10000/60
+39440*2
+100*10
+235*20
+360*20
+18000*20
+22200*20
+factorial(40)
+1560*300
+17121342/46800000
+factorial(40)/(factorial(38)*factorial(2))
+780*2
+1560*2*275
+factorial(72)/(factorial(70)*factorial(2))
+2556*2
+5112*275
+13414669/42174000
+1200/8
+2112*25
+2112*25*8
+5112*25*8
+5112*25
+5112*25*8
+996650/3067200
+328040/1022400
+60*5
+300/24
+989969/3021192
+1109778/4217400
+1029030/3113400
+1109778/4217400
+factorial(69)/(factorial(69)*factorial(2))
+factorial(69)/(factorial(67)*factorial(2))
+2346*2*25
+1109778/4217400
+1029030/3113400
+1403925/4280138
+14049643/42771654
+1600*8
+setwd("/Users/vicentediegoortegadelvecchyo/Dropbox (Personal)/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/PopExpansion/ForwardSims")#
+Data <- read.table("FullTable.txt")#
+RecombinationQuantiles <- read.table("QuantilesRecombination.txt")#
+RecombinationQuantiles <- RecombinationQuantiles * 2#
+#
+RecValuesOne <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValuesTwo <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValues <- rbind(RecValuesOne,RecValuesTwo)#
+#
+for (i in 1:546){#
+}#
+#
+VariantsWeirdValues <- c(0,0,0,0,0,0,0,0,0)#
+ErrorVector <- c()#
+AllCoefficients <- c()#
+#
+for (i in 1:403){#
+    Points <- Data[0:20*403 + i,2]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out1 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,3]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out2 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Points <- Data[0:20*403 + i,4]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out3 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,5]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out4 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,6]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out5 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,7]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out6 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Row <- c(lm.out1$coefficients, lm.out2$coefficients, lm.out3$coefficients, lm.out4$coefficients, lm.out5$coefficients, lm.out6$coefficients )#
+    AllCoefficients <- rbind(AllCoefficients,Row)#
+}#
+#
+write.table(AllCoefficients, file = "AllRegressionCoefficients.txt",row.names= FALSE,col.names = FALSE)#
+#
+NeutralVector <- c()#
+# par(mfrow=c(2,3))#
+#
+SignificantPValueNumber <- 0#
+TotalErrors <- c()#
+ConcatenateErrorValues <- c()#
+#
+for (PolyNum in 4:4){#
+i <- 1#
+ConcatenateTestValues <- c()#
+TotalErrors <- c()#
+#
+# PolyNum <- 5#
+for (FourNs in 1:403){#
+print (FourNs)#
+FirstElement <- c()#
+FirstPoint <- c()#
+RecTestValue <- 4000#
+AllComparisons <- c(t(RecombinationQuantiles))#
+for (i in 2:7){#
+Points <- Data[0:20*403 + FourNs,i]#
+Comparison <- cbind(RecombinationQuantiles,Points)#
+AllComparisons <- cbind(AllComparisons, Points)#
+lm.out1 = lm(Points ~ poly(V1,PolyNum,raw=TRUE),Comparison)#
+# plot(Comparison$V1,Comparison$Points)#
+#
+for (k in 1:(PolyNum+1)){#
+#     if (summary(lm.out1)$coefficients[k,4] > 0.05){#
+#        SignificantPValueNumber <- SignificantPValueNumber + 1#
+#        ConcatenateErrorValues <- c(ConcatenateErrorValues,rbind(i,k,FourNs))#
+#    }#
+}#
+#
+Test <- 0#
+SingleTest <- 0#
+for (Nums in 1:(PolyNum+1)){#
+#
+CurrentMultiplication <- lm.out1$coefficients[Nums]#
+SingleMult <- lm.out1$coefficients[Nums]#
+if (Nums > 1){#
+    for (MulNum in 1:(Nums - 1) ){#
+    CurrentMultiplication <- CurrentMultiplication * RecombinationQuantiles$V1#
+    SingleMult <- SingleMult * RecValues#
+    }#
+}#
+Test <- Test + CurrentMultiplication#
+SingleTest <- SingleTest + SingleMult#
+}#
+Error <- sum(abs(Points-Test))#
+TotalErrors <- c(TotalErrors,Error)#
+#
+# Test <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecombinationQuantiles$V1 + lm.out1$coefficients[3]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[4]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1 + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1#
+#
+# + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[6]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1#
+# lines(Comparison$V1,Test, col = "red")#
+# points(t(RecValues), t(SingleTest), col = "blue")#
+# SingleTest <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecValues + lm.out1$coefficients[3]* RecValues * RecValues + lm.out1$coefficients[4]* RecValues * RecValues * RecValues + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues#
+# + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues + lm.out1$coefficients[6]* RecValues * RecValues * RecValues * RecValues  * RecValues#
+ConcatenateTestValues <- rbind(ConcatenateTestValues, t(SingleTest))#
+}#
+#
+print(Test)#
+# FirstElement <- rbind(FirstElement, Test)#
+# FirstPoint <- rbind(FirstPoint, Points)#
+}#
+#
+print(round (sum(TotalErrors), digits=4) / length(TotalErrors))#
+#
+ErrorVector <- c(ErrorVector, round (sum(TotalErrors), digits=4) / length(TotalErrors))#
+print (SignificantPValueNumber)#
+NeutralVector <- rbind(NeutralVector, ConcatenateTestValues[203*6+1:6,545])#
+for (i in 1:600){#
+    if (sum(ifelse(ConcatenateTestValues[,i] <= 0,1,0)) > 0){#
+        VariantsWeirdValues[PolyNum]=VariantsWeirdValues[PolyNum] + 1#
+#     ConcatenateTestValues[,i] <- rep.int(1, 403*6)#
+        print(i)#
+    }#
+}#
+#
+#### AdditionalStep#
+FileName = paste ("PLGivenSTableWithRecs", PolyNum,".txt", sep = "")#
+write.table(ConcatenateTestValues, file = FileName,row.names= FALSE,col.names = FALSE)#
+}#
+#
+ImprovementVector <- c()#
+for (i in 2:9){#
+    ImprovementVector <- c(ImprovementVector, (ErrorVector[i-1]-ErrorVector[i])/ErrorVector[i-1])#
+}#
+write.table(ConcatenateTestValues, file = "PLGivenSTableWithRecs.txt",row.names= FALSE,col.names = FALSE)#
+#
+Stuff <- c()#
+for (i in 1:403){#
+Stuff <- rbind(Stuff,c( ConcatenateTestValues[ i * 6 + 1:6,545] ))#
+}#
+Stuff#
+write.table(Stuff,"AyCaon.txt",sep="\t")#
+pdf("../../../../Figures/SuppFigureSX14_PRLinePopExpansionSims.pdf",width=14,height = 10)#
+par(mar=c(4.1,5.1,2.6,2.1))#
+par(mfrow = c(2,3))#
+#
+OrderedVector <- ConcatenateTestValues[1213,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues,OrderedVector,type="o",main=expression(w[1]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,2]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+#abline(v=RecombinationQuantiles$V1[20],lty=2)#
+#
+OrderedVector <- ConcatenateTestValues[1214,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues,OrderedVector,type="o",main=expression(w[2]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,3]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+#abline(v=RecombinationQuantiles$V1[20],lty=2)#
+OrderedVector <- ConcatenateTestValues[1215,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues,OrderedVector,type="o",main=expression(w[3]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,4]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+#abline(v=RecombinationQuantiles$V1[20],lty=2)#
+OrderedVector <- ConcatenateTestValues[1216,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues,OrderedVector,type="o",main=expression(w[4]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,5]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+# abline(v=RecombinationQuantiles$V1[20],lty=2)#
+OrderedVector <- ConcatenateTestValues[1217,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues,OrderedVector,type="o",main=expression(w[5]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,6]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+# abline(v=RecombinationQuantiles$V1[20],lty=2)#
+#
+OrderedVector <- ConcatenateTestValues[1218,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues,OrderedVector,type="o",main=expression(w[6]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,7]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+# abline(v=RecombinationQuantiles$V1[20],lty=2)#
+#
+dev.off()
+setwd("/Users/vicentediegoortegadelvecchyo/Dropbox (Personal)/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims")#
+Data <- read.table("FullTable.txt")#
+RecombinationQuantiles <- read.table("QuantilesRecombination.txt")#
+#
+RecValuesOne <- read.table("../ForwardSims/RecRateMissenseOnePercentLeftNoCpG.txt")#
+RecValuesTwo <- read.table("../ForwardSims/RecRateMissenseOnePercentRightNoCpG.txt")#
+RecValues <- rbind(RecValuesOne,RecValuesTwo)#
+#
+ErrorVector <- c()#
+#
+for (i in 1:546){#
+}#
+#
+VariantsWeirdValues <- c(0,0,0,0,0,0,0,0,0)#
+#
+AllCoefficients <- c()#
+#
+for (i in 1:403){#
+    Points <- Data[0:20*403 + i,2]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out1 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,3]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out2 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Points <- Data[0:20*403 + i,4]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out3 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,5]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out4 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,6]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out5 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,7]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out6 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Row <- c(lm.out1$coefficients, lm.out2$coefficients, lm.out3$coefficients, lm.out4$coefficients, lm.out5$coefficients, lm.out6$coefficients )#
+    AllCoefficients <- rbind(AllCoefficients,Row)#
+}#
+#
+write.table(AllCoefficients, file = "AllRegressionCoefficients.txt",row.names= FALSE,col.names = FALSE)#
+#
+NeutralVector <- c()#
+# par(mfrow=c(2,3))#
+#
+SignificantPValueNumber <- 0#
+TotalErrors <- c()#
+ConcatenateErrorValues <- c()#
+#
+for (PolyNum in 5:5){#
+    TotalErrors <- c()#
+#
+i <- 1#
+ConcatenateTestValues <- c()#
+# PolyNum <- 6#
+for (FourNs in 1:403){#
+    print (FourNs)#
+    FirstElement <- c()#
+    FirstPoint <- c()#
+    RecTestValue <- 4000#
+    AllComparisons <- c(t(RecombinationQuantiles))#
+    for (i in 2:7){#
+    Points <- Data[0:20*403 + FourNs,i]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    AllComparisons <- cbind(AllComparisons, Points)#
+    lm.out1 = lm(Points ~ poly(V1,PolyNum,raw=TRUE),Comparison)#
+    # plot(Comparison$V1,Comparison$Points)#
+#
+    for (k in 1:(PolyNum+1)){#
+        if (summary(lm.out1)$coefficients[k,4] > 0.05){#
+            SignificantPValueNumber <- SignificantPValueNumber + 1#
+            ConcatenateErrorValues <- c(ConcatenateErrorValues,rbind(i,k,FourNs))#
+        }#
+    }#
+Test <- 0#
+SingleTest <- 0#
+for (Nums in 1:(PolyNum+1)){#
+#
+CurrentMultiplication <- lm.out1$coefficients[Nums]#
+SingleMult <- lm.out1$coefficients[Nums]#
+if (Nums > 1){#
+    for (MulNum in 1:(Nums - 1) ){#
+    CurrentMultiplication <- CurrentMultiplication * RecombinationQuantiles$V1#
+    SingleMult <- SingleMult * RecValues#
+    }#
+}#
+Test <- Test + CurrentMultiplication#
+SingleTest <- SingleTest + SingleMult#
+}#
+Error <- sum(abs(Points[1:20]-Test[1:20]))#
+TotalErrors <- c(TotalErrors,Error)#
+#
+ConcatenateTestValues <- rbind(ConcatenateTestValues, t(SingleTest))#
+}#
+#
+print(Test)#
+# FirstElement <- rbind(FirstElement, Test)#
+# FirstPoint <- rbind(FirstPoint, Points)#
+}#
+#
+ErrorVector <- c(ErrorVector, round (sum(TotalErrors), digits=4) / length(TotalErrors))#
+print (SignificantPValueNumber)#
+# NeutralVector <- rbind(NeutralVector, ConcatenateTestValues[203*6+1:6,545])#
+#### AdditionalStep#
+#
+for (i in 1:550){#
+    if (RecValues$V1[i] >= RecombinationQuantiles$V1[20]){#
+        VariantsWeirdValues[PolyNum]=VariantsWeirdValues[PolyNum] + 1#
+#    ConcatenateTestValues[,i] <- rep.int(1, 403*6)#
+        print(i)#
+    }#
+}#
+#### AdditionalStep#
+FileName = paste ("PLGivenSTableWithRecs", PolyNum,".txt", sep = "")#
+write.table(ConcatenateTestValues, file = FileName,row.names= FALSE,col.names = FALSE)#
+}#
+#
+ImprovementVector <- c()#
+for (i in 2:9){#
+    ImprovementVector <- c(ImprovementVector, (ErrorVector[i-1]-ErrorVector[i])/ErrorVector[i-1])#
+}#
+#
+write.table(ConcatenateTestValues, file = "PLGivenSTableWithRecs.txt",row.names= FALSE,col.names = FALSE)#
+#
+Stuff <- c()#
+for (i in 1:403){#
+Stuff <- rbind(Stuff,c( ConcatenateTestValues[ i * 6 + 1:6,545] ))#
+}#
+Stuff#
+write.table(Stuff,"AyCaon.txt",sep="\t")#
+pdf("../../../../Figures/SuppFigureSX14_PRLine.pdf",width=14,height = 10)#
+par(mar=c(4.1,5.1,2.6,2.1))#
+par(mfrow = c(2,3))#
+#
+OrderedVector <- ConcatenateTestValues[1213,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues[1:522],OrderedVector[1:522],type="o",main=expression(w[1]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,2]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+#abline(v=RecombinationQuantiles$V1[20],lty=2)#
+#
+OrderedVector <- ConcatenateTestValues[1214,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues[1:522],OrderedVector[1:522],type="o",main=expression(w[2]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,3]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+#abline(v=RecombinationQuantiles$V1[20],lty=2)#
+OrderedVector <- ConcatenateTestValues[1215,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues[1:522],OrderedVector[1:522],type="o",main=expression(w[3]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,4]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+#abline(v=RecombinationQuantiles$V1[20],lty=2)#
+OrderedVector <- ConcatenateTestValues[1216,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues[1:522],OrderedVector[1:522],type="o",main=expression(w[4]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,5]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+# abline(v=RecombinationQuantiles$V1[20],lty=2)#
+OrderedVector <- ConcatenateTestValues[1217,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues[1:522],OrderedVector[1:522],type="o",main=expression(w[5]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,6]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+# abline(v=RecombinationQuantiles$V1[20],lty=2)#
+#
+OrderedVector <- ConcatenateTestValues[1218,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues[1:522],OrderedVector[1:522],type="o",main=expression(w[6]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,7]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+# abline(v=RecombinationQuantiles$V1[20],lty=2)#
+#
+dev.off()
+RecombinationQuantiles$V1
+RecombinationQuantiles$V1/(2*82331)
+RecombinationQuantiles$V1/(4*82331*500000)
+setwd("/Users/vicentediegoortegadelvecchyo/Dropbox (Personal)/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/PopExpansion/ForwardSims")#
+Data <- read.table("FullTable.txt")#
+RecombinationQuantiles <- read.table("QuantilesRecombination.txt")#
+RecombinationQuantiles <- RecombinationQuantiles * 2
+RecombinationQuantiles$V1/(4*50000*500000)
+4.275500e-08*(4*50000*500000)
+4.275500e-08*(4*50000*250000)
+RecombinationQuantiles$V1/(4*50000*250000)
+RecombinationQuantiles$V1
+3.3808e-06/5.59479999999999e-06
+0.6*5/8
+12000*0.375
+RecombinationQuantiles$V1/(4*82331*250000)
+RecombinationQuantiles$V1/(4*82231*250000)
+setwd("/Users/vicentediegoortegadelvecchyo/Dropbox (Personal)/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims")#
+Data <- read.table("../../../../Data/AllBpRecRatePerVariantNoCpG.txt")#
+#
+RecQuantiles <- quantile(Data$V1, probs = c(0.05*0:20)) * 4 * 250000 * 411155 / 100
+RecQuantiles
+23003.2999/(4 * 250000 * 411155)
+23003.2999/(4 * 250000 * 411155/100)
+4*411155*5.5948e-06
+4*411155*5.5948e-06*250000
+4*411155*(5.5948e-06)*250000
+4*411155*(5.5948e-06)*250000/100
+setwd("/Users/vicentediegoortegadelvecchyo/Dropbox (Personal)/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims")#
+Data <- read.table("../../../../Data/AllBpRecRatePerVariantNoCpG.txt")
+median(Data)
+median(Data$V1)
+mean(Data$V1)
+(3.3808e-06/5.59479999999999e-06)*(50000/411155)
+(3.3808e-06/5.59479999999999e-06)*(50000/411155) * 2
+12984.2943/(4 * 250000 * 411155/100)
+(3.3808e-06/3.158005e-06)*(50000/411155) * 2
+3391.7331/(4 * 250000 * 411155/100)
+(3.3808e-06/3.158005e-06)*(50000/411155)
+13000
+13000*0.2603761
+setwd("/Users/vicentediegoortegadelvecchyo/Dropbox (Personal)/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/PopExpansion/ForwardSims")#
+Data <- read.table("FullTable.txt")#
+RecombinationQuantiles <- read.table("QuantilesRecombination.txt")#
+RecombinationQuantiles <- RecombinationQuantiles * 2#
+#
+RecValuesOne <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValuesTwo <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValues <- rbind(RecValuesOne,RecValuesTwo)#
+#
+for (i in 1:546){#
+}#
+#
+VariantsWeirdValues <- c(0,0,0,0,0,0,0,0,0)#
+ErrorVector <- c()#
+AllCoefficients <- c()#
+#
+for (i in 1:403){#
+    Points <- Data[0:20*403 + i,2]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out1 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,3]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out2 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Points <- Data[0:20*403 + i,4]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out3 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,5]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out4 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,6]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out5 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,7]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out6 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Row <- c(lm.out1$coefficients, lm.out2$coefficients, lm.out3$coefficients, lm.out4$coefficients, lm.out5$coefficients, lm.out6$coefficients )#
+    AllCoefficients <- rbind(AllCoefficients,Row)#
+}#
+#
+write.table(AllCoefficients, file = "AllRegressionCoefficients.txt",row.names= FALSE,col.names = FALSE)#
+#
+NeutralVector <- c()#
+# par(mfrow=c(2,3))#
+#
+SignificantPValueNumber <- 0#
+TotalErrors <- c()#
+ConcatenateErrorValues <- c()#
+#
+for (PolyNum in 1:9){#
+i <- 1#
+ConcatenateTestValues <- c()#
+TotalErrors <- c()#
+#
+# PolyNum <- 5#
+for (FourNs in 1:403){#
+print (FourNs)#
+FirstElement <- c()#
+FirstPoint <- c()#
+RecTestValue <- 4000#
+AllComparisons <- c(t(RecombinationQuantiles))#
+for (i in 2:7){#
+Points <- Data[0:20*403 + FourNs,i]#
+Comparison <- cbind(RecombinationQuantiles,Points)#
+AllComparisons <- cbind(AllComparisons, Points)#
+lm.out1 = lm(Points ~ poly(V1,PolyNum,raw=TRUE),Comparison)#
+# plot(Comparison$V1,Comparison$Points)#
+#
+for (k in 1:(PolyNum+1)){#
+#     if (summary(lm.out1)$coefficients[k,4] > 0.05){#
+#        SignificantPValueNumber <- SignificantPValueNumber + 1#
+#        ConcatenateErrorValues <- c(ConcatenateErrorValues,rbind(i,k,FourNs))#
+#    }#
+}#
+#
+Test <- 0#
+SingleTest <- 0#
+for (Nums in 1:(PolyNum+1)){#
+#
+CurrentMultiplication <- lm.out1$coefficients[Nums]#
+SingleMult <- lm.out1$coefficients[Nums]#
+if (Nums > 1){#
+    for (MulNum in 1:(Nums - 1) ){#
+    CurrentMultiplication <- CurrentMultiplication * RecombinationQuantiles$V1#
+    SingleMult <- SingleMult * RecValues#
+    }#
+}#
+Test <- Test + CurrentMultiplication#
+SingleTest <- SingleTest + SingleMult#
+}#
+Error <- sum(abs(Points-Test))#
+TotalErrors <- c(TotalErrors,Error)#
+#
+# Test <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecombinationQuantiles$V1 + lm.out1$coefficients[3]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[4]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1 + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1#
+#
+# + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[6]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1#
+# lines(Comparison$V1,Test, col = "red")#
+# points(t(RecValues), t(SingleTest), col = "blue")#
+# SingleTest <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecValues + lm.out1$coefficients[3]* RecValues * RecValues + lm.out1$coefficients[4]* RecValues * RecValues * RecValues + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues#
+# + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues + lm.out1$coefficients[6]* RecValues * RecValues * RecValues * RecValues  * RecValues#
+ConcatenateTestValues <- rbind(ConcatenateTestValues, t(SingleTest))#
+}#
+#
+print(Test)#
+# FirstElement <- rbind(FirstElement, Test)#
+# FirstPoint <- rbind(FirstPoint, Points)#
+}#
+#
+print(round (sum(TotalErrors), digits=4) / length(TotalErrors))#
+#
+ErrorVector <- c(ErrorVector, round (sum(TotalErrors), digits=4) / length(TotalErrors))#
+print (SignificantPValueNumber)#
+NeutralVector <- rbind(NeutralVector, ConcatenateTestValues[203*6+1:6,545])#
+for (i in 1:600){#
+    if (sum(ifelse(ConcatenateTestValues[,i] <= 0,1,0)) > 0){#
+        VariantsWeirdValues[PolyNum]=VariantsWeirdValues[PolyNum] + 1#
+#     ConcatenateTestValues[,i] <- rep.int(1, 403*6)#
+        print(i)#
+    }#
+}#
+#
+#### AdditionalStep#
+FileName = paste ("PLGivenSTableWithRecs", PolyNum,".txt", sep = "")#
+write.table(ConcatenateTestValues, file = FileName,row.names= FALSE,col.names = FALSE)#
+}#
+#
+ImprovementVector <- c()#
+for (i in 2:9){#
+    ImprovementVector <- c(ImprovementVector, (ErrorVector[i-1]-ErrorVector[i])/ErrorVector[i-1])#
+}
+setwd("/Users/vicentediegoortegadelvecchyo/Dropbox (Personal)/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/PopExpansion/ForwardSims")#
+Data <- read.table("FullTable.txt")#
+RecombinationQuantiles <- read.table("QuantilesRecombination.txt")#
+RecombinationQuantiles <- RecombinationQuantiles * 2#
+#
+RecValuesOne <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValuesTwo <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValues <- rbind(RecValuesOne,RecValuesTwo)#
+#
+for (i in 1:546){#
+}#
+#
+VariantsWeirdValues <- c(0,0,0,0,0,0,0,0,0)#
+ErrorVector <- c()#
+AllCoefficients <- c()#
+#
+for (i in 1:403){#
+    Points <- Data[0:20*403 + i,2]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out1 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,3]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out2 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Points <- Data[0:20*403 + i,4]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out3 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,5]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out4 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,6]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out5 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,7]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out6 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Row <- c(lm.out1$coefficients, lm.out2$coefficients, lm.out3$coefficients, lm.out4$coefficients, lm.out5$coefficients, lm.out6$coefficients )#
+    AllCoefficients <- rbind(AllCoefficients,Row)#
+}#
+#
+write.table(AllCoefficients, file = "AllRegressionCoefficients.txt",row.names= FALSE,col.names = FALSE)#
+#
+NeutralVector <- c()#
+# par(mfrow=c(2,3))#
+#
+SignificantPValueNumber <- 0#
+TotalErrors <- c()#
+ConcatenateErrorValues <- c()#
+#
+for (PolyNum in 1:9){#
+i <- 1#
+ConcatenateTestValues <- c()#
+TotalErrors <- c()#
+#
+# PolyNum <- 5#
+for (FourNs in 3:403){#
+print (FourNs)#
+FirstElement <- c()#
+FirstPoint <- c()#
+RecTestValue <- 4000#
+AllComparisons <- c(t(RecombinationQuantiles))#
+for (i in 2:7){#
+Points <- Data[0:20*403 + FourNs,i]#
+Comparison <- cbind(RecombinationQuantiles,Points)#
+AllComparisons <- cbind(AllComparisons, Points)#
+lm.out1 = lm(Points ~ poly(V1,PolyNum,raw=TRUE),Comparison)#
+# plot(Comparison$V1,Comparison$Points)#
+#
+for (k in 1:(PolyNum+1)){#
+#     if (summary(lm.out1)$coefficients[k,4] > 0.05){#
+#        SignificantPValueNumber <- SignificantPValueNumber + 1#
+#        ConcatenateErrorValues <- c(ConcatenateErrorValues,rbind(i,k,FourNs))#
+#    }#
+}#
+#
+Test <- 0#
+SingleTest <- 0#
+for (Nums in 1:(PolyNum+1)){#
+#
+CurrentMultiplication <- lm.out1$coefficients[Nums]#
+SingleMult <- lm.out1$coefficients[Nums]#
+if (Nums > 1){#
+    for (MulNum in 1:(Nums - 1) ){#
+    CurrentMultiplication <- CurrentMultiplication * RecombinationQuantiles$V1#
+    SingleMult <- SingleMult * RecValues#
+    }#
+}#
+Test <- Test + CurrentMultiplication#
+SingleTest <- SingleTest + SingleMult#
+}#
+Error <- sum(abs(Points-Test))#
+TotalErrors <- c(TotalErrors,Error)#
+#
+# Test <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecombinationQuantiles$V1 + lm.out1$coefficients[3]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[4]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1 + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1#
+#
+# + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[6]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1#
+# lines(Comparison$V1,Test, col = "red")#
+# points(t(RecValues), t(SingleTest), col = "blue")#
+# SingleTest <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecValues + lm.out1$coefficients[3]* RecValues * RecValues + lm.out1$coefficients[4]* RecValues * RecValues * RecValues + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues#
+# + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues + lm.out1$coefficients[6]* RecValues * RecValues * RecValues * RecValues  * RecValues#
+ConcatenateTestValues <- rbind(ConcatenateTestValues, t(SingleTest))#
+}#
+#
+print(Test)#
+# FirstElement <- rbind(FirstElement, Test)#
+# FirstPoint <- rbind(FirstPoint, Points)#
+}#
+#
+print(round (sum(TotalErrors), digits=4) / length(TotalErrors))#
+#
+ErrorVector <- c(ErrorVector, round (sum(TotalErrors), digits=4) / length(TotalErrors))#
+print (SignificantPValueNumber)#
+NeutralVector <- rbind(NeutralVector, ConcatenateTestValues[203*6+1:6,545])#
+for (i in 1:600){#
+    if (sum(ifelse(ConcatenateTestValues[,i] <= 0,1,0)) > 0){#
+        VariantsWeirdValues[PolyNum]=VariantsWeirdValues[PolyNum] + 1#
+#     ConcatenateTestValues[,i] <- rep.int(1, 403*6)#
+        print(i)#
+    }#
+}#
+#
+#### AdditionalStep#
+FileName = paste ("PLGivenSTableWithRecs", PolyNum,".txt", sep = "")#
+write.table(ConcatenateTestValues, file = FileName,row.names= FALSE,col.names = FALSE)#
+}#
+#
+ImprovementVector <- c()#
+for (i in 2:9){#
+    ImprovementVector <- c(ImprovementVector, (ErrorVector[i-1]-ErrorVector[i])/ErrorVector[i-1])#
+}#
+#
+round(ImprovementVector,4)#
+round(ErrorVector,4)
+setwd("/Users/vicentediegoortegadelvecchyo/Dropbox (Personal)/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/PopExpansion/ForwardSims")#
+Data <- read.table("FullTable.txt")#
+RecombinationQuantiles <- read.table("QuantilesRecombination.txt")#
+RecombinationQuantiles <- RecombinationQuantiles * 2#
+#
+RecValuesOne <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValuesTwo <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValues <- rbind(RecValuesOne,RecValuesTwo)#
+#
+for (i in 1:546){#
+}#
+#
+VariantsWeirdValues <- c(0,0,0,0,0,0,0,0,0)#
+ErrorVector <- c()#
+AllCoefficients <- c()#
+#
+for (i in 1:403){#
+    Points <- Data[0:20*403 + i,2]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out1 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,3]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out2 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Points <- Data[0:20*403 + i,4]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out3 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,5]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out4 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,6]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out5 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,7]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out6 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Row <- c(lm.out1$coefficients, lm.out2$coefficients, lm.out3$coefficients, lm.out4$coefficients, lm.out5$coefficients, lm.out6$coefficients )#
+    AllCoefficients <- rbind(AllCoefficients,Row)#
+}#
+#
+write.table(AllCoefficients, file = "AllRegressionCoefficients.txt",row.names= FALSE,col.names = FALSE)#
+#
+NeutralVector <- c()#
+# par(mfrow=c(2,3))#
+#
+SignificantPValueNumber <- 0#
+TotalErrors <- c()#
+ConcatenateErrorValues <- c()#
+#
+for (PolyNum in 4:4){#
+i <- 1#
+ConcatenateTestValues <- c()#
+TotalErrors <- c()#
+#
+# PolyNum <- 5#
+for (FourNs in 1:403){#
+print (FourNs)#
+FirstElement <- c()#
+FirstPoint <- c()#
+RecTestValue <- 4000#
+AllComparisons <- c(t(RecombinationQuantiles))#
+for (i in 2:7){#
+Points <- Data[0:20*403 + FourNs,i]#
+Comparison <- cbind(RecombinationQuantiles,Points)#
+AllComparisons <- cbind(AllComparisons, Points)#
+lm.out1 = lm(Points ~ poly(V1,PolyNum,raw=TRUE),Comparison)#
+# plot(Comparison$V1,Comparison$Points)#
+#
+for (k in 1:(PolyNum+1)){#
+#     if (summary(lm.out1)$coefficients[k,4] > 0.05){#
+#        SignificantPValueNumber <- SignificantPValueNumber + 1#
+#        ConcatenateErrorValues <- c(ConcatenateErrorValues,rbind(i,k,FourNs))#
+#    }#
+}#
+#
+Test <- 0#
+SingleTest <- 0#
+for (Nums in 1:(PolyNum+1)){#
+#
+CurrentMultiplication <- lm.out1$coefficients[Nums]#
+SingleMult <- lm.out1$coefficients[Nums]#
+if (Nums > 1){#
+    for (MulNum in 1:(Nums - 1) ){#
+    CurrentMultiplication <- CurrentMultiplication * RecombinationQuantiles$V1#
+    SingleMult <- SingleMult * RecValues#
+    }#
+}#
+Test <- Test + CurrentMultiplication#
+SingleTest <- SingleTest + SingleMult#
+}#
+Error <- sum(abs(Points-Test))#
+TotalErrors <- c(TotalErrors,Error)#
+#
+# Test <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecombinationQuantiles$V1 + lm.out1$coefficients[3]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[4]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1 + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1#
+#
+# + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[6]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1#
+# lines(Comparison$V1,Test, col = "red")#
+# points(t(RecValues), t(SingleTest), col = "blue")#
+# SingleTest <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecValues + lm.out1$coefficients[3]* RecValues * RecValues + lm.out1$coefficients[4]* RecValues * RecValues * RecValues + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues#
+# + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues + lm.out1$coefficients[6]* RecValues * RecValues * RecValues * RecValues  * RecValues#
+ConcatenateTestValues <- rbind(ConcatenateTestValues, t(SingleTest))#
+}#
+#
+print(Test)#
+# FirstElement <- rbind(FirstElement, Test)#
+# FirstPoint <- rbind(FirstPoint, Points)#
+}#
+#
+print(round (sum(TotalErrors), digits=4) / length(TotalErrors))#
+#
+ErrorVector <- c(ErrorVector, round (sum(TotalErrors), digits=4) / length(TotalErrors))#
+print (SignificantPValueNumber)#
+NeutralVector <- rbind(NeutralVector, ConcatenateTestValues[203*6+1:6,545])#
+for (i in 1:600){#
+    if (sum(ifelse(ConcatenateTestValues[,i] <= 0,1,0)) > 0){#
+        VariantsWeirdValues[PolyNum]=VariantsWeirdValues[PolyNum] + 1#
+#     ConcatenateTestValues[,i] <- rep.int(1, 403*6)#
+        print(i)#
+    }#
+}#
+#
+#### AdditionalStep#
+FileName = paste ("PLGivenSTableWithRecs", PolyNum,".txt", sep = "")#
+write.table(ConcatenateTestValues, file = FileName,row.names= FALSE,col.names = FALSE)#
+}#
+#
+ImprovementVector <- c()#
+for (i in 2:9){#
+    ImprovementVector <- c(ImprovementVector, (ErrorVector[i-1]-ErrorVector[i])/ErrorVector[i-1])#
+}#
+write.table(ConcatenateTestValues, file = "PLGivenSTableWithRecs.txt",row.names= FALSE,col.names = FALSE)#
+#
+Stuff <- c()#
+for (i in 1:403){#
+Stuff <- rbind(Stuff,c( ConcatenateTestValues[ i * 6 + 1:6,545] ))#
+}#
+Stuff#
+write.table(Stuff,"AyCaon.txt",sep="\t")#
+pdf("../../../../Figures/SuppFigureSX14_PRLinePopExpansionSims.pdf",width=14,height = 10)#
+par(mar=c(4.1,5.1,2.6,2.1))#
+par(mfrow = c(2,3))#
+#
+OrderedVector <- ConcatenateTestValues[1213,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues,OrderedVector,type="o",main=expression(w[1]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,2]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+#abline(v=RecombinationQuantiles$V1[20],lty=2)#
+#
+OrderedVector <- ConcatenateTestValues[1214,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues,OrderedVector,type="o",main=expression(w[2]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,3]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+#abline(v=RecombinationQuantiles$V1[20],lty=2)#
+OrderedVector <- ConcatenateTestValues[1215,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues,OrderedVector,type="o",main=expression(w[3]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,4]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+#abline(v=RecombinationQuantiles$V1[20],lty=2)#
+OrderedVector <- ConcatenateTestValues[1216,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues,OrderedVector,type="o",main=expression(w[4]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,5]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+# abline(v=RecombinationQuantiles$V1[20],lty=2)#
+OrderedVector <- ConcatenateTestValues[1217,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues,OrderedVector,type="o",main=expression(w[5]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,6]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+# abline(v=RecombinationQuantiles$V1[20],lty=2)#
+#
+OrderedVector <- ConcatenateTestValues[1218,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues,OrderedVector,type="o",main=expression(w[6]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,7]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+# abline(v=RecombinationQuantiles$V1[20],lty=2)#
+#
+dev.off()
+Data <- read.table("PLGivenSTableWithRecs.txt")#
+DFETable <- read.table("DFETableOfProbabilities.txt")
+head(DFETable)
+Data <- read.table("PLGivenSTableWithRecs.txt")#
+DFETable <- read.table("DFETableOfProbabilities.txt")#
+#
+RecValuesOne <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValuesTwo <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValues <- rbind(RecValuesOne,RecValuesTwo)#
+#
+FullDataTable <- matrix(nrow = nrow(DFETable)*6+12, ncol = 600)
+Data <- read.table("PLGivenSTableWithRecs.txt")#
+DFETable <- read.table("DFETableOfProbabilities.txt")#
+#
+RecValuesOne <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValuesTwo <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValues <- rbind(RecValuesOne,RecValuesTwo)#
+#
+FullDataTable <- matrix(nrow = nrow(DFETable)*6+12, ncol = 600)#
+#
+TotalCount <- 1
+i=2
+print (i)#
+    Subset <- DFETable[i,3:ncol(DFETable)]
+Subset
+Element=1
+FullDataTable[TotalCount,] <- 0#
+    Test <- c()#
+    for (RecRate in 1:600){#
+        Test <- rbind(Test, Data[(204-3:ncol(DFETable))*6 + Element + 12,RecRate])#
+    }
+Test
+Test[,1]
+Row <- Test %*% t(Subset)
+Row
+Row[,1]
+Row[1]
+Subset[1]
+Data[203*6+1+13]
+Data[203*6+1+13,1]
+Data[(204-3:ncol(DFETable))*6 + Element + 12
+]
+Data[(204-3:ncol(DFETable))*6 + Element + 12,RecRate]
+(204-3:ncol(DFETable))*6
+(204-3:ncol(DFETable))*6 + Element + 12
+(204-3:ncol(DFETable))*6 + Element + 12
+(204-3:ncol(DFETable))*6 + Element + 6
+Element
+Element + 6
+204-3
+ncol(DFETable)
+204-3:ncol(DFETable)
+204-4:ncol(DFETable)
+204-4:0
+200:9
+200:9
+200:0
+(204-3:ncol(DFETable))*6 + Element + 12
+Element
+ncol(DFETable))*6
+ncol(DFETable)*6
+201*6
+204-3:ncol(DFETable)
+ncol(DFETable)
+203-3:ncol(DFETable)
+(203-3:ncol(DFETable))*6 + Element + 12
+i=2
+Element=1
+Data <- read.table("PLGivenSTableWithRecs.txt")#
+DFETable <- read.table("DFETableOfProbabilities.txt")#
+#
+RecValuesOne <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValuesTwo <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValues <- rbind(RecValuesOne,RecValuesTwo)#
+#
+FullDataTable <- matrix(nrow = nrow(DFETable)*6+12, ncol = 600)
+Data[(203-3:ncol(DFETable))*6 + Element + 12,1]
+Subset <- DFETable[i,3:ncol(DFETable)]
+Subset
+Test %*% t(Subset)
+Subset <- DFETable[i,3:ncol(DFETable)]
+Data[(203-3:ncol(DFETable))*6 + Element + 12,1]
+Test <- Data[(203-3:ncol(DFETable))*6 + Element + 12,1]
+Row <- Test %*% t(Subset)
+Row
+Subset
+(203-3:ncol(DFETable))*6 + Element + 12
+Data <- read.table("PLGivenSTableWithRecs.txt")#
+DFETable <- read.table("DFETableOfProbabilities.txt")#
+#
+RecValuesOne <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValuesTwo <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValues <- rbind(RecValuesOne,RecValuesTwo)
+FullDataTable <- matrix(nrow = nrow(DFETable)*6+12, ncol = 600)#
+#
+TotalCount <- 1#
+for (i in 1:2){#
+    print (i)#
+    Subset <- DFETable[i,3:ncol(DFETable)]#
+for (Element in 1:6){#
+    FullDataTable[TotalCount,] <- 0#
+    Test <- c()#
+    for (RecRate in 1:600){#
+        Test <- rbind(Test, Data[(203-3:ncol(DFETable))*6 + Element + 12,RecRate])#
+    }#
+    Row <- Test %*% t(Subset)#
+    FullDataTable[TotalCount,] <- t(Row)#
+        TotalCount <- TotalCount + 1#
+}#
+}#
+#
+for (i in 1:nrow(DFETable)){#
+    print (i)#
+    Subset <- DFETable[i,3:ncol(DFETable)]#
+for (Element in 1:6){#
+    FullDataTable[TotalCount,] <- 0#
+    Test <- c()#
+    for (RecRate in 1:600){#
+        Test <- rbind(Test, Data[(203-3:ncol(DFETable))*6 + Element + 12,RecRate])#
+    }#
+    Row <- Test %*% t(Subset)#
+    FullDataTable[TotalCount,] <- t(Row)#
+        TotalCount <- TotalCount + 1#
+}#
+}#
+#
+write.table(FullDataTable, file = "PLGivenSTableWithRecsFirstDFE.txt",row.names= FALSE,col.names = FALSE)
+25212/6
+8463/6
+8463/401
+8463/403
+2418/6
+(203-3:ncol(DFETable))*6 + Element + 12
+Element=1
+(203-3:ncol(DFETable))*6 + Element + 12
+Element=6
+(203-3:ncol(DFETable))*6 + Element + 12
+0.0052/20
+setwd("~/Dropbox (Personal)/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/PlottingScripts/")
+library(here)#
+library(viridis)#
+### Calculation of means#
+#
+Data <- read.table("../Results/ExitSValues/ExitOnePercentSValuesConstantBoyko.txt")#
+MeanConstantBoyko <- mean(Data$V2[1:50000]*40000)#
+#
+Data <- read.table("../Results/ExitSValues/ExitOnePercentSValuesConstantMouse.txt")#
+MeanConstantMouse <- mean(Data$V2[1:50000]*40000)#
+#
+Data <- read.table("../Results/ExitSValues/ExitOnePercentSValuesPopExpansionBoyko.txt")#
+MeanPopExpansionBoyko <- mean(Data$V2[1:50000]*20000)#
+#
+Data <- read.table("../Results/ExitSValues/ExitOnePercentSValuesPopExpansionMouse.txt")#
+MeanPopExpansionMouse <- mean(Data$V2[1:50000]*20000)#
+#
+### Reading DFE parameters and 4Ns values from the truncated gamma distributions used#
+#
+DFEPars <- read.table ("../Scripts/Sims/ConstantPopSizeBoyko/ImportanceSamplingSims/AnotherExtraTableOfProbabilities.txt")#
+FourNsMeans <- c()#
+#
+for (i in 1:nrow(DFEPars)){#
+FourNsMeans[i] <- 0#
+#
+for (j in 3:203){#
+FourNsMeans[i] <- FourNsMeans[i] + (j-3)* DFEPars[i,j]#
+}#
+}#
+#
+DFEPars <- read.table ("../Scripts/Sims/ConstantPopSizeBoyko/ImportanceSamplingSims/AnotherExtraTableOfProbabilitiesSmall.txt")#
+# FourNsMeans <- c()#
+#
+for (i in 1:nrow(DFEPars)){#
+FourNsMeans[i+nrow(DFEPars)] <- 0#
+#
+for (j in 3:203){#
+FourNsMeans[i+nrow(DFEPars)] <- FourNsMeans[i+nrow(DFEPars)] + (j-3)* DFEPars[i,j]#
+}#
+}#
+#
+pdf("../Figures/SuppFigureSX9_MLEDFEHumanPopExpansion.pdf",width=7*2,height=7*4/4)#
+par(mfrow = c(1,2),mar=c(5,5,5,3))#
+#
+MLE <- read.table("../Results/ResultsSelectionInferred/SelectionPopExpansionBoykoDifRecRate.txt")#
+#
+Row <- c()#
+Column <- c()#
+#
+for (i in 1:nrow(MLE)){#
+    if (MLE$V1[i] < 2100 ){#
+CurRow <- ( MLE$V1[i] ) %% 70 + 1#
+CurColumn <- floor(( MLE$V1[i] ) / 70) + 1#
+Row <- c(Row, CurRow)#
+Column <- c(Column, CurColumn)#
+    }else{#
+CurRow <- (( MLE$V1[i] ) %% 70) + 1 + 70#
+CurColumn <- floor(( MLE$V1[i] - 2100 ) / 70) + 1#
+Row <- c(Row, CurRow)#
+Column <- c(Column, CurColumn)#
+    }#
+}#
+#
+BestFit <- c()#
+Differences <- c()#
+for (i in 1:70){#
+BestFit[i] <- 1#
+for (j in 1:30){#
+    DifferenceOne <- abs(FourNsMeans[(j-1) * 70 + i] - MeanConstantBoyko)#
+    DifferenceTwo <- abs(FourNsMeans[(BestFit[i]-1) * 70 + i] - MeanConstantBoyko)#
+    Differences <- c(Differences,DifferenceOne)#
+    if (DifferenceOne < DifferenceTwo){#
+        BestFit[i] <- j#
+    }#
+}#
+}#
+#
+for (i in 1:70){#
+BestFit[i+70] <- 1#
+for (j in 1:30){#
+    DifferenceOne <- abs(FourNsMeans[(j-1) * 70 + i + 2100] - MeanConstantBoyko)#
+    DifferenceTwo <- abs(FourNsMeans[(BestFit[i+70]-1) * 70 + i + 2100] - MeanConstantBoyko)#
+    Differences <- c(Differences,DifferenceOne)#
+    if (DifferenceOne < DifferenceTwo){#
+        BestFit[i+70] <- j#
+    }#
+}#
+}#
+#
+Test <- as.data.frame(table(MLE))#
+UniqueNumbers <- sort(unique(Test$Freq))#
+ColorViridis <- viridis(length(UniqueNumbers))#
+#
+ColorsToPrint <- c()#
+for (i in 1:nrow(MLE)){#
+    CurrentColor <- Test[Test$MLE==MLE$V1[i],]$Freq#
+    Index <- match(CurrentColor,UniqueNumbers)#
+    ColorsToPrint <- c(ColorsToPrint, Index)#
+}#
+plot(Row*5,Column*.03,xlim=c(0,700),ylim=c(0,0.9),xlab=expression("Shape (" ~ alpha ~ ")"),ylab=expression("Scale (" ~ beta ~ ")"),main="A) Population expansion\nHuman DFE",col=ColorViridis[ColorsToPrint],cex.lab=2,cex.main=2.5,cex.axis=2,pch=19, xaxt = 'n')#
+axis(1,at = c(0,175,350,525,700), labels = c("3", "110", "240", "1245", "2310"), cex.axis = 1.5)#
+#points(50.454203927295,0.184753036884482,col="red",pch=19,lwd=3)#
+lines(1:140*5,BestFit*0.03,lty="dashed",lwd=2,col="red")#
+# legend("center",c("-100","-50","0","50","100"), lty=c(1,1,1,6,6),lwd=6,col=ColorViridis,cex=2,title=expression(paste(4,N[0],'s',sep="")),bty="n")#
+legend("topright",format(UniqueNumbers), pch=19, col=ColorViridis,cex=1,title="Number of simulations",bty="n")#
+abline(v=350, lty= 3)#
+#lines(1:350,(MeanConstantBoyko/2)/1:350,lty="dashed",lwd=2,col="green")#
+#
+library(viridis)#
+library(jpeg)#
+library(plotrix)#
+library(beanplot)#
+library(RColorBrewer)#
+library(here)#
+#
+### Calculation of means#
+#
+Data <- read.table("../Results/ExitSValues/ExitOnePercentSValuesConstantBoyko.txt")#
+MeanConstantBoyko <- mean(Data$V2[1:50000]*40000)#
+#
+Data <- read.table("../Results/ExitSValues/ExitOnePercentSValuesConstantMouse.txt")#
+MeanConstantMouse <- mean(Data$V2[1:50000]*40000)#
+#
+Data <- read.table("../Results/ExitSValues/ExitOnePercentSValuesPopExpansionBoyko.txt")#
+MeanPopExpansionBoyko <- mean(Data$V2[1:50000]*20000)#
+#
+Data <- read.table("../Results/ExitSValues/ExitOnePercentSValuesPopExpansionMouse.txt")#
+MeanPopExpansionMouse <- mean(Data$V2[1:50000]*20000)#
+#
+### Reading DFE parameters and 4Ns values from the truncated gamma distributions used#
+#
+DFEParsOne <- read.table ("../Scripts/Sims/ConstantPopSizeBoyko/ImportanceSamplingSims/AnotherExtraTableOfProbabilities.txt")#
+#
+DFEParsTwo <- read.table ("../Scripts/Sims/ConstantPopSizeBoyko/ImportanceSamplingSims/AnotherExtraTableOfProbabilitiesSmall.txt")#
+#
+DFEPars <- rbind(DFEParsOne, DFEParsTwo)#
+#
+# pdf("../Figures/SuppFigure2_MeanDFEMouseHuman2DemScenarios.pdf")#
+# par(mfrow = c(2,2))#
+# par(mar=c(2.1,5.1,4.1,1.1))#
+MLE <- read.table("../Results/MLEDFEs/ConstantBoykoMLE.txt")#
+#
+Row <- ( MLE$V1 ) %% 70 + 1#
+Column <- floor(( MLE$V1 ) / 70) + 1#
+#
+FourNsMeans <- c()#
+for (i in 1:100){#
+    DFEParameterNumber <- MLE$V1[i]#
+    FourNsMeans[i] <- 0#
+for (j in 3:203){#
+    FourNsMeans[i] <- FourNsMeans[i] + (j-3)* DFEPars[MLE$V1[i]+1,j]#
+}#
+}#
+#
+MLE <- read.table("../Results/MLEDFEs/ConstantMouseMLE.txt")#
+#
+Row <- ( MLE$V1 ) %% 70 + 1#
+Column <- floor(( MLE$V1 ) / 70) + 1#
+#
+FourNsMeans <- c()#
+for (i in 1:100){#
+    DFEParameterNumber <-  MLE$V1[i]#
+    FourNsMeans[i] <- 0#
+    for (j in 3:203){#
+        FourNsMeans[i] <- FourNsMeans[i] + (j-3)* DFEPars[MLE$V1[i]+1,j]#
+    }#
+}#
+#
+MLE <- read.table("../Results/ResultsSelectionInferred/SelectionPopExpansionBoykoDifRecRate.txt")#
+#
+Row <- ( MLE$V1 ) %% 70 + 1#
+Column <- floor(( MLE$V1 ) / 70) + 1#
+#
+FourNsMeans <- c()#
+for (i in 1:100){#
+    DFEParameterNumber <-  MLE$V1[i]#
+    FourNsMeans[i] <- 0#
+    for (j in 3:203){#
+        FourNsMeans[i] <- FourNsMeans[i] + (j-3)* DFEPars[MLE$V1[i]+1,j]#
+    }#
+}#
+#
+beanplot(-FourNsMeans,main="B) Population expansion\nHuman DFE",ylab="Mean 4Ns value",cex.lab=2,cex.main=2.5,cex.axis=2,ylim=c(-200,10), col = c("#CAB2D6", "#33A02C", "#B2DF8A"), border = "#CAB2D6", maxstripline=0.15, beanlinewd=0.5, overall=10000, what=c(FALSE,TRUE,TRUE,TRUE), overallline = "median", ll=0.5)#
+points(1,-MeanPopExpansionBoyko,col="red",pch=19)#
+#
+MLE <- read.table("../Results/MLEDFEs/PopExpansionMouseMLE.txt")#
+#
+Row <- ( MLE$V1 ) %% 70 + 1#
+Column <- floor(( MLE$V1 ) / 70) + 1#
+#
+FourNsMeans <- c()#
+for (i in 1:100){#
+    DFEParameterNumber <-  MLE$V1[i]#
+    FourNsMeans[i] <- 0#
+    for (j in 3:203){#
+        FourNsMeans[i] <- FourNsMeans[i] + (j-3)* DFEPars[MLE$V1[i]+1,j]#
+    }#
+}#
+#
+dev.off()#
+# dev.off()
+library(here)#
+library(viridis)#
+library(beanplot)#
+#
+Divisions <- 20#
+DivisionsPlusOne <- Divisions + 1#
+#
+################################################### Two plots on same place #############################
+#
+ColorViridis <- viridis(3)#
+ViridisColors <- viridis(3)#
+#
+Alpha = 0.184#
+Beta = 319.8626 * 10#
+#
+P_Allele_Is_2Ns <- c()#
+NumberOfAllelesAt2Ns <- c()#
+RealProbs <- c()#
+# P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,pgamma(0.5,Alpha,scale=Beta))#
+for (i in 1:200){#
+    # print (i)#
+    Prob <- pgamma(i*2.5,Alpha,scale=Beta) - pgamma((i-1)*2.5,Alpha,scale=Beta)#
+    P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,Prob)#
+    NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*((160000)*2500*1000)) # Original Test#
+    # NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*(1))#
+}#
+#
+SelectionCoefficientListBoyko <- read.table("../Results/CalculateDFEOfNewMutations/ExitOnePercentSValuesConstantBoyko.txt")#
+#
+### P (allele is at 1%)#
+#
+P_allele_at_OnePercent = nrow(SelectionCoefficientListBoyko)/((160000)*2500*1000) # Original#
+Alpha = 0.11#
+Beta = 8636364 * 0.01#
+#
+# P_Allele_Is_2Ns <- c()#
+NumberOfAllelesAt2Ns <- c()#
+RealProbs <- c()#
+# P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,pgamma(0.5,Alpha,scale=Beta))#
+for (i in 1:200){#
+    # print (i)#
+    Prob <- pgamma(i*2.5 - 0.25,Alpha,scale=Beta) - pgamma(max((i-1)*2.5 - 0.25,0),Alpha,scale=Beta)#
+    #   P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,Prob)#
+    NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*((160000)*2500*1000)) # Original Test#
+    #    NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*(1))#
+}#
+#
+SelectionCoefficientList <- read.table("../Results/CalculateDFEOfNewMutations/ExitOnePercentSValuesConstantMouse.txt")#
+#
+TwoNsValues <- SelectionCoefficientList$V2*20000#
+#
+Breaks <- c(0,2.5*0:200 + 2.25)#
+#
+Check <- hist(TwoNsValues, breaks= Breaks, plot = FALSE)#
+Counts_At_OnePercent_Given2Ns <- Check$counts#
+#
+Probabilities_At_One_Percent_Given_2NsMouse= Counts_At_OnePercent_Given2Ns[1:50]/ (NumberOfAllelesAt2Ns[1:50])#
+DFEParsOne <- read.table ("../Scripts/Sims/ConstantPopSizeBoyko/ImportanceSamplingSims/AnotherExtraTableOfProbabilities.txt")#
+#
+DFEParsTwo <- read.table ("../Scripts/Sims/ConstantPopSizeBoyko/ImportanceSamplingSims/AnotherExtraTableOfProbabilitiesSmall.txt")#
+#
+DFEPars <- rbind(DFEParsOne, DFEParsTwo)#
+#
+MLE <- read.table("../Results/MLEDFEs/ConstantBoykoMLE.txt")#
+#
+Row <- ( MLE$V1 ) %% 70 + 1#
+Column <- floor(( MLE$V1 ) / 70) + 1#
+#
+DFEParameterNumber <- (Column[1]-1)*70 + Row[1]#
+P_Allele_Is_2Ns_given_OnePercent <- c()#
+# MatrixP_Allele_Is_2Ns_given_OnePercent <- matrix(nrow=1,ncol=50)#
+#
+FourNs <- SelectionCoefficientListBoyko$V2 * 40000#
+#
+for (j in 1:100){#
+Row <- ( MLE$V1 ) %% 70 + 1#
+Column <- floor(( MLE$V1 ) / 70) + 1#
+DFEParameterNumber <- MLE$V1[j] + 1#
+P_Allele_Is_2Ns_given_OnePercent <- c()#
+for (i in 1:40){#
+    UpperBound <- i*5 + 2#
+    LowerBound <- (i-1)*5 + 3#
+    CurrentSum <- sum(DFEPars[DFEParameterNumber,LowerBound:UpperBound])#
+    P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,CurrentSum)#
+}#
+ProbsMouse <- P_Allele_Is_2Ns_given_OnePercent[1:Divisions] * P_allele_at_OnePercent#
+ProbsMouse <- ProbsMouse[1:Divisions] / Probabilities_At_One_Percent_Given_2NsMouse[1:Divisions]#
+ProbsMouse[DivisionsPlusOne] <- 1 - sum (ProbsMouse[1:Divisions])#
+if (j==1){#
+    #    MatrixP_Allele_Is_2Ns_given_OnePercent <- matrix(P_Allele_Is_2Ns_given_OnePercent,nrow=1)#
+    MatrixFinalProbs <- matrix(ProbsMouse,nrow=1)#
+    DifferenceMatrix <- ProbsMouse#
+}else{#
+    #    MatrixP_Allele_Is_2Ns_given_OnePercent <- rbind(MatrixP_Allele_Is_2Ns_given_OnePercent,P_Allele_Is_2Ns_given_OnePercent)#
+     MatrixFinalProbs <- rbind ( MatrixFinalProbs,ProbsMouse)#
+     DifferenceMatrix <- rbind (DifferenceMatrix,ProbsMouse)#
+}#
+}#
+GammaLimit <- Divisions * 2.5#
+LastAlleleNumber <- (1-pgamma(GammaLimit,Alpha,scale=Beta))* ((160000)*2500*1000)#
+#
+Probabilities_At_One_Percent_Given_2NsMouse= c(Counts_At_OnePercent_Given2Ns[1:Divisions],sum(Counts_At_OnePercent_Given2Ns[DivisionsPlusOne:200]))/ c((NumberOfAllelesAt2Ns[1:Divisions]),LastAlleleNumber )#
+for (j in 1:100){#
+    Row <- ( MLE$V1 ) %% 70 + 1#
+    Column <- floor(( MLE$V1 ) / 70) + 1#
+    DFEParameterNumber <- (Column[j]-1)*70 + Row[j]#
+    P_Allele_Is_2Ns_given_OnePercent <- c()#
+    for (i in 1:40){#
+        UpperBound <- i*5 + 2#
+        LowerBound <- (i-1)*5 + 3#
+        CurrentSum <- sum(DFEPars[DFEParameterNumber,LowerBound:UpperBound])#
+        P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,CurrentSum)#
+    }#
+    OtherProbsMouse <- c(P_Allele_Is_2Ns_given_OnePercent[1:Divisions],1-sum(P_Allele_Is_2Ns_given_OnePercent[1:Divisions]))#
+    OtherProbsMouse <-  OtherProbsMouse[1:DivisionsPlusOne] / Probabilities_At_One_Percent_Given_2NsMouse[1:DivisionsPlusOne]#
+    OtherProbsMouse <- OtherProbsMouse[1:DivisionsPlusOne] / sum (OtherProbsMouse[1:DivisionsPlusOne] )#
+    if (j==1){#
+        #    MatrixP_Allele_Is_2Ns_given_OnePercent <- matrix(P_Allele_Is_2Ns_given_OnePercent,nrow=1)#
+        OtherMatrixFinalProbs <- matrix(OtherProbsMouse,nrow=1)#
+        MatrixP_Allele_Is_2Ns_given_OnePercent <- matrix(P_Allele_Is_2Ns_given_OnePercent,nrow=1)#
+    }else{#
+        #    MatrixP_Allele_Is_2Ns_given_OnePercent <- rbind(MatrixP_Allele_Is_2Ns_given_OnePercent,P_Allele_Is_2Ns_given_OnePercent)#
+        OtherMatrixFinalProbs <- rbind ( OtherMatrixFinalProbs,OtherProbsMouse)#
+        MatrixP_Allele_Is_2Ns_given_OnePercent <- rbind(MatrixP_Allele_Is_2Ns_given_OnePercent, P_Allele_Is_2Ns_given_OnePercent)#
+    }#
+}#
+#
+Labels <- c()#
+for (i in 1:20){#
+    Label <- paste((i-1)*5,"-",i*5,sep="")#
+    Labels <- c(Labels,Label)#
+}#
+Label <- paste(">","150",sep="")#
+Labels <- c("0-5","50-55","100-150",Label)#
+#
+pdf("../Figures/SuppFigureSX10_DFEf_toDFEOn100SimsPopExpansionDifRate.pdf",width=10,height = 14)#
+par(mar=c(4.1,5.1,2.6,2.1))#
+par(mfrow = c(4,1))#
+#
+PartOne <- c(P_Allele_Is_2Ns[1:Divisions], 1 - sum(P_Allele_Is_2Ns[1:Divisions]))#
+#
+# plot(1:DivisionsPlusOne,c(P_Allele_Is_2Ns[1:Divisions], 1 - sum(P_Allele_Is_2Ns[1:Divisions])), col=ColorViridis[1], ylim=c(0,1.0), xaxt="n", ylab="Probability", xlab="4Ns",lwd=5,cex.lab=2,cex.axis=2,cex.lab=2, main = "A) Constant size - Human DFE",cex.main = 2)#
+#
+FinalMedian <- c()#
+for (i in 1:Divisions){#
+    Quantiles <- quantile(MatrixFinalProbs[,i],c(0.05,0.95))#
+    #segments (i,Quantiles[1],x1=i,Quantiles[2],col=ColorViridis[2], lwd = 4, lty=2)#
+    #    points(i,Quantiles[1],col=ColorViridis[2],pch=25, bg = ColorViridis[2],cex=2)#
+    #    points(i,Quantiles[2],col=ColorViridis[2],pch=24, bg = ColorViridis[2],cex=2)#
+    Quantiles <- quantile(MatrixFinalProbs[,i],c(0.5))#
+    FinalMedian <- c(FinalMedian,Quantiles[1])#
+}#
+#
+Quantiles <- quantile(MatrixFinalProbs[,DivisionsPlusOne],c(0.05,0.95))#
+#segments (31, Quantiles[1],x1=31,y1=Quantiles[2],col=ColorViridis[2], lwd = 4, lty=2)#
+#points(DivisionsPlusOne,Quantiles[1],col=ColorViridis[2],pch=25, bg = ColorViridis[2],cex=2)#
+#points(DivisionsPlusOne,Quantiles[2],col=ColorViridis[2],pch=24, bg = ColorViridis[2],cex=2)#
+Quantiles <- quantile(MatrixFinalProbs[,DivisionsPlusOne],c(0.5))#
+FinalMedian <- c(FinalMedian,Quantiles[1])#
+PartTwo <- FinalMedian#
+# lines(1:DivisionsPlusOne,FinalMedian,col=ColorViridis[2],lwd=4)#
+# lines(1:31,c(P_Allele_Is_2Ns_given_OnePercent[1:30],  1 - sum(P_Allele_Is_2Ns_given_OnePercent[1:30])),col=ColorViridis[4],lwd=3)#
+#
+FinalMedian <- c()#
+for (i in 1:Divisions){#
+    Quantiles <- quantile(OtherMatrixFinalProbs[,i],c(0.05,0.95))#
+    #    segments (i,Quantiles[1],x1=i,Quantiles[2],col=ColorViridis[3], lwd = 3, lty=2)#
+    #    points(i,Quantiles[1],col=ColorViridis[3],pch=25, bg = ColorViridis[3],cex=1.5)#
+    #    points(i,Quantiles[2],col=ColorViridis[3],pch=24, bg = ColorViridis[3],cex=1.5)#
+    Quantiles <- quantile(OtherMatrixFinalProbs[,i],c(0.5))#
+    FinalMedian <- c(FinalMedian,Quantiles[1])#
+}#
+Quantiles <- quantile(OtherMatrixFinalProbs[,DivisionsPlusOne],c(0.05,0.95))#
+#segments (31, Quantiles[1],x1=31,y1=Quantiles[2],col=ColorViridis[3], lwd = 3, lty=2)#
+#points(DivisionsPlusOne,Quantiles[1],col=ColorViridis[3],pch=25, bg = ColorViridis[3],cex=1.5)#
+#points(DivisionsPlusOne,Quantiles[2],col=ColorViridis[3],pch=24, bg = ColorViridis[3],cex=1.5)#
+Quantiles <- quantile(OtherMatrixFinalProbs[,DivisionsPlusOne],c(0.5))#
+FinalMedian <- c(FinalMedian,Quantiles[1])#
+PartThree <- FinalMedian#
+# lines(1:DivisionsPlusOne,FinalMedian,col=ColorViridis[3],lwd=2)#
+#
+FinalMedian <- c()#
+for (i in 1:Divisions){#
+    Quantiles <- quantile(MatrixP_Allele_Is_2Ns_given_OnePercent[,i],c(0.05,0.95))#
+    #    segments (i,Quantiles[1],x1=i,Quantiles[2],col=ColorViridis[4], lwd = 3, lty=2)#
+    #    points(i,Quantiles[1],col=ColorViridis[4],pch=25, bg = ColorViridis[4])#
+    #    points(i,Quantiles[2],col=ColorViridis[4],pch=24, bg = ColorViridis[4])#
+    Quantiles <- quantile(MatrixP_Allele_Is_2Ns_given_OnePercent[,i],c(0.5))#
+    FinalMedian <- c(FinalMedian,Quantiles[1])#
+}#
+Quantiles <- quantile(MatrixP_Allele_Is_2Ns_given_OnePercent[,DivisionsPlusOne],c(0.05,0.95))#
+# segments (31, Quantiles[1],x1=31,y1=Quantiles[2],col=ColorViridis[4], lwd = 3, lty=2)#
+#points(DivisionsPlusOne,Quantiles[1],col=ColorViridis[4],pch=25, bg = ColorViridis[4])#
+#points(DivisionsPlusOne,Quantiles[2],col=ColorViridis[4],pch=24, bg = ColorViridis[4])#
+Quantiles <- quantile(MatrixP_Allele_Is_2Ns_given_OnePercent[,DivisionsPlusOne],c(0.5))#
+FinalMedian <- c(FinalMedian,Quantiles[1])#
+PartFour <- FinalMedian#
+# lines(1:DivisionsPlusOne,FinalMedian,col=ColorViridis[4],lwd=2)#
+# for (i in 1:30){#
+#    segments (i,OtherUpSDProbsMouse[i],x1=i,y1=max(OtherDownSDProbsMouse[i],0),col=ColorViridis[3], lwd = 3, lty = 2)#
+# }#
+# segments (31, 1 - sum(OtherUpSDProbsMouse[1:30]),x1=31,y1=max( 1 - sum(OtherDownSDProbsMouse[1:30])),col=ColorViridis[3], lwd = 3, lty = 2)#
+counts <- table(mtcars$vs, mtcars$gear)#
+counts <- rbind(counts,c(1,2,3))#
+# counts <- rbind(counts,c(1,2,3))#
+# counts <- cbind(counts,c(Probs[3],P_Allele_Is_2Ns_given_OnePercent[3]))#
+for (i in 4:20){#
+counts <- cbind(counts,c(PartOne[i],PartTwo[i],PartFour[i]))#
+}#
+#
+counts <- cbind(counts,c(1-sum(PartOne[1:20]),1-sum(PartTwo[1:20]),1-sum(PartFour[1:20])))#
+#
+counts[1,1] <- PartOne[1]#
+counts[1,2] <- PartOne[2]#
+counts[1,3] <- PartOne[3]#
+counts[2,1] <- PartTwo[1]#
+counts[2,2] <- PartTwo[2]#
+counts[2,3] <- PartTwo[3]#
+counts[3,1] <- PartFour[1]#
+counts[3,2] <- PartFour[2]#
+counts[3,3] <- PartFour[3]#
+#
+BoykoParams <- PartOne#
+#
+colnames(counts) <- c("0-5", "5-10", "10-15", "15-20", "20-25", "25-30", "30-35", "35-40", "40-45", "45-50","50-55", "55-60", "60-65", "65-70", "70-75", "75-80", "80-85", "85-90", "90-95", "95-100", ">100")#
+rownames(counts) <- c("Real P(4Ns | DFE, D)", "Inferred P(4Ns| DFE, D)", "Inferred P(4Ns| 1%, DFE, D)")#
+#
+# barplot(log10(counts) - log10(0.0000000001), main="A) Constant Size - Human DFE", ylab="Probability", xlab=expression(bolditalic(s[j]) * " (4Ns intervals)"), col=ViridisColors, legend = c(expression("Real" ~ 'P'[psi] * "(" * bolditalic(s[j]) * ")"), expression("Inferred"  ~ 'P'[psi] * "(" * bolditalic(s[j]) * ")"), expression('P'[psi] * "(" * bolditalic(s[j]) * " | "* italic(f) * ", "* italic(D) *")")), beside=TRUE, cex.lab=2, cex.axis=2,cex.names=2, args.legend = list(x = "top",cex=1.5, bty = "n"), cex.main = 2, ylim = c(0,12), yaxt="n")#
+#
+# axis (2,at=c(0,2,4,6,8,10), labels = c(0,10^-8,10^-6,10^-4,10^-2,10^0), cex.axis = 1.5, cex.lab = 1.5)#
+Expression <- expression(paste("Real P(",bolditalic(s[j])," | DFE, D)"))#
+Expression2 <- expression(paste("Inferred P(",bolditalic(s[j])," | DFE, D)  Equation 4"))#
+Expression3 <- expression(paste("Inferred P(",bolditalic(s[j])," | DFE, D)  Equation 5"))#
+Expression4 <- expression(paste("Inferred P(",bolditalic(s[j])," | 1%, DFE, D)"))#
+# legend("top",c(Expression, Expression2, Expression3, Expression4),pch=19,col=ColorViridis,cex=2)#
+#
+FinalMedian <- c()#
+for (i in 1:Divisions){#
+    Quantiles <- quantile(MatrixFinalProbs[,i],c(0.05,0.95))#
+    CurrentMean <- mean(MatrixFinalProbs[,i])#
+    #segments (i,Quantiles[1],x1=i,Quantiles[2],col=ColorViridis[2], lwd = 4, lty=2)#
+        points((i - 1)* 4 + 2.5, log10(Quantiles[1]) - log10(0.0000000001),col="black",pch=24, bg = "black", cex=1)#
+        points((i - 1)* 4 + 2.5, log10(Quantiles[2]) - log10(0.0000000001),col="black", pch=25, bg = "black", cex=1)#
+        points((i - 1)* 4 + 2.5, log10(CurrentMean) - log10(0.0000000001),col="black", pch=8, bg = "black", cex=1)#
+    Quantiles <- quantile(MatrixFinalProbs[,i],c(0.5))#
+    FinalMedian <- c(FinalMedian,Quantiles[1])#
+}#
+#
+Quantiles <- quantile(MatrixFinalProbs[,DivisionsPlusOne],c(0.05,0.95))#
+CurrentMean <- mean(MatrixFinalProbs[,DivisionsPlusOne])#
+#
+points(Divisions*4 + 2.5, log10(Quantiles[1]) - log10(0.0000000001), col="black", pch=24, bg = "black", cex=1)#
+points(Divisions*4 + 2.5, log10(Quantiles[2]) - log10(0.0000000001), col="black", pch=25, bg = "black", cex=1)#
+points(Divisions*4 + 2.5, log10(CurrentMean) - log10(0.0000000001), col="black", pch=8, bg = "black", cex=1)#
+FinalMedian <- c()#
+TotalDifference <- c()#
+for (i in 1:Divisions){#
+    Quantiles <- quantile(MatrixP_Allele_Is_2Ns_given_OnePercent[,i],c(0.05,0.95))#
+    CurrentMean <- mean(MatrixP_Allele_Is_2Ns_given_OnePercent[,i])#
+#
+    #segments (i,Quantiles[1],x1=i,Quantiles[2],col=ColorViridis[2], lwd = 4, lty=2)#
+    points((i - 1)* 4 + 3.5, log10(Quantiles[1]) - log10(0.0000000001),col="black",pch=24, bg = "black", cex=1)#
+    points((i - 1)* 4 + 3.5, log10(Quantiles[2]) - log10(0.0000000001),col="black", pch=25, bg = "black", cex=1)#
+    points((i - 1)* 4 + 3.5, log10(CurrentMean) - log10(0.0000000001),col="black", pch=8, bg = "black", cex=1)#
+    Quantiles <- quantile(MatrixP_Allele_Is_2Ns_given_OnePercent[,i],c(0.5))#
+    FinalMedian <- c(FinalMedian,Quantiles[1])#
+    TotalDifference <- c(TotalDifference, 1 - sum(MatrixP_Allele_Is_2Ns_given_OnePercent[i,1:20]))#
+}#
+#
+Quantiles <- quantile(TotalDifference,c(0.05,0.95))#
+CurrentMean <- mean(TotalDifference)#
+#
+points(Divisions*4 + 3.5, log10(Quantiles[1]) - log10(0.0000000001), col="black", pch=24, bg = "black", cex=1)#
+points(Divisions*4 + 3.5, log10(Quantiles[2]) - log10(0.0000000001), col="black", pch=25, bg = "black", cex=1)#
+points(Divisions*4 + 3.5, log10(CurrentMean) - log10(0.0000000001), col="black", pch=8, bg = "black", cex=1)#
+# axis(1, at=c(1:DivisionsPlusOne), labels=FALSE,cex.lab=1,cex=1,cex.axis=1)#
+# axis(1, at=c(1,11,21,31), labels=Labels,cex.lab=2,cex=2,cex.axis=2,col.ticks="red")#
+# dev.off()#
+###################################### Plot 2 ################################################################################################################## #
+#
+ColorViridis <- viridis(3)#
+#
+Alpha = 0.11#
+Beta = 8636364 * 0.01#
+#
+P_Allele_Is_2Ns <- c()#
+NumberOfAllelesAt2Ns <- c()#
+RealProbs <- c()#
+# P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,pgamma(0.5,Alpha,scale=Beta))#
+for (i in 1:200){#
+    # print (i)#
+    Prob <- pgamma(i*2.5,Alpha,scale=Beta) - pgamma((i-1)*2.5,Alpha,scale=Beta)#
+    P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,Prob)#
+    NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*((160000)*2500*1000)) # Original Test#
+    # NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*(1))#
+}#
+#
+SelectionCoefficientListBoyko <- read.table("../Results/CalculateDFEOfNewMutations/ExitOnePercentSValuesConstantMouse.txt")#
+#
+### P (allele is at 1%)#
+#
+P_allele_at_OnePercent = nrow(SelectionCoefficientListBoyko)/((160000)*2500*1000) # Original#
+Alpha = 0.184#
+Beta = 319.8626 * 10#
+#
+# P_Allele_Is_2Ns <- c()#
+NumberOfAllelesAt2Ns <- c()#
+RealProbs <- c()#
+# P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,pgamma(0.5,Alpha,scale=Beta))#
+for (i in 1:200){#
+    # print (i)#
+    Prob <- pgamma(i*2.5 - 0.25,Alpha,scale=Beta) - pgamma(max((i-1)*2.5 - 0.25,0),Alpha,scale=Beta)#
+    #   P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,Prob)#
+    NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*((160000)*2500*1000)) # Original Test#
+    #    NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*(1))#
+}#
+#
+SelectionCoefficientList <- read.table("../Results/CalculateDFEOfNewMutations/ExitOnePercentSValuesConstantBoyko.txt")#
+#
+TwoNsValues <- SelectionCoefficientList$V2*20000#
+#
+Breaks <- c(0,2.5*0:300 + 2.25)#
+#
+Check <- hist(TwoNsValues, breaks= Breaks, plot = FALSE)#
+Counts_At_OnePercent_Given2Ns <- Check$counts#
+#
+Probabilities_At_One_Percent_Given_2NsMouse= Counts_At_OnePercent_Given2Ns[1:50]/ (NumberOfAllelesAt2Ns[1:50])#
+#
+DFEParsOne <- read.table ("../Scripts/Sims/ConstantPopSizeBoyko/ImportanceSamplingSims/AnotherExtraTableOfProbabilities.txt")#
+#
+DFEParsTwo <- read.table ("../Scripts/Sims/ConstantPopSizeBoyko/ImportanceSamplingSims/AnotherExtraTableOfProbabilitiesSmall.txt")#
+#
+DFEPars <- rbind(DFEParsOne, DFEParsTwo)#
+#
+MLE <- read.table("../Results/MLEDFEs/ConstantMouseMLE.txt")#
+#
+Row <- ( MLE$V1 ) %% 70 + 1#
+Column <- floor(( MLE$V1 ) / 70) + 1#
+#
+DFEParameterNumber <- (Column[1]-1)*70 + Row[1]#
+P_Allele_Is_2Ns_given_OnePercent <- c()#
+# MatrixP_Allele_Is_2Ns_given_OnePercent <- matrix(nrow=1,ncol=50)#
+#
+FourNs <- SelectionCoefficientListBoyko$V2 * 40000#
+#
+for (j in 1:100){#
+    Row <- ( MLE$V1 ) %% 70 + 1#
+    Column <- floor(( MLE$V1 ) / 70) + 1#
+    DFEParameterNumber <- (Column[j]-1)*70 + Row[j]#
+    P_Allele_Is_2Ns_given_OnePercent <- c()#
+    for (i in 1:40){#
+        UpperBound <- i*5 + 2#
+        LowerBound <- (i-1)*5 + 3#
+        CurrentSum <- sum(DFEPars[DFEParameterNumber,LowerBound:UpperBound])#
+        P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,CurrentSum)#
+    }#
+    ProbsMouse <- P_Allele_Is_2Ns_given_OnePercent[1:Divisions] * P_allele_at_OnePercent#
+    ProbsMouse <- ProbsMouse[1:Divisions] / Probabilities_At_One_Percent_Given_2NsMouse[1:Divisions]#
+    ProbsMouse[DivisionsPlusOne] <- 1 - sum (ProbsMouse[1:Divisions])#
+    if (j==1){#
+        #    MatrixP_Allele_Is_2Ns_given_OnePercent <- matrix(P_Allele_Is_2Ns_given_OnePercent,nrow=1)#
+        MatrixFinalProbs <- matrix(ProbsMouse,nrow=1)#
+        DifferenceMatrix <- rbind (DifferenceMatrix,ProbsMouse)#
+    }else{#
+        #    MatrixP_Allele_Is_2Ns_given_OnePercent <- rbind(MatrixP_Allele_Is_2Ns_given_OnePercent,P_Allele_Is_2Ns_given_OnePercent)#
+        MatrixFinalProbs <- rbind ( MatrixFinalProbs,ProbsMouse)#
+        DifferenceMatrix <- rbind (DifferenceMatrix,ProbsMouse)#
+    }#
+}#
+#
+GammaLimit <- Divisions * 2.5#
+LastAlleleNumber <- (1-pgamma(GammaLimit,Alpha,scale=Beta))* ((160000)*2500*1000)#
+#
+Probabilities_At_One_Percent_Given_2NsMouse= c(Counts_At_OnePercent_Given2Ns[1:Divisions],sum(Counts_At_OnePercent_Given2Ns[DivisionsPlusOne:200]))/ c((NumberOfAllelesAt2Ns[1:Divisions]),LastAlleleNumber )#
+for (j in 1:100){#
+    Row <- ( MLE$V1 ) %% 70 + 1#
+    Column <- floor(( MLE$V1 ) / 70) + 1#
+    DFEParameterNumber <- (Column[j]-1)*70 + Row[j]#
+    P_Allele_Is_2Ns_given_OnePercent <- c()#
+    for (i in 1:40){#
+        UpperBound <- i*5 + 2#
+        LowerBound <- (i-1)*5 + 3#
+        CurrentSum <- sum(DFEPars[DFEParameterNumber,LowerBound:UpperBound])#
+        P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,CurrentSum)#
+    }#
+    OtherProbsMouse <- c(P_Allele_Is_2Ns_given_OnePercent[1:Divisions],1-sum(P_Allele_Is_2Ns_given_OnePercent[1:Divisions]))#
+    OtherProbsMouse <-  OtherProbsMouse[1:DivisionsPlusOne] / Probabilities_At_One_Percent_Given_2NsMouse[1:DivisionsPlusOne]#
+    OtherProbsMouse <- OtherProbsMouse[1:DivisionsPlusOne] / sum (OtherProbsMouse[1:DivisionsPlusOne] )#
+    if (j==1){#
+        #    MatrixP_Allele_Is_2Ns_given_OnePercent <- matrix(P_Allele_Is_2Ns_given_OnePercent,nrow=1)#
+        OtherMatrixFinalProbs <- matrix(OtherProbsMouse,nrow=1)#
+        MatrixP_Allele_Is_2Ns_given_OnePercent <- matrix(P_Allele_Is_2Ns_given_OnePercent,nrow=1)#
+    }else{#
+        #    MatrixP_Allele_Is_2Ns_given_OnePercent <- rbind(MatrixP_Allele_Is_2Ns_given_OnePercent,P_Allele_Is_2Ns_given_OnePercent)#
+        OtherMatrixFinalProbs <- rbind ( OtherMatrixFinalProbs,OtherProbsMouse)#
+        MatrixP_Allele_Is_2Ns_given_OnePercent <- rbind(MatrixP_Allele_Is_2Ns_given_OnePercent, P_Allele_Is_2Ns_given_OnePercent)#
+    }#
+}#
+#
+Labels <- c()#
+for (i in 1:20){#
+    Label <- paste((i-1)*5,"-",i*5,sep="")#
+    Labels <- c(Labels,Label)#
+}#
+Label <- paste(">","150",sep="")#
+Labels <- c("0-5","50-55","100-150",Label)#
+#
+# pdf("../Figures/SuppFigure11_DFEf_toDFEOn100Sims.pdf",width=7,height = 14)#
+# par(mar=c(4.1,5.1,2.6,2.1))#
+# par(mfrow = c(4,1))#
+#
+PartOne <- c(P_Allele_Is_2Ns[1:Divisions], 1 - sum(P_Allele_Is_2Ns[1:Divisions]))#
+#
+# plot(1:DivisionsPlusOne,c(P_Allele_Is_2Ns[1:Divisions], 1 - sum(P_Allele_Is_2Ns[1:Divisions])), col=ColorViridis[1], ylim=c(0,1.0), xaxt="n", ylab="Probability", xlab="4Ns",lwd=5,cex.lab=2,cex.axis=2,cex.lab=2, main = "A) Constant size - Human DFE",cex.main = 2)#
+#
+FinalMedian <- c()#
+for (i in 1:Divisions){#
+    Quantiles <- quantile(MatrixFinalProbs[,i],c(0.05,0.95))#
+    #segments (i,Quantiles[1],x1=i,Quantiles[2],col=ColorViridis[2], lwd = 4, lty=2)#
+    #    points(i,Quantiles[1],col=ColorViridis[2],pch=25, bg = ColorViridis[2],cex=2)#
+    #    points(i,Quantiles[2],col=ColorViridis[2],pch=24, bg = ColorViridis[2],cex=2)#
+    Quantiles <- quantile(MatrixFinalProbs[,i],c(0.5))#
+    FinalMedian <- c(FinalMedian,Quantiles[1])#
+}#
+#
+Quantiles <- quantile(MatrixFinalProbs[,DivisionsPlusOne],c(0.05,0.95))#
+#segments (31, Quantiles[1],x1=31,y1=Quantiles[2],col=ColorViridis[2], lwd = 4, lty=2)#
+#points(DivisionsPlusOne,Quantiles[1],col=ColorViridis[2],pch=25, bg = ColorViridis[2],cex=2)#
+#points(DivisionsPlusOne,Quantiles[2],col=ColorViridis[2],pch=24, bg = ColorViridis[2],cex=2)#
+Quantiles <- quantile(MatrixFinalProbs[,DivisionsPlusOne],c(0.5))#
+FinalMedian <- c(FinalMedian,Quantiles[1])#
+PartTwo <- FinalMedian#
+# lines(1:DivisionsPlusOne,FinalMedian,col=ColorViridis[2],lwd=4)#
+# lines(1:31,c(P_Allele_Is_2Ns_given_OnePercent[1:30],  1 - sum(P_Allele_Is_2Ns_given_OnePercent[1:30])),col=ColorViridis[4],lwd=3)#
+#
+FinalMedian <- c()#
+for (i in 1:Divisions){#
+    Quantiles <- quantile(OtherMatrixFinalProbs[,i],c(0.05,0.95))#
+    #    segments (i,Quantiles[1],x1=i,Quantiles[2],col=ColorViridis[3], lwd = 3, lty=2)#
+    #    points(i,Quantiles[1],col=ColorViridis[3],pch=25, bg = ColorViridis[3],cex=1.5)#
+    #    points(i,Quantiles[2],col=ColorViridis[3],pch=24, bg = ColorViridis[3],cex=1.5)#
+    Quantiles <- quantile(OtherMatrixFinalProbs[,i],c(0.5))#
+    FinalMedian <- c(FinalMedian,Quantiles[1])#
+}#
+Quantiles <- quantile(OtherMatrixFinalProbs[,DivisionsPlusOne],c(0.05,0.95))#
+#segments (31, Quantiles[1],x1=31,y1=Quantiles[2],col=ColorViridis[3], lwd = 3, lty=2)#
+#points(DivisionsPlusOne,Quantiles[1],col=ColorViridis[3],pch=25, bg = ColorViridis[3],cex=1.5)#
+#points(DivisionsPlusOne,Quantiles[2],col=ColorViridis[3],pch=24, bg = ColorViridis[3],cex=1.5)#
+Quantiles <- quantile(OtherMatrixFinalProbs[,DivisionsPlusOne],c(0.5))#
+FinalMedian <- c(FinalMedian,Quantiles[1])#
+PartThree <- FinalMedian#
+# lines(1:DivisionsPlusOne,FinalMedian,col=ColorViridis[3],lwd=2)#
+#
+FinalMedian <- c()#
+for (i in 1:Divisions){#
+    Quantiles <- quantile(MatrixP_Allele_Is_2Ns_given_OnePercent[,i],c(0.05,0.95))#
+    #    segments (i,Quantiles[1],x1=i,Quantiles[2],col=ColorViridis[4], lwd = 3, lty=2)#
+    #    points(i,Quantiles[1],col=ColorViridis[4],pch=25, bg = ColorViridis[4])#
+    #    points(i,Quantiles[2],col=ColorViridis[4],pch=24, bg = ColorViridis[4])#
+    Quantiles <- quantile(MatrixP_Allele_Is_2Ns_given_OnePercent[,i],c(0.5))#
+    FinalMedian <- c(FinalMedian,Quantiles[1])#
+}#
+Quantiles <- quantile(MatrixP_Allele_Is_2Ns_given_OnePercent[,DivisionsPlusOne],c(0.05,0.95))#
+# segments (31, Quantiles[1],x1=31,y1=Quantiles[2],col=ColorViridis[4], lwd = 3, lty=2)#
+#points(DivisionsPlusOne,Quantiles[1],col=ColorViridis[4],pch=25, bg = ColorViridis[4])#
+#points(DivisionsPlusOne,Quantiles[2],col=ColorViridis[4],pch=24, bg = ColorViridis[4])#
+Quantiles <- quantile(MatrixP_Allele_Is_2Ns_given_OnePercent[,DivisionsPlusOne],c(0.5))#
+FinalMedian <- c(FinalMedian,Quantiles[1])#
+PartFour <- FinalMedian#
+# lines(1:DivisionsPlusOne,FinalMedian,col=ColorViridis[4],lwd=2)#
+# for (i in 1:30){#
+#    segments (i,OtherUpSDProbsMouse[i],x1=i,y1=max(OtherDownSDProbsMouse[i],0),col=ColorViridis[3], lwd = 3, lty = 2)#
+# }#
+# segments (31, 1 - sum(OtherUpSDProbsMouse[1:30]),x1=31,y1=max( 1 - sum(OtherDownSDProbsMouse[1:30])),col=ColorViridis[3], lwd = 3, lty = 2)#
+counts <- table(mtcars$vs, mtcars$gear)#
+counts <- rbind(counts,c(1,2,3))#
+# counts <- rbind(counts,c(1,2,3))#
+# counts <- cbind(counts,c(Probs[3],P_Allele_Is_2Ns_given_OnePercent[3]))#
+for (i in 4:20){#
+    counts <- cbind(counts,c(PartOne[i],PartTwo[i],PartFour[i]))#
+}#
+#
+counts <- cbind(counts,c(1-sum(PartOne[1:20]),1-sum(PartTwo[1:20]),1-sum(PartFour[1:20])))#
+#
+counts[1,1] <- PartOne[1]#
+counts[1,2] <- PartOne[2]#
+counts[1,3] <- PartOne[3]#
+counts[2,1] <- PartTwo[1]#
+counts[2,2] <- PartTwo[2]#
+counts[2,3] <- PartTwo[3]#
+counts[3,1] <- PartFour[1]#
+counts[3,2] <- PartFour[2]#
+counts[3,3] <- PartFour[3]#
+#
+BoykoParams <- rbind(BoykoParams, PartOne)#
+#
+colnames(counts) <- c("0-5", "5-10", "10-15", "15-20", "20-25", "25-30", "30-35", "35-40", "40-45", "45-50","50-55", "55-60", "60-65", "65-70", "70-75", "75-80", "80-85", "85-90", "90-95", "95-100", ">100")#
+rownames(counts) <- c("Real P(4Ns | DFE, D)", "Inferred P(4Ns| DFE, D)", "Inferred P(4Ns| 1%, DFE, D)")#
+#barplot(log10(counts) - log10(0.0000000001), main="B) Constant Size - Mouse DFE", ylab="Probability", xlab=expression(bolditalic(s[j]) * " (4Ns intervals)"), col=ViridisColors, beside=TRUE, cex.lab=2, cex.axis=2,cex.names=2, args.legend = list(x = "top",cex=1.5), cex.main = 2, ylim = c(0,10), yaxt="n")#
+#
+# axis (2,at=c(0,2,4,6,8,10), labels = c(0,10^-8,10^-6,10^-4,10^-2,10^0), cex.axis = 1.5, cex.lab = 1.5)#
+Expression <- expression(paste("Real P(",bolditalic(s[j])," | DFE, D)"))#
+Expression2 <- expression(paste("Inferred P(",bolditalic(s[j])," | DFE, D)  Equation 4"))#
+Expression3 <- expression(paste("Inferred P(",bolditalic(s[j])," | DFE, D)  Equation 5"))#
+Expression4 <- expression(paste("Inferred P(",bolditalic(s[j])," | 1%, DFE, D)"))#
+# legend("top",c(Expression, Expression2, Expression3, Expression4),pch=19,col=ColorViridis,cex=2)#
+#
+FinalMedian <- c()#
+for (i in 1:Divisions){#
+    Quantiles <- quantile(MatrixFinalProbs[,i],c(0.05,0.95))#
+    CurrentMean <- mean(MatrixFinalProbs[,i])#
+#
+    #segments (i,Quantiles[1],x1=i,Quantiles[2],col=ColorViridis[2], lwd = 4, lty=2)#
+    points((i - 1)* 4 + 2.5, log10(Quantiles[1]) - log10(0.0000000001),col="black",pch=24, bg = "black", cex=1)#
+    points((i - 1)* 4 + 2.5, log10(Quantiles[2]) - log10(0.0000000001),col="black", pch=25, bg = "black", cex=1)#
+    points((i - 1)* 4 + 2.5, log10(CurrentMean) - log10(0.0000000001),col="black", pch=8, bg = "black", cex=1)#
+#
+    Quantiles <- quantile(MatrixFinalProbs[,i],c(0.5))#
+    FinalMedian <- c(FinalMedian,Quantiles[1])#
+}#
+#
+Quantiles <- quantile(MatrixFinalProbs[,DivisionsPlusOne],c(0.05,0.95))#
+CurrentMean <- mean(MatrixFinalProbs[,DivisionsPlusOne])#
+#
+points(Divisions*4 + 2.5, log10(Quantiles[1]) - log10(0.0000000001), col="black", pch=24, bg = "black", cex=1)#
+points(Divisions*4 + 2.5, log10(Quantiles[2]) - log10(0.0000000001), col="black", pch=25, bg = "black", cex=1)#
+points(Divisions*4 + 2.5, log10(CurrentMean) - log10(0.0000000001), col="black", pch=8, bg = "black", cex=1)#
+FinalMedian <- c()#
+TotalDifference <- c()#
+for (i in 1:Divisions){#
+    Quantiles <- quantile(MatrixP_Allele_Is_2Ns_given_OnePercent[,i],c(0.05,0.95))#
+    CurrentMean <- mean(MatrixP_Allele_Is_2Ns_given_OnePercent[,i])#
+#
+    #segments (i,Quantiles[1],x1=i,Quantiles[2],col=ColorViridis[2], lwd = 4, lty=2)#
+    points((i - 1)* 4 + 3.5, log10(Quantiles[1]) - log10(0.0000000001),col="black",pch=24, bg = "black", cex=1)#
+    points((i - 1)* 4 + 3.5, log10(Quantiles[2]) - log10(0.0000000001),col="black", pch=25, bg = "black", cex=1)#
+    points((i - 1)* 4 + 3.5, log10(CurrentMean) - log10(0.0000000001),col="black", pch=8, bg = "black", cex=1)#
+#
+    Quantiles <- quantile(MatrixP_Allele_Is_2Ns_given_OnePercent[,i],c(0.5))#
+    FinalMedian <- c(FinalMedian,Quantiles[1])#
+    TotalDifference <- c(TotalDifference, 1 - sum(MatrixP_Allele_Is_2Ns_given_OnePercent[i,1:20]))#
+}#
+#
+Quantiles <- quantile(TotalDifference,c(0.05,0.95))#
+CurrentMean <- mean(TotalDifference)#
+points(Divisions*4 + 3.5, log10(Quantiles[1]) - log10(0.0000000001), col="black", pch=24, bg = "black", cex=1)#
+points(Divisions*4 + 3.5, log10(Quantiles[2]) - log10(0.0000000001), col="black", pch=25, bg = "black", cex=1)#
+points(Divisions*4 + 3.5, log10(CurrentMean) - log10(0.0000000001), col="black", pch=8, bg = "black", cex=1)#
+Expression <- expression(paste("Real P(",bolditalic(s[j])," | DFE, D)"))#
+Expression2 <- expression(paste("Inferred P(",bolditalic(s[j])," | DFE, D)  Equation 4"))#
+Expression3 <- expression(paste("Inferred P(",bolditalic(s[j])," | DFE, D)  Equation 5"))#
+Expression4 <- expression(paste("Inferred P(",bolditalic(s[j])," | 1%, DFE, D)"))#
+# legend("top",c(Expression, Expression2, Expression3, Expression4),pch=19,col=ColorViridis,cex=2)#
+#
+# axis(1, at=c(1:DivisionsPlusOne), labels=FALSE,cex.lab=1,cex=1,cex.axis=1)#
+# axis(1, at=c(1,11,21,31), labels=Labels,cex.lab=2,cex=2,cex.axis=2,col.ticks="red")#
+# dev.off()#
+###################################### Plot 3 ###################################################################################################################
+ColorViridis <- viridis(3)#
+#
+Alpha = 0.184#
+Beta = 319.8626 * 10#
+#
+P_Allele_Is_2Ns <- c()#
+NumberOfAllelesAt2Ns <- c()#
+RealProbs <- c()#
+# P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,pgamma(0.5,Alpha,scale=Beta))#
+for (i in 1:200){#
+    # print (i)#
+    Prob <- pgamma(i*2.5,Alpha,scale=Beta) - pgamma((i-1)*2.5,Alpha,scale=Beta)#
+    P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,Prob)#
+    NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*((80000 + (100000/10000)*100)*2500*1000)) # Original Test#
+    # NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*(1))#
+}#
+#
+SelectionCoefficientListBoyko <- read.table("../Results/CalculateDFEOfNewMutations/ExitOnePercentSValuesPopExpansionBoyko.txt")#
+#
+### P (allele is at 1%)#
+#
+P_allele_at_OnePercent = nrow(SelectionCoefficientListBoyko)/((80000 + (100000/10000)*100)*2500*1000) # Original#
+Alpha = 0.11#
+Beta = 8636364 * 0.01#
+#
+# P_Allele_Is_2Ns <- c()#
+NumberOfAllelesAt2Ns <- c()#
+RealProbs <- c()#
+# P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,pgamma(0.5,Alpha,scale=Beta))#
+for (i in 1:200){#
+    # print (i)#
+    Prob <- pgamma(i*2.5 - 0.25,Alpha,scale=Beta) - pgamma(max((i-1)*2.5 - 0.25,0),Alpha,scale=Beta)#
+    #   P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,Prob)#
+    NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*((80000 + (100000/10000)*100)*2500*1000)) # Original Test#
+    #    NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*(1))#
+}#
+#
+SelectionCoefficientList <- read.table("../Results/CalculateDFEOfNewMutations/ExitOnePercentSValuesPopExpansionMouse.txt")#
+#
+TwoNsValues <- SelectionCoefficientList$V2*10000#
+#
+Breaks <- c(0,2.5*0:200 + 2.25)#
+#
+Check <- hist(TwoNsValues, breaks= Breaks, plot = FALSE)#
+Counts_At_OnePercent_Given2Ns <- Check$counts#
+#
+Probabilities_At_One_Percent_Given_2NsMouse= Counts_At_OnePercent_Given2Ns[1:50]/ (NumberOfAllelesAt2Ns[1:50])#
+#
+DFEParsOne <- read.table ("../Scripts/Sims/ConstantPopSizeBoyko/ImportanceSamplingSims/AnotherExtraTableOfProbabilities.txt")#
+#
+DFEParsTwo <- read.table ("../Scripts/Sims/ConstantPopSizeBoyko/ImportanceSamplingSims/AnotherExtraTableOfProbabilitiesSmall.txt")#
+#
+DFEPars <- rbind(DFEParsOne, DFEParsTwo)#
+MLE <- read.table("../Results/ResultsSelectionInferred/SelectionPopExpansionBoykoDifRecRate.txt")#
+#
+Row <- ( MLE$V1 ) %% 70 + 1#
+Column <- floor(( MLE$V1 ) / 70) + 1#
+#
+DFEParameterNumber <- (Column[1]-1)*70 + Row[1]#
+P_Allele_Is_2Ns_given_OnePercent <- c()#
+# MatrixP_Allele_Is_2Ns_given_OnePercent <- matrix(nrow=1,ncol=50)#
+#
+FourNs <- SelectionCoefficientListBoyko$V2 * 20000#
+#
+for (j in 1:100){#
+    Row <- ( MLE$V1 ) %% 70 + 1#
+    Column <- floor(( MLE$V1 ) / 70) + 1#
+    DFEParameterNumber <- (Column[j]-1)*70 + Row[j]#
+    P_Allele_Is_2Ns_given_OnePercent <- c()#
+    for (i in 1:40){#
+        UpperBound <- i*5 + 2#
+        LowerBound <- (i-1)*5 + 3#
+        CurrentSum <- sum(DFEPars[DFEParameterNumber,LowerBound:UpperBound])#
+        P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,CurrentSum)#
+    }#
+    ProbsMouse <- P_Allele_Is_2Ns_given_OnePercent[1:Divisions] * P_allele_at_OnePercent#
+    ProbsMouse <- ProbsMouse[1:Divisions] / Probabilities_At_One_Percent_Given_2NsMouse[1:Divisions]#
+    ProbsMouse[DivisionsPlusOne] <- 1 - sum (ProbsMouse[1:Divisions])#
+    if (j==1){#
+        #    MatrixP_Allele_Is_2Ns_given_OnePercent <- matrix(P_Allele_Is_2Ns_given_OnePercent,nrow=1)#
+        MatrixFinalProbs <- matrix(ProbsMouse,nrow=1)#
+        DifferenceMatrix <- rbind (DifferenceMatrix,ProbsMouse)#
+    }else{#
+        #    MatrixP_Allele_Is_2Ns_given_OnePercent <- rbind(MatrixP_Allele_Is_2Ns_given_OnePercent,P_Allele_Is_2Ns_given_OnePercent)#
+        MatrixFinalProbs <- rbind ( MatrixFinalProbs,ProbsMouse)#
+        DifferenceMatrix <- rbind (DifferenceMatrix,ProbsMouse)#
+    }#
+}#
+#
+GammaLimit <- Divisions * 2.5#
+LastAlleleNumber <- (1-pgamma(GammaLimit,Alpha,scale=Beta))* ((80000 + (100000/10000)*100)*2500*1000)#
+Probabilities_At_One_Percent_Given_2NsMouse= c(Counts_At_OnePercent_Given2Ns[1:Divisions],sum(Counts_At_OnePercent_Given2Ns[DivisionsPlusOne:200]))/ c((NumberOfAllelesAt2Ns[1:Divisions]),LastAlleleNumber )#
+for (j in 1:100){#
+    Row <- ( MLE$V1 ) %% 70 + 1#
+    Column <- floor(( MLE$V1 ) / 70) + 1#
+    DFEParameterNumber <- (Column[j]-1)*70 + Row[j]#
+    P_Allele_Is_2Ns_given_OnePercent <- c()#
+    for (i in 1:40){#
+        UpperBound <- i*5 + 2#
+        LowerBound <- (i-1)*5 + 3#
+        CurrentSum <- sum(DFEPars[DFEParameterNumber,LowerBound:UpperBound])#
+        P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,CurrentSum)#
+    }#
+    OtherProbsMouse <- c(P_Allele_Is_2Ns_given_OnePercent[1:Divisions],1-sum(P_Allele_Is_2Ns_given_OnePercent[1:Divisions]))#
+    OtherProbsMouse <-  OtherProbsMouse[1:DivisionsPlusOne] / Probabilities_At_One_Percent_Given_2NsMouse[1:DivisionsPlusOne]#
+    OtherProbsMouse <- OtherProbsMouse[1:DivisionsPlusOne] / sum (OtherProbsMouse[1:DivisionsPlusOne] )#
+    if (j==1){#
+        #    MatrixP_Allele_Is_2Ns_given_OnePercent <- matrix(P_Allele_Is_2Ns_given_OnePercent,nrow=1)#
+        OtherMatrixFinalProbs <- matrix(OtherProbsMouse,nrow=1)#
+        MatrixP_Allele_Is_2Ns_given_OnePercent <- matrix(P_Allele_Is_2Ns_given_OnePercent,nrow=1)#
+    }else{#
+        #    MatrixP_Allele_Is_2Ns_given_OnePercent <- rbind(MatrixP_Allele_Is_2Ns_given_OnePercent,P_Allele_Is_2Ns_given_OnePercent)#
+        OtherMatrixFinalProbs <- rbind ( OtherMatrixFinalProbs,OtherProbsMouse)#
+        MatrixP_Allele_Is_2Ns_given_OnePercent <- rbind(MatrixP_Allele_Is_2Ns_given_OnePercent, P_Allele_Is_2Ns_given_OnePercent)#
+    }#
+}#
+#
+Labels <- c()#
+for (i in 1:20){#
+    Label <- paste((i-1)*5,"-",i*5,sep="")#
+    Labels <- c(Labels,Label)#
+}#
+Label <- paste(">","150",sep="")#
+Labels <- c("0-5","50-55","100-150",Label)#
+#
+# pdf("../Figures/SuppFigure11_DFEf_toDFEOn100Sims.pdf",width=7,height = 14)#
+# par(mar=c(4.1,5.1,2.6,2.1))#
+# par(mfrow = c(4,1))#
+#
+PartOne <- c(P_Allele_Is_2Ns[1:Divisions], 1 - sum(P_Allele_Is_2Ns[1:Divisions]))#
+#
+# plot(1:DivisionsPlusOne,c(P_Allele_Is_2Ns[1:Divisions], 1 - sum(P_Allele_Is_2Ns[1:Divisions])), col=ColorViridis[1], ylim=c(0,1.0), xaxt="n", ylab="Probability", xlab="4Ns",lwd=5,cex.lab=2,cex.axis=2,cex.lab=2, main = "A) Constant size - Human DFE",cex.main = 2)#
+#
+FinalMedian <- c()#
+for (i in 1:Divisions){#
+    Quantiles <- quantile(MatrixFinalProbs[,i],c(0.05,0.95))#
+    #segments (i,Quantiles[1],x1=i,Quantiles[2],col=ColorViridis[2], lwd = 4, lty=2)#
+    #    points(i,Quantiles[1],col=ColorViridis[2],pch=25, bg = ColorViridis[2],cex=2)#
+    #    points(i,Quantiles[2],col=ColorViridis[2],pch=24, bg = ColorViridis[2],cex=2)#
+    Quantiles <- quantile(MatrixFinalProbs[,i],c(0.5))#
+    FinalMedian <- c(FinalMedian,Quantiles[1])#
+}#
+#
+Quantiles <- quantile(MatrixFinalProbs[,DivisionsPlusOne],c(0.05,0.95))#
+#segments (31, Quantiles[1],x1=31,y1=Quantiles[2],col=ColorViridis[2], lwd = 4, lty=2)#
+#points(DivisionsPlusOne,Quantiles[1],col=ColorViridis[2],pch=25, bg = ColorViridis[2],cex=2)#
+#points(DivisionsPlusOne,Quantiles[2],col=ColorViridis[2],pch=24, bg = ColorViridis[2],cex=2)#
+Quantiles <- quantile(MatrixFinalProbs[,DivisionsPlusOne],c(0.5))#
+FinalMedian <- c(FinalMedian,Quantiles[1])#
+PartTwo <- FinalMedian#
+# lines(1:DivisionsPlusOne,FinalMedian,col=ColorViridis[2],lwd=4)#
+# lines(1:31,c(P_Allele_Is_2Ns_given_OnePercent[1:30],  1 - sum(P_Allele_Is_2Ns_given_OnePercent[1:30])),col=ColorViridis[4],lwd=3)#
+#
+FinalMedian <- c()#
+for (i in 1:Divisions){#
+    Quantiles <- quantile(OtherMatrixFinalProbs[,i],c(0.05,0.95))#
+    #    segments (i,Quantiles[1],x1=i,Quantiles[2],col=ColorViridis[3], lwd = 3, lty=2)#
+    #    points(i,Quantiles[1],col=ColorViridis[3],pch=25, bg = ColorViridis[3],cex=1.5)#
+    #    points(i,Quantiles[2],col=ColorViridis[3],pch=24, bg = ColorViridis[3],cex=1.5)#
+    Quantiles <- quantile(OtherMatrixFinalProbs[,i],c(0.5))#
+    FinalMedian <- c(FinalMedian,Quantiles[1])#
+}#
+Quantiles <- quantile(OtherMatrixFinalProbs[,DivisionsPlusOne],c(0.05,0.95))#
+#segments (31, Quantiles[1],x1=31,y1=Quantiles[2],col=ColorViridis[3], lwd = 3, lty=2)#
+#points(DivisionsPlusOne,Quantiles[1],col=ColorViridis[3],pch=25, bg = ColorViridis[3],cex=1.5)#
+#points(DivisionsPlusOne,Quantiles[2],col=ColorViridis[3],pch=24, bg = ColorViridis[3],cex=1.5)#
+Quantiles <- quantile(OtherMatrixFinalProbs[,DivisionsPlusOne],c(0.5))#
+FinalMedian <- c(FinalMedian,Quantiles[1])#
+PartThree <- FinalMedian#
+# lines(1:DivisionsPlusOne,FinalMedian,col=ColorViridis[3],lwd=2)#
+#
+FinalMedian <- c()#
+for (i in 1:Divisions){#
+    Quantiles <- quantile(MatrixP_Allele_Is_2Ns_given_OnePercent[,i],c(0.05,0.95))#
+    #    segments (i,Quantiles[1],x1=i,Quantiles[2],col=ColorViridis[4], lwd = 3, lty=2)#
+    #    points(i,Quantiles[1],col=ColorViridis[4],pch=25, bg = ColorViridis[4])#
+    #    points(i,Quantiles[2],col=ColorViridis[4],pch=24, bg = ColorViridis[4])#
+    Quantiles <- quantile(MatrixP_Allele_Is_2Ns_given_OnePercent[,i],c(0.5))#
+    FinalMedian <- c(FinalMedian,Quantiles[1])#
+}#
+Quantiles <- quantile(MatrixP_Allele_Is_2Ns_given_OnePercent[,DivisionsPlusOne],c(0.05,0.95))#
+# segments (31, Quantiles[1],x1=31,y1=Quantiles[2],col=ColorViridis[4], lwd = 3, lty=2)#
+#points(DivisionsPlusOne,Quantiles[1],col=ColorViridis[4],pch=25, bg = ColorViridis[4])#
+#points(DivisionsPlusOne,Quantiles[2],col=ColorViridis[4],pch=24, bg = ColorViridis[4])#
+Quantiles <- quantile(MatrixP_Allele_Is_2Ns_given_OnePercent[,DivisionsPlusOne],c(0.5))#
+FinalMedian <- c(FinalMedian,Quantiles[1])#
+PartFour <- FinalMedian#
+# lines(1:DivisionsPlusOne,FinalMedian,col=ColorViridis[4],lwd=2)#
+# for (i in 1:30){#
+#    segments (i,OtherUpSDProbsMouse[i],x1=i,y1=max(OtherDownSDProbsMouse[i],0),col=ColorViridis[3], lwd = 3, lty = 2)#
+# }#
+# segments (31, 1 - sum(OtherUpSDProbsMouse[1:30]),x1=31,y1=max( 1 - sum(OtherDownSDProbsMouse[1:30])),col=ColorViridis[3], lwd = 3, lty = 2)#
+counts <- table(mtcars$vs, mtcars$gear)#
+counts <- rbind(counts,c(1,2,3))#
+# counts <- rbind(counts,c(1,2,3))#
+# counts <- cbind(counts,c(Probs[3],P_Allele_Is_2Ns_given_OnePercent[3]))#
+for (i in 4:20){#
+    counts <- cbind(counts,c(PartOne[i],PartTwo[i],PartFour[i]))#
+}#
+#
+counts <- cbind(counts,c(1-sum(PartOne[1:20]),1-sum(PartTwo[1:20]),1-sum(PartFour[1:20])))#
+#
+counts[1,1] <- PartOne[1]#
+counts[1,2] <- PartOne[2]#
+counts[1,3] <- PartOne[3]#
+counts[2,1] <- PartTwo[1]#
+counts[2,2] <- PartTwo[2]#
+counts[2,3] <- PartTwo[3]#
+counts[3,1] <- PartFour[1]#
+counts[3,2] <- PartFour[2]#
+counts[3,3] <- PartFour[3]#
+#
+BoykoParams <- rbind(BoykoParams, PartOne)#
+#
+colnames(counts) <- c("0-5", "5-10", "10-15", "15-20", "20-25", "25-30", "30-35", "35-40", "40-45", "45-50","50-55", "55-60", "60-65", "65-70", "70-75", "75-80", "80-85", "85-90", "90-95", "95-100", ">100")#
+rownames(counts) <- c("Real P(4Ns | DFE, D)", "Inferred P(4Ns| DFE, D)", "Inferred P(4Ns| 1%, DFE, D)")#
+#
+barplot(log10(counts) - log10(0.0000000001), main="C) Population expansion - Human DFE", ylab="Probability", xlab=expression(bolditalic(s[j]) * " (4Ns intervals)"), legend = c(expression("Real" ~ 'P'[psi] * "(" * bolditalic(s[j]) * ")"), expression("Inferred"  ~ 'P'[psi] * "(" * bolditalic(s[j]) * ")"), expression('P'[psi] * "(" * bolditalic(s[j]) * " | "* italic(f) * ", "* italic(D) *")")), col=ViridisColors, beside=TRUE, cex.lab=2, cex.axis=2,cex.names=2, args.legend = list(x = "top",cex=1.5), cex.main = 2, ylim = c(0,15), yaxt="n")#
+#
+axis (2,at=c(0,2,4,6,8,10), labels = c(0,10^-8,10^-6,10^-4,10^-2,10^0), cex.axis = 1.5, cex.lab = 1.5)#
+Expression <- expression(paste("Real P(",bolditalic(s[j])," | DFE, D)"))#
+Expression2 <- expression(paste("Inferred P(",bolditalic(s[j])," | DFE, D)  Equation 4"))#
+Expression3 <- expression(paste("Inferred P(",bolditalic(s[j])," | DFE, D)  Equation 5"))#
+Expression4 <- expression(paste("Inferred P(",bolditalic(s[j])," | 1%, DFE, D)"))#
+# legend("top",c(Expression, Expression2, Expression3, Expression4),pch=19,col=ColorViridis,cex=2)#
+#
+FinalMedian <- c()#
+for (i in 1:Divisions){#
+    Quantiles <- quantile(MatrixFinalProbs[,i],c(0.05,0.95))#
+    CurrentMean <- mean(MatrixFinalProbs[,i])#
+    #segments (i,Quantiles[1],x1=i,Quantiles[2],col=ColorViridis[2], lwd = 4, lty=2)#
+    points((i - 1)* 4 + 2.5, log10(Quantiles[1]) - log10(0.0000000001),col="black",pch=24, bg = "black", cex=1)#
+    points((i - 1)* 4 + 2.5, log10(Quantiles[2]) - log10(0.0000000001),col="black", pch=25, bg = "black", cex=1)#
+    points((i - 1)* 4 + 2.5, log10(CurrentMean) - log10(0.0000000001),col="black", pch=8, bg = "black", cex=1)#
+#
+    Quantiles <- quantile(MatrixFinalProbs[,i],c(0.5))#
+    FinalMedian <- c(FinalMedian,Quantiles[1])#
+}#
+#
+Quantiles <- quantile(MatrixFinalProbs[,DivisionsPlusOne],c(0.05,0.95))#
+CurrentMean <- mean(MatrixFinalProbs[,DivisionsPlusOne])#
+points(Divisions*4 + 2.5, log10(Quantiles[1]) - log10(0.0000000001), col="black", pch=24, bg = "black", cex=1)#
+points(Divisions*4 + 2.5, log10(Quantiles[2]) - log10(0.0000000001), col="black", pch=25, bg = "black", cex=1)#
+points(Divisions*4 + 2.5, log10(CurrentMean) - log10(0.0000000001), col="black", pch=8, bg = "black", cex=1)#
+#
+FinalMedian <- c()#
+TotalDifference <- c()#
+for (i in 1:Divisions){#
+    Quantiles <- quantile(MatrixP_Allele_Is_2Ns_given_OnePercent[,i],c(0.05,0.95))#
+    CurrentMean <- mean(MatrixP_Allele_Is_2Ns_given_OnePercent[,i])#
+    #segments (i,Quantiles[1],x1=i,Quantiles[2],col=ColorViridis[2], lwd = 4, lty=2)#
+    points((i - 1)* 4 + 3.5, log10(Quantiles[1]) - log10(0.0000000001),col="black",pch=24, bg = "black", cex=1)#
+    points((i - 1)* 4 + 3.5, log10(Quantiles[2]) - log10(0.0000000001),col="black", pch=25, bg = "black", cex=1)#
+    points((i - 1)* 4 + 3.5, log10(CurrentMean) - log10(0.0000000001),col="black", pch=8, bg = "black", cex=1)#
+#
+    Quantiles <- quantile(MatrixP_Allele_Is_2Ns_given_OnePercent[,i],c(0.5))#
+    FinalMedian <- c(FinalMedian,Quantiles[1])#
+    TotalDifference <- c(TotalDifference, 1 - sum(MatrixP_Allele_Is_2Ns_given_OnePercent[i,1:20]))#
+}#
+#
+Quantiles <- quantile(TotalDifference,c(0.05,0.95))#
+#
+points(Divisions*4 + 3.5, log10(Quantiles[1]) - log10(0.0000000001), col="black", pch=24, bg = "black", cex=1)#
+points(Divisions*4 + 3.5, log10(Quantiles[2]) - log10(0.0000000001), col="black", pch=25, bg = "black", cex=1)#
+points(Divisions*4 + 3.5, log10(CurrentMean) - log10(0.0000000001), col="black", pch=8, bg = "black", cex=1)#
+dev.off()#
+############################################################################### Full data
+setwd("")
+setwd("~/Dropbox (Personal)/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/PopExpansion/ForwardSims/")
+setwd("/Users/vicentediegoortegadelvecchyo/Dropbox (Personal)/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/PopExpansion/ForwardSims")#
+Data <- read.table("FullTable.txt")#
+RecombinationQuantiles <- read.table("QuantilesRecombination.txt")#
+RecombinationQuantiles <- RecombinationQuantiles * 2#
+#
+RecValuesOne <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValuesTwo <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValues <- rbind(RecValuesOne,RecValuesTwo)#
+#
+for (i in 1:546){#
+}#
+#
+VariantsWeirdValues <- c(0,0,0,0,0,0,0,0,0)#
+ErrorVector <- c()#
+AllCoefficients <- c()#
+#
+for (i in 1:403){#
+    Points <- Data[0:20*403 + i,2]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out1 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,3]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out2 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Points <- Data[0:20*403 + i,4]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out3 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,5]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out4 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,6]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out5 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,7]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out6 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Row <- c(lm.out1$coefficients, lm.out2$coefficients, lm.out3$coefficients, lm.out4$coefficients, lm.out5$coefficients, lm.out6$coefficients )#
+    AllCoefficients <- rbind(AllCoefficients,Row)#
+}#
+#
+write.table(AllCoefficients, file = "AllRegressionCoefficients.txt",row.names= FALSE,col.names = FALSE)#
+#
+NeutralVector <- c()#
+# par(mfrow=c(2,3))#
+#
+SignificantPValueNumber <- 0#
+TotalErrors <- c()#
+ConcatenateErrorValues <- c()#
+#
+for (PolyNum in 1:9){#
+i <- 1#
+ConcatenateTestValues <- c()#
+TotalErrors <- c()#
+#
+# PolyNum <- 5#
+for (FourNs in 1:403){#
+print (FourNs)#
+FirstElement <- c()#
+FirstPoint <- c()#
+RecTestValue <- 4000#
+AllComparisons <- c(t(RecombinationQuantiles))#
+for (i in 2:7){#
+Points <- Data[0:20*403 + FourNs,i]#
+Comparison <- cbind(RecombinationQuantiles,Points)#
+AllComparisons <- cbind(AllComparisons, Points)#
+lm.out1 = lm(Points ~ poly(V1,PolyNum,raw=TRUE),Comparison)#
+# plot(Comparison$V1,Comparison$Points)#
+#
+for (k in 1:(PolyNum+1)){#
+#     if (summary(lm.out1)$coefficients[k,4] > 0.05){#
+#        SignificantPValueNumber <- SignificantPValueNumber + 1#
+#        ConcatenateErrorValues <- c(ConcatenateErrorValues,rbind(i,k,FourNs))#
+#    }#
+}#
+#
+Test <- 0#
+SingleTest <- 0#
+for (Nums in 1:(PolyNum+1)){#
+#
+CurrentMultiplication <- lm.out1$coefficients[Nums]#
+SingleMult <- lm.out1$coefficients[Nums]#
+if (Nums > 1){#
+    for (MulNum in 1:(Nums - 1) ){#
+    CurrentMultiplication <- CurrentMultiplication * RecombinationQuantiles$V1#
+    SingleMult <- SingleMult * RecValues#
+    }#
+}#
+Test <- Test + CurrentMultiplication#
+SingleTest <- SingleTest + SingleMult#
+}#
+Error <- sum(abs(Points-Test))#
+TotalErrors <- c(TotalErrors,Error)#
+#
+# Test <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecombinationQuantiles$V1 + lm.out1$coefficients[3]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[4]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1 + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1#
+#
+# + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[6]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1#
+# lines(Comparison$V1,Test, col = "red")#
+# points(t(RecValues), t(SingleTest), col = "blue")#
+# SingleTest <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecValues + lm.out1$coefficients[3]* RecValues * RecValues + lm.out1$coefficients[4]* RecValues * RecValues * RecValues + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues#
+# + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues + lm.out1$coefficients[6]* RecValues * RecValues * RecValues * RecValues  * RecValues#
+ConcatenateTestValues <- rbind(ConcatenateTestValues, t(SingleTest))#
+}#
+#
+print(Test)#
+# FirstElement <- rbind(FirstElement, Test)#
+# FirstPoint <- rbind(FirstPoint, Points)#
+}#
+#
+print(round (sum(TotalErrors), digits=4) / length(TotalErrors))#
+#
+ErrorVector <- c(ErrorVector, round (sum(TotalErrors), digits=4) / length(TotalErrors))#
+print (SignificantPValueNumber)#
+NeutralVector <- rbind(NeutralVector, ConcatenateTestValues[203*6+1:6,545])#
+for (i in 1:600){#
+    if (sum(ifelse(ConcatenateTestValues[,i] <= 0,1,0)) > 0){#
+        VariantsWeirdValues[PolyNum]=VariantsWeirdValues[PolyNum] + 1#
+#     ConcatenateTestValues[,i] <- rep.int(1, 403*6)#
+        print(i)#
+    }#
+}#
+#
+#### AdditionalStep#
+FileName = paste ("PLGivenSTableWithRecs", PolyNum,".txt", sep = "")#
+write.table(ConcatenateTestValues, file = FileName,row.names= FALSE,col.names = FALSE)#
+}#
+#
+ImprovementVector <- c()#
+for (i in 2:9){#
+    ImprovementVector <- c(ImprovementVector, (ErrorVector[i-1]-ErrorVector[i])/ErrorVector[i-1])#
+}
+setwd("/Users/vicentediegoortegadelvecchyo/Dropbox (Personal)/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/PopExpansion/ForwardSims")#
+Data <- read.table("FullTable.txt")#
+RecombinationQuantiles <- read.table("QuantilesRecombination.txt")#
+RecombinationQuantiles <- RecombinationQuantiles * 2#
+#
+RecValuesOne <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValuesTwo <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValues <- rbind(RecValuesOne,RecValuesTwo)#
+#
+for (i in 1:546){#
+}#
+#
+VariantsWeirdValues <- c(0,0,0,0,0,0,0,0,0)#
+ErrorVector <- c()#
+AllCoefficients <- c()#
+#
+for (i in 1:403){#
+    Points <- Data[0:20*403 + i,2]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out1 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,3]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out2 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Points <- Data[0:20*403 + i,4]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out3 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,5]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out4 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,6]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out5 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,7]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out6 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Row <- c(lm.out1$coefficients, lm.out2$coefficients, lm.out3$coefficients, lm.out4$coefficients, lm.out5$coefficients, lm.out6$coefficients )#
+    AllCoefficients <- rbind(AllCoefficients,Row)#
+}#
+#
+write.table(AllCoefficients, file = "AllRegressionCoefficients.txt",row.names= FALSE,col.names = FALSE)#
+#
+NeutralVector <- c()#
+# par(mfrow=c(2,3))#
+#
+SignificantPValueNumber <- 0#
+TotalErrors <- c()#
+ConcatenateErrorValues <- c()#
+#
+for (PolyNum in 1:9){#
+i <- 1#
+ConcatenateTestValues <- c()#
+TotalErrors <- c()#
+#
+# PolyNum <- 5#
+for (FourNs in 3:403){#
+print (FourNs)#
+FirstElement <- c()#
+FirstPoint <- c()#
+RecTestValue <- 4000#
+AllComparisons <- c(t(RecombinationQuantiles))#
+for (i in 2:7){#
+Points <- Data[0:20*403 + FourNs,i]#
+Comparison <- cbind(RecombinationQuantiles,Points)#
+AllComparisons <- cbind(AllComparisons, Points)#
+lm.out1 = lm(Points ~ poly(V1,PolyNum,raw=TRUE),Comparison)#
+# plot(Comparison$V1,Comparison$Points)#
+#
+for (k in 1:(PolyNum+1)){#
+#     if (summary(lm.out1)$coefficients[k,4] > 0.05){#
+#        SignificantPValueNumber <- SignificantPValueNumber + 1#
+#        ConcatenateErrorValues <- c(ConcatenateErrorValues,rbind(i,k,FourNs))#
+#    }#
+}#
+#
+Test <- 0#
+SingleTest <- 0#
+for (Nums in 1:(PolyNum+1)){#
+#
+CurrentMultiplication <- lm.out1$coefficients[Nums]#
+SingleMult <- lm.out1$coefficients[Nums]#
+if (Nums > 1){#
+    for (MulNum in 1:(Nums - 1) ){#
+    CurrentMultiplication <- CurrentMultiplication * RecombinationQuantiles$V1#
+    SingleMult <- SingleMult * RecValues#
+    }#
+}#
+Test <- Test + CurrentMultiplication#
+SingleTest <- SingleTest + SingleMult#
+}#
+Error <- sum(abs(Points-Test))#
+TotalErrors <- c(TotalErrors,Error)#
+#
+# Test <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecombinationQuantiles$V1 + lm.out1$coefficients[3]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[4]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1 + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1#
+#
+# + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[6]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1#
+# lines(Comparison$V1,Test, col = "red")#
+# points(t(RecValues), t(SingleTest), col = "blue")#
+# SingleTest <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecValues + lm.out1$coefficients[3]* RecValues * RecValues + lm.out1$coefficients[4]* RecValues * RecValues * RecValues + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues#
+# + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues + lm.out1$coefficients[6]* RecValues * RecValues * RecValues * RecValues  * RecValues#
+ConcatenateTestValues <- rbind(ConcatenateTestValues, t(SingleTest))#
+}#
+#
+print(Test)#
+# FirstElement <- rbind(FirstElement, Test)#
+# FirstPoint <- rbind(FirstPoint, Points)#
+}#
+#
+print(round (sum(TotalErrors), digits=4) / length(TotalErrors))#
+#
+ErrorVector <- c(ErrorVector, round (sum(TotalErrors), digits=4) / length(TotalErrors))#
+print (SignificantPValueNumber)#
+NeutralVector <- rbind(NeutralVector, ConcatenateTestValues[203*6+1:6,545])#
+for (i in 1:600){#
+    if (sum(ifelse(ConcatenateTestValues[,i] <= 0,1,0)) > 0){#
+        VariantsWeirdValues[PolyNum]=VariantsWeirdValues[PolyNum] + 1#
+#     ConcatenateTestValues[,i] <- rep.int(1, 403*6)#
+        print(i)#
+    }#
+}#
+#
+#### AdditionalStep#
+FileName = paste ("PLGivenSTableWithRecs", PolyNum,".txt", sep = "")#
+write.table(ConcatenateTestValues, file = FileName,row.names= FALSE,col.names = FALSE)#
+}#
+#
+ImprovementVector <- c()#
+for (i in 2:9){#
+    ImprovementVector <- c(ImprovementVector, (ErrorVector[i-1]-ErrorVector[i])/ErrorVector[i-1])#
+}#
+#
+round(ImprovementVector,4)#
+round(ErrorVector,4)
+setwd("/Users/vicentediegoortegadelvecchyo/Dropbox (Personal)/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/PopExpansion/ForwardSims")#
+Data <- read.table("FullTable.txt")#
+RecombinationQuantiles <- read.table("QuantilesRecombination.txt")#
+RecombinationQuantiles <- RecombinationQuantiles * 2#
+#
+RecValuesOne <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValuesTwo <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValues <- rbind(RecValuesOne,RecValuesTwo)#
+#
+for (i in 1:546){#
+}#
+#
+VariantsWeirdValues <- c(0,0,0,0,0,0,0,0,0)#
+ErrorVector <- c()#
+AllCoefficients <- c()#
+#
+for (i in 1:403){#
+    Points <- Data[0:20*403 + i,2]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out1 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,3]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out2 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Points <- Data[0:20*403 + i,4]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out3 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,5]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out4 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,6]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out5 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,7]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out6 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Row <- c(lm.out1$coefficients, lm.out2$coefficients, lm.out3$coefficients, lm.out4$coefficients, lm.out5$coefficients, lm.out6$coefficients )#
+    AllCoefficients <- rbind(AllCoefficients,Row)#
+}#
+#
+write.table(AllCoefficients, file = "AllRegressionCoefficients.txt",row.names= FALSE,col.names = FALSE)#
+#
+NeutralVector <- c()#
+# par(mfrow=c(2,3))#
+#
+SignificantPValueNumber <- 0#
+TotalErrors <- c()#
+ConcatenateErrorValues <- c()#
+#
+for (PolyNum in 4:4){#
+i <- 1#
+ConcatenateTestValues <- c()#
+TotalErrors <- c()#
+#
+# PolyNum <- 5#
+for (FourNs in 1:403){#
+print (FourNs)#
+FirstElement <- c()#
+FirstPoint <- c()#
+RecTestValue <- 4000#
+AllComparisons <- c(t(RecombinationQuantiles))#
+for (i in 2:7){#
+Points <- Data[0:20*403 + FourNs,i]#
+Comparison <- cbind(RecombinationQuantiles,Points)#
+AllComparisons <- cbind(AllComparisons, Points)#
+lm.out1 = lm(Points ~ poly(V1,PolyNum,raw=TRUE),Comparison)#
+# plot(Comparison$V1,Comparison$Points)#
+#
+for (k in 1:(PolyNum+1)){#
+#     if (summary(lm.out1)$coefficients[k,4] > 0.05){#
+#        SignificantPValueNumber <- SignificantPValueNumber + 1#
+#        ConcatenateErrorValues <- c(ConcatenateErrorValues,rbind(i,k,FourNs))#
+#    }#
+}#
+#
+Test <- 0#
+SingleTest <- 0#
+for (Nums in 1:(PolyNum+1)){#
+#
+CurrentMultiplication <- lm.out1$coefficients[Nums]#
+SingleMult <- lm.out1$coefficients[Nums]#
+if (Nums > 1){#
+    for (MulNum in 1:(Nums - 1) ){#
+    CurrentMultiplication <- CurrentMultiplication * RecombinationQuantiles$V1#
+    SingleMult <- SingleMult * RecValues#
+    }#
+}#
+Test <- Test + CurrentMultiplication#
+SingleTest <- SingleTest + SingleMult#
+}#
+Error <- sum(abs(Points-Test))#
+TotalErrors <- c(TotalErrors,Error)#
+#
+# Test <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecombinationQuantiles$V1 + lm.out1$coefficients[3]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[4]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1 + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1#
+#
+# + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[6]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1#
+# lines(Comparison$V1,Test, col = "red")#
+# points(t(RecValues), t(SingleTest), col = "blue")#
+# SingleTest <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecValues + lm.out1$coefficients[3]* RecValues * RecValues + lm.out1$coefficients[4]* RecValues * RecValues * RecValues + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues#
+# + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues + lm.out1$coefficients[6]* RecValues * RecValues * RecValues * RecValues  * RecValues#
+ConcatenateTestValues <- rbind(ConcatenateTestValues, t(SingleTest))#
+}#
+#
+print(Test)#
+# FirstElement <- rbind(FirstElement, Test)#
+# FirstPoint <- rbind(FirstPoint, Points)#
+}#
+#
+print(round (sum(TotalErrors), digits=4) / length(TotalErrors))#
+#
+ErrorVector <- c(ErrorVector, round (sum(TotalErrors), digits=4) / length(TotalErrors))#
+print (SignificantPValueNumber)#
+NeutralVector <- rbind(NeutralVector, ConcatenateTestValues[203*6+1:6,545])#
+for (i in 1:600){#
+    if (sum(ifelse(ConcatenateTestValues[,i] <= 0,1,0)) > 0){#
+        VariantsWeirdValues[PolyNum]=VariantsWeirdValues[PolyNum] + 1#
+#     ConcatenateTestValues[,i] <- rep.int(1, 403*6)#
+        print(i)#
+    }#
+}#
+#
+#### AdditionalStep#
+FileName = paste ("PLGivenSTableWithRecs", PolyNum,".txt", sep = "")#
+write.table(ConcatenateTestValues, file = FileName,row.names= FALSE,col.names = FALSE)#
+}#
+#
+ImprovementVector <- c()#
+for (i in 2:9){#
+    ImprovementVector <- c(ImprovementVector, (ErrorVector[i-1]-ErrorVector[i])/ErrorVector[i-1])#
+}#
+write.table(ConcatenateTestValues, file = "PLGivenSTableWithRecs.txt",row.names= FALSE,col.names = FALSE)#
+#
+Stuff <- c()#
+for (i in 1:403){#
+Stuff <- rbind(Stuff,c( ConcatenateTestValues[ i * 6 + 1:6,545] ))#
+}#
+Stuff#
+write.table(Stuff,"AyCaon.txt",sep="\t")#
+pdf("../../../../Figures/SuppFigureSX14_PRLinePopExpansionSims.pdf",width=14,height = 10)#
+par(mar=c(4.1,5.1,2.6,2.1))#
+par(mfrow = c(2,3))#
+#
+OrderedVector <- ConcatenateTestValues[1213,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues,OrderedVector,type="o",main=expression(w[1]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,2]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+#abline(v=RecombinationQuantiles$V1[20],lty=2)#
+#
+OrderedVector <- ConcatenateTestValues[1214,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues,OrderedVector,type="o",main=expression(w[2]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,3]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+#abline(v=RecombinationQuantiles$V1[20],lty=2)#
+OrderedVector <- ConcatenateTestValues[1215,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues,OrderedVector,type="o",main=expression(w[3]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,4]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+#abline(v=RecombinationQuantiles$V1[20],lty=2)#
+OrderedVector <- ConcatenateTestValues[1216,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues,OrderedVector,type="o",main=expression(w[4]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,5]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+# abline(v=RecombinationQuantiles$V1[20],lty=2)#
+OrderedVector <- ConcatenateTestValues[1217,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues,OrderedVector,type="o",main=expression(w[5]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,6]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+# abline(v=RecombinationQuantiles$V1[20],lty=2)#
+#
+OrderedVector <- ConcatenateTestValues[1218,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues,OrderedVector,type="o",main=expression(w[6]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,7]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+# abline(v=RecombinationQuantiles$V1[20],lty=2)#
+#
+dev.off()
+setwd("/Users/vicentediegoortegadelvecchyo/Dropbox (Personal)/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/PopExpansion/ForwardSims")#
+Data <- read.table("FullTable.txt")#
+RecombinationQuantiles <- read.table("QuantilesRecombination.txt")#
+RecombinationQuantiles <- RecombinationQuantiles * 2#
+#
+RecValuesOne <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValuesTwo <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValues <- rbind(RecValuesOne,RecValuesTwo)#
+#
+for (i in 1:546){#
+}#
+#
+VariantsWeirdValues <- c(0,0,0,0,0,0,0,0,0)#
+ErrorVector <- c()#
+AllCoefficients <- c()#
+#
+for (i in 1:403){#
+    Points <- Data[0:20*403 + i,2]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out1 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,3]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out2 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Points <- Data[0:20*403 + i,4]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out3 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,5]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out4 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,6]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out5 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,7]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out6 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Row <- c(lm.out1$coefficients, lm.out2$coefficients, lm.out3$coefficients, lm.out4$coefficients, lm.out5$coefficients, lm.out6$coefficients )#
+    AllCoefficients <- rbind(AllCoefficients,Row)#
+}#
+#
+write.table(AllCoefficients, file = "AllRegressionCoefficients.txt",row.names= FALSE,col.names = FALSE)#
+#
+NeutralVector <- c()#
+# par(mfrow=c(2,3))#
+#
+SignificantPValueNumber <- 0#
+TotalErrors <- c()#
+ConcatenateErrorValues <- c()#
+#
+for (PolyNum in 1:9){#
+i <- 1#
+ConcatenateTestValues <- c()#
+TotalErrors <- c()#
+#
+# PolyNum <- 5#
+for (FourNs in 1:403){#
+print (FourNs)#
+FirstElement <- c()#
+FirstPoint <- c()#
+RecTestValue <- 4000#
+AllComparisons <- c(t(RecombinationQuantiles))#
+for (i in 2:7){#
+Points <- Data[0:20*403 + FourNs,i]#
+Comparison <- cbind(RecombinationQuantiles,Points)#
+AllComparisons <- cbind(AllComparisons, Points)#
+lm.out1 = lm(Points ~ poly(V1,PolyNum,raw=TRUE),Comparison)#
+# plot(Comparison$V1,Comparison$Points)#
+#
+for (k in 1:(PolyNum+1)){#
+#     if (summary(lm.out1)$coefficients[k,4] > 0.05){#
+#        SignificantPValueNumber <- SignificantPValueNumber + 1#
+#        ConcatenateErrorValues <- c(ConcatenateErrorValues,rbind(i,k,FourNs))#
+#    }#
+}#
+#
+Test <- 0#
+SingleTest <- 0#
+for (Nums in 1:(PolyNum+1)){#
+#
+CurrentMultiplication <- lm.out1$coefficients[Nums]#
+SingleMult <- lm.out1$coefficients[Nums]#
+if (Nums > 1){#
+    for (MulNum in 1:(Nums - 1) ){#
+    CurrentMultiplication <- CurrentMultiplication * RecombinationQuantiles$V1#
+    SingleMult <- SingleMult * RecValues#
+    }#
+}#
+Test <- Test + CurrentMultiplication#
+SingleTest <- SingleTest + SingleMult#
+}#
+Error <- sum(abs(Points-Test))#
+TotalErrors <- c(TotalErrors,Error)#
+#
+# Test <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecombinationQuantiles$V1 + lm.out1$coefficients[3]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[4]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1 + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1#
+#
+# + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[6]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1#
+# lines(Comparison$V1,Test, col = "red")#
+# points(t(RecValues), t(SingleTest), col = "blue")#
+# SingleTest <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecValues + lm.out1$coefficients[3]* RecValues * RecValues + lm.out1$coefficients[4]* RecValues * RecValues * RecValues + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues#
+# + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues + lm.out1$coefficients[6]* RecValues * RecValues * RecValues * RecValues  * RecValues#
+ConcatenateTestValues <- rbind(ConcatenateTestValues, t(SingleTest))#
+}#
+#
+print(Test)#
+# FirstElement <- rbind(FirstElement, Test)#
+# FirstPoint <- rbind(FirstPoint, Points)#
+}#
+#
+print(round (sum(TotalErrors), digits=4) / length(TotalErrors))#
+#
+ErrorVector <- c(ErrorVector, round (sum(TotalErrors), digits=4) / length(TotalErrors))#
+print (SignificantPValueNumber)#
+NeutralVector <- rbind(NeutralVector, ConcatenateTestValues[203*6+1:6,545])#
+for (i in 1:600){#
+    if (sum(ifelse(ConcatenateTestValues[,i] <= 0,1,0)) > 0){#
+        VariantsWeirdValues[PolyNum]=VariantsWeirdValues[PolyNum] + 1#
+#     ConcatenateTestValues[,i] <- rep.int(1, 403*6)#
+        print(i)#
+    }#
+}#
+#
+#### AdditionalStep#
+FileName = paste ("PLGivenSTableWithRecs", PolyNum,".txt", sep = "")#
+write.table(ConcatenateTestValues, file = FileName,row.names= FALSE,col.names = FALSE)#
+}
+(203-3:ncol(DFETable))*6 + Element + 12
+Element=1
+(203-3:ncol(DFETable))*6 + Element + 12
+Data <- read.table("PLGivenSTableWithRecs.txt")#
+DFETable <- read.table("DFETableOfProbabilities.txt")#
+#
+RecValuesOne <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValuesTwo <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValues <- rbind(RecValuesOne,RecValuesTwo)#
+#
+FullDataTable <- matrix(nrow = nrow(DFETable)*6+12, ncol = 600)#
+#
+TotalCount <- 1#
+for (i in 1:2){#
+    print (i)#
+    Subset <- DFETable[i,3:ncol(DFETable)]#
+for (Element in 1:6){#
+    FullDataTable[TotalCount,] <- 0#
+    Test <- c()#
+    for (RecRate in 1:600){#
+        Test <- rbind(Test, Data[(203-3:ncol(DFETable))*6 + Element + 12,RecRate])#
+    }#
+    Row <- Test %*% t(Subset)#
+    FullDataTable[TotalCount,] <- t(Row)#
+        TotalCount <- TotalCount + 1#
+}#
+}#
+#
+for (i in 1:nrow(DFETable)){#
+    print (i)#
+    Subset <- DFETable[i,3:ncol(DFETable)]#
+for (Element in 1:6){#
+    FullDataTable[TotalCount,] <- 0#
+    Test <- c()#
+    for (RecRate in 1:600){#
+        Test <- rbind(Test, Data[(203-3:ncol(DFETable))*6 + Element + 12,RecRate])#
+    }#
+    Row <- Test %*% t(Subset)#
+    FullDataTable[TotalCount,] <- t(Row)#
+        TotalCount <- TotalCount + 1#
+}#
+}#
+#
+write.table(FullDataTable, file = "PLGivenSTableWithRecsFirstDFE.txt",row.names= FALSE,col.names = FALSE)
+setwd("/Users/vicentediegoortegadelvecchyo/Dropbox (Personal)/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims")#
+Data <- read.table("FullTable.txt")#
+RecombinationQuantiles <- read.table("QuantilesRecombination.txt")#
+#
+RecValuesOne <- read.table("../ForwardSims/RecRateMissenseOnePercentLeftNoCpG.txt")#
+RecValuesTwo <- read.table("../ForwardSims/RecRateMissenseOnePercentRightNoCpG.txt")#
+RecValues <- rbind(RecValuesOne,RecValuesTwo)#
+#
+ErrorVector <- c()#
+#
+for (i in 1:546){#
+}#
+#
+VariantsWeirdValues <- c(0,0,0,0,0,0,0,0,0)#
+#
+AllCoefficients <- c()#
+#
+for (i in 1:403){#
+    Points <- Data[0:20*403 + i,2]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out1 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,3]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out2 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Points <- Data[0:20*403 + i,4]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out3 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,5]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out4 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,6]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out5 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,7]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out6 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Row <- c(lm.out1$coefficients, lm.out2$coefficients, lm.out3$coefficients, lm.out4$coefficients, lm.out5$coefficients, lm.out6$coefficients )#
+    AllCoefficients <- rbind(AllCoefficients,Row)#
+}#
+#
+write.table(AllCoefficients, file = "AllRegressionCoefficients.txt",row.names= FALSE,col.names = FALSE)#
+#
+NeutralVector <- c()#
+# par(mfrow=c(2,3))#
+#
+SignificantPValueNumber <- 0#
+TotalErrors <- c()#
+ConcatenateErrorValues <- c()#
+#
+for (PolyNum in 1:9){#
+    TotalErrors <- c()#
+#
+i <- 1#
+ConcatenateTestValues <- c()#
+# PolyNum <- 6#
+for (FourNs in (123+2):(293+2)){#
+    print (FourNs)#
+    FirstElement <- c()#
+    FirstPoint <- c()#
+    RecTestValue <- 4000#
+    AllComparisons <- c(t(RecombinationQuantiles))#
+    for (i in 2:7){#
+    Points <- Data[0:20*403 + FourNs,i]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    AllComparisons <- cbind(AllComparisons, Points)#
+    lm.out1 = lm(Points ~ poly(V1,PolyNum,raw=TRUE),Comparison)#
+    # plot(Comparison$V1,Comparison$Points)#
+#
+    for (k in 1:(PolyNum+1)){#
+        if (summary(lm.out1)$coefficients[k,4] > 0.05){#
+            SignificantPValueNumber <- SignificantPValueNumber + 1#
+            ConcatenateErrorValues <- c(ConcatenateErrorValues,rbind(i,k,FourNs))#
+        }#
+    }#
+Test <- 0#
+SingleTest <- 0#
+for (Nums in 1:(PolyNum+1)){#
+#
+CurrentMultiplication <- lm.out1$coefficients[Nums]#
+SingleMult <- lm.out1$coefficients[Nums]#
+if (Nums > 1){#
+    for (MulNum in 1:(Nums - 1) ){#
+    CurrentMultiplication <- CurrentMultiplication * RecombinationQuantiles$V1#
+    SingleMult <- SingleMult * RecValues#
+    }#
+}#
+Test <- Test + CurrentMultiplication#
+SingleTest <- SingleTest + SingleMult#
+}#
+Error <- sum(abs(Points[1:20]-Test[1:20]))#
+TotalErrors <- c(TotalErrors,Error)#
+#
+ConcatenateTestValues <- rbind(ConcatenateTestValues, t(SingleTest))#
+}#
+#
+print(Test)#
+# FirstElement <- rbind(FirstElement, Test)#
+# FirstPoint <- rbind(FirstPoint, Points)#
+}#
+#
+ErrorVector <- c(ErrorVector, round (sum(TotalErrors), digits=4) / length(TotalErrors))#
+print (SignificantPValueNumber)#
+# NeutralVector <- rbind(NeutralVector, ConcatenateTestValues[203*6+1:6,545])#
+#### AdditionalStep#
+#
+for (i in 1:550){#
+    if (RecValues$V1[i] >= RecombinationQuantiles$V1[20]){#
+        VariantsWeirdValues[PolyNum]=VariantsWeirdValues[PolyNum] + 1#
+#    ConcatenateTestValues[,i] <- rep.int(1, 403*6)#
+        print(i)#
+    }#
+}#
+#### AdditionalStep#
+FileName = paste ("PLGivenSTableWithRecs", PolyNum,".txt", sep = "")#
+write.table(ConcatenateTestValues, file = FileName,row.names= FALSE,col.names = FALSE)#
+}#
+#
+ImprovementVector <- c()#
+for (i in 2:9){#
+    ImprovementVector <- c(ImprovementVector, (ErrorVector[i-1]-ErrorVector[i])/ErrorVector[i-1])#
+}#
+#
+round(ErrorVector,4)#
+round(ImprovementVector,4)
+setwd("/Users/vicentediegoortegadelvecchyo/Dropbox (Personal)/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims")#
+Data <- read.table("FullTable.txt")#
+RecombinationQuantiles <- read.table("QuantilesRecombination.txt")#
+#
+RecValuesOne <- read.table("../ForwardSims/RecRateMissenseOnePercentLeftNoCpG.txt")#
+RecValuesTwo <- read.table("../ForwardSims/RecRateMissenseOnePercentRightNoCpG.txt")#
+RecValues <- rbind(RecValuesOne,RecValuesTwo)#
+#
+ErrorVector <- c()#
+#
+for (i in 1:546){#
+}#
+#
+VariantsWeirdValues <- c(0,0,0,0,0,0,0,0,0)#
+#
+AllCoefficients <- c()#
+#
+for (i in 1:403){#
+    Points <- Data[0:20*403 + i,2]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out1 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,3]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out2 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Points <- Data[0:20*403 + i,4]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out3 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,5]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out4 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,6]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out5 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,7]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out6 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Row <- c(lm.out1$coefficients, lm.out2$coefficients, lm.out3$coefficients, lm.out4$coefficients, lm.out5$coefficients, lm.out6$coefficients )#
+    AllCoefficients <- rbind(AllCoefficients,Row)#
+}#
+#
+write.table(AllCoefficients, file = "AllRegressionCoefficients.txt",row.names= FALSE,col.names = FALSE)#
+#
+NeutralVector <- c()#
+# par(mfrow=c(2,3))#
+#
+SignificantPValueNumber <- 0#
+TotalErrors <- c()#
+ConcatenateErrorValues <- c()#
+#
+for (PolyNum in 5:5){#
+    TotalErrors <- c()#
+#
+i <- 1#
+ConcatenateTestValues <- c()#
+# PolyNum <- 6#
+for (FourNs in 1:403){#
+    print (FourNs)#
+    FirstElement <- c()#
+    FirstPoint <- c()#
+    RecTestValue <- 4000#
+    AllComparisons <- c(t(RecombinationQuantiles))#
+    for (i in 2:7){#
+    Points <- Data[0:20*403 + FourNs,i]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    AllComparisons <- cbind(AllComparisons, Points)#
+    lm.out1 = lm(Points ~ poly(V1,PolyNum,raw=TRUE),Comparison)#
+    # plot(Comparison$V1,Comparison$Points)#
+#
+    for (k in 1:(PolyNum+1)){#
+        if (summary(lm.out1)$coefficients[k,4] > 0.05){#
+            SignificantPValueNumber <- SignificantPValueNumber + 1#
+            ConcatenateErrorValues <- c(ConcatenateErrorValues,rbind(i,k,FourNs))#
+        }#
+    }#
+Test <- 0#
+SingleTest <- 0#
+for (Nums in 1:(PolyNum+1)){#
+#
+CurrentMultiplication <- lm.out1$coefficients[Nums]#
+SingleMult <- lm.out1$coefficients[Nums]#
+if (Nums > 1){#
+    for (MulNum in 1:(Nums - 1) ){#
+    CurrentMultiplication <- CurrentMultiplication * RecombinationQuantiles$V1#
+    SingleMult <- SingleMult * RecValues#
+    }#
+}#
+Test <- Test + CurrentMultiplication#
+SingleTest <- SingleTest + SingleMult#
+}#
+Error <- sum(abs(Points[1:20]-Test[1:20]))#
+TotalErrors <- c(TotalErrors,Error)#
+#
+ConcatenateTestValues <- rbind(ConcatenateTestValues, t(SingleTest))#
+}#
+#
+print(Test)#
+# FirstElement <- rbind(FirstElement, Test)#
+# FirstPoint <- rbind(FirstPoint, Points)#
+}#
+#
+ErrorVector <- c(ErrorVector, round (sum(TotalErrors), digits=4) / length(TotalErrors))#
+print (SignificantPValueNumber)#
+# NeutralVector <- rbind(NeutralVector, ConcatenateTestValues[203*6+1:6,545])#
+#### AdditionalStep#
+#
+for (i in 1:550){#
+    if (RecValues$V1[i] >= RecombinationQuantiles$V1[20]){#
+        VariantsWeirdValues[PolyNum]=VariantsWeirdValues[PolyNum] + 1#
+#    ConcatenateTestValues[,i] <- rep.int(1, 403*6)#
+        print(i)#
+    }#
+}#
+#### AdditionalStep#
+FileName = paste ("PLGivenSTableWithRecs", PolyNum,".txt", sep = "")#
+write.table(ConcatenateTestValues, file = FileName,row.names= FALSE,col.names = FALSE)#
+}#
+#
+ImprovementVector <- c()#
+for (i in 2:9){#
+    ImprovementVector <- c(ImprovementVector, (ErrorVector[i-1]-ErrorVector[i])/ErrorVector[i-1])#
+}#
+#
+write.table(ConcatenateTestValues, file = "PLGivenSTableWithRecs.txt",row.names= FALSE,col.names = FALSE)#
+#
+Stuff <- c()#
+for (i in 1:403){#
+Stuff <- rbind(Stuff,c( ConcatenateTestValues[ i * 6 + 1:6,545] ))#
+}#
+Stuff#
+write.table(Stuff,"AyCaon.txt",sep="\t")#
+pdf("../../../../Figures/SuppFigureSX14_PRLine.pdf",width=14,height = 10)#
+par(mar=c(4.1,5.1,2.6,2.1))#
+par(mfrow = c(2,3))#
+#
+OrderedVector <- ConcatenateTestValues[1213,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues[1:522],OrderedVector[1:522],type="o",main=expression(w[1]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,2]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+#abline(v=RecombinationQuantiles$V1[20],lty=2)#
+#
+OrderedVector <- ConcatenateTestValues[1214,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues[1:522],OrderedVector[1:522],type="o",main=expression(w[2]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,3]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+#abline(v=RecombinationQuantiles$V1[20],lty=2)#
+OrderedVector <- ConcatenateTestValues[1215,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues[1:522],OrderedVector[1:522],type="o",main=expression(w[3]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,4]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+#abline(v=RecombinationQuantiles$V1[20],lty=2)#
+OrderedVector <- ConcatenateTestValues[1216,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues[1:522],OrderedVector[1:522],type="o",main=expression(w[4]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,5]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+# abline(v=RecombinationQuantiles$V1[20],lty=2)#
+OrderedVector <- ConcatenateTestValues[1217,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues[1:522],OrderedVector[1:522],type="o",main=expression(w[5]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,6]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+# abline(v=RecombinationQuantiles$V1[20],lty=2)#
+#
+OrderedVector <- ConcatenateTestValues[1218,order(RecValues$V1)]#
+SortRecValues <- sort(RecValues$V1)#
+#
+plot(SortRecValues[1:522],OrderedVector[1:522],type="o",main=expression(w[6]), xlab = "Population scaled recombination rate in the region",  ylab = "Probability", cex.lab=1.7, cex.main=2, pch = 3)#
+Points <- Data[0:20*403 + 203,7]#
+points(RecombinationQuantiles$V1,Points,pch=19, col = "red")#
+# abline(v=RecombinationQuantiles$V1[20],lty=2)#
+#
+dev.off()
+Data <- read.table("FullTable.txt")#
+RecombinationQuantiles <- read.table("QuantilesRecombination.txt")#
+#
+RecValuesOne <- read.table("../ForwardSims/RecRateMissenseOnePercentLeftNoCpG.txt")#
+RecValuesTwo <- read.table("../ForwardSims/RecRateMissenseOnePercentRightNoCpG.txt")#
+RecValues <- rbind(RecValuesOne,RecValuesTwo)#
+#
+ErrorVector <- c()#
+#
+for (i in 1:546){#
+}#
+#
+VariantsWeirdValues <- c(0,0,0,0,0,0,0,0,0)#
+#
+AllCoefficients <- c()#
+#
+for (i in 1:403){#
+    Points <- Data[0:20*403 + i,2]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out1 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,3]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out2 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Points <- Data[0:20*403 + i,4]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out3 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,5]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out4 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,6]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out5 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,7]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out6 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Row <- c(lm.out1$coefficients, lm.out2$coefficients, lm.out3$coefficients, lm.out4$coefficients, lm.out5$coefficients, lm.out6$coefficients )#
+    AllCoefficients <- rbind(AllCoefficients,Row)#
+}#
+#
+write.table(AllCoefficients, file = "AllRegressionCoefficients.txt",row.names= FALSE,col.names = FALSE)#
+#
+NeutralVector <- c()#
+# par(mfrow=c(2,3))#
+#
+SignificantPValueNumber <- 0#
+TotalErrors <- c()#
+ConcatenateErrorValues <- c()#
+#
+for (PolyNum in 1:9){#
+    TotalErrors <- c()#
+#
+i <- 1#
+ConcatenateTestValues <- c()#
+# PolyNum <- 6#
+for (FourNs in 1:403){#
+print (FourNs)#
+FirstElement <- c()#
+FirstPoint <- c()#
+RecTestValue <- 4000#
+AllComparisons <- c(t(RecombinationQuantiles))#
+for (i in 2:7){#
+Points <- Data[0:20*403 + FourNs,i]#
+Comparison <- cbind(RecombinationQuantiles,Points)#
+AllComparisons <- cbind(AllComparisons, Points)#
+lm.out1 = lm(Points ~ poly(V1,PolyNum,raw=TRUE),Comparison)#
+# plot(Comparison$V1,Comparison$Points)#
+#
+for (k in 1:(PolyNum+1)){#
+    if (summary(lm.out1)$coefficients[k,4] > 0.05){#
+        SignificantPValueNumber <- SignificantPValueNumber + 1#
+        ConcatenateErrorValues <- c(ConcatenateErrorValues,rbind(i,k,FourNs))#
+    }#
+}#
+#
+Test <- 0#
+SingleTest <- 0#
+for (Nums in 1:(PolyNum+1)){#
+#
+CurrentMultiplication <- lm.out1$coefficients[Nums]#
+SingleMult <- lm.out1$coefficients[Nums]#
+if (Nums > 1){#
+    for (MulNum in 1:(Nums - 1) ){#
+    CurrentMultiplication <- CurrentMultiplication * RecombinationQuantiles$V1#
+    SingleMult <- SingleMult * RecValues#
+    }#
+}#
+Test <- Test + CurrentMultiplication#
+SingleTest <- SingleTest + SingleMult#
+}#
+Error <- sum(abs(Points-Test))#
+TotalErrors <- c(TotalErrors,Error)#
+#
+# Test <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecombinationQuantiles$V1 + lm.out1$coefficients[3]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[4]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1 + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1#
+#
+# + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[6]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1#
+# lines(Comparison$V1,Test, col = "red")#
+# points(t(RecValues), t(SingleTest), col = "blue")#
+# SingleTest <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecValues + lm.out1$coefficients[3]* RecValues * RecValues + lm.out1$coefficients[4]* RecValues * RecValues * RecValues + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues#
+# + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues + lm.out1$coefficients[6]* RecValues * RecValues * RecValues * RecValues  * RecValues#
+ConcatenateTestValues <- rbind(ConcatenateTestValues, t(SingleTest))#
+}#
+#
+print(Test)#
+# FirstElement <- rbind(FirstElement, Test)#
+# FirstPoint <- rbind(FirstPoint, Points)#
+}#
+#
+ErrorVector <- c(ErrorVector, round (sum(TotalErrors), digits=4) / length(TotalErrors))#
+print (SignificantPValueNumber)#
+NeutralVector <- rbind(NeutralVector, ConcatenateTestValues[203*6+1:6,545])#
+#### AdditionalStep#
+#
+for (i in 1:550){#
+    if (RecValues$V1[i] >= RecombinationQuantiles$V1[20]){#
+        VariantsWeirdValues[PolyNum]=VariantsWeirdValues[PolyNum] + 1#
+    ConcatenateTestValues[,i] <- rep.int(1, 403*6)#
+        print(i)#
+    }#
+}#
+#### AdditionalStep#
+FileName = paste ("PLGivenSTableWithRecs", PolyNum,".txt", sep = "")#
+write.table(ConcatenateTestValues, file = FileName,row.names= FALSE,col.names = FALSE)#
+}
+VariantsWeirdValues
+Data <- read.table("FullTable.txt")#
+RecombinationQuantiles <- read.table("QuantilesRecombination.txt")#
+#
+RecValuesOne <- read.table("../ForwardSims/RecRateMissenseOnePercentLeftNoCpG.txt")#
+RecValuesTwo <- read.table("../ForwardSims/RecRateMissenseOnePercentRightNoCpG.txt")#
+RecValues <- rbind(RecValuesOne,RecValuesTwo)#
+#
+ErrorVector <- c()#
+#
+for (i in 1:546){#
+}#
+#
+VariantsWeirdValues <- c(0,0,0,0,0,0,0,0,0)#
+#
+AllCoefficients <- c()#
+#
+for (i in 1:403){#
+    Points <- Data[0:20*403 + i,2]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out1 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,3]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out2 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Points <- Data[0:20*403 + i,4]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out3 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,5]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out4 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,6]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out5 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,7]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out6 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Row <- c(lm.out1$coefficients, lm.out2$coefficients, lm.out3$coefficients, lm.out4$coefficients, lm.out5$coefficients, lm.out6$coefficients )#
+    AllCoefficients <- rbind(AllCoefficients,Row)#
+}#
+#
+write.table(AllCoefficients, file = "AllRegressionCoefficients.txt",row.names= FALSE,col.names = FALSE)#
+#
+NeutralVector <- c()#
+# par(mfrow=c(2,3))#
+#
+SignificantPValueNumber <- 0#
+TotalErrors <- c()#
+ConcatenateErrorValues <- c()#
+#
+for (PolyNum in 1:9){#
+    TotalErrors <- c()#
+#
+i <- 1#
+ConcatenateTestValues <- c()#
+# PolyNum <- 6#
+for (FourNs in 1:403){#
+print (FourNs)#
+FirstElement <- c()#
+FirstPoint <- c()#
+RecTestValue <- 4000#
+AllComparisons <- c(t(RecombinationQuantiles))#
+for (i in 2:7){#
+Points <- Data[0:20*403 + FourNs,i]#
+Comparison <- cbind(RecombinationQuantiles,Points)#
+AllComparisons <- cbind(AllComparisons, Points)#
+lm.out1 = lm(Points ~ poly(V1,PolyNum,raw=TRUE),Comparison)#
+# plot(Comparison$V1,Comparison$Points)#
+#
+for (k in 1:(PolyNum+1)){#
+    if (summary(lm.out1)$coefficients[k,4] > 0.05){#
+        SignificantPValueNumber <- SignificantPValueNumber + 1#
+        ConcatenateErrorValues <- c(ConcatenateErrorValues,rbind(i,k,FourNs))#
+    }#
+}#
+#
+Test <- 0#
+SingleTest <- 0#
+for (Nums in 1:(PolyNum+1)){#
+#
+CurrentMultiplication <- lm.out1$coefficients[Nums]#
+SingleMult <- lm.out1$coefficients[Nums]#
+if (Nums > 1){#
+    for (MulNum in 1:(Nums - 1) ){#
+    CurrentMultiplication <- CurrentMultiplication * RecombinationQuantiles$V1#
+    SingleMult <- SingleMult * RecValues#
+    }#
+}#
+Test <- Test + CurrentMultiplication#
+SingleTest <- SingleTest + SingleMult#
+}#
+Error <- sum(abs(Points-Test))#
+TotalErrors <- c(TotalErrors,Error)#
+#
+# Test <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecombinationQuantiles$V1 + lm.out1$coefficients[3]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[4]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1 + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1#
+#
+# + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[6]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1#
+# lines(Comparison$V1,Test, col = "red")#
+# points(t(RecValues), t(SingleTest), col = "blue")#
+# SingleTest <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecValues + lm.out1$coefficients[3]* RecValues * RecValues + lm.out1$coefficients[4]* RecValues * RecValues * RecValues + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues#
+# + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues + lm.out1$coefficients[6]* RecValues * RecValues * RecValues * RecValues  * RecValues#
+ConcatenateTestValues <- rbind(ConcatenateTestValues, t(SingleTest))#
+}#
+#
+print(Test)#
+# FirstElement <- rbind(FirstElement, Test)#
+# FirstPoint <- rbind(FirstPoint, Points)#
+}#
+#
+ErrorVector <- c(ErrorVector, round (sum(TotalErrors), digits=4) / length(TotalErrors))#
+print (SignificantPValueNumber)#
+NeutralVector <- rbind(NeutralVector, ConcatenateTestValues[203*6+1:6,545])#
+#### AdditionalStep#
+#
+for (i in 1:550){#
+    if (RecValues$V1[i] >= RecombinationQuantiles$V1[20]){#
+        VariantsWeirdValues[PolyNum]=VariantsWeirdValues[PolyNum] + 1#
+#     ConcatenateTestValues[,i] <- rep.int(1, 403*6)#
+        print(i)#
+    }#
+}#
+#### AdditionalStep#
+FileName = paste ("PLGivenSTableWithRecs", PolyNum,".txt", sep = "")#
+write.table(ConcatenateTestValues, file = FileName,row.names= FALSE,col.names = FALSE)#
+}
+Data <- read.table("FullTable.txt")#
+RecombinationQuantiles <- read.table("QuantilesRecombination.txt")#
+#
+RecValuesOne <- read.table("../ForwardSims/RecRateMissenseOnePercentLeftNoCpG.txt")#
+RecValuesTwo <- read.table("../ForwardSims/RecRateMissenseOnePercentRightNoCpG.txt")#
+RecValues <- rbind(RecValuesOne,RecValuesTwo)#
+#
+ErrorVector <- c()#
+#
+for (i in 1:546){#
+}#
+#
+VariantsWeirdValues <- c(0,0,0,0,0,0,0,0,0)#
+#
+AllCoefficients <- c()#
+#
+for (i in 1:403){#
+    Points <- Data[0:20*403 + i,2]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out1 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,3]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out2 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Points <- Data[0:20*403 + i,4]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out3 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,5]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out4 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,6]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out5 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,7]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out6 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Row <- c(lm.out1$coefficients, lm.out2$coefficients, lm.out3$coefficients, lm.out4$coefficients, lm.out5$coefficients, lm.out6$coefficients )#
+    AllCoefficients <- rbind(AllCoefficients,Row)#
+}#
+#
+write.table(AllCoefficients, file = "AllRegressionCoefficients.txt",row.names= FALSE,col.names = FALSE)#
+#
+NeutralVector <- c()#
+# par(mfrow=c(2,3))#
+#
+SignificantPValueNumber <- 0#
+TotalErrors <- c()#
+ConcatenateErrorValues <- c()#
+#
+for (PolyNum in 1:9){#
+    TotalErrors <- c()#
+#
+i <- 1#
+ConcatenateTestValues <- c()#
+# PolyNum <- 6#
+for (FourNs in 1:403){#
+print (FourNs)#
+FirstElement <- c()#
+FirstPoint <- c()#
+RecTestValue <- 4000#
+AllComparisons <- c(t(RecombinationQuantiles))#
+for (i in 2:7){#
+Points <- Data[0:20*403 + FourNs,i]#
+Comparison <- cbind(RecombinationQuantiles,Points)#
+AllComparisons <- cbind(AllComparisons, Points)#
+lm.out1 = lm(Points ~ poly(V1,PolyNum,raw=TRUE),Comparison)#
+# plot(Comparison$V1,Comparison$Points)#
+#
+for (k in 1:(PolyNum+1)){#
+    if (summary(lm.out1)$coefficients[k,4] > 0.05){#
+        SignificantPValueNumber <- SignificantPValueNumber + 1#
+        ConcatenateErrorValues <- c(ConcatenateErrorValues,rbind(i,k,FourNs))#
+    }#
+}#
+#
+Test <- 0#
+SingleTest <- 0#
+for (Nums in 1:(PolyNum+1)){#
+#
+CurrentMultiplication <- lm.out1$coefficients[Nums]#
+SingleMult <- lm.out1$coefficients[Nums]#
+if (Nums > 1){#
+    for (MulNum in 1:(Nums - 1) ){#
+    CurrentMultiplication <- CurrentMultiplication * RecombinationQuantiles$V1#
+    SingleMult <- SingleMult * RecValues#
+    }#
+}#
+Test <- Test + CurrentMultiplication#
+SingleTest <- SingleTest + SingleMult#
+}#
+Error <- sum(abs(Points-Test))#
+TotalErrors <- c(TotalErrors,Error)#
+#
+# Test <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecombinationQuantiles$V1 + lm.out1$coefficients[3]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[4]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1 + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1#
+#
+# + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[6]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1#
+# lines(Comparison$V1,Test, col = "red")#
+# points(t(RecValues), t(SingleTest), col = "blue")#
+# SingleTest <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecValues + lm.out1$coefficients[3]* RecValues * RecValues + lm.out1$coefficients[4]* RecValues * RecValues * RecValues + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues#
+# + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues + lm.out1$coefficients[6]* RecValues * RecValues * RecValues * RecValues  * RecValues#
+ConcatenateTestValues <- rbind(ConcatenateTestValues, t(SingleTest))#
+}#
+#
+print(Test)#
+# FirstElement <- rbind(FirstElement, Test)#
+# FirstPoint <- rbind(FirstPoint, Points)#
+}#
+#
+ErrorVector <- c(ErrorVector, round (sum(TotalErrors), digits=4) / length(TotalErrors))#
+print (SignificantPValueNumber)#
+NeutralVector <- rbind(NeutralVector, ConcatenateTestValues[203*6+1:6,545])#
+#### AdditionalStep#
+#
+for (i in 1:550){#
+    if (RecValues$V1[i] >= RecombinationQuantiles$V1[20]){#
+        VariantsWeirdValues[PolyNum]=VariantsWeirdValues[PolyNum] + 1#
+     ConcatenateTestValues[,i] <- rep.int(1, 403*6)#
+        print(i)#
+    }#
+}#
+#### AdditionalStep#
+FileName = paste ("PLGivenSTableWithRecs", PolyNum,".txt", sep = "")#
+write.table(ConcatenateTestValues, file = FileName,row.names= FALSE,col.names = FALSE)#
+}
+setwd("~/Dropbox (Personal)/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/PlottingScripts")
+library(here)#
+library(viridis)#
+library(jpeg)#
+library(plotrix)#
+library(beanplot)#
+library(RColorBrewer)#
+Selection4Ns_0 <- read.table("../Results/ResultsSelectionInferred/SelectionUK10K4Ns_0CoefNum5.txt")#
+Selection4Ns_50 <- read.table("../Results/ResultsSelectionInferred/SelectionUK10K4Ns_25CoefNum5.txt")#
+Selection4Ns_100 <- read.table("../Results/ResultsSelectionInferred/SelectionUK10K4Ns_50CoefNum5.txt")#
+Selection4Ns_Minus50 <- read.table("../Results/ResultsSelectionInferred/SelectionUK10K4Ns_-25CoefNum5.txt")#
+Selection4Ns_Minus100 <- read.table("../Results/ResultsSelectionInferred/SelectionUK10K4Ns_-50CoefNum5.txt")#
+#
+Plot <- paste("../Figures/SuppFigure22_UK10KSelInference.pdf",sep="")#
+#
+pdf(Plot,width=14)#
+par(mfrow=c(1,2),mar=c(5,5,4,2) + 0.1)#
+#
+### ,mar=c(5,5,4,2) + 0.1#
+#
+beanplot(Selection4Ns_0$V1, Selection4Ns_Minus50$V1, Selection4Ns_Minus100$V1, Selection4Ns_50$V1, Selection4Ns_100$V1, names=c("0","-25","-50","25","50"), ylab="Estimated 4Ns values", xlab="Real 4Ns values", main="Inference of Selection", cex.axis=1.25, cex.lab=2, cex.main=1.5, col = c("#CAB2D6", "#33A02C", "#B2DF8A"), border = "#CAB2D6", maxstripline=0.15, beanlinewd=0.5, overall=10000, what=c(FALSE,TRUE,TRUE,TRUE), overallline = "median", ll=0.5)#
+abline(h=0,lty=3)#
+abline(h=-25,lty=3)#
+abline(h=-50,lty=3)#
+abline(h=25,lty=3)#
+abline(h=50,lty=3)#
+######################## Only negative#
+Selection4Ns_0 <- read.table("../Results/ResultsSelectionInferred/SelectionUK10KOnlyNeg4Ns_0.txt")#
+Selection4Ns_Minus50 <- read.table("../Results/ResultsSelectionInferred/SelectionUK10KOnlyNeg4Ns_-25.txt")#
+Selection4Ns_Minus100 <- read.table("../Results/ResultsSelectionInferred/SelectionUK10KOnlyNeg4Ns_-50.txt")#
+#
+beanplot(Selection4Ns_0$V1,Selection4Ns_Minus50$V1,Selection4Ns_Minus100$V1,names=c("0","-25","-50"),ylab="Estimated 4Ns values",xlab="Real 4Ns values",main="Inference of Selection", cex.axis=1.25, cex.lab=2, cex.main=1.5, col = c("#CAB2D6", "#33A02C", "#B2DF8A"), border = "#CAB2D6", maxstripline=0.15, beanlinewd=0.5, overall=10000, what=c(FALSE,TRUE,TRUE,TRUE), overallline = "median", ll=0.5)#
+abline(h=0,lty=3)#
+abline(h=-25,lty=3)#
+abline(h=-50,lty=3)#
+# abline(h=25,lty=3)#
+# abline(h=50,lty=3)#
+#
+dev.off()
+Data <- read.table("FullTable.txt")#
+RecombinationQuantiles <- read.table("QuantilesRecombination.txt")#
+#
+RecValuesOne <- read.table("../ForwardSims/RecRateSynonymousOnePercentLeftNoCpG.txt")#
+RecValuesTwo <- read.table("../ForwardSims/RecRateSynonymousOnePercentRightNoCpG.txt")#
+RecValues <- rbind(RecValuesOne,RecValuesTwo)#
+#
+for (i in 1:546){#
+}#
+AllCoefficients <- c()#
+#
+for (i in 1:403){#
+    Points <- Data[0:20*403 + i,2]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out1 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,3]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out2 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Points <- Data[0:20*403 + i,4]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out3 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,5]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out4 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,6]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out5 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,7]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out6 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Row <- c(lm.out1$coefficients, lm.out2$coefficients, lm.out3$coefficients, lm.out4$coefficients, lm.out5$coefficients, lm.out6$coefficients )#
+    AllCoefficients <- rbind(AllCoefficients,Row)#
+}#
+#
+write.table(AllCoefficients, file = "AllRegressionCoefficients.txt",row.names= FALSE,col.names = FALSE)#
+#
+# par(mfrow=c(2,3))#
+#
+TotalErrors <- c()#
+i <- 1#
+ConcatenateTestValues <- c()#
+PolyNum <- 5#
+for (FourNs in 1:403){#
+print (FourNs)#
+FirstElement <- c()#
+FirstPoint <- c()#
+RecTestValue <- 4000#
+AllComparisons <- c(t(RecombinationQuantiles))#
+for (i in 2:7){#
+Points <- Data[0:20*403 + FourNs,i]#
+Comparison <- cbind(RecombinationQuantiles,Points)#
+AllComparisons <- cbind(AllComparisons, Points)#
+lm.out1 = lm(Points ~ poly(V1,PolyNum,raw=TRUE),Comparison)#
+# plot(Comparison$V1,Comparison$Points)#
+#
+Test <- 0#
+SingleTest <- 0#
+for (Nums in 1:(PolyNum+1)){#
+#
+CurrentMultiplication <- lm.out1$coefficients[Nums]#
+SingleMult <- lm.out1$coefficients[Nums]#
+if (Nums > 1){#
+    for (MulNum in 1:(Nums - 1) ){#
+    CurrentMultiplication <- CurrentMultiplication * RecombinationQuantiles$V1#
+    SingleMult <- SingleMult * RecValues#
+    }#
+}#
+Test <- Test + CurrentMultiplication#
+SingleTest <- SingleTest + SingleMult#
+}#
+Error <- sum(abs(Points-Test))#
+TotalErrors <- c(TotalErrors,Error)#
+#
+# Test <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecombinationQuantiles$V1 + lm.out1$coefficients[3]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[4]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1 + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1#
+#
+# + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[6]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1#
+# lines(Comparison$V1,Test, col = "red")#
+# points(t(RecValues), t(SingleTest), col = "blue")#
+# SingleTest <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecValues + lm.out1$coefficients[3]* RecValues * RecValues + lm.out1$coefficients[4]* RecValues * RecValues * RecValues + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues#
+# + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues + lm.out1$coefficients[6]* RecValues * RecValues * RecValues * RecValues  * RecValues#
+ConcatenateTestValues <- rbind(ConcatenateTestValues, t(SingleTest))#
+}#
+#
+print(Test)#
+# FirstElement <- rbind(FirstElement, Test)#
+# FirstPoint <- rbind(FirstPoint, Points)#
+}#
+#
+#### AdditionalStep#
+#
+for (i in 1:284){#
+    if (RecValues$V1[i] >= RecombinationQuantiles$V1[20]){#
+        ConcatenateTestValues[,i] <- rep.int(1, 403*6)#
+        print(i)#
+    }#
+}#
+#
+write.table(ConcatenateTestValues, file = "PLGivenSTableWithRecsSyn.txt",row.names= FALSE,col.names = FALSE)
+pwd()
+Data <- read.table("FullTable.txt")#
+RecombinationQuantiles <- read.table("QuantilesRecombination.txt")#
+#
+RecValuesOne <- read.table("../ForwardSims/RecRateSynonymousOnePercentLeftNoCpG.txt")#
+RecValuesTwo <- read.table("../ForwardSims/RecRateSynonymousOnePercentRightNoCpG.txt")
+setwd("~/Dropbox (Personal)/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims/")
+Data <- read.table("FullTable.txt")#
+RecombinationQuantiles <- read.table("QuantilesRecombination.txt")#
+#
+RecValuesOne <- read.table("../ForwardSims/RecRateSynonymousOnePercentLeftNoCpG.txt")#
+RecValuesTwo <- read.table("../ForwardSims/RecRateSynonymousOnePercentRightNoCpG.txt")#
+RecValues <- rbind(RecValuesOne,RecValuesTwo)#
+#
+for (i in 1:546){#
+}#
+AllCoefficients <- c()#
+#
+for (i in 1:403){#
+    Points <- Data[0:20*403 + i,2]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out1 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,3]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out2 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Points <- Data[0:20*403 + i,4]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out3 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,5]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out4 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,6]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out5 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,7]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out6 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Row <- c(lm.out1$coefficients, lm.out2$coefficients, lm.out3$coefficients, lm.out4$coefficients, lm.out5$coefficients, lm.out6$coefficients )#
+    AllCoefficients <- rbind(AllCoefficients,Row)#
+}#
+#
+write.table(AllCoefficients, file = "AllRegressionCoefficients.txt",row.names= FALSE,col.names = FALSE)#
+#
+# par(mfrow=c(2,3))#
+#
+TotalErrors <- c()#
+i <- 1#
+ConcatenateTestValues <- c()#
+PolyNum <- 5#
+for (FourNs in 1:403){#
+print (FourNs)#
+FirstElement <- c()#
+FirstPoint <- c()#
+RecTestValue <- 4000#
+AllComparisons <- c(t(RecombinationQuantiles))#
+for (i in 2:7){#
+Points <- Data[0:20*403 + FourNs,i]#
+Comparison <- cbind(RecombinationQuantiles,Points)#
+AllComparisons <- cbind(AllComparisons, Points)#
+lm.out1 = lm(Points ~ poly(V1,PolyNum,raw=TRUE),Comparison)#
+# plot(Comparison$V1,Comparison$Points)#
+#
+Test <- 0#
+SingleTest <- 0#
+for (Nums in 1:(PolyNum+1)){#
+#
+CurrentMultiplication <- lm.out1$coefficients[Nums]#
+SingleMult <- lm.out1$coefficients[Nums]#
+if (Nums > 1){#
+    for (MulNum in 1:(Nums - 1) ){#
+    CurrentMultiplication <- CurrentMultiplication * RecombinationQuantiles$V1#
+    SingleMult <- SingleMult * RecValues#
+    }#
+}#
+Test <- Test + CurrentMultiplication#
+SingleTest <- SingleTest + SingleMult#
+}#
+Error <- sum(abs(Points-Test))#
+TotalErrors <- c(TotalErrors,Error)#
+#
+# Test <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecombinationQuantiles$V1 + lm.out1$coefficients[3]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[4]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1 + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1#
+#
+# + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[6]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1#
+# lines(Comparison$V1,Test, col = "red")#
+# points(t(RecValues), t(SingleTest), col = "blue")#
+# SingleTest <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecValues + lm.out1$coefficients[3]* RecValues * RecValues + lm.out1$coefficients[4]* RecValues * RecValues * RecValues + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues#
+# + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues + lm.out1$coefficients[6]* RecValues * RecValues * RecValues * RecValues  * RecValues#
+ConcatenateTestValues <- rbind(ConcatenateTestValues, t(SingleTest))#
+}#
+#
+print(Test)#
+# FirstElement <- rbind(FirstElement, Test)#
+# FirstPoint <- rbind(FirstPoint, Points)#
+}#
+#
+#### AdditionalStep#
+#
+for (i in 1:284){#
+    if (RecValues$V1[i] >= RecombinationQuantiles$V1[20]){#
+        ConcatenateTestValues[,i] <- rep.int(1, 403*6)#
+        print(i)#
+    }#
+}#
+#
+write.table(ConcatenateTestValues, file = "PLGivenSTableWithRecsSyn.txt",row.names= FALSE,col.names = FALSE)
+204-201
+151-201
+setwd("~/Dropbox (Personal)/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/PopExpansion/ForwardSims/")
+Data <- read.table("PLGivenSTableWithRecs.txt")#
+DFETable <- read.table("DFETableOfProbabilities.txt")#
+#
+RecValuesOne <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValuesTwo <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValues <- rbind(RecValuesOne,RecValuesTwo)#
+#
+FullDataTable <- matrix(nrow = nrow(DFETable)*6+12, ncol = 600)
+Element = 1
+(203-3:ncol(DFETable))*6 + Element + 12
+ncol(DFETable)
+library(here)#
+library(viridis)#
+library(jpeg)#
+library(plotrix)#
+library(beanplot)#
+library(RColorBrewer)#
+SelectionNS <- read.table("../Results/ResultsSelectionInferred/SelectionUK10KBootstrap.txt")#
+SelectionSyn <- read.table("../Results/ResultsSelectionInferred/SelectionSynUK10KBootstrap.txt")#
+#
+Plot <- paste("../Figures/SuppFigure32_UK10KSelInferenceSynNS.pdf",sep="")#
+#
+pdf(Plot,width=14)#
+par(mfrow=c(1,2),mar=c(5,5,4,2) + 0.1)#
+#
+### ,mar=c(5,5,4,2) + 0.1#
+#
+beanplot(SelectionNS$V1, SelectionSyn$V1, names=c("Non Syn","Syn"), ylab="Estimated 4Ns values", xlab="Type of Variants", bw = "nrd0", main="Inference of Selection in the\nUK10K data", cex.axis=1.25, cex.lab=2, cex.main=1.5, col = c("#CAB2D6", "#33A02C", "#B2DF8A"), border = "#CAB2D6", maxstripline=0.15, beanlinewd=0.5, what=c(FALSE,TRUE,TRUE,TRUE), overallline = "median", ll=0.5)#
+#
+dev.off()
+setwd("~/Dropbox (Personal)/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/PlottingScripts/")
+library(here)#
+library(viridis)#
+library(jpeg)#
+library(plotrix)#
+library(beanplot)#
+library(RColorBrewer)#
+SelectionNS <- read.table("../Results/ResultsSelectionInferred/SelectionUK10KBootstrap.txt")#
+SelectionSyn <- read.table("../Results/ResultsSelectionInferred/SelectionSynUK10KBootstrap.txt")#
+#
+Plot <- paste("../Figures/SuppFigure32_UK10KSelInferenceSynNS.pdf",sep="")#
+#
+pdf(Plot,width=14)#
+par(mfrow=c(1,2),mar=c(5,5,4,2) + 0.1)#
+#
+### ,mar=c(5,5,4,2) + 0.1#
+#
+beanplot(SelectionNS$V1, SelectionSyn$V1, names=c("Non Syn","Syn"), ylab="Estimated 4Ns values", xlab="Type of Variants", bw = "nrd0", main="Inference of Selection in the\nUK10K data", cex.axis=1.25, cex.lab=2, cex.main=1.5, col = c("#CAB2D6", "#33A02C", "#B2DF8A"), border = "#CAB2D6", maxstripline=0.15, beanlinewd=0.5, what=c(FALSE,TRUE,TRUE,TRUE), overallline = "median", ll=0.5)#
+#
+dev.off()
+0:20*403 + 203
+setwd("/Users/vicentediegoortegadelvecchyo/Dropbox (Personal)/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/PopExpansion/ForwardSims")#
+Data <- read.table("FullTable.txt")
+nrow(Data)
+8463/403
+(0.1554-0.0542)/0.1554
+(0.0177-0.0089)/0.0177
+(0.0089-0.0073)/0.0089
+setwd("~/Dropbox (Personal)/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims/")
+Data <- read.table("FullTable.txt")#
+RecombinationQuantiles <- read.table("QuantilesRecombination.txt")#
+#
+RecValuesOne <- read.table("../ForwardSims/RecRateMissenseOnePercentLeftNoCpG.txt")#
+RecValuesTwo <- read.table("../ForwardSims/RecRateMissenseOnePercentRightNoCpG.txt")#
+RecValues <- rbind(RecValuesOne,RecValuesTwo)#
+#
+ErrorVector <- c()#
+#
+for (i in 1:546){#
+}#
+#
+VariantsWeirdValues <- c(0,0,0,0,0,0,0,0,0)#
+#
+AllCoefficients <- c()#
+#
+for (i in 1:403){#
+    Points <- Data[0:20*403 + i,2]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out1 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,3]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out2 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Points <- Data[0:20*403 + i,4]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out3 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,5]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out4 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,6]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out5 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+    Points <- Data[0:20*403 + i,7]#
+    Comparison <- cbind(RecombinationQuantiles,Points)#
+    lm.out6 = lm(Points ~ poly(V1,4,raw=TRUE),Comparison)#
+#
+    Row <- c(lm.out1$coefficients, lm.out2$coefficients, lm.out3$coefficients, lm.out4$coefficients, lm.out5$coefficients, lm.out6$coefficients )#
+    AllCoefficients <- rbind(AllCoefficients,Row)#
+}#
+#
+write.table(AllCoefficients, file = "AllRegressionCoefficients.txt",row.names= FALSE,col.names = FALSE)#
+#
+NeutralVector <- c()#
+# par(mfrow=c(2,3))#
+#
+SignificantPValueNumber <- 0#
+TotalErrors <- c()#
+ConcatenateErrorValues <- c()#
+#
+for (PolyNum in 1:9){#
+    TotalErrors <- c()#
+#
+i <- 1#
+ConcatenateTestValues <- c()#
+# PolyNum <- 6#
+for (FourNs in 1:403){#
+print (FourNs)#
+FirstElement <- c()#
+FirstPoint <- c()#
+RecTestValue <- 4000#
+AllComparisons <- c(t(RecombinationQuantiles))#
+for (i in 2:7){#
+Points <- Data[0:20*403 + FourNs,i]#
+Comparison <- cbind(RecombinationQuantiles,Points)#
+AllComparisons <- cbind(AllComparisons, Points)#
+lm.out1 = lm(Points ~ poly(V1,PolyNum,raw=TRUE),Comparison)#
+# plot(Comparison$V1,Comparison$Points)#
+#
+for (k in 1:(PolyNum+1)){#
+    if (summary(lm.out1)$coefficients[k,4] > 0.05){#
+        SignificantPValueNumber <- SignificantPValueNumber + 1#
+        ConcatenateErrorValues <- c(ConcatenateErrorValues,rbind(i,k,FourNs))#
+    }#
+}#
+#
+Test <- 0#
+SingleTest <- 0#
+for (Nums in 1:(PolyNum+1)){#
+#
+CurrentMultiplication <- lm.out1$coefficients[Nums]#
+SingleMult <- lm.out1$coefficients[Nums]#
+if (Nums > 1){#
+    for (MulNum in 1:(Nums - 1) ){#
+    CurrentMultiplication <- CurrentMultiplication * RecombinationQuantiles$V1#
+    SingleMult <- SingleMult * RecValues#
+    }#
+}#
+Test <- Test + CurrentMultiplication#
+SingleTest <- SingleTest + SingleMult#
+}#
+Error <- sum(abs(Points-Test))#
+TotalErrors <- c(TotalErrors,Error)#
+#
+# Test <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecombinationQuantiles$V1 + lm.out1$coefficients[3]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[4]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1 + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1#
+#
+# + lm.out1$coefficients[5]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 + lm.out1$coefficients[6]* RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1* RecombinationQuantiles$V1 * RecombinationQuantiles$V1#
+# lines(Comparison$V1,Test, col = "red")#
+# points(t(RecValues), t(SingleTest), col = "blue")#
+# SingleTest <- lm.out1$coefficients[1] + lm.out1$coefficients[2] * RecValues + lm.out1$coefficients[3]* RecValues * RecValues + lm.out1$coefficients[4]* RecValues * RecValues * RecValues + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues#
+# + lm.out1$coefficients[5]* RecValues * RecValues * RecValues * RecValues + lm.out1$coefficients[6]* RecValues * RecValues * RecValues * RecValues  * RecValues#
+ConcatenateTestValues <- rbind(ConcatenateTestValues, t(SingleTest))#
+}#
+#
+print(Test)#
+# FirstElement <- rbind(FirstElement, Test)#
+# FirstPoint <- rbind(FirstPoint, Points)#
+}#
+#
+ErrorVector <- c(ErrorVector, round (sum(TotalErrors), digits=4) / length(TotalErrors))#
+print (SignificantPValueNumber)#
+NeutralVector <- rbind(NeutralVector, ConcatenateTestValues[203*6+1:6,545])#
+#### AdditionalStep#
+#
+for (i in 1:550){#
+    if (RecValues$V1[i] >= RecombinationQuantiles$V1[20]){#
+        VariantsWeirdValues[PolyNum]=VariantsWeirdValues[PolyNum] + 1#
+     ConcatenateTestValues[,i] <- rep.int(1, 403*6)#
+        print(i)#
+    }#
+}#
+#### AdditionalStep#
+FileName = paste ("PLGivenSTableWithRecs", PolyNum,".txt", sep = "")#
+write.table(ConcatenateTestValues, file = FileName,row.names= FALSE,col.names = FALSE)#
+}
+setwd("~/Dropbox (Personal)/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/PopExpansion/ForwardSims/")
+Data <- read.table("PLGivenSTableWithRecs.txt")#
+DFETable <- read.table("DFETableOfProbabilities.txt")#
+#
+RecValuesOne <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValuesTwo <- read.table("ResampledBpRecRatePerVariantNoCpG.txt")#
+RecValues <- rbind(RecValuesOne,RecValuesTwo)#
+#
+FullDataTable <- matrix(nrow = nrow(DFETable)*6+12, ncol = 600)#
+#
+TotalCount <- 1#
+for (i in 1:2){#
+    print (i)#
+    Subset <- DFETable[i,3:ncol(DFETable)]#
+for (Element in 1:6){#
+    FullDataTable[TotalCount,] <- 0#
+    Test <- c()#
+    for (RecRate in 1:600){#
+        Test <- rbind(Test, Data[(203-3:ncol(DFETable))*6 + Element + 12,RecRate])#
+    }#
+    Row <- Test %*% t(Subset)#
+    FullDataTable[TotalCount,] <- t(Row)#
+        TotalCount <- TotalCount + 1#
+}#
+}#
+#
+for (i in 1:nrow(DFETable)){#
+    print (i)#
+    Subset <- DFETable[i,3:ncol(DFETable)]#
+for (Element in 1:6){#
+    FullDataTable[TotalCount,] <- 0#
+    Test <- c()#
+    for (RecRate in 1:600){#
+        Test <- rbind(Test, Data[(203-3:ncol(DFETable))*6 + Element + 12,RecRate])#
+    }#
+    Row <- Test %*% t(Subset)#
+    FullDataTable[TotalCount,] <- t(Row)#
+        TotalCount <- TotalCount + 1#
+}#
+}#
+#
+write.table(FullDataTable, file = "PLGivenSTableWithRecsFirstDFE.txt",row.names= FALSE,col.names = FALSE)
+(203-3:ncol(DFETable))*6 + Element + 12
+Element=1
+(203-3:ncol(DFETable))*6 + Element + 12

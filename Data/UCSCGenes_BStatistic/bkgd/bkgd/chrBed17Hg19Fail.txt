@@ -1,0 +1,270 @@
+#Split in new
+chr17	254131	257032	923
+#Partially deleted in new
+chr17	296583	297229	844
+#Deleted in new
+chr17	297229	298270	850
+#Deleted in new
+chr17	298270	299761	856
+#Deleted in new
+chr17	299761	302085	861
+#Deleted in new
+chr17	302085	306681	867
+#Deleted in new
+chr17	306681	319881	872
+#Deleted in new
+chr17	319881	327249	867
+#Deleted in new
+chr17	327249	332145	861
+#Deleted in new
+chr17	332145	335992	856
+#Deleted in new
+chr17	335992	338937	851
+#Deleted in new
+chr17	338937	339301	850
+#Deleted in new
+chr17	339301	342063	845
+#Partially deleted in new
+chr17	342063	344601	840
+#Partially deleted in new
+chr17	4639034	4641451	764
+#Partially deleted in new
+chr17	4770608	4770851	393
+#Partially deleted in new
+chr17	21462675	21519566	851
+#Deleted in new
+chr17	21519566	21583894	846
+#Partially deleted in new
+chr17	21583894	21650587	840
+#Partially deleted in new
+chr17	21897366	22550236	819
+#Partially deleted in new
+chr17	26910155	26910499	732
+#Partially deleted in new
+chr17	27660720	27661236	367
+#Deleted in new
+chr17	31703486	31772688	964
+#Partially deleted in new
+chr17	31772688	31804201	958
+#Split in new
+chr17	33364492	33409933	867
+#Split in new
+chr17	33409933	33446451	862
+#Deleted in new
+chr17	33446451	33476746	856
+#Deleted in new
+chr17	33476746	33502439	851
+#Deleted in new
+chr17	33502439	33524371	846
+#Split in new
+chr17	33524371	33543420	840
+#Split in new
+chr17	33575115	33588374	824
+#Partially deleted in new
+chr17	38598161	38602060	112
+#Deleted in new
+chr17	38602060	38606282	113
+#Deleted in new
+chr17	38606282	38610778	114
+#Deleted in new
+chr17	38610778	38615549	115
+#Deleted in new
+chr17	38615549	38617161	116
+#Deleted in new
+chr17	38617161	38619904	117
+#Deleted in new
+chr17	38619904	38621012	118
+#Deleted in new
+chr17	38621012	38622744	119
+#Deleted in new
+chr17	38622744	38625690	120
+#Deleted in new
+chr17	38625690	38626315	121
+#Deleted in new
+chr17	38626315	38628749	122
+#Deleted in new
+chr17	38628749	38631928	123
+#Deleted in new
+chr17	38631928	38635233	125
+#Deleted in new
+chr17	38635233	38638218	126
+#Deleted in new
+chr17	38638218	38638659	127
+#Deleted in new
+chr17	38638659	38642238	128
+#Deleted in new
+chr17	38642238	38644056	129
+#Deleted in new
+chr17	38644056	38645969	130
+#Deleted in new
+chr17	38645969	38649862	131
+#Deleted in new
+chr17	38649862	38650295	132
+#Deleted in new
+chr17	38650295	38653932	133
+#Deleted in new
+chr17	38653932	38657308	134
+#Deleted in new
+chr17	38657308	38658209	135
+#Deleted in new
+chr17	38658209	38662719	136
+#Deleted in new
+chr17	38662719	38663604	137
+#Deleted in new
+chr17	38663604	38667467	138
+#Deleted in new
+chr17	38667467	38671590	139
+#Deleted in new
+chr17	38671590	38672546	140
+#Deleted in new
+chr17	38672546	38677904	141
+#Deleted in new
+chr17	38677904	38678490	142
+#Deleted in new
+chr17	38678490	38683659	143
+#Deleted in new
+chr17	38683659	38687218	144
+#Deleted in new
+chr17	38687218	38689958	145
+#Deleted in new
+chr17	38689958	38696881	146
+#Split in new
+chr17	38696881	38704480	148
+#Split in new
+chr17	40570779	40574063	501
+#Partially deleted in new
+chr17	42209740	42209752	481
+#Partially deleted in new
+chr17	42218434	42218599	577
+#Partially deleted in new
+chr17	59760231	59766770	715
+#Deleted in new
+chr17	59766770	59766923	719
+#Deleted in new
+chr17	59766923	59767062	724
+#Deleted in new
+chr17	59767062	59767122	725
+#Deleted in new
+chr17	59767122	59767209	729
+#Deleted in new
+chr17	59767209	59767368	730
+#Deleted in new
+chr17	59767368	59767441	734
+#Deleted in new
+chr17	59767441	59767668	735
+#Deleted in new
+chr17	59767668	59768019	739
+#Deleted in new
+chr17	59768019	59768426	744
+#Deleted in new
+chr17	59768426	59768894	749
+#Deleted in new
+chr17	59768894	59769434	754
+#Deleted in new
+chr17	59769434	59770069	759
+#Deleted in new
+chr17	59770069	59770862	764
+#Deleted in new
+chr17	59770862	59772001	769
+#Deleted in new
+chr17	59772001	59773714	774
+#Deleted in new
+chr17	59773714	59774689	779
+#Deleted in new
+chr17	59774689	59775342	778
+#Deleted in new
+chr17	59775342	59775643	777
+#Deleted in new
+chr17	59775643	59775780	772
+#Deleted in new
+chr17	59775780	59776241	773
+#Deleted in new
+chr17	59776241	59776541	774
+#Deleted in new
+chr17	59776541	59776959	769
+#Split in new
+chr17	59776959	59806644	764
+#Deleted in new
+chr17	59806644	59811071	769
+#Deleted in new
+chr17	59811071	59811810	774
+#Deleted in new
+chr17	59811810	59812511	779
+#Deleted in new
+chr17	59812511	59813519	784
+#Deleted in new
+chr17	59813519	59814981	789
+#Deleted in new
+chr17	59814981	59830559	794
+#Split in new
+chr17	59830559	59869081	799
+#Split in new
+chr17	59869081	59877647	804
+#Deleted in new
+chr17	59877647	59886264	809
+#Deleted in new
+chr17	59886264	59887987	804
+#Deleted in new
+chr17	59887987	59889395	799
+#Deleted in new
+chr17	59889395	59890315	794
+#Deleted in new
+chr17	59890315	59891055	789
+#Partially deleted in new
+chr17	59891055	59891678	784
+#Partially deleted in new
+chr17	63494729	63497816	721
+#Deleted in new
+chr17	63497816	63500998	725
+#Deleted in new
+chr17	63500998	63504370	730
+#Deleted in new
+chr17	63504370	63507905	735
+#Deleted in new
+chr17	63507905	63511619	740
+#Deleted in new
+chr17	63511619	63515554	744
+#Deleted in new
+chr17	63515554	63519683	749
+#Deleted in new
+chr17	63519683	63524076	754
+#Deleted in new
+chr17	63524076	63528699	759
+#Deleted in new
+chr17	63528699	63533614	764
+#Deleted in new
+chr17	63533614	63538836	769
+#Deleted in new
+chr17	63538836	63544392	774
+#Deleted in new
+chr17	63544392	63550329	779
+#Deleted in new
+chr17	63550329	63556678	784
+#Deleted in new
+chr17	63556678	63563475	789
+#Deleted in new
+chr17	63563475	63570786	794
+#Deleted in new
+chr17	63570786	63578712	799
+#Partially deleted in new
+chr17	63578712	63587472	804
+#Partially deleted in new
+chr17	75050672	75219320	988
+#Partially deleted in new
+chr17	77307601	77315407	958
+#Deleted in new
+chr17	77315407	77333769	964
+#Deleted in new
+chr17	77333769	77369393	970
+#Partially deleted in new
+chr17	77369393	77383746	964
+#Split in new
+chr17	78648266	78662465	964
+#Deleted in new
+chr17	78662465	78682490	970
+#Deleted in new
+chr17	78682490	78713522	976
+#Deleted in new
+chr17	78713522	78767887	982
+#Deleted in new
+chr17	78767887	78774742	988

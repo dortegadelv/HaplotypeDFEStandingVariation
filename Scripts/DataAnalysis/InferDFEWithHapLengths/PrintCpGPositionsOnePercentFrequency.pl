@@ -31,7 +31,7 @@ push(@SynOnePercent,$SplitLine[2]);
 close (ALL);
 open (POSEXIT,">../../../Data/Plink/CpGSynOnePercentNumberPositions.frq") or die "NO\n";
 foreach $Site (@UsedSites){
-for ($i = 0; $i < scalar(@VarInclude); $i++){
+for ($i = 0; $i < scalar(@SynOnePercent); $i++){
 if ($Site eq $SynOnePercent[$i]){
 print POSEXIT "$i\n";
 }

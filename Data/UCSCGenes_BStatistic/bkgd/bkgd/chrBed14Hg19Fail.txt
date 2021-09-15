@@ -1,0 +1,8 @@
+#Deleted in new
+chr14	0	17756457	1000
+#Partially deleted in new
+chr14	17756457	18903787	994
+#Partially deleted in new
+chr14	27607095	27607129	937
+#Partially deleted in new
+chr14	27607129	27607168	936

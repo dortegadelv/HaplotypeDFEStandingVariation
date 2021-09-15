@@ -22,7 +22,7 @@ push (@MisNumbers,$Line);
 
 close(SYNN);
 
-open (SYNPOS,"../../../Data/Plink/AllSynonymousOnePercent.frq") or die "NO!";
+open (SYNPOS,"../../../Data/Plink/SynonymousOnePercentCpG.frq") or die "NO!";
 @SynChromosome = ();
 @SynPosition = ();
 while (<SYNPOS>){
@@ -37,7 +37,7 @@ push (@SynPosition,$ImportantStuff[1] - 1);
 
 close (SYNPOS);
 
-open (MISPOS,"../../../Data/Plink/AllMissenseOnePercent.frq") or die "NO!";
+open (MISPOS,"../../../Data/Plink/MissenseOnePercentCpG.frq") or die "NO!";
 @MisChromosome = ();
 @MisPosition = ();
 while (<MISPOS>){
@@ -52,9 +52,12 @@ push (@MisPosition,$ImportantStuff[1] - 1);
 close (MISPOS);
 
 open (PROP,">../../../Data/UCSCGenes_BStatistic/ProportionMis.txt") or die "NO!";
-foreach $i (@MisNumbers){
+for ($i = 0; $i < scalar(@MisChromosome) ; $i++){
 print "$MisChromosome[$i]\t$MisPosition[$i]\n";
 $MinusPosition = $MisPosition[$i] - 250000;
+    if ($MinusPosition < 0){
+        $MinusPosition = 0;
+    }
 $PlusPosition = $MisPosition[$i] + 250000;
 open (BEDFILE,">../../../Results/Data/BedFilePositionMis.bed") or die "NO!";
 print BEDFILE "chr$MisChromosome[$i]\t$MinusPosition\t$PlusPosition\n";

@@ -1,0 +1,6 @@
+#Partially deleted in new
+chr21	0	10063366	1000
+#Partially deleted in new
+chr21	10075924	13398750	1000
+#Partially deleted in new
+chr21	42122484	42131282	946

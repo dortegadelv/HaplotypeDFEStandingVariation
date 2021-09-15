@@ -2,8 +2,8 @@
 Data <- read.table("FullTable.txt")
 RecombinationQuantiles <- read.table("QuantilesRecombination.txt")
 
-RecValuesOne <- read.table("~/Dropbox/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RecRateMissenseOnePercentRightNoCpG.txt")
-RecValuesTwo <- read.table("~/Dropbox/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RecRateMissenseOnePercentLeftNoCpG.txt")
+RecValuesOne <- read.table("../ForwardSims/RecRateMissenseOnePercentRightNoCpG.txt")
+RecValuesTwo <- read.table("../ForwardSims/RecRateMissenseOnePercentLeftNoCpG.txt")
 RecValues <- rbind(RecValuesOne,RecValuesTwo)
 
 for (i in 1:546){
@@ -63,7 +63,7 @@ ConcatenateErrorValues <- c()
 i <- 1
 ConcatenateTestValues <- c()
 PolyNum <- 5
-for (FourNs in 3:403){
+for (FourNs in 1:403){
 print (FourNs)
 FirstElement <- c()
 FirstPoint <- c()
@@ -127,7 +127,7 @@ NeutralVector <- rbind(NeutralVector, ConcatenateTestValues[203*6+1:6,545])
 
 #### AdditionalStep
 
-for (i in 1:546){
+for (i in 1:550){
     if (RecValues$V1[i] >= RecombinationQuantiles$V1[20]){
         ConcatenateTestValues[,i] <- rep.int(1, 403*6)
         print(i)

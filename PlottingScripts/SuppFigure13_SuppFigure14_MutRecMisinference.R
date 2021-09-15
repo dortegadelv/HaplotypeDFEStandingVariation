@@ -6,7 +6,7 @@ library(beanplot)
 library(RColorBrewer)
 library(viridis)
 
-setwd("/Users/vicentediegoortegadelvecchyo/Dropbox/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts")
+setwd("/Users/vicentediegoortegadelvecchyo/Dropbox (Personal)/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/PlottingScripts")
 
 DemographicScenarios <- c("ConstantPopSize","PopExpansion")
 FourNs <- c("0", "50", "100", "-50", "-100")

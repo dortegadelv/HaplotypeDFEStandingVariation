@@ -62,7 +62,7 @@ Ne[8]=100000
 Ne[9]=10000
 Ne[10]=10000
 Ne[11]=20000
-Ne[12]=346884
+Ne[12]=164462
 
 
 XLimFigureOne <- c()
@@ -91,7 +91,7 @@ XLimFigureTwo[8]=1000
 XLimFigureTwo[9]=2000
 XLimFigureTwo[10]=900
 XLimFigureTwo[11]=3000
-XLimFigureTwo[12]=2500
+XLimFigureTwo[12]=1500
 
 
 YLimFigureTwo <- c()
@@ -170,7 +170,7 @@ for (j in 12:12){
 	
 	if (j==12){
 		
-		plot(c(100000,100000-46,100000-(46+244),100000-(61+229+352),100000-(61+229+352+1221),100000-(61+229+352+1221+22971)),c(226252/2,1496/2,1171/2,9109/2,4594/2,14600/2),type="s",xlim=c(100000-3000,100000),ylim=c(0,226252/2),ylab="Effective Population Size",xlab="Time before the present",main="A) Scaled UK10K Model",xaxt='n',yaxt='n',cex.main=2.5,cex.lab=2.5,col="red",lwd=6)
+		plot(c(100000,100000-49,100000-(49+241),100000-(61+229+352),100000-(61+229+352+1221),100000-(61+229+352+1221+22970)),c(164462/2,1274/2,1172/2,9108/2,4594/2,4594/2),type="s",xlim=c(100000-3000,100000),ylim=c(0,200000/2),ylab="Effective Population Size",xlab="Time before the present",main="A) Scaled UK10K Model",xaxt='n',yaxt='n',cex.main=2.5,cex.lab=2.5,col="red",lwd=6)
 		
 		axis(1,at=c(100000,100000-1000,100000-2000,100000-3000,100000-4000,100000-5000,100000-6000),labels = c("Present","1000","2000","3000","4000","5000","6000"),cex.axis=2.5)
 		axis(2,at=c(150000,100000,50000,0),labels = c("150000","100000","50000","0"),cex.axis=2.5)
@@ -214,12 +214,12 @@ par(mar=c(5,5,5,2) + 0.1)
 		abline(v=5000-300,lty=3,cex=3,lwd=3)
 	}
 	if (j==12){
-		abline(v=5000-61,lty=3,cex=3,lwd=3)
-		abline(v=5000-(61+229),lty=3,cex=3,lwd=3)
-		abline(v=5000-(61+229+352),lty=3,cex=3,lwd=3)
-		abline(v=5000-(61+229+352+1221),lty=3,cex=3,lwd=3)
-		abline(v=5000-(61+229+352+1221),lty=3,cex=3,lwd=3)
-		abline(v=5000-(61+229+352+1221+22971),lty=3,cex=3,lwd=3)
+		abline(v=5000-49,lty=3,cex=3,lwd=3)
+		abline(v=5000-(49+241),lty=3,cex=3,lwd=3)
+		abline(v=5000-(49+241+352),lty=3,cex=3,lwd=3)
+		abline(v=5000-(49+241+352+1221),lty=3,cex=3,lwd=3)
+		abline(v=5000-(49+241+352+1221),lty=3,cex=3,lwd=3)
+		abline(v=5000-(49+241+352+1221+22970),lty=3,cex=3,lwd=3)
 
 	}
 	
@@ -298,7 +298,7 @@ par(mar=c(5,5,5,2) + 0.1)
 #		plot(max(Data$V1*Ne[j]*2) - 0:99*50,Histogram$counts[1:100]/sum(Histogram$counts),xlab="Allele Age",ylab="Probability",type="l",ylim=c(0,YLimFigureTwo[j]),main="B) Allele Age",xaxt="n",cex.lab=2,cex.main=2,cex.axis=1.5,lwd=6,xlim=c(max(density(Data$V1*Ne[j]*2,from=0)$x)-XLimFigureTwo[j],max(Data$V1*Ne[j]*2)))
 #		abline(v=mean(Max- Data$V1*Ne[j]*2),lwd=6,col=ColorViridisAlpha[3])
 		points(Max - mean(Data$V1*Ne[j]*2),-0.12*ListMaxAge[1],pch=20,col=ColorViridis[3],cex=3)
-		axis(2,at=c(0,0.002,0.004,0.006,0.008,0.01,0.012,0.014,0.016,0.018,0.02),labels=c("0","0.002","0.004","0.006","0.008","0.01","0.012","0.014","0.016","0.018","0.02"),cex.lab=2.5,cex.axis=2.5)
+		axis(2,at=c(0,0.005,0.01,0.015,0.02,0.025),labels=c("0","0.005","0.01","0.015","0.02","0.025"),cex.lab=2.5,cex.axis=2.5)
 ## X values 
 		XFirstValue <- max(density(Data$V1*Ne[j]*2,from=0,to=Max)$x) - 0.8*XLimFigureTwo[j]
 		Threshold <- mean(Data$V1*Ne[j]*2) + SD-0.1*XLimFigureTwo[j]
@@ -322,7 +322,7 @@ par(mar=c(5,5,5,2) + 0.1)
 #		abline(v=mean(Max - Data$V1*Ne[j]*2),lwd=6,col=ColorViridisAlpha[3])
 		points(Max - mean(Data$V1*Ne[j]*2),-0.12*ListMaxAge[1],pch=20,col=ColorViridis[3],cex=3)
 #		plot(max(Data$V1*Ne[j]*2) - 0:99*50,Histogram$counts[1:100]/sum(Histogram$counts),xlab="Allele Age",ylab="Probability",type="l",ylim=c(0,YLimFigureTwo[j]),main="B) Allele Age",xaxt="n",cex.lab=2,cex.main=2,cex.axis=1.5,lwd=6,xlim=c(max(density(Data$V1*Ne[j]*2,from=0)$x)-XLimFigureTwo[j],max(Data$V1*Ne[j]*2)))
-		axis(2,at=c(0,0.002,0.004,0.006,0.008,0.01,0.012,0.014,0.016,0.018,0.02),labels=c("0","0.002","0.004","0.006","0.008","0.01","0.012","0.014","0.016","0.018","0.02"),cex.lab=2.5,cex.axis=2.5)
+		axis(2,at=c(0,0.005,0.01,0.015,0.02,0.025),labels=c("0","0.005","0.01","0.015","0.02","0.025"),cex.lab=2.5,cex.axis=2.5)
 ## X values 
 		XFirstValue <- max(density(Data$V1*Ne[j]*2,from=0,to=Max)$x) - 0.8*XLimFigureTwo[j]
 		Threshold <- mean(Data$V1*Ne[j]*2) + SD-0.1*XLimFigureTwo[j]
@@ -501,7 +501,7 @@ par(mar=c(5,5,5,2) + 0.1)
 
     par(mar=c(5,5,5,3) + 0.1)
 
-	plot(Data$V1[XLimFigureThree[j]:1],Data$V2[1:XLimFigureThree[j]],xlab=expression(bold(T[2])),ylab="Probability",type="l",main=expression(bold(paste("D) ",T[2],sep=""))),ylim=c(-0.2*ListMaxT2[1],1.05*ListMaxT2[1]),xaxt="n",yaxt="n",cex.lab=2.5,cex.main=2.5,cex.axis=2.5,lwd=6,col=ColorViridis[3])
+	plot(Data$V1[XLimFigureThree[j]:1],Data$V3[1:XLimFigureThree[j]],xlab=expression(bold(T[2])),ylab="Probability",type="l",main=expression(bold(paste("D) ",T[2],sep=""))),ylim=c(-0.2*ListMaxT2[1],1.05*ListMaxT2[1]),xaxt="n",yaxt="n",cex.lab=2.5,cex.main=2.5,cex.axis=2.5,lwd=6,col=ColorViridis[3])
 #,ylim=c(0,1.0)
 	if (j==7 || j==8){
 #		abline(v=Data$V1[XLimFigureThree[j]]-100,lty=3,lwd=3)
@@ -528,48 +528,48 @@ par(mar=c(5,5,5,2) + 0.1)
 		segments(Data$V1[XLimFigureThree[j]]-300,0,Data$V1[XLimFigureThree[j]]-100,300,lty=3,lwd=3)
 		
 	}
-	SD <- (sum(Data$V1*Data$V1*Data$V2) - sum(Data$V1*Data$V2)*sum(Data$V1*Data$V2))^(1/2)
-	arrows(XLimFigureThree[j]- sum(Data$V1*Data$V2)-SD,-0.12*ListMaxT2[1],min(XLimFigureThree[j]- sum(Data$V1*Data$V2)+SD,XLimFigureThree[j]),-0.12*ListMaxT2[1], length=0.05, angle=90, code=3,col=ColorViridis[3],lwd=6)
+	SD <- (sum(Data$V1*Data$V1*Data$V3) - sum(Data$V1*Data$V3)*sum(Data$V1*Data$V3))^(1/2)
+	arrows(XLimFigureThree[j]- sum(Data$V1*Data$V3)-SD,-0.12*ListMaxT2[1],min(XLimFigureThree[j]- sum(Data$V1*Data$V3)+SD,XLimFigureThree[j]),-0.12*ListMaxT2[1], length=0.05, angle=90, code=3,col=ColorViridis[3],lwd=6)
 	
-	points(XLimFigureThree[j]- sum(Data$V1*Data$V2),-0.12*ListMaxT2[1],pch=20,col=ColorViridis[3],cex=3)
+	points(XLimFigureThree[j]- sum(Data$V1*Data$V3),-0.12*ListMaxT2[1],pch=20,col=ColorViridis[3],cex=3)
 	
 	AgesFile <- paste("../Results/TTwos/",DemScenario[j],"_",SelectionTest[2],".txt",sep="")
 	Data <- read.table(AgesFile)
 	
 	Color <- col2rgb("purple")
-	lines(Data$V1[XLimFigureThree[j]:1],Data$V2[1:XLimFigureThree[j]],col=ColorViridis[2],lwd=6)
-	SD <- (sum(Data$V1*Data$V1*Data$V2) - sum(Data$V1*Data$V2)*sum(Data$V1*Data$V2))^(1/2)
-	arrows(XLimFigureThree[j]- sum(Data$V1*Data$V2)-SD,-0.08*ListMaxT2[1],min(XLimFigureThree[j]- sum(Data$V1*Data$V2)+SD,XLimFigureThree[j]),-0.08*ListMaxT2[1], length=0.05, angle=90, code=3,col=ColorViridis[2],lwd=6)
-	points(XLimFigureThree[j]- sum(Data$V1*Data$V2),-0.08*ListMaxT2[1],pch=20,col=ColorViridis[2],cex=3)
+	lines(Data$V1[XLimFigureThree[j]:1],Data$V3[1:XLimFigureThree[j]],col=ColorViridis[2],lwd=6)
+	SD <- (sum(Data$V1*Data$V1*Data$V3) - sum(Data$V1*Data$V3)*sum(Data$V1*Data$V3))^(1/2)
+	arrows(XLimFigureThree[j]- sum(Data$V1*Data$V3)-SD,-0.08*ListMaxT2[1],min(XLimFigureThree[j]- sum(Data$V1*Data$V3)+SD,XLimFigureThree[j]),-0.08*ListMaxT2[1], length=0.05, angle=90, code=3,col=ColorViridis[2],lwd=6)
+	points(XLimFigureThree[j]- sum(Data$V1*Data$V3),-0.08*ListMaxT2[1],pch=20,col=ColorViridis[2],cex=3)
 	
 	AgesFile <- paste("../Results/TTwos/",DemScenario[j],"_",SelectionTest[3],".txt",sep="")
 	Data <- read.table(AgesFile)
 	
 	Color <- col2rgb("orange")
-	lines(Data$V1[XLimFigureThree[j]:1],Data$V2[1:XLimFigureThree[j]],col=ColorViridis[1],lwd=6)
-	SD <- (sum(Data$V1*Data$V1*Data$V2) - sum(Data$V1*Data$V2)*sum(Data$V1*Data$V2))^(1/2)
-	arrows(XLimFigureThree[j]- sum(Data$V1*Data$V2)-SD,-0.04*ListMaxT2[1],min(XLimFigureThree[j]- sum(Data$V1*Data$V2)+SD,XLimFigureThree[j]),-0.04*ListMaxT2[1], length=0.05, angle=90, code=3,col=ColorViridis[1],lwd=6)
+	lines(Data$V1[XLimFigureThree[j]:1],Data$V3[1:XLimFigureThree[j]],col=ColorViridis[1],lwd=6)
+	SD <- (sum(Data$V1*Data$V1*Data$V3) - sum(Data$V1*Data$V3)*sum(Data$V1*Data$V3))^(1/2)
+	arrows(XLimFigureThree[j]- sum(Data$V1*Data$V3)-SD,-0.04*ListMaxT2[1],min(XLimFigureThree[j]- sum(Data$V1*Data$V3)+SD,XLimFigureThree[j]),-0.04*ListMaxT2[1], length=0.05, angle=90, code=3,col=ColorViridis[1],lwd=6)
 	
-	points(XLimFigureThree[j]- sum(Data$V1*Data$V2),-0.04*ListMaxT2[1],pch=20,col=ColorViridis[1],cex=3)
+	points(XLimFigureThree[j]- sum(Data$V1*Data$V3),-0.04*ListMaxT2[1],pch=20,col=ColorViridis[1],cex=3)
 	
 	AgesFile <- paste("../Results/TTwos/",DemScenario[j],"_",SelectionTest[4],".txt",sep="")
 	Data <- read.table(AgesFile)
 	
-	lines(Data$V1[XLimFigureThree[j]:1],Data$V2[1:XLimFigureThree[j]],col=ColorViridis[4],lty=5,lwd=6)
-	SD <- (sum(Data$V1*Data$V1*Data$V2) - sum(Data$V1*Data$V2)*sum(Data$V1*Data$V2))^(1/2)
-	arrows(XLimFigureThree[j]- sum(Data$V1*Data$V2)-SD,-0.16*ListMaxT2[1],min(XLimFigureThree[j]- sum(Data$V1*Data$V2)+SD,XLimFigureThree[j]),-0.16*ListMaxT2[1], length=0.05, angle=90, code=3,col=ColorViridis[4],lwd=6)
-	points(XLimFigureThree[j]- sum(Data$V1*Data$V2),-0.16*ListMaxT2[1],pch=20,col=ColorViridis[4],cex=3)
+	lines(Data$V1[XLimFigureThree[j]:1],Data$V3[1:XLimFigureThree[j]],col=ColorViridis[4],lty=5,lwd=6)
+	SD <- (sum(Data$V1*Data$V1*Data$V3) - sum(Data$V1*Data$V3)*sum(Data$V1*Data$V3))^(1/2)
+	arrows(XLimFigureThree[j]- sum(Data$V1*Data$V3)-SD,-0.16*ListMaxT2[1],min(XLimFigureThree[j]- sum(Data$V1*Data$V3)+SD,XLimFigureThree[j]),-0.16*ListMaxT2[1], length=0.05, angle=90, code=3,col=ColorViridis[4],lwd=6)
+	points(XLimFigureThree[j]- sum(Data$V1*Data$V3),-0.16*ListMaxT2[1],pch=20,col=ColorViridis[4],cex=3)
 	
 	AgesFile <- paste("../Results/TTwos/",DemScenario[j],"_",SelectionTest[5],".txt",sep="")
 	Data <- read.table(AgesFile)
 	
-	lines(Data$V1[XLimFigureThree[j]:1],Data$V2[1:XLimFigureThree[j]],col=ColorViridis[5],lty=5,lwd=6)
-	SD <- (sum(Data$V1*Data$V1*Data$V2) - sum(Data$V1*Data$V2)*sum(Data$V1*Data$V2))^(1/2)
-	arrows(XLimFigureThree[j]- sum(Data$V1*Data$V2)-SD,-0.2*ListMaxT2[1],min(XLimFigureThree[j]- sum(Data$V1*Data$V2)+SD,XLimFigureThree[j]),-0.2*ListMaxT2[1], length=0.05, angle=90, code=3,col=ColorViridis[5],lwd=6)
-	points(XLimFigureThree[j]- sum(Data$V1*Data$V2),-0.2*ListMaxT2[1],pch=20,col=ColorViridis[5],cex=3)
+	lines(Data$V1[XLimFigureThree[j]:1],Data$V3[1:XLimFigureThree[j]],col=ColorViridis[5],lty=5,lwd=6)
+	SD <- (sum(Data$V1*Data$V1*Data$V3) - sum(Data$V1*Data$V3)*sum(Data$V1*Data$V3))^(1/2)
+	arrows(XLimFigureThree[j]- sum(Data$V1*Data$V3)-SD,-0.2*ListMaxT2[1],min(XLimFigureThree[j]- sum(Data$V1*Data$V3)+SD,XLimFigureThree[j]),-0.2*ListMaxT2[1], length=0.05, angle=90, code=3,col=ColorViridis[5],lwd=6)
+	points(XLimFigureThree[j]- sum(Data$V1*Data$V3),-0.2*ListMaxT2[1],pch=20,col=ColorViridis[5],cex=3)
 #legend("topleft",c("0","-50","-100","50","100"),pch=19,col=c("black","purple","orange","red","dodgerblue"),cex=1.5,title="4Ns",bty="n")
 	axis(1,at=c(XLimFigureThree[j]-700,XLimFigureThree[j]-600,XLimFigureThree[j]-500,XLimFigureThree[j]-400,XLimFigureThree[j]-300,XLimFigureThree[j]-200,XLimFigureThree[j]-100,XLimFigureThree[j]),labels=c("700","600","500","400","300","200","100","Present"),cex.lab=2.5,cex.axis=2.5)
-	axis(2,at=c(0,0.005,0.01,0.015,0.02,0.025,0.03,0.035,0.04),labels=c("0","0.005","0.01","0.015","0.02","0.025","0.03","0.035","0.04"),cex.lab=2.5,cex.axis=2.5)
+	axis(2,at=c(0,0.02,0.04,0.06,0.08,0.1,0.12,0.14,0.16),labels=c("0","0.005","0.01","0.015","0.02","0.025","0.03","0.035","0.04"),cex.lab=2.5,cex.axis=2.5)
 
 	
 	

@@ -1,10 +1,12 @@
 library(here)
 
-FileNames <- c("../Results/RecMaps/LeftBpRecRatePerVariantNoCpGPrintMap.txt", "../Results/RecMaps/RightBpRecRatePerVariantNoCpGPrintMap.txt", "../Results/RecMaps/LeftBpRecRatePerVariantSynonymousNoCpGPrintMap.txt", "../Results/RecMaps/RightBpRecRatePerVariantSynonymousNoCpGPrintMap.txt")
+FileNames <- c("../Results/RecMaps/LeftBpRecRatePerVariantNoCpGPrintMap269.txt", "../Results/RecMaps/RightBpRecRatePerVariantNoCpGPrintMap269.txt", "../Results/RecMaps/LeftBpRecRatePerVariantSynonymousNoCpGPrintMap143.txt", "../Results/RecMaps/RightBpRecRatePerVariantSynonymousNoCpGPrintMap143.txt")
 
 for (j in 1:2){
 
 Table <- read.table(FileNames[j])
+
+# Table <- as.numeric(Table)
 
 RecMap <- rep(0,250001)
 
@@ -263,3 +265,33 @@ boxplot(FirstDataBoxPlots/100, BoxplotAbsDiff/100, names = c("Non synonymous","S
 
 dev.off()
 
+DataLeftSyn <- read.table("../Data/LeftBpRecRatePerVariantSynonymous.txt")
+DataRightSyn <- read.table("../Data/RightBpRecRatePerVariantSynonymous.txt")
+
+DataSyn <- rbind(DataLeftSyn,DataRightSyn)
+
+DataLeft <- read.table("../Data/LeftBpRecRatePerVariant.txt")
+DataRight <- read.table("../Data/RightBpRecRatePerVariant.txt")
+
+Data <- rbind(DataLeft,DataRight)
+
+mean(DataSyn$V1)
+mean(Data$V1)
+
+wilcox.test(DataSyn$V1,Data$V1)
+
+
+DataLeftSyn <- read.table("../Data/LeftBpRecRatePerVariantNoCpGSynonymous.txt")
+DataRightSyn <- read.table("../Data/RightBpRecRatePerVariantNoCpGSynonymous.txt")
+
+DataSyn <- rbind(DataLeftSyn,DataRightSyn)
+
+DataLeft <- read.table("../Data/LeftBpRecRatePerVariantNoCpG.txt")
+DataRight <- read.table("../Data/RightBpRecRatePerVariantNoCpG.txt")
+
+Data <- rbind(DataLeft,DataRight)
+
+mean(DataSyn$V1)
+mean(Data$V1)
+
+wilcox.test(DataSyn$V1,Data$V1)

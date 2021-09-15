@@ -113,7 +113,7 @@ par(mar=c(5,5,5,2) + 0.1)
 DistributionOfL <- read.table("../Results/DistributionOfL/DistributionOfL.txt")
 Max <- max(DistributionOfL)
 Min <- min(DistributionOfL)
-plot(1:6,DistributionOfL[1,], col=ColorViridis[3], type="l", lwd=6, ylim=c(0.05,0.41), ylab="Probability", xlab="L", cex.lab=2.5, cex.axis=2.5, xaxt="n", main="A) Probability Distribution of L\n in a constant population size scenario", cex.main=2.5)
+plot(1:6,DistributionOfL[1,], col=ColorViridis[3], type="l", lwd=6, ylim=c(0.03,0.5), ylab="Probability", xlab="L", cex.lab=2.5, cex.axis=2.5, xaxt="n", main="A) Probability Distribution of L\n in a constant population size scenario", cex.main=2.5)
 lines(1:6,DistributionOfL[2,],col=ColorViridis[4],lwd=6)
 lines(1:6,DistributionOfL[3,],col=ColorViridis[5],lwd=6)
 lines(1:6,DistributionOfL[4,],col=ColorViridis[2],lty=5,lwd=6)
@@ -124,7 +124,7 @@ legend("center",c("-100","-50","0","50","100"), lty=c(6,6,1,1,1),lwd=6,col=Color
 DistributionOfL <- read.table("../Results/DistributionOfL/DistributionOfLPopExpansion.txt")
 Max <- max(DistributionOfL)
 Min <- min(DistributionOfL)
-plot(1:6,DistributionOfL[1,], col=ColorViridis[3], type="l", lwd=6, ylim=c(0.05,0.41), ylab="Probability", xlab="L", cex.lab=2.5, cex.axis=2.5, xaxt="n", main="B) Probability Distribution of L\n in a population expansion scenario", cex.main=2.5)
+plot(1:6,DistributionOfL[1,], col=ColorViridis[3], type="l", lwd=6, ylim=c(0.03,0.5), ylab="Probability", xlab="L", cex.lab=2.5, cex.axis=2.5, xaxt="n", main="B) Probability Distribution of L\n in a population expansion scenario", cex.main=2.5)
 lines(1:6,DistributionOfL[2,],col=ColorViridis[4],lwd=6)
 lines(1:6,DistributionOfL[3,],col=ColorViridis[5],lwd=6)
 lines(1:6,DistributionOfL[4,],col=ColorViridis[2],lty=5,lwd=6)
@@ -135,13 +135,13 @@ legend("center",c("-100","-50","0","50","100"), lty=c(6,6,1,1,1),lwd=6,col=Color
 DistributionOfL <- read.table("../Results/DistributionOfL/DistributionOfLUK10K.txt")
 Max <- max(DistributionOfL)
 Min <- min(DistributionOfL)
-plot(1:6,DistributionOfL[1,], col=ColorViridis[3], type="l", lwd=6, ylim=c(0.05,0.41), ylab="Probability", xlab="L", cex.lab=2.5, cex.axis=2.5, xaxt="n", main="C) Probability Distribution of L\n in the scaled UK10K demographic model", cex.main=2.5)
+plot(1:6,DistributionOfL[1,], col=ColorViridis[3], type="l", lwd=6, ylim=c(0.03,0.5), ylab="Probability", xlab="L", cex.lab=2.5, cex.axis=2.5, xaxt="n", main="C) Probability Distribution of L\n in the scaled UK10K demographic model", cex.main=2.5)
 lines(1:6,DistributionOfL[2,],col=ColorViridis[4],lwd=6)
 lines(1:6,DistributionOfL[3,],col=ColorViridis[5],lwd=6)
 lines(1:6,DistributionOfL[4,],col=ColorViridis[2],lty=5,lwd=6)
 lines(1:6,DistributionOfL[5,],col=ColorViridis[1],lty=5,lwd=6)
 axis(1,at=c(1,2,3,4,5,6),labels=c(expression(w[1],w[2],w[3],w[4],w[5],w[6])),cex.lab=2.5,cex.axis=2.5)
-legend("center",c("-50","-25","0","50","100"), lty=c(6,6,1,1,1),lwd=6,col=ColorViridis,cex=2,title=expression(paste(4,N,'s',sep="")),bty="n")
+legend("center",c("-50","-25","0","25","50"), lty=c(6,6,1,1,1),lwd=6,col=ColorViridis,cex=2,title=expression(paste(4,N,'s',sep="")),bty="n")
 
 dev.off()
 
@@ -170,18 +170,18 @@ Plot <- paste("../Figures/SuppFigure24_LDistributionBoxplot.pdf",sep="")
 
 pdf(Plot, width=21)
 par(mfrow = c(1,3))
-par(mar=c(5,5,5,5) + 0.1)
+par(mar=c(5,5,5,6) + 0.1)
 
 plot(1:3,TotalConcatenateSums[1:3], type="o",pch=19,ylab=" Absolute difference between probability distributions of L", xaxt = "n",xlab= "", ylim = c(0,0.075), cex.axis = 2, cex.lab = 2, main = "D) Constant population size scenario", cex.main = 2.5)
 
-axis (1, at=c(1,2,3), labels = c("4Ns = 0 vs 4Ns = 50","4Ns = 0 vs 4Ns = 100","4Ns = 50 vs 4Ns = 100"), cex.axis = 1.5 )
+axis (1, at=c(1,2,3), labels = c("4Ns = 0 vs 4Ns = -50","4Ns = 0 vs 4Ns = -100","4Ns = -50 vs 4Ns = 100"), cex.axis = 1.5 )
 
 plot(1:3,TotalConcatenateSums[4:6], type="o",pch=19,ylab=" Absolute difference between probability distributions of L", xaxt = "n",xlab= "", ylim = c(0,0.075), cex.axis = 2, cex.lab = 2, main = "E) Population expansion scenario", cex.main = 2.5)
 
-axis (1, at=c(1,2,3), labels = c("4Ns = 0 vs 4Ns = 50","4Ns = 0 vs 4Ns = 100","4Ns = 50 vs 4Ns = 100"), cex.axis = 1.5 )
+axis (1, at=c(1,2,3), labels = c("4Ns = 0 vs 4Ns = -50","4Ns = 0 vs 4Ns = -100","4Ns = -50 vs 4Ns = -100"), cex.axis = 1.5 )
 
 plot(1:3,TotalConcatenateSums[7:9], type="o",pch=19,ylab=" Absolute difference between probability distributions of L", xaxt = "n",xlab= "", ylim = c(0,0.075), cex.axis = 2, cex.lab = 2, main = "F) Scaled UK10K demographic model", cex.main = 2.5)
 
-axis (1, at=c(1,2,3), labels = c("4Ns = 0 vs 4Ns = 25","4Ns = 0 vs 4Ns = 50","4Ns = 25 vs 4Ns = 50"), cex.axis = 1.5 )
+axis (1, at=c(1,2,3), labels = c("4Ns = 0 vs 4Ns = -25","4Ns = 0 vs 4Ns = -50","4Ns = -25 vs 4Ns = -50"), cex.axis = 1.5 )
 
 dev.off()

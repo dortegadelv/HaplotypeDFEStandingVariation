@@ -22,7 +22,7 @@ push (@MisNumbers,$Line);
 
 close(SYNN);
 
-open (SYNPOS,"../../../Data/Plink/AllSynonymousOnePercent.frq") or die "NO!";
+open (SYNPOS,"../../../Data/Plink/SynonymousOnePercentCpG.frq") or die "NO!";
 @SynChromosome = ();
 @SynPosition = ();
 while (<SYNPOS>){
@@ -37,7 +37,7 @@ push (@SynPosition,$ImportantStuff[1] - 1);
 
 close (SYNPOS);
 
-open (MISPOS,"../../../Data/Plink/AllMissenseOnePercent.frq") or die "NO!";
+open (MISPOS,"../../../Data/Plink/MissenseOnePercentCpG.frq") or die "NO!";
 @MisChromosome = ();
 @MisPosition = ();
 while (<MISPOS>){
@@ -53,7 +53,7 @@ close (MISPOS);
 
 ## Synonymous variants
 open (PROP,">../../../Data/UCSCGenes_BStatistic/B_StatisticSyn.txt") or die "NO!";
-foreach $i (@SynNumbers){
+for ($i = 0; $i < scalar(@SynChromosome) ; $i++){
 print "$SynChromosome[$i]\t$SynPosition[$i]\n";
 $MinusPosition = $SynPosition[$i] - 250000;
 $PlusPosition = $SynPosition[$i] + 250000;
@@ -85,8 +85,9 @@ $TotalPositionNumber = $TotalPositionNumber + ($SplitLine[2] - $SplitLine[1]);
 
 }
 close (BFILE);
-
+    if ($TotalPositionNumber != 0){
 $AverageBValue = $SumBValue / $TotalPositionNumber;
+    }
 print PROP "$SynChromosome[$i]\t$SynPosition[$i]\t$AverageBValue\t$TotalPositionNumber\n";
 
 }
@@ -94,7 +95,7 @@ close (PROP);
 
 ## Nonsynonymous variants
 open (PROP,">../../../Data/UCSCGenes_BStatistic/B_StatisticMis.txt") or die "NO!";
-foreach $i (@MisNumbers){
+for ($i = 0; $i < scalar(@MisChromosome) ; $i++){
 print "$MisChromosome[$i]\t$MisPosition[$i]\n";
 $MinusPosition = $MisPosition[$i] - 250000;
 $PlusPosition = $MisPosition[$i] + 250000;
@@ -126,8 +127,10 @@ $TotalPositionNumber = $TotalPositionNumber + ($SplitLine[2] - $SplitLine[1]);
 }
 close (BFILE);
 
+if ($TotalPositionNumber != 0){
 $AverageBValue = $SumBValue / $TotalPositionNumber;
-print PROP "$MisChromosome[$i]\t$MisPosition[$i]\t$AverageBValue\t$TotalPositionNumber\n";
+}
+    print PROP "$MisChromosome[$i]\t$MisPosition[$i]\t$AverageBValue\t$TotalPositionNumber\n";
 
 }
 close (PROP);

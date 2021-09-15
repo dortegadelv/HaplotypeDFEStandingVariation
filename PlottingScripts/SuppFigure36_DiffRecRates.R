@@ -3,8 +3,8 @@ library(here)
 Data <- read.table("../Results/Fig36/FullTable.txt")
 RecombinationQuantiles <- read.table("../Results/Fig36/QuantilesRecombination.txt")
 
-RecValuesOne <- read.table("../Results/Fig36/RecRateMissenseOnePercentRightNoCpG.txt")
-RecValuesTwo <- read.table("../Results/Fig36/RecRateMissenseOnePercentLeftNoCpG.txt")
+RecValuesOne <- read.table("../Results/Fig36/RecRateMissenseOnePercentRightNoCpG.txt") * 0.8928947
+RecValuesTwo <- read.table("../Results/Fig36/RecRateMissenseOnePercentLeftNoCpG.txt") * 0.8928947
 RecValues <- rbind(RecValuesOne,RecValuesTwo)
 
 for (i in 1:546){

@@ -16,6 +16,6 @@ par(mfrow=c(1,2),mar=c(5,5,4,2) + 0.1)
 
 ### ,mar=c(5,5,4,2) + 0.1
 
-beanplot(SelectionNS$V1, SelectionSyn$V1, names=c("Non Syn","Syn"), ylab="Estimated 4Ns values", xlab="Type of Variants", bw = "nrd0", cutmin = -75, cutmax = 75, main="Inference of Selection in the\nUK10K data", cex.axis=1.25, cex.lab=2, cex.main=1.5, col = c("#CAB2D6", "#33A02C", "#B2DF8A"), border = "#CAB2D6", maxstripline=0.15, beanlinewd=0.5, overall=10000, what=c(FALSE,TRUE,TRUE,TRUE), overallline = "median", ll=0.5)
+beanplot(SelectionNS$V1, SelectionSyn$V1, names=c("Non Syn","Syn"), ylab="Estimated 4Ns values", xlab="Type of Variants", bw = "nrd0", main="Inference of Selection in the\nUK10K data", cex.axis=1.25, cex.lab=2, cex.main=1.5, col = c("#CAB2D6", "#33A02C", "#B2DF8A"), border = "#CAB2D6", maxstripline=0.15, beanlinewd=0.5, what=c(FALSE,TRUE,TRUE,TRUE), overallline = "median", ll=0.5)
 
 dev.off()

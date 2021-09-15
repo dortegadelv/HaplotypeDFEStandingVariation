@@ -3,7 +3,7 @@ library(viridis)
 
 ### P (allele is 2Ns = x | allele is at 1%)
 
-Alpha = 0.9
+Alpha = 0.06
 Beta = 75000
 
 P_Allele_Is_2Ns_given_OnePercent <- c()
@@ -32,12 +32,12 @@ for (i in 1:10){
 # print (i)
 	Prob <- pgamma(i*2.5,Alpha,scale=Beta) - pgamma((i-1)*2.5,Alpha,scale=Beta)
 	P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,Prob)
-	NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*76163488446)
+	NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*61603609695)
 }
 Prob <- 1 - pgamma(25,Alpha,scale=Beta)
-NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*76163488446)
+NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*61603609695)
 
-#### The number of alleles comes from the population expansion model (229700 + 45544 / 22970 * 6104 + 5856 / 22970 * 1760 + 7480 / 22970 * 1222 + 1131262 / 22970 * 228) * 100 * 3000
+#### The number of alleles comes from the population expansion model (183760 + 45544 / 22970 * 6104 + 5856 / 22970 * 1760 + 6369 / 22970 * 1207 + 822310 / 22970 * 243) * 100 * 3000
 
 SelectionCoefficientList <- read.table("../Results/ExitSValues/ExitOnePercentSValuesUK10KMouseHighPop.txt")
 
@@ -55,8 +55,8 @@ Probs <- P_Allele_Is_2Ns_given_OnePercent
 ## This is the over the number of NonCpG sites where a nonsynonymous mutation can take place that are far away from centromeres and telomeres
 NumberOfNonCpGSites <- 26368474
 MutationRate <- 1.5e-8
-SitesDemography <- (229700 + 45544 / 22970 * 6104 + 5856 / 22970 * 1760 + 7480 / 22970 * 1222 + 1131262 / 22970 * 228) * 100 * 3000
-Prob_One_Percent <- 11048 / SitesDemography
+SitesDemography <- (183760 + 45544 / 22970 * 6104 + 5856 / 22970 * 1760 + 6369 / 22970 * 1207 + 822310 / 22970 * 243) * 100 * 26000
+Prob_One_Percent <- 84288 / SitesDemography
 
 Probs <- Probs[1:10] * Prob_One_Percent / Probabilities_At_One_Percent_Given_2Ns[1:10]
 
@@ -576,7 +576,17 @@ Title <- c("A) Probability of having a 4Ns value < 5\n on inferences done on 100
 par(mar=c(5.1,5.1,6.1,2.1))
 par(mfrow=c(1,3))
 
-ProbFromData <- c (0.0000374743, 0.0002987963, 0.9996637)
+ProbFromData <- c (0.1976878, 0.03350874, 0.7688034)
+
+sum(ifelse(MatrixFinalProbs[,1]> 0.1976878,1,0))
+Sums <- c()
+        for (CurNumber in 1:100){
+            Sums <- c(Sums,sum(MatrixFinalProbs[CurNumber,2:10]))
+}
+sum(ifelse(Sums > 0.03350874,1,0))
+sum(ifelse(MatrixFinalProbs[,11]> 0.7688034,1,0))
+
+
 Xlabels <- c("Proportion of new mutations with a 4Ns value < 5", "Proportion of new mutations with 4Ns between 5 and 50","Proportion of new mutations with a 4Ns value > 50")
 # barplot(logcountsThree + 0.01, main="", ylab="Probability", xlab="4Ns", col=ViridisColors,
 # legend = c(expression("Inferred P("*bolditalic(s[j])*" | 1%, "* italic(DFE) * ", "* italic(D) * ")"), expression("Inferred P("*bolditalic(s[j])*" | "* italic(DFE) * ")"), expression("Boyko et al 2008 P("*bolditalic(s[j])*" | "* italic(DFE) * ")") ), ylim = c(0, 1.2), beside=TRUE,cex.lab=2,cex.axis=2,cex.names=2, args.legend = list(x = "top",cex=2), yaxt="n")
@@ -584,7 +594,7 @@ Xlabels <- c("Proportion of new mutations with a 4Ns value < 5", "Proportion of 
 # axis (2,at=c(0+0.01, 0.25+0.01, 0.5+0.01, 0.75 + 0.01, 1+0.01), labels = c(0, 0.25, 0.5, 0.75, 1.0),cex.axis=2, cex.lab = 2)
 
 FinalMedian <- c()
-PValToPrint <- c("<= 0.01","= 0.1","<= 0.01")
+PValToPrint <- c("= 0.54","= 0.2","= 0.22")
 for (i in 1:3){
     
     if (i == 1){

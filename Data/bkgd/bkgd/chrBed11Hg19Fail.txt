@@ -1,0 +1,36 @@
+#Deleted in new
+chr11	0	5726	958
+#Deleted in new
+chr11	5726	34982	952
+#Partially deleted in new
+chr11	34982	57804	946
+#Partially deleted in new
+chr11	1075862	1157489	970
+#Deleted in new
+chr11	1157489	1165031	964
+#Deleted in new
+chr11	1165031	1168027	958
+#Deleted in new
+chr11	1168027	1169306	952
+#Partially deleted in new
+chr11	50516810	51123519	226
+#Partially deleted in new
+chr11	51402718	52350181	221
+#Deleted in new
+chr11	52350181	53157383	219
+#Deleted in new
+chr11	53157383	53863845	217
+#Partially deleted in new
+chr11	53863845	54469318	215
+#Split in new
+chr11	69367636	69545581	952
+#Partially deleted in new
+chr11	87364778	87367460	945
+#Deleted in new
+chr11	87367460	87373271	946
+#Partially deleted in new
+chr11	87373271	87410498	940
+#Partially deleted in new
+chr11	95925130	95930595	971
+#Partially deleted in new
+chr11	95930595	95945278	972

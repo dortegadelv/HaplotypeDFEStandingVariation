@@ -2,8 +2,8 @@
 Data <- read.table("FullTable.txt")
 RecombinationQuantiles <- read.table("QuantilesRecombination.txt")
 
-RecValuesOne <- read.table("~/Dropbox/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RecRateSynonymousOnePercentRightNoCpG.txt")
-RecValuesTwo <- read.table("~/Dropbox/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts/Sims/UK10K_OnePercenters/ForwardSims/RecRateSynonymousOnePercentLeftNoCpG.txt")
+RecValuesOne <- read.table("../ForwardSims/RecRateSynonymousOnePercentRightNoCpG.txt")
+RecValuesTwo <- read.table("../ForwardSims/RecRateSynonymousOnePercentLeftNoCpG.txt")
 RecValues <- rbind(RecValuesOne,RecValuesTwo)
 
 for (i in 1:546){
@@ -109,7 +109,7 @@ print(Test)
 
 #### AdditionalStep
 
-for (i in 1:304){
+for (i in 1:284){
     if (RecValues$V1[i] >= RecombinationQuantiles$V1[20]){
         ConcatenateTestValues[,i] <- rep.int(1, 403*6)
         print(i)

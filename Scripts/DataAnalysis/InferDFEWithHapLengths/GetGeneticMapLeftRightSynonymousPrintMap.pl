@@ -1,5 +1,3 @@
-
-open (EXCLUSION,"../../../Data/VariantNumberSynonymous.txt") or die "NO!";
 open (PERRECVAR,">../../../Data/LeftBpRecRatePerVariantSynonymousPrintMap.txt") or die "NO!";
 @VariantsToExclude = ();
 
@@ -13,9 +11,9 @@ push(@VariantsToExclude,$Line);
 close(EXCLUSION);
 
 $TotalLineNumber = -1;
-for ($i = 1; $i <= 22; $i++){
+for ($i = 1; $i <= 1; $i++){
 
-$GeneticMapFile = "../../../Data/Plink/SynonymousOnePercent".$i.".frq";
+$GeneticMapFile = "../../../Data/Plink/SynonymousOnePercentCpG.frq";
 
 open (MAP,$GeneticMapFile) or die "NO!";
 
@@ -25,7 +23,7 @@ $Line = $_;
 @SplitLine = split(/\s+/, $Line);
 @Position = split(/\./,$SplitLine[2]);
 # print "$Position[1]\n";
-$ActualMap = "../../../Data/maps_b37/maps_chr.$i";
+$ActualMap = "../../../Data/maps_b37/maps_chr.$Position[0]";
 
 $LowerPosition = $Position[1] - 250000;
 $UpperPosition = $Position[1];
@@ -35,16 +33,6 @@ $UpperPosition = $Position[1];
 $GenMapSum = 0;
 $FirstPositionFlag = 0;
 $TotalLineNumber++;
-$Flag = 0;
-foreach $Var (@VariantsToExclude){
-if ($Var eq $TotalLineNumber){
-$Flag = 1;
-last;
-}
-}
-if ($Flag == 1){
-next;
-}
 
 $SomethingThereFlag = 0;
 open (ACTMAP,$ActualMap) or die "NO!";
@@ -90,7 +78,7 @@ $CurRegionPosition = $SplitLine[0];
 $CurRegionGenMap = $SplitLine[1];
 $GenMapRate = ($CurRegionGenMap - $PreRegionGenMap) / ($CurRegionPosition - $PreRegionPosition);
 $GenMapFirstPart = $GenMapRate * ( $CurRegionPosition - $LowerPosition)  ;
-print PERRECVAR "$i\t$UpperPosition\t$LowerPosition\t$CurRegionPosition\t$GenMapRate\n";
+print PERRECVAR "$Position[0]\t$UpperPosition\t$LowerPosition\t$CurRegionPosition\t$GenMapRate\n";
 # print "$Line $GenMapRate $GenMapFirstPart $CurRegionPosition $LowerPosition\n";
 }
 if ( ( $ACTMAPLineNumber > ( $FirstPositionACTMAP )) && ( $ACTMAPLineNumber < ( $LastPositionACTMAP + 1 ) ) ){
@@ -99,7 +87,7 @@ $CurRegionPosition = $SplitLine[0];
 $PastGenMap = $CurRegionGenMap;
 $CurRegionGenMap = $SplitLine[1];
 $GenMapRate = ($CurRegionGenMap - $PastGenMap) / ($CurRegionPosition - $PreRegionPosition);
-print PERRECVAR "$i\t$UpperPosition\t$PreRegionPosition\t$CurRegionPosition\t$GenMapRate\n";
+print PERRECVAR "$Position[0]\t$UpperPosition\t$PreRegionPosition\t$CurRegionPosition\t$GenMapRate\n";
 # print "$Line\n";
 }
 if ( $ACTMAPLineNumber == ( $LastPositionACTMAP + 1 ) ){
@@ -107,7 +95,7 @@ $PostRegionPosition = $SplitLine[0];
 $PostRegionGenMap = $SplitLine[1];
 $GenMapRate = ($PostRegionGenMap - $CurRegionGenMap) / ($PostRegionPosition - $CurRegionPosition);
 $GenMapLastPart = $GenMapRate * ( $UpperPosition - $CurRegionPosition)  ;
-print PERRECVAR "$i\t$UpperPosition\t$CurRegionPosition\t$UpperPosition\t$GenMapRate\n";
+print PERRECVAR "$Position[0]\t$UpperPosition\t$CurRegionPosition\t$UpperPosition\t$GenMapRate\n";
 # print "$Line $GenMapRate\n";
 }
 
@@ -145,9 +133,9 @@ close(PERRECVAR);
 open (PERRECVAR,">../../../Data/RightBpRecRatePerVariantSynonymousPrintMap.txt") or die "NO!";
 
 $TotalLineNumber = -1;
-for ($i = 1; $i <= 22; $i++){
+for ($i = 1; $i <= 1; $i++){
 
-$GeneticMapFile = "../../../Data/Plink/SynonymousOnePercent".$i.".frq";
+$GeneticMapFile = "../../../Data/Plink/SynonymousOnePercentCpG.frq";
 
 open (MAP,$GeneticMapFile) or die "NO!";
 
@@ -157,7 +145,7 @@ $Line = $_;
 @SplitLine = split(/\s+/, $Line);
 @Position = split(/\./,$SplitLine[2]);
 # print "$Position[1]\n";
-$ActualMap = "../../../Data/maps_b37/maps_chr.$i";
+$ActualMap = "../../../Data/maps_b37/maps_chr.$Position[0]";
 
 $LowerPosition = $Position[1];
 $UpperPosition = $Position[1] + 250000;
@@ -167,16 +155,6 @@ $UpperPosition = $Position[1] + 250000;
 $GenMapSum = 0;
 $FirstPositionFlag = 0;
 $TotalLineNumber++;
-$Flag = 0;
-foreach $Var (@VariantsToExclude){
-if ($Var eq $TotalLineNumber){
-$Flag = 1;
-last;
-}
-}
-if ($Flag == 1){
-next;
-}
 
 $SomethingThereFlag = 0;
 open (ACTMAP,$ActualMap) or die "NO!";
@@ -223,7 +201,7 @@ $CurRegionPosition = $SplitLine[0];
 $CurRegionGenMap = $SplitLine[1];
 $GenMapRate = ($CurRegionGenMap - $PreRegionGenMap) / ($CurRegionPosition - $PreRegionPosition);
 $GenMapFirstPart = $GenMapRate * ( $CurRegionPosition - $LowerPosition)  ;
-print PERRECVAR "$i\t$LowerPosition\t$LowerPosition\t$CurRegionPosition\t$GenMapRate\n";
+print PERRECVAR "$Position[0]\t$LowerPosition\t$LowerPosition\t$CurRegionPosition\t$GenMapRate\n";
 # print PERRECVAR "$i\t$UpperPosition\t$LowerPosition\t$CurRegionPosition\t$GenMapRate\n";
 # print "$Line $GenMapRate $GenMapFirstPart $CurRegionPosition $LowerPosition\n";
 }
@@ -233,7 +211,7 @@ $CurRegionPosition = $SplitLine[0];
 $PastGenMap = $CurRegionGenMap;
 $CurRegionGenMap = $SplitLine[1];
 $GenMapRate = ($CurRegionGenMap - $PastGenMap) / ($CurRegionPosition - $PreRegionPosition);
-print PERRECVAR "$i\t$LowerPosition\t$PreRegionPosition\t$CurRegionPosition\t$GenMapRate\n";
+print PERRECVAR "$Position[0]\t$LowerPosition\t$PreRegionPosition\t$CurRegionPosition\t$GenMapRate\n";
 
 }
 
@@ -243,7 +221,7 @@ $PostRegionGenMap = $SplitLine[1];
 $GenMapRate = ($PostRegionGenMap - $CurRegionGenMap) / ($PostRegionPosition - $CurRegionPosition);
 $GenMapLastPart = $GenMapRate * ( $UpperPosition - $CurRegionPosition)  ;
 # print "$Line $GenMapRate\n";
-print PERRECVAR "$i\t$LowerPosition\t$CurRegionPosition\t$UpperPosition\t$GenMapRate\n";
+print PERRECVAR "$Position[0]\t$LowerPosition\t$CurRegionPosition\t$UpperPosition\t$GenMapRate\n";
 }
 
 

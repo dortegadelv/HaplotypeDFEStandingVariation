@@ -14,7 +14,7 @@ P_Allele_Is_2Ns_given_OnePercent <- c()
 for (i in 1:10){
      UpperBound <- i*5 + 2
      LowerBound <- (i-1)*5 + 3
-     CurrentSum <- sum(DFEPars[1560,LowerBound:UpperBound])
+     CurrentSum <- sum(DFEPars[104,LowerBound:UpperBound])
      #    print (i)
      #    print (CurrentSum)
      P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,CurrentSum)
@@ -48,12 +48,12 @@ for (i in 1:10){
     # print (i)
     Prob <- pgamma(i*2.5,Alpha,scale=Beta) - pgamma((i-1)*2.5,Alpha,scale=Beta)
     P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,Prob)
-    NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*25387829482)
+    NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*61603609695)
 }
 Prob <- 1 - pgamma(25,Alpha,scale=Beta)
-NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*25387829482)
+NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*61603609695)
 
-#### The number of alleles comes from the population expansion model (229700 + 45544 / 22970 * 6104 + 5856 / 22970 * 1760 + 7480 / 22970 * 1222 + 1131262 / 22970 * 228) * 100 * 1000
+#### The number of alleles comes from the population expansion model (183760 + 45544 / 22970 * 6104 + 5856 / 22970 * 1760 + 6369 / 22970 * 1207 + 822310 / 22970 * 243) * 100 * 3000
 
 SelectionCoefficientList <- read.table("../Results/CalculateDFEOfNewMutations/ExitOnePercentSValuesUK10KHighPop.txt")
 
@@ -69,10 +69,10 @@ Probabilities_At_One_Percent_Given_2Ns= Counts_At_OnePercent_Given2Ns/ NumberOfA
 Probs <- P_Allele_Is_2Ns_given_OnePercent
 
 ## This is the over the number of NonCpG sites where a nonsynonymous mutation can take place that are far away from centromeres and telomeres
-NumberOfNonCpGSites <- 26368474
+NumberOfNonCpGSites <- 33409384
 MutationRate <- 1.5e-8
-SitesDemography <- (22970 * 229700 + 45544 * 6104 + 5856 * 1760 + 7480 * 1222 + 1131262 * 228) * NumberOfNonCpGSites * MutationRate
-Prob_One_Percent <- 273 / SitesDemography
+SitesDemography <- (22970*183760 + 45544 * 6104 + 5856 * 1760 + 6369 * 1207 + 822310 * 243) * NumberOfNonCpGSites * MutationRate
+Prob_One_Percent <- 275 / SitesDemography
 
 Probs <- Probs[1:10] * Prob_One_Percent / Probabilities_At_One_Percent_Given_2Ns[1:10]
 
@@ -321,7 +321,7 @@ write.table(Table, file ="../Figures/ConfidenceIntervalsP2NsOnePercentSuppTableS
 ######################################################################################################################################################################################################### Sum
 
 
-Alpha = 0.9
+Alpha = 0.06
 Beta = 75000
 
 P_Allele_Is_2Ns_given_OnePercent <- c()
@@ -350,12 +350,12 @@ for (i in 1:10){
     # print (i)
     Prob <- pgamma(i*2.5,Alpha,scale=Beta) - pgamma((i-1)*2.5,Alpha,scale=Beta)
     P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,Prob)
-    NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*25387829482)
+    NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*61603609695)
 }
 Prob <- 1 - pgamma(25,Alpha,scale=Beta)
-NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*25387829482)
+NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*61603609695)
 
-#### The number of alleles comes from the population expansion model (229700 + 45544 / 22970 * 6104 + 5856 / 22970 * 1760 + 7480 / 22970 * 1222 + 1131262 / 22970 * 228) * 100 * 1000
+#### The number of alleles comes from the population expansion model (183760 + 45544 / 22970 * 6104 + 5856 / 22970 * 1760 + 6369 / 22970 * 1207 + 822310 / 22970 * 243) * 100 * 3000
 
 
 SelectionCoefficientList <- read.table("../Results/CalculateDFEOfNewMutations/ExitOnePercentSValuesUK10KHighPop.txt")
@@ -372,10 +372,10 @@ Probabilities_At_One_Percent_Given_2Ns= Counts_At_OnePercent_Given2Ns/ NumberOfA
 Probs <- P_Allele_Is_2Ns_given_OnePercent
 
 ## This is the over the number of NonCpG sites where a nonsynonymous mutation can take place that are far away from centromeres and telomeres
-NumberOfNonCpGSites <- 26368474
+NumberOfNonCpGSites <- 33409384
 MutationRate <- 1.5e-8
-SitesDemography <- (22970 * 229700 + 45544 * 6104 + 5856 * 1760 + 7480 * 1222 + 1131262 * 228) * NumberOfNonCpGSites * MutationRate
-Prob_One_Percent <- 273 / SitesDemography
+SitesDemography <- (22970*183760 + 45544 * 6104 + 5856 * 1760 + 6369 * 1207 + 822310 * 243) * NumberOfNonCpGSites * MutationRate
+Prob_One_Percent <- 275 / SitesDemography
 
 Probs <- Probs[1:11] * Prob_One_Percent / Probabilities_At_One_Percent_Given_2Ns[1:11]
 
@@ -628,7 +628,7 @@ for (i in 1:3){
 ######################################################################################################################################################################################################### Sum
 
 
-Alpha = 0.9
+Alpha = 0.06
 Beta = 75000
 
 P_Allele_Is_2Ns_given_OnePercent <- c()
@@ -657,10 +657,10 @@ for (i in 1:10){
     # print (i)
     Prob <- pgamma(i*2.5,Alpha,scale=Beta) - pgamma((i-1)*2.5,Alpha,scale=Beta)
     P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,Prob)
-    NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*25387829482)
+    NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*61603609695)
 }
 Prob <- 1 - pgamma(25,Alpha,scale=Beta)
-NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*25387829482)
+NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*61603609695)
 
 #### The number of alleles comes from the population expansion model (229700 + 45544 / 22970 * 6104 + 5856 / 22970 * 1760 + 7480 / 22970 * 1222 + 1131262 / 22970 * 228) * 100 * 1000
 
@@ -678,10 +678,10 @@ Probabilities_At_One_Percent_Given_2Ns= Counts_At_OnePercent_Given2Ns/ NumberOfA
 Probs <- P_Allele_Is_2Ns_given_OnePercent
 
 ## This is the over the number of NonCpG sites where a nonsynonymous mutation can take place that are far away from centromeres and telomeres
-NumberOfNonCpGSites <- 26368474
+NumberOfNonCpGSites <- 33409384
 MutationRate <- 1.5e-8
-SitesDemography <- (22970 * 229700 + 45544 * 6104 + 5856 * 1760 + 7480 * 1222 + 1131262 * 228) * NumberOfNonCpGSites * MutationRate
-Prob_One_Percent <- 273 / SitesDemography
+SitesDemography <- (22970*183760 + 45544 * 6104 + 5856 * 1760 + 6369 * 1207 + 822310 * 243) * NumberOfNonCpGSites * MutationRate
+Prob_One_Percent <- 275 / SitesDemography
 
 Probs <- Probs[1:10] * Prob_One_Percent / Probabilities_At_One_Percent_Given_2Ns[1:10]
 

@@ -26,9 +26,9 @@ LowerLimit <- c(LowerLimit,50)
 
 
 for (i in 2:12){
-    UpperBound <- LowerLimit[i] + 3
+    UpperBound <- LowerLimit[i] + 3 - 1
     LowerBound <- LowerLimit[(i-1)] + 3
-    CurrentSum <- sum(DFEPars[1560,LowerBound:UpperBound])
+    CurrentSum <- sum(DFEPars[104,LowerBound:UpperBound])
     # CurrentSum <-  pgamma(LowerLimit[i+1],Alpha,scale=Beta) - pgamma(LowerLimit[i],Alpha,scale=Beta)
     #    print (i)
     #    print (CurrentSum)
@@ -38,11 +38,11 @@ for (i in 2:12){
 
 ### P (allele is 2Ns = x | allele is at 1%)
 
-Alpha = 0.9
+Alpha = 0.06
 Beta = 75000
 
 # P_Allele_Is_2Ns_given_OnePercent <- c()
-CurrentLimits <- c(0, 0.5, 2.5, 5, 7.5, 10, 12.5, 15, 17.5, 20, 22.5, 25)
+CurrentLimits <- c(0, 0.25, 2.25, 4.75, 7.25, 9.75, 12.25, 14.75, 17.25, 19.75, 22.25, 24.75)
 
 # P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,pgamma(0.5,Alpha,scale=Beta))
 for (i in 1:11){
@@ -51,7 +51,7 @@ for (i in 1:11){
     #    P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,Prob)
 }
 
-Prob <- 1 - pgamma(25,Alpha,scale=Beta)
+Prob <- 1 - pgamma(24.75,Alpha,scale=Beta)
 # P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,Prob)
 
 ### P (allele is at 1% | allele is 2Ns x)
@@ -63,17 +63,17 @@ Beta = 319.8626 * 22970/2000
 P_Allele_Is_2Ns <- c()
 NumberOfAllelesAt2Ns <- c()
 RealProbs <- c()
-CurrentLimits <- c(0, 0.5, 2.5, 5, 7.5, 10, 12.5, 15, 17.5, 20, 22.5, 25)
+CurrentLimits <- c(0, 0.25, 2.25, 4.75, 7.25, 9.75, 12.25, 14.75, 17.25, 19.75, 22.25, 24.75)
 
 # P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,pgamma(0.5,Alpha,scale=Beta))
 for (i in 1:11){
     # print (i)
     Prob <- pgamma(CurrentLimits[i+1],Alpha,scale=Beta) - pgamma(CurrentLimits[i],Alpha,scale=Beta)
     P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,Prob)
-    NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*25387829482)
+    NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*61603609695)
 }
-Prob <- 1 - pgamma(25,Alpha,scale=Beta)
-NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*25387829482)
+Prob <- 1 - pgamma(24.75,Alpha,scale=Beta)
+NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*61603609695)
 
 #### The number of alleles comes from the population expansion model (229700 + 45544 / 22970 * 6104 + 5856 / 22970 * 1760 + 7480 / 22970 * 1222 + 1131262 / 22970 * 228) * 100 * 1000
 
@@ -82,7 +82,7 @@ SelectionCoefficientList <- read.table("../Results/CalculateDFEOfNewMutations/Ex
 TwoNsValues <- SelectionCoefficientList$V2*22970
 
 # Check <- hist(TwoNsValues,breaks=c(0,0.2297,2.297,7.297,12.297,17.297,22.97,2297000000))
-Check <- hist(TwoNsValues,breaks=c(0,0.5,2.5,5,7.5,10,12.5,15,17.5,20,22.5,25,100000000))
+Check <- hist(TwoNsValues,breaks=c(0, 0.25, 2.25, 4.75, 7.25, 9.75, 12.25, 14.75, 17.25, 19.75, 22.25, 24.75,100000000))
 
 Counts_At_OnePercent_Given2Ns <- Check$counts
 
@@ -93,10 +93,11 @@ Probabilities_At_One_Percent_Given_2Ns= Counts_At_OnePercent_Given2Ns/ NumberOfA
 Probs <- P_Allele_Is_2Ns_given_OnePercent
 
 ## This is the over the number of NonCpG sites where a nonsynonymous mutation can take place that are far away from centromeres and telomeres
-NumberOfNonCpGSites <- 26368474
+NumberOfNonCpGSites <- 33409384
 MutationRate <- 1.5e-8
-SitesDemography <- (22970 * 229700 + 45544 * 6104 + 5856 * 1760 + 7480 * 1222 + 1131262 * 228) * NumberOfNonCpGSites * MutationRate
-Prob_One_Percent <- 273 / SitesDemography
+SitesDemography <- (22970*183760 + 45544 * 6104 + 5856 * 1760 + 6369 * 1207 + 822310 * 243) * NumberOfNonCpGSites * MutationRate
+Prob_One_Percent <- 275 / SitesDemography
+
 
 Probs <- Probs[1:11] * Prob_One_Percent / Probabilities_At_One_Percent_Given_2Ns[1:11]
 
@@ -277,7 +278,7 @@ for (j in 1:100){
     #    Beta = 30 * (SelectionDFERow)
     
     for (i in 2:12){
-        UpperBound <- LowerLimit[i] + 3
+        UpperBound <- LowerLimit[i] + 3 - 1
         LowerBound <- LowerLimit[(i-1)] + 3
         CurrentSum <- sum(DFEPars[DFEParameterNumber,LowerBound:UpperBound])
         # CurrentSum <-  pgamma(LowerLimit[i+1],Alpha,scale=Beta) - pgamma(LowerLimit[i],Alpha,scale=Beta)

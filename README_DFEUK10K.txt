@@ -26,14 +26,6 @@ Then add the ancestral state. You must get the vcf file from the 1,000 genomes p
 
 perl AssignAncestralState.pl
 
-# Get 1% frequency sites that are not CpGs
-
-qsub -t 1-22 GetListOfMissenseAllelesAtACertainFrequencyCpG.sh
-qsub -t 1-22 GetListOfSynonymousAllelesAtACertainFrequencyCpG.sh
-
-cat ../../../Data/Plink/SynonymousOnePercentCpG{1..22}.frq > ../../../Data/Plink/SynonymousOnePercentCpG.frq
-cat ../../../Data/Plink/MissenseOnePercentCpG{1..22}.frq > ../../../Data/Plink/MissenseOnePercentCpG.frq
-
 ####### CpG Sites
 #This compares the reference allele of the reference genome hg19 with what
 # the reference allele I got from the 1000 genomes VCF. Things match! You will need to place the reference genome on the directory: ../../../Data/ReferenceGenomehg19/human_g1k_v37.fasta.gz.1
@@ -63,7 +55,13 @@ echo $i
 awk '{print $4}' ../../../Data/Plink/PlinkNotCpG$i.tped > ../../../Data/Plink/PositionsNotCpG$i.txt
 done
 
-perl PrintCpGPositionsOnePercentFrequency.pl
+# Get 1% frequency sites that are not CpGs
+
+qsub -t 1-22 GetListOfMissenseAllelesAtACertainFrequencyCpG.sh
+qsub -t 1-22 GetListOfSynonymousAllelesAtACertainFrequencyCpG.sh
+
+cat ../../../Data/Plink/SynonymousOnePercentCpG{1..22}.frq > ../../../Data/Plink/SynonymousOnePercentCpG.frq
+cat ../../../Data/Plink/MissenseOnePercentCpG{1..22}.frq > ../../../Data/Plink/MissenseOnePercentCpG.frq
 
 ### Calculate Haplotype lengths not CpG regions
 
@@ -175,4 +173,16 @@ cd Scripts/Scripts/Sims/ConcatenateManyStatisticsScripts
 bash PrintSValuesAtParticularFrequency.sh
 
 ############################################################################################################################################################
+
+Scripts to calculate functional content:
+
+cd Scripts/DataAnalysis/InferDFEWithHapLengths/
+perl CompareFunctionalContentNS.pl
+perl CompareFunctionalContent.pl
+perl CompareBValuesContent.pl
+
+perl GetGeneticMapLeftRightPrintMap.pl
+perl GetGeneticMapLeftRightSynonymousPrintMap.pl
+perl GetGeneticMapLeftRight.pl
+perl GetGeneticMapLeftRightSynonymous.pl
 

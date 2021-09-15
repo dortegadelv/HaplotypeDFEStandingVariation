@@ -5,7 +5,7 @@ library(plotrix)
 library(beanplot)
 library(RColorBrewer)
 
-setwd("/Users/vicentediegoortegadelvecchyo/Dropbox/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/Scripts")
+setwd("/Users/vicentediegoortegadelvecchyo/Dropbox (Personal)/Documents/DissertationThesis/PurifyingSelection/Drafts/HaplotypeDFEStandingVariation/PlottingScripts")
 
 DemographicScenarios <- c("ConstantPopSize","PopExpansion")
 FourNs <- c("0", "50", "100", "-50", "-100")
@@ -29,7 +29,7 @@ BiasedEstimators <- c(BiasedEstimators, BiasedInference$V1)
 UnbiasedEstimators <- c(UnbiasedEstimators, UnbiasedInference$V1)
     }
     
-    boxplot( abs(BiasedEstimators[1:100] - 200) - abs(UnbiasedEstimators[1:100]- 200), abs(BiasedEstimators[101:200] - 200) - abs(UnbiasedEstimators[101:200] - 200) , abs(BiasedEstimators[201:300] - 200) - abs(UnbiasedEstimators[201:300] - 200), abs(BiasedEstimators[301:400] - 200) - abs(UnbiasedEstimators[301:400] - 200), abs(BiasedEstimators[401:500] - 200) - abs(UnbiasedEstimators[401:500] - 200) , ylim = c(-400,400), xlab = "4Ns", ylab = "| Estimated 4Ns on haplotype data | - | Estimated 4Ns on statistically phased data |", main = "Constant population size", names = c(0, 50, 100, -50, 100) )
+    boxplot( abs(BiasedEstimators[1:100] - 200) - abs(UnbiasedEstimators[1:100]- 200), abs(BiasedEstimators[101:200] - 200) - abs(UnbiasedEstimators[101:200] - 200) , abs(BiasedEstimators[201:300] - 200) - abs(UnbiasedEstimators[201:300] - 200), abs(BiasedEstimators[301:400] - 200) - abs(UnbiasedEstimators[301:400] - 200), abs(BiasedEstimators[401:500] - 200) - abs(UnbiasedEstimators[401:500] - 200) , ylim = c(-400,400), xlab = "4Ns", ylab = "| Estimated 4Ns on statistically phased data | - | Estimated 4Ns on haplotype data |", main = "Constant population size", names = c(0, 50, 100, -50, 100) )
 
 abline (h= 0 , lty=2)
 
@@ -45,7 +45,7 @@ BiasedEstimators <- c(BiasedEstimators, BiasedInference$V1)
 UnbiasedEstimators <- c(UnbiasedEstimators, UnbiasedInference$V1)
     }
     
-    boxplot( BiasedEstimators[1:100] - UnbiasedEstimators[1:100], BiasedEstimators[101:200] - UnbiasedEstimators[101:200] , BiasedEstimators[201:300] - UnbiasedEstimators[201:300] , BiasedEstimators[301:400] - UnbiasedEstimators[301:400] , BiasedEstimators[401:500] - UnbiasedEstimators[401:500] , ylim = c(-400,400), xlab = "4Ns", ylab = "Estimated 4Ns on haplotype data - Estimated 4Ns on statistically phased data", main = "Population expansion", names = c(0, 50, 100, -50, 100))
+    boxplot( BiasedEstimators[1:100] - UnbiasedEstimators[1:100], BiasedEstimators[101:200] - UnbiasedEstimators[101:200] , BiasedEstimators[201:300] - UnbiasedEstimators[201:300] , BiasedEstimators[301:400] - UnbiasedEstimators[301:400] , BiasedEstimators[401:500] - UnbiasedEstimators[401:500] , ylim = c(-400,400), xlab = "4Ns", ylab = "Estimated 4Ns on statistically phased data - Estimated 4Ns on haplotype data", main = "Population expansion", names = c(0, 50, 100, -50, 100))
 
 abline (h= 0 , lty=2)
 

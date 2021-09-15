@@ -32,12 +32,12 @@ for (i in 1:10){
 # print (i)
 	Prob <- pgamma(i*2.5,Alpha,scale=Beta) - pgamma((i-1)*2.5,Alpha,scale=Beta)
 	P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,Prob)
-	NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*34783323629)
+	NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*123250612973)
 }
 Prob <- 1 - pgamma(25,Alpha,scale=Beta)
-NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*34783323629)
+NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*123250612973)
 
-#### The number of alleles comes from the population expansion model (22971 + 9109 / 4594 * 1221 + 1171 / 4594 * 352 + 1496 / 4594 * 244 + 226252 / 4594 * 46) * 1000 * 1250
+#### The number of alleles comes from the population expansion model (36752 + 9108 / 4594 * 1221 + 1172 / 4594 * 352 + 1274 / 4594 * 241 + 164462 / 4594 * 49) * 1000 * 3000
 
 SelectionCoefficientList <- read.table("../Results/CalculateDFEOfNewMutations/ExitOnePercentSValuesUK10KMouse.txt")
 
@@ -55,8 +55,8 @@ Probs <- P_Allele_Is_2Ns_given_OnePercent
 ## This is the over the number of NonCpG sites where a nonsynonymous mutation can take place that are far away from centromeres and telomeres
 NumberOfNonCpGSites <- 26368474
 MutationRate <- 1.5e-8
-SitesDemography <- (22971 + 9109 / 4594 * 1221 + 1171 / 4594 * 352 + 1496 / 4594 * 244 + 226252 / 4594 * 46) * 1000 * 1250
-Prob_One_Percent <- 61813 / SitesDemography
+SitesDemography <- (36752 + 9108 / 4594 * 1221 + 1172 / 4594 * 352 + 1274 / 4594 * 241 + 164462 / 4594 * 49) * 1000 * 3000
+Prob_One_Percent <- 129806 / SitesDemography
 
 Probs <- Probs[1:11] * Prob_One_Percent / Probabilities_At_One_Percent_Given_2Ns[1:11]
 
@@ -247,8 +247,8 @@ FinalMedian <- c()
 for (i in 1:11){
     Quantiles <- quantile(MatrixFinalProbs[,i],c(0.05,0.95))
     #segments (i,Quantiles[1],x1=i,Quantiles[2],col=ColorViridis[2], lwd = 4, lty=2)
-    points((i - 1)* 5 + 2.5, max(log10(Quantiles[1]) - log10(0.001), 0), col="black",pch=24, bg = "black", cex=1)
-    points((i - 1)* 5 + 2.5, max(log10(Quantiles[2]) - log10(0.001), 0), col="black", pch=25, bg = "black", cex=1)
+    # points((i - 1)* 5 + 2.5, max(log10(Quantiles[1]) - log10(0.001), 0), col="black",pch=24, bg = "black", cex=1)
+    # points((i - 1)* 5 + 2.5, max(log10(Quantiles[2]) - log10(0.001), 0), col="black", pch=25, bg = "black", cex=1)
     
     print ("MinMax")
     print (i)
