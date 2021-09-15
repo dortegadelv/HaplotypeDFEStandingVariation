@@ -1,0 +1,5 @@
+Programs/ExamplePipeline/CalculateLData/Plink22.tped filter=lfs diff=lfs merge=lfs -text
+Data/UCSCGenes_BStatistic/PhastCons100WayVertebratesBedFile.txt filter=lfs diff=lfs merge=lfs -text
+Scripts/Sims/PopExpansion/ForwardSims/PLGivenSTableWithRecsFirstDFE filter=lfs diff=lfs merge=lfs -text
+copy.txt filter=lfs diff=lfs merge=lfs -text
+Scripts/Sims/PopExpansion/ForwardSims/PLGivenSTableWithRecsFirstDFE.txt filter=lfs diff=lfs merge=lfs -text
