@@ -31,12 +31,15 @@ for k in {3..3}
 do
 ResultsFile="../../../../Results/UK10K/ForwardSims/"${FourNs[$i]}"/HapLengths/ExitFileNoRecLessPhasingN"${NumberOfMarkers[$k]}"_"$Repetition".txt"
 rm $ResultsFile
-HapFile="../../../../Results/UK10K/ForwardSims/"${FourNs[$i]}"/HapLengths/HapLengthsLessUnphased1Part"$Repetition".txt"
-perl ../../ConstantPopSize/ForwardSims/CalculatePLengthGivenS.pl $HapFile 250000 ../../../../Results/ConstantPopSize/ImportanceSamplingSims/TableToTest.txt ../ImportanceSamplingSims/TestT2Bounds.txt $ResultsFile
+HapFile="../../../../Results/UK10K/ForwardSims/"${FourNs[$i]}"/HapLengths/HapLengthsLessUnphased"$Repetition".txt"
+ParamsFile="../../../../Results/UK10K/ForwardSims/"${FourNs[$i]}"/Params$Repetition.txt"
+NumberToTake=$( head -n1 $ParamsFile | awk '{print $4}' )
+NumberToTake=$(( $NumberToTake - 1 ))
+perl ../../UK10K_PointTwoPercenters/ForwardSims/CalculatePLengthGivenSQuantileSimsDifQuantSingleNumber.pl $HapFile 250000 ../../../../Results/UK10K_OnePercenters/ImportanceSamplingSims/Quantile ../ImportanceSamplingSims/TestT2Bounds.txt $ResultsFile ../../../../Data/RightBpRecRatePerVariantNoCpG.txt ../../../../Data/LeftBpRecRatePerVariantNoCpG.txt 275 ../../UK10K_PointTwoPercenters/ForwardSims/MissenseOnePercentNoCpG.txt 565630 PLGivenSTableWithRecs.txt $NumberToTake
 done
 done
 
-Repetition=$(( ( $SLURM_ARRAY_TASK_ID - 1 ) % 100 ))
+Repetition=$(( ( $SLURM_ARRAY_TASK_ID - 1 ) % 100 + 1 ))
 
 for i in {1..5}
 do
@@ -46,7 +49,10 @@ do
 ResultsFile="../../../../Results/UK10K/ForwardSims/"${FourNs[$i]}"/HapLengths/ExitFileNoRecLessStatPhasingN"${NumberOfMarkers[$k]}"_"$Repetition".txt"
 rm $ResultsFile
 HapFile="../../../../Results/UK10K/ForwardSims/"${FourNs[$i]}"/HapLengths/HapLengthsLessStatPhase"$Repetition".txt"
-perl ../../ConstantPopSize/ForwardSims/CalculatePLengthGivenS.pl $HapFile 250000 ../../../../Results/ConstantPopSize/ImportanceSamplingSims/TableToTest.txt ../ImportanceSamplingSims/TestT2Bounds.txt $ResultsFile
+ParamsFile="../../../../Results/UK10K/ForwardSims/"${FourNs[$i]}"/Params$Repetition.txt"
+NumberToTake=$( head -n1 $ParamsFile | awk '{print $4}' )
+NumberToTake=$(( $NumberToTake - 1 ))
+perl ../../UK10K_PointTwoPercenters/ForwardSims/CalculatePLengthGivenSQuantileSimsDifQuantSingleNumber.pl $HapFile 250000 ../../../../Results/UK10K_OnePercenters/ImportanceSamplingSims/Quantile ../ImportanceSamplingSims/TestT2Bounds.txt $ResultsFile ../../../../Data/RightBpRecRatePerVariantNoCpG.txt ../../../../Data/LeftBpRecRatePerVariantNoCpG.txt 275 ../../UK10K_PointTwoPercenters/ForwardSims/MissenseOnePercentNoCpG.txt 565630 PLGivenSTableWithRecs.txt $NumberToTake
 done
 done
 

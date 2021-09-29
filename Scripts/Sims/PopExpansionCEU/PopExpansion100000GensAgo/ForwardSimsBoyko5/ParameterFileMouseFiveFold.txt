@@ -1,0 +1,18 @@
+MutationRate  10000.0 
+DFEType: 	gamma
+DFEParameterOne: 0.11
+DFEParameterTwo: 43181820
+DFEParameterThree: 1000000
+DemographicHistory:         PopulationExpansionModel.txt
+PrintSNPNumber:   0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart5/Output
+

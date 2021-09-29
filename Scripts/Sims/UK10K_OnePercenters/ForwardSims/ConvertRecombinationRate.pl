@@ -6,7 +6,7 @@ open (EXIT,">$ConvertedRecRateFile") or die "NO";
 while (<RECRATE>){
 chomp;
 $Line = $_;
-$ConvertedRecRate = 2 * 164462 * $Line * 250000 * 5 / 100;
+$ConvertedRecRate = 2 * 209142 * $Line * 250000 * 5 / 100;
 print EXIT "$ConvertedRecRate\n";
 }
 

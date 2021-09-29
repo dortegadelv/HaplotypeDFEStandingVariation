@@ -8,6 +8,7 @@ $LeftRecFile = $ARGV[6];
 $NumberOfVariants = $ARGV[7];
 $QuantilesFile = $ARGV[8];
 $LastPopSize = $ARGV[9];
+$PLGivenSFile = $ARGV[10];
 @HapLengths = ();
 @ISValues = ();
 @VariantsToUse = ();
@@ -35,12 +36,12 @@ close (QUANT);
 
 @FullPLGivenSTable = ();
 $LineNumber = 0;
-open (REG,"PLGivenSTableWithRecsFirstDFE.txt") or die "NO!";
+open (REG,$PLGivenSFile) or die "NO!";
 while (<REG>){
 chomp;
 $Line = $_;
 @SplitLine = split(/\s+/, $Line );
-for ($i = 0; $i < 546; $i++){
+for ($i = 0; $i < 550; $i++){
 $FullPLGivenSTable[$i][$LineNumber] = $SplitLine[$i];
 }
 $LineNumber++;
@@ -149,34 +150,18 @@ $RecRateLeft = $CurrentLeftRec * .01 * 4*$LastPopSize*250000;
 $RecRateRight= $CurrentRightRec * .01 * 4*$LastPopSize*250000;
 $RecNum++;
 ### Get Recombination rate
-for ( $QuantTest = 0 ; $QuantTest < 20 ; $QuantTest++ ){
-$MidPoint = ( $QuantileRec[$QuantTest+1] - $QuantileRec[$QuantTest]) / 2 + $QuantileRec[$QuantTest] ;
-if ( ( $RecRateLeft <= ($MidPoint)) && ($RecRateLeft >= $QuantileRec[$QuantTest]  )){
-$QuantileLeft = $QuantTest;
-}
-if ( ( $RecRateRight <= ($MidPoint)) && ($RecRateRight >= $QuantileRec[$QuantTest]  )){
-$QuantileRight = $QuantTest;
-}
-
-if ( ( $RecRateLeft > ($MidPoint)) && ($RecRateLeft <= $QuantileRec[$QuantTest+1]  )){
-$QuantileLeft = $QuantTest + 1;
-}
-
-if ( ( $RecRateRight > ($MidPoint)) && ($RecRateRight <= $QuantileRec[$QuantTest+1]  )){
-$QuantileRight = $QuantTest + 1;
-}
-#print "$QuantileLeft\t$QuantileRight\n";
-
-}
 $HapLengthFileToOpen = $HapLengthFile.$VarNum.".txt";
 
 @HapLengths = ();
 open (HAP,$HapLengthFile ) or die "NO! File $HapLengthFile\n";
 $OddOrEven = 0;
 $LineNumber = 0;
+$RecCount = 0;
+$RecNum = 0;
 while (<HAP>){
 chomp;
 $Line = $_;
+$Original = $Line;
 # push(@HapLengths,int($Line));
 $Line = $Line * 250000;
 # print "Line = $Line\t";
@@ -190,43 +175,26 @@ last;
 # print "$j\n";
 # die "NO\n";
 
-if ($LineNumber % 2556 == 0){
-$RecNum = int ($LineNumber / 2556 + 0.5);
+if ($Original eq "#"){
+$RecCount++;
+if ($RecCount % 2 == 0){
+$RecNum= int ( $RecCount / 2 );
+print "$RecNum\n";
+}else{
+$RecNum= int ( $RecCount / 2 ) + $NumberOfVariants;
+print "$RecNum\n";
+}
 print "Rec num = $RecNum\t";
 $CurrentRec = $RecRate[$RecNum];
 
 $RecRate = $CurrentRec * .01 * 4*$LastPopSize*250000;
 print "rec rate = $RecRate\t";
 $PositionFlag = 0;
-for ( $QuantTest = 0 ; $QuantTest < 20 ; $QuantTest++ ){
-$MidPoint = ( $QuantileRec[$QuantTest+1] - $QuantileRec[$QuantTest]) / 2 + $QuantileRec[$QuantTest] ;
-
-if ( ( $RecRate <= ($MidPoint)) && ($RecRate >= $QuantileRec[$QuantTest]  )){
-$QuantileLeft = $QuantTest;
-$DownNotUp++;
-$PositionFlag = 0;
-$UpProportion = ($RecRate - $QuantileRec[$QuantTest]) / ($QuantileRec[$QuantTest+ 1] - $QuantileRec[$QuantTest]);
-$LowProportion = 1 - $UpProportion;
-$LowQuant = $QuantTest;
-}
-if ( ( $RecRate > ($MidPoint)) && ($RecRate <= $QuantileRec[$QuantTest+1]  )){
-$QuantileLeft = $QuantTest + 1;
-$PositionFlag = 1;
-$UpProportion = ($RecRate - $QuantileRec[$QuantTest]) / ($QuantileRec[$QuantTest+ 1] - $QuantileRec[$QuantTest]);
-$LowProportion = 1 - $UpProportion;
-$LowQuant = $QuantTest;
-}
-}
-
-$QuantileLeft = $Quantiles[$QuantileNumber ] - 1 ;
-$QuantileNumber++;
-print "Quantile  Down=$QuantileRec[$LowQuant] Middle=$RecRate Up=$QuantileRec[$LowQuant + 1] D = $UpProportion\n";
-}
+}else{
 # print "$j\n";
 # die "NO!\n";
 for ($i = 1; $i <= 1500; $i++){
 $ToCheckNum = $OddOrEven % 2;
-if ( ( $RecRate <= $QuantileRec[20] ) && (  $RecRate >= $QuantileRec[0] ) ){
 $Value = $FullPLGivenSTable[$RecNum][ ( $i + 1 ) * 6 + $j];
 
 
@@ -236,10 +204,9 @@ $LogLikelihoods[$i] = $LogLikelihoods[$i] + log ( $Value  );
 # print "$j\t$LogLikelihoods[$i]\n";
 # die "NO\n";
 # print "$ISValues[$QuantileLeft][$i+1][$j+1]\t$Line\t$j\t$QuantileLeft\tNO\n";
-}
 
 # print "Hap = $i  $ISValues[$QuantileLeft][$i+2][$j]\n";
-}
+}}
 # die "NO\n";
 
 $LineNumber++;

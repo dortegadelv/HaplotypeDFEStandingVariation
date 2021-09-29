@@ -8,6 +8,7 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --mem-per-cpu=1000
 
+module load python
 
 TrajNum=$( wc -l ../../../../Results/UK10K/ForwardSims/4Ns_-50/Alleles{1..120}.txt | tail -n1 | awk '{print $1}' )
 echo $TrajNum
@@ -23,31 +24,32 @@ NumberOfMarkers[3]="273"
 # NumberOfMarkers[3]="1000"
 
 RecRate[1]="0"
-RecRate[2]="484.278"
-RecRate[3]="855.292"
-RecRate[4]="1251.886"
-RecRate[5]="1624.489"
-RecRate[6]="2164.258"
-RecRate[7]="2699.187"
-RecRate[8]="3120.820"
-RecRate[9]="3509.574"
-RecRate[10]="4083.76"
-RecRate[11]="4496.201"
-RecRate[12]="5625.89"
-RecRate[13]="6448.182"
-RecRate[14]="7504.213"
-RecRate[15]="8522.912"
-RecRate[16]="9955.981"
-RecRate[17]="10977.747"
-RecRate[18]="12265.958"
-RecRate[19]="14138.413"
-RecRate[20]="19608.766"
-RecRate[21]="38656.841"
+RecRate[2]="191.352"
+RecRate[3]="495.326"
+RecRate[4]="783.562"
+RecRate[5]="1079.2"
+RecRate[6]="1370.047"
+RecRate[7]="1888.974"
+RecRate[8]="2244.487"
+RecRate[9]="2512.65"
+RecRate[10]="2881.44"
+RecRate[11]="3391.733"
+RecRate[12]="3977.678"
+RecRate[13]="4614.348"
+RecRate[14]="5215.098"
+RecRate[15]="5869.541"
+RecRate[16]="6966.051"
+RecRate[17]="7767.025"
+RecRate[18]="8498.236"
+RecRate[19]="10215.751"
+RecRate[20]="12984.294"
+RecRate[21]="23003.3"
 
-RecNumber=$(( ( $SLURM_ARRAY_TASK_ID - 1 ) / 1 + 1 ))
-# Repetition=$(( ( $SLURM_ARRAY_TASK_ID - 1 ) % 100 + 1 ))
 
-for Repetition in {1..50}
+# RecNumber=$(( ( $SLURM_ARRAY_TASK_ID - 1 ) / 1 + 1 ))
+Repetition=$(( ( $SLURM_ARRAY_TASK_ID - 1 ) % 100 + 1 ))
+
+for RecNumber in {11..11}
 do
 
 ResampledTrajFile="../../../../Results/UK10K/ForwardSims/4Ns_0/ResampledTraj"${RecRate[$RecNumber]}"_"$Repetition".txt"
@@ -64,29 +66,50 @@ T2File="../../../../Results/UK10K/ForwardSims/4Ns_0/T2Values"${RecRate[$RecNumbe
 
 # perl TrajToMsselFormat.pl ../../../../Results/UK10K/ForwardSims/4Ns_-50/Traj_0.01_ 20000 ../../../../Results/UK10K/ForwardSims/4Ns_-50/TrajMsselLike.txt $TrajNum 0 1000
 # cat ../../../../Results/UK10K/ForwardSims/4Ns_-50/TrajMsselLike.txt | ../stepftn > ../../../../Results/UK10K/ForwardSims/4Ns_-50/ReducedTrajectories.txt
+DistancesFile="../../../../Results/UK10K/ForwardSims/4Ns_0/SimDistancesMsselSingleRecHighRecHighMut"${NumberOfMarkers[3]}"_"${RecRate[$RecNumber]}"_"$Repetition".txt"
+rm $DistancesFile
+touch $DistancesFile
 
-for i in {3..3}
+for i in {69..76}
 do
-HapLengths="../../../../Results/UK10K/ForwardSims/4Ns_0/HapLengthN"${NumberOfMarkers[$i]}"_"${RecRate[$RecNumber]}"_"$Repetition".txt"
-HapLengthsNoRec="../../../../Results/UK10K/ForwardSims/4Ns_0/HapLengthNoRecN"${NumberOfMarkers[$i]}"_"${RecRate[$RecNumber]}"_"$Repetition".txt"
-HapLengthsMultiSeq="../../../../Results/UK10K/ForwardSims/4Ns_0/HapLengthMultiSeqN"${NumberOfMarkers[$i]}"_"${RecRate[$RecNumber]}"_"$Repetition".txt"
-HapLengthsNoRecAnc="../../../../Results/UK10K/ForwardSims/4Ns_0/HapLengthNoRecAncN"${NumberOfMarkers[$i]}"_"${RecRate[$RecNumber]}"_"$Repetition".txt"
-HapLengthsRecAware="../../../../Results/UK10K/ForwardSims/4Ns_0/HapLengthRecAwareN"${NumberOfMarkers[$i]}"_"${RecRate[$RecNumber]}"_"$Repetition".txt"
-DistancesFileOne="../../../../Results/UK10K/ForwardSims/4Ns_0/SimDistancesPartOneMsselSingleRec"${NumberOfMarkers[$i]}"_"${RecRate[$RecNumber]}"_"$Repetition".txt"
-DistancesFileTwo="../../../../Results/UK10K/ForwardSims/4Ns_0/SimDistancesPartTwoMsselSingleRec"${NumberOfMarkers[$i]}"_"${RecRate[$RecNumber]}"_"$Repetition".txt"
-DistancesFile="../../../../Results/UK10K/ForwardSims/4Ns_0/SimDistancesMsselSingleRecHighRecHighMut"${NumberOfMarkers[$i]}"_"${RecRate[$RecNumber]}"_"$Repetition".txt"
+Value[$i]=$( grep 'age' ../../../../Results/UK10K/ForwardSims/4Ns_0/ReducedTrajectories_$i.txt | wc -l )
+done
 
-perl ../../ConstantPopSize/ForwardSims/SampleTrajectories.pl ../../../../Results/UK10K/ForwardSims/4Ns_0/ReducedTrajectories10000.txt 273 $ResampledTrajFile $Repetition
+Test=`python MultinomialDist.py ${Value[69]} ${Value[70]} ${Value[71]} ${Value[72]} ${Value[73]} ${Value[74]} ${Value[75]} ${Value[76]}`
+Samples[69]=$( echo $Test | cut -d' ' -f1 )
+Samples[70]=$( echo $Test | cut -d' ' -f2 )
+Samples[71]=$( echo $Test | cut -d' ' -f3 )
+Samples[72]=$( echo $Test | cut -d' ' -f4 )
+Samples[73]=$( echo $Test | cut -d' ' -f5 )
+Samples[74]=$( echo $Test | cut -d' ' -f6 )
+Samples[75]=$( echo $Test | cut -d' ' -f7 )
+Samples[76]=$( echo $Test | cut -d' ' -f8 )
+
+
+for i in {69..76}
+do
+HapLengths="../../../../Results/UK10K/ForwardSims/4Ns_0/HapLengthN"${NumberOfMarkers[3]}"_"${RecRate[$RecNumber]}"_"$Repetition".txt"
+HapLengthsNoRec="../../../../Results/UK10K/ForwardSims/4Ns_0/HapLengthNoRecN"${NumberOfMarkers[3]}"_"${RecRate[$RecNumber]}"_"$Repetition".txt"
+HapLengthsMultiSeq="../../../../Results/UK10K/ForwardSims/4Ns_0/HapLengthMultiSeqN"${NumberOfMarkers[3]}"_"${RecRate[$RecNumber]}"_"$Repetition".txt"
+HapLengthsNoRecAnc="../../../../Results/UK10K/ForwardSims/4Ns_0/HapLengthNoRecAncN"${NumberOfMarkers[3]}"_"${RecRate[$RecNumber]}"_"$Repetition".txt"
+HapLengthsRecAware="../../../../Results/UK10K/ForwardSims/4Ns_0/HapLengthRecAwareN"${NumberOfMarkers[3]}"_"${RecRate[$RecNumber]}"_"$Repetition".txt"
+DistancesFileOne="../../../../Results/UK10K/ForwardSims/4Ns_0/SimDistancesPartOneMsselSingleRec"${NumberOfMarkers[3]}"_"${RecRate[$RecNumber]}"_"$Repetition".txt"
+DistancesFileTwo="../../../../Results/UK10K/ForwardSims/4Ns_0/SimDistancesPartTwoMsselSingleRec"${NumberOfMarkers[3]}"_"${RecRate[$RecNumber]}"_"$Repetition".txt"
+DistancesFileTemp="../../../../Results/UK10K/ForwardSims/4Ns_0/SimDistancesMsselSingleRecHighRecTemp"${NumberOfMarkers[3]}"_"${RecRate[$RecNumber]}"_"$Repetition".txt"
+
+perl ../../ConstantPopSize/ForwardSims/SampleTrajectories.pl ../../../../Results/UK10K/ForwardSims/4Ns_0/ReducedTrajectories_$i.txt ${Samples[$i]} $ResampledTrajFile $Repetition
 
 Rate=$( echo "scale = 5; ${RecRate[$RecNumber]} * 2" | bc )
 
 echo $Rate
 
-../../../../Programs/Mssel/mssel3 73 273 1 72 $ResampledTrajFile 250000 -r $Rate 499999 -t 17817.3 -eN 0.0 1.0 -eN 0.0001017 0.0066121 -eN 0.0006409 0.0051756 -eN 0.0014188 0.0402604 -eN 0.0041171 0.0203048 > $MsselOutNoRec
+Num=$(( $i + 1 ))
+../../../../Programs/Mssel/mssel3 $Num ${Samples[$i]} 1 $i $ResampledTrajFile 250000 -r $Rate 499999 -t 12951.3825 -eN 0.0 1.0 -eN 0.0001490 0.0077465 -eN 0.0008817 0.0071263 -eN 0.0019518 0.0553806 -eN 0.0056639 0.0279335 > $MsselOutNoRec
 
-time perl ../../ConcatenateManyStatisticsScripts/DistanceToFirstSegregatingSiteMultiSequence_DeleteSingletonsBothSides.pl $MsselOutNoRec $DistancesFile 1 72 0 0 25 250000 
+time perl ../../ConcatenateManyStatisticsScripts/DistanceToFirstSegregatingSiteMultiSequence_DeleteSingletonsBothSides.pl $MsselOutNoRec $DistancesFileTemp 1 $i 0 0 25 250000 
 
-
+cat $DistancesFileTemp >> $DistancesFile
+rm $DistancesFileTemp
 rm $ResampledTrajFile
 rm $DistancesFileTwo
 rm $DistancesFileOne

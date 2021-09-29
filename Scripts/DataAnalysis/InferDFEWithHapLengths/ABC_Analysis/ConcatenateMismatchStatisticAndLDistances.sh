@@ -28,6 +28,7 @@ done
 
 paste -d "\t" ../../../../Results/ABCAnalysis/AllLeftParameters.txt ../../../../Results/ABCAnalysis/Output/AllWindowMismatch.txt ../../../../Results/ABCAnalysis/Output/AllWindowDistance.txt  > ../../../../Results/ABCAnalysis/ParametersAndStatistics.txt
 
+
 sort -k 5,5 ../../../../Results/ABCAnalysis/ParametersAndStatistics.txt | head -n100 > ../../../../Results/ABCAnalysis/Best100.txt
 
 ## Not CpG
@@ -55,8 +56,11 @@ done
 
 paste -d "\t" ../../../../Results/ABCAnalysis/AllLeftParametersNotCpG.txt ../../../../Results/ABCAnalysis/Output/AllWindowMismatchNotCpG.txt ../../../../Results/ABCAnalysis/Output/AllWindowDistanceNotCpG.txt  > ../../../../Results/ABCAnalysis/ParametersAndStatisticsNotCpG.txt
 
-sort -k 5,5 ../../../../Results/ABCAnalysis/ParametersAndStatisticsNotCpG.txt | head -n100 > ../../../../Results/ABCAnalysis/Best100NotCpG.txt
+cat ../../../../Results/ABCAnalysis/ParametersAndStatisticsNotCpG.txt | head -n50000 > ../../../../Results/ABCAnalysis/ParametersAndStatisticsNotCpG50000.txt
 
+sort -k 5,5 ../../../../Results/ABCAnalysis/ParametersAndStatisticsNotCpG50000.txt | head -n100 > ../../../../Results/ABCAnalysis/Best100NotCpG.txt
+
+sort -k 5,5 ../../../../Results/ABCAnalysis/ParametersAndStatisticsNotCpG50000.txt | head -n500 > ../../../../Results/ABCAnalysis/Best500NotCpG.txt
 
 ### Constant Pop Size
 
@@ -66,13 +70,16 @@ for (( j = 1 ; j <= 100 ; j++ ))
 do
 
 File="../../../../Results/ConstantPopSize/ForwardSims/4Ns_0/HapLengths/HapLengthsLess"$j".txt"
+AltFile="../../../../Results/ConstantPopSize/ForwardSims/4Ns_0/HapLengths/HapLengthsAltLess"$j".txt"
 
-Values[1]=$( awk '$1 >= 0.0 && $1 <= 0.2 {print $1}' $File | wc -l )
-Values[2]=$( awk '$1 > 0.2 && $1 <= 0.4 {print $1}' $File | wc -l )
-Values[3]=$( awk '$1 > 0.4 && $1 <= 0.6 {print $1}' $File | wc -l )
-Values[4]=$( awk '$1 > 0.6 && $1 <= 0.8 {print $1}' $File | wc -l )
-Values[5]=$( awk '$1 > 0.8 && $1 <= 1.0 {print $1}' $File | wc -l )
-Values[6]=$( awk '$1 > 1.0 {print $1}' $File | wc -l )
+head -n234000 $File > $AltFile
+
+Values[1]=$( awk '$1 >= 0.0 && $1 <= 0.2 {print $1}' $AltFile | wc -l )
+Values[2]=$( awk '$1 > 0.2 && $1 <= 0.4 {print $1}' $AltFile | wc -l )
+Values[3]=$( awk '$1 > 0.4 && $1 <= 0.6 {print $1}' $AltFile | wc -l )
+Values[4]=$( awk '$1 > 0.6 && $1 <= 0.8 {print $1}' $AltFile | wc -l )
+Values[5]=$( awk '$1 > 0.8 && $1 <= 1.0 {print $1}' $AltFile | wc -l )
+Values[6]=$( awk '$1 > 1.0 {print $1}' $AltFile | wc -l )
 
 Sum=$(( ${Values[1]} + ${Values[2]} + ${Values[3]} + ${Values[4]} + ${Values[5]} + ${Values[6]} ))
 
@@ -135,13 +142,17 @@ for (( j = 1 ; j <= 100 ; j++ ))
 do
 
 File="../../../../Results/PopExpansion/ForwardSims/4Ns_0/HapLengths/HapLengthsLess"$j".txt"
+AltFile="../../../../Results/PopExpansion/ForwardSims/4Ns_0/HapLengths/HapLengthsAltLess"$j".txt"
 
-Values[1]=$( awk '$1 >= 0.0 && $1 <= 0.2 {print $1}' $File | wc -l )
-Values[2]=$( awk '$1 > 0.2 && $1 <= 0.4 {print $1}' $File | wc -l )
-Values[3]=$( awk '$1 > 0.4 && $1 <= 0.6 {print $1}' $File | wc -l )
-Values[4]=$( awk '$1 > 0.6 && $1 <= 0.8 {print $1}' $File | wc -l )
-Values[5]=$( awk '$1 > 0.8 && $1 <= 1.0 {print $1}' $File | wc -l )
-Values[6]=$( awk '$1 > 1.0 {print $1}' $File | wc -l )
+head -n234000 $File > $AltFile
+
+
+Values[1]=$( awk '$1 >= 0.0 && $1 <= 0.2 {print $1}' $AltFile | wc -l )
+Values[2]=$( awk '$1 > 0.2 && $1 <= 0.4 {print $1}' $AltFile | wc -l )
+Values[3]=$( awk '$1 > 0.4 && $1 <= 0.6 {print $1}' $AltFile | wc -l )
+Values[4]=$( awk '$1 > 0.6 && $1 <= 0.8 {print $1}' $AltFile | wc -l )
+Values[5]=$( awk '$1 > 0.8 && $1 <= 1.0 {print $1}' $AltFile | wc -l )
+Values[6]=$( awk '$1 > 1.0 {print $1}' $AltFile | wc -l )
 
 Sum=$(( ${Values[1]} + ${Values[2]} + ${Values[3]} + ${Values[4]} + ${Values[5]} + ${Values[6]} ))
 
@@ -203,6 +214,91 @@ MedianThree=$(  echo "scale=15 ; ( $ValueOne + $ValueTwo ) / 2" | bc  )
 echo -e "$Median\t$MedianTwo\t$MedianThree" >> ../../../../Results/ABCResults/MedianResultsPopExpansion.txt
 
 done
+
+############# Pop Expansion Dif Rec Rate
+
+
+rm ../../../../Results/ABCResults/MedianResultsPopExpansionDifRecRate.txt
+touch ../../../../Results/ABCResults/MedianResultsPopExpansionDifRecRate.txt
+for (( j = 1 ; j <= 100 ; j++ ))
+do
+
+File="../../../../Results/PopExpansion/ForwardSims/4Ns_0/HapLengths/HapLengthsLessDifRecRate"$j".txt"
+AltFile="../../../../Results/PopExpansion/ForwardSims/4Ns_0/HapLengths/HapLengthsAltLessDifRecRate"$j".txt"
+
+head -n234000 $File > $AltFile
+
+
+Values[1]=$( awk '$1 >= 0.0 && $1 <= 0.2 {print $1}' $AltFile | wc -l )
+Values[2]=$( awk '$1 > 0.2 && $1 <= 0.4 {print $1}' $AltFile | wc -l )
+Values[3]=$( awk '$1 > 0.4 && $1 <= 0.6 {print $1}' $AltFile | wc -l )
+Values[4]=$( awk '$1 > 0.6 && $1 <= 0.8 {print $1}' $AltFile | wc -l )
+Values[5]=$( awk '$1 > 0.8 && $1 <= 1.0 {print $1}' $AltFile | wc -l )
+Values[6]=$( awk '$1 > 1.0 {print $1}' $AltFile | wc -l )
+
+Sum=$(( ${Values[1]} + ${Values[2]} + ${Values[3]} + ${Values[4]} + ${Values[5]} + ${Values[6]} ))
+
+echo "${Values[1]}\t$Sum\n"
+
+Fraction[1]=$( echo "scale=15 ; ${Values[1]} / $Sum" | bc )
+Fraction[2]=$( echo "scale=15 ; ${Values[2]} / $Sum" | bc )
+Fraction[3]=$( echo "scale=15 ; ${Values[3]} / $Sum" | bc )
+Fraction[4]=$( echo "scale=15 ; ${Values[4]} / $Sum" | bc )
+Fraction[5]=$( echo "scale=15 ; ${Values[5]} / $Sum" | bc )
+Fraction[6]=$( echo "scale=15 ; ${Values[6]} / $Sum" | bc )
+
+echo -e "${Fraction[1]}\t${Fraction[2]}\t${Fraction[3]}\t${Fraction[4]}\t${Fraction[5]}\t${Fraction[6]}" > LDistributionPopExpansion.txt
+
+perl CalculateMismatchStatisticPopExpansionDifRecRate_NotCpG.pl
+
+rm ../../../../Results/ABCAnalysisPopExpansionDifRate/ParametersAndStatisticsNotCpG.txt
+rm ../../../../Results/ABCAnalysisPopExpansionDifRate/Output/AllWindowDistanceNotCpG.txt
+rm ../../../../Results/ABCAnalysisPopExpansionDifRate/Output/AllWindowMismatchNotCpG.txt
+rm ../../../../Results/ABCAnalysisPopExpansionDifRate/AllLeftParametersNotCpG.txt
+
+
+for (( i = 1 ; i <= 1000 ; i++ ))
+do
+
+File="../../../../Results/ABCAnalysisPopExpansionDifRate/Output/WindowDistanceOutNotCpG"$i".txt"
+MismatchFile="../../../../Results/ABCAnalysisPopExpansionDifRate/Output/WindowMismatchNotCpG"$i".txt"
+ParsFile="../../../../Results/ABCAnalysisPopExpansionDifRate/LeftParameters"$i".txt"
+NumberOfLines=$( wc -l $File | awk '{print $1}')
+
+MinusOneLines=$(( $NumberOfLines ))
+
+head -n$MinusOneLines $File >> ../../../../Results/ABCAnalysisPopExpansionDifRate/Output/AllWindowDistanceNotCpG.txt
+head -n$MinusOneLines $MismatchFile >> ../../../../Results/ABCAnalysisPopExpansionDifRate/Output/AllWindowMismatchNotCpG.txt
+head -n$MinusOneLines $ParsFile >> ../../../../Results/ABCAnalysisPopExpansionDifRate/AllLeftParametersNotCpG.txt
+
+done
+
+paste -d "\t" ../../../../Results/ABCAnalysisPopExpansionDifRate/AllLeftParametersNotCpG.txt ../../../../Results/ABCAnalysisPopExpansionDifRate/Output/AllWindowMismatchNotCpG.txt ../../../../Results/ABCAnalysisPopExpansionDifRate/Output/AllWindowDistanceNotCpG.txt  > ../../../../Results/ABCAnalysisPopExpansionDifRate/ParametersAndStatisticsNotCpG.txt
+
+sort -k 4,4 ../../../../Results/ABCAnalysisPopExpansionDifRate/ParametersAndStatisticsNotCpG.txt | head -n100 > ../../../../Results/ABCAnalysisPopExpansionDifRate/Best100NotCpG.txt
+
+cp ../../../../Results/ABCAnalysisPopExpansionDifRate/Best100NotCpG.txt ../../../../Results/ABCResults/Best100NotCpGPopExpansionDifRate$j.txt
+
+ValueOne=$( awk '{print $1}' ../../../../Results/ABCAnalysisPopExpansionDifRate/Best100NotCpG.txt | sort -g | head -n50 | tail -n1 )
+ValueTwo=$( awk '{print $1}' ../../../../Results/ABCAnalysisPopExpansionDifRate/Best100NotCpG.txt | sort -g | head -n51 | tail -n1 )
+
+Median=$(  echo "scale=15 ; ( $ValueOne + $ValueTwo ) / 2" | bc  )
+
+ValueOne=$( awk '{print $2}' ../../../../Results/ABCAnalysisPopExpansionDifRate/Best100NotCpG.txt | sort -g | head -n50 | tail -n1 )
+ValueTwo=$( awk '{print $2}' ../../../../Results/ABCAnalysisPopExpansionDifRate/Best100NotCpG.txt | sort -g | head -n51 | tail -n1 )
+
+MedianTwo=$(  echo "scale=15 ; ( $ValueOne + $ValueTwo ) / 2" | bc  )
+
+ValueOne=$( awk '{print $3}' ../../../../Results/ABCAnalysisPopExpansionDifRate/Best100NotCpG.txt | sort -g | head -n50 | tail -n1 )
+ValueTwo=$( awk '{print $3}' ../../../../Results/ABCAnalysisPopExpansionDifRate/Best100NotCpG.txt | sort -g | head -n51 | tail -n1 )
+
+MedianThree=$(  echo "scale=15 ; ( $ValueOne + $ValueTwo ) / 2" | bc  )
+
+echo -e "$Median\t$MedianTwo\t$MedianThree" >> ../../../../Results/ABCResults/MedianResultsPopExpansionDifRecRate.txt
+
+done
+
+
 
 ############ 4Ns = 0
 

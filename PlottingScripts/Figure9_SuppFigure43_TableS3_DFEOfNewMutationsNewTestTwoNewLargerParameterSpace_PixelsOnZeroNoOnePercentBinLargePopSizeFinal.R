@@ -46,7 +46,7 @@ RealProbs <- c()
 # P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,pgamma(0.5,Alpha,scale=Beta))
 for (i in 1:10){
     # print (i)
-    Prob <- pgamma(i*2.5,Alpha,scale=Beta) - pgamma((i-1)*2.5,Alpha,scale=Beta)
+    Prob <- pgamma(i*2.5 - 0.25,Alpha,scale=Beta) - pgamma(max((i-1)*2.5 - 0.25,0),Alpha,scale=Beta)
     P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,Prob)
     NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*61603609695)
 }
@@ -59,7 +59,7 @@ SelectionCoefficientList <- read.table("../Results/CalculateDFEOfNewMutations/Ex
 
 TwoNsValues <- SelectionCoefficientList$V2*22970
 
-Check <- hist(TwoNsValues,breaks=c(0,2.5,5,7.5,10,12.5,15,17.5,20,22.5,25,100000000))
+Check <- hist(TwoNsValues,breaks=c(0,2.25,4.75,7.25,9.75,12.25,14.75,17.25,19.75,22.25,24.75,100000000))
 Counts_At_OnePercent_Given2Ns <- Check$counts
 
 Probabilities_At_One_Percent_Given_2Ns= Counts_At_OnePercent_Given2Ns/ NumberOfAllelesAt2Ns
@@ -208,51 +208,98 @@ axis (2,at=c(0+0.01, 1+0.01, 2+0.01, 3+0.01), labels = c(0,10^-2,10^-1,10^0))
 #################################################################################### Upper and lower 5% quantile
 
 DFESelection <- read.table("../Results/ResultsSelectionInferred/SelectionLargerSpaceBootstrapUK10KDFETest.txt")
-DFEPars <- read.table ("../Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims/AnotherDFETableOfProbabilities.txt")
+DFEPars <- read.table ("../Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims/DFETableOfProbabilities.txt")
+DFEParsTwo <- read.table ("../Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims/AnotherDFETableOfProbabilities.txt")
 
 MatrixProbs <- c()
 MatrixP_Allele_Is_2Ns_given_OnePercent <- c()
 for (j in 1:100){
-SelectionDFERow <- ((DFESelection$V2[j] %% 52 ) + 1)
-SelectionDFEColumn <- (floor(DFESelection$V2[j] / 52 ) + 1)
-print (j)
-print (SelectionDFERow)
-print (SelectionDFEColumn)
+    if (DFESelection$V1[j] == 1){
+        SelectionDFERow <- ((DFESelection$V2[j] %% 52 ) + 1)
+        SelectionDFEColumn <- (floor(DFESelection$V2[j] / 52 ) + 1)
+        print ("J value")
+        print (j)
+        print (SelectionDFERow)
+        print (SelectionDFEColumn)
 
-DFEParameterNumber <- (SelectionDFEColumn-1)*52 + SelectionDFERow
-P_Allele_Is_2Ns_given_OnePercent <- c()
-print (DFEParameterNumber)
+        DFEParameterNumber <- (SelectionDFEColumn-1)*52 + SelectionDFERow
+        P_Allele_Is_2Ns_given_OnePercent <- c()
+        print (DFEParameterNumber)
 
 
-for (i in 1:10){
-    UpperBound <- i*5 + 2
-    LowerBound <- (i-1)*5 + 3
-    CurrentSum <- sum(DFEPars[DFEParameterNumber,LowerBound:UpperBound])
-    #    print (i)
-    #    print (CurrentSum)
-    P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,CurrentSum)
-}
-Probs <- P_Allele_Is_2Ns_given_OnePercent[1:10] * Prob_One_Percent
+        for (i in 1:10){
+            UpperBound <- i*5 + 2
+            LowerBound <- (i-1)*5 + 3
+            CurrentSum <- sum(DFEParsTwo[DFEParameterNumber,LowerBound:UpperBound])
+            #    print (i)
+            #    print (CurrentSum)
+            P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,CurrentSum)
+        }
+        Probs <- P_Allele_Is_2Ns_given_OnePercent[1:10] * Prob_One_Percent
 
-# print (Probs)
-Probs <- Probs[1:10] / Probabilities_At_One_Percent_Given_2Ns[1:10]
-# print (Probs)
-if (sum(Probs) > 1.0){
-Probs[11] = 0
-Probs[1:10] <- Probs[1:10] / sum(Probs[1:10])
-}else{
-Probs[11] <- 1 - sum (Probs[1:10])
-}
-P_Allele_Is_2Ns_given_OnePercent[11] <- 1 - sum(P_Allele_Is_2Ns_given_OnePercent)
-# print (Probs)
-if (j==1){
-    MatrixFinalProbs <- matrix(Probs,nrow=1)
-    MatrixP_Allele_Is_2Ns_given_OnePercent <- matrix(P_Allele_Is_2Ns_given_OnePercent,nrow=1)
-}else{
-    MatrixFinalProbs <- rbind ( MatrixFinalProbs,Probs)
-    MatrixP_Allele_Is_2Ns_given_OnePercent <- rbind(MatrixP_Allele_Is_2Ns_given_OnePercent,P_Allele_Is_2Ns_given_OnePercent)
-}
-}
+        # print (Probs)
+        Probs <- Probs[1:10] / Probabilities_At_One_Percent_Given_2Ns[1:10]
+        # print (Probs)
+        if (sum(Probs) > 1.0){
+        Probs[11] = 0
+        Probs[1:10] <- Probs[1:10] / sum(Probs[1:10])
+        }else{
+        Probs[11] <- 1 - sum (Probs[1:10])
+        }
+        P_Allele_Is_2Ns_given_OnePercent[11] <- 1 - sum(P_Allele_Is_2Ns_given_OnePercent)
+        # print (Probs)
+        if (j==1){
+            MatrixFinalProbs <- matrix(Probs,nrow=1)
+            MatrixP_Allele_Is_2Ns_given_OnePercent <- matrix(P_Allele_Is_2Ns_given_OnePercent,nrow=1)
+        }else{
+            MatrixFinalProbs <- rbind ( MatrixFinalProbs,Probs)
+            MatrixP_Allele_Is_2Ns_given_OnePercent <- rbind(MatrixP_Allele_Is_2Ns_given_OnePercent,P_Allele_Is_2Ns_given_OnePercent)
+        }
+            }else{
+            
+            SelectionDFERow <- ((DFESelection$V2[j] %% 50 ) + 1)
+            SelectionDFEColumn <- (floor(DFESelection$V2[j] / 50 ) + 1)
+            print ("J value")
+            print (j)
+            print (SelectionDFERow)
+            print (SelectionDFEColumn)
+            
+            DFEParameterNumber <- (SelectionDFEColumn-1)*50 + SelectionDFERow
+            P_Allele_Is_2Ns_given_OnePercent <- c()
+            print (DFEParameterNumber)
+            
+            
+            for (i in 1:10){
+                UpperBound <- i*5 + 2
+                LowerBound <- (i-1)*5 + 3
+                CurrentSum <- sum(DFEPars[DFEParameterNumber,LowerBound:UpperBound])
+                #    print (i)
+                #    print (CurrentSum)
+                P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,CurrentSum)
+            }
+            Probs <- P_Allele_Is_2Ns_given_OnePercent[1:10] * Prob_One_Percent
+            
+            # print (Probs)
+            Probs <- Probs[1:10] / Probabilities_At_One_Percent_Given_2Ns[1:10]
+            # print (Probs)
+            if (sum(Probs) > 1.0){
+                Probs[11] = 0
+                Probs[1:10] <- Probs[1:10] / sum(Probs[1:10])
+            }else{
+                Probs[11] <- 1 - sum (Probs[1:10])
+            }
+            P_Allele_Is_2Ns_given_OnePercent[11] <- 1 - sum(P_Allele_Is_2Ns_given_OnePercent)
+            # print (Probs)
+            if (j==1){
+                MatrixFinalProbs <- matrix(Probs,nrow=1)
+                MatrixP_Allele_Is_2Ns_given_OnePercent <- matrix(P_Allele_Is_2Ns_given_OnePercent,nrow=1)
+            }else{
+                MatrixFinalProbs <- rbind ( MatrixFinalProbs,Probs)
+                MatrixP_Allele_Is_2Ns_given_OnePercent <- rbind(MatrixP_Allele_Is_2Ns_given_OnePercent,P_Allele_Is_2Ns_given_OnePercent)
+            }
+            }
+        }
+
 
 FinalMedian <- c()
 for (i in 1:11){
@@ -324,17 +371,19 @@ write.table(Table, file ="../Figures/ConfidenceIntervalsP2NsOnePercentSuppTableS
 Alpha = 0.06
 Beta = 75000
 
+
 P_Allele_Is_2Ns_given_OnePercent <- c()
 
-# P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,pgamma(0.5,Alpha,scale=Beta))
 for (i in 1:10){
-    # print (i)
-    Prob <- pgamma(i*2.5,Alpha,scale=Beta) - pgamma((i-1)*2.5,Alpha,scale=Beta)
-    P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,Prob)
-}
+     UpperBound <- i*5 + 2
+     LowerBound <- (i-1)*5 + 3
+     CurrentSum <- sum(DFEPars[104,LowerBound:UpperBound])
+     #    print (i)
+     #    print (CurrentSum)
+     P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,CurrentSum)
+ }
 
-Prob <- 1 - pgamma(25,Alpha,scale=Beta)
-P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,Prob)
+P_Allele_Is_2Ns_given_OnePercent[11] <- 1 - sum(P_Allele_Is_2Ns_given_OnePercent)
 
 ### P (allele is at 1% | allele is 2Ns x)
 
@@ -362,7 +411,7 @@ SelectionCoefficientList <- read.table("../Results/CalculateDFEOfNewMutations/Ex
 
 TwoNsValues <- SelectionCoefficientList$V2*22970
 
-Check <- hist(TwoNsValues,breaks=c(0,2.5,5,7.5,10,12.5,15,17.5,20,22.5,25,100000000))
+Check <- hist(TwoNsValues,breaks=c(0,2.25,4.75,7.25,9.75,12.25,14.75,17.25,19.75,22.25,24.75,100000000))
 Counts_At_OnePercent_Given2Ns <- Check$counts
 
 Probabilities_At_One_Percent_Given_2Ns= Counts_At_OnePercent_Given2Ns/ NumberOfAllelesAt2Ns
@@ -507,51 +556,97 @@ ViridisColors <- viridis(4, alpha = 0.7)
 #################################################################################### Upper and lower 5% quantile
 
 DFESelection <- read.table("../Results/ResultsSelectionInferred/SelectionLargerSpaceBootstrapUK10KDFETest.txt")
-DFEPars <- read.table ("../Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims/AnotherDFETableOfProbabilities.txt")
+DFEPars <- read.table ("../Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims/DFETableOfProbabilities.txt")
+DFEParsTwo <- read.table ("../Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims/AnotherDFETableOfProbabilities.txt")
 
 MatrixProbs <- c()
 MatrixP_Allele_Is_2Ns_given_OnePercent <- c()
 for (j in 1:100){
-    SelectionDFERow <- ((DFESelection$V2[j] %% 52 ) + 1)
-    SelectionDFEColumn <- (floor(DFESelection$V2[j] / 52 ) + 1)
-    print (j)
-    print (SelectionDFERow)
-    print (SelectionDFEColumn)
-    
-    DFEParameterNumber <- (SelectionDFEColumn-1)*52 + SelectionDFERow
-    P_Allele_Is_2Ns_given_OnePercent <- c()
-    print (DFEParameterNumber)
-    
-    
-    for (i in 1:10){
-        UpperBound <- i*5 + 2
-        LowerBound <- (i-1)*5 + 3
-        CurrentSum <- sum(DFEPars[DFEParameterNumber,LowerBound:UpperBound])
-        #    print (i)
-        #    print (CurrentSum)
-        P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,CurrentSum)
-    }
-    Probs <- P_Allele_Is_2Ns_given_OnePercent[1:10] * Prob_One_Percent
-    
-    # print (Probs)
-    Probs <- Probs[1:10] / Probabilities_At_One_Percent_Given_2Ns[1:10]
-    # print (Probs)
-    if (sum(Probs) > 1.0){
+    if (DFESelection$V1[j] == 1){
+        SelectionDFERow <- ((DFESelection$V2[j] %% 52 ) + 1)
+        SelectionDFEColumn <- (floor(DFESelection$V2[j] / 52 ) + 1)
+        print ("J value")
+        print (j)
+        print (SelectionDFERow)
+        print (SelectionDFEColumn)
+
+        DFEParameterNumber <- (SelectionDFEColumn-1)*52 + SelectionDFERow
+        P_Allele_Is_2Ns_given_OnePercent <- c()
+        print (DFEParameterNumber)
+
+
+        for (i in 1:10){
+            UpperBound <- i*5 + 2
+            LowerBound <- (i-1)*5 + 3
+            CurrentSum <- sum(DFEParsTwo[DFEParameterNumber,LowerBound:UpperBound])
+            #    print (i)
+            #    print (CurrentSum)
+            P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,CurrentSum)
+        }
+        Probs <- P_Allele_Is_2Ns_given_OnePercent[1:10] * Prob_One_Percent
+
+        # print (Probs)
+        Probs <- Probs[1:10] / Probabilities_At_One_Percent_Given_2Ns[1:10]
+        # print (Probs)
+        if (sum(Probs) > 1.0){
         Probs[11] = 0
         Probs[1:10] <- Probs[1:10] / sum(Probs[1:10])
-    }else{
+        }else{
         Probs[11] <- 1 - sum (Probs[1:10])
-    }
-    P_Allele_Is_2Ns_given_OnePercent[11] <- 1 - sum(P_Allele_Is_2Ns_given_OnePercent)
-    # print (Probs)
-    if (j==1){
-        MatrixFinalProbs <- matrix(Probs,nrow=1)
-        MatrixP_Allele_Is_2Ns_given_OnePercent <- matrix(P_Allele_Is_2Ns_given_OnePercent,nrow=1)
-    }else{
-        MatrixFinalProbs <- rbind ( MatrixFinalProbs,Probs)
-        MatrixP_Allele_Is_2Ns_given_OnePercent <- rbind(MatrixP_Allele_Is_2Ns_given_OnePercent,P_Allele_Is_2Ns_given_OnePercent)
-    }
-}
+        }
+        P_Allele_Is_2Ns_given_OnePercent[11] <- 1 - sum(P_Allele_Is_2Ns_given_OnePercent)
+        # print (Probs)
+        if (j==1){
+            MatrixFinalProbs <- matrix(Probs,nrow=1)
+            MatrixP_Allele_Is_2Ns_given_OnePercent <- matrix(P_Allele_Is_2Ns_given_OnePercent,nrow=1)
+        }else{
+            MatrixFinalProbs <- rbind ( MatrixFinalProbs,Probs)
+            MatrixP_Allele_Is_2Ns_given_OnePercent <- rbind(MatrixP_Allele_Is_2Ns_given_OnePercent,P_Allele_Is_2Ns_given_OnePercent)
+        }
+            }else{
+            
+            SelectionDFERow <- ((DFESelection$V2[j] %% 50 ) + 1)
+            SelectionDFEColumn <- (floor(DFESelection$V2[j] / 50 ) + 1)
+            print ("J value")
+            print (j)
+            print (SelectionDFERow)
+            print (SelectionDFEColumn)
+            
+            DFEParameterNumber <- (SelectionDFEColumn-1)*50 + SelectionDFERow
+            P_Allele_Is_2Ns_given_OnePercent <- c()
+            print (DFEParameterNumber)
+            
+            
+            for (i in 1:10){
+                UpperBound <- i*5 + 2
+                LowerBound <- (i-1)*5 + 3
+                CurrentSum <- sum(DFEPars[DFEParameterNumber,LowerBound:UpperBound])
+                #    print (i)
+                #    print (CurrentSum)
+                P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,CurrentSum)
+            }
+            Probs <- P_Allele_Is_2Ns_given_OnePercent[1:10] * Prob_One_Percent
+            
+            # print (Probs)
+            Probs <- Probs[1:10] / Probabilities_At_One_Percent_Given_2Ns[1:10]
+            # print (Probs)
+            if (sum(Probs) > 1.0){
+                Probs[11] = 0
+                Probs[1:10] <- Probs[1:10] / sum(Probs[1:10])
+            }else{
+                Probs[11] <- 1 - sum (Probs[1:10])
+            }
+            P_Allele_Is_2Ns_given_OnePercent[11] <- 1 - sum(P_Allele_Is_2Ns_given_OnePercent)
+            # print (Probs)
+            if (j==1){
+                MatrixFinalProbs <- matrix(Probs,nrow=1)
+                MatrixP_Allele_Is_2Ns_given_OnePercent <- matrix(P_Allele_Is_2Ns_given_OnePercent,nrow=1)
+            }else{
+                MatrixFinalProbs <- rbind ( MatrixFinalProbs,Probs)
+                MatrixP_Allele_Is_2Ns_given_OnePercent <- rbind(MatrixP_Allele_Is_2Ns_given_OnePercent,P_Allele_Is_2Ns_given_OnePercent)
+            }
+            }
+        }
 
 FinalMedian <- c()
 
@@ -636,11 +731,11 @@ P_Allele_Is_2Ns_given_OnePercent <- c()
 # P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,pgamma(0.5,Alpha,scale=Beta))
 for (i in 1:10){
     # print (i)
-    Prob <- pgamma(i*2.5,Alpha,scale=Beta) - pgamma((i-1)*2.5,Alpha,scale=Beta)
+    Prob <- pgamma(i*2.5 - 0.25,Alpha,scale=Beta) - pgamma(max((i-1)*2.5 - 0.25,0),Alpha,scale=Beta)
     P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,Prob)
 }
 
-Prob <- 1 - pgamma(25,Alpha,scale=Beta)
+Prob <- 1 - pgamma(24.75,Alpha,scale=Beta)
 P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,Prob)
 
 ### P (allele is at 1% | allele is 2Ns x)
@@ -655,11 +750,11 @@ RealProbs <- c()
 # P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,pgamma(0.5,Alpha,scale=Beta))
 for (i in 1:10){
     # print (i)
-    Prob <- pgamma(i*2.5,Alpha,scale=Beta) - pgamma((i-1)*2.5,Alpha,scale=Beta)
+    Prob <- pgamma(i*2.5 - 0.25,Alpha,scale=Beta) - pgamma(max((i-1)*2.5 - 0.25,0),Alpha,scale=Beta)
     P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,Prob)
     NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*61603609695)
 }
-Prob <- 1 - pgamma(25,Alpha,scale=Beta)
+Prob <- 1 - pgamma(24.75,Alpha,scale=Beta)
 NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*61603609695)
 
 #### The number of alleles comes from the population expansion model (229700 + 45544 / 22970 * 6104 + 5856 / 22970 * 1760 + 7480 / 22970 * 1222 + 1131262 / 22970 * 228) * 100 * 1000
@@ -668,7 +763,7 @@ SelectionCoefficientList <- read.table("../Results/CalculateDFEOfNewMutations/Ex
 
 TwoNsValues <- SelectionCoefficientList$V2*22970
 
-Check <- hist(TwoNsValues,breaks=c(0,2.5,5,7.5,10,12.5,15,17.5,20,22.5,25,100000000))
+Check <- hist(TwoNsValues,breaks=c(0,2.25,4.75,7.25,9.75,12.25,14.75,17.25,19.75,22.25,24.75,100000000))
 Counts_At_OnePercent_Given2Ns <- Check$counts
 
 Probabilities_At_One_Percent_Given_2Ns= Counts_At_OnePercent_Given2Ns/ NumberOfAllelesAt2Ns
@@ -824,46 +919,91 @@ DFEPars <- read.table ("../Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSi
 MatrixProbs <- c()
 MatrixP_Allele_Is_2Ns_given_OnePercent <- c()
 for (j in 1:100){
-    SelectionDFERow <- ((DFESelection$V2[j] %% 52 ) + 1)
-    SelectionDFEColumn <- (floor(DFESelection$V2[j] / 52 ) + 1)
-    print (j)
-    print (SelectionDFERow)
-    print (SelectionDFEColumn)
-    
-    DFEParameterNumber <- (SelectionDFEColumn-1)*52 + SelectionDFERow
-    P_Allele_Is_2Ns_given_OnePercent <- c()
-    print (DFEParameterNumber)
-    
-    
-    for (i in 1:10){
-        UpperBound <- i*5 + 2
-        LowerBound <- (i-1)*5 + 3
-        CurrentSum <- sum(DFEPars[DFEParameterNumber,LowerBound:UpperBound])
-        #    print (i)
-        #    print (CurrentSum)
-        P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,CurrentSum)
-    }
-    Probs <- P_Allele_Is_2Ns_given_OnePercent[1:10] * Prob_One_Percent
-    
-    # print (Probs)
-    Probs <- Probs[1:10] / Probabilities_At_One_Percent_Given_2Ns[1:10]
-    # print (Probs)
-    if (sum(Probs) > 1.0){
+    if (DFESelection$V1[j] == 1){
+        SelectionDFERow <- ((DFESelection$V2[j] %% 52 ) + 1)
+        SelectionDFEColumn <- (floor(DFESelection$V2[j] / 52 ) + 1)
+        print ("J value")
+        print (j)
+        print (SelectionDFERow)
+        print (SelectionDFEColumn)
+
+        DFEParameterNumber <- (SelectionDFEColumn-1)*52 + SelectionDFERow
+        P_Allele_Is_2Ns_given_OnePercent <- c()
+        print (DFEParameterNumber)
+
+
+        for (i in 1:10){
+            UpperBound <- i*5 + 2
+            LowerBound <- (i-1)*5 + 3
+            CurrentSum <- sum(DFEParsTwo[DFEParameterNumber,LowerBound:UpperBound])
+            #    print (i)
+            #    print (CurrentSum)
+            P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,CurrentSum)
+        }
+        Probs <- P_Allele_Is_2Ns_given_OnePercent[1:10] * Prob_One_Percent
+
+        # print (Probs)
+        Probs <- Probs[1:10] / Probabilities_At_One_Percent_Given_2Ns[1:10]
+        # print (Probs)
+        if (sum(Probs) > 1.0){
         Probs[11] = 0
         Probs[1:10] <- Probs[1:10] / sum(Probs[1:10])
-    }else{
+        }else{
         Probs[11] <- 1 - sum (Probs[1:10])
-    }
-    P_Allele_Is_2Ns_given_OnePercent[11] <- 1 - sum(P_Allele_Is_2Ns_given_OnePercent)
-    # print (Probs)
-    if (j==1){
-        MatrixFinalProbs <- matrix(Probs,nrow=1)
-        MatrixP_Allele_Is_2Ns_given_OnePercent <- matrix(P_Allele_Is_2Ns_given_OnePercent,nrow=1)
-    }else{
-        MatrixFinalProbs <- rbind ( MatrixFinalProbs,Probs)
-        MatrixP_Allele_Is_2Ns_given_OnePercent <- rbind(MatrixP_Allele_Is_2Ns_given_OnePercent,P_Allele_Is_2Ns_given_OnePercent)
-    }
-}
+        }
+        P_Allele_Is_2Ns_given_OnePercent[11] <- 1 - sum(P_Allele_Is_2Ns_given_OnePercent)
+        # print (Probs)
+        if (j==1){
+            MatrixFinalProbs <- matrix(Probs,nrow=1)
+            MatrixP_Allele_Is_2Ns_given_OnePercent <- matrix(P_Allele_Is_2Ns_given_OnePercent,nrow=1)
+        }else{
+            MatrixFinalProbs <- rbind ( MatrixFinalProbs,Probs)
+            MatrixP_Allele_Is_2Ns_given_OnePercent <- rbind(MatrixP_Allele_Is_2Ns_given_OnePercent,P_Allele_Is_2Ns_given_OnePercent)
+        }
+            }else{
+            
+            SelectionDFERow <- ((DFESelection$V2[j] %% 50 ) + 1)
+            SelectionDFEColumn <- (floor(DFESelection$V2[j] / 50 ) + 1)
+            print ("J value")
+            print (j)
+            print (SelectionDFERow)
+            print (SelectionDFEColumn)
+            
+            DFEParameterNumber <- (SelectionDFEColumn-1)*50 + SelectionDFERow
+            P_Allele_Is_2Ns_given_OnePercent <- c()
+            print (DFEParameterNumber)
+            
+            
+            for (i in 1:10){
+                UpperBound <- i*5 + 2
+                LowerBound <- (i-1)*5 + 3
+                CurrentSum <- sum(DFEPars[DFEParameterNumber,LowerBound:UpperBound])
+                #    print (i)
+                #    print (CurrentSum)
+                P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,CurrentSum)
+            }
+            Probs <- P_Allele_Is_2Ns_given_OnePercent[1:10] * Prob_One_Percent
+            
+            # print (Probs)
+            Probs <- Probs[1:10] / Probabilities_At_One_Percent_Given_2Ns[1:10]
+            # print (Probs)
+            if (sum(Probs) > 1.0){
+                Probs[11] = 0
+                Probs[1:10] <- Probs[1:10] / sum(Probs[1:10])
+            }else{
+                Probs[11] <- 1 - sum (Probs[1:10])
+            }
+            P_Allele_Is_2Ns_given_OnePercent[11] <- 1 - sum(P_Allele_Is_2Ns_given_OnePercent)
+            # print (Probs)
+            if (j==1){
+                MatrixFinalProbs <- matrix(Probs,nrow=1)
+                MatrixP_Allele_Is_2Ns_given_OnePercent <- matrix(P_Allele_Is_2Ns_given_OnePercent,nrow=1)
+            }else{
+                MatrixFinalProbs <- rbind ( MatrixFinalProbs,Probs)
+                MatrixP_Allele_Is_2Ns_given_OnePercent <- rbind(MatrixP_Allele_Is_2Ns_given_OnePercent,P_Allele_Is_2Ns_given_OnePercent)
+            }
+            }
+        }
 
 FinalMedian <- c()
 

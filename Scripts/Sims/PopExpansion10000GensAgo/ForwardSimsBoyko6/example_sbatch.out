@@ -1,0 +1,6262 @@
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58294581
+
+Total number of mutations = 63848077
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58318807
+
+Total number of mutations = 63873829
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58297254
+
+Total number of mutations = 63848506
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58310935
+
+Total number of mutations = 63867758
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58298045
+
+Total number of mutations = 63853315
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58307212
+
+Total number of mutations = 63867057
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58287799
+
+Total number of mutations = 63841885
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58302948
+
+Total number of mutations = 63858254
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58293495
+
+Total number of mutations = 63850280
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58298977
+
+Total number of mutations = 63850220
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58303443
+
+Total number of mutations = 63860265
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58296764
+
+Total number of mutations = 63852209
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58301182
+
+Total number of mutations = 63855841
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58308946
+
+Total number of mutations = 63863617
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58299561
+
+Total number of mutations = 63854908
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58310095
+
+Total number of mutations = 63866368
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58303197
+
+Total number of mutations = 63860093
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58301342
+
+Total number of mutations = 63859455
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58302885
+
+Total number of mutations = 63853978
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58306980
+
+Total number of mutations = 63863765
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58306063
+
+Total number of mutations = 63861726
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58292761
+
+Total number of mutations = 63850928
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58288816
+
+Total number of mutations = 63842203
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58296378
+
+Total number of mutations = 63854096
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58285532
+
+Total number of mutations = 63844078
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58293829
+
+Total number of mutations = 63846296
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58296331
+
+Total number of mutations = 63855951
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58294592
+
+Total number of mutations = 63849390
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58298355
+
+Total number of mutations = 63850685
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58315557
+
+Total number of mutations = 63868661
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58294910
+
+Total number of mutations = 63851278
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58293786
+
+Total number of mutations = 63846160
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58294196
+
+Total number of mutations = 63852416
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58315963
+
+Total number of mutations = 63867716
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58307810
+
+Total number of mutations = 63862616
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58295125
+
+Total number of mutations = 63848522
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58305603
+
+Total number of mutations = 63863370
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58304765
+
+Total number of mutations = 63859126
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58310539
+
+Total number of mutations = 63865908
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58308615
+
+Total number of mutations = 63864532
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58289909
+
+Total number of mutations = 63846377
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58300850
+
+Total number of mutations = 63854990
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58293678
+
+Total number of mutations = 63845223
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58310850
+
+Total number of mutations = 63870404
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58301381
+
+Total number of mutations = 63857660
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58294389
+
+Total number of mutations = 63849339
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58294410
+
+Total number of mutations = 63847409
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58289901
+
+Total number of mutations = 63843057
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58293083
+
+Total number of mutations = 63848405
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58287489
+
+Total number of mutations = 63844400
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58290554
+
+Total number of mutations = 63848823
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58298082
+
+Total number of mutations = 63851734
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58302146
+
+Total number of mutations = 63855269
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58300917
+
+Total number of mutations = 63857827
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58284955
+
+Total number of mutations = 63841026
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58296055
+
+Total number of mutations = 63853330
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58294015
+
+Total number of mutations = 63850014
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58302826
+
+Total number of mutations = 63858669
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58303488
+
+Total number of mutations = 63859579
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58278703
+
+Total number of mutations = 63832193
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58298636
+
+Total number of mutations = 63853330
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58297061
+
+Total number of mutations = 63851346
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58302891
+
+Total number of mutations = 63859799
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58292414
+
+Total number of mutations = 63849407
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58304711
+
+Total number of mutations = 63859181
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58288970
+
+Total number of mutations = 63842269
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58301449
+
+Total number of mutations = 63854160
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58288172
+
+Total number of mutations = 63841449
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58298360
+
+Total number of mutations = 63856554
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58291582
+
+Total number of mutations = 63850251
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58295241
+
+Total number of mutations = 63855123
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58303225
+
+Total number of mutations = 63855297
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58303601
+
+Total number of mutations = 63857336
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58324470
+
+Total number of mutations = 63880207
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58284138
+
+Total number of mutations = 63840044
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58298970
+
+Total number of mutations = 63850054
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58310274
+
+Total number of mutations = 63865816
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58277257
+
+Total number of mutations = 63828099
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58295142
+
+Total number of mutations = 63849977
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58306657
+
+Total number of mutations = 63857981
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58301772
+
+Total number of mutations = 63859501
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58301320
+
+Total number of mutations = 63858258
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58300776
+
+Total number of mutations = 63854239
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58297626
+
+Total number of mutations = 63852135
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58296197
+
+Total number of mutations = 63854428
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58307565
+
+Total number of mutations = 63864069
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58298763
+
+Total number of mutations = 63852573
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58294374
+
+Total number of mutations = 63850160
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58297672
+
+Total number of mutations = 63852338
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58304358
+
+Total number of mutations = 63860261
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58286492
+
+Total number of mutations = 63845191
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58293142
+
+Total number of mutations = 63852002
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58310712
+
+Total number of mutations = 63873728
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58313774
+
+Total number of mutations = 63862657
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58298747
+
+Total number of mutations = 63856533
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58302402
+
+Total number of mutations = 63857074
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58281423
+
+Total number of mutations = 63832415
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58302885
+
+Total number of mutations = 63853494
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58302530
+
+Total number of mutations = 63858529
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58289975
+
+Total number of mutations = 63843043
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58307885
+
+Total number of mutations = 63864042
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58296782
+
+Total number of mutations = 63855236
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58299086
+
+Total number of mutations = 63855236
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58295047
+
+Total number of mutations = 63850042
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58301938
+
+Total number of mutations = 63857246
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58298948
+
+Total number of mutations = 63855601
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58284629
+
+Total number of mutations = 63841723
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58302673
+
+Total number of mutations = 63858927
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58317017
+
+Total number of mutations = 63874214
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58295938
+
+Total number of mutations = 63852740
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58293225
+
+Total number of mutations = 63855696
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58306803
+
+Total number of mutations = 63859887
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58304448
+
+Total number of mutations = 63859201
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58294685
+
+Total number of mutations = 63850196
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58310164
+
+Total number of mutations = 63864647
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58304768
+
+Total number of mutations = 63863078
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58297113
+
+Total number of mutations = 63853973
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58299855
+
+Total number of mutations = 63853443
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58295008
+
+Total number of mutations = 63848157
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58292315
+
+Total number of mutations = 63849260
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58297480
+
+Total number of mutations = 63853545
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58304434
+
+Total number of mutations = 63858531
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58294595
+
+Total number of mutations = 63849527
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58302649
+
+Total number of mutations = 63859051
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58310477
+
+Total number of mutations = 63866108
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58287461
+
+Total number of mutations = 63840799
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58300159
+
+Total number of mutations = 63855503
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58288245
+
+Total number of mutations = 63842952
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58301911
+
+Total number of mutations = 63860444
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58290785
+
+Total number of mutations = 63847132
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58307631
+
+Total number of mutations = 63864028
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58291262
+
+Total number of mutations = 63845501
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58302043
+
+Total number of mutations = 63861328
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58301835
+
+Total number of mutations = 63858343
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58296079
+
+Total number of mutations = 63853548
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58304664
+
+Total number of mutations = 63858462
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58311860
+
+Total number of mutations = 63864912
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58306234
+
+Total number of mutations = 63866000
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58287524
+
+Total number of mutations = 63842164
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58303183
+
+Total number of mutations = 63859103
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58316879
+
+Total number of mutations = 63874886
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58296070
+
+Total number of mutations = 63853950
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58300805
+
+Total number of mutations = 63852904
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58302814
+
+Total number of mutations = 63861620
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58297377
+
+Total number of mutations = 63851225
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58304507
+
+Total number of mutations = 63860626
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58307989
+
+Total number of mutations = 63863136
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58299707
+
+Total number of mutations = 63853084
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58293550
+
+Total number of mutations = 63846720
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58308830
+
+Total number of mutations = 63865134
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58297967
+
+Total number of mutations = 63852310
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58304651
+
+Total number of mutations = 63859712
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58316961
+
+Total number of mutations = 63875594
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58308190
+
+Total number of mutations = 63864663
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58293392
+
+Total number of mutations = 63846239
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58297443
+
+Total number of mutations = 63855692
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58294154
+
+Total number of mutations = 63850810
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58298763
+
+Total number of mutations = 63854065
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58309265
+
+Total number of mutations = 63861321
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58312716
+
+Total number of mutations = 63865620
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58309872
+
+Total number of mutations = 63860796
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58301937
+
+Total number of mutations = 63857497
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58301988
+
+Total number of mutations = 63859854
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58303228
+
+Total number of mutations = 63863599
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58286922
+
+Total number of mutations = 63842137
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58306183
+
+Total number of mutations = 63861712
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58293492
+
+Total number of mutations = 63847782
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58307695
+
+Total number of mutations = 63860431
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58287741
+
+Total number of mutations = 63845016
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58306775
+
+Total number of mutations = 63861358
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58284772
+
+Total number of mutations = 63837246
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58293302
+
+Total number of mutations = 63848998
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58310403
+
+Total number of mutations = 63866615
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58307745
+
+Total number of mutations = 63858575
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58302855
+
+Total number of mutations = 63860943
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58295682
+
+Total number of mutations = 63847366
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58314009
+
+Total number of mutations = 63873109
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58298626
+
+Total number of mutations = 63858267
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58308397
+
+Total number of mutations = 63867849
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58299097
+
+Total number of mutations = 63854272
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58292437
+
+Total number of mutations = 63847785
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58289684
+
+Total number of mutations = 63846929
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58296113
+
+Total number of mutations = 63850595
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58302207
+
+Total number of mutations = 63861570
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58308576
+
+Total number of mutations = 63865558
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58304205
+
+Total number of mutations = 63856570
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58299147
+
+Total number of mutations = 63858625
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58294710
+
+Total number of mutations = 63849923
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58300886
+
+Total number of mutations = 63855419
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58299097
+
+Total number of mutations = 63852246
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58299458
+
+Total number of mutations = 63857579
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58295322
+
+Total number of mutations = 63850645
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58310942
+
+Total number of mutations = 63870295
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58296901
+
+Total number of mutations = 63847161
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58303749
+
+Total number of mutations = 63861151
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58303261
+
+Total number of mutations = 63857716
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58303832
+
+Total number of mutations = 63855861
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58302249
+
+Total number of mutations = 63850819
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58305458
+
+Total number of mutations = 63860437
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58313163
+
+Total number of mutations = 63869558
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58299338
+
+Total number of mutations = 63855320
+Random sampling works!
+
+Parameter List
+
+MutationRate: 10000.000000
+DFEType: gamma
+DFEParameterOne: 0.110000
+DFEParameterTwo: 43181820.000000
+DFEParameterThree: 1000000.000000
+DemographicHistory: PopulationExpansionModel.txt
+PrintSNPNumber: 0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: ../../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart6/Output
+
+Demographic History ( 2 epochs )
+
+Ne = 1166	generations = 5830	F = 0.000000
+Ne = 23992	generations = 27	F = 0.000000
+
+Currently in epoch = 0 ; Mutations before epoch's beginning = 0
+Currently in epoch = 1 ; Mutations before epoch's beginning = 58296535
+
+Total number of mutations = 63849116
+Random sampling works!

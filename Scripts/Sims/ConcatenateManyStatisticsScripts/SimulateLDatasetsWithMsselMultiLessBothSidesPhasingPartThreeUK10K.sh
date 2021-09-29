@@ -54,9 +54,10 @@ Ne[10]="10000"
 Ne[11]="20000"
 Ne[12]="346884"
 
-DemHistNumber=$(( ( ( $SLURM_ARRAY_TASK_ID - 1) / 1500 ) + 1 ))
-FourNsNumber=$(( ( $SLURM_ARRAY_TASK_ID - 1 -  ( ( $DemHistNumber - 1 ) * 1500 ) ) / 300 + 1 ))
-SeriesNumber=$(( ( $SLURM_ARRAY_TASK_ID - 1 ) % 300 ))
+DemHistNumber=$(( ( ( $SLURM_ARRAY_TASK_ID - 1) / 500 ) + 1 ))
+FourNsNumber=$(( ( $SLURM_ARRAY_TASK_ID - 1 -  ( ( $DemHistNumber - 1 ) * 500 ) ) / 100 + 1 ))
+SeriesNumber=$(( ( $SLURM_ARRAY_TASK_ID - 1 ) % 100 ))
+GenMapNumber=$(( $SeriesNumber + 1 ))
 
 i=$DemHistNumber
 
@@ -82,25 +83,29 @@ PhasedDataOutput=$DirToCreate"PhasedShapeitVCF1.txt."$SeriesNumber".phased"
 PhasedDataOutputHaps=$DirToCreate"PhasedShapeitVCF1.txt."$SeriesNumber".phased.haps"
 
 
-MsselOut="../../../Results/"${Directory[$i]}"/ForwardSims/"${FourNs[$j]}"/MsselFiles/MsselOutLess_1.txt"
+MsselOut="../../../Results/"${Directory[$i]}"/ForwardSims/"${FourNs[$j]}"/MsselFiles/MsselOutLess_"$Repetition".txt"
 MsselPhasedOutFile="../../../Results/"${Directory[$i]}"/ForwardSims/"${FourNs[$j]}"/MsselFiles/MsselOutLessPhased_"$SeriesNumber".txt"
 HapLengths=$DirToCreate"HapLengthsLessStatPhase"$SeriesNumber".txt"
 LogOutput="../../../Results/"${Directory[$i]}"/ForwardSims/"${FourNs[$j]}"/MsselFiles/Log"$SLURM_ARRAY_TASK_ID".txt"
 #### Followed by
+# DerHaps=$( cat ../../../Results/${Directory[$i]}/ForwardSims/${FourNs[$j]}/Params.txt | awk '{print $2}' )
 
 echo "time ../../../Programs/shapeit.v2.904.3.10.0-693.11.6.el7.x86_64/bin/shapeit --input-vcf $PhasedDataPrefix -M GeneticMapConstantPopSize.txt -O $PhasedDataOutput --output-log $LogOutput
 perl CreatePhasedToVCF.pl $MsselOut $PhasedDataOutputHaps $MsselPhasedOutFile $SeriesNumber
 perl DistanceToFirstSegregatingSiteMultiSequence_NoSingletonsBothSides.pl $MsselPhasedOutFile $HapLengths 1 40"
 
 ##time ../../../Programs/shapeit.v2.904.3.10.0-693.11.6.el7.x86_64/bin/shapeit --input-vcf $PhasedDataPrefix -M GeneticMapUK10K.txt -O $PhasedDataOutput --output-log $LogOutput
-for Repetition in {1..50}
+for Repetition in {1..100}
 do
+MsselOut="../../../Results/"${Directory[$i]}"/ForwardSims/"${FourNs[$j]}"/MsselFiles/MsselOutLess_"$Repetition".txt"
 MinusNumber=$(( $Repetition - 1 ))
-PhasedDataOutputHaps=$DirToCreate"PhasedShapeitVCF1.txt."$MinusNumber".phased.haps"
-MsselPhasedOutFile="../../../Results/"${Directory[$i]}"/ForwardSims/"${FourNs[$j]}"/MsselFiles/MsselOutLessPhased_"$MinusNumber".txt"
-HapLengths=$DirToCreate"HapLengthsLessStatPhase"$MinusNumber".txt"
-perl CreatePhasedToVCF.pl $MsselOut $PhasedDataOutputHaps $MsselPhasedOutFile $MinusNumber
-perl DistanceToFirstSegregatingSiteMultiSequence_DeleteSingletonsBothSides.pl $MsselPhasedOutFile $HapLengths 1 72
+ParamsFile="../../../Results/${Directory[$i]}/ForwardSims/${FourNs[$j]}/Params$Repetition.txt"
+DerHaps=$( cat $ParamsFile | awk '{print $2}' )
+PhasedDataOutputHaps=$DirToCreate"PhasedShapeitVCF1.txt."$Repetition".phased.haps"
+MsselPhasedOutFile="../../../Results/"${Directory[$i]}"/ForwardSims/"${FourNs[$j]}"/MsselFiles/MsselOutLessPhased_"$Repetition".txt"
+HapLengths=$DirToCreate"HapLengthsLessStatPhase"$Repetition".txt"
+perl CreatePhasedToVCF.pl $MsselOut $PhasedDataOutputHaps $MsselPhasedOutFile 0
+perl DistanceToFirstSegregatingSiteMultiSequence_DeleteSingletonsBothSides.pl $MsselPhasedOutFile $HapLengths 1 $DerHaps
 done
 # perl DistanceToFirstSegregatingSiteMultiSequence_DeleteSingletonsBothSides.pl $MsselPhasedOutFile $HapLengths 7170 72
 # perl DistanceToFirstSegregatingSiteMultiSequence_DeleteSingletonsBothSides.pl $MsselOut $HapLengths 3960 40

@@ -11,15 +11,39 @@
 
 time GSL_RNG_SEED=$SLURM_ARRAY_TASK_ID GSL_RNG_TYPE=mrg ../../../../Programs/PReFeRSim/fwd_seldist_gsl_2012_4epoch.debug ParameterFile_4Ns0.txt $SLURM_ARRAY_TASK_ID
 
-time perl ../../ConstantPopSize/ForwardSims/GetListOfRunsWhereFrequencyMatches.pl 0.9899 0.9901 ../../../../Results/UK10K/ForwardSims/4Ns_0/Output.$SLURM_ARRAY_TASK_ID.full_out.txt ../../../../Results/UK10K/ForwardSims/4Ns_0/Alleles_$SLURM_ARRAY_TASK_ID.txt 0 24834
+LowFreq[69]="0.9904"
+LowFreq[70]="0.9902"
+LowFreq[71]="0.9901"
+LowFreq[72]="0.99"
+LowFreq[73]="0.9899"
+LowFreq[74]="0.9897"
+LowFreq[75]="0.9896"
+LowFreq[76]="0.9895"
+
+UpFreq[69]="0.9905"
+UpFreq[70]="0.9904"
+UpFreq[71]="0.9902"
+UpFreq[72]="0.9901"
+UpFreq[73]="0.99"
+UpFreq[74]="0.9899"
+UpFreq[75]="0.9897"
+UpFreq[76]="0.9896"
+
+for i in {69..76}
+do
+
+AlleleFile="Alleles_"$i"_"$SLURM_ARRAY_TASK_ID".txt"
+ParameterFile="ParameterFile_4Ns0_"$i"_B.txt"
+
+time perl ../../ConstantPopSize/ForwardSims/GetListOfRunsWhereFrequencyMatches.pl ${LowFreq[$i]} ${UpFreq[$i]} ../../../../Results/UK10K/ForwardSims/4Ns_0/Output.$SLURM_ARRAY_TASK_ID.full_out.txt ../../../../Results/UK10K/ForwardSims/4Ns_0/$AlleleFile 0 24834
 
 File="../../../../Results/UK10K/ForwardSims/4Ns_0/Output."$SLURM_ARRAY_TASK_ID".full_out.txt"
 
-rm $File
+# rm $File
 
-time GSL_RNG_SEED=$SLURM_ARRAY_TASK_ID GSL_RNG_TYPE=mrg ../../../../Programs/PReFeRSim/fwd_seldist_gsl_2012_4epoch.debug ParameterFile_4Ns0_B.txt $SLURM_ARRAY_TASK_ID
+time GSL_RNG_SEED=$SLURM_ARRAY_TASK_ID GSL_RNG_TYPE=mrg ../../../../Programs/PReFeRSim/fwd_seldist_gsl_2012_4epoch.debug $ParameterFile $SLURM_ARRAY_TASK_ID
 
-
+done
 
 ## Old stuff
 # time GSL_RNG_SEED=$SLURM_ARRAY_TASK_ID GSL_RNG_TYPE=mrg ../fwd_seldist_gsl_2012_4epoch.debug -m1000 -t$SLURM_ARRAY_TASK_ID -z2 -gpoint 0.0 -f1.0 -h0.5 -F0.0 -n20 -RPopulationBottleneckModel.txt -S0 TestData/

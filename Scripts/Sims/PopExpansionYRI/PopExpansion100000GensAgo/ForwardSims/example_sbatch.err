@@ -1,0 +1,449 @@
+rm: cannot remove ‘../../../../Results/PopExpansion100000GensAgo/ForwardSims/4Ns_-100/Output.169.full_out.txt’: No such file or directory
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=169
+rm: cannot remove ‘../../../../Results/PopExpansion100000GensAgo/ForwardSims/4Ns_-100/Output.183.full_out.txt’: No such file or directory
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=183
+rm: cannot remove ‘../../../../Results/PopExpansion100000GensAgo/ForwardSims/4Ns_-100/Output.176.full_out.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/PopExpansion100000GensAgo/ForwardSims/4Ns_-100/Output.159.full_out.txt’: No such file or directory
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=176
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=159
+rm: cannot remove ‘../../../../Results/PopExpansion100000GensAgo/ForwardSims/4Ns_-100/Output.172.full_out.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/PopExpansion100000GensAgo/ForwardSims/4Ns_-100/Output.179.full_out.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/PopExpansion100000GensAgo/ForwardSims/4Ns_-100/Output.182.full_out.txt’: No such file or directory
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=172
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=179
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=182
+rm: cannot remove ‘../../../../Results/PopExpansion100000GensAgo/ForwardSims/4Ns_-100/Output.175.full_out.txt’: No such file or directory
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=175
+rm: cannot remove ‘../../../../Results/PopExpansion100000GensAgo/ForwardSims/4Ns_-100/Output.165.full_out.txt’: No such file or directory
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=165
+rm: cannot remove ‘../../../../Results/PopExpansion100000GensAgo/ForwardSims/4Ns_-100/Output.180.full_out.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/PopExpansion100000GensAgo/ForwardSims/4Ns_-100/Output.177.full_out.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/PopExpansion100000GensAgo/ForwardSims/4Ns_-100/Output.167.full_out.txt’GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=180
+: No such file or directory
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=177
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=167
+rm: cannot remove ‘../../../../Results/PopExpansion100000GensAgo/ForwardSims/4Ns_-100/Output.181.full_out.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/PopExpansion100000GensAgo/ForwardSims/4Ns_-100/Output.173.full_out.txt’: No such file or directory
+rm: cannot remove ‘../../../../Results/PopExpansion100000GensAgo/ForwardSims/4Ns_-100/Output.174.full_out.txt’: No such file or directory
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=181
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=173
+GSL_RNG_TYPE=mrg
+GSL_RNG_SEED=174
+
+real	35m48.136s
+user	35m47.488s
+sys	0m0.022s
+
+real	36m17.877s
+user	36m17.209s
+sys	0m0.035s
+
+real	37m23.935s
+user	37m23.328s
+sys	0m0.031s
+
+real	61m28.572s
+user	61m22.645s
+sys	0m0.064s
+
+real	61m32.998s
+user	61m27.448s
+sys	0m0.059s
+
+real	61m37.638s
+user	61m31.818s
+sys	0m0.127s
+
+real	61m38.717s
+user	61m33.465s
+sys	0m0.070s
+
+real	61m40.976s
+user	61m34.102s
+sys	0m1.202s
+
+real	61m49.977s
+user	61m43.914s
+sys	0m0.248s
+
+real	61m50.326s
+user	61m44.139s
+sys	0m0.072s
+
+real	61m50.227s
+user	61m45.242s
+sys	0m0.064s
+
+real	61m52.576s
+user	61m47.149s
+sys	0m0.060s
+
+real	61m54.475s
+user	61m47.521s
+sys	0m0.173s
+
+real	61m54.528s
+user	61m49.448s
+sys	0m0.061s
+
+real	61m55.160s
+user	61m49.245s
+sys	0m0.067s
+
+real	61m57.992s
+user	61m52.304s
+sys	0m0.069s
+
+real	61m58.520s
+user	61m54.801s
+sys	0m0.069s
+
+real	62m0.930s
+user	61m55.757s
+sys	0m0.055s
+
+real	62m0.995s
+user	61m54.789s
+sys	0m0.079s
+
+real	62m1.858s
+user	61m56.354s
+sys	0m0.068s
+
+real	62m2.557s
+user	61m57.234s
+sys	0m0.065s
+
+real	62m4.415s
+user	61m59.147s
+sys	0m0.057s
+
+real	62m4.151s
+user	61m58.132s
+sys	0m0.060s
+
+real	62m9.397s
+user	62m1.275s
+sys	0m0.444s
+
+real	62m10.358s
+user	62m4.961s
+sys	0m0.065s
+
+real	62m12.404s
+user	62m6.100s
+sys	0m0.249s
+
+real	62m13.730s
+user	62m9.767s
+sys	0m0.058s
+
+real	62m14.711s
+user	62m9.462s
+sys	0m0.068s
+
+real	62m17.130s
+user	62m11.920s
+sys	0m0.085s
+
+real	62m18.233s
+user	62m3.968s
+sys	0m0.074s
+
+real	62m24.549s
+user	62m19.283s
+sys	0m0.058s
+
+real	62m24.218s
+user	62m19.269s
+sys	0m0.063s
+
+real	62m25.251s
+user	62m20.220s
+sys	0m0.053s
+
+real	62m30.116s
+user	62m24.995s
+sys	0m0.069s
+
+real	62m30.380s
+user	62m25.076s
+sys	0m0.060s
+
+real	62m31.225s
+user	62m24.543s
+sys	0m0.065s
+
+real	62m32.756s
+user	62m26.834s
+sys	0m0.195s
+
+real	62m35.373s
+user	62m29.307s
+sys	0m0.066s
+
+real	62m36.914s
+user	62m29.017s
+sys	0m0.351s
+
+real	62m37.986s
+user	62m23.502s
+sys	0m0.071s
+
+real	62m39.727s
+user	62m33.793s
+sys	0m0.054s
+
+real	62m39.470s
+user	62m34.379s
+sys	0m0.074s
+
+real	62m43.146s
+user	62m36.388s
+sys	0m0.189s
+
+real	62m43.205s
+user	62m37.955s
+sys	0m0.062s
+
+real	62m44.436s
+user	62m39.219s
+sys	0m0.056s
+
+real	62m44.712s
+user	62m39.749s
+sys	0m0.056s
+
+real	62m45.538s
+user	62m39.042s
+sys	0m0.083s
+
+real	62m45.838s
+user	62m39.102s
+sys	0m0.086s
+
+real	62m47.388s
+user	62m41.932s
+sys	0m0.068s
+
+real	62m50.147s
+user	62m44.510s
+sys	0m0.086s
+
+real	62m49.712s
+user	62m44.532s
+sys	0m0.080s
+
+real	62m51.073s
+user	62m47.261s
+sys	0m0.067s
+
+real	62m51.052s
+user	62m44.751s
+sys	0m0.141s
+
+real	62m52.122s
+user	62m47.029s
+sys	0m0.056s
+
+real	62m53.122s
+user	62m47.666s
+sys	0m0.064s
+
+real	62m54.564s
+user	62m50.689s
+sys	0m0.063s
+
+real	62m55.043s
+user	62m49.815s
+sys	0m0.058s
+
+real	62m55.333s
+user	62m38.501s
+sys	0m0.072s
+
+real	62m59.500s
+user	62m54.269s
+sys	0m0.056s
+
+real	62m59.021s
+user	62m52.771s
+sys	0m0.176s
+
+real	63m2.855s
+user	62m57.666s
+sys	0m0.060s
+
+real	63m3.373s
+user	62m57.410s
+sys	0m0.048s
+
+real	63m3.961s
+user	62m57.166s
+sys	0m0.292s
+
+real	63m4.247s
+user	62m58.987s
+sys	0m0.064s
+
+real	63m4.745s
+user	62m59.450s
+sys	0m0.065s
+
+real	63m7.022s
+user	63m1.954s
+sys	0m0.062s
+
+real	63m7.085s
+user	63m2.095s
+sys	0m0.059s
+
+real	63m9.058s
+user	63m3.189s
+sys	0m0.347s
+
+real	63m21.448s
+user	63m16.203s
+sys	0m0.060s
+
+real	63m23.060s
+user	63m15.943s
+sys	0m0.597s
+
+real	63m23.392s
+user	63m12.775s
+sys	0m0.373s
+
+real	63m24.617s
+user	63m18.828s
+sys	0m0.068s
+
+real	63m23.715s
+user	63m18.789s
+sys	0m0.071s
+
+real	63m24.661s
+user	63m18.783s
+sys	0m0.079s
+
+real	63m30.309s
+user	63m25.046s
+sys	0m0.055s
+
+real	63m32.706s
+user	63m27.446s
+sys	0m0.069s
+
+real	63m45.367s
+user	63m38.859s
+sys	0m0.264s
+
+real	63m50.296s
+user	63m46.238s
+sys	0m0.090s
+
+real	63m54.786s
+user	63m49.460s
+sys	0m0.164s
+
+real	63m53.654s
+user	63m48.585s
+sys	0m0.064s
+
+real	63m58.086s
+user	63m53.229s
+sys	0m0.183s
+
+real	63m58.321s
+user	63m54.386s
+sys	0m0.070s
+
+real	63m59.218s
+user	63m52.111s
+sys	0m0.282s
+
+real	64m0.837s
+user	63m54.450s
+sys	0m0.079s
+
+real	64m1.963s
+user	63m55.758s
+sys	0m0.061s
+
+real	64m9.049s
+user	64m1.850s
+sys	0m0.191s
+
+real	64m13.145s
+user	64m6.911s
+sys	0m0.075s
+
+real	64m16.541s
+user	64m11.208s
+sys	0m0.068s
+
+real	64m17.825s
+user	64m12.360s
+sys	0m0.079s
+
+real	64m25.352s
+user	64m18.524s
+sys	0m0.064s
+
+real	64m27.244s
+user	64m22.227s
+sys	0m0.062s
+
+real	64m28.501s
+user	64m23.095s
+sys	0m0.067s
+
+real	64m34.610s
+user	64m29.002s
+sys	0m0.184s
+
+real	64m34.229s
+user	64m30.151s
+sys	0m0.163s
+
+real	64m35.703s
+user	64m31.512s
+sys	0m0.181s
+
+real	64m41.752s
+user	64m37.495s
+sys	0m0.305s
+
+real	64m45.305s
+user	64m41.345s
+sys	0m0.066s
+
+real	64m45.349s
+user	64m40.907s
+sys	0m0.323s
+
+real	65m2.571s
+user	64m58.621s
+sys	0m0.074s
+
+real	65m13.024s
+user	65m8.838s
+sys	0m0.216s
+
+real	159m25.891s
+user	159m12.232s
+sys	0m0.746s

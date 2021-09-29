@@ -27,7 +27,7 @@ HapFilePrefix="../../../../Data/Plink/HapLengths/HapLengthOnlyCpG"
 BootstrapExitFile="../../../../Results/UK10K_OnePercenters/ForwardSims/LLDataDFEBootstrap"$SLURM_ARRAY_TASK_ID".txt"
 
 
-perl ../../UK10K_PointTwoPercenters/ForwardSims/CalculatePLengthGivenSQuantileBootstrapCloseQuantileDFENew.pl $HapFilePrefix 250000 ../../../../Results/UK10K_OnePercenters/ImportanceSamplingSims/Quantile ../ImportanceSamplingSims/TestT2Bounds.txt $ResultsFile ../../../../Data/LeftBpRecRatePerVariantNoCpG.txt ../../../../Data/RightBpRecRatePerVariantNoCpG.txt 273 ../../../../Data/Plink/CpGMisOnePercentNumberPositionsVar.txt ../../UK10K_PointTwoPercenters/ForwardSims/MissenseOnePercentNoCpG.txt 565630 $BootstrapExitFile $PrefixTwoFile
+perl ../../UK10K_PointTwoPercenters/ForwardSims/CalculatePLengthGivenSQuantileBootstrapCloseQuantileDFENew.pl $HapFilePrefix 250000 ../../../../Results/UK10K_OnePercenters/ImportanceSamplingSims/Quantile ../ImportanceSamplingSims/TestT2Bounds.txt $ResultsFile ../../../../Data/LeftBpRecRatePerVariantNoCpG.txt ../../../../Data/RightBpRecRatePerVariantNoCpG.txt 275 ../../../../Data/Plink/CpGMisOnePercentNumberPositionsVar.txt ../../UK10K_PointTwoPercenters/ForwardSims/MissenseOnePercentNoCpG.txt 565630 $BootstrapExitFile $PrefixTwoFile
 
 
 

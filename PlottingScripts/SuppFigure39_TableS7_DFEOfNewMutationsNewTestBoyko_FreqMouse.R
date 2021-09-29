@@ -30,7 +30,7 @@ RealProbs <- c()
 # P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,pgamma(0.5,Alpha,scale=Beta))
 for (i in 1:10){
 # print (i)
-	Prob <- pgamma(i*2.5,Alpha,scale=Beta) - pgamma((i-1)*2.5,Alpha,scale=Beta)
+	Prob <- pgamma(i*2.5 - 0.25,Alpha,scale=Beta) - pgamma(max((i-1)*2.5 - 0.25,0),Alpha,scale=Beta)
 	P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,Prob)
 	NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*123250612973)
 }
@@ -43,7 +43,7 @@ SelectionCoefficientList <- read.table("../Results/CalculateDFEOfNewMutations/Ex
 
 TwoNsValues <- SelectionCoefficientList$V2*4594
 
-Check <- hist(TwoNsValues,breaks=c(0,2.5,5,7.5,10,12.5,15,17.5,20,22.5,25,100000000))
+Check <- hist(TwoNsValues,breaks=c(0,2.25,4.75,7.25,9.75,12.25,14.75,17.25,19.75,22.25,24.75,100000000))
 Counts_At_OnePercent_Given2Ns <- Check$counts
 
 Probabilities_At_One_Percent_Given_2Ns= Counts_At_OnePercent_Given2Ns/ NumberOfAllelesAt2Ns
@@ -157,7 +157,7 @@ DFEParsTwo <- read.table ("../Scripts/Sims/UK10K_OnePercenters/ImportanceSamplin
 MatrixProbs <- c()
 MatrixP_Allele_Is_2Ns_given_OnePercent <- c()
 for (j in 1:100){
-    if (DFESelection$V1[j] == 0){
+    if (DFESelection$V1[j] == 1){
 SelectionDFERow <- ((DFESelection$V2[j] %% 52 ) + 1)
 SelectionDFEColumn <- (floor(DFESelection$V2[j] / 52 ) + 1)
 print ("J value")
@@ -173,7 +173,7 @@ print (DFEParameterNumber)
 for (i in 1:10){
     UpperBound <- i*5 + 2
     LowerBound <- (i-1)*5 + 3
-    CurrentSum <- sum(DFEPars[DFEParameterNumber,LowerBound:UpperBound])
+    CurrentSum <- sum(DFEParsTwo[DFEParameterNumber,LowerBound:UpperBound])
     #    print (i)
     #    print (CurrentSum)
     P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,CurrentSum)
@@ -215,7 +215,7 @@ if (j==1){
     for (i in 1:10){
         UpperBound <- i*5 + 2
         LowerBound <- (i-1)*5 + 3
-        CurrentSum <- sum(DFEParsTwo[DFEParameterNumber,LowerBound:UpperBound])
+        CurrentSum <- sum(DFEPars[DFEParameterNumber,LowerBound:UpperBound])
         #    print (i)
         #    print (CurrentSum)
         P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,CurrentSum)

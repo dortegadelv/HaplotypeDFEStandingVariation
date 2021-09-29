@@ -1,8 +1,12 @@
-#$ -l h_vmem=4g
-#$ -cwd
-#$ -N ForWF
-#$ -o Trash
-#$ -e Trash
+#!/bin/bash
+#SBATCH --job-name=example_sbatch
+#SBATCH --output=example_sbatch.out
+#SBATCH --error=example_sbatch.err
+#SBATCH --time=24:00:00
+#SBATCH --partition=jnovembre
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --mem-per-cpu=1000
 
 
 Directory[1]="AncientBottleneck"
@@ -34,10 +38,10 @@ DemScenario[4]="DemHistExpansion.txt"
 Ne[1]="10000"
 Ne[2]="20000"
 Ne[3]="100000"
-Ne[4]="226252"
+Ne[4]="164462"
 
-DemHistNumber=$(( ( ( $SGE_TASK_ID - 1) / 5 ) + 1 ))
-FourNsNumber=$(( ( ( $SGE_TASK_ID - 1) % 5 ) + 1 ))
+DemHistNumber=$(( ( ( $SLURM_ARRAY_TASK_ID - 1) / 5 ) + 1 ))
+FourNsNumber=$(( ( ( $SLURM_ARRAY_TASK_ID - 1) % 5 ) + 1 ))
 
 i=$DemHistNumber
 
@@ -47,7 +51,7 @@ echo ${Directory[$i]}
 CurrentFile="../../../Results/"${Directory[$i]}"/ForwardSims/"${FourNs[$j]}"/ReducedTrajectories10000.txt"
 TTwosFile="../../../Results/TTwos/TTwos"${Directory[$i]}"_"${FourNs[$j]}".txt"
 ExitDir="../../../Results/"${Directory[$i]}"/ForwardSims/"${FourNs[$j]}"/Trajectories"
-if [ $SGE_TASK_ID -le "15" ]
+if [ $SLURM_ARRAY_TASK_ID -le "15" ]
 then
 DemHist="../../../Scripts/Sims/"${Directory[$i]}"/ImportanceSamplingSims/"${DemScenario[$i]}
 else
@@ -63,5 +67,7 @@ done
 TrajFile="../../../Results/"${Directory[$i]}"/ForwardSims/"${FourNs[$j]}"/Trajectories/Traj_"
 ExitT2File="../../../Results/TTwos/"${Directory[$i]}"_"${FourNs[$j]}".txt"
 perl CalculateDistributionOfT2_Trajectory.pl $TrajFile 10000 ${Ne[$i]} $ExitT2File 
+
+
 
 

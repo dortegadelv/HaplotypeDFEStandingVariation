@@ -40,16 +40,16 @@ Ne[9]="10000"
 Ne[10]="10000"
 Ne[11]="20000"
 
-rm ../../../Results/DistributionOfL/DistributionOfL.txt
-touch ../../../Results/DistributionOfL/DistributionOfL.txt
+rm ../../../Results/DistributionOfL/DistributionOfLUK10K.txt
+touch ../../../Results/DistributionOfL/DistributionOfLUK10K.txt
 # File="../../../Results/"${Directory[]}
 for (( i = 7 ; i <= 7 ; i++ ))
 do
 for (( j = 1 ; j <= 5 ; j++ ))
 do
 echo $j
-Files="../../../Results/UK10K/ForwardSims/"${FourNs[$j]}"/SimDistancesMsselSingleRecHighRec273_5625.89_"
-perl CalculatePLGivenSDistribution.pl ../../../Results/DistributionOfL/DistributionOfL.txt 1 100 $Files
+Files="../../../Results/UK10K/ForwardSims/"${FourNs[$j]}"/SimDistancesMsselSingleRecHighRecOnly72273_3391.733_"
+perl CalculatePLGivenSDistribution.pl ../../../Results/DistributionOfL/DistributionOfLUK10K.txt 1 100 $Files
 done
 done
 

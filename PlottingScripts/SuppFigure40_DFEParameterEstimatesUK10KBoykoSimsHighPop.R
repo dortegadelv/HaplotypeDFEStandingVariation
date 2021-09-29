@@ -13,7 +13,7 @@ AllRows <- c()
 AllColumns <- c()
 
 for (i in 1:length(DFESelection$V1)){
-    if (DFESelection$V1[i] == 0){
+    if (DFESelection$V1[i] == 1){
         
         SelectionDFERow <- ((DFESelection$V2[i] %% 52 ) + 1) * 5
         SelectionDFEColumn <- (floor(DFESelection$V2[i] / 52 ) + 1) *.03
@@ -66,8 +66,8 @@ text(slot(h,"ycm"),slot(h,"xcm"),slot(h,"count"),col="red",cex=1)
 abline(v=-55, lty = 2)
 abline(v=-20, lty = 2)
 abline(v=5, lty = 2)
-abline(v=250, lty = 2)
-axis(1, at=c(-55, -20, 5, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500), labels = c("0.03", "3", "30", "300", "600", "900", "1200", "1500", "15000", "30000", "45000", "60000", "75000"), cex.axis = 1.2)
+abline(v=255, lty = 2)
+axis(1, at=c(-55, -20, 5, 50, 100, 150, 200, 255, 300, 350, 400, 450, 500), labels = c("0.03", "3", "30", "300", "600", "900", "1200", "1500", "15000", "30000", "45000", "60000", "75000"), cex.axis = 1.1)
 # beanplot(-SelectionDFEColumn$V1*SelectionDFERow$V1,names=c("Data"),ylab="Estimated 4Ns values",xlab="",main="Variation in the estimated 4Ns values\n in the UK10K dataset",cex.axis=1.3,cex.lab=2,cex.main=1.2,col = c("#CAB2D6", "#33A02C", "#B2DF8A"), border = "#CAB2D6",maxstripline=0.15,beanlinewd=0.5,overall=10000,what=c(FALSE,TRUE,FALSE,TRUE),overallline = "median",ll=0.5,bw="nrd0")
 # boxplot(-SelectionDFEColumn$V1*SelectionDFERow$V1,names=c("Data"),ylab="Estimated 4Ns values",xlab="",main="Variation in the estimated 4Ns values\n in the UK10K dataset",cex.lab=2,cex.axis=2)
 dev.off()

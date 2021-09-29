@@ -21,6 +21,12 @@ Directory[9]="RecentBottleneck"
 Directory[10]="RecentBottleneckPointFivePercent"
 Directory[11]="ConstantPopSizePopFrequency"
 Directory[12]="UK10K"
+Directory[13]="PopExpansion100GensAgo"
+Directory[14]="PopExpansion1000GensAgo"
+Directory[15]="PopExpansion10000GensAgo"
+Directory[16]="PopExpansion100000GensAgo"
+Directory[17]="PopExpansionCEU"
+Directory[18]="PopExpansionYRI"
 
 FourNs[1]="4Ns_0"
 FourNs[2]="4Ns_50"
@@ -40,6 +46,13 @@ DemScenario[9]="DemUK10KHistBottleneck.txt"
 DemScenario[10]="DemHistBottleneck.txt"
 DemScenario[11]="DemographicHistoryConstant.txt"
 DemScenario[12]="DemHistExpansion.txt"
+DemScenario[13]="DemHistExpansion.txt"
+DemScenario[14]="DemHistExpansion.txt"
+DemScenario[15]="DemHistExpansion.txt"
+DemScenario[16]="DemHistExpansion.txt"
+DemScenario[17]="DemHistExpansion.txt"
+DemScenario[18]="DemHistExpansion.txt"
+
 
 Ne[1]="10000"
 Ne[2]="10000"
@@ -53,6 +66,12 @@ Ne[9]="10000"
 Ne[10]="10000"
 Ne[11]="20000"
 Ne[12]="346884"
+Ne[13]="100000"
+Ne[14]="100000"
+Ne[15]="100000"
+Ne[16]="100000"
+Ne[17]="310000"
+Ne[18]="330000"
 
 DemHistNumber=$(( ( ( $SLURM_ARRAY_TASK_ID - 1) / 50 ) + 1 ))
 FourNsNumber=$(( ( $SLURM_ARRAY_TASK_ID - 1 -  ( ( $DemHistNumber - 1 ) * 50 ) ) / 10 + 1 ))
@@ -76,6 +95,8 @@ CurrentTrajs="../../../Results/"${Directory[$i]}"/ForwardSims/"${FourNs[$j]}"/Re
 
 DirToCreate="../../../Results/"${Directory[$i]}"/ForwardSims/"${FourNs[$j]}"/HapLengths/"
 mkdir $DirToCreate
+OtherDirToCreate="../../../Results/"${Directory[$i]}"/ForwardSims/"${FourNs[$j]}"/MsselFiles/"
+mkdir $OtherDirToCreate
 for (( k = $Start ; k <= $End ; k++ ))
 do
 
@@ -100,7 +121,18 @@ Line[8]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 250000 
 # Bases = Theta /(4Nu) = 120/(4*5000*1.2e-8) = 500000
 Line[9]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 500000 -r 200 999999 -t 240 -eN 0.0 1.0 -eN 0.005 0.5 -eN 0.015 1.0 -seeds $k $k $k"
 Line[10]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 500000 -r 200 999999 -t 240 -eN 0.0 1.0 -eN 0.005 0.5 -eN 0.015 1.0 -seeds $k $k $k"
-Line[12]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 250000 -r 0.0 250000 -t 16968.9 -eN 0.0 1.0 -eN 0.0001017 0.0066121 -eN 0.0006409 0.0051756 -eN 0.0014188 0.0402604 -eN 0.0041171 0.0203048 -seeds $k $k $k"
+Line[12]="../../../Programs/Mssel/mssel3 73 300 1 72 $ResampledTrajectory 250000 -r 0.0 250000 -t 16968.9 -eN 0.0 1.0 -eN 0.0001017 0.0066121 -eN 0.0006409 0.0051756 -eN 0.0014188 0.0402604 -eN 0.0041171 0.0203048 -seeds $k $k $k"
+
+Line[13]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 250000 -r 1000 499999 -t 1200 -eN 0.0 1.0 -eN 0.0005 0.1 -seeds $k $k $k"
+Line[14]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 250000 -r 1000 499999 -t 1200 -eN 0.0 1.0 -eN 0.005 0.1 -seeds $k $k $k"
+Line[15]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 250000 -r 1000 499999 -t 1200 -eN 0.0 1.0 -eN 0.05 0.1 -seeds $k $k $k"
+Line[16]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 250000 -r 1000 499999 -t 1200 -eN 0.0 1.0 -eN 0.5 0.1 -seeds $k $k $k"
+
+Line[17]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 50000 -r 1668.604 99999 -t 2002.3248 -eN 0.00000000 1 -eN 0.00000300 0.884588554 -eN 0.00000899 0.750308641 -eN 0.00001498 0.636414632 -eN 0.00002098 0.539806928 -eN 0.00002697 0.457865377 -eN 0.00003296 0.38836057 -eN 0.00003895 0.329408296 -eN 0.00004495 0.27940482 -eN 0.00005094 0.236990922 -eN 0.00005693 0.201015939 -eN 0.00006293 0.170501809 -eN 0.00006892 0.144621492 -eN 0.00007491 0.122667811 -eN 0.00008091 0.104046257 -eN 0.00008690 0.088253414 -eN 0.00009289 0.074855388 -eN 0.00009889 0.063492596 -eN 0.00010488 0.053855798 -eN 0.00011087 0.045678903 -eN 0.00011686 0.038746161 -eN 0.00012286 0.034697268 -eN 0.00354788 0.017523631 -seeds $k $k $k"
+Line[18]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 100000 -r 1320 199999 -t 1584 -eN 0.0 1.0 -eN 0.00030303 0.1 -eN 0.00505 0.3 -eN 0.020201515 0.1 -seeds $k $k $k"
+
+echo "${Line[$i]}"
+echo "$MsselOut"
 
 ${Line[$i]} > $MsselOut
 perl DistanceToFirstSegregatingSiteMultiSequence_NoSingletonsBothSides.pl $MsselOut $HapLengths 1 40

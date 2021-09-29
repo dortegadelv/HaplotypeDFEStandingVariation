@@ -1,4 +1,6 @@
-$ExitFile = "../../../../Results/PopExpansion/ImportanceSamplingSims/SumDistancesFile10000.txt";
+for ( $l = 1; $l <= 21; $l++ ){
+
+$ExitFile = "../../../../Results/PopExpansion/ImportanceSamplingSims/Quantile".$l."/SumDistancesFile10000.txt";
 open (EXIT,">$ExitFile") or die "NO! $ExitFile\n";
 
 for ( $j = 1; $j <= 100; $j++ ){
@@ -11,7 +13,7 @@ $Distances[$i][$row] = 0;
 }}
 
 for ( $k = 1; $k <= 1; $k++ ){
-$InputFile = "../../../../Results/PopExpansion/ImportanceSamplingSims/DistancesFile10000_".$j."_".$k.".txt";
+$InputFile = "../../../../Results/PopExpansion/ImportanceSamplingSims/Quantile".$l."/DistancesFileWithRec10000_".$j."_".$k.".txt";
 open (INPUT,$InputFile) or die "NO! $InputFile\n";
 $row = 0;
 while (<INPUT>){
@@ -39,4 +41,4 @@ print EXIT "\n";
 }
 }
 close (EXIT);
-
+}

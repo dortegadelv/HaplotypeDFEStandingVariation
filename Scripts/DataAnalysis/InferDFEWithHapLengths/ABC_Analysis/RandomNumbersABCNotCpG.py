@@ -59,7 +59,7 @@ print "Ne Initial " + str(NeInitial)
 NeInitial  = int(NeInitial + 1000 + 0.5)
 print "Ne Initial " + str(NeInitial)
 
-NeTwo  = random.random()* 49500
+NeTwo  = random.random()* 19500
 NeTwo  = int ( NeTwo + 500 + 0.5)
 
 NeThree  = random.random()* math.log10(490000)

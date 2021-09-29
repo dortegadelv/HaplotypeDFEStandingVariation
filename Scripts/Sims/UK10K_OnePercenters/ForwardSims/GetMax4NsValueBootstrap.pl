@@ -23,12 +23,12 @@ chomp;
 $Line = $_;
 @SplitLine = split(/\s+/,$Line);
 # print "$SplitLine[1]";
-if ($LineNumber == 126){
+if ($LineNumber == 123){
 $Max = $SplitLine[1];
 $MaxNum = $LineNumber;
 }
-if ($LineNumber > 126){
-if ( ($SplitLine[1] > $Max) && ($LineNumber > 126) && ($LineNumber < 277) ){
+if ($LineNumber > 123){
+if ( ($SplitLine[1] > $Max) && ($LineNumber > 123) && ($LineNumber < 294) ){
 $Max = $SplitLine[1];
 $MaxNum = $LineNumber;
 }
@@ -59,12 +59,12 @@ chomp;
 $Line = $_;
 @SplitLine = split(/\s+/,$Line);
 # print "$SplitLine[1]";
-if ($LineNumber == 126){
+if ($LineNumber == 133){
 $Max = $SplitLine[1];
 $MaxNum = $LineNumber;
 }
-if ($LineNumber > 126){
-if ( ($SplitLine[1] > $Max) && ($LineNumber > 126) && ($LineNumber < 202) ){
+if ($LineNumber > 123){
+if ( ($SplitLine[1] > $Max) && ($LineNumber > 123) && ($LineNumber < 294) ){
 $Max = $SplitLine[1];
 $MaxNum = $LineNumber;
 }
@@ -96,12 +96,12 @@ chomp;
 $Line = $_;
 @SplitLine = split(/\s+/,$Line);
 # print "$SplitLine[1]";
-if ($LineNumber == 126){
+if ($LineNumber == 133){
 $Max = $SplitLine[1];
 $MaxNum = $LineNumber;
 }
-if ($LineNumber > 126){
-if ( ($SplitLine[1] > $Max) && ($LineNumber > 126) && ($LineNumber < 277) ){
+if ($LineNumber > 123){
+if ( ($SplitLine[1] > $Max) && ($LineNumber > 123) && ($LineNumber < 294) ){
 $Max = $SplitLine[1];
 $MaxNum = $LineNumber;
 }
@@ -133,12 +133,12 @@ chomp;
 $Line = $_;
 @SplitLine = split(/\s+/,$Line);
 # print "$SplitLine[1]";
-if ($LineNumber == 126){
+if ($LineNumber == 123){
 $Max = $SplitLine[1];
 $MaxNum = $LineNumber;
 }
-if ($LineNumber > 126){
-if ( ($SplitLine[1] > $Max) && ($LineNumber > 126) && ($LineNumber < 202) ){
+if ($LineNumber > 123){
+if ( ($SplitLine[1] > $Max) && ($LineNumber > 123) && ($LineNumber < 294) ){
 $Max = $SplitLine[1];
 $MaxNum = $LineNumber;
 }

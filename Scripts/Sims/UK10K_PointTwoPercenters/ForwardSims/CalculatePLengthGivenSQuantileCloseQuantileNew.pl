@@ -15,7 +15,7 @@ $DFETableRec = $ARGV[11];
 @VariantsToUse = ();
 
 @Bounds = ();
-open (BOUNDS,$FileISBoundaries) or die "NO!";
+open (BOUNDS,$FileISBoundaries) or die "NO! $FileISBoundaries\n";
 
 while(<BOUNDS>){
 chomp;
@@ -29,7 +29,7 @@ close(BOUNDS);
 
 @FullPLGivenSTable = ();
 $LineNumber = 0;
-open (REG,$DFETableRec) or die "NO!";
+open (REG,$DFETableRec) or die "NO! $DFETableRec\n";
 while (<REG>){
 chomp;
 $Line = $_;
@@ -88,7 +88,7 @@ close(IS);
 @LeftRecRate = ();
 @RightRecRate = ();
 
-open (LEFT, $LeftRecFile ) or die "NO";
+open (LEFT, $LeftRecFile ) or die "NO $LeftRecFile ";
 
 while ( <LEFT> ){
 chomp;
@@ -97,7 +97,7 @@ push (@LeftRecRate,$Line);
 }
 close (LEFT);
 
-open (RIGHT, $RightRecFile ) or die "NO";
+open (RIGHT, $RightRecFile ) or die "NO $RightRecFile";
 
 while ( <RIGHT> ){
 chomp;
@@ -138,7 +138,7 @@ for ($VarNum = 0; $VarNum < $NumberOfVariants; $VarNum++ ){
 $VariantFlagFount = 0;
 
 $SubResultsFile = $ExitFile.$VarNum.".txt";
-open (SUBR,">$SubResultsFile") or die "NO!\n";
+open (SUBR,">$SubResultsFile") or die "NO! $SubResultsFile\n";
 
 @CurrentLogLikelihoods = ();
 for ($i = 1; $i <= 401; $i++){
@@ -146,11 +146,11 @@ $CurrentLogLikelihoods[$i] = 0;
 }
 
 
-if (grep {$_ eq $VarNum} @VariantsToUse) {
+# if (grep {$_ eq $VarNum} @VariantsToUse) {
 #  print "Element '$element' found!\n" ;
 $VariantFlagFount = 1;
 $VariantNumberSum++;
-}
+# }
 if ($VariantFlagFount == 1){
 $HapFileToOpen = $HapLengthFile.$VarNum.".txt";
 $CurrentLeftRec = $LeftRecRate[$RecNum];
@@ -159,12 +159,13 @@ $RecRateLeft = $CurrentLeftRec * .01 * 4*$LastPopSize*250000;
 $RecRateRight= $CurrentRightRec * .01 * 4*$LastPopSize*250000;
 $RecNum++;
 ### Get Recombination rate
-print "$VarNum\t$RecRateLeft\t$RecRateRight\n";
-
-$HapLengthFileToOpen = $HapLengthFile.$VarNum.".txt";
+print "$VariantNumberSum\t$VariantsToUse[$VarNum]\t$VarNum\t$RecRateLeft\t$RecRateRight\n";
 
 
-open (HAP,$HapLengthFileToOpen ) or die "NO! File\n";
+$HapLengthFileToOpen = $HapLengthFile.$VariantsToUse[$VarNum].".txt";
+print "File = $HapLengthFileToOpen\n";
+
+open (HAP,$HapLengthFileToOpen ) or die "NO! $HapLengthFileToOpen\n";
 $OddOrEven = 0;
 while (<HAP>){
 chomp;

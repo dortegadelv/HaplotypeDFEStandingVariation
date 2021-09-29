@@ -27,7 +27,7 @@ do
 for k in {3..3}
 do
 ResultsFile="../../../../Results/UK10K/ForwardSims/"${Dir[$i]}"/HapLengths/ExitFileNoRecLessPhasingN"${NumberOfMarkers[$k]}".txt"
-cat ../../../../Results/UK10K/ForwardSims/${Dir[$i]}/HapLengths/ExitFileNoRecLessPhasingN${NumberOfMarkers[$k]}_{1..50}.txt > $ResultsFile
+cat ../../../../Results/UK10K/ForwardSims/${Dir[$i]}/HapLengths/ExitFileNoRecLessPhasingN${NumberOfMarkers[$k]}_{1..100}.txt > $ResultsFile
 DataSummarized="../../../../Results/ResultsSelectionInferred/SelectionUK10KPhasing"${Selection[$i]}"_N"${NumberOfMarkers[$k]}".txt"
 perl ../../ConstantPopSize/ForwardSims/GetMax4NsValueFromTable.pl $ResultsFile $DataSummarized ${ActualSelection[$i]}
 done
@@ -38,7 +38,7 @@ do
 for k in {3..3}
 do
 ResultsFile="../../../../Results/UK10K/ForwardSims/"${Dir[$i]}"/HapLengths/ExitFileNoRecLessStatPhasingN"${NumberOfMarkers[$k]}".txt"
-cat ../../../../Results/UK10K/ForwardSims/${Dir[$i]}/HapLengths/ExitFileNoRecLessStatPhasingN${NumberOfMarkers[$k]}_{0..49}.txt > $ResultsFile
+cat ../../../../Results/UK10K/ForwardSims/${Dir[$i]}/HapLengths/ExitFileNoRecLessStatPhasingN${NumberOfMarkers[$k]}_{1..100}.txt > $ResultsFile
 DataSummarized="../../../../Results/ResultsSelectionInferred/SelectionUK10KLessStatPhasing"${Selection[$i]}"_N"${NumberOfMarkers[$k]}".txt"
 perl ../../ConstantPopSize/ForwardSims/GetMax4NsValueFromTable.pl $ResultsFile $DataSummarized ${ActualSelection[$i]}
 done

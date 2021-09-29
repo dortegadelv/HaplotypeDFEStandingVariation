@@ -1,0 +1,18 @@
+MutationRate  120.0 
+DFEType: 	gamma
+DFEParameterOne: 0.11
+DFEParameterTwo: 8636364
+DFEParameterThree: 34.00
+DemographicHistory:         ConstantSizeDemHist.txt
+PrintSNPNumber:   0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 1
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 4000
+FilePrefix: /scratch/midway2/diegoortega/ConstantPopSizeMouse/OutputSmall
+

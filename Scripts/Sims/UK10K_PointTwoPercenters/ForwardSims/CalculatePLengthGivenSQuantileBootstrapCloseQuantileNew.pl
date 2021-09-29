@@ -120,6 +120,14 @@ $RanVar = int(rand($NumberOfVariants));
 $VarTotal = scalar(@VariantsToUse);
 # print "Sampled $VarNum variants out of $VarTotal\n";
 $SubResultsFile = $ExitFile.$RanVar.".txt";
+$LL = 0;
+# while ($LL == 0){
+$RanVar = int(rand($NumberOfVariants));
+$VarTotal = scalar(@VariantsToUse);
+# print "Sampled $VarNum variants out of $VarTotal\n";
+$SubResultsFile = $ExitFile.$RanVar.".txt";
+$LL = `head -n2 $SubResultsFile | tail -n1 | awk '{print \$2}'`;
+# }
 open (SUBR,"$SubResultsFile") or die "NO! $SubResultsFile\n";
 @LLSubResults = ();
 $LineNumber = 0;

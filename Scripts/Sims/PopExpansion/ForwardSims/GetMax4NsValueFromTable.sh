@@ -272,3 +272,120 @@ done
 
 
 
+
+############################################## Different Window Numbers
+
+for i in {2..6}
+do
+for k in {3..3}
+do
+ResultsFile="../../../../Results/PopExpansion/ForwardSims/"${Dir[$i]}"/HapLengths/ExitFileNoRecLess3WindowsN"${NumberOfMarkers[$k]}".txt"
+cat ../../../../Results/PopExpansion/ForwardSims/${Dir[$i]}/HapLengths/ExitFileNoRecLess3WindowsN${NumberOfMarkers[$k]}_{1..100}.txt > $ResultsFile
+DataSummarized="../../../../Results/ResultsSelectionInferred/SelectionPopExpansion3Windows"${Selection[$i]}"_N"${NumberOfMarkers[$k]}".txt"
+perl ../../ConstantPopSize/ForwardSims/GetMax4NsValueFromTable.pl $ResultsFile $DataSummarized ${ActualSelection[$i]}
+done
+done
+
+
+for i in {2..6}
+do
+for k in {3..3}
+do
+ResultsFile="../../../../Results/PopExpansion/ForwardSims/"${Dir[$i]}"/HapLengths/ExitFileNoRecLess10WindowsN"${NumberOfMarkers[$k]}".txt"
+cat ../../../../Results/PopExpansion/ForwardSims/${Dir[$i]}/HapLengths/ExitFileNoRecLess10WindowsN${NumberOfMarkers[$k]}_{1..100}.txt > $ResultsFile
+DataSummarized="../../../../Results/ResultsSelectionInferred/SelectionPopExpansion10Windows"${Selection[$i]}"_N"${NumberOfMarkers[$k]}".txt"
+perl ../../ConstantPopSize/ForwardSims/GetMax4NsValueFromTable.pl $ResultsFile $DataSummarized ${ActualSelection[$i]}
+done
+done
+
+
+for i in {2..6}
+do
+for k in {3..3}
+do
+ResultsFile="../../../../Results/PopExpansion/ForwardSims/"${Dir[$i]}"/HapLengths/ExitFileNoRecLess50WindowsN"${NumberOfMarkers[$k]}".txt"
+cat ../../../../Results/PopExpansion/ForwardSims/${Dir[$i]}/HapLengths/ExitFileNoRecLess50WindowsN${NumberOfMarkers[$k]}_{1..100}.txt > $ResultsFile
+DataSummarized="../../../../Results/ResultsSelectionInferred/SelectionPopExpansion50Windows"${Selection[$i]}"_N"${NumberOfMarkers[$k]}".txt"
+perl ../../ConstantPopSize/ForwardSims/GetMax4NsValueFromTable.pl $ResultsFile $DataSummarized ${ActualSelection[$i]}
+done
+done
+
+
+for i in {2..6}
+do
+for k in {3..3}
+do
+ResultsFile="../../../../Results/PopExpansion/ForwardSims/"${Dir[$i]}"/HapLengths/ExitFileNoRecLess100WindowsN"${NumberOfMarkers[$k]}".txt"
+cat ../../../../Results/PopExpansion/ForwardSims/${Dir[$i]}/HapLengths/ExitFileNoRecLess100WindowsN${NumberOfMarkers[$k]}_{1..100}.txt > $ResultsFile
+DataSummarized="../../../../Results/ResultsSelectionInferred/SelectionPopExpansion100Windows"${Selection[$i]}"_N"${NumberOfMarkers[$k]}".txt"
+perl ../../ConstantPopSize/ForwardSims/GetMax4NsValueFromTable.pl $ResultsFile $DataSummarized ${ActualSelection[$i]}
+done
+done
+
+### Both sides
+
+for i in {2..6}
+do
+for k in {3..3}
+do
+ResultsFile="../../../../Results/PopExpansion/ForwardSims/"${Dir[$i]}"/HapLengths/ExitFileNoRecLessBothSidesN"${NumberOfMarkers[$k]}".txt"
+cat ../../../../Results/PopExpansion/ForwardSims/${Dir[$i]}/HapLengths/ExitFileNoRecLessBothSidesN${NumberOfMarkers[$k]}_{1..100}.txt > $ResultsFile
+DataSummarized="../../../../Results/ResultsSelectionInferred/SelectionPopExpansionBothSides"${Selection[$i]}"_N"${NumberOfMarkers[$k]}".txt"
+perl ../../ConstantPopSize/ForwardSims/GetMax4NsValueFromTable.pl $ResultsFile $DataSummarized ${ActualSelection[$i]}
+done
+done
+
+
+for i in {2..6}
+do
+for k in {3..3}
+do
+ResultsFile="../../../../Results/PopExpansion/ForwardSims/"${Dir[$i]}"/HapLengths/ExitFileNoRecFullHapN"${NumberOfMarkers[$k]}".txt"
+cat ../../../../Results/PopExpansion/ForwardSims/${Dir[$i]}/HapLengths/ExitFileNoRecFullHapN${NumberOfMarkers[$k]}_{1..100}.txt > $ResultsFile
+DataSummarized="../../../../Results/ResultsSelectionInferred/SelectionPopExpansionFullHap"${Selection[$i]}"_N"${NumberOfMarkers[$k]}".txt"
+perl ../../ConstantPopSize/ForwardSims/GetMax4NsValueFromTable.pl $ResultsFile $DataSummarized ${ActualSelection[$i]}
+done
+done
+
+
+for i in {2..6}
+do
+for k in {3..3}
+do
+ResultsFile="../../../../Results/PopExpansion/ForwardSims/"${Dir[$i]}"/HapLengths/ExitFileNoRecMoreSimsN"${NumberOfMarkers[$k]}".txt"
+cat ../../../../Results/PopExpansion/ForwardSims/${Dir[$i]}/HapLengths/ExitFileNoRecLessMoreSimsN${NumberOfMarkers[$k]}_{1..100}.txt > $ResultsFile
+DataSummarized="../../../../Results/ResultsSelectionInferred/SelectionPopExpansionMoreSims"${Selection[$i]}"_N"${NumberOfMarkers[$k]}".txt"
+perl ../../ConstantPopSize/ForwardSims/GetMax4NsValueFromTable.pl $ResultsFile $DataSummarized ${ActualSelection[$i]}
+done
+done
+
+
+### Dif rec rates
+
+
+for i in {2..6}
+do
+for k in {3..3}
+do
+ResultsFile="../../../../Results/PopExpansion/ForwardSims/"${Dir[$i]}"/HapLengths/ExitFileNoRecLess_NoRecAllPartsSumN"${NumberOfMarkers[$k]}".txt"
+cat ../../../../Results/PopExpansion/ForwardSims/${Dir[$i]}/HapLengths/ExitFileNoRecLess_NoRecAllPartsSumN${NumberOfMarkers[$k]}_{1..100}.txt > $ResultsFile
+DataSummarized="../../../../Results/ResultsSelectionInferred/SelectionPopExpansionTwoRecRates"${Selection[$i]}"_N"${NumberOfMarkers[$k]}".txt"
+perl ../../ConstantPopSize/ForwardSims/GetMax4NsValueFromTable.pl $ResultsFile $DataSummarized ${ActualSelection[$i]}
+done
+done
+#### Copy
+
+
+for i in {2..6}
+do
+Directory="TestData/run."$i"/"
+for k in {3..3}
+do
+ResultsFile="../../../../Results/PopExpansion/ForwardSims/"${Dir[$i]}"/HapLengths/ExitFileNoRecLessN"${NumberOfMarkers[$k]}".txtCopy"
+cat ../../../../Results/PopExpansion/ForwardSims/${Dir[$i]}/HapLengths/ExitFileNoRecLessN${NumberOfMarkers[$k]}_{1..100}.txtCopy > $ResultsFile
+# DataSummarized="ResultsSelectionInferred/Selection"${Selection[$i]}"_N"${NumberOfMarkers[$k]}".txt"
+DataSummarized="../../../../Results/ResultsSelectionInferred/SelectionPopExpansion"${Selection[$i]}"_N"${NumberOfMarkers[$k]}".txtCopy"
+perl ../../ConstantPopSize/ForwardSims/GetMax4NsValueFromTable.pl $ResultsFile $DataSummarized ${ActualSelection[$i]}
+done
+done
+

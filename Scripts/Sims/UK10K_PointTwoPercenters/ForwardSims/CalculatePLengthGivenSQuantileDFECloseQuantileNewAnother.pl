@@ -146,12 +146,6 @@ $CurrentLogLikelihoods[$i] = 0;
 }
 
 
-if (grep {$_ eq $VarNum} @VariantsToUse) {
-#  print "Element '$element' found!\n" ;
-$VariantFlagFount = 1;
-$VariantNumberSum++;
-}
-if ($VariantFlagFount == 1){
 $HapFileToOpen = $HapLengthFile.$VarNum.".txt";
 $CurrentLeftRec = $LeftRecRate[$RecNum];
 $CurrentRightRec = $RightRecRate[$RecNum];
@@ -161,7 +155,7 @@ $RecNum++;
 ### Get Recombination rate
 print "$VarNum\t$RecRateLeft\t$RecRateRight\n";
 
-$HapLengthFileToOpen = $HapLengthFile.$VarNum.".txt";
+$HapLengthFileToOpen = $HapLengthFile.$VariantsToUse[$VarNum].".txt";
 
 
 open (HAP,$HapLengthFileToOpen ) or die "NO! File\n";
@@ -209,7 +203,6 @@ print SUBR "$i\t$CurrentLogLikelihoods[$i]\n";
 }
 close (SUBR);
 # die "NO!\n";
-}
 }
 open (EXIT,">$ExitFile") or die "NO!";
 

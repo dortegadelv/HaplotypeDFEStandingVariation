@@ -7,6 +7,7 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --mem-per-cpu=10000
 
+module load python
 
 Directory[1]="AncientBottleneck"
 Directory[2]="AncientBottleneckPointFivePercent"
@@ -51,17 +52,29 @@ Ne[8]="100000"
 Ne[9]="10000"
 Ne[10]="10000"
 Ne[11]="20000"
-Ne[12]="346884"
+Ne[12]="164462"
 
-DemHistNumber=$(( ( ( $SLURM_ARRAY_TASK_ID - 1) / 50 ) + 1 ))
-FourNsNumber=$(( ( $SLURM_ARRAY_TASK_ID - 1 -  ( ( $DemHistNumber - 1 ) * 50 ) ) / 10 + 1 ))
-SeriesNumber=$(( ( $SLURM_ARRAY_TASK_ID - 1 ) % 10 + 1 ))
+DemHistNumber=$(( ( ( $SLURM_ARRAY_TASK_ID - 1) / 500 ) + 1 ))
+FourNsNumber=$(( ( $SLURM_ARRAY_TASK_ID - 1 -  ( ( $DemHistNumber - 1 ) * 500 ) ) / 100 + 1 ))
+SeriesNumber=$(( ( $SLURM_ARRAY_TASK_ID - 1 ) % 100 + 1 ))
 
 i=$DemHistNumber
 
 j=$FourNsNumber
 
 echo "DemHist = $DemHistNumber FourNs = $FourNsNumber Series = $SeriesNumber"
+
+ResampledTrajFile="../../../../Results/UK10K/ForwardSims/"${FourNs[$j]}"/ResampledTraj"$SLURM_ARRAY_TASK_ID".txt"
+MsselOut="../../../../Results/UK10K/ForwardSims/"${FourNs[$j]}"/MsselOut"$SLURM_ARRAY_TASK_ID".txt"
+HapLengths="../../../../Results/UK10K/ForwardSims/"${FourNs[$j]}"/HapLength"$SLURM_ARRAY_TASK_ID".txt"
+MsselOutNoRec="../../../../Results/UK10K/ForwardSims/"${FourNs[$j]}"/MsselOutNoRec"$SLURM_ARRAY_TASK_ID".txt"
+HapLengthsNoRec="../../../../Results/UK10K/ForwardSims/"${FourNs[$j]}"/HapLengthNoRec"$SLURM_ARRAY_TASK_ID".txt"
+MsselOutNoRecAnc="../../../../Results/UK10KForwardSims/"${FourNs[$j]}"/MsselOutNoRecAnc"$SLURM_ARRAY_TASK_ID".txt"
+HapLengthsNoRecAnc="../../../../Results/UK10K/ForwardSims/"${FourNs[$j]}"/HapLengthNoRecAnc"$SLURM_ARRAY_TASK_ID".txt"
+
+MsselOutMultiSeq="../../../../Results/UK10K/ForwardSims/"${FourNs[$j]}"/MsselOutMultiSeq"$SLURM_ARRAY_TASK_ID".txt"
+HapLengthsMultiSeq="../../../../Results/UK10K/ForwardSims/"${FourNs[$j]}"/HapLengthMultiSeq"$SLURM_ARRAY_TASK_ID".txt"
+T2File="../../../../Results/UK10K/ForwardSims/"${FourNs[$j]}"/T2Values"$SLURM_ARRAY_TASK_ID".txt"
 
 Start=$(( ( $SeriesNumber - 1 ) * 1 + 1 ))
 End=$(( $SeriesNumber * 1 ))
@@ -75,16 +88,50 @@ CurrentTrajs="../../../Results/"${Directory[$i]}"/ForwardSims/"${FourNs[$j]}"/Re
 
 DirToCreate="../../../Results/"${Directory[$i]}"/ForwardSims/"${FourNs[$j]}"/HapLengths/"
 mkdir $DirToCreate
-for (( k = $Start ; k <= $End ; k++ ))
+for (( Reps = $Start ; Reps <= $End ; Reps++ ))
 do
 
-MsselOut="../../../Results/"${Directory[$i]}"/ForwardSims/"${FourNs[$j]}"/MsselFiles/MsselOutLess_"$k".txt"
-TTwoOutput="../../../Results/"${Directory[$i]}"/ForwardSims/"${FourNs[$j]}"/MsselFiles/T2Less_"$k".txt"
-ResampledTrajectory="../../../Results/"${Directory[$i]}"/ForwardSims/"${FourNs[$j]}"/MsselFiles/ResampledTraj"$k".txt"
-HapLengths=$DirToCreate"HapLengthsLessUnphased"$k".txt"
-PhasedDataPrefix=$DirToCreate"PhasedVCF"$k".txt"
+HapLengths="../../../Results/UK10K/ForwardSims/"${FourNs[$j]}"/HapLengthN"${NumberOfMarkers[$i]}"_"$Reps".txt"
+HapLengthsNoRec="../../../Results/UK10K/ForwardSims/"${FourNs[$j]}"/HapLengthNoRecN"${NumberOfMarkers[$i]}"_"$Reps".txt"
+HapLengthsMultiSeq="../../../Results/UK10K/ForwardSims/"${FourNs[$j]}"/HapLengthMultiSeqN"${NumberOfMarkers[$i]}"_"$Reps".txt"
+HapLengthsNoRecAnc="../../../Results/UK10K/ForwardSims/"${FourNs[$j]}"/HapLengthNoRecAncN"${NumberOfMarkers[$i]}"_"$Reps".txt"
+HapLengthsRecAware="../../../Results/UK10K/ForwardSims/"${FourNs[$j]}"/HapLengthRecAwareN"${NumberOfMarkers[$i]}"_"$Reps".txt"
+DistancesFileOne="../../../Results/UK10K/ForwardSims/"${FourNs[$j]}"/SimDistancesPartOneMssel"${NumberOfMarkers[$i]}"_"$Reps".txt"
+DistancesFileTwo="../../../Results/UK10K/ForwardSims/"${FourNs[$j]}"/SimDistancesPartTwoMssel"${NumberOfMarkers[$i]}"_"$Reps".txt"
+DistancesFile="../../../Results/UK10K/ForwardSims/"${FourNs[$j]}"/SimDistancesMssel"${NumberOfMarkers[$i]}"_"$Reps".txt"
+SamplesFile="../../../Results/UK10K/ForwardSims/"${FourNs[$j]}"/SamplesToCheckMssel"${NumberOfMarkers[$i]}"_"$Reps".txt"
 
-perl ../../Sims/ConstantPopSize/ForwardSims/SampleTrajectories.pl $CurrentTrajs 273 $ResampledTrajectory $k ${Ne[$i]}
+MsselOut="../../../Results/"${Directory[$i]}"/ForwardSims/"${FourNs[$j]}"/MsselFiles/MsselOutLess_"$Reps".txt"
+TTwoOutput="../../../Results/"${Directory[$i]}"/ForwardSims/"${FourNs[$j]}"/MsselFiles/T2Less_"$Reps".txt"
+ResampledTrajectory="../../../Results/"${Directory[$i]}"/ForwardSims/"${FourNs[$j]}"/MsselFiles/ResampledTraj"$Reps".txt"
+HapLengths=$DirToCreate"HapLengthsLessUnphased"$Reps".txt"
+PhasedDataPrefix=$DirToCreate"PhasedVCF"$Reps".txt"
+ParamsFile="../../../Results/UK10K/ForwardSims/"${FourNs[$j]}"/Params"$Reps".txt"
+GeneticMapFile="../../../Results/UK10K/ForwardSims/"${FourNs[$j]}"/GenMap"$Reps".txt"
+
+# rm $DistancesFile
+# touch $DistancesFile
+
+for ChrNum in {69..76}
+do
+Value[$ChrNum]=$( grep 'age' ../../../Results/UK10K/ForwardSims/"${FourNs[$j]}"/ReducedTrajectories_$ChrNum.txt | wc -l )
+done
+
+Test=`python ../UK10K_OnePercenters/ForwardSims/MultinomialDistSamples.py ${Value[69]} ${Value[70]} ${Value[71]} ${Value[72]} ${Value[73]} ${Value[74]} ${Value[75]} ${Value[76]} $SamplesFile`
+
+ChrNum=$( head -n1 $SamplesFile | tail -n1 )
+Num=$(( 7242 - $ChrNum ))
+
+RandomValue=`python RandomRecToTake.py`
+LeftRec=$( head -n$RandomValue ../../Sims/UK10K_OnePercenters/ForwardSims/AllRecRateMissenseOnePercentNoCpG.txt | tail -n1 )
+LeftRec=$( echo "$LeftRec * 2" | bc )
+PerBaseRecRate=$( echo "scale=6; ( $LeftRec * 1000000 * 100 ) / ( 4 * 500000.0 * 411155.0  )" | bc )
+
+echo "pposition rrate gposition
+1 $PerBaseRecRate 0.000000
+1000000 $PerBaseRecRate $PerBaseRecRate" > $GeneticMapFile
+
+perl ../../Sims/ConstantPopSize/ForwardSims/SampleTrajectories.pl ../../../Results/UK10K/ForwardSims/${FourNs[$j]}/ReducedTrajectories_$ChrNum.txt 1 $ResampledTrajectory $Reps ${Ne[$j]}
 # Bases = Theta /(4Nu) = 120/(4*5000*1.2e-8) = 500000
 Line[1]="../../../Programs/Mssel/mssel3 4000 300 3960 40 $ResampledTrajectory 500000 -r 200 999999 -t 240 -eN 0.0 1.0 -eN 0.25 0.2 -eN 0.26 1.0 -seeds $k $k $k"
 Line[2]="../../../Programs/Mssel/mssel3 4000 300 3960 40 $ResampledTrajectory 500000 -r 200 999999 -t 240 -eN 0.0 1.0 -eN 0.25 0.2 -eN 0.26 1.0 -seeds $k $k $k"
@@ -101,7 +148,7 @@ Line[8]="../../../Programs/Mssel/mssel3 4000 300 3960 40 $ResampledTrajectory 25
 # Bases = Theta /(4Nu) = 120/(4*5000*1.2e-8) = 500000
 Line[9]="../../../Programs/Mssel/mssel3 4000 300 3960 40 $ResampledTrajectory 500000 -r 200 999999 -t 240 -eN 0.0 1.0 -eN 0.005 0.5 -eN 0.015 1.0 -seeds $k $k $k"
 Line[10]="../../../Programs/Mssel/mssel3 4000 300 3960 40 $ResampledTrajectory 500000 -r 200 999999 -t 240 -eN 0.0 1.0 -eN 0.005 0.5 -eN 0.015 1.0 -seeds $k $k $k"
-Line[12]="../../../Programs/Mssel/mssel3 7242 273 7170 72 $ResampledTrajectory 250000 -r 8992.402 499999 -t 16968.9 -eN 0.0 1.0 -eN 0.0001017 0.0066121 -eN 0.0006409 0.0051756 -eN 0.0014188 0.0402604 -eN 0.0041171 0.0203048 -seeds $k $k $k"
+Line[12]="../../../Programs/Mssel/mssel3 7242 1 $Num $ChrNum $ResampledTrajectory 250000 -r $LeftRec 499999 -t 12334.65 -eN 0.0 1.0 -eN 0.0001490 0.0077465 -eN 0.0008817 0.0071263 -eN 0.0019518 0.0553806 -eN 0.0056639 0.0279335 -seeds $Reps $Reps $Reps"
 
 ${Line[$i]} > $MsselOut
 
@@ -109,8 +156,9 @@ ${Line[$i]} > $MsselOut
 
 perl ConvertMsselToVCFUK10K.pl $MsselOut 7242 $PhasedDataPrefix
 # time ../../../Programs/shapeit.v2.904.3.10.0-693.11.6.el7.x86_64/bin/shapeit --input-vcf ../../../Results/ConstantPopSize/ForwardSims/4Ns_0/HapLengths/PhasedVCF1.txt.0.txt -M GeneticMapConstantPopSize.txt -O TestShapeIt.phased
-perl DistanceToFirstSegregatingSiteMultiSequence_DeleteSingletonsBothSides.pl $MsselOut $HapLengths 7170 72
+perl DistanceToFirstSegregatingSiteMultiSequence_DeleteSingletonsBothSides.pl $MsselOut $HapLengths $Num $ChrNum
 # rm $MsselOut
+echo "$Num $ChrNum $LeftRec $RandomValue" > $ParamsFile
 rm $ResampledTrajectory
 done
 # perl GetT2s.pl $MsselOut $TTwoOutput

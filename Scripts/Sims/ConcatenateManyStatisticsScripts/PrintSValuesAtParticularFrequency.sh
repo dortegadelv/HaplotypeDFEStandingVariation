@@ -3,7 +3,7 @@ perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../../../Result
 perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../../../Results/ExitSValues/ExitOnePercentSValuesPopExpansionBoyko.txt ../../../Results/PopExpansionBoykoPlusPositive/ForwardSims/BoykoPart/Output. 2500
 perl PrintSValuesAtParticularFrequency.pl OnePercentVariants.txt ../../../Results/ExitSValues/ExitOnePercentSValuesPopExpansionMouse.txt ../../../Results/PopExpansionMousePlusPositive/ForwardSims/MousePart/Output. 2500
 perl PrintSValuesAroundParticularFrequency.pl OnePercentVariants.txt ../../../Results/ExitSValues/ExitOnePercentSValuesUK10K.txt ../../../Results/UK10K/ForwardSims/DFETest/Output. 1250
-perl PrintSValuesAroundParticularFrequency.pl OnePercentVariants.txt ../../../Results/ExitSValues/ExitOnePercentSValuesUK10KMouse.txt ../../../Results/UK10K/ForwardSims/DFETestMouse/Output. 1250
+perl PrintSValuesAroundParticularFrequency.pl OnePercentVariants.txt ../../../Results/ExitSValues/ExitOnePercentSValuesUK10KMouse.txt ../../../Results/UK10K/ForwardSims/DFETestMouse/Output. 3000
 perl PrintSValuesAroundParticularFrequency.pl OnePercentVariants.txt ../../../Results/ExitSValues/ExitOnePercentSValuesUK10KMouseHighPop.txt ../../../Results/UK10K/ForwardSims/DFETestMouseHighPop/Output. 3000
 perl PrintSValuesAroundParticularFrequency.pl OnePercentVariants.txt ../../../Results/ExitSValues/ExitOnePercentSValuesUK10KHighPop.txt ../../../Results/UK10K/ForwardSims/DFETestHighPop/Output. 3000
 

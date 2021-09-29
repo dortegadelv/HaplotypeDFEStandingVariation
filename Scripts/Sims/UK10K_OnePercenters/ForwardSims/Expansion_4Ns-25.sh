@@ -8,31 +8,56 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --mem-per-cpu=1000
 
+
 time GSL_RNG_SEED=$SLURM_ARRAY_TASK_ID GSL_RNG_TYPE=mrg ../../../../Programs/PReFeRSim/fwd_seldist_gsl_2012_4epoch.debug ParameterFile_4Ns-25.txt $SLURM_ARRAY_TASK_ID
 
-time perl ../../ConstantPopSize/ForwardSims/GetListOfRunsWhereFrequencyMatches.pl 0.0095 0.0105 ../../../../Results/UK10K/ForwardSims/4Ns_-25/Output.$SLURM_ARRAY_TASK_ID.full_out.txt ../../../../Results/UK10K/ForwardSims/4Ns_-25/Alleles_$SLURM_ARRAY_TASK_ID.txt 0 24834
+LowFreq[69]="0.0095"
+LowFreq[70]="0.0096"
+LowFreq[71]="0.0098"
+LowFreq[72]="0.0099"
+LowFreq[73]="0.01"
+LowFreq[74]="0.0101"
+LowFreq[75]="0.0103"
+LowFreq[76]="0.0104"
+
+UpFreq[69]="0.0096"
+UpFreq[70]="0.0098"
+UpFreq[71]="0.0099"
+UpFreq[72]="0.01"
+UpFreq[73]="0.0101"
+UpFreq[74]="0.0103"
+UpFreq[75]="0.0104"
+UpFreq[76]="0.0105"
+
+for i in {69..76}
+do
+
+AlleleFile="Alleles_"$i"_"$SLURM_ARRAY_TASK_ID".txt"
+ParameterFile="ParameterFile_4Ns-25_"$i"_B.txt"
+
+time perl ../../ConstantPopSize/ForwardSims/GetListOfRunsWhereFrequencyMatches.pl ${LowFreq[$i]} ${UpFreq[$i]} ../../../../Results/UK10K/ForwardSims/4Ns_-25/Output.$SLURM_ARRAY_TASK_ID.full_out.txt ../../../../Results/UK10K/ForwardSims/4Ns_-25/$AlleleFile 0 24834
 
 File="../../../../Results/UK10K/ForwardSims/4Ns_-25/Output."$SLURM_ARRAY_TASK_ID".full_out.txt"
 
-rm $File
+# rm $File
 
-time GSL_RNG_SEED=$SLURM_ARRAY_TASK_ID GSL_RNG_TYPE=mrg ../../../../Programs/PReFeRSim/fwd_seldist_gsl_2012_4epoch.debug ParameterFile_4Ns-25_B.txt $SLURM_ARRAY_TASK_ID
+time GSL_RNG_SEED=$SLURM_ARRAY_TASK_ID GSL_RNG_TYPE=mrg ../../../../Programs/PReFeRSim/fwd_seldist_gsl_2012_4epoch.debug $ParameterFile $SLURM_ARRAY_TASK_ID
 
+done
 
+## Old stuff
+# time GSL_RNG_SEED=$SLURM_ARRAY_TASK_ID GSL_RNG_TYPE=mrg ../fwd_seldist_gsl_2012_4epoch.debug -m1000 -t$SLURM_ARRAY_TASK_ID -z2 -gpoint 0.0 -f1.0 -h0.5 -F0.0 -n20 -RPopulationBottleneckModel.txt -S0 TestData/
 
-### Old stuff
-# time GSL_RNG_SEED=$SLURM_ARRAY_TASK_ID GSL_RNG_TYPE=mrg ../fwd_seldist_gsl_2012_4epoch.debug -m1000 -t$SLURM_ARRAY_TASK_ID -z5 -gpoint 0.0025 -f1.0 -h0.5 -F0.0 -n20 -RPopulationBottleneckModel.txt -S0 TestData/
+# time perl ../../../ConstantPopSize/ForwardSims/GetListOfRunsWhereFrequencyMatches.pl 0.0099 0.0101 TestData/run.2/full_out.run.2.num.$SLURM_ARRAY_TASK_ID.N.10000.h.0.500000.F.0.000000.txt TestData/run.2/Alleles$SLURM_ARRAY_TASK_ID.txt 0 122220
 
-# time perl ../../../ConstantPopSize/ForwardSims/GetListOfRunsWhereFrequencyMatches.pl 0.0099 0.0101 TestData/run.5/full_out.run.5.num.$SLURM_ARRAY_TASK_ID.N.10000.h.0.500000.F.0.000000.txt TestData/run.5/Alleles$SLURM_ARRAY_TASK_ID.txt 0 122220
+# time GSL_RNG_SEED=$SLURM_ARRAY_TASK_ID GSL_RNG_TYPE=mrg ../fwd_seldist_gsl_2012_4epoch.debug -m1000 -t$SLURM_ARRAY_TASK_ID -z2 -gpoint 0.0 -f1.0 -h0.5 -F0.0 -n20 -RPopulationBottleneckModel.txt -S0 -TTestData/run.2/Alleles$SLURM_ARRAY_TASK_ID.txt TestData/run.2/Traj_0.01_$SLURM_ARRAY_TASK_ID.txt TestData/
 
-# time GSL_RNG_SEED=$SLURM_ARRAY_TASK_ID GSL_RNG_TYPE=mrg ../fwd_seldist_gsl_2012_4epoch.debug -m1000 -t$SLURM_ARRAY_TASK_ID -z5 -gpoint 0.0025 -f1.0 -h0.5 -F0.0 -n20 -RPopulationBottleneckModel.txt -S0 -TTestData/run.5/Alleles$SLURM_ARRAY_TASK_ID.txt TestData/run.5/Traj_0.01_$SLURM_ARRAY_TASK_ID.txt TestData/
-
-# FileToDelete="TestData/run.5/dog_out.run.5.num."$SLURM_ARRAY_TASK_ID".N.10000.h.0.500000.F.0.000000.txt"
+# FileToDelete="TestData/run.2/dog_out.run.2.num."$SLURM_ARRAY_TASK_ID".N.10000.h.0.500000.F.0.000000.txt"
 # rm $FileToDelete
 
-# FileToDelete="TestData/run.5/full_out.run.5.num."$SLURM_ARRAY_TASK_ID".N.10000.h.0.500000.F.0.000000.txt"
+# FileToDelete="TestData/run.2/full_out.run.2.num."$SLURM_ARRAY_TASK_ID".N.10000.h.0.500000.F.0.000000.txt"
 # rm $FileToDelete
 
-# FileToDelete="TestData/run.5/sfs_out.run.5.num."$SLURM_ARRAY_TASK_ID".N.10000.h.0.500000.F.0.000000.txt"
+# FileToDelete="TestData/run.2/sfs_out.run.2.num."$SLURM_ARRAY_TASK_ID".N.10000.h.0.500000.F.0.000000.txt"
 # rm $FileToDelete
 

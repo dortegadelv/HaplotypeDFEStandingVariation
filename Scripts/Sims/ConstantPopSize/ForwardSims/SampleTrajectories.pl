@@ -7,8 +7,8 @@ $N_Zero = $ARGV[4];
 $UpperLimit = 10000;
 srand($RandomSeed);
 
-open (INPUT,$InputFile) or die "NO!";
-open (OUTPUT,">$ExitFile") or die "NO!";
+open (INPUT,$InputFile) or die "NO! $InputFile";
+open (OUTPUT,">$ExitFile") or die "NO! $ExitFile";
 @Trajectories = ();
 $HeaderFlag = 0;
 $Header = "";

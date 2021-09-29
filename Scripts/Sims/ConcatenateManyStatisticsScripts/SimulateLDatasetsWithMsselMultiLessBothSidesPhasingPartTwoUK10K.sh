@@ -54,9 +54,10 @@ Ne[10]="10000"
 Ne[11]="20000"
 Ne[12]="346884"
 
-DemHistNumber=$(( ( ( $SLURM_ARRAY_TASK_ID - 1) / 1500 ) + 1 ))
-FourNsNumber=$(( ( $SLURM_ARRAY_TASK_ID - 1 -  ( ( $DemHistNumber - 1 ) * 1500 ) ) / 300 + 1 ))
-SeriesNumber=$(( ( $SLURM_ARRAY_TASK_ID - 1 ) % 300 ))
+DemHistNumber=$(( ( ( $SLURM_ARRAY_TASK_ID - 1) / 500 ) + 1 ))
+FourNsNumber=$(( ( $SLURM_ARRAY_TASK_ID - 1 -  ( ( $DemHistNumber - 1 ) * 500 ) ) / 100 + 1 ))
+SeriesNumber=$(( ( $SLURM_ARRAY_TASK_ID - 1 ) % 100 + 1 ))
+GenMapNumber=$(( $SeriesNumber + 1 ))
 
 i=$DemHistNumber
 
@@ -73,11 +74,11 @@ CurrentTrajs="../../../Results/"${Directory[$i]}"/ForwardSims/"${FourNs[$j]}"/Re
 # DemHist="../../../Scripts/Sims/"${Directory[$i]}"/ImportanceSamplingSims/"${DemScenario[$i]}
 # grep 'age' $CurrentFile | awk '{print $6}' > $AlleleAgesFile
 # mkdir $ExitDir
-
+Minus=$(( $Start - 1 ))
 DirToCreate="../../../Results/"${Directory[$i]}"/ForwardSims/"${FourNs[$j]}"/HapLengths/"
 mkdir $DirToCreate
 
-PhasedDataPrefix=$DirToCreate"PhasedVCF1.txt."$SeriesNumber".txt"
+PhasedDataPrefix=$DirToCreate"PhasedVCF"$SeriesNumber".txt.0.txt"
 PhasedDataOutput=$DirToCreate"PhasedShapeitVCF1.txt."$SeriesNumber".phased"
 PhasedDataOutputHaps=$DirToCreate"PhasedShapeitVCF1.txt."$SeriesNumber".phased.haps"
 
@@ -87,12 +88,13 @@ MsselPhasedOutFile="../../../Results/"${Directory[$i]}"/ForwardSims/"${FourNs[$j
 HapLengths=$DirToCreate"HapLengthsLessStatPhase"$SeriesNumber".txt"
 LogOutput="../../../Results/"${Directory[$i]}"/ForwardSims/"${FourNs[$j]}"/MsselFiles/Log"$SLURM_ARRAY_TASK_ID".txt"
 #### Followed by
+GeneticMapFile="../../../Results/UK10K/ForwardSims/"${FourNs[$j]}"/GenMap"$SeriesNumber".txt"
 
-echo "time ../../../Programs/shapeit.v2.904.3.10.0-693.11.6.el7.x86_64/bin/shapeit --input-vcf $PhasedDataPrefix -M GeneticMapConstantPopSize.txt -O $PhasedDataOutput --output-log $LogOutput
+echo "time ../../../Programs/shapeit.v2.904.3.10.0-693.11.6.el7.x86_64/bin/shapeit --input-vcf $PhasedDataPrefix -M $GeneticMapFile -O $PhasedDataOutput --output-log $LogOutput
 perl CreatePhasedToVCF.pl $MsselOut $PhasedDataOutputHaps $MsselPhasedOutFile $SeriesNumber
 perl DistanceToFirstSegregatingSiteMultiSequence_NoSingletonsBothSides.pl $MsselPhasedOutFile $HapLengths 1 40"
 
-time ../../../Programs/shapeit.v2.904.3.10.0-693.11.6.el7.x86_64/bin/shapeit --input-vcf $PhasedDataPrefix -M GeneticMapUK10K.txt -O $PhasedDataOutput --output-log $LogOutput
+time ../../../Programs/shapeit.v2.904.3.10.0-693.11.6.el7.x86_64/bin/shapeit --input-vcf $PhasedDataPrefix -M $GeneticMapFile -O $PhasedDataOutput --output-log $LogOutput
 # perl CreatePhasedToVCF.pl $MsselOut $PhasedDataOutputHaps $MsselPhasedOutFile $SeriesNumber
 # perl DistanceToFirstSegregatingSiteMultiSequence_DeleteSingletonsBothSides.pl $MsselPhasedOutFile $HapLengths 7170 72
 # perl DistanceToFirstSegregatingSiteMultiSequence_DeleteSingletonsBothSides.pl $MsselOut $HapLengths 3960 40

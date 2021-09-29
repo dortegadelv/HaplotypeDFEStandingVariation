@@ -1,0 +1,20 @@
+MutationRate  100.0 
+DFEType: 	gamma
+DFEParameterOne: 0.184
+DFEParameterTwo: 319.8626
+DFEParameterThree: 1000
+DemographicHistory:         PopulationExpansionModelHighPopSize.txt
+PrintSNPNumber:   0
+PrintSumOfS: 0
+PrintAverageDAF: 0
+PrintWeightedSumOfS: 0
+PrintGenLoad: 0
+PrintFixedSites: 0
+PrintSegSiteInfo: 0
+PrintSampledGenotypes: 0
+PrintSFS: 0
+LastGenerationAFSamplingValue: 7242
+AlleleTrajsInput: ../../../../Results/UK10K/ForwardSims/DFETestHighPop/Alleles_71
+AlleleTrajsOutput: ../../../../Results/UK10K/ForwardSims/DFETestHighPopTraj_71
+FilePrefix: ../../../../Results/UK10K/ForwardSims/DFETestHighPop/Output
+

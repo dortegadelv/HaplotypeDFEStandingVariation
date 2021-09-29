@@ -1,8 +1,8 @@
 @FourNs = ();
 
 $FourNs[1]="4Ns_0";
-$FourNs[2]="4Ns_-25";
-$FourNs[3]="4Ns_-50";
+$FourNs[2]="4Ns_25";
+$FourNs[3]="4Ns_50";
 $FourNs[4]="4Ns_25";
 $FourNs[5]="4Ns_50";
 
@@ -31,15 +31,15 @@ push(@RecRate,"19608.766");
 push(@RecRate,"38656.841");
 
 for ( $RecNumber = 10; $RecNumber <= 10 ; $RecNumber++ ) {
-for ( $DirNumber = 1; $DirNumber <= 1 ; $DirNumber++ ) {
+for ( $DirNumber = 1; $DirNumber <= 3 ; $DirNumber++ ) {
 # for ( $RecNumber = 0; $RecNumber < 20 ; $RecNumber++ ) {
 
 print "$FourNs[$DirNumber]\n";
-$ExitFile = "../../../../Results/ResultsSelectionInferred/SelectionUK10KSingleRecHighRecMisAnc".$RecRate[$RecNumber]."4Ns".$FourNs[$DirNumber].".txt";
+$ExitFile = "../../../../Results/ResultsSelectionInferred/SelectionUK10KSingleRecHighRecMisAnc4Ns".$FourNs[$DirNumber].".txt";
 open (EXIT,">$ExitFile") or die "NO";
-for ( $RepNumber = 1; $RepNumber <= 50 ; $RepNumber++) {
+for ( $RepNumber = 1; $RepNumber <= 100 ; $RepNumber++) {
 # LLSimsSingleRecHighRecMssel273_"${RecRate[$RecNumber]}"_"$RepNumber".txt"
-$File="../../../../Results/UK10K/ForwardSims/".$FourNs[$DirNumber]."/LLSimsSingleRecHighRecMsselAncMis273_".$RecRate[$RecNumber]."_".$RepNumber.".txt";
+$File="../../../../Results/UK10K/ForwardSims/".$FourNs[$DirNumber]."/LLSimsSingleRecHighRecMsselAncMis273_".$RepNumber.".txt";
 
 open (FILE,$File) or die "NO! $File\n";
 
@@ -49,11 +49,11 @@ chomp;
 $Line = $_;
 @SplitLine = split(/\s+/,$Line);
 # print "$SplitLine[1]";
-if ($LineNumber == 1){
+if ($LineNumber == 123){
 $Max = $SplitLine[1];
 $MaxNum = $LineNumber;
 }
-if (($LineNumber > 125) && ($LineNumber < 277)){
+if (($LineNumber > 123) && ($LineNumber < 294)){
 if ($SplitLine[1] > $Max ){
 $Max = $SplitLine[1];
 $MaxNum = $LineNumber;

@@ -88,15 +88,15 @@ perl ../../Sims/ConstantPopSize/ForwardSims/SampleTrajectories.pl $CurrentTrajs 
 Line[1]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 500000 -r 300 999999 -t 240 -eN 0.0 1.0 -eN 0.25 0.2 -eN 0.26 1.0 -seeds $k $k $k"
 Line[2]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 500000 -r 300 999999 -t 240 -eN 0.0 1.0 -eN 0.25 0.2 -eN 0.26 1.0 -seeds $k $k $k"
 # Bases = Theta /(4Nu) = 120/(4*10000*1.2e-8) = 250000
-Line[3]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 250000 -r 300 499999 -t 240 -seeds $k $k $k"
-Line[4]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 250000 -r 300 499999 -t 240 -seeds $k $k $k"
+Line[3]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 250000 -r 250 499999 -t 240 -seeds $k $k $k"
+Line[4]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 250000 -r 250 499999 -t 240 -seeds $k $k $k"
 Line[11]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 250000 -r 200 499999 -t 240 -seeds $k $k $k"
 # Bases = Theta /(4Nu) = 120/(4*5000*1.2e-8) = 500000
 Line[5]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 500000 -r 300 999999 -t 240 -eN 0.0 1.0 -eN 0.1 0.2 -eN 0.11 1.0 -seeds $k $k $k"
 Line[6]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 500000 -r 300 999999 -t 240 -eN 0.0 1.0 -eN 0.1 0.2 -eN 0.11 1.0 -seeds $k $k $k"
 # Bases = Theta /(4Nu) = 600/(4*50000*1.2e-8) = 250000
-Line[7]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 250000 -r 1500 499999 -t 1200 -eN 0.0 1.0 -eN 0.0005 0.1 -seeds $k $k $k"
-Line[8]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 250000 -r 1500 499999 -t 1200 -eN 0.0 1.0 -eN 0.0005 0.1 -seeds $k $k $k"
+Line[7]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 250000 -r 1250 499999 -t 1200 -eN 0.0 1.0 -eN 0.0005 0.1 -seeds $k $k $k"
+Line[8]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 250000 -r 1250 499999 -t 1200 -eN 0.0 1.0 -eN 0.0005 0.1 -seeds $k $k $k"
 # Bases = Theta /(4Nu) = 120/(4*5000*1.2e-8) = 500000
 Line[9]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 500000 -r 300 999999 -t 240 -eN 0.0 1.0 -eN 0.005 0.5 -eN 0.015 1.0 -seeds $k $k $k"
 Line[10]="../../../Programs/Mssel/mssel3 41 300 1 40 $ResampledTrajectory 500000 -r 300 999999 -t 240 -eN 0.0 1.0 -eN 0.005 0.5 -eN 0.015 1.0 -seeds $k $k $k"

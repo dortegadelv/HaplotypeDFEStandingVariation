@@ -16,7 +16,7 @@ Sum=$(( $i + 1000 ))
 FileOne="../../../../Results/UK10K_OnePercenters/ImportanceSamplingSims/Exit_DemHistAfricanTennessen.txt_0.01_0_"$Sum".txtTrajectory.txt"
 ExitFileOne="../../../../Results/UK10K_OnePercenters/ImportanceSamplingSims/ExitMsselPrev_0.01_0_"$i".txtTrajectory.txt"
 ExitFileTwo="../../../../Results/UK10K_OnePercenters/ImportanceSamplingSims/ExitMssel_0.01_0_"$i".txtTrajectory.txt"
-perl ../../ConstantPopSize/ImportanceSamplingSims/TrajToMsselFormatReverse.pl $FileOne $ExitFileOne 1000 113126
+perl ../../ConstantPopSize/ImportanceSamplingSims/TrajToMsselFormatReverse.pl $FileOne $ExitFileOne 1000 82231
 cat $ExitFileOne | ../../../../Programs/Mssel/stepftn > $ExitFileTwo
 
 # echo $i

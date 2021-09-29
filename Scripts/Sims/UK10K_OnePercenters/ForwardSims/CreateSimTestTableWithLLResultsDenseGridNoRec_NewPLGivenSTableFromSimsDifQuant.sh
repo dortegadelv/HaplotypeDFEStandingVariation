@@ -19,15 +19,17 @@ FourNs[4]="4Ns_25"
 FourNs[5]="4Ns_50"
 FourNs[6]="4Ns_1"
 
-DirNumber=$(( $SLURM_ARRAY_TASK_ID ))
-
-for RepNumber in {51..100}
+RepNumber=$(( $SLURM_ARRAY_TASK_ID ))
+DirNumber=1
+for CoefNumber in {1..9}
+do
+for DirNumber in {1..5}
 do
 
 echo "RepNumber = $RepNumber DirNumber = $DirNumber"
 
 FileToCheck="../../../../Results/UK10K/ForwardSims/"${FourNs[$DirNumber]}"/SimDistancesMssel273_"$RepNumber".txt"
-LLResults="../../../../Results/UK10K/ForwardSims/"${FourNs[$DirNumber]}"/LLSimsMssel273_"$RepNumber".txt"
+LLResults="../../../../Results/UK10K/ForwardSims/"${FourNs[$DirNumber]}"/LLSimsMssel273_"$RepNumber"_CoefNum"$CoefNumber".txt"
 echo "File = $FileToCheck"
 
 Directory="../../../../Results/UK10K/ForwardSims/"${FourNs[$SLURM_ARRAY_TASK_ID]}"/"
@@ -35,7 +37,7 @@ ResultsFile="../../../../Results/UK10K_OnePercenters/ForwardSims/LLData.txt"
 
 HapFilePrefix="../../../../Data/Plink/HapLengths/HapLength"
 
-perl ../../UK10K_PointTwoPercenters/ForwardSims/CalculatePLengthGivenSQuantileSimsDifQuant.pl $FileToCheck 250000 ../../../../Results/UK10K_OnePercenters/ImportanceSamplingSims/Quantile ../ImportanceSamplingSims/TestT2Bounds.txt $LLResults ../../../../Data/RightBpRecRatePerVariantNoCpG.txt ../../../../Data/LeftBpRecRatePerVariantNoCpG.txt 273 ../../UK10K_PointTwoPercenters/ForwardSims/MissenseOnePercentNoCpG.txt 565630
+perl ../../UK10K_PointTwoPercenters/ForwardSims/CalculatePLengthGivenSQuantileSimsDifQuant.pl $FileToCheck 250000 ../../../../Results/UK10K_OnePercenters/ImportanceSamplingSims/Quantile ../ImportanceSamplingSims/TestT2Bounds.txt $LLResults ../../../../Data/RightBpRecRatePerVariantNoCpG.txt ../../../../Data/LeftBpRecRatePerVariantNoCpG.txt 275 ../../UK10K_PointTwoPercenters/ForwardSims/MissenseOnePercentNoCpG.txt 565630 PLGivenSTableWithRecs$CoefNumber.txt
 
-
+done
 done

@@ -32,22 +32,22 @@ do
 ResultsFile="../../../../Results/PopExpansion/ForwardSims/"${FourNs[$i]}"/HapLengths/ExitFileNoRecLessSmallMutN"${NumberOfMarkers[$k]}"_"$Repetition".txt"
 rm $ResultsFile
 HapFile="../../../../Results/PopExpansion/ForwardSims/"${FourNs[$i]}"/HapLengths/HapLengthsLessSmallMut"$Repetition".txt"
-perl ../../ConstantPopSize/ForwardSims/CalculatePLengthGivenS.pl $HapFile 250000 ../../../../Results/ConstantPopSize/ImportanceSamplingSims/TableToTest.txt ../ImportanceSamplingSims/TestT2Bounds.txt $ResultsFile
+perl ../../ConstantPopSize/ForwardSims/CalculatePLengthGivenS.pl $HapFile 250000 ../../../../Results/PopExpansion/ImportanceSamplingSims/TableToTest.txt ../ImportanceSamplingSims/TestT2Bounds.txt $ResultsFile
 
 ResultsFile="../../../../Results/PopExpansion/ForwardSims/"${FourNs[$i]}"/HapLengths/ExitFileNoRecLessBigMutN"${NumberOfMarkers[$k]}"_"$Repetition".txt"
 rm $ResultsFile
 HapFile="../../../../Results/PopExpansion/ForwardSims/"${FourNs[$i]}"/HapLengths/HapLengthsLessBigMut"$Repetition".txt"
-perl ../../ConstantPopSize/ForwardSims/CalculatePLengthGivenS.pl $HapFile 250000 ../../../../Results/ConstantPopSize/ImportanceSamplingSims/TableToTest.txt ../ImportanceSamplingSims/TestT2Bounds.txt $ResultsFile
+perl ../../ConstantPopSize/ForwardSims/CalculatePLengthGivenS.pl $HapFile 250000 ../../../../Results/PopExpansion/ImportanceSamplingSims/TableToTest.txt ../ImportanceSamplingSims/TestT2Bounds.txt $ResultsFile
 
 ResultsFile="../../../../Results/PopExpansion/ForwardSims/"${FourNs[$i]}"/HapLengths/ExitFileNoRecLessNotSoSmallMutN"${NumberOfMarkers[$k]}"_"$Repetition".txt"
 rm $ResultsFile
 HapFile="../../../../Results/PopExpansion/ForwardSims/"${FourNs[$i]}"/HapLengths/HapLengthsLessNotSoSmallMut"$Repetition".txt"
-perl ../../ConstantPopSize/ForwardSims/CalculatePLengthGivenS.pl $HapFile 250000 ../../../../Results/ConstantPopSize/ImportanceSamplingSims/TableToTest.txt ../ImportanceSamplingSims/TestT2Bounds.txt $ResultsFile
+perl ../../ConstantPopSize/ForwardSims/CalculatePLengthGivenS.pl $HapFile 250000 ../../../../Results/PopExpansion/ImportanceSamplingSims/TableToTest.txt ../ImportanceSamplingSims/TestT2Bounds.txt $ResultsFile
 
 ResultsFile="../../../../Results/PopExpansion/ForwardSims/"${FourNs[$i]}"/HapLengths/ExitFileNoRecLessNotSoBigMutN"${NumberOfMarkers[$k]}"_"$Repetition".txt"
 rm $ResultsFile
 HapFile="../../../../Results/PopExpansion/ForwardSims/"${FourNs[$i]}"/HapLengths/HapLengthsLessNotSoBigMut"$Repetition".txt"
-perl ../../ConstantPopSize/ForwardSims/CalculatePLengthGivenS.pl $HapFile 250000 ../../../../Results/ConstantPopSize/ImportanceSamplingSims/TableToTest.txt ../ImportanceSamplingSims/TestT2Bounds.txt $ResultsFile
+perl ../../ConstantPopSize/ForwardSims/CalculatePLengthGivenS.pl $HapFile 250000 ../../../../Results/PopExpansion/ImportanceSamplingSims/TableToTest.txt ../ImportanceSamplingSims/TestT2Bounds.txt $ResultsFile
 
 
 done
