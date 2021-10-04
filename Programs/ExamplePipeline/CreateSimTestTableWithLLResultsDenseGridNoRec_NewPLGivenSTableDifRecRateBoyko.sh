@@ -1,0 +1,6 @@
+
+ResultsFile="DifRecRate/LLDataCoefNumBoyko.txt"
+
+HapFilePrefix="DifRecRate/HapLengthsDifRecRate/HapLengthsLessDifRecRateNS1""_"
+
+perl CalculatePLengthGivenSQuantileCloseQuantileNewBoykoDFE.pl $HapFilePrefix 250000 Quantile DifRecRate/TestBounds.txt $ResultsFile DifRecRate/ResampledBpRecRatePerVariantNoCpGLeft.txt DifRecRate/ResampledBpRecRatePerVariantNoCpGRight.txt 300 DifRecRate/VariantNumber.txt DifRecRate/MissenseOnePercentNoCpG.txt 50000 DifRecRate/PLGivenSTableWithRecsFirstDFE.txt

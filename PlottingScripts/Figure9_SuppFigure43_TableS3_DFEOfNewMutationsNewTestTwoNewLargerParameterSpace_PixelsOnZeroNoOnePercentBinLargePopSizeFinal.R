@@ -69,7 +69,7 @@ Probabilities_At_One_Percent_Given_2Ns= Counts_At_OnePercent_Given2Ns/ NumberOfA
 Probs <- P_Allele_Is_2Ns_given_OnePercent
 
 ## This is the over the number of NonCpG sites where a nonsynonymous mutation can take place that are far away from centromeres and telomeres
-NumberOfNonCpGSites <- 33409384
+NumberOfNonCpGSites <- 35086455
 MutationRate <- 1.5e-8
 SitesDemography <- (22970*183760 + 45544 * 6104 + 5856 * 1760 + 6369 * 1207 + 822310 * 243) * NumberOfNonCpGSites * MutationRate
 Prob_One_Percent <- 275 / SitesDemography
@@ -421,7 +421,7 @@ Probabilities_At_One_Percent_Given_2Ns= Counts_At_OnePercent_Given2Ns/ NumberOfA
 Probs <- P_Allele_Is_2Ns_given_OnePercent
 
 ## This is the over the number of NonCpG sites where a nonsynonymous mutation can take place that are far away from centromeres and telomeres
-NumberOfNonCpGSites <- 33409384
+NumberOfNonCpGSites <- 35086455
 MutationRate <- 1.5e-8
 SitesDemography <- (22970*183760 + 45544 * 6104 + 5856 * 1760 + 6369 * 1207 + 822310 * 243) * NumberOfNonCpGSites * MutationRate
 Prob_One_Percent <- 275 / SitesDemography
@@ -773,7 +773,7 @@ Probabilities_At_One_Percent_Given_2Ns= Counts_At_OnePercent_Given2Ns/ NumberOfA
 Probs <- P_Allele_Is_2Ns_given_OnePercent
 
 ## This is the over the number of NonCpG sites where a nonsynonymous mutation can take place that are far away from centromeres and telomeres
-NumberOfNonCpGSites <- 33409384
+NumberOfNonCpGSites <- 35086455
 MutationRate <- 1.5e-8
 SitesDemography <- (22970*183760 + 45544 * 6104 + 5856 * 1760 + 6369 * 1207 + 822310 * 243) * NumberOfNonCpGSites * MutationRate
 Prob_One_Percent <- 275 / SitesDemography

@@ -576,15 +576,15 @@ Title <- c("A) Probability of having a 4Ns value < 5\n on inferences done on 100
 par(mar=c(5.1,5.1,6.1,2.1))
 par(mfrow=c(1,3))
 
-ProbFromData <- c (0.1960714, 0.03469635, 0.7692323)
+ProbFromData <- c (0.1866995, 0.03303793, 0.7802625)
 
 sum(ifelse(MatrixFinalProbs[,1]> 0.1976878,1,0))
 Sums <- c()
         for (CurNumber in 1:100){
             Sums <- c(Sums,sum(MatrixFinalProbs[CurNumber,2:10]))
 }
-sum(ifelse(Sums > 0.03350874,1,0))
-sum(ifelse(MatrixFinalProbs[,11]> 0.7688034,1,0))
+sum(ifelse(Sums > 0.03303793,1,0))
+sum(ifelse(MatrixFinalProbs[,11]> 0.7802625,1,0))
 
 
 Xlabels <- c("Proportion of new mutations with a 4Ns value < 5", "Proportion of new mutations with 4Ns between 5 and 50","Proportion of new mutations with a 4Ns value > 50")

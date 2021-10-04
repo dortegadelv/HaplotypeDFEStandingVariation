@@ -1,0 +1,6 @@
+
+
+HapFilePrefix="DifRecRate/HapLengthsDifRecRate/HapLengthsLessDifRecRateNS1""_"
+ResultsFile="DifRecRate/LLDataCoefNum.txt"
+
+perl CalculatePLengthGivenSQuantileCloseQuantileNew.pl $HapFilePrefix 250000 Quantile DifRecRate/TestBounds.txt $ResultsFile DifRecRate/ResampledBpRecRatePerVariantNoCpGLeft.txt DifRecRate/ResampledBpRecRatePerVariantNoCpGRight.txt 300 DifRecRate/VariantNumber.txt DifRecRate/MissenseOnePercentNoCpG.txt 50000 DifRecRate/PLGivenSTableWithRecs4.txt

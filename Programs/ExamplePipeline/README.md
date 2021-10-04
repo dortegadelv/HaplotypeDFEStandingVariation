@@ -8,11 +8,12 @@ The following steps can be used to compute the DFE from a set of simulated L val
 3) Generate a table that computes the likelihoods Likelihood(alpha, beta, allele frequency, Demographic scenario | L) for two parameters alpha and beta of a partially collapsed gamma distribution (see equation 3 from our paper).
 4) Use the L values to compute the maximum likelihood estimate of either a) the single selection coefficient 4Ns or b) the two parameters alpha and beta.
 5) Estimate the DFE from DFEf.
+6) Estimate the value of selection when there are variable recombination rates.
 
-We also provide scripts to calculate L from genomic data. If you compute the L values, we recommend that you do step 6) and then estimate the demographic history using step 7). Then go over steps 2) to 5) to infer the DFE from the collection of L values
+We also provide scripts to calculate L from genomic data. If you compute the L values, we recommend that you do step 7) and then estimate the demographic history using step 8). Then go over steps 2) to 5) to infer the DFE from the collection of L values
 
-6) Calculate L from data
-7) ABC algorithm to estimate the demographic history
+7) Calculate L from data
+8) ABC algorithm to estimate the demographic history
 
 If you only want to run the inference on a set of precomputed L values, follow steps 2-5.
 
@@ -305,7 +306,17 @@ Where:
 
 This script will produce two files: Results/DFEf_toDFE.pdf contains a plot with the inferred values of P(sj) and P(sj|f ,D); we will also create a file called 'Probabilities.txt' which contains the probabilities of P(sj) and P(sj|f ,D) across a set of pre-specified sj intervals of 4Ns.
 
-## 6) Calculate L and mean recombination rate from genomic data
+## 6) Estimate the value of selection when there are variable recombination rates.
+
+Run 'GetQuadraticParametersSingle4NsManyCoefficients.R' on R to estimate Likelihood(4Ns, allele frequency, Demographic scenario | L) given different recombination rates. The R script requires 3 files: a) The concatenated Likelihood(4Ns, allele frequency, Demographic scenario | L) table generated for the percentile 0, 5, ..., 95, 100 of the recombination rates in the data ("DifRecRate/FullTable.txt"). This table can be created by following step 2) from this manual for the 21 percentiles indicated, and then concatenating the table starting from the lower to the upper Likelihood(4Ns, allele frequency, Demographic scenario | L) table; b) The percentile 0, 5, ..., 95, 100 of the recombination rates; c) The recombination rates of the analyzed regions at both the upstream and downstream direction of the focal allele ("DifRecRate/ResampledBpRecRatePerVariantNoCpGLeft.txt" and "DifRecRate/ResampledBpRecRatePerVariantNoCpGRight.txt"). The output of this script are the tables Likelihood(4Ns, allele frequency, Demographic scenario | L) given different recombination rates after using our polynomial regression approach. The output of this script are a set of tables "DifRecRate/PLGivenSTableWithRecs*.txt" Where * is replaced by the number of regression coefficients used. Here the recombination rates are the same at both sides of the focal allele.
+
+Then run 'GetQuadraticParametersSingle4NsManyCoefficientsErrorPrint.R' to estimate our error metric after fitting a different number of regression coefficients (see Table S11 from our paper for an example of the error metric values and how we select the number of regression coefficients under our approach).
+
+Then run 'GetQuadraticParametersDFE.R' to get the likelihoods Likelihood(alpha, beta, allele frequency, Demographic scenario | L) for two parameters alpha and beta of a partially collapsed gamma distribution (see equation 3 from our paper) when we have variable recombination rates. In this example, we use the table "DifRecRate/PLGivenSTableWithRecs4.txt", along with a table that lists the probability of having different discrete 4Ns values under a particular DFE ("DifRecRate/DFETableOfProbabilities.txt", see step 3) ) .
+
+Run "bash CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableDifRecRateDifCoef.sh" to estimate the likelihood of selection for the inspected 4Ns values of selection (in this case they go from -200 to 200). Inside the file, $HapFilePrefix specifies the prefix of the L values for 300 different variants. $ResultsFile gives back the likelihood results. "DifRecRate/PLGivenSTableWithRecs4.txt" is the likelihood table Likelihood(4Ns, allele frequency, Demographic scenario | L) given different recombination rates after using our polynomial regression approach with 4 regression coefficients. "300" is the number of inspected variants and "DifRecRate/VariantNumber.txt" are the suffixes of the variant numbers inspected (see "DifRecRate/HapLengthsDifRecRate/HapLengthsLessDifRecRateNS1_{1..300}.txt" to see the L values. the suffixes go from 1 up to 300). The file "CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableDifRecRateBoyko.sh" estimates the value of selection for two parameters alpha and beta of a partially collapsed gamma distribution. This file has the same syntax as "CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableDifRecRateDifCoef.sh", the only difference is that a file "DifRecRate/PLGivenSTableWithRecsFirstDFE.txt" with the likelihoods of two parameters alpha and beta of a partially collapsed gamma distribution  when we have variable recombination rates is given.
+
+## 7) Calculate L and mean recombination rate from genomic data
 
 The start point are three files: A Plink tped and a Plink tfam file where the information has been phased. We also assume that you have a file with the frequency of the low-frequency derived alleles.
 
@@ -349,7 +360,7 @@ Example run:
 
 `perl GetGeneticMapLeftRightPrintMap.pl 250000 MissenseOnePercent maps_chr. 1`
 
-## 7) ABC algorithm to estimate the demographic history
+## 8) ABC algorithm to estimate the demographic history
 
 A demographic model must be specified when analyzing genomic data to infer DFEf or the point strength of selection acting on the nonsynonymous variants at a certain frequency in the population (steps 2-4). We used an ABC algorithm to infer the demographic model based on the L values found on the synonymous variants. Although the scenario simulated is very specific, we hope that this gives an intuition into how our proposed ABC works. The L values of the synonymous variants are summarized by their frequency in different windows w1, ... , wn. In this example we will use the file located in ExamplePipeline/ABC/LDistributionOnePercentSynSites.txt .
 
