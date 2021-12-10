@@ -12,7 +12,7 @@ The following steps can be used to compute the DFE from a set of simulated L val
 
 We also provide scripts to calculate L from genomic data. If you compute the L values, we recommend that you do step 7) and then estimate the demographic history using step 8). Then go over steps 2) to 5) to infer the DFE from the collection of L values
 
-7) Calculate L from data
+7) Calculate L, P(L is inside a window wi) and mean recombination rate from genomic data
 8) ABC algorithm to estimate the demographic history
 
 If you only want to run the inference on a set of precomputed L values, follow steps 2-5.
