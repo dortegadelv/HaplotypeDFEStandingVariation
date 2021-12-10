@@ -316,29 +316,45 @@ Then run 'GetQuadraticParametersDFE.R' to get the likelihoods Likelihood(alpha, 
 
 Run "bash CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableDifRecRateDifCoef.sh" to estimate the likelihood of selection for the inspected 4Ns values of selection (in this case they go from -200 to 200). Inside the file, $HapFilePrefix specifies the prefix of the L values for 300 different variants. $ResultsFile gives back the likelihood results. "DifRecRate/PLGivenSTableWithRecs4.txt" is the likelihood table Likelihood(4Ns, allele frequency, Demographic scenario | L) given different recombination rates after using our polynomial regression approach with 4 regression coefficients. "300" is the number of inspected variants and "DifRecRate/VariantNumber.txt" are the suffixes of the variant numbers inspected (see "DifRecRate/HapLengthsDifRecRate/HapLengthsLessDifRecRateNS1_{1..300}.txt" to see the L values. the suffixes go from 1 up to 300). The file "CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableDifRecRateBoyko.sh" estimates the value of selection for two parameters alpha and beta of a partially collapsed gamma distribution. This file has the same syntax as "CreateSimTestTableWithLLResultsDenseGridNoRec_NewPLGivenSTableDifRecRateDifCoef.sh", the only difference is that a file "DifRecRate/PLGivenSTableWithRecsFirstDFE.txt" with the likelihoods of two parameters alpha and beta of a partially collapsed gamma distribution  when we have variable recombination rates is given.
 
-## 7) Calculate L and mean recombination rate from genomic data
+## 7) Calculate L, P(L is inside a window wi) and mean recombination rate from genomic data
 
 The start point are three files: A Plink tped and a Plink tfam file where the information has been phased. We also assume that you have a file with the frequency of the low-frequency derived alleles.
 
 `bash CalculateLData.sh PositionsFilePrefix FrequencySNPFile SNPNumberToTake PlinkTpedFilePrefix PlinkTfamFilePrefix IndividualsToTake HapLengthToTake`
 
-* PositionsFilePrefix - Prefix of the files that contain the positions that will be used to compute L.
+* PositionsFilePrefix - Prefix of the files that contain the positions that will be used to compute L. The positions defined in the files should match the positions from the plink file.
 
-* FrequencySNPFile - A list of the SNPs at a certain frequency in the population.
+* FrequencySNPFile - A list of the SNPs at a certain frequency in the population. In this file each row contains a SNP. The rows in each file contain: 1) Chromosome Number; 2) Chromosome Number (DOT) SNP Position ; 3) Minor Allele; 4) Major Allele; 5) Minor allele frequency; 6) Chromosome sample size; 7) Type of mutation (can be anything defined by the user); 8) Allele defined as 0 in plink file; 9) Allele defined as 1 in plink file; 10) Ancestral Allele; 11) and 12) An arbitrary nucleotide and an arbitrary number.
 
 * SNPNumberToTake - The row number defining the SNPs that will be taken from the FrequencySNPFile file to calculate L.
 
-* PlinkTpedFilePrefix - Prefix of the tped file
+* PlinkTpedFilePrefix - Prefix of the plink tped file. This contains the dataset where we will calculate L.
 
-* PlinkTfamFilePrefix - Prefix of the tfam file
+* PlinkTfamFilePrefix - Prefix of the plink tfam file. This contains the dataset where we will calculate L.
 
 * IndividualsToTake - List of individuals from the Plink files that will be used to calculate L.
 
-* HapLengthToTake - The L values calculated will start from the focal variant analyzed up to the value of HapLengthToTake . If there are no differences in the haplotype pairs from the focal variant up to HapLengthToTake, this will be noted in the output.
+* HapLengthToTake - The L values calculated will start from the focal variant analyzed up to the value of HapLengthToTake . If there are no differences in the haplotype pairs from the focal variant up to HapLengthToTake, this will be noted in the output. As an example, if the HapLengthToTake value is equal to 250000, then a number of 250001 will indicate that there are no differences between the haplotype pair.
 
 As an example, you can run:
 
 `bash CalculateLData.sh Positions SNPsAtOnePercentFrequency.frq 325 Plink Plink ListUnrelatedSamples.txt 250000`
+
+You can calculate the probability P(L is inside a window wi) using the following script:
+
+`bash CalculateLProportion.sh SNPNumberToTake LBreaksFile`
+
+* SNPNumberToTake - The row number defining the SNPs that will be taken from the FrequencySNPFile file to calculate L.
+
+* LBreaksFile - A file showing the boundaries of the windows wi. Based on this file, the windows wi are (0, 50000], (50000, 100000], (100000, 150000], (150000, 200000], (200000, 250000], (250000, ∞).
+
+As an example, you can run one of the following two commands:
+
+`bash CalculateLProportion.sh 10 LBreaks.txt`
+
+`bash CalculateLProportion.sh 325 LBreaks.txt`
+
+The output file with the prefix "Results/LProportion" has the proportion of L values falling into each of the defined windows. In the case of the example file, we define the proportion of L values falling in the windows (0, 50000], (50000, 100000], (100000, 150000], (150000, 200000], (200000, 250000], (250000, ∞). You can use this file, as an example, to see if more than 5% of the L values fall in each of the windows wi. In our manuscript we recommend to have more than 5% of the L values fall in each of the windows wi if only 6 windows are defined.
 
 Then, you can also run the following command to get the recombination map:
 

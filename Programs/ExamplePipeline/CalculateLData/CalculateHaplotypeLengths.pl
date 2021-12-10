@@ -125,13 +125,15 @@ $NumberOfComparisons = 0;
 $NumberOfThingsPrinted = 0;
 for ($IndOne = 0; $IndOne < scalar(@IndividualsToTake); $IndOne++){
 $IndividualOne = $IndividualsToTake[$IndOne];
-print "Calculating... $IndividualOne\n";
+$AlleleOne = $FocalSiteChecked[($IndividualOne)*2+0+4];
+$OtherAlleleOne = $FocalSiteChecked[($IndividualOne)*2+1+4];
+print "Calculating... $IndividualOne\t$FocalSiteChecked[1]\t$AlleleOne\t$OtherAlleleOne\n";
 
 @FocalSiteChecked = split(/\s+/,$AllLines[$FocalSNP]);
 
 for ($IndTwo = $IndOne; $IndTwo < scalar(@IndividualsToTake); $IndTwo++){
 $IndividualTwo = $IndividualsToTake[$IndTwo];
-#    print "Ind one = $IndOne $IndividualOne and Ind two = $IndTwo $IndividualTwo\n";
+# print "Ind one = $IndOne $IndividualOne and Ind two = $IndTwo $IndividualTwo\n";
 for ($i = 0; $i < 2; $i++){
 for ($j = 0; $j < 2; $j++){
 
@@ -146,6 +148,7 @@ next;
 $AlleleOne = $FocalSiteChecked[($IndividualOne)*2+$i+4];
 $AlleleTwo = $FocalSiteChecked[($IndividualTwo)*2+$j+4];
 if ($AlleleOne ne $DerivedAllele){
+#   print "$AlleleOne\t$DerivedAllele\n";
 next;
 }
 if ($AlleleTwo ne $DerivedAllele){
