@@ -578,7 +578,7 @@ par(mfrow=c(1,3))
 
 ProbFromData <- c (0.1866995, 0.03303793, 0.7802625)
 
-sum(ifelse(MatrixFinalProbs[,1]> 0.1976878,1,0))
+sum(ifelse(MatrixFinalProbs[,1]> 0.1866995,1,0))
 Sums <- c()
         for (CurNumber in 1:100){
             Sums <- c(Sums,sum(MatrixFinalProbs[CurNumber,2:10]))
@@ -594,7 +594,7 @@ Xlabels <- c("Proportion of new mutations with a 4Ns value < 5", "Proportion of 
 # axis (2,at=c(0+0.01, 0.25+0.01, 0.5+0.01, 0.75 + 0.01, 1+0.01), labels = c(0, 0.25, 0.5, 0.75, 1.0),cex.axis=2, cex.lab = 2)
 
 FinalMedian <- c()
-PValToPrint <- c("= 0.54","= 0.4","= 0.22")
+PValToPrint <- c("= 0.52","= 0.4","= 0.22")
 for (i in 1:3){
     
     if (i == 1){

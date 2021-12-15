@@ -338,7 +338,7 @@ for (j in 1:100){
         for (i in 2:12){
             UpperBound <- LowerLimit[i] + 3 - 1
             LowerBound <- LowerLimit[(i-1)] + 3
-            CurrentSum <- sum(DFEParsTwo[DFEParameterNumber,LowerBound:UpperBound])
+            CurrentSum <- sum(DFEPars[DFEParameterNumber,LowerBound:UpperBound])
             # CurrentSum <-  pgamma(LowerLimit[i+1],Alpha,scale=Beta) - pgamma(LowerLimit[i],Alpha,scale=Beta)
             #    print (i)
             #    print (CurrentSum)
