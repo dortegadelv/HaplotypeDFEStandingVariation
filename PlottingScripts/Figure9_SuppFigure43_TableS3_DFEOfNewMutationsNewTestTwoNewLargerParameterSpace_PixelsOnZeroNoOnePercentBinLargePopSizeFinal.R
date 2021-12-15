@@ -377,7 +377,7 @@ P_Allele_Is_2Ns_given_OnePercent <- c()
 for (i in 1:10){
      UpperBound <- i*5 + 2
      LowerBound <- (i-1)*5 + 3
-     CurrentSum <- sum(DFEPars[104,LowerBound:UpperBound])
+     CurrentSum <- sum(DFEParsTwo[104,LowerBound:UpperBound])
      #    print (i)
      #    print (CurrentSum)
      P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,CurrentSum)
@@ -914,7 +914,8 @@ axis (2,at=c(0+0.01, 0.25+0.01, 0.5+0.01, 0.75 + 0.01, 1+0.01), labels = c(0, 0.
 #################################################################################### Upper and lower 5% quantile
 
 DFESelection <- read.table("../Results/ResultsSelectionInferred/SelectionLargerSpaceBootstrapUK10KDFETest.txt")
-DFEPars <- read.table ("../Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims/AnotherDFETableOfProbabilities.txt")
+DFEPars <- read.table ("../Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims/DFETableOfProbabilities.txt")
+DFEParsTwo <- read.table ("../Scripts/Sims/UK10K_OnePercenters/ImportanceSamplingSims/AnotherDFETableOfProbabilities.txt")
 
 MatrixProbs <- c()
 MatrixP_Allele_Is_2Ns_given_OnePercent <- c()
@@ -1016,15 +1017,18 @@ for (i in 1:3){
         SumLower <- 0
         SumUpper <- 0
         Mean <- 0
-        
+        Sum <- 0
         for (j in 2:10){
-            
+            Sum <- Sum + MatrixFinalProbs[,j]
             Quantiles <- quantile(MatrixFinalProbs[,j],c(0.05,0.95))
             SumLower <- SumLower + Quantiles[1]
             SumUpper <- SumUpper + Quantiles[2]
             Mean <-  Mean + mean(MatrixFinalProbs[,j])
         }
-        
+        Mean <-  mean(Sum)
+        Quantiles <- quantile(Sum,c(0.05,0.95))
+        SumLower <- Quantiles[1]
+        SumUpper <- Quantiles[2]
         print ("MinMax")
         print (i)
         print (SumLower)
@@ -1044,10 +1048,10 @@ for (i in 1:3){
             Mean <-  Mean + mean(MatrixP_Allele_Is_2Ns_given_OnePercent[,j])
         }
         
-        print ("MinMax")
-        print (i)
-        print (Quantiles[1])
-        print (Quantiles[2])
+#        print ("MinMax")
+#        print (i)
+#        print (Quantiles[1])
+#        print (Quantiles[2])
         
         #        points((i - 1)* 5 + 1.5, SumLower + 0.01, col="black", pch=24, bg = "black", cex=2)
         #        points((i - 1)* 5 + 1.5, SumUpper + 0.01, col="black", pch=25, bg = "black", cex=2)
