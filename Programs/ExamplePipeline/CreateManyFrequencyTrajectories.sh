@@ -94,7 +94,7 @@ fi
 FileToReplace="\/Output."$Identifier
 sed "s/\/Output/$FileToReplace/g" $PReFerSimParameterFile1 > $PReFerSimParameterFile1.$Identifier.txt
 
-time GSL_RNG_SEED=$Identifier GSL_RNG_TYPE=mrg PReFerSim $PReFerSimParameterFile1.$Identifier.txt $Identifier
+time GSL_RNG_SEED=$Identifier GSL_RNG_TYPE=mrg ./PReFerSim $PReFerSimParameterFile1.$Identifier.txt $Identifier
 
 time perl GetListOfRunsWhereFrequencyMatches.pl $AlleleFrequencyDown $AlleleFrequencyUp ../Results/Output.$Identifier.$Identifier.full_out.txt ../Results/Alleles_$Identifier.txt
 
@@ -109,5 +109,5 @@ File="../Results/Output."$Identifier"."$Identifier".full_out.txt"
 
 rm $File
 
-time GSL_RNG_SEED=$Identifier GSL_RNG_TYPE=mrg PReFerSim $PReFerSimParameterFile2.B_$Identifier.txt $Identifier
+time GSL_RNG_SEED=$Identifier GSL_RNG_TYPE=mrg ./PReFerSim $PReFerSimParameterFile2.B_$Identifier.txt $Identifier
 
