@@ -124,7 +124,7 @@ Where:
 
 * DemScenario - Demographic history. This follows the syntax from PReFerSim to get demographic histories.  This should match the variable DemographicHistory: from the file DemographicScenarioFile provided on the script CreateManyFrequencyTrajectories.sh  .
 
-* SelValuesForwardFile - File with the selection coefficient values that will be evaluated when going forwards in time. There should be one selection coefficient per row.
+* SelValuesForwardFile - File with the selection coefficient values that will be evaluated when going forwards in time. There should be one selection coefficient per row. In the example provided here, the file NewSelectionValues.txt contains values of selection going from 4Ns = -200 to 200 where N is equal to the ancestral population size (5000) in the particular demographic model analyzed.
 
 * SampleSize - Number of chromosomes sampled from the present. This should match the number used after the variable 'n: ' inside the files PReFerSimParameterFile1 and PReFerSimParameterFile2 used on the script CreateManyFrequencyTrajectories.sh  .
 
