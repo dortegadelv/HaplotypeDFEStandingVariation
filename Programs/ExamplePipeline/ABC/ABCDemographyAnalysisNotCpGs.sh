@@ -12,7 +12,7 @@ rm $ExitWindowLowRecDistanceFile
 LeftParametersFile="../Results/LeftParameters"$SGE_TASK_ID".txt"
 rm $LeftParametersFile
 
-for i in {1..100}
+for i in {1..5}
 do
 
 FullAlleles="../Results/TrajOutputAllAlleles_"$SGE_TASK_ID".txt"
