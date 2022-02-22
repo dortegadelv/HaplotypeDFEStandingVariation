@@ -69,7 +69,7 @@ Example of how to run the script:
 
 The output of that script will be two files located in the results folder. One file is Results/Traj_Identifier.txt  (substitute Identifier with the value of Identifier given to the script). That file contains the allele frequency trajectories. The other file is Results/Alleles_Identifier.txt which contains the IDs of the alleles that fell inside the frequency interval specified in the script.
 
-I recommend running the past script with many 'Identifier' numbers many times. You need to start from the number 1 and then go up in consecutive order until you get a big number of allele frequency trajectories. A number close to 10,000 is recommended for point 4Ns selection coefficients and 50,000 is you are doing simulations from a DFE. Those trajectories will be sampled with replacement to generate the haplotypic data under the stuctured coalescent model. To check the number of allele frequency trajectories you have created run these two commands:
+I recommend running the past script with many 'Identifier' numbers many times. You need to start from the number 1 and then go up in consecutive order until you get a big number of allele frequency trajectories. A number close to 10,000 is recommended for point 4Ns selection coefficients and  simulations from a DFE. Those trajectories will be sampled with replacement to generate the haplotypic data under the stuctured coalescent model. To check the number of allele frequency trajectories you have created run these two commands:
 
 `AlleleCount=$( wc -l Results/Alleles_*.txt | tail -n1 | awk '{print $1}' )`
 
