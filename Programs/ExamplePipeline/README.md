@@ -41,7 +41,7 @@ You need to compile the following programs to run any of the steps. Some program
 
 ## 1) Simulation of pairwise identity by state lengths, L, values
 
-The first step is to simulate many allele frequency trajectories under the Poisson Random Field model going forward in time with PReFerSim. To do that, you can run the following bash script by providing the following parameters:
+Follow these instructions to simulate many allele frequency trajectories under the Poisson Random Field model going forward in time with PReFerSim. To do this, you can run the following bash script by providing the following parameters:
 
 `bash CreateManyFrequencyTrajectories.sh PReFerSimParameterFile1 PReFerSimParameterFile2 Identifier NumberOfHaplotypesWithTheDerivedAllele NumberOfIndependentVariants ThetaHaplotype RhoHaplotype NumberOfSites`
 
