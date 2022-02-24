@@ -1,4 +1,4 @@
-UpperThreshold = 300
+UpperThreshold = 200
 UpperThresholdPlusThree = UpperThreshold + 3
 #### Another table of probabilities
 
@@ -18,7 +18,7 @@ for (j in AlphaGrid){
 			if ( i == 0.25){
 				Probability <- pgamma(0.25,j,1/k)
 				Row <- c(Row,Probability)
-			}else if (i==150.25){
+			}else if (i==100.25){
 				Probability <- ( 1 - pgamma(i-0.5,j,1/k) )
 				Row <- c(Row,Probability)
 			}else{
