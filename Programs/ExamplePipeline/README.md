@@ -213,7 +213,7 @@ AlphaGrid <- 0.01*1:30
 
 GammaGrid <- 5*1:70
 
-And put the values you wish to explore. Also, currently the threshold 4Ns is equal to 300 (check equation 3 from the paper). If you want to change that, modify the variable UpperThreshold appearing at the top of the script. The integration over the 4Ns values is currently done over the integer values of 4Ns (0, 1, 2, ... etc up to the value of the UpperThreshold). The likelihoods L(alpha, gamma, allele frequency, Demographic scenario | L) will be given on the file Results/DFETableToTest.txt starting from the third row and follow the same format as Results/TableToTest.txt . The order of the alpha and beta parameters from that file is given in the file TableDFE/AnotherExtraTableOfProbabilities.txt . You need to do step 1) and 2) before doing this step.
+And put the values you wish to explore. Also, currently the threshold 4Ns is equal to 200 (check equation 3 from the paper). If you want to change that, modify the variable UpperThreshold appearing at the top of the script. The integration over the 4Ns values is currently done over the integer values of 4Ns (0, 1, 2, ... etc up to the value of the UpperThreshold). The likelihoods L(alpha, gamma, allele frequency, Demographic scenario | L) will be given on the file Results/DFETableToTest.txt starting from the third row and follow the same format as Results/TableToTest.txt . The order of the alpha and beta parameters from that file is given in the file TableDFE/AnotherExtraTableOfProbabilities.txt . You need to do step 1) and 2) before doing this step.
 
 ## 4) Compute the maximum likelihood estimate of either a) the single selection coefficient 4Ns or b) the two parameters alpha and beta.
 
