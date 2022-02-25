@@ -34,8 +34,11 @@ for (j in AlphaGrid){
 }
 
 write.table(Table,file="AnotherExtraTableOfProbabilities.txt",row.names=FALSE,col.names=FALSE,sep="\t")
+Numbers = length(AlphaGrid)
+NumbersTwo = length(GammaGrid)
+Total = Numbers*NumbersTwo
 
-for (k in 1:2100){
+for (k in 1:Total){
     print(sum(Table[k,3:UpperThresholdPlusThree]))
 }
 
