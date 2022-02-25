@@ -1,5 +1,6 @@
 UpperThreshold = 200
 UpperThresholdPlusThree = UpperThreshold + 3
+Limit = UpperThreshold / 2 + 0.25
 #### Another table of probabilities
 
 AlphaGrid <- 0.01*1:30
@@ -18,7 +19,7 @@ for (j in AlphaGrid){
 			if ( i == 0.25){
 				Probability <- pgamma(0.25,j,1/k)
 				Row <- c(Row,Probability)
-			}else if (i==100.25){
+			}else if (i==Limit){
 				Probability <- ( 1 - pgamma(i-0.5,j,1/k) )
 				Row <- c(Row,Probability)
 			}else{
