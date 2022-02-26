@@ -51,7 +51,7 @@ P_Allele_Is_2Ns_given_OnePercent <- c()
 # P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,pgamma(0.5,Alpha,scale=Gamma))
 for (i in 1:IntervalNumber){
     # print (i)
-    Prob <- pgamma(i*2.5,Alpha,scale=Gamma) - pgamma((i-1)*2.5,Alpha,scale=Gamma)
+    Prob <- pgamma(i*IntervalLength/2,Alpha,scale=Gamma) - pgamma((i-1)*IntervalLength/2,Alpha,scale=Gamma)
     P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,Prob)
 }
 
