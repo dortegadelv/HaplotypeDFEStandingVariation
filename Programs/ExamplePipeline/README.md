@@ -286,11 +286,11 @@ As an example, you can run:
 
 After obtaining that file, you can run the following script:
 
-`bash EstimateDFEfromDFEf.sh MaxLLestimatesDFE P_allele_at_f AllelesWithSelectionCoefficientFile NumberOfChromosomesInMostAncestralEpoch NumberAllelesSimulatedInDemHistory FourNsIntervalLength FourNsIntervalNumber`
+`bash EstimateDFEfromDFEf.sh MaxLLestimatesDFE P_allele_at_f AllelesWithSelectionCoefficientFile NumberOfChromosomesInMostAncestralEpoch NumberAllelesSimulatedInDemHistory FourNsIntervalLength FourNsIntervalNumber AlphaPReFerSim ScalePReFerSim`
 
 In this particular example it is possible to run:
 
-`bash EstimateDFEfromDFEf.sh ../Results/MaxLLEstimatesDFE.txt 3.08e-07 ExitOnePercentSValuesPopExpansionBoyko.txt 10000 2.025e+11 5 30`
+`bash EstimateDFEfromDFEf.sh ../Results/MaxLLEstimatesDFE.txt 3.08e-07 ExitOnePercentSValuesPopExpansionBoyko.txt 10000 2.025e+11 5 30 0.184 1599.313`
 
 Where:
 
@@ -307,6 +307,8 @@ Where:
 * FourNsIntervalLength - This is the length of each of the sj 4Ns intervals inspected.
 
 * FourNsIntervalNumber - How many sj 4Ns intervals were inspected. The first interval inspected goes from 4Ns = 0 to 4Ns = FourNsIntervalLength, the second interval goes from 4Ns = FourNsIntervalLength to 4Ns = 2*FourNsIntervalLength
+
+* AlphaPReFerSim and ScalePReFerSim - Alpha and scale parameters used in the ParameterFilePReFerSim file from the RunSimsPReFerSim.sh script taking into account the population size
 
 This script will produce two files: Results/DFEf_toDFE.pdf contains a plot with the inferred values of P(sj) and P(sj|f ,D); we will also create a file called 'Probabilities.txt' which contains the probabilities of P(sj) and P(sj|f ,D) across a set of pre-specified sj intervals of 4Ns.
 
