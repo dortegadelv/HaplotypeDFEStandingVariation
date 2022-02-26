@@ -20,6 +20,9 @@ NumberOfChromosomesInMostAncestralEpoch = 10000
 NumberAllelesSimulatedInDemHistory = 2.025e+11
 IntervalLength <- as.double(5)
 IntervalNumber <- as.double(30)
+AlphaPReFerSim <- 0.184
+ScalePReFerSim <- 1599.313
+
 
 
 MaxLLParameters = args[1]
@@ -84,7 +87,7 @@ ViridisColors <- viridis(2)
 
 SelectionCoefficientList <- read.table(AllelesWithSelectionCoefficientFile)
 
-TwoNsValues <- SelectionCoefficientList$V2*NumberOfChromosomesInMostAncestralEpoch*2
+TwoNsValues <- SelectionCoefficientList$V2*NumberOfChromosomesInMostAncestralEpoch
 
 
 Check <- hist(TwoNsValues,breaks=c((IntervalLength/2)*0:IntervalNumber,1e+100))
