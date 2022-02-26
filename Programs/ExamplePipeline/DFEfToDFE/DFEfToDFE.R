@@ -35,6 +35,9 @@ NumberAllelesSimulatedInDemHistory = as.double(args[5])
 IntervalLength <- as.double(args[6])
 IntervalNumber <- as.double(args[7])
 
+AlphaPReFerSim <- as.double(args[8])
+ScalePReFerSim <- as.double(args[9])
+
 print ("Parameters read")
 print (Alpha)
 print (Gamma)
@@ -57,8 +60,8 @@ for (i in 1:IntervalNumber){
 
 #### Number of alleles
 
-Alpha = 0.184
-Beta = 319.8626 * 10
+Alpha = AlphaPReFerSim
+Beta = ScalePReFerSim
 
 P_Allele_Is_2Ns <- c()
 NumberOfAllelesAt2Ns <- c()
@@ -81,12 +84,11 @@ ViridisColors <- viridis(2)
 
 SelectionCoefficientList <- read.table(AllelesWithSelectionCoefficientFile)
 
-MultipliedValues <- SelectionCoefficientList$V2*NumberOfChromosomesInMostAncestralEpoch*2
+TwoNsValues <- SelectionCoefficientList$V2*NumberOfChromosomesInMostAncestralEpoch*2
 
-FourNsValues <- MultipliedValues[(MultipliedValues < IntervalLength/2*IntervalNumber)]
 
-Check <- hist(FourNsValues,breaks=c(IntervalLength/2*0:IntervalNumber))
-Counts_At_OnePercent_Given2Ns <- Check$counts
+Check <- hist(TwoNsValues,breaks=c((IntervalLength/2)*0:IntervalNumber,1e+100))
+Counts_At_OnePercent_Given2Ns <- Check$counts[1:IntervalNumber]
 
 Probabilities_At_One_Percent_Given_2NsMouse= Counts_At_OnePercent_Given2Ns/ (NumberOfAllelesAt2Ns)
 
