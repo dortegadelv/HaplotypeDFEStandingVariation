@@ -57,7 +57,7 @@ P_Allele_Is_2Ns_given_OnePercent <- c()
 # P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,pgamma(0.5,Alpha,scale=Gamma))
 for (i in 1:IntervalNumber){
     # print (i)
-    Prob <- pgamma(i*IntervalLength/2,Alpha,scale=Gamma) - pgamma((i-1)*IntervalLength/2,Alpha,scale=Gamma)
+    Prob <- pgamma(i*IntervalLength/2 - 0.25,Alpha,scale=Gamma) - pgamma(max((i-1)*IntervalLength/2 - 0.25,0),Alpha,scale=Gamma)
     P_Allele_Is_2Ns_given_OnePercent <- c(P_Allele_Is_2Ns_given_OnePercent,Prob)
 }
 
@@ -72,7 +72,7 @@ RealProbs <- c()
 # P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,pgamma(0.5,Alpha,scale=Beta))
 for (i in 1:IntervalNumber){
     # print (i)
-    Prob <- pgamma(i*IntervalLength/2,Alpha,scale=Beta) - pgamma((i-1)*IntervalLength/2,Alpha,scale=Beta)
+    Prob <- pgamma(i*IntervalLength/2 - 0.25,Alpha,scale=Beta) - pgamma(max((i-1)*IntervalLength/2 - 0.25,0),Alpha,scale=Beta)
     P_Allele_Is_2Ns <- c(P_Allele_Is_2Ns,Prob)
     NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*(NumberAllelesSimulatedInDemHistory)) # Original Test
     # NumberOfAllelesAt2Ns <- c(NumberOfAllelesAt2Ns,Prob*(1))
@@ -89,8 +89,9 @@ SelectionCoefficientList <- read.table(AllelesWithSelectionCoefficientFile)
 
 TwoNsValues <- SelectionCoefficientList$V2*NumberOfChromosomesInMostAncestralEpoch
 
+Breaks <- c(0,(IntervalLength/2)*0:IntervalNumber + 2.25,1e+100)
 
-Check <- hist(TwoNsValues,breaks=c((IntervalLength/2)*0:IntervalNumber,1e+100))
+Check <- hist(TwoNsValues,breaks=c(Breaks))
 Counts_At_OnePercent_Given2Ns <- Check$counts[1:IntervalNumber]
 
 Probabilities_At_One_Percent_Given_2NsMouse= Counts_At_OnePercent_Given2Ns/ (NumberOfAllelesAt2Ns)
