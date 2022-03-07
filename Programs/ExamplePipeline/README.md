@@ -17,6 +17,9 @@ We also provide scripts to calculate L from genomic data. If you compute the L v
 
 If you only want to run the inference on a set of precomputed L values, follow steps 2-5.
 
+Finally, we include a discussion, section 9), on considerations regarding how the amount of data available impacts the inferences performed by our method.
+
+
 ## Step 0) Prerequisites
 
 You need to compile the following programs to run any of the steps. Some programs require the gsl library. More information on how to install it can be found in the PReFerSim manual at https://github.com/LohmuellerLab/PReFerSim
@@ -413,3 +416,43 @@ And finally, you can run:
 `bash ConcatenateMismatchStatisticAndLDistances.sh`
 
 And the posterior distribution of the parameters will be given in the file Results/Best100NotCpG.txt . Those are the 100 simulations where the proportion of L values in the windows w1, ... , wn is more similar to what is seen in the synonymous variants. The three parameters analyzed in this demographic model are given in columns 2-4. In this example those parameters are the Ne in the present, the Ne in the epoch that comes before the present epoch and the time where the population size changes to the current day Ne.
+
+
+## 9) Data considerations
+
+The quality of the inferences performed by our method are dependant on the following factors: 
+
+1) The demographic scenario used to fit the data.
+
+- The ability to perform inferences is tightly dependant on the demographic scenario. As an example, in Figure S33 of our paper we see the L values show a larger difference between different values of selection under a constant population size scenario compared to a population expansion scenario. Larger L value differences lead to a smaller variance on the selection estimates (point estimates or DFE).
+
+2) The number of variants observed at a particular frequency.
+
+- A higher number of variants decreases the variance on the selection estimates (point estimates or DFE).
+
+3) The sample size.
+
+- A larger sample size allows you to obtain a larger number of L values for a particular variant sampled at a certain frequency. A larger sample size will increase the number of L values for a fixed number of sampled variants at a frequency f. Therefore, if that number of variants is fixed then a larger sample size should lead to more L values which in turn should decrease the variance on the estimates. However, note that changes in the sample size also lead to changes in the number of variants sampled at a certain frequency which should also impact the number of L values used in the inference.
+
+4) The length of the window wi.
+
+- We recommend that you choose a window length wi such that you have approximately >5% of the L values falling in each window wi.
+
+6) The value of the ESS (Effective sample size)
+
+- The quality of the estimates depends on the ESS. A value of the ESS is a necessary, but not sufficient condition to get accurate estimates of the ESS.
+
+We recommend that you take two different measures to check the quality of your estimates:
+
+1) Perform inferences on bootstrap replicates.
+
+One way to assess the variance in your estimates is to create bootstrap replicates. To do this, you can follow this procedure:
+
+- A) Estimate the likelihood function LLi(parameter_S), either for point estimates of selection or for parameters of a distribution of fitness effects, for every single variant Mi of the M variants sampled. Calculate LLi(parameter_S) for a set of possible values of the selection parameters S which can be either point estimates or parameters of a distribution of fitness effects.
+- B) Estimate the likelihood function LLj(parameter_S) for every bootstrap replicate Bj. Calculate LLj(parameter_S) by sampling M values of LLi(parameter_S) with replacement and then summing them up. Do that for a set of parameters S explored.
+- C) Find the maximum likelihood estimate of either the point estimates of selection or the parameters of a distribution of fitness effects from the explored values of those parameters S.
+- D) Repeat the process starting from B) for other 100 bootstrap replicates to assess the variance in your estimates (see Figure S41-S43 from our paper for an example of how we display the results from these bootstrap replicates).
+
+2) Perform inferences on simulations.
+
+Another way to assess the variance in your estimates is to perform simulations under a known point selection coefficient or distribution of fitness effects (see Step 1 for more information on how to do this). The objective in these simulations is to assess the accuracy of the estimates given the number of variants sampled, the sample size and the specified demographic scenario. We recommend to do two things: a) Assess the estimates of selection under an array of 4Ns values (see Figure 3 and 5 from our paper), and at least one realistic DFE such (such as the Kim et al. 2017 Genetics inferred DFE or the Boyko et al 2008 PLoS Genetics DFE).
