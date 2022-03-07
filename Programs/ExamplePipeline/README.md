@@ -422,7 +422,7 @@ And the posterior distribution of the parameters will be given in the file Resul
 
 The quality of the inferences performed by our method are dependant on the following factors: 
 
-1) The demographic scenario used to fit the data.
+1) The demographic scenario used to fit the data. We obtain this via an ABC method (see step 8).
 
 - The ability to perform inferences is tightly dependant on the demographic scenario. As an example, in Figure S33 of our paper we see the L values show a larger difference between different values of selection under a constant population size scenario compared to a population expansion scenario. Larger L value differences lead to a smaller variance on the selection estimates (point estimates or DFE).
 
